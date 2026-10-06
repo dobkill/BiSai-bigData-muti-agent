@@ -8,11 +8,11 @@ review_dir = "../Datas_分组_新版"      # 新闻主组阅读资料，历史�
 [llm]
 # 首次运行可保持 false，完整规则基线无需模型服务。
 enabled = false
-provider = "ollama"                 # ollama 或 api（兼容 chat/completions）
+provider = "ollama"                 # ollama / llama_cpp / api，可用 --provider 切换
 temperature = 0.0
 timeout_seconds = 300
 retries = 2
-concurrency = 1                      # Ollama 0.35.1 对 Qwen3.5 强制单路；支持并行的模型/API 可提高
+concurrency = 1                      # 固定并发或动态上限；llama_cpp 建议命令行覆盖为 4
 max_calls = 200                      # 每次运行最多实际 HTTP 请求数（含重试）
 cache = true
 fail_on_error = false                # false 时记录错误并使用规则抽取
@@ -32,6 +32,28 @@ num_ctx = 8192
 think = false                       # 事实抽取关闭思考输出，减少耗时；需要时可改 true
 num_predict = 2048                  # 单篇最多生成 token 数；截断/无效 JSON 视为错误
 
+[llm.llama_cpp]
+base_url = "http://localhost:8080/v1"
+model = "local-model"                # 与服务端 --alias 一致
+api_key = ""                         # 本机无鉴权服务可留空
+api_key_env = "LLAMA_CPP_API_KEY"
+num_predict = 2048
+think = false
+executable = "llama-server"           # 可填写 CUDA 版 llama-server.exe 的绝对路径
+# model_path = "models/model.gguf"    # 启动脚本使用，相对本配置文件；也可用 --model-path 指定
+server_slots = 4                     # 服务端槽位在启动时分配，客户端会读取 /props 验证
+num_ctx = 8192                       # 每路上下文；启动脚本按 slots × num_ctx 设置总容量
+
+[llm.adaptive]
+enabled = false                     # llama_cpp 用 --adaptive-concurrency 开启
+start = 1                           # 逐级 1 → 2 → 3 → 4，不一次提交全部文本
+sample_size = 8                     # 每档至少观测 max(sample_size, 2×并发) 个真实成功任务
+min_free_mb = 1024                  # V100 16GB 的显存余量下限，可按实测调整
+growth_headroom_mb = 256             # 升一路前的额外余量，不是每路 KV 显存估算
+gpu_index = 0                       # 本机 nvidia-smi 的 GPU 索引
+min_gain = 0.05                     # 升档吞吐改善不足 5% 时退回更好的档位
+memory_poll_seconds = 2
+
 [extraction]
 mode = "hybrid"                     # rules / llm / hybrid；后两者需要 llm.enabled
 
@@ -45,7 +67,7 @@ candidate_gap_hours = 3              # 不重叠区间相隔不超过 3 小时�
 overlap_slack_minutes = 15           # 区间接壤的时钟误差容差；确认仍需身份/上下文一致且无歧义
 
 [verification]
-# 事件关联明确，关键事实有至少两类来源支持，无明确冲突则可信；核心海域可信事件进入日报。
+# 三类来源完成同一事件关联，关键事实至少两类来源支持，第三类无明确冲突才可信；其余均不可信。
 required_fields = ["country", "platform", "direction"]
 time_tolerance_minutes = 5
 min_radar_points = 2

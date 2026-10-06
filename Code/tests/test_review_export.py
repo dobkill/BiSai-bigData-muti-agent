@@ -52,7 +52,7 @@ def test_export_copies_original_bytes_filters_rows_and_keeps_all_observations(re
     settings, day = review_data
     before = {p: p.read_bytes() for p in settings.paths.data_dir.rglob("*") if p.is_file()}
     summary = ReviewExporter(settings.paths.data_dir, settings.paths.review_dir).export([day])
-    assert summary["counts"] == {"可信事件": 1, "可疑事件": 0, "未配对记录": 2}
+    assert summary["counts"] == {"可信事件": 1, "不可信事件": 2}
     assert summary["unique_observations"] == {"radar": 2, "open_source": 2, "opinion": 1}
     folder = group_folder(settings, day, "可信事件")
     assert (folder/"新闻.txt").read_bytes() == before[settings.paths.data_dir/"2025.5.10"/"开源军情"/"001.txt"]
@@ -92,13 +92,13 @@ def test_rerun_preserves_review_and_moves_status_with_version_notice(review_data
     event = next(e for e in day.events if e.accepted)
     event.accepted = False
     event.reasons = ["fact_conflict:quantity"]
-    event.classification = "suspicious"
+    event.classification = "untrusted"
     event.verification_reasons = event.reasons[:]
     summary = exporter.export([day])
-    new_folder = group_folder(settings, day, "可疑事件")
+    new_folder = group_folder(settings, day, "不可信事件")
     assert not old_folder.exists()
     assert (new_folder/"人工复核.csv").read_bytes() == edited
-    assert summary["counts"]["可疑事件"] == 1
+    assert summary["counts"]["不可信事件"] == 3
     assert json.loads((new_folder/"事件信息.json").read_text(encoding="utf-8"))["review_record_stale"]
     assert "数量存在显式冲突" in (new_folder/"关联说明.md").read_text(encoding="utf-8")
 
@@ -172,7 +172,8 @@ def test_removed_groups_are_archived_with_manual_files_preserved(review_data):
     assert (history/"我的笔记.txt").read_text(encoding="utf-8") == "需要队友再看一下"
 
 
-def test_old_category_migrates_without_losing_manual_review_or_notes(review_data):
+@pytest.mark.parametrize("old_category", ["可确认关联", "可疑事件", "未配对记录"])
+def test_old_category_migrates_without_losing_manual_review_or_notes(review_data, old_category):
     settings, day = review_data
     exporter = ReviewExporter(settings.paths.data_dir, settings.paths.review_dir)
     exporter.export([day])
@@ -180,13 +181,13 @@ def test_old_category_migrates_without_losing_manual_review_or_notes(review_data
     review = (folder / "人工复核.csv").read_bytes().replace("待复核".encode(), "人工通过".encode())
     (folder / "人工复核.csv").write_bytes(review)
     (folder / "我的笔记.txt").write_text("保留人工笔记", encoding="utf-8")
-    old_folder = settings.paths.review_dir / day.date / "可确认关联" / folder.name
+    old_folder = settings.paths.review_dir / day.date / old_category / folder.name
     old_folder.parent.mkdir()
     folder.rename(old_folder)
     index_path = settings.paths.review_dir / day.date / "索引.json"
     index = json.loads(index_path.read_text(encoding="utf-8"))
     moved = next(g for g in index["groups"] if g["id"] == next(e.id for e in day.events if e.accepted))
-    moved.update(status="可确认关联", path=old_folder.relative_to(settings.paths.review_dir).as_posix())
+    moved.update(status=old_category, path=old_folder.relative_to(settings.paths.review_dir).as_posix())
     write_json(index_path, index)
     # Simulate a saved snapshot predating event classification.
     for event in day.events:
@@ -195,4 +196,27 @@ def test_old_category_migrates_without_losing_manual_review_or_notes(review_data
     assert (folder / "人工复核.csv").read_bytes() == review
     assert (folder / "我的笔记.txt").read_text(encoding="utf-8") == "保留人工笔记"
     assert not old_folder.parent.exists()
-    assert {p.name for p in (settings.paths.review_dir / day.date).iterdir() if p.is_dir()} == {"可信事件", "可疑事件", "未配对记录"}
+    assert {p.name for p in (settings.paths.review_dir / day.date).iterdir() if p.is_dir()} == {"可信事件", "不可信事件"}
+
+
+def test_saved_two_source_trusted_snapshot_is_reverified(review_data):
+    settings, day = review_data
+    candidate = next(c for c in day.candidates if next(e for e in day.events if e.id == c.id).accepted)
+    event = next(e for e in day.events if e.id == candidate.id)
+    radar_id = next(o.id for o in day.observations if o.id in candidate.observation_ids and o.source == "radar")
+    candidate.observation_ids.remove(radar_id)
+    event.evidence_ids.remove(radar_id)
+    candidate.relations = [r for r in candidate.relations if radar_id not in (r.left_id, r.right_id)]
+    day.observations = [o for o in day.observations if o.id != radar_id]
+    for trace in day.trace:
+        if trace.get("agent") == "verification":
+            trace["method"] = "two_source_verification_v1"
+    # The historical snapshot still says trusted; exporting must apply the new gate.
+    assert event.classification == "trusted"
+    summary = ReviewExporter(settings.paths.data_dir, settings.paths.review_dir).export([day])
+    assert summary["counts"] == {"可信事件": 0, "不可信事件": 3}
+    index = json.loads((settings.paths.review_dir / day.date / "索引.json").read_text(encoding="utf-8"))
+    group = next(g for g in index["groups"] if g["id"] == event.id)
+    metadata = json.loads((settings.paths.review_dir / group["path"] / "事件信息.json").read_text(encoding="utf-8"))
+    assert metadata["event"]["classification"] == "untrusted"
+    assert "three_sources_not_linked" in metadata["event"]["verification_reasons"]

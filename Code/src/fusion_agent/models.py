@@ -1,6 +1,6 @@
 from typing import Any, Literal
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
 
 Source = Literal["open_source", "opinion", "radar"]
 FACT_FIELDS = ("country", "platform", "direction", "region", "quantity", "task", "start", "end")
@@ -79,8 +79,14 @@ class Event(BaseModel):
     reasons: list[str] = Field(default_factory=list)
     quality: float = 0.0
     platform_verdicts: dict[str, dict[str, FieldVerdict]] = Field(default_factory=dict)
-    classification: Literal["trusted", "suspicious", "unpaired"] | None = None
+    classification: Literal["trusted", "untrusted"] | None = None
     verification_reasons: list[str] = Field(default_factory=list)
+
+    @field_validator("classification", mode="before")
+    @classmethod
+    def migrate_classification(cls, value):
+        # Historical snapshots remain readable; new results use two classes.
+        return "untrusted" if value in ("suspicious", "unpaired") else value
 
 
 class DayResult(BaseModel):

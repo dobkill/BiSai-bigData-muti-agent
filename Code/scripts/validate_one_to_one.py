@@ -22,6 +22,9 @@ def validate_day(path, review_root, data_root, reference=None):
     index = json.loads((review_root / day.date / "索引.json").read_text(encoding="utf-8"))
     exported = {g["id"]: g for g in index["groups"]}
     assert set(exported) == {c.id for c in day.candidates}
+    events = {e.id: e for e in day.events}
+    required_fields = next((t.get("rules", {}).get("required_fields", ["country", "platform", "direction"])
+                            for t in day.trace if t.get("agent") == "verification"), [])
     workbook_cache = {}
     matched_reference = 0
     def validate_package(members, folder):
@@ -69,6 +72,16 @@ def validate_day(path, review_root, data_root, reference=None):
         members = [observations[i] for i in candidate.observation_ids]
         sources = Counter(o.source for o in members)
         assert sources["open_source"] == 1 and sources["opinion"] <= 1
+        event = events[candidate.id]
+        assert event.classification in {"trusted", "untrusted"}
+        assert exported[candidate.id]["status"] == ("可信事件" if event.classification == "trusted" else "不可信事件")
+        assert not event.accepted or event.classification == "trusted"
+        if event.classification == "trusted":
+            assert set(sources) == {"open_source", "opinion", "radar"}, "trusted event lacks a source type"
+            assert candidate.relation_status == "confirmed" and not event.verification_reasons
+            assert all(event.verdicts[f].status == "supported" and len(set(event.verdicts[f].support_sources)) >= 2
+                       for f in required_fields), "trusted event lacks cross-source fact support"
+            assert not any(v.status == "conflict" for v in event.verdicts.values())
         validate_package(members, review_root / exported[candidate.id]["path"])
         if reference is not None:
             number = candidate.assignment["news_number"]
@@ -84,11 +97,14 @@ def validate_day(path, review_root, data_root, reference=None):
         ids = record["observation_ids"]
         assert len(ids) == 1 and ids[0] in unassigned and ids[0] not in copied_unassigned
         copied_unassigned.update(ids)
-        assert record["status"] == "未配对记录"
+        assert record["status"] == "不可信事件"
+        assert Path(record["path"]).parent.name == "不可信事件"
         validate_package([observations[ids[0]]], review_root / record["path"])
     assert copied_unassigned == unassigned, "an unassigned source has no readable original copy"
     assert index["counts"] == {s: sum(g["status"] == s for g in index["groups"])
-                               for s in ("可信事件", "可疑事件", "未配对记录")}
+                               for s in ("可信事件", "不可信事件")}
+    assert not (review_root / day.date / "可疑事件").exists()
+    assert not (review_root / day.date / "未配对记录").exists()
     assert len(text_files) == sum(o.source != "radar" for o in day.observations)
     assert len(radar_rows) == sum(len(o.metadata["row_numbers"]) for o in day.observations if o.source == "radar")
     return {"date": day.date, "main_groups": len(day.candidates),
@@ -98,7 +114,7 @@ def validate_day(path, review_root, data_root, reference=None):
             "exported_radar_rows": len(radar_rows), "unpaired_record_count": index.get("unpaired_record_count", 0),
             "exported_original_texts": len(text_files), "accepted": sum(e.accepted for e in day.events),
             "classification": index["counts"], "manual_proposed_pairs_checked": matched_reference,
-            "scope": "structure, unique ownership and original-copy fidelity; not official accuracy"}
+            "scope": "two-class trust policy, structure, unique ownership and original-copy fidelity; not official accuracy"}
 
 
 def main():

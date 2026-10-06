@@ -1,11 +1,14 @@
 from datetime import datetime
+from itertools import combinations
 from typing import Any
 
 from ..config import AlignmentSettings, VerificationSettings
 from ..domain import REGIONS, region_compatible
 from ..models import Candidate, Event, FACT_FIELDS, FieldVerdict, Observation
 from ..utils import unique
-from ..relations import event_window, platform_key, time_relation
+from ..relations import RelationMatcher, event_window, platform_key, time_relation
+
+METHOD = "three_source_verification_v2"
 
 
 class VerificationAgent:
@@ -14,6 +17,30 @@ class VerificationAgent:
     def __init__(self, settings: VerificationSettings, alignment: AlignmentSettings | None = None):
         self.settings = settings
         self.alignment = alignment or AlignmentSettings()
+
+    def association_reasons(self, candidate: Candidate, members: list[Observation]) -> list[str]:
+        if candidate.relation_status is not None and candidate.relation_status != "confirmed":
+            return ["association_not_confirmed:" + candidate.relation_status]
+        relations = candidate.relations
+        if not relations:
+            matcher = RelationMatcher(self.alignment)
+            relations = [matcher.compare(a, b) for a, b in combinations(members, 2) if a.source != b.source]
+        # All records must belong to the same linked event. A third source merely
+        # present in the package cannot turn a two-source event into a trusted one.
+        linked = {members[0].id} if members else set()
+        edges = [r for r in relations if r.status in {"confirmed", "candidate"} and not r.conflicts
+                 and r.time_relation not in {"nearby_hours", "far", "different_date"}]
+        while True:
+            expanded = linked | {oid for r in edges if linked & {r.left_id, r.right_id}
+                                 for oid in (r.left_id, r.right_id)}
+            if expanded == linked:
+                break
+            linked = expanded
+        if linked != {o.id for o in members} or any(r.status == "unrelated" or r.conflicts for r in relations):
+            return ["three_source_association_incomplete"]
+        if candidate.relation_status is None and not any(r.status == "confirmed" for r in relations):
+            return ["association_not_confirmed:candidate"]
+        return []
 
     def compatible(self, field: str, a: Any, b: Any) -> bool:
         if field in {"start", "end"}:
@@ -153,11 +180,11 @@ class VerificationAgent:
                              "radar_cross_direction_track", "radar_implausible_track_jump", "multiple_platforms_unresolved"}
         for candidate in candidates:
             members = [index[i] for i in candidate.observation_ids]
-            # A missing source is an informational gap, not contradicting evidence.
-            reasons = [w for w in candidate.warnings if not w.startswith("missing_source:")]
-            if candidate.relation_status is not None and candidate.relation_status != "confirmed":
-                reasons.append("association_not_confirmed:" + candidate.relation_status)
+            reasons = list(candidate.warnings)
+            reasons.extend(self.association_reasons(candidate, members))
             sources = {o.source for o in members}
+            if sources != {"open_source", "opinion", "radar"}:
+                reasons.append("three_sources_not_linked")
             if len(sources) < 2:
                 reasons.append("fewer_than_two_source_types")
             for obs in members:
@@ -181,7 +208,7 @@ class VerificationAgent:
             if facts.get("start") and facts.get("end") and facts["end"] < facts["start"]:
                 reasons.append("invalid_time_interval")
             reasons = unique(reasons)
-            classification = "unpaired" if len(sources) < 2 else "suspicious" if reasons else "trusted"
+            classification = "untrusted" if reasons else "trusted"
             report_reasons = list(reasons)
             if facts.get("direction") not in {"东海", "南海", "黄海"}:
                 report_reasons.append("outside_core_or_unknown_direction")

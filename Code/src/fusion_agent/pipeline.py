@@ -11,7 +11,7 @@ from .agents.extraction import ExtractionAgent
 from .agents.event_units import EventUnitAgent
 from .agents.report import ReportAgent
 from .agents.temporal import TemporalAgent
-from .agents.verification import VerificationAgent
+from .agents.verification import METHOD as VERIFICATION_METHOD, VerificationAgent
 from .config import Settings
 from .ingestion import IngestionAgent
 from .knowledge import build_graph
@@ -33,6 +33,7 @@ class AgentPipeline:
         self.llm = LLMClient(settings.llm, settings.paths.cache_dir) if settings.llm.enabled and settings.extraction.mode != "rules" else None
         if self.llm:
             self.llm.validate()
+            self.llm.prepare_concurrency()
         self.extraction = ExtractionAgent(settings, self.llm)
         self.event_units = EventUnitAgent()
         self.alignment = AlignmentAgent(settings.alignment, self.llm)
@@ -50,6 +51,7 @@ class AgentPipeline:
         values = self.settings.model_dump(mode="json", exclude={"paths", "review_export"})
         # 排除密钥；模型、服务地址、提示词、算法参数、数据内容都参与版本计算。
         values["llm"]["api"].pop("api_key", None)
+        values["llm"]["llama_cpp"].pop("api_key", None)
         source_hash = hashlib.sha256()
         for path in sorted(Path(__file__).parent.rglob("*.py")):
             source_hash.update(path.read_bytes())
@@ -76,7 +78,8 @@ class AgentPipeline:
         observations = self.extraction.run(docs, batches)
         fallbacks = sum(any(w.startswith("llm_fallback") for w in o.warnings) for o in observations)
         trace.append({"agent": "extraction", "seconds": round(time.perf_counter()-start, 3),
-                      "observations": len(observations), "llm_fallbacks": fallbacks})
+                      "observations": len(observations), "llm_fallbacks": fallbacks,
+                      "llm_concurrency": self.llm.concurrency_snapshot() if self.llm else None})
         start = time.perf_counter()
         observations = self.event_units.run(docs, observations, keep_documents=self.settings.alignment.mode == "one_to_one")
         trace.append({"agent": "event_units", "seconds": round(time.perf_counter()-start, 3),
@@ -100,8 +103,8 @@ class AgentPipeline:
         start = time.perf_counter()
         events = self.verification.run(candidates, observations)
         trace.append({"agent": "verification", "seconds": round(time.perf_counter()-start, 3),
-                      "method": "two_source_verification_v1", "rules": self.settings.verification.model_dump(),
-                      "classification": {s: sum(e.classification == s for e in events) for s in ("trusted", "suspicious", "unpaired")},
+                      "method": VERIFICATION_METHOD, "rules": self.settings.verification.model_dump(),
+                      "classification": {s: sum(e.classification == s for e in events) for s in ("trusted", "untrusted")},
                       "accepted": sum(e.accepted for e in events), "rejected": sum(not e.accepted for e in events)})
         result = DayResult(date=day, observations=observations, candidates=candidates, events=events, trace=trace,
                            unassigned_observation_ids=self.alignment.unassigned_observation_ids)
@@ -138,11 +141,12 @@ class AgentPipeline:
                 "completed_dates": [d.date for d in days], "completed_days": len(days),
                 "total_days": len(needed), "current_date": current,
                 "model_enabled": self.llm is not None,
-                "model_name": (self.settings.llm.ollama.model if self.settings.llm.provider == "ollama"
-                               else self.settings.llm.api.model) if self.llm else None,
+                "model_name": self.settings.llm.endpoint.model if self.llm else None,
+                "model_provider": self.settings.llm.provider if self.llm else None,
                 "strict_llm": self.settings.llm.fail_on_error,
                 "llm_requests": self.llm.calls if self.llm else 0,
                 "llm_cache_hits": self.llm.cache_hits if self.llm else 0,
+                "llm_concurrency": self.llm.concurrency_snapshot() if self.llm else None,
                 "error": error,
             })
 
@@ -174,13 +178,13 @@ class AgentPipeline:
         manifest = {"version": __version__, "target_dates": sorted(set(targets)), "processed_dates": sorted(needed),
                     "model_enabled": self.llm is not None, "llm_requests": self.llm.calls if self.llm else 0,
                     "model_provider": self.settings.llm.provider if self.llm else None,
-                    "model_name": (self.settings.llm.ollama.model if self.settings.llm.provider == "ollama"
-                                   else self.settings.llm.api.model) if self.llm else None,
+                    "model_name": self.settings.llm.endpoint.model if self.llm else None,
+                    "llm_concurrency": self.llm.concurrency_snapshot() if self.llm else None,
                     "lookback_days": self.settings.report.lookback_days,
                     "llm_cache_hits": self.llm.cache_hits if self.llm else 0, "llm_fallbacks": fallback_count,
                     "accepted_events": sum(e.accepted for d in days for e in d.events),
                     "event_classification": {s: sum(e.classification == s for d in days for e in d.events)
-                                             for s in ("trusted", "suspicious", "unpaired")},
+                                             for s in ("trusted", "untrusted")},
                     "association_method": methods[0] if len(methods) == 1 else "mixed",
                     "llm_review_fallbacks": sum(t.get("llm_review_fallbacks", 0) for d in days for t in d.trace),
                     "unassigned_observations": sum(len(d.unassigned_observation_ids) for d in days),

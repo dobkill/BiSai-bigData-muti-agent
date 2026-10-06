@@ -17,7 +17,7 @@ import openpyxl
 from openpyxl.styles import Alignment, Font, PatternFill
 
 from .models import Candidate, DayResult, Event, FACT_FIELDS, Observation
-from .agents.verification import VerificationAgent
+from .agents.verification import METHOD as VERIFICATION_METHOD, VerificationAgent
 from .config import AlignmentSettings, VerificationSettings
 from .relations import RELATION_NAMES
 from .utils import stable_id, unique, write_json, write_text
@@ -26,9 +26,10 @@ logger = logging.getLogger(__name__)
 FORMAT = "fusion_review_v1"
 LEGACY_STATUSES = ("已核验", "待人工确认", "未匹配")
 ASSOCIATION_STATUSES = ("可确认关联", "相关候选", "疑似相关但有冲突", "未找到关联")
-EVENT_NAMES = {"trusted": "可信事件", "suspicious": "可疑事件", "unpaired": "未配对记录"}
+EVENT_NAMES = {"trusted": "可信事件", "untrusted": "不可信事件"}
 EVENT_STATUSES = tuple(EVENT_NAMES.values())
-STATUSES = EVENT_STATUSES + ASSOCIATION_STATUSES + LEGACY_STATUSES
+OLD_EVENT_STATUSES = ("可疑事件", "未配对记录")
+STATUSES = EVENT_STATUSES + OLD_EVENT_STATUSES + ASSOCIATION_STATUSES + LEGACY_STATUSES
 SOURCE_NAMES = {"open_source": "新闻", "opinion": "舆论", "radar": "雷达"}
 FIELD_NAMES = {"country": "国家地区", "platform": "平台", "direction": "方向", "region": "区域",
                "quantity": "数量", "task": "任务", "start": "开始时间", "end": "结束时间"}
@@ -36,6 +37,7 @@ VERDICT_NAMES = {"supported": "获得跨源支持", "conflict": "存在显式冲
                  "insufficient": "未知（来源支持不足）", "absent": "未知（未给出）"}
 REASON_NAMES = {
     "three_sources_not_linked": "尚未关联齐新闻、舆论、雷达三类来源",
+    "three_source_association_incomplete": "三类来源尚未完成同一事件关联",
     "fewer_than_two_source_types": "暂时只有单类来源，无法交叉印证；未配对不代表虚假",
     "unlinked_observation": "该观测尚未关联到其他来源",
     "inconsistent_text_alignment": "新闻与舆论之间的关联评分未达到阈值",
@@ -63,7 +65,7 @@ def explain(reason: str) -> str:
     if prefix == "fact_not_verified":
         return f"{FIELD_NAMES.get(value, value)}未获得足够跨源支持"
     if prefix == "missing_source":
-        return f"缺少可关联的{SOURCE_NAMES.get(value, value)}材料；缺失不构成否定证据"
+        return f"缺少可关联的{SOURCE_NAMES.get(value, value)}材料；未满足三源关联条件，归入不可信"
     if prefix == "ambiguous_alignment":
         return f"{SOURCE_NAMES.get(value, value)}存在评分接近的多个候选，关联有歧义"
     if prefix == "uncertain_coordinate_points":
@@ -239,11 +241,11 @@ class ReviewExporter:
 
     @staticmethod
     def status(candidate: Candidate, event: Event, members: list[Observation]) -> str:
-        if len({o.source for o in members}) < 2:
-            return "未配对记录"
+        if {o.source for o in members} != {"open_source", "opinion", "radar"}:
+            return "不可信事件"
         if event.classification is not None:
             return EVENT_NAMES[event.classification]
-        return "可信事件" if event.accepted else "可疑事件"
+        return "可信事件" if event.accepted else "不可信事件"
 
     @staticmethod
     def fact_status(event: Event) -> str:
@@ -281,7 +283,7 @@ class ReviewExporter:
         if notes:
             lines += ["", "需确认：" + "；".join(notes[:4]) + "。"]
         if missing:
-            lines += ["", "来源缺失不代表否定；有两类来源印证仍可成为可信事件。"]
+            lines += ["", "来源缺失记为未知；未满足三类来源完成同一事件关联的条件，归入不可信。"]
         units = [o for o in members if o.metadata.get("unit_platform")]
         for obs in units:
             lines += ["", f"本组只对应原文中的 **{obs.metadata['unit_platform']}** 子事件；完整原文仍保留。"]
@@ -345,7 +347,9 @@ class ReviewExporter:
     def description(self, candidate: Candidate, event: Event, members: list[Observation], status: str,
                     files: list[dict], issues: list[str], stale: bool) -> str:
         lines = [f"# 三源分组 {candidate.id}", "", f"日期：{candidate.date}　分类：**{status}**", "",
-                 "先关联成事件，再逐字段核验。可信事件需至少两类来源印证且无明确冲突；单类来源保留为未配对记录。"
+                 "先关联成事件，再逐字段核验。可信事件要求新闻、舆论、雷达完成同一事件关联，"
+                 "关键事实至少两类来源相互支持，第三类来源未给出明确冲突值；其余均归入不可信事件。"
+                 "雷达作为时空、数量和轨迹核验依据之一，不作为无条件优先真值。"
                  "核心海域范围决定是否进入日报，单独记录。", "",
                  "## 阅读顺序", "", "先读新闻和舆论原文，再对照雷达记录；最后查看下方字段对照与关联问题。", ""]
         for file in files:
@@ -404,9 +408,9 @@ class ReviewExporter:
         return "\n".join(lines)
 
     def export_day(self, day: DayResult) -> dict:
-        if any(e.classification is None for e in day.events):
-            # Older snapshots used source completeness as a reporting gate.
-            # Reverify their existing links before presenting the three classes.
+        if (any(e.classification is None for e in day.events) or not any(
+                t.get("agent") == "verification" and t.get("method") == VERIFICATION_METHOD for t in day.trace)):
+            # Reverify historical snapshots under the current trust policy.
             rules = next((t.get("rules", {}) for t in day.trace if t.get("agent") == "verification"), {})
             alignment = next((t.get("rules", {}) for t in day.trace if t.get("agent") == "alignment"), {})
             verifier = VerificationAgent(VerificationSettings.model_validate(rules), AlignmentSettings.model_validate(alignment))
@@ -533,10 +537,9 @@ class ReviewExporter:
                     history.parent.mkdir(parents=True, exist_ok=True)
                     source.rename(history)
         # All old category folders are generated paths; remove only empty ones.
-        for old_status in ASSOCIATION_STATUSES + LEGACY_STATUSES:
+        for old_status in OLD_EVENT_STATUSES + ASSOCIATION_STATUSES + LEGACY_STATUSES:
             old_dir = self.target(day_dir / old_status)
-            if old_dir.is_dir() and not any(old_dir.iterdir()):
-                old_dir.rmdir()
+            self.remove_old_category_indexes(old_dir)
         unassigned_records = [g for g in groups if g["kind"] == "unassigned_record"]
         groups = [g for g in groups if g["kind"] == "main_group"]
         unassigned = [{"id": oid, "source": observations[oid].source, "path": observations[oid].path,
@@ -550,17 +553,34 @@ class ReviewExporter:
         index = {"format": FORMAT, "date": day.date, "data_dir": str(self.data_dir), "groups": groups,
                  "unassigned_observations": unassigned,
                  "unassigned_records": unassigned_records,
-                 "unpaired_record_count": sum(g["status"] == "未配对记录" for g in groups) + len(unassigned_records),
+                 "unpaired_record_count": sum(len(set(g["source_types"].values())) < 2 for g in groups) + len(unassigned_records),
                  "association_rules": next((t.get("rules", {}) for t in day.trace if t.get("agent") == "alignment"), {}),
                  "counts": {s: sum(g["status"] == s for g in groups) for s in EVENT_STATUSES}}
         write_json(previous_path, index)
-        self.write_indexes(day_dir / "未配对记录", [g for g in groups if g["status"] == "未配对记录"] + unassigned_records,
-                           [index], records_only=True)
+        for status in EVENT_STATUSES:
+            self.write_indexes(day_dir / status, [g for g in groups + unassigned_records if g["status"] == status],
+                               [index], category=status)
         self.write_indexes(day_dir, groups, [index])
         logger.info("%s 人工阅读导出：%s", day.date, index["counts"])
         return index
 
-    def write_indexes(self, folder: Path, groups: list[dict], days: list[dict], records_only: bool = False):
+    def remove_old_category_indexes(self, folder: Path):
+        """Remove generated navigation after migration; retain manual files."""
+        if not folder.is_dir():
+            return
+        readme = self.target(folder / "README.md")
+        if readme.is_file() and readme.read_text(encoding="utf-8").startswith("# 未配对记录\n"):
+            readme.unlink()
+        index = self.target(folder / "索引.csv")
+        if index.is_file():
+            with index.open(encoding="utf-8-sig", newline="") as file:
+                generated = next(csv.reader(file), []) == INDEX_COLUMNS
+            if generated:
+                index.unlink()
+        if not any(folder.iterdir()):
+            folder.rmdir()
+
+    def write_indexes(self, folder: Path, groups: list[dict], days: list[dict], category: str | None = None):
         rows = [[g["date"], g["status"], g["id"], "是" if g["full_sources"] else "否", "是" if g["accepted"] else "否",
                  g["country"], g["platform"], g["direction"], g["news_title"], g["opinion_title"], g["radar_batch"],
                  g["radar_rows"], "；".join(g["issues"]), g["path"], "；".join(g.get("basis", [])),
@@ -572,20 +592,22 @@ class ReviewExporter:
         one_to_one = bool(groups) and all(g.get("assignment") for g in groups)
         statuses = EVENT_STATUSES
         extra_records = sum(len(d.get("unassigned_records", [])) for d in days)
-        if records_only:
-            lines = ["# 未配对记录", "", f"共 {len(groups)} 条未配对记录，新闻、舆论和雷达均可能出现。", "",
-                     "暂时只有单类来源，无法交叉印证。未配对不代表虚假；原始材料和未配对理由均保留。", ""]
+        if category:
+            main_groups = sum(g.get("kind") != "unassigned_record" for g in groups)
+            lines = [f"# {category}", "", f"共 {main_groups} 个主组、{len(groups) - main_groups} 条未归属记录。", "",
+                     "可信要求三类来源完成同一事件关联、关键事实至少两类来源支持且第三类无明确冲突。"
+                     "冲突、缺源、关联歧义、证据不足及未配对记录均归入不可信，并保留原始材料和具体原因。", ""]
         else:
             lines = ["# 事件核验分组", "", f"共 {len(days)} 天、{len(groups)} 个{'新闻主组' if one_to_one else '事件主组'}；日报接纳 {sum(g['accepted'] for g in groups)} 项。", "",
                      "| 分类 | 主组数 | 判断标准 |", "| --- | --- | --- |",
-                     f"| 可信事件 | {counts['可信事件']} | 同一事件关联明确，关键事实至少两类来源印证，其他相关来源无明确冲突 |",
-                     f"| 可疑事件 | {counts['可疑事件']} | 已有关联材料，但存在明确冲突、配对歧义或关键事实证据不足 |",
-                     f"| 未配对记录 | {counts['未配对记录']} | 本主组暂时只有单类来源，无法交叉印证 |", "",
-                     f"另有 {extra_records} 条未归属的舆论或雷达，存入“未配对记录”，不增加新闻主组数量。", "",
+                     f"| 可信事件 | {counts['可信事件']} | 三类来源完成同一事件关联，关键事实至少两类来源支持，第三类无明确冲突值 |",
+                     f"| 不可信事件 | {counts['不可信事件']} | 除可信事件外的全部主组，包括冲突、缺源、关联歧义、证据不足和未配对 |", "",
+                     f"另有 {extra_records} 条未归属的舆论或雷达，存入“不可信事件”，不增加新闻主组数量。", "",
                      "## 分组依据", "",
-                     "- **先关联，再核验**：保留对应线索和备选，明确冲突与证据不足都归入可疑事件，并注明具体原因。",
-                     "- **来源缺失**：未找到雷达不等于雷达否定事件；缺失记未知，有两类来源印证仍可成为可信事件。",
+                     "- **先关联，再核验**：新闻、舆论、雷达三类来源须完成同一事件关联；其余均归入不可信事件，并注明具体原因。",
+                     "- **来源缺失**：缺失记未知；即使已有两类来源一致，缺少第三类关联材料仍归入不可信。第三类已关联但未给出某字段时，不构成该字段冲突。",
                      "- **逐字段核验**：可信事件仅保留已交叉印证的字段；数量或任务只有单类来源支持时记未知，不补全。",
+                     "- **雷达依据**：雷达记录作为时空、数量和轨迹核验依据之一，不作为无条件优先真值；任一来源的明确冲突均不能被另外两类来源一致抵消。",
                      "- **时空与歧义**：同一天、同方向不足以证明同一活动；数小时差距或多个合理对应仅保留候选。",
                      "- **日报范围**：可信事件与日报接纳分别记录，核心海域以外的可信活动也保留在可信事件中。", ""]
             if one_to_one:
@@ -596,8 +618,8 @@ class ReviewExporter:
                   ("原文按字节复制，主组来源不重复；雷达子表包含该主组对应的全部批次。" if one_to_one else
                    "原文按字节复制，雷达只筛对应记录；同一原文可因子事件或多个候选出现在不同组中。"), "",
                   "人工意见填写 `人工复核.csv`，重复导出保留；意见暂不自动重算。", ""]
-        if not records_only:
-            lines += ["## 日期导航", "", "| 日期 | " + " | ".join(statuses) + " | 额外未配对记录 |",
+        if not category:
+            lines += ["## 日期导航", "", "| 日期 | " + " | ".join(statuses) + " | 不可信未归属记录 |",
                       "| --- | " + " | ".join("---" for _ in statuses) + " | --- |"]
             for d in days:
                 target = self.output_dir / d["date"] / "README.md"
@@ -632,15 +654,18 @@ class ReviewExporter:
         observations = {oid: source for g in groups for oid, source in g["source_types"].items()}
         observations.update({v["id"]: v["source"] for d in indexes for v in d.get("unassigned_observations", [])})
         self.write_indexes(self.output_dir, groups, indexes)
-        self.write_indexes(self.output_dir / "未配对记录", [g for g in groups if g["status"] == "未配对记录"] + records,
-                           indexes, records_only=True)
+        for status in EVENT_STATUSES:
+            self.write_indexes(self.output_dir / status, [g for g in groups + records if g["status"] == status],
+                               indexes, category=status)
+        for old_status in OLD_EVENT_STATUSES:
+            self.remove_old_category_indexes(self.target(self.output_dir / old_status))
         manifest = {"format": FORMAT, "data_dir": str(self.data_dir), "output_dir": str(self.output_dir),
                     "updated_dates": sorted(set(updated)), "exported_dates": [d["date"] for d in indexes],
                     "total_groups": len(groups), "counts": {s: sum(g["status"]==s for g in groups)
                         for s in EVENT_STATUSES},
                     "unique_observations": dict(Counter(observations.values()))}
         manifest["unassigned_observations"] = sum(len(d.get("unassigned_observations", [])) for d in indexes)
-        manifest["unpaired_record_count"] = sum(g["status"] == "未配对记录" for g in groups) + len(records)
+        manifest["unpaired_record_count"] = sum(len(set(g["source_types"].values())) < 2 for g in groups) + len(records)
         manifest["unassigned_record_sources"] = dict(Counter(s for g in records for s in g["source_types"].values()))
         originals = {(v["source"], v["path"]) for g in groups for v in g.get("original_sources", {}).values()}
         originals.update((v["source"], v["path"]) for d in indexes for v in d.get("unassigned_observations", []))

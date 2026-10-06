@@ -80,12 +80,13 @@ def test_last_remaining_unrelated_material_is_not_forced_into_a_pair():
 
 
 @pytest.mark.parametrize("other_source", ["opinion", "radar"])
-def test_missing_opinion_or_radar_does_not_prevent_a_trusted_news_event(other_source):
+def test_missing_opinion_or_radar_keeps_link_but_makes_news_event_untrusted(other_source):
     observations = [observation("n", "open_source"), observation("other", other_source)]
     groups = AlignmentAgent(AlignmentSettings()).run(observations)
     assert groups[0].relation_status == "confirmed"
     event = VerificationAgent(VerificationSettings()).run(groups, observations)[0]
-    assert event.classification == "trusted" and event.accepted
+    assert event.classification == "untrusted" and not event.accepted
+    assert "three_sources_not_linked" in event.verification_reasons
 
 
 def test_identity_conflict_can_be_paired_but_never_accepted_as_a_fact():
@@ -226,11 +227,11 @@ def test_main_export_preserves_unassigned_sources_without_extra_groups(tmp_path)
         assert manifest["total_candidates"] == 1 and manifest["unassigned_observations"] == 2
         index = json.loads((tmp_path / "out/review/2025-05-10/索引.json").read_text(encoding="utf-8"))
         assert len(index["groups"]) == 1 and len(index["unassigned_observations"]) == 2
-        assert index["counts"] == {"可信事件": 1, "可疑事件": 0, "未配对记录": 0}
+        assert index["counts"] == {"可信事件": 1, "不可信事件": 0}
         assert index["unpaired_record_count"] == 2 and len(index["unassigned_records"]) == 2
         for record in index["unassigned_records"]:
             folder = tmp_path / "out/review" / record["path"]
-            assert record["status"] == "未配对记录" and folder.parent.name == "未配对记录"
+            assert record["status"] == "不可信事件" and folder.parent.name == "不可信事件"
             if "opinion" in record["source_types"].values():
                 assert (folder / "舆论.txt").read_bytes() == extra.read_bytes()
             else:

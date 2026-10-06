@@ -210,12 +210,19 @@ class ExtractionAgent:
         labels = [str(r.get("目标类型") or r.get("机舰名") or "") for batch in batches for r in batch.rows]
         self.platform_aliases = platform_catalog(labels)
         workers = self.settings.llm.concurrency if self.llm else 1
-        logger.info("开始抽取 %d 篇文本、%d 个雷达批次；模型=%s，并发=%d", len(docs), len(batches), bool(self.llm), workers)
-        with ThreadPoolExecutor(max_workers=workers) as pool:
-            texts = []
-            for index, observation in enumerate(pool.map(self.text, docs), start=1):
-                texts.append(observation)
-                if self.llm:
-                    logger.info("文本抽取 %d/%d：%s", index, len(docs), observation.path)
+        logger.info("开始抽取 %d 篇文本、%d 个雷达批次；模型=%s，并发上限=%d", len(docs), len(batches), bool(self.llm), workers)
+
+        def extract(doc):
+            observation = self.text(doc)
+            if self.llm:
+                logger.info("文本抽取完成：%s", observation.path)
+            return observation
+
+        if isinstance(self.llm, LLMClient):
+            texts = self.llm.map_tasks(extract, docs,
+                                      succeeded=lambda obs: not any(w.startswith("llm_fallback") for w in obs.warnings))
+        else:
+            with ThreadPoolExecutor(max_workers=workers) as pool:
+                texts = list(pool.map(extract, docs))
         return texts + [self.radar(b) for b in batches]
 

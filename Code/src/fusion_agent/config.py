@@ -29,6 +29,32 @@ class OllamaSettings(BaseModel):
     num_predict: int = Field(default=2048, ge=128)
 
 
+class LlamaCppSettings(BaseModel):
+    base_url: str = "http://localhost:8080/v1"
+    model: str = "local-model"  # 与 llama-server --alias 一致
+    api_key: str = Field(default="", repr=False)
+    api_key_env: str = "LLAMA_CPP_API_KEY"
+    num_predict: int = Field(default=2048, ge=128)
+    think: bool | None = False
+    # 可选启动脚本配置；应用本身连接已经启动的服务。
+    executable: str = "llama-server"
+    model_path: Path | None = None
+    server_slots: int = Field(default=4, ge=1, le=32)
+    num_ctx: int = Field(default=8192, ge=1024)
+
+
+class AdaptiveConcurrencySettings(BaseModel):
+    enabled: bool = False
+    start: int = Field(default=1, ge=1, le=32)
+    sample_size: int = Field(default=8, ge=2)
+    min_free_mb: int = Field(default=1024, ge=0)
+    # 增加一路前额外预留的计算缓冲余量；不是 KV 缓存的精确估算。
+    growth_headroom_mb: int = Field(default=256, ge=0)
+    gpu_index: int = Field(default=0, ge=0)
+    min_gain: float = Field(default=0.05, ge=0, le=1)
+    memory_poll_seconds: float = Field(default=2, gt=0)
+
+
 class LLMSettings(BaseModel):
     enabled: bool = False
     provider: str = "ollama"
@@ -41,11 +67,21 @@ class LLMSettings(BaseModel):
     fail_on_error: bool = False
     api: APISettings = Field(default_factory=APISettings)
     ollama: OllamaSettings = Field(default_factory=OllamaSettings)
+    llama_cpp: LlamaCppSettings = Field(default_factory=LlamaCppSettings)
+    adaptive: AdaptiveConcurrencySettings = Field(default_factory=AdaptiveConcurrencySettings)
+
+    @property
+    def endpoint(self):
+        return getattr(self, self.provider)
 
     @model_validator(mode="after")
     def provider_known(self):
-        if self.provider not in {"api", "ollama"}:
-            raise ValueError("llm.provider 必须为 api 或 ollama")
+        if self.provider not in {"api", "ollama", "llama_cpp"}:
+            raise ValueError("llm.provider 必须为 api、ollama 或 llama_cpp")
+        if self.adaptive.enabled and self.provider != "llama_cpp":
+            raise ValueError("显存自适应并发只支持本机 llama_cpp；Ollama/API 请使用固定 concurrency")
+        if self.adaptive.enabled and self.adaptive.start > self.concurrency:
+            raise ValueError("llm.adaptive.start 不能超过 llm.concurrency")
         return self
 
 
@@ -112,5 +148,7 @@ def load_settings(path: Path) -> Settings:
         setattr(settings.paths, name, (path.parent / value).resolve())
     settings.paths.review_dir = ((path.parent / settings.paths.review_dir).resolve()
                                  if settings.paths.review_dir is not None else settings.paths.output_dir / "review")
+    if settings.llm.llama_cpp.model_path is not None:
+        settings.llm.llama_cpp.model_path = (path.parent / settings.llm.llama_cpp.model_path).resolve()
     return settings
 

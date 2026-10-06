@@ -12,6 +12,7 @@ from .ingestion import IngestionAgent
 from .llm import LLMClient
 from .pipeline import AgentPipeline
 from .review_export import export_saved_results
+from .runtime import add_llm_arguments, apply_llm_arguments, estimate_request_budget
 from .utils import parse_date, write_json, write_text
 
 
@@ -47,10 +48,12 @@ def doctor(settings, check_llm: bool) -> dict:
         client = LLMClient(settings.llm, settings.paths.cache_dir)
         try:
             client.validate()
+            client.prepare_concurrency()
             # 最小结构化调用同时验证模型可访问性与 JSON 返回。
             response = client.complete_json("只输出 JSON 对象：{\"ok\":true}", "连接测试", {
                 "type": "object", "properties": {"ok": {"type": "boolean"}}, "required": ["ok"]})
             result["llm_check"] = response.get("ok") is True
+            result["llm_concurrency"] = client.concurrency_snapshot()
         finally:
             client.close()
     return result
@@ -86,6 +89,7 @@ def main():
     inspect.add_argument("--out", type=Path)
     check = sub.add_parser("doctor", help="检查环境；可选模型连接测试")
     check.add_argument("--check-llm", action="store_true")
+    add_llm_arguments(check)
     run = sub.add_parser("run", help="执行 Agent 工作流并生成日报")
     selection = run.add_mutually_exclusive_group(required=True)
     selection.add_argument("--date", action="append", help="可重复指定日报日期")
@@ -99,6 +103,7 @@ def main():
     run.add_argument("--review-dir", type=Path, help="本次人工阅读目录；相对路径按当前工作目录解析")
     run.add_argument("--strict-llm", action="store_true", help="模型失败立即终止，避免把规则回退当成模型试跑")
     run.add_argument("--max-llm-calls", type=int, help="本次模型实际 HTTP 请求上限（含重试）；全量运行可覆盖配置中的单日预算")
+    add_llm_arguments(run)
     export = sub.add_parser("export", help="导出内部 JSONL；官方格式待补充")
     export.add_argument("--out", type=Path, required=True)
     export.add_argument("--date", action="append")
@@ -112,6 +117,8 @@ def main():
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
     try:
         settings = load_settings(args.config)
+        if args.command in {"run", "doctor"}:
+            apply_llm_arguments(settings, args)
         if args.command == "inspect":
             result = inspect_data(settings, args.out)
         elif args.command == "doctor":
@@ -148,6 +155,9 @@ def main():
                 settings.llm.max_calls = args.max_llm_calls
             available = IngestionAgent(settings.paths.data_dir).dates()
             targets = list(available) if args.all else settings.report.node_dates if args.nodes else [parse_date(d) for d in args.date]
+            if args.all and settings.llm.enabled and args.max_llm_calls is None:
+                settings.llm.max_calls = estimate_request_budget(settings, targets)
+                logging.info("全量模型请求预算（含重试）自动设为 %d；可用 --max-llm-calls 显式限制", settings.llm.max_calls)
             pipeline = AgentPipeline(settings)
             try:
                 result = pipeline.run(targets, force=args.force)
