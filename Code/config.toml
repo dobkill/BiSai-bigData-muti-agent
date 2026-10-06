@@ -1,0 +1,62 @@
+# 所有运行配置集中在本文件。相对路径以本文件所在目录为基准。
+[paths]
+data_dir = "../Datas/数据"
+output_dir = "outputs/one_to_one_trial"
+cache_dir = ".cache"
+review_dir = "../Datas_分组_新版"      # 新闻主组阅读资料，历史组合由导出器归档
+
+[llm]
+# 首次运行可保持 false，完整规则基线无需模型服务。
+enabled = false
+provider = "ollama"                 # ollama 或 api（兼容 chat/completions）
+temperature = 0.0
+timeout_seconds = 300
+retries = 2
+concurrency = 1                      # Ollama 0.35.1 对 Qwen3.5 强制单路；支持并行的模型/API 可提高
+max_calls = 200                      # 每次运行最多实际 HTTP 请求数（含重试）
+cache = true
+fail_on_error = false                # false 时记录错误并使用规则抽取
+
+[llm.api]
+base_url = "https://api.example.com/v1"
+model = ""                          # 填写服务商提供的模型名
+api_key = ""                        # 可直接填写；建议使用下面的环境变量
+api_key_env = "LLM_API_KEY"
+json_mode = true                     # 服务商不支持 response_format 时改为 false
+
+[llm.ollama]
+base_url = "http://localhost:11434"
+model = "qwen3.5:9b-q8_0"            # 本机已安装并用于单日试跑
+keep_alive = "10m"
+num_ctx = 8192
+think = false                       # 事实抽取关闭思考输出，减少耗时；需要时可改 true
+num_predict = 2048                  # 单篇最多生成 token 数；截断/无效 JSON 视为错误
+
+[extraction]
+mode = "hybrid"                     # rules / llm / hybrid；后两者需要 llm.enabled
+
+[alignment]
+mode = "one_to_one"                 # 每篇新闻一个主组；legacy 保留旧版多组合对照
+minimum_pair_score = 22              # 关联排序依据，不是事实正确概率
+ambiguity_margin = 3                # 禁用所选对应后，整体目标差距过小则保留歧义
+llm_review = true                   # 启用模型时审查难以区分的文本对应，必须引用两篇原文
+max_llm_reviews = 8
+candidate_gap_hours = 3              # 不重叠区间相隔不超过 3 小时仅保留候选，不能直接确认
+overlap_slack_minutes = 15           # 区间接壤的时钟误差容差；确认仍需身份/上下文一致且无歧义
+
+[verification]
+# 事件关联明确，关键事实有至少两类来源支持，无明确冲突则可信；核心海域可信事件进入日报。
+required_fields = ["country", "platform", "direction"]
+time_tolerance_minutes = 5
+min_radar_points = 2
+# 雷达坐标仅作粗粒度方向核验，边界缓冲区输出未知，不推定具体子海域。
+geo_boundary_margin_degrees = 0.3
+max_air_track_jump_kmh = 2500
+
+[report]
+lookback_days = 7                    # 参数选择，非官方指定窗口
+node_dates = ["2025-05-10", "2025-05-18", "2025-05-30", "2025-06-09", "2025-06-17", "2025-06-29", "2025-07-09", "2025-07-17"]
+
+[review_export]
+enabled = true                      # run 自动导出本次处理日期的三源人工阅读分组
+
