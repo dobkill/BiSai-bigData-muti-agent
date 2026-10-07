@@ -1,0 +1,21 @@
+{
+  "role": "extraction",
+  "error": "N001 平台名称须出自本篇原文，quote须包含其识别词: AW-159 反潜直升机",
+  "response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T15:46:45.8586562Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\n  \"items\": [\n    {\n      \"source_id\": \"N001\",\n      \"platforms\": [\n        {\n          \"name\": \"AW-159 反潜直升机\",\n          \"country\": \"韩国\",\n          \"quantity\": null,\n          \"quote\": \"\",\n          \"quantity_quote\": \"\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"阿拉伯海\",\n        \"quote\": \"在阿拉伯海展开行动\"\n      },\n      \"mission\": {\n        \"value\": \"反潜巡逻\",\n        \"quote\": \"执行反潜巡逻任务\"\n      },\n      \"start_time\": \"11:37\",\n      \"end_time\": \"13:02\",\n      \"time_quote\": \"从 11 时 37 分至 13 时 02 分\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"展开行动\"\n    },\n    {\n      \"source_id\": \"N002\",\n      \"platforms\": [\n        {\n          \"name\": \"轰 -6K 轰炸机\",\n          \"country\": \"中国\",\n          \"quantity\": null,\n          \"quote\": \"\",\n          \"quantity_quote\": \"\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"上海外海\",\n        \"quote\": \"在上海外海\"\n      },\n      \"mission\": {\n        \"value\": \"对海突击训练\",\n        \"quote\": \"组织对海突击训练\"\n      },\n      \"start_time\": \"11:21\",\n      \"end_time\": \"13:46\",\n      \"time_quote\": \"11 时 21 分至 13 时 46 分\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"组织对海突击训练\"\n    },\n    {\n      \"source_id\": \"N003\",\n      \"platforms\": [\n        {\n          \"name\": \"903A 型综合补给舰\",\n          \"country\": \"中国\",\n          \"quantity\": null,\n          \"quote\": \"\",\n          \"quantity_quote\": \"\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"冲绳海槽\",\n        \"quote\": \"在冲绳海槽持续活动\"\n      },\n      \"mission\": {\n        \"value\": null,\n        \"quote\": \"\"\n      },\n      \"start_time\": null,\n      \"end_time\": null,\n      \"time_quote\": \"\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"持续活动\"\n    },\n    {\n      \"source_id\": \"N004\",\n      \"platforms\": [\n        {\n          \"name\": \"歼 -35 舰载隐身战斗机\",\n          \"country\": \"中国\",\n          \"quantity\": null,\n          \"quote\": \"\",\n          \"quantity_quote\": \"\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"温州外海\",\n        \"quote\": \"在温州外海活动\"\n      },\n      \"mission\": {\n        \"value\": \"战备警巡\",\n        \"quote\": \"执行战备警巡行动\"\n      },\n      \"start_time\": \"17:35\",\n      \"end_time\": \"19:00\",\n      \"time_quote\": \"17 时 35 分至 19 时 00 分\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"活动\"\n    }\n  ]\n}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 14767845500,
+    "load_duration": 7655200,
+    "prompt_eval_count": 1793,
+    "prompt_eval_cached_count": 909,
+    "prompt_eval_duration": 371568000,
+    "eval_count": 830,
+    "eval_duration": 14368873000
+  }
+}

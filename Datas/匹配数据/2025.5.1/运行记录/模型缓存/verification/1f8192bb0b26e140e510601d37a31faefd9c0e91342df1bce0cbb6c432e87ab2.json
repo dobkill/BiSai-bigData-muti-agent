@@ -1,0 +1,298 @@
+{
+  "role": "verification",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N040",
+      "kind": "news",
+      "title": "新加坡F-15SG多用途战斗机在孟加拉湾开展对海突击训练",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：新加坡F-15SG多用途战斗机在孟加拉湾开展对海突击训练\n正文：2025年5月1日，新加坡F-15SG多用途战斗机在孟加拉湾展开行动，自11时44分至13时14分围绕任务海域组织对海突击训练，按计划保持机动并持续执行对海突击训练。\n\n主题词：新加坡  F-15SG  多用途战斗机  孟加拉湾\n",
+      "platforms": [
+        {
+          "name": "F-15SG",
+          "country": "新加坡",
+          "quantity": null,
+          "quote": "新加坡F-15SG多用途战斗机",
+          "quantity_quote": "",
+          "country_raw": "新加坡"
+        }
+      ],
+      "location": {
+        "raw": "孟加拉湾",
+        "region": "孟加拉湾",
+        "direction": "其他",
+        "precision": "原文区域",
+        "mapping": "PDF未列入三大核心海域的区域归其他",
+        "transit": false,
+        "quote": "孟加拉湾"
+      },
+      "mission": {
+        "value": "对海突击训练",
+        "quote": "组织对海突击训练"
+      },
+      "start_time": "11:44",
+      "end_time": "13:14",
+      "movement": "活动"
+    },
+    "opinion": {
+      "id": "O041",
+      "kind": "opinion",
+      "title": "新加坡两架F-15SG在孟加拉湾执行战备警巡",
+      "text": "时间：2025.5.1\n\n标题：新加坡两架F-15SG在孟加拉湾执行战备警巡\n\n正文：据公开防务媒体报道，新加坡空军两架F-15SG多用途战斗机于2025年5月1日11时44分至13时14分在孟加拉湾围绕任务海域组织战备警巡。相关平台按计划保持机动并持续执行战备警巡，沿既定方向维持部署或警戒。这一行动被视为展现前沿存在和部署持续性的常规安排。\n",
+      "platforms": [
+        {
+          "name": "F-15SG多用途战斗机",
+          "country": "新加坡",
+          "quantity": 2,
+          "quote": "两架F-15SG多用途战斗机",
+          "quantity_quote": "两架F-15SG多用途战斗机",
+          "country_raw": "新加坡"
+        }
+      ],
+      "location": {
+        "raw": "孟加拉湾",
+        "region": "孟加拉湾",
+        "direction": "其他",
+        "precision": "原文区域",
+        "mapping": "PDF未列入三大核心海域的区域归其他",
+        "transit": false,
+        "quote": "在孟加拉湾"
+      },
+      "mission": {
+        "value": "战备警巡",
+        "quote": "执行战备警巡"
+      },
+      "start_time": "11:44",
+      "end_time": "13:14",
+      "movement": "活动"
+    },
+    "radars": [
+      {
+        "id": "R017",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "F-15SG多用途战斗机",
+            "country": "新加坡",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-86FAD17E60C49E",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "对海突击训练",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "对海突击训练"
+        ],
+        "start_time": "2025.05.01 11:44:00",
+        "end_time": "2025.05.01 13:14:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            88.0461,
+            88.1408
+          ],
+          "latitude_range": [
+            14.9136,
+            15.319
+          ],
+          "median": [
+            88.1218,
+            15.1564
+          ],
+          "origins": [
+            [
+              88.0934,
+              14.8873
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [],
+        "batch": "AIR-86FAD17E60C49E",
+        "sibling_ids": [],
+        "hull_values": [],
+        "country_values": [
+          "新加坡"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 10
+      }
+    ],
+    "association": {
+      "opinion_edges": [
+        {
+          "candidate_id": "O041",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.95,
+          "reason": "平台（新加坡 F-15SG）、时间（2025.5.1 11:44-13:14）、地点（孟加拉湾）及任务性质（对海突击/战备警巡，均为机动部署）完全一致。新闻与意见内容高度重合，仅任务名称表述略有差异（突击 vs 警巡），属同一活动不同描述视角。"
+        },
+        {
+          "candidate_id": "O004",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.9,
+          "reason": "虽然平台相同且日期一致，但地点明确为安达曼海，与新闻中的孟加拉湾不符；时间区间（08:19-10:44）也与新闻（11:44-13:14）无重叠，确认为不同活动。"
+        },
+        {
+          "candidate_id": "O003",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.95,
+          "reason": "平台为中国运 -8，国籍与中国不符，地点为南海，与新闻中的新加坡 F-15SG 及孟加拉湾完全不同。"
+        }
+      ],
+      "radar_edges": [
+        {
+          "candidate_id": "R017",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.92,
+          "reason": "平台（新加坡 F-15SG）、时间（11:44-13:14）完全匹配。任务原始列为“对海突击训练”，与新闻一致。虽雷达数据地点缺失，但坐标范围（88°E, 15°N）位于孟加拉湾地理范围内，且批号唯一，确认为同一活动。"
+        },
+        {
+          "candidate_id": "R004",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.9,
+          "reason": "平台与时间匹配，但任务原始列为“战备警巡”，且坐标范围（93°E, 10°N）位于安达曼海，与新闻的孟加拉湾及“对海突击”任务不符，确认为不同活动。"
+        },
+        {
+          "candidate_id": "R021",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.95,
+          "reason": "平台为中国歼 -15T，国籍不符，任务为舰载机起降训练，与新闻完全无关。"
+        }
+      ],
+      "ambiguity": "无。新闻与 O041/R017 在时间、平台、地点（通过坐标或文本）及任务上高度一致，其他候选因地点、时间或平台差异明显被排除。"
+    },
+    "same_batch_other_candidates": []
+  },
+  "result": {
+    "same_event": true,
+    "platforms": [
+      {
+        "platform_index": 0,
+        "platform": {
+          "claim": "新加坡 F-15SG",
+          "supporting_sources": [
+            "N040",
+            "O041",
+            "R017"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均明确指向新加坡 F-15SG，无冲突。"
+        },
+        "country": {
+          "claim": "新加坡",
+          "supporting_sources": [
+            "N040",
+            "O041",
+            "R017"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源一致确认国籍为新加坡。"
+        },
+        "quantity": {
+          "claim": "2 架",
+          "supporting_sources": [
+            "O041",
+            "R017"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论明确提及“两架”，雷达批号 AIR-86FAD17E60C49E 数量列为 2；新闻未说明具体数量，但不构成冲突。"
+        }
+      }
+    ],
+    "location": {
+      "claim": "孟加拉湾",
+      "supporting_sources": [
+        "N040",
+        "O041"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与舆论均显式声明地点为“孟加拉湾”；雷达坐标范围（88°E, 15°N）地理上位于孟加拉湾，三源位置信息一致。"
+    },
+    "time": {
+      "claim": "2025-05-01 11:44-13:14",
+      "supporting_sources": [
+        "N040",
+        "O041",
+        "R017"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻、舆论、雷达三源的时间起止点完全一致。"
+    },
+    "mission": {
+      "claim": "对海突击训练/战备警巡",
+      "supporting_sources": [
+        "N040",
+        "O041",
+        "R017"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻定义为“对海突击训练”，舆论定义为“战备警巡”，雷达原始列为“对海突击训练”。三者描述同一机动部署活动，任务性质高度兼容（均为前沿存在与机动），无明确冲突。"
+    },
+    "movement": {
+      "claim": "活动",
+      "supporting_sources": [
+        "N040",
+        "O041"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与舆论均描述为围绕海域组织行动并保持机动，雷达虽未显式说明但坐标变化暗示活动状态，三源逻辑一致。"
+    },
+    "unresolved_issues": [],
+    "explanation": "新闻、舆论、雷达三源在平台型号、国籍、数量（两源支持）、地点、时间及任务性质上高度一致。舆论与雷达明确数量为 2 架，新闻未提数量但不构成冲突；任务名称虽有“突击”与“警巡”之别，但属同一活动不同视角描述，无实质矛盾。所有关键事实均有至少两类来源支持，且无未消解冲突。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T16:48:35.5307088Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"same_event\": true, \"platforms\": [{\"platform_index\": 0, \"platform\": {\"claim\": \"新加坡 F-15SG\", \"supporting_sources\": [\"N040\", \"O041\", \"R017\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻、舆论、雷达三源均明确指向新加坡 F-15SG，无冲突。\"}, \"country\": {\"claim\": \"新加坡\", \"supporting_sources\": [\"N040\", \"O041\", \"R017\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源一致确认国籍为新加坡。\"}, \"quantity\": {\"claim\": \"2 架\", \"supporting_sources\": [\"O041\", \"R017\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"舆论明确提及“两架”，雷达批号 AIR-86FAD17E60C49E 数量列为 2；新闻未说明具体数量，但不构成冲突。\"}}], \"location\": {\"claim\": \"孟加拉湾\", \"supporting_sources\": [\"N040\", \"O041\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻与舆论均显式声明地点为“孟加拉湾”；雷达坐标范围（88°E, 15°N）地理上位于孟加拉湾，三源位置信息一致。\"}, \"time\": {\"claim\": \"2025-05-01 11:44-13:14\", \"supporting_sources\": [\"N040\", \"O041\", \"R017\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻、舆论、雷达三源的时间起止点完全一致。\"}, \"mission\": {\"claim\": \"对海突击训练/战备警巡\", \"supporting_sources\": [\"N040\", \"O041\", \"R017\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻定义为“对海突击训练”，舆论定义为“战备警巡”，雷达原始列为“对海突击训练”。三者描述同一机动部署活动，任务性质高度兼容（均为前沿存在与机动），无明确冲突。\"}, \"movement\": {\"claim\": \"活动\", \"supporting_sources\": [\"N040\", \"O041\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻与舆论均描述为围绕海域组织行动并保持机动，雷达虽未显式说明但坐标变化暗示活动状态，三源逻辑一致。\"}, \"unresolved_issues\": [],\"explanation\": \"新闻、舆论、雷达三源在平台型号、国籍、数量（两源支持）、地点、时间及任务性质上高度一致。舆论与雷达明确数量为 2 架，新闻未提数量但不构成冲突；任务名称虽有“突击”与“警巡”之别，但属同一活动不同视角描述，无实质矛盾。所有关键事实均有至少两类来源支持，且无未消解冲突。\"}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 14180652100,
+    "load_duration": 15748700,
+    "prompt_eval_count": 2299,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 851040000,
+    "eval_count": 688,
+    "eval_duration": 13139377000
+  }
+}

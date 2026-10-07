@@ -1,0 +1,149 @@
+{
+  "role": "extraction",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "materials": [
+      {
+        "source_id": "N005",
+        "kind": "news",
+        "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：中国海军903A型补给舰在万安滩海域持续活动\n正文：2025年5月1日，中国海军1艘903A型综合补给舰在万安滩海域持续活动，围绕任务区域保持机动，行动范围保持在指定任务海域。\n\n主题词：中国海军  903A型综合补给舰  万安滩海域\n"
+      },
+      {
+        "source_id": "N006",
+        "kind": "news",
+        "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：中国054B型导弹护卫舰在东海开展远海训练\n正文：2025年5月1日，中国054B型导弹护卫舰在东海活动，于20时20分至22时45分围绕任务海域组织远海训练，按计划保持机动并持续执行远海训练。\n\n主题词：中国  054B型  导弹护卫舰  东海\n"
+      },
+      {
+        "source_id": "N007",
+        "kind": "news",
+        "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：德国“台风”多用途战斗机在东海油气田海域活动\n正文：2025年5月1日，德国2架“台风”多用途战斗机在东海油气田海域持续活动，围绕任务区域保持机动，行动范围保持在指定任务海域。\n\n主题词：德国  “台风”多用途战斗机  东海油气田海域\n"
+      },
+      {
+        "source_id": "N008",
+        "kind": "news",
+        "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：苏-35S多用途战斗机俄军苏-35S在成山头外海持续活动\n正文：2025年5月1日，俄罗斯2架苏-35S多用途战斗机在成山头外海持续活动，围绕任务区域保持机动，行动范围保持在指定任务海域。\n\n主题词：俄罗斯  苏-35S  成山头外海  活动\n"
+      }
+    ]
+  },
+  "result": {
+    "items": [
+      {
+        "source_id": "N005",
+        "platforms": [
+          {
+            "name": "903A型综合补给舰",
+            "country": "中国",
+            "quantity": 1,
+            "quote": "1艘903A型综合补给舰",
+            "quantity_quote": "1艘903A型综合补给舰"
+          }
+        ],
+        "location": {
+          "value": "万安滩海域",
+          "quote": "在万安滩海域持续活动"
+        },
+        "mission": {
+          "value": null,
+          "quote": ""
+        },
+        "start_time": null,
+        "end_time": null,
+        "time_quote": "",
+        "movement": "活动",
+        "movement_quote": "在万安滩海域持续活动"
+      },
+      {
+        "source_id": "N006",
+        "platforms": [
+          {
+            "name": "054B型导弹护卫舰",
+            "country": "中国",
+            "quantity": null,
+            "quote": "054B型导弹护卫舰",
+            "quantity_quote": ""
+          }
+        ],
+        "location": {
+          "value": "东海",
+          "quote": "在东海活动"
+        },
+        "mission": {
+          "value": "远海训练",
+          "quote": "组织远海训练"
+        },
+        "start_time": "20:20",
+        "end_time": "22:45",
+        "time_quote": "于20时20分至22时45分",
+        "movement": "活动",
+        "movement_quote": "在东海活动"
+      },
+      {
+        "source_id": "N007",
+        "platforms": [
+          {
+            "name": "“台风”多用途战斗机",
+            "country": "德国",
+            "quantity": 2,
+            "quote": "2架“台风”多用途战斗机",
+            "quantity_quote": "2架“台风”多用途战斗机"
+          }
+        ],
+        "location": {
+          "value": "东海油气田海域",
+          "quote": "在东海油气田海域持续活动"
+        },
+        "mission": {
+          "value": null,
+          "quote": ""
+        },
+        "start_time": null,
+        "end_time": null,
+        "time_quote": "",
+        "movement": "活动",
+        "movement_quote": "在东海油气田海域持续活动"
+      },
+      {
+        "source_id": "N008",
+        "platforms": [
+          {
+            "name": "苏-35S多用途战斗机",
+            "country": "俄罗斯",
+            "quantity": 2,
+            "quote": "2架苏-35S多用途战斗机",
+            "quantity_quote": "2架苏-35S多用途战斗机"
+          }
+        ],
+        "location": {
+          "value": "成山头外海",
+          "quote": "在成山头外海持续活动"
+        },
+        "mission": {
+          "value": null,
+          "quote": ""
+        },
+        "start_time": null,
+        "end_time": null,
+        "time_quote": "",
+        "movement": "活动",
+        "movement_quote": "在成山头外海持续活动"
+      }
+    ]
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T15:50:46.5750316Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\n  \"items\": [\n    {\n      \"source_id\": \"N005\",\n      \"platforms\": [\n        {\n          \"name\": \"903A型综合补给舰\",\n          \"country\": \"中国\",\n          \"quantity\": null,\n          \"quote\": \"1艘903A型综合补给舰\",\n          \"quantity_quote\": \"1艘903A型综合补给舰\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"万安滩海域\",\n        \"quote\": \"在万安滩海域持续活动\"\n      },\n      \"mission\": {\n        \"value\": null,\n        \"quote\": \"\"\n      },\n      \"start_time\": null,\n      \"end_time\": null,\n      \"time_quote\": \"\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"在万安滩海域持续活动\"\n    },\n    {\n      \"source_id\": \"N006\",\n      \"platforms\": [\n        {\n          \"name\": \"054B型导弹护卫舰\",\n          \"country\": \"中国\",\n          \"quantity\": null,\n          \"quote\": \"054B型导弹护卫舰\",\n          \"quantity_quote\": \"\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"东海\",\n        \"quote\": \"在东海活动\"\n      },\n      \"mission\": {\n        \"value\": \"远海训练\",\n        \"quote\": \"组织远海训练\"\n      },\n      \"start_time\": \"20:20\",\n      \"end_time\": \"22:45\",\n      \"time_quote\": \"于20时20分至22时45分\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"在东海活动\"\n    },\n    {\n      \"source_id\": \"N007\",\n      \"platforms\": [\n        {\n          \"name\": \"“台风”多用途战斗机\",\n          \"country\": \"德国\",\n          \"quantity\": null,\n          \"quote\": \"2架“台风”多用途战斗机\",\n          \"quantity_quote\": \"2架“台风”多用途战斗机\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"东海油气田海域\",\n        \"quote\": \"在东海油气田海域持续活动\"\n      },\n      \"mission\": {\n        \"value\": null,\n        \"quote\": \"\"\n      },\n      \"start_time\": null,\n      \"end_time\": null,\n      \"time_quote\": \"\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"在东海油气田海域持续活动\"\n    },\n    {\n      \"source_id\": \"N008\",\n      \"platforms\": [\n        {\n          \"name\": \"苏-35S多用途战斗机\",\n          \"country\": \"俄罗斯\",\n          \"quantity\": null,\n          \"quote\": \"2架苏-35S多用途战斗机\",\n          \"quantity_quote\": \"2架苏-35S多用途战斗机\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"成山头外海\",\n        \"quote\": \"在成山头外海持续活动\"\n      },\n      \"mission\": {\n        \"value\": null,\n        \"quote\": \"\"\n      },\n      \"start_time\": null,\n      \"end_time\": null,\n      \"time_quote\": \"\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"在成山头外海持续活动\"\n    }\n  ]\n}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 15779151000,
+    "load_duration": 10847800,
+    "prompt_eval_count": 866,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 412852000,
+    "eval_count": 820,
+    "eval_duration": 15234121000
+  }
+}

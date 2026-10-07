@@ -1,0 +1,149 @@
+{
+  "role": "extraction",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "materials": [
+      {
+        "source_id": "O019",
+        "kind": "opinion",
+        "text": "时间：2025.5.1\n\n标题：俄军苏-30SM在南海连续机动，南沙海域活动引发关注\n\n正文：据今日头条报道，俄罗斯3架苏-30SM多用途战斗机于2025年5月1日18时01分至19时31分在南海方向南沙群岛海域持续活动。相关平台围绕任务区域保持机动，行动范围保持在指定任务海域。媒体观察认为，此次长时间连续部署体现了较高的任务连续性，有助于外界评估该型机在远海环境下的区域机动能力。\n"
+      },
+      {
+        "source_id": "O020",
+        "kind": "opinion",
+        "text": "时间：2025.5.1\n\n标题：俄海军“瓦良格”号巡洋舰南海执行护航任务\n\n正文：据联合早报报道，俄罗斯海军“瓦良格”号导弹巡洋舰于2025年5月1日2时16分至4时41分在南海方向执行海上护航任务。该舰围绕任务编组实施保障行动，被认为按计划完成了相关保障环节衔接。相关观察关注其持续保障能力，认为此类行动续航有助于体现保障协同水平。\n"
+      },
+      {
+        "source_id": "O021",
+        "kind": "opinion",
+        "text": "时间：2025.5.1\n\n标题：中国两架歼-35隐身战斗机在东海执行战备警巡\n\n正文：据央视新闻报道，2025年5月1日，中国两架歼-35舰载隐身战斗机在东海方向按计划保持机动并持续执行战备警巡任务。围绕此次平台运用的讨论认为，该行动有助于维持前沿存在和部署持续性，展现了在特定方向的区域机动能力。\n"
+      },
+      {
+        "source_id": "O022",
+        "kind": "opinion",
+        "text": "时间：2025.5.1\n\n标题：德军2架“台风”战斗机在印度洋持续活动引关注\n\n正文：据央视新闻报道，德国2架“台风”多用途战斗机于2025年5月1日在印度洋相关海域持续活动。相关平台围绕任务区域保持机动，行动范围保持在指定任务海域。这一部署有助于观察德军远程兵力投送后的行动组织与区域机动能力。\n"
+      }
+    ]
+  },
+  "result": {
+    "items": [
+      {
+        "source_id": "O019",
+        "platforms": [
+          {
+            "name": "苏 -30SM",
+            "country": "俄罗斯",
+            "quantity": 3,
+            "quote": "3架苏-30SM多用途战斗机",
+            "quantity_quote": "3架苏-30SM多用途战斗机"
+          }
+        ],
+        "location": {
+          "value": "南海方向南沙群岛海域",
+          "quote": "在南海方向南沙群岛海域"
+        },
+        "mission": {
+          "value": "持续活动",
+          "quote": "持续活动"
+        },
+        "start_time": "18:01",
+        "end_time": "19:31",
+        "time_quote": "于2025年5月1日18时01分至19时31分",
+        "movement": "活动",
+        "movement_quote": "在南海方向南沙群岛海域持续活动"
+      },
+      {
+        "source_id": "O020",
+        "platforms": [
+          {
+            "name": "“瓦良格”号导弹巡洋舰",
+            "country": "俄罗斯",
+            "quantity": null,
+            "quote": "“瓦良格”号导弹巡洋舰",
+            "quantity_quote": ""
+          }
+        ],
+        "location": {
+          "value": "南海方向",
+          "quote": "在南海方向"
+        },
+        "mission": {
+          "value": "海上护航任务",
+          "quote": "执行海上护航任务"
+        },
+        "start_time": "02:16",
+        "end_time": "04:41",
+        "time_quote": "于2025年5月1日2时16分至4时41分",
+        "movement": "活动",
+        "movement_quote": "在南海方向执行海上护航任务"
+      },
+      {
+        "source_id": "O021",
+        "platforms": [
+          {
+            "name": "歼 -35",
+            "country": "中国",
+            "quantity": 2,
+            "quote": "两架歼-35舰载隐身战斗机",
+            "quantity_quote": "两架歼-35舰载隐身战斗机"
+          }
+        ],
+        "location": {
+          "value": "东海方向",
+          "quote": "在东海方向"
+        },
+        "mission": {
+          "value": "战备警巡任务",
+          "quote": "执行战备警巡任务"
+        },
+        "start_time": null,
+        "end_time": null,
+        "time_quote": "",
+        "movement": "活动",
+        "movement_quote": "按计划保持机动并持续执行战备警巡任务"
+      },
+      {
+        "source_id": "O022",
+        "platforms": [
+          {
+            "name": "“台风”",
+            "country": "德国",
+            "quantity": 2,
+            "quote": "2架“台风”多用途战斗机",
+            "quantity_quote": "2架“台风”多用途战斗机"
+          }
+        ],
+        "location": {
+          "value": "印度洋相关海域",
+          "quote": "在印度洋相关海域"
+        },
+        "mission": {
+          "value": null,
+          "quote": ""
+        },
+        "start_time": null,
+        "end_time": null,
+        "time_quote": "",
+        "movement": "活动",
+        "movement_quote": "在印度洋相关海域持续活动"
+      }
+    ]
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T16:02:13.047325Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\n  \"items\": [\n    {\n      \"source_id\": \"O019\",\n      \"platforms\": [\n        {\n          \"name\": \"苏 -30SM\",\n          \"country\": \"俄罗斯\",\n          \"quantity\": 3,\n          \"quote\": \"3架苏-30SM多用途战斗机\",\n          \"quantity_quote\": \"3架苏-30SM多用途战斗机\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"南海方向南沙群岛海域\",\n        \"quote\": \"在南海方向南沙群岛海域\"\n      },\n      \"mission\": {\n        \"value\": \"持续活动\",\n        \"quote\": \"持续活动\"\n      },\n      \"start_time\": \"18:01\",\n      \"end_time\": \"19:31\",\n      \"time_quote\": \"于2025年5月1日18时01分至19时31分\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"在南海方向南沙群岛海域持续活动\"\n    },\n    {\n      \"source_id\": \"O020\",\n      \"platforms\": [\n        {\n          \"name\": \"“瓦良格”号导弹巡洋舰\",\n          \"country\": \"俄罗斯\",\n          \"quantity\": 1,\n          \"quote\": \"“瓦良格”号导弹巡洋舰\",\n          \"quantity_quote\": \"\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"南海方向\",\n        \"quote\": \"在南海方向\"\n      },\n      \"mission\": {\n        \"value\": \"海上护航任务\",\n        \"quote\": \"执行海上护航任务\"\n      },\n      \"start_time\": \"02:16\",\n      \"end_time\": \"04:41\",\n      \"time_quote\": \"于2025年5月1日2时16分至4时41分\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"在南海方向执行海上护航任务\"\n    },\n    {\n      \"source_id\": \"O021\",\n      \"platforms\": [\n        {\n          \"name\": \"歼 -35\",\n          \"country\": \"中国\",\n          \"quantity\": 2,\n          \"quote\": \"两架歼-35舰载隐身战斗机\",\n          \"quantity_quote\": \"两架歼-35舰载隐身战斗机\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"东海方向\",\n        \"quote\": \"在东海方向\"\n      },\n      \"mission\": {\n        \"value\": \"战备警巡任务\",\n        \"quote\": \"执行战备警巡任务\"\n      },\n      \"start_time\": null,\n      \"end_time\": null,\n      \"time_quote\": \"\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"按计划保持机动并持续执行战备警巡任务\"\n    },\n    {\n      \"source_id\": \"O022\",\n      \"platforms\": [\n        {\n          \"name\": \"“台风”\",\n          \"country\": \"德国\",\n          \"quantity\": 2,\n          \"quote\": \"2架“台风”多用途战斗机\",\n          \"quantity_quote\": \"2架“台风”多用途战斗机\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"印度洋相关海域\",\n        \"quote\": \"在印度洋相关海域\"\n      },\n      \"mission\": {\n        \"value\": null,\n        \"quote\": \"\"\n      },\n      \"start_time\": null,\n      \"end_time\": null,\n      \"time_quote\": \"\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"在印度洋相关海域持续活动\"\n    }\n  ]\n}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 15927101800,
+    "load_duration": 15777800,
+    "prompt_eval_count": 1764,
+    "prompt_eval_cached_count": 847,
+    "prompt_eval_duration": 404232000,
+    "eval_count": 878,
+    "eval_duration": 15369042000
+  }
+}

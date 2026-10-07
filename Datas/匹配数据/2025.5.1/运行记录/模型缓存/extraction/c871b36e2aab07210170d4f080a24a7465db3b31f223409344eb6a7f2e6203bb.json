@@ -1,0 +1,156 @@
+{
+  "role": "extraction",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "materials": [
+      {
+        "source_id": "N009",
+        "kind": "news",
+        "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：俄军苏-35S多用途战斗机在南黄海执行战备警巡行动\n正文：2025年5月1日，俄罗斯苏-35S多用途战斗机在南黄海活动，于8时03分至10时28分围绕任务海域组织战备警巡，期间沿既定方向保持机动并维持警戒部署。\n\n主题词：俄罗斯  苏-35S  南黄海  战备警巡\n"
+      },
+      {
+        "source_id": "N010",
+        "kind": "news",
+        "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：日本秋月级护卫舰在东海南部完成实弹射击训练后离开\n正文：2025年5月1日14时28分至16时53分，日本海上自卫队秋月级导弹护卫舰在东海南部执行实弹射击训练，随后沿既定航线离开该任务海域。按计划保持机动并持续执行实弹射击训练。\n\n主题词：日本  秋月级  实弹射击训练  东海南部\n"
+      },
+      {
+        "source_id": "N011",
+        "kind": "news",
+        "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：澳大利亚霍巴特级导弹驱逐舰在琼州海峡完成联合搜救训练后离开\n正文：2025年5月1日，澳大利亚霍巴特级导弹驱逐舰在琼州海峡围绕任务海域组织联合搜救训练，自11时48分起按计划保持机动并持续执行任务，于13时13分沿既定航线离开该海域。\n\n主题词：澳大利亚  霍巴特级  琼州海峡  联合搜救训练\n"
+      },
+      {
+        "source_id": "N012",
+        "kind": "news",
+        "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：美海军新奥尔良号及本福德号在北黄海执行编队警戒部署\n正文：2025年5月1日20时42分至22时07分，美国海军新奥尔良号船坞运输舰与本福德号导弹驱逐舰在北黄海执行编队警戒部署任务，编队沿既定方向保持机动并围绕任务区域维持警戒。\n\n主题词：美国  新奥尔良号  本福德号  编队警戒部署\n"
+      }
+    ]
+  },
+  "result": {
+    "items": [
+      {
+        "source_id": "N009",
+        "platforms": [
+          {
+            "name": "苏 -35S",
+            "country": "俄罗斯",
+            "quantity": null,
+            "quote": "俄罗斯苏-35S多用途战斗机",
+            "quantity_quote": ""
+          }
+        ],
+        "location": {
+          "value": "南黄海",
+          "quote": "南黄海"
+        },
+        "mission": {
+          "value": "战备警巡",
+          "quote": "执行战备警巡行动"
+        },
+        "start_time": "08:03",
+        "end_time": "10:28",
+        "time_quote": "于8时03分至10时28分",
+        "movement": "活动",
+        "movement_quote": "在南黄海活动"
+      },
+      {
+        "source_id": "N010",
+        "platforms": [
+          {
+            "name": "秋月级",
+            "country": "日本",
+            "quantity": null,
+            "quote": "日本海上自卫队秋月级导弹护卫舰",
+            "quantity_quote": ""
+          }
+        ],
+        "location": {
+          "value": "东海南部",
+          "quote": "东海南部"
+        },
+        "mission": {
+          "value": "实弹射击训练",
+          "quote": "执行实弹射击训练"
+        },
+        "start_time": "14:28",
+        "end_time": "16:53",
+        "time_quote": "14时28分至16时53分",
+        "movement": "离开",
+        "movement_quote": "随后沿既定航线离开该任务海域"
+      },
+      {
+        "source_id": "N011",
+        "platforms": [
+          {
+            "name": "霍巴特级",
+            "country": "澳大利亚",
+            "quantity": null,
+            "quote": "澳大利亚霍巴特级导弹驱逐舰",
+            "quantity_quote": ""
+          }
+        ],
+        "location": {
+          "value": "琼州海峡",
+          "quote": "在琼州海峡"
+        },
+        "mission": {
+          "value": "联合搜救训练",
+          "quote": "组织联合搜救训练"
+        },
+        "start_time": "11:48",
+        "end_time": "13:13",
+        "time_quote": "自11时48分起按计划保持机动并持续执行任务，于13时13分沿既定航线离开该海域",
+        "movement": "离开",
+        "movement_quote": "于13时13分沿既定航线离开该海域"
+      },
+      {
+        "source_id": "N012",
+        "platforms": [
+          {
+            "name": "新奥尔良号",
+            "country": "美国",
+            "quantity": null,
+            "quote": "美国海军新奥尔良号船坞运输舰",
+            "quantity_quote": ""
+          },
+          {
+            "name": "本福德号",
+            "country": "美国",
+            "quantity": null,
+            "quote": "与本福德号导弹驱逐舰",
+            "quantity_quote": ""
+          }
+        ],
+        "location": {
+          "value": "北黄海",
+          "quote": "在北黄海"
+        },
+        "mission": {
+          "value": "编队警戒部署",
+          "quote": "执行编队警戒部署任务"
+        },
+        "start_time": "20:42",
+        "end_time": "22:07",
+        "time_quote": "20时42分至22时07分",
+        "movement": "活动",
+        "movement_quote": "执行编队警戒部署任务"
+      }
+    ]
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T15:51:20.5009475Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\n  \"items\": [\n    {\n      \"source_id\": \"N009\",\n      \"platforms\": [\n        {\n          \"name\": \"苏 -35S\",\n          \"country\": \"俄罗斯\",\n          \"quantity\": null,\n          \"quote\": \"俄罗斯苏-35S多用途战斗机\",\n          \"quantity_quote\": \"\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"南黄海\",\n        \"quote\": \"南黄海\"\n      },\n      \"mission\": {\n        \"value\": \"战备警巡\",\n        \"quote\": \"执行战备警巡行动\"\n      },\n      \"start_time\": \"08:03\",\n      \"end_time\": \"10:28\",\n      \"time_quote\": \"于8时03分至10时28分\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"在南黄海活动\"\n    },\n    {\n      \"source_id\": \"N010\",\n      \"platforms\": [\n        {\n          \"name\": \"秋月级\",\n          \"country\": \"日本\",\n          \"quantity\": null,\n          \"quote\": \"日本海上自卫队秋月级导弹护卫舰\",\n          \"quantity_quote\": \"\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"东海南部\",\n        \"quote\": \"东海南部\"\n      },\n      \"mission\": {\n        \"value\": \"实弹射击训练\",\n        \"quote\": \"执行实弹射击训练\"\n      },\n      \"start_time\": \"14:28\",\n      \"end_time\": \"16:53\",\n      \"time_quote\": \"14时28分至16时53分\",\n      \"movement\": \"离开\",\n      \"movement_quote\": \"随后沿既定航线离开该任务海域\"\n    },\n    {\n      \"source_id\": \"N011\",\n      \"platforms\": [\n        {\n          \"name\": \"霍巴特级\",\n          \"country\": \"澳大利亚\",\n          \"quantity\": null,\n          \"quote\": \"澳大利亚霍巴特级导弹驱逐舰\",\n          \"quantity_quote\": \"\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"琼州海峡\",\n        \"quote\": \"在琼州海峡\"\n      },\n      \"mission\": {\n        \"value\": \"联合搜救训练\",\n        \"quote\": \"组织联合搜救训练\"\n      },\n      \"start_time\": \"11:48\",\n      \"end_time\": \"13:13\",\n      \"time_quote\": \"自11时48分起按计划保持机动并持续执行任务，于13时13分沿既定航线离开该海域\",\n      \"movement\": \"离开\",\n      \"movement_quote\": \"于13时13分沿既定航线离开该海域\"\n    },\n    {\n      \"source_id\": \"N012\",\n      \"platforms\": [\n        {\n          \"name\": \"新奥尔良号\",\n          \"country\": \"美国\",\n          \"quantity\": null,\n          \"quote\": \"美国海军新奥尔良号船坞运输舰\",\n          \"quantity_quote\": \"\"\n        },\n        {\n          \"name\": \"本福德号\",\n          \"country\": \"美国\",\n          \"quantity\": null,\n          \"quote\": \"与本福德号导弹驱逐舰\",\n          \"quantity_quote\": \"\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"北黄海\",\n        \"quote\": \"在北黄海\"\n      },\n      \"mission\": {\n        \"value\": \"编队警戒部署\",\n        \"quote\": \"执行编队警戒部署任务\"\n      },\n      \"start_time\": \"20:42\",\n      \"end_time\": \"22:07\",\n      \"time_quote\": \"20时42分至22时07分\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"执行编队警戒部署任务\"\n    }\n  ]\n}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 16597138500,
+    "load_duration": 17888700,
+    "prompt_eval_count": 1891,
+    "prompt_eval_cached_count": 921,
+    "prompt_eval_duration": 406672000,
+    "eval_count": 930,
+    "eval_duration": 16147314000
+  }
+}

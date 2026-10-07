@@ -1,0 +1,511 @@
+{
+  "id": "N033",
+  "news_id": "N033",
+  "opinion_id": "O042",
+  "radar_ids": [
+    "R054"
+  ],
+  "radar_slots": {
+    "0": "R054"
+  },
+  "alignment": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O042",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.95,
+        "reason": "平台（菲律宾米格尔·马尔瓦尔号）、日期（2025.5.1）及地点（东海/上海外海方向）完全一致。新闻描述为‘持续活动’，雷达数据O042明确记录该舰于同日17:24-19:49在东海进行‘远海训练’，任务性质高度吻合。尽管新闻未提及具体起止时间，但‘持续活动’与雷达记录的特定训练时段不冲突，属于同一活动的不同信息粒度描述。"
+      },
+      {
+        "candidate_id": "O037",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "平台完全不同（中国轰-6K轰炸机 vs 菲律宾护卫舰），任务性质（空中机动 vs 海上活动）及所属国家均不一致，属于不同活动。"
+      },
+      {
+        "candidate_id": "O028",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "平台完全不同（中国空警-500预警机 vs 菲律宾护卫舰），虽地点时间重合，但主体与任务均不同。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R054",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.98,
+        "reason": "平台名称、国籍、数量（1艘）、日期及地点（上海外海）与新闻完全匹配。雷达数据明确记录该舰于2025.5.1 17:24-19:49执行‘远海训练’，与新闻中‘持续活动’的描述在逻辑上兼容（训练是活动的一种具体形式）。"
+      },
+      {
+        "candidate_id": "R037",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台为中国054B型护卫舰，与新闻中的菲律宾米格尔·马尔瓦尔号不符，属于不同活动。"
+      },
+      {
+        "candidate_id": "R047",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台为日本村雨号护卫舰，国籍及平台型号均与新闻不符。"
+      }
+    ],
+    "ambiguity": "新闻未提供具体起止时间，仅描述为‘持续活动’，而雷达数据R054提供了精确的训练时段（17:24-19:49）。需确认新闻中的‘持续活动’是否涵盖该时段或指代其他时段，但鉴于平台、地点及任务类型（训练/活动）的高度一致性，判定为同一活动的可能性极大。"
+  },
+  "candidates": {
+    "opinion": [
+      {
+        "id": "O042",
+        "score": 4.48078,
+        "cosine": 0.95078,
+        "platform_similarity": 0.95,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O037",
+        "score": 1.55555,
+        "cosine": 0.75555,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "same"
+      },
+      {
+        "id": "O028",
+        "score": 1.53537,
+        "cosine": 0.73537,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "same"
+      },
+      {
+        "id": "O040",
+        "score": 1.27709,
+        "cosine": 0.79709,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O029",
+        "score": 1.26134,
+        "cosine": 0.78134,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O032",
+        "score": 1.2604,
+        "cosine": 0.7804,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O010",
+        "score": 0.77217,
+        "cosine": 0.77217,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      }
+    ],
+    "radar": [
+      {
+        "id": "R054",
+        "score": 4.76247,
+        "cosine": 0.91247,
+        "platform_similarity": 0.95,
+        "time_overlap": null,
+        "location_relation": "same"
+      },
+      {
+        "id": "R037",
+        "score": 1.2188,
+        "cosine": 0.7388,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "R047",
+        "score": 1.19841,
+        "cosine": 0.71841,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "R031",
+        "score": 0.93455,
+        "cosine": 0.77455,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "same_direction_only"
+      },
+      {
+        "id": "R053",
+        "score": 0.91231,
+        "cosine": 0.75231,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "same_direction_only"
+      },
+      {
+        "id": "R040",
+        "score": 0.75694,
+        "cosine": 0.75694,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "R048",
+        "score": 0.74959,
+        "cosine": 0.74959,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      }
+    ]
+  },
+  "verification": {
+    "same_event": true,
+    "facts": [
+      {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "米格尔·马尔瓦尔号",
+        "supporting_sources": [
+          "N033",
+          "O042",
+          "R054"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N033': '米格尔·马尔瓦尔号', 'O042': '米格尔·马尔瓦尔号', 'R054': '米格尔·马尔瓦尔号导弹护卫舰'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "米格尔·马尔瓦尔号",
+          "supporting_sources": [
+            "N033",
+            "O042",
+            "R054"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均明确指向该舰"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "菲律宾",
+        "supporting_sources": [
+          "N033",
+          "O042",
+          "R054"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N033': '菲律宾', 'O042': '菲律宾', 'R054': '菲律宾'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "菲律宾",
+          "supporting_sources": [
+            "N033",
+            "O042",
+            "R054"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源一致确认国籍为菲律宾"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "1艘",
+        "supporting_sources": [
+          "N033",
+          "R054"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N033': 1, 'R054': 1}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "1 艘",
+          "supporting_sources": [
+            "N033",
+            "R054"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻明确提及'1 艘'，雷达批号记录数量为 1；舆论未提数量但不构成冲突"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "上海外海",
+        "supporting_sources": [
+          "N033",
+          "R054"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与雷达均明确记录为'上海外海'；舆论描述'东海方向'涵盖该具体区域，无冲突",
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "2025 年 5 月 1 日 17:24-19:49",
+        "supporting_sources": [
+          "O042",
+          "R054"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "舆论与雷达提供精确起止时间；新闻仅描述'持续活动'且日期一致，未提及具体时刻故不冲突也不作为独立支持",
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "远海训练",
+        "supporting_sources": [
+          "O042",
+          "R054"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "舆论与雷达均明确记录为'远海训练'；新闻描述'持续活动'为泛称，不冲突也不独立印证具体任务",
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N033",
+          "O042"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与舆论均描述为活动状态；雷达未说明 movement 但不构成冲突",
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      }
+    ],
+    "unresolved_issues": [],
+    "explanation": "三源在平台、国籍、地点（上海外海）、日期及任务性质上高度一致。数量由新闻和雷达共同支持（舆论缺失不视为冲突）。时间上，舆论和雷达提供精确时段，新闻的泛称描述与之兼容。无未消解冲突。"
+  },
+  "reasons": [],
+  "status": "可信事件",
+  "verified_facts": [
+    {
+      "platform_index": 0,
+      "field": "platform",
+      "claim": "米格尔·马尔瓦尔号",
+      "supporting_sources": [
+        "N033",
+        "O042",
+        "R054"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N033': '米格尔·马尔瓦尔号', 'O042': '米格尔·马尔瓦尔号', 'R054': '米格尔·马尔瓦尔号导弹护卫舰'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "米格尔·马尔瓦尔号",
+        "supporting_sources": [
+          "N033",
+          "O042",
+          "R054"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源（新闻、舆论、雷达）均明确指向该舰"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "country",
+      "claim": "菲律宾",
+      "supporting_sources": [
+        "N033",
+        "O042",
+        "R054"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N033': '菲律宾', 'O042': '菲律宾', 'R054': '菲律宾'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "菲律宾",
+        "supporting_sources": [
+          "N033",
+          "O042",
+          "R054"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源一致确认国籍为菲律宾"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "quantity",
+      "claim": "1艘",
+      "supporting_sources": [
+        "N033",
+        "R054"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N033': 1, 'R054': 1}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "1 艘",
+        "supporting_sources": [
+          "N033",
+          "R054"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻明确提及'1 艘'，雷达批号记录数量为 1；舆论未提数量但不构成冲突"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "location",
+      "claim": "上海外海",
+      "supporting_sources": [
+        "N033",
+        "R054"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与雷达均明确记录为'上海外海'；舆论描述'东海方向'涵盖该具体区域，无冲突",
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "time",
+      "claim": "2025 年 5 月 1 日 17:24-19:49",
+      "supporting_sources": [
+        "O042",
+        "R054"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "舆论与雷达提供精确起止时间；新闻仅描述'持续活动'且日期一致，未提及具体时刻故不冲突也不作为独立支持",
+      "supporting_source_types": [
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "mission",
+      "claim": "远海训练",
+      "supporting_sources": [
+        "O042",
+        "R054"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "舆论与雷达均明确记录为'远海训练'；新闻描述'持续活动'为泛称，不冲突也不独立印证具体任务",
+      "supporting_source_types": [
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "movement",
+      "claim": "活动",
+      "supporting_sources": [
+        "N033",
+        "O042"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与舆论均描述为活动状态；雷达未说明 movement 但不构成冲突",
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    }
+  ],
+  "radar_row_count": 12,
+  "direction": "东海",
+  "report_eligible": true,
+  "directory": "可信事件/N033_菲律宾海军米格尔·马尔瓦尔号护卫舰在上海外海活动"
+}

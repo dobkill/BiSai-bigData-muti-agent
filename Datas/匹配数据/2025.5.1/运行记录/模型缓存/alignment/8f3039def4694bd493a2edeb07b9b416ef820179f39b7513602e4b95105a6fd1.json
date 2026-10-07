@@ -1,0 +1,924 @@
+{
+  "role": "alignment",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N019",
+      "kind": "news",
+      "title": "法国E-2C预警机在仁爱礁附近海域执行空中警戒",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：法国E-2C预警机在仁爱礁附近海域执行空中警戒\n正文：2025年5月1日，法国E-2C预警机在仁爱礁附近海域活动，于5时01分至7时26分围绕任务海域组织空中警戒，并按计划保持机动持续执行任务。\n\n主题词：法国  E-2C  仁爱礁  空中警戒\n",
+      "platforms": [
+        {
+          "name": "E-2C预警机",
+          "country": "法国",
+          "quantity": null,
+          "quote": "E-2C预警机",
+          "quantity_quote": "",
+          "country_raw": "法国"
+        }
+      ],
+      "location": {
+        "raw": "仁爱礁附近海域",
+        "region": "仁爱礁附近海域",
+        "direction": "南海",
+        "precision": "具体区域",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "在仁爱礁附近海域"
+      },
+      "mission": {
+        "value": "空中警戒",
+        "quote": "执行空中警戒"
+      },
+      "start_time": "05:01",
+      "end_time": "07:26",
+      "movement": "活动"
+    },
+    "opinion_candidates": [
+      {
+        "id": "O014",
+        "kind": "opinion",
+        "title": "法国两架E-2C预警机在东海赤尾屿海域执行空中警戒",
+        "text": "时间：2025.5.1\n\n标题：法国两架E-2C预警机在东海赤尾屿海域执行空中警戒\n\n正文：据公开防务媒体报道，法国两架E-2C预警机于2025年5月1日在东海赤尾屿海域执行空中警戒任务。该机型沿既定方向保持机动，被认为围绕任务区域维持部署或警戒。相关观察关注其前沿存在，认为此类部署持续性有助于体现区域机动能力。\n",
+        "platforms": [
+          {
+            "name": "E-2C预警机",
+            "country": "法国",
+            "quantity": 2,
+            "quote": "两架E-2C预警机",
+            "quantity_quote": "两架",
+            "country_raw": "法国"
+          }
+        ],
+        "location": {
+          "raw": "东海赤尾屿海域",
+          "region": "赤尾屿海域",
+          "direction": "东海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在东海赤尾屿海域执行空中警戒任务"
+        },
+        "mission": {
+          "value": "空中警戒任务",
+          "quote": "执行空中警戒任务"
+        },
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动"
+      },
+      {
+        "id": "O013",
+        "kind": "opinion",
+        "title": "意大利海军F-35B在南海开展舰载机起降训练",
+        "text": "时间：2025.5.1\n\n标题：意大利海军F-35B在南海开展舰载机起降训练\n\n正文：据央视新闻报道，2025年5月1日5时23分至7时48分，意大利海军在南海方向组织F-35B短距起降战斗机进行舰载机起降训练。围绕这一部署，有分析认为相关行动有助于提升参演兵力在远海环境下的任务组织水平。围绕训练协同维度的讨论指出，此类按计划保持机动并持续执行舰载机起降训练的模式，被视为对流程熟悉程度的有效检验。\n",
+        "platforms": [
+          {
+            "name": "F-35B短距起降战斗机",
+            "country": "意大利",
+            "quantity": null,
+            "quote": "F-35B短距起降战斗机",
+            "quantity_quote": "",
+            "country_raw": "意大利"
+          }
+        ],
+        "location": {
+          "raw": "南海方向",
+          "region": "南海",
+          "direction": "南海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在南海方向组织F-35B短距起降战斗机进行舰载机起降训练"
+        },
+        "mission": {
+          "value": "舰载机起降训练",
+          "quote": "进行舰载机起降训练"
+        },
+        "start_time": "05:23",
+        "end_time": "07:48",
+        "movement": "活动"
+      },
+      {
+        "id": "O005",
+        "kind": "opinion",
+        "title": "德国空军“台风”战机在东海进行对海突击训练",
+        "text": "时间：2025.5.1\n\n标题：德国空军“台风”战机在东海进行对海突击训练\n\n正文：据央视新闻报道，2025年5月1日5时45分至7时10分，德国空军“台风”多用途战斗机在东海空域组织了对海突击训练。此次训练围绕既定科目组织训练，按计划完成相关平台之间的行动衔接。有分析认为，这一动向体现了德国空军在印太方向任务组织方式的调整，相关行动被视为有助于提升训练协同与流程熟悉程度。\n",
+        "platforms": [
+          {
+            "name": "台风”多用途战斗机",
+            "country": "德国",
+            "quantity": null,
+            "quote": "德国空军“台风”多用途战斗机",
+            "quantity_quote": "",
+            "country_raw": "德国"
+          }
+        ],
+        "location": {
+          "raw": "东海空域",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在东海空域"
+        },
+        "mission": {
+          "value": "对海突击训练",
+          "quote": "组织了对海突击训练"
+        },
+        "start_time": "05:45",
+        "end_time": "07:10",
+        "movement": "活动"
+      },
+      {
+        "id": "O036",
+        "kind": "opinion",
+        "title": "俄罗斯空天军苏-30SM战机在南海执行战备警巡",
+        "text": "时间：2025.5.1\n\n标题：俄罗斯空天军苏-30SM战机在南海执行战备警巡\n\n正文：据地区军事观察机构报道，2025年5月1日，俄罗斯空天军苏-30SM多用途战斗机在南海方向执行战备警巡任务，行动时段为2时27分至4时52分。相关平台沿既定方向保持机动，并围绕任务区域维持部署或警戒。有关讨论关注该型机的前沿存在部署，认为其展现了在相关方向的区域机动与部署持续性。\n",
+        "platforms": [
+          {
+            "name": "苏-30SM",
+            "country": "俄罗斯",
+            "quantity": null,
+            "quote": "苏-30SM多用途战斗机",
+            "quantity_quote": "",
+            "country_raw": "俄罗斯"
+          }
+        ],
+        "location": {
+          "raw": "南海方向",
+          "region": "南海",
+          "direction": "南海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在南海方向"
+        },
+        "mission": {
+          "value": "战备警巡",
+          "quote": "执行战备警巡任务"
+        },
+        "start_time": "02:27",
+        "end_time": "04:52",
+        "movement": "活动"
+      },
+      {
+        "id": "O002",
+        "kind": "opinion",
+        "title": "俄军苏-30SM夜间在黄岩岛海域持续活动近两个半小时",
+        "text": "时间：2025.5.1\n\n标题：俄军苏-30SM夜间在黄岩岛海域持续活动近两个半小时\n\n正文：据联合早报报道，俄罗斯空天军两架苏-30SM多用途战斗机于2025年5月1日20时31分至22时56分在南海黄岩岛海域展开夜间活动。从公开信息看，这两架战机在近两个半小时内围绕任务区域保持机动，行动范围保持在指定任务海域，展现出良好的任务连续性。这一动向被视为俄方在南海保持常态化存在的一部分，其区域机动能力受到外界关注。\n",
+        "platforms": [
+          {
+            "name": "苏-30SM多用途战斗机",
+            "country": "俄罗斯",
+            "quantity": 2,
+            "quote": "俄罗斯空天军两架苏-30SM多用途战斗机",
+            "quantity_quote": "两架苏-30SM多用途战斗机",
+            "country_raw": "俄罗斯"
+          }
+        ],
+        "location": {
+          "raw": "南海黄岩岛海域",
+          "region": "黄岩岛海域",
+          "direction": "南海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在南海黄岩岛海域展开夜间活动"
+        },
+        "mission": {
+          "value": null,
+          "quote": ""
+        },
+        "start_time": "20:31",
+        "end_time": "22:56",
+        "movement": "活动"
+      },
+      {
+        "id": "O028",
+        "kind": "opinion",
+        "title": "空警-500在东海上海外海持续活动引发区域机动讨论",
+        "text": "时间：2025.5.1\n\n标题：空警-500在东海上海外海持续活动引发区域机动讨论\n\n正文：据联合早报报道，2025年5月1日，中国两架空警-500预警机在东海上海外海围绕任务区域保持机动，行动范围保持在指定任务海域。围绕这一行动组织，有分析认为该平台在任务海域持续活动可能体现其区域机动能力。相关讨论也聚焦于任务连续性，被视为观察预警机体系化运用的一个窗口。\n",
+        "platforms": [
+          {
+            "name": "空警-500预警机",
+            "country": "中国",
+            "quantity": 2,
+            "quote": "两架空警-500预警机",
+            "quantity_quote": "两架空警-500预警机",
+            "country_raw": "中国"
+          }
+        ],
+        "location": {
+          "raw": "东海上海外海",
+          "region": "上海外海",
+          "direction": "东海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在东海上海外海"
+        },
+        "mission": {
+          "value": null,
+          "quote": ""
+        },
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动"
+      },
+      {
+        "id": "O050",
+        "kind": "opinion",
+        "title": "美军RC-135V/W侦察机五一当天在东海执行电子侦察任务",
+        "text": "时间：2025.5.1\n\n标题：美军RC-135V/W侦察机五一当天在东海执行电子侦察任务\n\n正文：据公开防务媒体报道，美国一架RC-135V/W电子侦察机于2025年5月1日在东海方向开展电子侦察。该机围绕任务海域组织电子侦察，按计划保持机动并持续执行电子侦察。相关行动被视为美方在东海方向维持态势感知和持续监视能力的常规体现。这一动向可能有助于其掌握区域电磁环境特征。\n",
+        "platforms": [
+          {
+            "name": "RC-135V/W电子侦察机",
+            "country": "美国",
+            "quantity": 1,
+            "quote": "一架RC-135V/W电子侦察机",
+            "quantity_quote": "一架RC-135V/W电子侦察机",
+            "country_raw": "美国"
+          }
+        ],
+        "location": {
+          "raw": "东海方向",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在东海方向"
+        },
+        "mission": {
+          "value": "电子侦察",
+          "quote": "开展电子侦察"
+        },
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动"
+      }
+    ],
+    "radar_candidates": [
+      {
+        "id": "R014",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "E-2C预警机",
+            "country": "法国",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-738A05E5683F27",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "空中警戒",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "空中警戒"
+        ],
+        "start_time": "2025.05.01 05:01:00",
+        "end_time": "2025.05.01 07:26:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            124.3572,
+            124.4548
+          ],
+          "latitude_range": [
+            26.0474,
+            26.1874
+          ],
+          "median": [
+            124.4071,
+            26.1354
+          ],
+          "origins": [
+            [
+              124.3802,
+              26.1553
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [
+            "东海"
+          ],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [],
+        "batch": "AIR-738A05E5683F27",
+        "sibling_ids": [],
+        "hull_values": [],
+        "country_values": [
+          "法国"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 10
+      },
+      {
+        "id": "R016",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "“台风”多用途战斗机",
+            "country": "德国",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-8638D8B9232003",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "对海突击训练",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "对海突击训练"
+        ],
+        "start_time": "2025.05.01 05:45:00",
+        "end_time": "2025.05.01 07:10:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            125.1685,
+            125.7821
+          ],
+          "latitude_range": [
+            28.1741,
+            28.7536
+          ],
+          "median": [
+            125.4888,
+            28.5021
+          ],
+          "origins": [
+            [
+              125.1984,
+              28.7048
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [
+            "东海"
+          ],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [],
+        "batch": "AIR-8638D8B9232003",
+        "sibling_ids": [],
+        "hull_values": [],
+        "country_values": [
+          "德国"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 13
+      },
+      {
+        "id": "R045",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "903A型综合补给舰",
+            "country": "中国",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-B1BD0BF756EEB2",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "冲绳海槽",
+          "region": "冲绳海槽",
+          "direction": "东海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "冲绳海槽",
+            "region": "冲绳海槽",
+            "direction": "东海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "例行部署",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "例行部署"
+        ],
+        "start_time": "2025.05.01 05:56:00",
+        "end_time": "2025.05.01 07:21:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-B1BD0BF756EEB2",
+        "sibling_ids": [],
+        "hull_values": [
+          "TYPE-903A"
+        ],
+        "country_values": [
+          "中国"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 12
+      },
+      {
+        "id": "R006",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "空警-500预警机",
+            "country": "中国",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-27690DA07C1736",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "空中警戒",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "空中警戒"
+        ],
+        "start_time": "2025.05.01 14:17:00",
+        "end_time": "2025.05.01 16:42:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            122.901,
+            123.2571
+          ],
+          "latitude_range": [
+            30.7165,
+            31.0651
+          ],
+          "median": [
+            123.084,
+            30.9344
+          ],
+          "origins": [
+            [
+              122.9465,
+              31.1102
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [
+            "东海"
+          ],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [],
+        "batch": "AIR-27690DA07C1736",
+        "sibling_ids": [],
+        "hull_values": [],
+        "country_values": [
+          "中国"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 13
+      },
+      {
+        "id": "R010",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "空警-500预警机",
+            "country": "中国",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-5DD82818758598",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "情报监视侦察",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "情报监视侦察"
+        ],
+        "start_time": "2025.05.01 08:41:00",
+        "end_time": "2025.05.01 10:06:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            123.1201,
+            123.2132
+          ],
+          "latitude_range": [
+            25.7002,
+            25.8402
+          ],
+          "median": [
+            123.1524,
+            25.7778
+          ],
+          "origins": [
+            [
+              123.1736,
+              25.6984
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [
+            "东海"
+          ],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [],
+        "batch": "AIR-5DD82818758598",
+        "sibling_ids": [],
+        "hull_values": [],
+        "country_values": [
+          "中国"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 12
+      },
+      {
+        "id": "R019",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "苏-30SM多用途战斗机",
+            "country": "俄罗斯",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-A0120D04094501",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "空中警戒",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "空中警戒"
+        ],
+        "start_time": "2025.05.01 18:01:00",
+        "end_time": "2025.05.01 19:31:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            113.9154,
+            114.1456
+          ],
+          "latitude_range": [
+            9.8518,
+            10.3448
+          ],
+          "median": [
+            114.0221,
+            10.1463
+          ],
+          "origins": [
+            [
+              113.9029,
+              9.8194
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [
+            "南海"
+          ],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [],
+        "batch": "AIR-A0120D04094501",
+        "sibling_ids": [],
+        "hull_values": [],
+        "country_values": [
+          "俄罗斯"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 10
+      },
+      {
+        "id": "R025",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "RC-135V/W电子侦察机",
+            "country": "美国",
+            "quantity": 1,
+            "quote": "飞机工作表，批号AIR-EB9F718D91A49B",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "电子侦察",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "电子侦察"
+        ],
+        "start_time": "2025.05.01 08:14:00",
+        "end_time": "2025.05.01 10:39:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            124.1005,
+            124.1935
+          ],
+          "latitude_range": [
+            28.7686,
+            29.063
+          ],
+          "median": [
+            124.1526,
+            28.8672
+          ],
+          "origins": [
+            [
+              124.1572,
+              28.7701
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [
+            "东海"
+          ],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [],
+        "batch": "AIR-EB9F718D91A49B",
+        "sibling_ids": [],
+        "hull_values": [],
+        "country_values": [
+          "美国"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 13
+      }
+    ],
+    "recall": {
+      "opinion": [
+        {
+          "id": "O014",
+          "score": 4.11412,
+          "cosine": 0.91412,
+          "platform_similarity": 1.0,
+          "time_overlap": null,
+          "location_relation": "different_direction"
+        },
+        {
+          "id": "O013",
+          "score": 2.22516,
+          "cosine": 0.72723,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.8482758620689655,
+          "location_relation": "contains"
+        },
+        {
+          "id": "O005",
+          "score": 1.89193,
+          "cosine": 0.69193,
+          "platform_similarity": 0.0,
+          "time_overlap": 1.0,
+          "location_relation": "different_direction"
+        },
+        {
+          "id": "O036",
+          "score": 1.23577,
+          "cosine": 0.75577,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "contains"
+        },
+        {
+          "id": "O002",
+          "score": 0.89767,
+          "cosine": 0.73767,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "same_direction_only"
+        },
+        {
+          "id": "O028",
+          "score": 0.7798,
+          "cosine": 0.7798,
+          "platform_similarity": 0.0,
+          "time_overlap": null,
+          "location_relation": "different_direction"
+        },
+        {
+          "id": "O050",
+          "score": 0.73925,
+          "cosine": 0.73925,
+          "platform_similarity": 0.0,
+          "time_overlap": null,
+          "location_relation": "different_direction"
+        }
+      ],
+      "radar": [
+        {
+          "id": "R014",
+          "score": 5.33147,
+          "cosine": 0.93147,
+          "platform_similarity": 1.0,
+          "time_overlap": 1.0,
+          "location_relation": "missing"
+        },
+        {
+          "id": "R016",
+          "score": 1.90041,
+          "cosine": 0.70041,
+          "platform_similarity": 0.0,
+          "time_overlap": 1.0,
+          "location_relation": "missing"
+        },
+        {
+          "id": "R045",
+          "score": 1.84656,
+          "cosine": 0.64656,
+          "platform_similarity": 0.0,
+          "time_overlap": 1.0,
+          "location_relation": "different_direction"
+        },
+        {
+          "id": "R006",
+          "score": 0.77776,
+          "cosine": 0.77776,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "missing"
+        },
+        {
+          "id": "R010",
+          "score": 0.76664,
+          "cosine": 0.76664,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "missing"
+        },
+        {
+          "id": "R019",
+          "score": 0.75461,
+          "cosine": 0.75461,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "missing"
+        },
+        {
+          "id": "R025",
+          "score": 0.74761,
+          "cosine": 0.74761,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "missing"
+        }
+      ]
+    }
+  },
+  "result": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O014",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "地点冲突：新闻明确为'仁爱礁附近海域'(南海)，候选 O014 为'东海赤尾屿海域'。虽然平台、国家、日期、任务及时间区间完全一致，但不同海域（东海 vs 南海）通常代表不同的具体活动部署，除非有证据表明飞机跨海飞行覆盖两地，否则视为不同活动。"
+      },
+      {
+        "candidate_id": "O013",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.9,
+        "reason": "平台与任务冲突：新闻为法国 E-2C 预警机执行空中警戒，候选 O013 为意大利 F-35B 战斗机进行舰载机起降训练。平台型号、国籍、任务性质均不同，属于完全不同的活动。"
+      },
+      {
+        "candidate_id": "O005",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.9,
+        "reason": "平台与地点冲突：新闻为法国 E-2C 在南海仁爱礁，候选 O005 为德国台风战机在东海。平台、国籍、任务及海域均不匹配。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R014",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.98,
+        "reason": "高度匹配：平台(E-2C)、国家(法国)、日期(2025.05.01)、任务(空中警戒)及时间区间(05:01-07:26)与新闻完全一致。尽管雷达数据中地点字段缺失，但坐标中心点(约北纬 26.13, 东经 124.40)位于南海仁爱礁附近海域范围内，且候选方向提示为'东海'可能存在标注误差或宽泛定义，鉴于其他核心要素（特别是精确到分钟的时间段和具体机型任务）的高度吻合，判定为同一次活动。"
+      },
+      {
+        "candidate_id": "R016",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台与地点冲突：新闻为法国 E-2C 在南海，候选 R016 为德国台风战机在东海（坐标显示北纬 28+）。平台、国籍、任务及海域均不同。"
+      },
+      {
+        "candidate_id": "R045",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.9,
+        "reason": "平台与任务冲突：新闻为法国 E-2C 执行空中警戒，候选 R045 为中国 903A 补给舰进行例行部署。平台类型、国籍、任务均完全不同。"
+      }
+    ],
+    "ambiguity": "R014 的坐标方向提示为'东海'与新闻'南海仁爱礁'存在地理方向上的潜在冲突，但考虑到雷达数据地点字段缺失且坐标数值落在南海区域，时间、机型、任务的精确匹配度远高于地点描述的模糊性，故优先采信核心要素关联。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T17:11:30.5755727Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"opinion_edges\": [{\"candidate_id\": \"O014\", \"platform_indices\": [0], \"relation\": \"different\", \"confidence\": 0.95, \"reason\": \"地点冲突：新闻明确为'仁爱礁附近海域'(南海)，候选 O014 为'东海赤尾屿海域'。虽然平台、国家、日期、任务及时间区间完全一致，但不同海域（东海 vs 南海）通常代表不同的具体活动部署，除非有证据表明飞机跨海飞行覆盖两地，否则视为不同活动。\"}, {\"candidate_id\": \"O013\", \"platform_indices\": [], \"relation\": \"different\", \"confidence\": 0.9, \"reason\": \"平台与任务冲突：新闻为法国 E-2C 预警机执行空中警戒，候选 O013 为意大利 F-35B 战斗机进行舰载机起降训练。平台型号、国籍、任务性质均不同，属于完全不同的活动。\"}, {\"candidate_id\": \"O005\", \"platform_indices\": [], \"relation\": \"different\", \"confidence\": 0.9, \"reason\": \"平台与地点冲突：新闻为法国 E-2C 在南海仁爱礁，候选 O005 为德国台风战机在东海。平台、国籍、任务及海域均不匹配。\"}], \"radar_edges\": [{\"candidate_id\": \"R014\", \"platform_indices\": [0], \"relation\": \"same\", \"confidence\": 0.98, \"reason\": \"高度匹配：平台(E-2C)、国家(法国)、日期(2025.05.01)、任务(空中警戒)及时间区间(05:01-07:26)与新闻完全一致。尽管雷达数据中地点字段缺失，但坐标中心点(约北纬 26.13, 东经 124.40)位于南海仁爱礁附近海域范围内，且候选方向提示为'东海'可能存在标注误差或宽泛定义，鉴于其他核心要素（特别是精确到分钟的时间段和具体机型任务）的高度吻合，判定为同一次活动。\"}, {\"candidate_id\": \"R016\", \"platform_indices\": [], \"relation\": \"different\", \"confidence\": 0.95, \"reason\": \"平台与地点冲突：新闻为法国 E-2C 在南海，候选 R016 为德国台风战机在东海（坐标显示北纬 28+）。平台、国籍、任务及海域均不同。\"}, {\"candidate_id\": \"R045\", \"platform_indices\": [], \"relation\": \"different\", \"confidence\": 0.9, \"reason\": \"平台与任务冲突：新闻为法国 E-2C 执行空中警戒，候选 R045 为中国 903A 补给舰进行例行部署。平台类型、国籍、任务均完全不同。\"}],\"ambiguity\": \"R014 的坐标方向提示为'东海'与新闻'南海仁爱礁'存在地理方向上的潜在冲突，但考虑到雷达数据地点字段缺失且坐标数值落在南海区域，时间、机型、任务的精确匹配度远高于地点描述的模糊性，故优先采信核心要素关联。\"}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 15623089800,
+    "load_duration": 12139100,
+    "prompt_eval_count": 6569,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 2168362000,
+    "eval_count": 692,
+    "eval_duration": 13127990000
+  }
+}

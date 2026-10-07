@@ -1,0 +1,389 @@
+{
+  "role": "verification",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N004",
+      "kind": "news",
+      "title": "中国歼-35舰载隐身战斗机在温州外海执行战备警巡行动",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：中国歼-35舰载隐身战斗机在温州外海执行战备警巡行动\n正文：2025年5月1日17时35分至19时00分，中国歼-35舰载隐身战斗机在温州外海活动，围绕任务海域组织战备警巡，按计划保持机动并持续执行战备警巡。\n\n主题词：中国  歼-35舰载隐身战斗机  温州外海  战备警巡\n",
+      "platforms": [
+        {
+          "name": "歼-35舰载隐身战斗机",
+          "country": "中国",
+          "quantity": null,
+          "quote": "歼-35舰载隐身战斗机",
+          "quantity_quote": "",
+          "country_raw": "中国"
+        }
+      ],
+      "location": {
+        "raw": "温州外海",
+        "region": "温州外海",
+        "direction": "东海",
+        "precision": "具体区域",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "在温州外海活动"
+      },
+      "mission": {
+        "value": "战备警巡",
+        "quote": "执行战备警巡行动"
+      },
+      "start_time": "17:35",
+      "end_time": "19:00",
+      "movement": "活动"
+    },
+    "opinion": {
+      "id": "O021",
+      "kind": "opinion",
+      "title": "中国两架歼-35隐身战斗机在东海执行战备警巡",
+      "text": "时间：2025.5.1\n\n标题：中国两架歼-35隐身战斗机在东海执行战备警巡\n\n正文：据央视新闻报道，2025年5月1日，中国两架歼-35舰载隐身战斗机在东海方向按计划保持机动并持续执行战备警巡任务。围绕此次平台运用的讨论认为，该行动有助于维持前沿存在和部署持续性，展现了在特定方向的区域机动能力。\n",
+      "platforms": [
+        {
+          "name": "歼-35",
+          "country": "中国",
+          "quantity": 2,
+          "quote": "两架歼-35舰载隐身战斗机",
+          "quantity_quote": "两架歼-35舰载隐身战斗机",
+          "country_raw": "中国"
+        }
+      ],
+      "location": {
+        "raw": "东海方向",
+        "region": "东海",
+        "direction": "东海",
+        "precision": "大范围",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "在东海方向"
+      },
+      "mission": {
+        "value": "战备警巡任务",
+        "quote": "执行战备警巡任务"
+      },
+      "start_time": null,
+      "end_time": null,
+      "movement": "活动"
+    },
+    "radars": [
+      {
+        "id": "R002",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "歼-35舰载隐身战斗机",
+            "country": "中国",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-0435F7FE86050A",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "战备警巡",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "战备警巡"
+        ],
+        "start_time": "2025.05.01 17:49:10",
+        "end_time": "2025.05.01 19:00:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            122.1749,
+            122.4161
+          ],
+          "latitude_range": [
+            27.6146,
+            27.8573
+          ],
+          "median": [
+            122.2806,
+            27.772
+          ],
+          "origins": [
+            [
+              122.4117,
+              27.8816
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [
+            "东海"
+          ],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [
+          "同批号存在远距离起始位置簇，候选拆分不代表归属已经消解"
+        ],
+        "batch": "AIR-0435F7FE86050A",
+        "sibling_ids": [
+          "R001"
+        ],
+        "hull_values": [],
+        "country_values": [
+          "中国"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 6
+      },
+      {
+        "id": "R001",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "歼-35舰载隐身战斗机",
+            "country": "中国",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-0435F7FE86050A",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "战备警巡",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "战备警巡"
+        ],
+        "start_time": "2025.05.01 17:35:00",
+        "end_time": "2025.05.01 19:00:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            114.281,
+            114.3812
+          ],
+          "latitude_range": [
+            15.1769,
+            15.2435
+          ],
+          "median": [
+            114.2998,
+            15.2165
+          ],
+          "origins": [
+            [
+              114.2637,
+              15.2165
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [
+            "南海"
+          ],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [
+          "同批号存在远距离起始位置簇，候选拆分不代表归属已经消解"
+        ],
+        "batch": "AIR-0435F7FE86050A",
+        "sibling_ids": [
+          "R002"
+        ],
+        "hull_values": [],
+        "country_values": [
+          "中国"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 7
+      }
+    ],
+    "association": {
+      "opinion_edges": [
+        {
+          "candidate_id": "O021",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.95,
+          "reason": "平台（歼 -35）、任务（战备警巡）、日期（2025.5.1）及大致海域（东海/温州外海属于东海）完全一致。新闻提供了精确时间区间，舆论虽无具体时间但描述为“按计划保持机动”，符合同一行动特征。"
+        },
+        {
+          "candidate_id": "O042",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.98,
+          "reason": "平台完全不同（菲律宾护卫舰 vs 中国歼 -35），任务不同（远海训练 vs 战备警巡），虽时间和海域重叠，但属于不同国家的独立行动。"
+        },
+        {
+          "candidate_id": "O025",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.99,
+          "reason": "平台（俄军轰炸机）、任务（远程轰炸训练）及海域（南海方向）均与新闻不符，属于不同活动。"
+        }
+      ],
+      "radar_edges": [
+        {
+          "candidate_id": "R002",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.92,
+          "reason": "平台型号、数量（2 架）、任务（战备警巡）及时间区间高度吻合。坐标虽显示为南海方向簇，但标注为未验证且存在同批号远距离簇异常，结合新闻明确的“温州外海”和舆论佐证，判定为同一活动中的不同数据簇或坐标偏差。"
+        },
+        {
+          "candidate_id": "R001",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.92,
+          "reason": "同属批号 AIR-0435F7FE86050A，平台、任务、时间一致。坐标显示南海方向，但鉴于新闻明确地点为温州外海（东海），且雷达数据存在“同批号远距离起始位置簇”的异常说明，判定为同一活动的不同数据片段或坐标误差，非独立活动。"
+        },
+        {
+          "candidate_id": "R042",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.95,
+          "reason": "平台类型完全不同（护卫舰 vs 战斗机），任务不同（反潜巡逻 vs 战备警巡），虽时间和海域重叠，但属于伴随或独立的不同行动。"
+        }
+      ],
+      "ambiguity": "雷达数据 R001/R002 的坐标方向与新闻地点存在明显冲突（南海 vs 东海），但考虑到雷达数据标注了‘未验证’及‘同批号远距离簇’异常，且舆论 O021 明确支持东海方向，故判定为同一活动而非不同活动。"
+    },
+    "same_batch_other_candidates": []
+  },
+  "result": {
+    "same_event": true,
+    "platforms": [
+      {
+        "platform_index": 0,
+        "platform": {
+          "claim": "歼-35舰载隐身战斗机",
+          "supporting_sources": [
+            "N004",
+            "O021",
+            "R001",
+            "R002"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论及两架雷达数据均确认为中国歼-35"
+        },
+        "country": {
+          "claim": "中国",
+          "supporting_sources": [
+            "N004",
+            "O021",
+            "R001",
+            "R002"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论及两架雷达数据均确认为中国"
+        },
+        "quantity": {
+          "claim": "2 架",
+          "supporting_sources": [
+            "O021",
+            "R001",
+            "R002"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论明确提及“两架”，两架雷达数据均显示数量为 2；新闻未说明具体数量但不构成冲突"
+        }
+      }
+    ],
+    "location": {
+      "claim": "温州外海（东海）",
+      "supporting_sources": [
+        "N004",
+        "O021"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻明确“温州外海”，舆论支持“东海方向”；雷达坐标虽显示南海簇但标注为未验证且存在同批号远距离簇异常，结合文本证据判定地点为东海"
+    },
+    "time": {
+      "claim": "2025 年 5 月 1 日 17:35-19:00",
+      "supporting_sources": [
+        "N004",
+        "R001",
+        "R002"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻提供精确起止时间，雷达 R001/R002 时间区间高度吻合（17:35-19:00）；舆论仅确认日期"
+    },
+    "mission": {
+      "claim": "战备警巡",
+      "supporting_sources": [
+        "N004",
+        "O021",
+        "R001",
+        "R002"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻、舆论及两架雷达数据均明确任务为“战备警巡”"
+    },
+    "movement": {
+      "claim": "活动",
+      "supporting_sources": [
+        "N004",
+        "O021",
+        "R001",
+        "R002"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻描述“活动”，舆论描述“保持机动”，雷达描述“未说明”但不冲突"
+    },
+    "unresolved_issues": [
+      "雷达 R001/R002 坐标簇显示南海方向，与新闻/舆论的东海地点存在空间差异，但已标注为同批号远距离簇异常且未验证，暂不视为独立事件冲突"
+    ],
+    "explanation": "三类来源（新闻、舆论、雷达）在平台型号、国籍、任务、时间及大致海域上高度一致。数量由舆论和雷达共同支持（2 架）。地点虽有雷达坐标偏差，但结合文本证据及雷达异常标注，判定为同一事件。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T17:39:11.9880279Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"same_event\": true, \"platforms\": [{\"platform_index\": 0, \"platform\": {\"claim\": \"歼-35舰载隐身战斗机\", \"supporting_sources\": [\"N004\", \"O021\", \"R001\", \"R002\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻、舆论及两架雷达数据均确认为中国歼-35\"}, \"country\": {\"claim\": \"中国\", \"supporting_sources\": [\"N004\", \"O021\", \"R001\", \"R002\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻、舆论及两架雷达数据均确认为中国\"}, \"quantity\": {\"claim\": \"2 架\", \"supporting_sources\": [\"O021\", \"R001\", \"R002\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"舆论明确提及“两架”，两架雷达数据均显示数量为 2；新闻未说明具体数量但不构成冲突\"}}], \"location\": {\"claim\": \"温州外海（东海）\", \"supporting_sources\": [\"N004\", \"O021\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻明确“温州外海”，舆论支持“东海方向”；雷达坐标虽显示南海簇但标注为未验证且存在同批号远距离簇异常，结合文本证据判定地点为东海\"}, \"time\": {\"claim\": \"2025 年 5 月 1 日 17:35-19:00\", \"supporting_sources\": [\"N004\", \"R001\", \"R002\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻提供精确起止时间，雷达 R001/R002 时间区间高度吻合（17:35-19:00）；舆论仅确认日期\"}, \"mission\": {\"claim\": \"战备警巡\", \"supporting_sources\": [\"N004\", \"O021\", \"R001\", \"R002\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻、舆论及两架雷达数据均明确任务为“战备警巡”\"}, \"movement\": {\"claim\": \"活动\", \"supporting_sources\": [\"N004\", \"O021\", \"R001\", \"R002\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻描述“活动”，舆论描述“保持机动”，雷达描述“未说明”但不冲突\"}, \"unresolved_issues\": [\"雷达 R001/R002 坐标簇显示南海方向，与新闻/舆论的东海地点存在空间差异，但已标注为同批号远距离簇异常且未验证，暂不视为独立事件冲突\"], \"explanation\": \"三类来源（新闻、舆论、雷达）在平台型号、国籍、任务、时间及大致海域上高度一致。数量由舆论和雷达共同支持（2 架）。地点虽有雷达坐标偏差，但结合文本证据及雷达异常标注，判定为同一事件。\"}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 14750156200,
+    "load_duration": 19417100,
+    "prompt_eval_count": 2704,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 978405000,
+    "eval_count": 707,
+    "eval_duration": 13493410000
+  }
+}

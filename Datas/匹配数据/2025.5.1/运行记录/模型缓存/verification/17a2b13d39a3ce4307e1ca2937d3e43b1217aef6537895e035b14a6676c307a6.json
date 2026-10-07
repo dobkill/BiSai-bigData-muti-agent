@@ -1,0 +1,302 @@
+{
+  "role": "verification",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N037",
+      "kind": "news",
+      "title": "中国空警-500预警机在上海外海执行空中警戒任务",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：中国空警-500预警机在上海外海执行空中警戒任务\n正文：2025年5月1日，中国空警-500预警机在上海外海围绕任务海域组织空中警戒，自14时17分起按计划保持机动并持续执行空中警戒至16时42分。\n\n主题词：中国  空警-500  上海外海  空中警戒\n",
+      "platforms": [
+        {
+          "name": "空警-500",
+          "country": "中国",
+          "quantity": null,
+          "quote": "中国空警-500预警机",
+          "quantity_quote": "",
+          "country_raw": "中国"
+        }
+      ],
+      "location": {
+        "raw": "上海外海",
+        "region": "上海外海",
+        "direction": "东海",
+        "precision": "具体区域",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "上海外海"
+      },
+      "mission": {
+        "value": "空中警戒",
+        "quote": "执行空中警戒任务"
+      },
+      "start_time": "14:17",
+      "end_time": "16:42",
+      "movement": "活动"
+    },
+    "opinion": {
+      "id": "O028",
+      "kind": "opinion",
+      "title": "空警-500在东海上海外海持续活动引发区域机动讨论",
+      "text": "时间：2025.5.1\n\n标题：空警-500在东海上海外海持续活动引发区域机动讨论\n\n正文：据联合早报报道，2025年5月1日，中国两架空警-500预警机在东海上海外海围绕任务区域保持机动，行动范围保持在指定任务海域。围绕这一行动组织，有分析认为该平台在任务海域持续活动可能体现其区域机动能力。相关讨论也聚焦于任务连续性，被视为观察预警机体系化运用的一个窗口。\n",
+      "platforms": [
+        {
+          "name": "空警-500预警机",
+          "country": "中国",
+          "quantity": 2,
+          "quote": "两架空警-500预警机",
+          "quantity_quote": "两架空警-500预警机",
+          "country_raw": "中国"
+        }
+      ],
+      "location": {
+        "raw": "东海上海外海",
+        "region": "上海外海",
+        "direction": "东海",
+        "precision": "具体区域",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "在东海上海外海"
+      },
+      "mission": {
+        "value": null,
+        "quote": ""
+      },
+      "start_time": null,
+      "end_time": null,
+      "movement": "活动"
+    },
+    "radars": [
+      {
+        "id": "R006",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "空警-500预警机",
+            "country": "中国",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-27690DA07C1736",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "空中警戒",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "空中警戒"
+        ],
+        "start_time": "2025.05.01 14:17:00",
+        "end_time": "2025.05.01 16:42:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            122.901,
+            123.2571
+          ],
+          "latitude_range": [
+            30.7165,
+            31.0651
+          ],
+          "median": [
+            123.084,
+            30.9344
+          ],
+          "origins": [
+            [
+              122.9465,
+              31.1102
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [
+            "东海"
+          ],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [],
+        "batch": "AIR-27690DA07C1736",
+        "sibling_ids": [],
+        "hull_values": [],
+        "country_values": [
+          "中国"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 13
+      }
+    ],
+    "association": {
+      "opinion_edges": [
+        {
+          "candidate_id": "O028",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.95,
+          "reason": "平台（空警 -500）、地点（上海外海/东海）、时间（2025.5.1）及任务性质（空中警戒/区域机动）完全一致。新闻明确的时间段（14:17-16:42）与舆论描述的行动时段吻合，虽舆论未列具体起止点，但“持续活动”的描述符合新闻事实。"
+        },
+        {
+          "candidate_id": "O035",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.85,
+          "reason": "平台、地点（东海方向/上海外海）、时间一致。任务描述为“情报监视侦察”，与新闻的“空中警戒”在预警机常规职能上存在重叠，属于同一类活动范畴，但具体任务名称略有差异，故置信度略低于 O028。"
+        },
+        {
+          "candidate_id": "O037",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.9,
+          "reason": "地点和时间重合，但平台型号不同（轰 -6K 轰炸机 vs 空警 -500 预警机），且任务性质（机动/区域控制 vs 空中警戒）不同，判定为同一时间地点的不同活动。"
+        }
+      ],
+      "radar_edges": [
+        {
+          "candidate_id": "R006",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 1.0,
+          "reason": "平台、任务（空中警戒）、时间（2025.05.01 14:17-16:42）与新闻完全精确匹配。坐标范围覆盖上海外海，虽地点字段缺失但坐标辅助召回指向一致，确认为同一次活动。"
+        },
+        {
+          "candidate_id": "R010",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.95,
+          "reason": "平台相同（空警 -500），时间同为 2025.05.01，但时间段（08:41-10:06）与新闻（14:17-16:42）无重叠，且任务为“情报监视侦察”，判定为同日不同活动。"
+        },
+        {
+          "candidate_id": "R029",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.95,
+          "reason": "平台（054A 护卫舰）、地点（白令海 vs 上海外海）、任务均完全不同，尽管时间重叠，但属于完全不同的活动。"
+        }
+      ],
+      "ambiguity": "O035 的任务描述与新闻略有差异，但在预警机语境下可视为同一活动的不同表述；R006 坐标未经验证，仅作为辅助召回依据，需结合文本确认。"
+    },
+    "same_batch_other_candidates": []
+  },
+  "result": {
+    "same_event": true,
+    "platforms": [
+      {
+        "platform_index": 0,
+        "platform": {
+          "claim": "空警 -500",
+          "supporting_sources": [
+            "N037",
+            "O028",
+            "R006"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均明确指向空警 -500 预警机，且雷达批号与新闻时间完全吻合。"
+        },
+        "country": {
+          "claim": "中国",
+          "supporting_sources": [
+            "N037",
+            "O028",
+            "R006"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源均明确标注国籍为中国，无冲突。"
+        },
+        "quantity": {
+          "claim": "2 架",
+          "supporting_sources": [
+            "O028",
+            "R006"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论明确提及“两架”，雷达批号 AIR-27690DA07C1736 显示数量值为 2；新闻未说明具体数量，但不构成冲突，由另外两类来源确证。"
+        }
+      }
+    ],
+    "location": {
+      "claim": "上海外海",
+      "supporting_sources": [
+        "N037",
+        "O028"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与舆论均明确提及“上海外海”，雷达坐标范围（122.9-123.2E, 30.7-31.0N）地理上覆盖上海外海区域，虽雷达文本字段缺失但坐标辅助印证一致。"
+    },
+    "time": {
+      "claim": "2025-05-01 14:17 - 16:42",
+      "supporting_sources": [
+        "N037",
+        "R006"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与雷达时间精确匹配（14:17-16:42）；舆论仅提及“持续活动”及日期，未提供具体时刻，但不构成冲突，由新闻和雷达确证。"
+    },
+    "mission": {
+      "claim": "空中警戒",
+      "supporting_sources": [
+        "N037",
+        "R006"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与雷达均明确任务为“空中警戒”；舆论描述为“区域机动/持续活动”，属于对同一任务的泛称或不同表述，无实质冲突。"
+    },
+    "movement": {
+      "claim": "活动",
+      "supporting_sources": [
+        "N037",
+        "O028"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻描述“保持机动并持续执行”，舆论描述“保持机动”，均确认为活动状态；雷达未说明 movement 字段，但不影响整体结论。"
+    },
+    "unresolved_issues": [],
+    "explanation": "三源（新闻、舆论、雷达）在平台型号、国籍、任务性质及时间地点上高度一致。数量由舆论和雷达共同确证（2 架），新闻虽未提及数量但不构成冲突。雷达坐标范围与文本描述的上海外海地理兼容。舆论中的“区域机动”与新闻/雷达的“空中警戒”视为同一任务的合理表述，无未消解冲突。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T16:47:57.3095661Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"same_event\": true, \"platforms\": [{\"platform_index\": 0, \"platform\": {\"claim\": \"空警 -500\", \"supporting_sources\": [\"N037\", \"O028\", \"R006\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源（新闻、舆论、雷达）均明确指向空警 -500 预警机，且雷达批号与新闻时间完全吻合。\"}, \"country\": {\"claim\": \"中国\", \"supporting_sources\": [\"N037\", \"O028\", \"R006\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源均明确标注国籍为中国，无冲突。\"}, \"quantity\": {\"claim\": \"2 架\", \"supporting_sources\": [\"O028\", \"R006\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"舆论明确提及“两架”，雷达批号 AIR-27690DA07C1736 显示数量值为 2；新闻未说明具体数量，但不构成冲突，由另外两类来源确证。\"}}], \"location\": {\"claim\": \"上海外海\", \"supporting_sources\": [\"N037\", \"O028\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻与舆论均明确提及“上海外海”，雷达坐标范围（122.9-123.2E, 30.7-31.0N）地理上覆盖上海外海区域，虽雷达文本字段缺失但坐标辅助印证一致。\"}, \"time\": {\"claim\": \"2025-05-01 14:17 - 16:42\", \"supporting_sources\": [\"N037\", \"R006\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻与雷达时间精确匹配（14:17-16:42）；舆论仅提及“持续活动”及日期，未提供具体时刻，但不构成冲突，由新闻和雷达确证。\"}, \"mission\": {\"claim\": \"空中警戒\", \"supporting_sources\": [\"N037\", \"R006\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻与雷达均明确任务为“空中警戒”；舆论描述为“区域机动/持续活动”，属于对同一任务的泛称或不同表述，无实质冲突。\"}, \"movement\": {\"claim\": \"活动\", \"supporting_sources\": [\"N037\", \"O028\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻描述“保持机动并持续执行”，舆论描述“保持机动”，均确认为活动状态；雷达未说明 movement 字段，但不影响整体结论。\"}, \"unresolved_issues\": [],\"explanation\":\"三源（新闻、舆论、雷达）在平台型号、国籍、任务性质及时间地点上高度一致。数量由舆论和雷达共同确证（2 架），新闻虽未提及数量但不构成冲突。雷达坐标范围与文本描述的上海外海地理兼容。舆论中的“区域机动”与新闻/雷达的“空中警戒”视为同一任务的合理表述，无未消解冲突。\"}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 14819848300,
+    "load_duration": 9092200,
+    "prompt_eval_count": 2277,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 846595000,
+    "eval_count": 726,
+    "eval_duration": 13791342000
+  }
+}

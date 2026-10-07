@@ -1,0 +1,511 @@
+{
+  "id": "N045",
+  "news_id": "N045",
+  "opinion_id": "O039",
+  "radar_ids": [
+    "R050"
+  ],
+  "radar_slots": {
+    "0": "R050"
+  },
+  "alignment": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O039",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.95,
+        "reason": "平台（新加坡坚韧级坦克登陆舰）、日期（2025.5.1）、地点（东海/东海南部）及任务性质（训练）高度一致。新闻提供了精确的时间窗口（08:08-10:33），虽雷达数据未明确区分具体活动类型，但时间重叠度为 100%，且无其他新加坡舰艇在同一时段于同一海域执行同类任务的冲突记录，故判定为同一次活动。"
+      },
+      {
+        "candidate_id": "O044",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "平台型号不同（韩国独岛级两栖攻击舰 vs 新加坡坚韧级坦克登陆舰），且新闻中明确提及该舰在“东海方向”进行训练，与新闻标题限定的“东海南部”存在区域精度差异。虽然任务均为两栖训练，但主体和具体海域指向不同，属于不同活动。"
+      },
+      {
+        "candidate_id": "O042",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "平台国籍与型号完全不同（菲律宾护卫舰 vs 新加坡坦克登陆舰），且时间窗口无重叠（新闻为 08:08-10:33，候选为 17:24-19:49）。地点虽同为东海方向，但主体和时间均不匹配，确认为不同活动。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R050",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 1.0,
+        "reason": "雷达数据 R050 与新闻 N045 在平台（新加坡坚韧级）、地点（东海南部）、时间（2025.05.01 08:08-10:33）及任务描述上完全吻合。尽管雷达任务标记为“远海训练”而新闻为“两栖作战训练”，但在该海域该时段无其他新加坡舰艇活动记录，且时间地点精确匹配，视为同一活动的不同信息源表述差异。"
+      },
+      {
+        "candidate_id": "R041",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台主体不同（韩国独岛级 vs 新加坡坚韧级）。虽然时间重叠且地点均为东海南部，任务也相似，但根据赛题规则“同一天同型号也不等于同活动”，此处主体明确为不同国家舰艇，故判定为不同活动。"
+      },
+      {
+        "candidate_id": "R053",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "平台主体不同（马来西亚莱库号 vs 新加坡坚韧级）。虽然任务均为海上护航/训练，地点均在东海方向，但舰艇归属国及具体型号均不匹配，确认为不同活动。"
+      }
+    ],
+    "ambiguity": "雷达数据 R050 的任务描述（远海训练）与新闻标题（两栖作战训练）存在用词差异，但鉴于时间、地点、平台的高度一致性，且无其他干扰项，推断为同一活动的不同侧重点描述，不影响关联结论。"
+  },
+  "candidates": {
+    "opinion": [
+      {
+        "id": "O039",
+        "score": 4.49808,
+        "cosine": 0.96808,
+        "platform_similarity": 0.95,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O004",
+        "score": 1.99666,
+        "cosine": 0.6877,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.9241379310344827,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O024",
+        "score": 1.85452,
+        "cosine": 0.65452,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O042",
+        "score": 1.23268,
+        "cosine": 0.75268,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O044",
+        "score": 1.2259,
+        "cosine": 0.7459,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O040",
+        "score": 1.21892,
+        "cosine": 0.73892,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O020",
+        "score": 0.73635,
+        "cosine": 0.73635,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      }
+    ],
+    "radar": [
+      {
+        "id": "R050",
+        "score": 6.01764,
+        "cosine": 0.96764,
+        "platform_similarity": 0.95,
+        "time_overlap": 1.0,
+        "location_relation": "same"
+      },
+      {
+        "id": "R041",
+        "score": 2.78509,
+        "cosine": 0.78509,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "same"
+      },
+      {
+        "id": "R004",
+        "score": 1.99443,
+        "cosine": 0.68547,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.9241379310344827,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R046",
+        "score": 1.51137,
+        "cosine": 0.71137,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "same"
+      },
+      {
+        "id": "R043",
+        "score": 1.26606,
+        "cosine": 0.7206,
+        "platform_similarity": 0.18182,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "R053",
+        "score": 0.87409,
+        "cosine": 0.71409,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "same_direction_only"
+      }
+    ]
+  },
+  "verification": {
+    "same_event": true,
+    "facts": [
+      {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "坚韧级坦克登陆舰",
+        "supporting_sources": [
+          "N045",
+          "O039",
+          "R050"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N045': '坚韧级坦克登陆舰', 'O039': '坚韧级坦克登陆舰', 'R050': '坚韧级坦克登陆舰'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "新加坡坚韧级坦克登陆舰",
+          "supporting_sources": [
+            "N045",
+            "O039",
+            "R050"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均明确指向同一平台型号及国籍，无冲突。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "新加坡",
+        "supporting_sources": [
+          "N045",
+          "O039",
+          "R050"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N045': '新加坡', 'O039': '新加坡', 'R050': '新加坡'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "新加坡",
+          "supporting_sources": [
+            "N045",
+            "O039",
+            "R050"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源一致确认国籍为新加坡。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "1艘",
+        "supporting_sources": [
+          "O039",
+          "R050"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'O039': 1, 'R050': 1}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "1 艘",
+          "supporting_sources": [
+            "O039",
+            "R050"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论明确提及“一艘”，雷达批号显示数量值为 1；新闻虽未明示具体数字但描述为单舰活动，无冲突。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "东海南部",
+        "supporting_sources": [
+          "N045",
+          "R050"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与雷达均精确指向“东海南部”；舆论提及“东海”，属于大范围兼容，不构成冲突。",
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "2025 年 5 月 1 日 08:08-10:33",
+        "supporting_sources": [
+          "N045",
+          "R050"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与雷达时间窗口完全一致；舆论仅提及日期，未提供具体时刻，不构成反对。",
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "两栖作战训练/远海训练",
+        "supporting_sources": [
+          "N045",
+          "R050"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻明确为“两栖作战训练”，雷达标记为“远海训练”。两者在军事语境下常作为同一活动的不同侧重点描述（前者侧重科目，后者侧重性质），且无其他来源提出明确的互斥任务类型，视为一致。舆论提及“远海训练”亦兼容此结论。",
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N045",
+          "O039"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与舆论均描述为“活动”或“机动”，雷达未说明但不构成冲突。",
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      }
+    ],
+    "unresolved_issues": [],
+    "explanation": "三源在平台、国籍、时间、地点上高度一致，数量由两源支持，任务描述存在用词差异但逻辑兼容，无未消解冲突。"
+  },
+  "reasons": [],
+  "status": "可信事件",
+  "verified_facts": [
+    {
+      "platform_index": 0,
+      "field": "platform",
+      "claim": "坚韧级坦克登陆舰",
+      "supporting_sources": [
+        "N045",
+        "O039",
+        "R050"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N045': '坚韧级坦克登陆舰', 'O039': '坚韧级坦克登陆舰', 'R050': '坚韧级坦克登陆舰'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "新加坡坚韧级坦克登陆舰",
+        "supporting_sources": [
+          "N045",
+          "O039",
+          "R050"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源（新闻、舆论、雷达）均明确指向同一平台型号及国籍，无冲突。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "country",
+      "claim": "新加坡",
+      "supporting_sources": [
+        "N045",
+        "O039",
+        "R050"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N045': '新加坡', 'O039': '新加坡', 'R050': '新加坡'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "新加坡",
+        "supporting_sources": [
+          "N045",
+          "O039",
+          "R050"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源一致确认国籍为新加坡。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "quantity",
+      "claim": "1艘",
+      "supporting_sources": [
+        "O039",
+        "R050"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'O039': 1, 'R050': 1}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "1 艘",
+        "supporting_sources": [
+          "O039",
+          "R050"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "舆论明确提及“一艘”，雷达批号显示数量值为 1；新闻虽未明示具体数字但描述为单舰活动，无冲突。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "location",
+      "claim": "东海南部",
+      "supporting_sources": [
+        "N045",
+        "R050"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与雷达均精确指向“东海南部”；舆论提及“东海”，属于大范围兼容，不构成冲突。",
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "time",
+      "claim": "2025 年 5 月 1 日 08:08-10:33",
+      "supporting_sources": [
+        "N045",
+        "R050"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与雷达时间窗口完全一致；舆论仅提及日期，未提供具体时刻，不构成反对。",
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "mission",
+      "claim": "两栖作战训练/远海训练",
+      "supporting_sources": [
+        "N045",
+        "R050"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻明确为“两栖作战训练”，雷达标记为“远海训练”。两者在军事语境下常作为同一活动的不同侧重点描述（前者侧重科目，后者侧重性质），且无其他来源提出明确的互斥任务类型，视为一致。舆论提及“远海训练”亦兼容此结论。",
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "movement",
+      "claim": "活动",
+      "supporting_sources": [
+        "N045",
+        "O039"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与舆论均描述为“活动”或“机动”，雷达未说明但不构成冲突。",
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    }
+  ],
+  "radar_row_count": 10,
+  "direction": "东海",
+  "report_eligible": true,
+  "directory": "可信事件/N045_新加坡坚韧级坦克登陆舰在东海南部实施两栖作战训练"
+}

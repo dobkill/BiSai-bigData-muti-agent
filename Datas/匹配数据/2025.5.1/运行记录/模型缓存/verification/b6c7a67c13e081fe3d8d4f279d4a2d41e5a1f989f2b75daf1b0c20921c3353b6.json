@@ -1,0 +1,303 @@
+{
+  "role": "verification",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N039",
+      "kind": "news",
+      "title": "苏-30SM多用途战斗机俄军苏-30SM在黄岩岛海域组织夜间对海突击训练",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：苏-30SM多用途战斗机俄军苏-30SM在黄岩岛海域组织夜间对海突击训练\n正文：2025年5月1日，俄罗斯苏-30SM多用途战斗机在黄岩岛海域展开行动，于20时31分至22时56分围绕既定科目组织对海突击训练，并按计划完成相关平台之间的行动衔接。\n\n主题词：俄罗斯  苏-30SM  黄岩岛  对海突击训练\n",
+      "platforms": [
+        {
+          "name": "苏-30SM",
+          "country": "俄罗斯",
+          "quantity": null,
+          "quote": "俄罗斯苏-30SM多用途战斗机",
+          "quantity_quote": "",
+          "country_raw": "俄罗斯"
+        }
+      ],
+      "location": {
+        "raw": "黄岩岛海域",
+        "region": "黄岩岛海域",
+        "direction": "南海",
+        "precision": "具体区域",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "黄岩岛海域"
+      },
+      "mission": {
+        "value": "对海突击训练",
+        "quote": "组织对海突击训练"
+      },
+      "start_time": "20:31",
+      "end_time": "22:56",
+      "movement": "活动"
+    },
+    "opinion": {
+      "id": "O002",
+      "kind": "opinion",
+      "title": "俄军苏-30SM夜间在黄岩岛海域持续活动近两个半小时",
+      "text": "时间：2025.5.1\n\n标题：俄军苏-30SM夜间在黄岩岛海域持续活动近两个半小时\n\n正文：据联合早报报道，俄罗斯空天军两架苏-30SM多用途战斗机于2025年5月1日20时31分至22时56分在南海黄岩岛海域展开夜间活动。从公开信息看，这两架战机在近两个半小时内围绕任务区域保持机动，行动范围保持在指定任务海域，展现出良好的任务连续性。这一动向被视为俄方在南海保持常态化存在的一部分，其区域机动能力受到外界关注。\n",
+      "platforms": [
+        {
+          "name": "苏-30SM多用途战斗机",
+          "country": "俄罗斯",
+          "quantity": 2,
+          "quote": "俄罗斯空天军两架苏-30SM多用途战斗机",
+          "quantity_quote": "两架苏-30SM多用途战斗机",
+          "country_raw": "俄罗斯"
+        }
+      ],
+      "location": {
+        "raw": "南海黄岩岛海域",
+        "region": "黄岩岛海域",
+        "direction": "南海",
+        "precision": "具体区域",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "在南海黄岩岛海域展开夜间活动"
+      },
+      "mission": {
+        "value": null,
+        "quote": ""
+      },
+      "start_time": "20:31",
+      "end_time": "22:56",
+      "movement": "活动"
+    },
+    "radars": [
+      {
+        "id": "R024",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "苏-30SM多用途战斗机",
+            "country": "俄罗斯",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-E782041C6BA813",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "对海突击训练",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "对海突击训练"
+        ],
+        "start_time": "2025.05.01 20:31:00",
+        "end_time": "2025.05.01 22:56:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            117.7421,
+            118.0858
+          ],
+          "latitude_range": [
+            15.1728,
+            15.4443
+          ],
+          "median": [
+            117.9379,
+            15.2699
+          ],
+          "origins": [
+            [
+              118.0904,
+              15.4308
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [
+            "南海"
+          ],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [],
+        "batch": "AIR-E782041C6BA813",
+        "sibling_ids": [],
+        "hull_values": [],
+        "country_values": [
+          "俄罗斯"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 13
+      }
+    ],
+    "association": {
+      "opinion_edges": [
+        {
+          "candidate_id": "O002",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.95,
+          "reason": "时间（20:31-22:56）、地点（黄岩岛海域）、平台（苏 -30SM）、任务（对海突击训练）及国家完全一致，且新闻标题与正文描述高度重合。"
+        },
+        {
+          "candidate_id": "O036",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.9,
+          "reason": "虽然平台和日期相同，但时间区间（02:27-04:52）与新闻完全无重叠，且任务描述为“战备警巡”而非“对海突击训练”，地点仅为“南海方向”不够具体。"
+        },
+        {
+          "candidate_id": "O019",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.85,
+          "reason": "平台和日期相同，但时间区间（18:01-19:31）不重叠，地点为“南沙群岛海域”而非“黄岩岛”，任务描述模糊。"
+        }
+      ],
+      "radar_edges": [
+        {
+          "candidate_id": "R024",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.98,
+          "reason": "时间（20:31-22:56）、平台（苏 -30SM）、任务（对海突击训练）及数量（2 架）与新闻完全匹配。坐标位于南海黄岩岛附近，虽地点字段缺失但辅助方向一致，数据特征高度吻合。"
+        },
+        {
+          "candidate_id": "R019",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.85,
+          "reason": "平台和日期相同，但时间（18:01-19:31）不重叠，任务为“空中警戒”而非“对海突击训练”。"
+        },
+        {
+          "candidate_id": "R026",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.85,
+          "reason": "平台和日期相同，但时间（02:27-04:52）不重叠，任务为“战备警巡”。"
+        }
+      ],
+      "ambiguity": "无。新闻与候选 O002 及雷达数据 R024 在时间、地点、平台型号、任务类型及数量上均存在精确匹配，关联证据充分，不存在歧义。其他候选因时间不重叠或任务/地点不符被排除为不同活动。"
+    },
+    "same_batch_other_candidates": []
+  },
+  "result": {
+    "same_event": true,
+    "platforms": [
+      {
+        "platform_index": 0,
+        "platform": {
+          "claim": "苏 -30SM",
+          "supporting_sources": [
+            "N039",
+            "O002",
+            "R024"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均确认为俄罗斯苏 -30SM 多用途战斗机，完全一致。"
+        },
+        "country": {
+          "claim": "俄罗斯",
+          "supporting_sources": [
+            "N039",
+            "O002",
+            "R024"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均明确标注为俄罗斯，完全一致。"
+        },
+        "quantity": {
+          "claim": "2 架",
+          "supporting_sources": [
+            "O002",
+            "R024"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论明确提及“两架”，雷达批号 AIR-E782041C6BA813 数量列为 2；新闻虽未明示具体数字，但三源中两类支持且无冲突，符合可信标准。"
+        }
+      }
+    ],
+    "location": {
+      "claim": "黄岩岛海域",
+      "supporting_sources": [
+        "N039",
+        "O002"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与舆论均明确表述为“黄岩岛海域”，雷达坐标范围（15.17-15.44 纬度）覆盖该区域且辅助方向一致，三源在区域精度上无冲突。"
+    },
+    "time": {
+      "claim": "2025 年 5 月 1 日 20:31 - 22:56",
+      "supporting_sources": [
+        "N039",
+        "O002",
+        "R024"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻、舆论、雷达三源在日期及起止时刻（20:31-22:56）上完全精确匹配。"
+    },
+    "mission": {
+      "claim": "对海突击训练",
+      "supporting_sources": [
+        "N039",
+        "R024"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻明确描述为“组织对海突击训练”，雷达任务列亦为“对海突击训练”；舆论虽未详述具体科目但确认了夜间活动，两类来源支持且无冲突。"
+    },
+    "movement": {
+      "claim": "活动（机动）",
+      "supporting_sources": [
+        "N039",
+        "O002"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻描述为“围绕既定科目组织...行动衔接”，舆论描述为“保持机动”，均指向非过境的具体活动状态，与雷达“未说明”无实质冲突。"
+    },
+    "unresolved_issues": [],
+    "explanation": "新闻 N039、舆论 O002 及雷达 R024 在平台型号（苏 -30SM）、国籍（俄罗斯）、数量（2 架）、地点（黄岩岛海域）、时间（20:31-22:56）及任务（对海突击训练）上高度一致。舆论和雷达提供了关键的数量证据，新闻提供了详细的任务描述，三源相互印证，无未消解冲突，确认为同一事件。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T17:18:22.633042Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"same_event\": true, \"platforms\": [{\"platform_index\": 0, \"platform\": {\"claim\": \"苏 -30SM\", \"supporting_sources\": [\"N039\", \"O002\", \"R024\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源（新闻、舆论、雷达）均确认为俄罗斯苏 -30SM 多用途战斗机，完全一致。\"}, \"country\": {\"claim\": \"俄罗斯\", \"supporting_sources\": [\"N039\", \"O002\", \"R024\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源（新闻、舆论、雷达）均明确标注为俄罗斯，完全一致。\"}, \"quantity\": {\"claim\": \"2 架\", \"supporting_sources\": [\"O002\", \"R024\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"舆论明确提及“两架”，雷达批号 AIR-E782041C6BA813 数量列为 2；新闻虽未明示具体数字，但三源中两类支持且无冲突，符合可信标准。\"}}], \"location\": {\"claim\": \"黄岩岛海域\", \"supporting_sources\": [\"N039\", \"O002\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻与舆论均明确表述为“黄岩岛海域”，雷达坐标范围（15.17-15.44 纬度）覆盖该区域且辅助方向一致，三源在区域精度上无冲突。\"}, \"time\": {\"claim\": \"2025 年 5 月 1 日 20:31 - 22:56\", \"supporting_sources\": [\"N039\", \"O002\", \"R024\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻、舆论、雷达三源在日期及起止时刻（20:31-22:56）上完全精确匹配。\"}, \"mission\": {\"claim\": \"对海突击训练\", \"supporting_sources\": [\"N039\", \"R024\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻明确描述为“组织对海突击训练”，雷达任务列亦为“对海突击训练”；舆论虽未详述具体科目但确认了夜间活动，两类来源支持且无冲突。\"}, \"movement\": {\"claim\": \"活动（机动）\", \"supporting_sources\": [\"N039\", \"O002\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻描述为“围绕既定科目组织...行动衔接”，舆论描述为“保持机动”，均指向非过境的具体活动状态，与雷达“未说明”无实质冲突。\"}, \"unresolved_issues\": [],\"explanation\": \"新闻 N039、舆论 O002 及雷达 R024 在平台型号（苏 -30SM）、国籍（俄罗斯）、数量（2 架）、地点（黄岩岛海域）、时间（20:31-22:56）及任务（对海突击训练）上高度一致。舆论和雷达提供了关键的数量证据，新闻提供了详细的任务描述，三源相互印证，无未消解冲突，确认为同一事件。\"}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 15515203100,
+    "load_duration": 17848300,
+    "prompt_eval_count": 2283,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 850876000,
+    "eval_count": 746,
+    "eval_duration": 14429579000
+  }
+}

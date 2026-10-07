@@ -1,0 +1,711 @@
+{
+  "id": "N046",
+  "news_id": "N046",
+  "opinion_id": "O025",
+  "radar_ids": [
+    "R018"
+  ],
+  "radar_slots": {
+    "0": "R018"
+  },
+  "alignment": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O025",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.95,
+        "reason": "平台完全匹配（图-95MS，俄罗斯，2 架），日期一致（2025.5.1），任务性质高度相关（新闻称“持续活动”，候选明确为“远程轰炸训练”且时间区间吻合）。地点上，新闻指“西沙群岛海域”，候选指“南海方向”，西沙属于南海，符合包含关系。"
+      },
+      {
+        "candidate_id": "O036",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.9,
+        "reason": "平台型号不同（苏-30SM vs 图-95MS），任务类型不同（战备警巡 vs 轰炸训练/持续活动），虽同属俄罗斯空军在南海同日活动，但属于不同作战单元和任务序列。"
+      },
+      {
+        "candidate_id": "O020",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.9,
+        "reason": "平台型号不同（瓦良格号巡洋舰 vs 图-95MS），军种不同（海军 vs 空军），任务类型不同（护航 vs 轰炸/活动），属于同日不同平台的独立行动。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R018",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.92,
+        "reason": "平台、数量（2 架）、国籍完全匹配。时间区间（17:13-19:38）与新闻描述的“持续活动”时段高度重合。任务均为远程轰炸训练性质。地点虽雷达数据缺失具体坐标，但候选方向为南海，与新闻西沙群岛海域无冲突。"
+      },
+      {
+        "candidate_id": "R048",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.9,
+        "reason": "平台不同（瓦良格号巡洋舰 vs 图-95MS），任务不同（护航 vs 轰炸/活动），属于同日不同平台的独立行动。"
+      },
+      {
+        "candidate_id": "R019",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.85,
+        "reason": "平台型号不同（苏-30SM vs 图-95MS），任务描述略有差异（空中警戒 vs 持续活动/轰炸训练），虽时间有重叠但主体不一致，判定为不同活动。"
+      }
+    ],
+    "ambiguity": "新闻未明确具体任务名称，仅称“持续活动”，需依赖候选材料推断为训练；雷达数据 R018 地点缺失，依赖方向辅助判断，存在微小不确定性但不影响整体关联结论。"
+  },
+  "candidates": {
+    "opinion": [
+      {
+        "id": "O025",
+        "score": 4.58637,
+        "cosine": 0.90637,
+        "platform_similarity": 1.0,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O036",
+        "score": 1.46995,
+        "cosine": 0.78995,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O020",
+        "score": 1.41808,
+        "cosine": 0.73808,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O019",
+        "score": 1.16254,
+        "cosine": 0.80254,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "same_direction_only"
+      },
+      {
+        "id": "O002",
+        "score": 1.15848,
+        "cosine": 0.79848,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "same_direction_only"
+      },
+      {
+        "id": "O026",
+        "score": 1.00474,
+        "cosine": 0.80474,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O023",
+        "score": 0.99154,
+        "cosine": 0.79154,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      }
+    ],
+    "radar": [
+      {
+        "id": "R018",
+        "score": 4.14035,
+        "cosine": 0.94035,
+        "platform_similarity": 1.0,
+        "time_overlap": null,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R048",
+        "score": 1.10413,
+        "cosine": 0.74413,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "same_direction_only"
+      },
+      {
+        "id": "R003",
+        "score": 1.01312,
+        "cosine": 0.81312,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R013",
+        "score": 1.00819,
+        "cosine": 0.80819,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R024",
+        "score": 1.00667,
+        "cosine": 0.80667,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R019",
+        "score": 1.00374,
+        "cosine": 0.80374,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "missing"
+      }
+    ]
+  },
+  "verification": {
+    "same_event": true,
+    "facts": [
+      {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "图-95MS战略轰炸机",
+        "supporting_sources": [
+          "N046",
+          "O025",
+          "R018"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N046': '图-95MS战略轰炸机', 'O025': '图-95MS', 'R018': '图-95MS战略轰炸机'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "图-95MS",
+          "supporting_sources": [
+            "N046",
+            "O025",
+            "R018"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均确认为图-95MS"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "俄罗斯",
+        "supporting_sources": [
+          "N046",
+          "O025",
+          "R018"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N046': '俄罗斯', 'O025': '俄罗斯', 'R018': '俄罗斯'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "俄罗斯",
+          "supporting_sources": [
+            "N046",
+            "O025",
+            "R018"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均确认为俄罗斯"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "2架",
+        "supporting_sources": [
+          "N046",
+          "R018"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N046': 2, 'R018': 2}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "2 架",
+          "supporting_sources": [
+            "N046",
+            "R018"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻明确提及 2 架，雷达批号 AIR-92CF6229FD84B9 数量列为 2；舆论未提具体数量但不构成冲突"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "南海",
+        "supporting_sources": [
+          "N046",
+          "O025"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "按地点归一化与包含关系确认共同可支持的区域；未核实的细节另行保留",
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ],
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "西沙群岛海域",
+          "supporting_sources": [
+            "N046"
+          ],
+          "conflicting_sources": [],
+          "status": "insufficient",
+          "reason": "新闻明确指定位于西沙群岛海域；舆论称“南海方向”（包含西沙），雷达坐标范围 [112.0993, 112.4616] / [16.4953, 16.6882] 经度位于东经 112 度附近，纬度位于北纬 16-17 度之间，地理上对应西沙群岛区域（永暑礁等），虽雷达未显式标注地名但坐标与新闻地点一致；程序检查：不足两类独立来源支持",
+          "supporting_source_types": [
+            "news"
+          ]
+        },
+        "checked_by": "location_precision_guard"
+      },
+      {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "起点 17:13，终点 19:38",
+        "supporting_sources": [
+          "O025",
+          "R018"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "2025.05.01 17:13 - 19:38",
+          "supporting_sources": [
+            "O025",
+            "R018"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论和雷达均精确记录为 2025 年 5 月 1 日 17:13 至 19:38；新闻仅提及日期及“持续活动”，时间区间吻合"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "components": {
+          "start_time": {
+            "value": "17:13",
+            "support": [
+              "O025",
+              "R018"
+            ],
+            "conflicts": [],
+            "status": "supported",
+            "source_values": {
+              "O025": "17:13",
+              "R018": "17:13"
+            }
+          },
+          "end_time": {
+            "value": "19:38",
+            "support": [
+              "O025",
+              "R018"
+            ],
+            "conflicts": [],
+            "status": "supported",
+            "source_values": {
+              "O025": "19:38",
+              "R018": "19:38"
+            }
+          }
+        },
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "远程轰炸训练",
+        "supporting_sources": [
+          "O025",
+          "R018"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "原文明示任务：{'N046': [], 'O025': ['远程轰炸训练'], 'R018': ['远程轰炸训练']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "远程轰炸训练",
+          "supporting_sources": [
+            "O025",
+            "R018"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论和雷达均明确任务为“远程轰炸训练”；新闻描述为“持续活动”，结合时间、地点及两源具体任务描述，可推断该活动即为远程轰炸训练"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N046": [],
+          "O025": [
+            "远程轰炸训练"
+          ],
+          "R018": [
+            "远程轰炸训练"
+          ]
+        },
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N046",
+          "O025"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "supporting_sources": [
+            "N046",
+            "O025",
+            "R018"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源均表明飞机处于活动状态（新闻称持续活动/机动，舆论称执行训练任务，雷达显示坐标变化）"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N046": "活动",
+          "O025": "活动",
+          "R018": "未说明"
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location_detail",
+        "claim": "西沙群岛海域",
+        "supporting_sources": [
+          "N046"
+        ],
+        "conflicting_sources": [],
+        "status": "insufficient",
+        "reason": "新闻明确指定位于西沙群岛海域；舆论称“南海方向”（包含西沙），雷达坐标范围 [112.0993, 112.4616] / [16.4953, 16.6882] 经度位于东经 112 度附近，纬度位于北纬 16-17 度之间，地理上对应西沙群岛区域（永暑礁等），虽雷达未显式标注地名但坐标与新闻地点一致；程序检查：不足两类独立来源支持；具体地点未取得两类支持，保留为未核实线索",
+        "supporting_source_types": [
+          "news"
+        ]
+      }
+    ],
+    "unresolved_issues": [],
+    "explanation": "三类来源（新闻、舆论、雷达）在平台型号、国籍、数量（两源支持）、地点（新闻与雷达坐标一致，舆论兼容）、时间（两源精确匹配）、任务（两源明确，新闻兼容）及活动状态上高度一致。舆论未提数量不视为冲突，雷达坐标范围地理落点与新闻“西沙群岛”吻合。无未消解冲突。"
+  },
+  "reasons": [],
+  "status": "可信事件",
+  "verified_facts": [
+    {
+      "platform_index": 0,
+      "field": "platform",
+      "claim": "图-95MS战略轰炸机",
+      "supporting_sources": [
+        "N046",
+        "O025",
+        "R018"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N046': '图-95MS战略轰炸机', 'O025': '图-95MS', 'R018': '图-95MS战略轰炸机'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "图-95MS",
+        "supporting_sources": [
+          "N046",
+          "O025",
+          "R018"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源（新闻、舆论、雷达）均确认为图-95MS"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "country",
+      "claim": "俄罗斯",
+      "supporting_sources": [
+        "N046",
+        "O025",
+        "R018"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N046': '俄罗斯', 'O025': '俄罗斯', 'R018': '俄罗斯'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "俄罗斯",
+        "supporting_sources": [
+          "N046",
+          "O025",
+          "R018"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源（新闻、舆论、雷达）均确认为俄罗斯"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "quantity",
+      "claim": "2架",
+      "supporting_sources": [
+        "N046",
+        "R018"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N046': 2, 'R018': 2}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "2 架",
+        "supporting_sources": [
+          "N046",
+          "R018"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻明确提及 2 架，雷达批号 AIR-92CF6229FD84B9 数量列为 2；舆论未提具体数量但不构成冲突"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "location",
+      "claim": "南海",
+      "supporting_sources": [
+        "N046",
+        "O025"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "按地点归一化与包含关系确认共同可支持的区域；未核实的细节另行保留",
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ],
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "西沙群岛海域",
+        "supporting_sources": [
+          "N046"
+        ],
+        "conflicting_sources": [],
+        "status": "insufficient",
+        "reason": "新闻明确指定位于西沙群岛海域；舆论称“南海方向”（包含西沙），雷达坐标范围 [112.0993, 112.4616] / [16.4953, 16.6882] 经度位于东经 112 度附近，纬度位于北纬 16-17 度之间，地理上对应西沙群岛区域（永暑礁等），虽雷达未显式标注地名但坐标与新闻地点一致；程序检查：不足两类独立来源支持",
+        "supporting_source_types": [
+          "news"
+        ]
+      },
+      "checked_by": "location_precision_guard"
+    },
+    {
+      "platform_index": -1,
+      "field": "time",
+      "claim": "起点 17:13，终点 19:38",
+      "supporting_sources": [
+        "O025",
+        "R018"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "2025.05.01 17:13 - 19:38",
+        "supporting_sources": [
+          "O025",
+          "R018"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "舆论和雷达均精确记录为 2025 年 5 月 1 日 17:13 至 19:38；新闻仅提及日期及“持续活动”，时间区间吻合"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "components": {
+        "start_time": {
+          "value": "17:13",
+          "support": [
+            "O025",
+            "R018"
+          ],
+          "conflicts": [],
+          "status": "supported",
+          "source_values": {
+            "O025": "17:13",
+            "R018": "17:13"
+          }
+        },
+        "end_time": {
+          "value": "19:38",
+          "support": [
+            "O025",
+            "R018"
+          ],
+          "conflicts": [],
+          "status": "supported",
+          "source_values": {
+            "O025": "19:38",
+            "R018": "19:38"
+          }
+        }
+      },
+      "supporting_source_types": [
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "mission",
+      "claim": "远程轰炸训练",
+      "supporting_sources": [
+        "O025",
+        "R018"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "原文明示任务：{'N046': [], 'O025': ['远程轰炸训练'], 'R018': ['远程轰炸训练']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "远程轰炸训练",
+        "supporting_sources": [
+          "O025",
+          "R018"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "舆论和雷达均明确任务为“远程轰炸训练”；新闻描述为“持续活动”，结合时间、地点及两源具体任务描述，可推断该活动即为远程轰炸训练"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N046": [],
+        "O025": [
+          "远程轰炸训练"
+        ],
+        "R018": [
+          "远程轰炸训练"
+        ]
+      },
+      "supporting_source_types": [
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "movement",
+      "claim": "活动",
+      "supporting_sources": [
+        "N046",
+        "O025"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N046",
+          "O025",
+          "R018"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源均表明飞机处于活动状态（新闻称持续活动/机动，舆论称执行训练任务，雷达显示坐标变化）"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N046": "活动",
+        "O025": "活动",
+        "R018": "未说明"
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    }
+  ],
+  "radar_row_count": 13,
+  "direction": "南海",
+  "report_eligible": true,
+  "directory": "可信事件/N046_俄军图-95MS战略轰炸机在西沙群岛海域持续活动"
+}

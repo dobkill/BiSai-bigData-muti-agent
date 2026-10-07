@@ -1,0 +1,665 @@
+{
+  "id": "N030",
+  "news_id": "N030",
+  "opinion_id": "O043",
+  "radar_ids": [
+    "R020"
+  ],
+  "radar_slots": {
+    "0": "R020"
+  },
+  "alignment": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O043",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.95,
+        "reason": "平台完全一致（韩国 P-3CK）、地点一致（莫桑比克海峡）、任务一致（联合巡逻）、时间高度重叠（新闻 17:51-19:16，舆论仅提日期但描述机动行为吻合）。"
+      },
+      {
+        "candidate_id": "O009",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "平台不同（潜艇 vs 飞机）、地点不同（鄂霍次克海 vs 莫桑比克海峡），虽同属韩国且时间相近，但属于完全不同的活动。"
+      },
+      {
+        "candidate_id": "O038",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "平台不同（直升机 vs 飞机）、地点不同（阿拉伯海 vs 莫桑比克海峡），任务虽相似但时空不重合。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R020",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 1.0,
+        "reason": "平台、地点（坐标映射至莫桑比克海峡区域）、时间、任务与新闻完全一致，批号 AIR-BC9206D3B8A3D2 确认为该次活动数据源。"
+      },
+      {
+        "candidate_id": "R028",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "平台不同（潜艇）、地点不同（鄂霍次克海），虽时间重叠但为独立事件。"
+      },
+      {
+        "candidate_id": "R015",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "平台不同（直升机）、地点不同（坐标显示在印度洋/阿拉伯海区域，非莫桑比克海峡），时间不重叠。"
+      }
+    ],
+    "ambiguity": "无。新闻与舆论 O043、雷达 R020 在平台型号、具体海域、任务性质及精确时间段上均高度吻合，可确认为同一活动。其他候选因平台类型或地理位置明显不同，排除关联可能。"
+  },
+  "candidates": {
+    "opinion": [
+      {
+        "id": "O043",
+        "score": 4.90633,
+        "cosine": 0.90633,
+        "platform_similarity": 1.0,
+        "time_overlap": null,
+        "location_relation": "same"
+      },
+      {
+        "id": "O009",
+        "score": 1.97703,
+        "cosine": 0.73233,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.8705882352941177,
+        "location_relation": "different_named_regions"
+      },
+      {
+        "id": "O042",
+        "score": 1.88566,
+        "cosine": 0.68566,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O038",
+        "score": 0.97928,
+        "cosine": 0.77928,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_named_regions"
+      },
+      {
+        "id": "O030",
+        "score": 0.96174,
+        "cosine": 0.76174,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_named_regions"
+      },
+      {
+        "id": "O003",
+        "score": 0.76571,
+        "cosine": 0.76571,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      }
+    ],
+    "radar": [
+      {
+        "id": "R020",
+        "score": 5.34036,
+        "cosine": 0.94036,
+        "platform_similarity": 1.0,
+        "time_overlap": 1.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R028",
+        "score": 1.96416,
+        "cosine": 0.71945,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.8705882352941177,
+        "location_relation": "different_named_regions"
+      },
+      {
+        "id": "R039",
+        "score": 1.93008,
+        "cosine": 0.73008,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "R015",
+        "score": 0.97742,
+        "cosine": 0.77742,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R049",
+        "score": 0.94577,
+        "cosine": 0.74577,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_named_regions"
+      },
+      {
+        "id": "R009",
+        "score": 0.75083,
+        "cosine": 0.75083,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R022",
+        "score": 0.73498,
+        "cosine": 0.73498,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      }
+    ]
+  },
+  "verification": {
+    "same_event": true,
+    "facts": [
+      {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "P-3CK反潜巡逻机",
+        "supporting_sources": [
+          "N030",
+          "O043",
+          "R020"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N030': 'P-3CK反潜巡逻机', 'O043': 'P-3CK', 'R020': 'P-3CK反潜巡逻机'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "韩国 P-3CK 反潜巡逻机",
+          "supporting_sources": [
+            "N030",
+            "O043",
+            "R020"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均明确指向韩国 P-3CK，无冲突。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "韩国",
+        "supporting_sources": [
+          "N030",
+          "O043",
+          "R020"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N030': '韩国', 'O043': '韩国', 'R020': '韩国'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "韩国",
+          "supporting_sources": [
+            "N030",
+            "O043",
+            "R020"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源一致确认国籍为韩国。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "2架",
+        "supporting_sources": [
+          "O043",
+          "R020"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'O043': 2, 'R020': 2}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "2 架",
+          "supporting_sources": [
+            "O043",
+            "R020"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论明确提及“两架”，雷达批号数据列示数量为 2；新闻未说明具体数量但不构成冲突，两源支持成立。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "莫桑比克海峡",
+        "supporting_sources": [
+          "N030",
+          "O043"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与舆论均明确表述为“莫桑比克海峡”，雷达坐标范围（南纬 17-18 度，东经 40-41 度）地理上位于莫桑比克海峡区域，三源位置信息一致。",
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "起点 17:51，终点 19:16",
+        "supporting_sources": [
+          "N030",
+          "R020"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "2025 年 5 月 1 日 17:51 - 19:16",
+          "supporting_sources": [
+            "N030",
+            "R020"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻与雷达精确匹配起止时间；舆论仅提及日期，不冲突也不否定具体时刻，两源支持成立。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "components": {
+          "start_time": {
+            "value": "17:51",
+            "support": [
+              "N030",
+              "R020"
+            ],
+            "conflicts": [],
+            "status": "supported",
+            "source_values": {
+              "N030": "17:51",
+              "R020": "17:51"
+            }
+          },
+          "end_time": {
+            "value": "19:16",
+            "support": [
+              "N030",
+              "R020"
+            ],
+            "conflicts": [],
+            "status": "supported",
+            "source_values": {
+              "N030": "19:16",
+              "R020": "19:16"
+            }
+          }
+        },
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "联合巡逻",
+        "supporting_sources": [
+          "N030",
+          "R020"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "原文明示任务：{'N030': ['联合巡逻'], 'O043': [], 'R020': ['联合巡逻']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "联合巡逻",
+          "supporting_sources": [
+            "N030",
+            "R020"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻与雷达均明确标注“联合巡逻”；舆论描述为“持续活动/机动”，属于泛称，不与具体任务冲突，两源支持成立。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N030": [
+            "联合巡逻"
+          ],
+          "O043": [],
+          "R020": [
+            "联合巡逻"
+          ]
+        },
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N030",
+          "O043"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "supporting_sources": [
+            "N030",
+            "O043"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻与舆论均描述为巡逻/活动状态，雷达未说明但无冲突，两源支持成立。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N030": "活动",
+          "O043": "活动",
+          "R020": "未说明"
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      }
+    ],
+    "unresolved_issues": [],
+    "explanation": "新闻、舆论、雷达三源在平台型号（P-3CK）、国籍（韩国）、地点（莫桑比克海峡）、时间（2025.5.1 17:51-19:16）、任务（联合巡逻）及数量（2 架，由舆论和雷达支持）上高度一致。新闻虽未明确数量，但舆论与雷达的“2 架”结论相互印证，且无其他来源提出反证，满足可信度要求。"
+  },
+  "reasons": [],
+  "status": "可信事件",
+  "verified_facts": [
+    {
+      "platform_index": 0,
+      "field": "platform",
+      "claim": "P-3CK反潜巡逻机",
+      "supporting_sources": [
+        "N030",
+        "O043",
+        "R020"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N030': 'P-3CK反潜巡逻机', 'O043': 'P-3CK', 'R020': 'P-3CK反潜巡逻机'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "韩国 P-3CK 反潜巡逻机",
+        "supporting_sources": [
+          "N030",
+          "O043",
+          "R020"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻、舆论、雷达三源均明确指向韩国 P-3CK，无冲突。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "country",
+      "claim": "韩国",
+      "supporting_sources": [
+        "N030",
+        "O043",
+        "R020"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N030': '韩国', 'O043': '韩国', 'R020': '韩国'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "韩国",
+        "supporting_sources": [
+          "N030",
+          "O043",
+          "R020"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源一致确认国籍为韩国。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "quantity",
+      "claim": "2架",
+      "supporting_sources": [
+        "O043",
+        "R020"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'O043': 2, 'R020': 2}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "2 架",
+        "supporting_sources": [
+          "O043",
+          "R020"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "舆论明确提及“两架”，雷达批号数据列示数量为 2；新闻未说明具体数量但不构成冲突，两源支持成立。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "location",
+      "claim": "莫桑比克海峡",
+      "supporting_sources": [
+        "N030",
+        "O043"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与舆论均明确表述为“莫桑比克海峡”，雷达坐标范围（南纬 17-18 度，东经 40-41 度）地理上位于莫桑比克海峡区域，三源位置信息一致。",
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "time",
+      "claim": "起点 17:51，终点 19:16",
+      "supporting_sources": [
+        "N030",
+        "R020"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "2025 年 5 月 1 日 17:51 - 19:16",
+        "supporting_sources": [
+          "N030",
+          "R020"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与雷达精确匹配起止时间；舆论仅提及日期，不冲突也不否定具体时刻，两源支持成立。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "components": {
+        "start_time": {
+          "value": "17:51",
+          "support": [
+            "N030",
+            "R020"
+          ],
+          "conflicts": [],
+          "status": "supported",
+          "source_values": {
+            "N030": "17:51",
+            "R020": "17:51"
+          }
+        },
+        "end_time": {
+          "value": "19:16",
+          "support": [
+            "N030",
+            "R020"
+          ],
+          "conflicts": [],
+          "status": "supported",
+          "source_values": {
+            "N030": "19:16",
+            "R020": "19:16"
+          }
+        }
+      },
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "mission",
+      "claim": "联合巡逻",
+      "supporting_sources": [
+        "N030",
+        "R020"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "原文明示任务：{'N030': ['联合巡逻'], 'O043': [], 'R020': ['联合巡逻']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "联合巡逻",
+        "supporting_sources": [
+          "N030",
+          "R020"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与雷达均明确标注“联合巡逻”；舆论描述为“持续活动/机动”，属于泛称，不与具体任务冲突，两源支持成立。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N030": [
+          "联合巡逻"
+        ],
+        "O043": [],
+        "R020": [
+          "联合巡逻"
+        ]
+      },
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "movement",
+      "claim": "活动",
+      "supporting_sources": [
+        "N030",
+        "O043"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N030",
+          "O043"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与舆论均描述为巡逻/活动状态，雷达未说明但无冲突，两源支持成立。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N030": "活动",
+        "O043": "活动",
+        "R020": "未说明"
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    }
+  ],
+  "radar_row_count": 12,
+  "direction": "其他",
+  "report_eligible": false,
+  "directory": "可信事件/N030_韩国P-3CK反潜巡逻机在莫桑比克海峡执行联合巡逻"
+}

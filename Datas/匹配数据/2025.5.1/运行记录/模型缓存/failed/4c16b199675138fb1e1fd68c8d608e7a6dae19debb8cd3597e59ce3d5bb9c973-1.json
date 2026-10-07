@@ -1,0 +1,21 @@
+{
+  "role": "extraction",
+  "error": "N022 数量必须明确引用数字和单位，不能推测: 莱蒙多·蒙特库科利号多用途巡逻舰",
+  "response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T15:52:29.7914453Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\n  \"items\": [\n    {\n      \"source_id\": \"N021\",\n      \"platforms\": [\n        {\n          \"name\": \"运 -8反潜巡逻机\",\n          \"country\": \"中国\",\n          \"quantity\": 2,\n          \"quote\": \"2架运 -8反潜巡逻机\",\n          \"quantity_quote\": \"2架运 -8反潜巡逻机\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"南海北部\",\n        \"quote\": \"在南海北部持续活动\"\n      },\n      \"mission\": {\n        \"value\": \"反潜巡逻\",\n        \"quote\": \"中国运 -8反潜巡逻机在南海北部持续开展活动\"\n      },\n      \"start_time\": null,\n      \"end_time\": null,\n      \"time_quote\": \"\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"在南海北部持续活动\"\n    },\n    {\n      \"source_id\": \"N022\",\n      \"platforms\": [\n        {\n          \"name\": \"莱蒙多·蒙特库科利号多用途巡逻舰\",\n          \"country\": \"意大利\",\n          \"quantity\": 1,\n          \"quote\": \"意大利莱蒙多·蒙特库科利号多用途巡逻舰\",\n          \"quantity_quote\": \"\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"礼乐滩海域\",\n        \"quote\": \"在礼乐滩海域执行任务\"\n      },\n      \"mission\": {\n        \"value\": \"反潜巡逻\",\n        \"quote\": \"围绕任务海域组织反潜巡逻\"\n      },\n      \"start_time\": \"14:06\",\n      \"end_time\": \"16:31\",\n      \"time_quote\": \"从14时06分至16时31分\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"围绕任务海域组织反潜巡逻\"\n    },\n    {\n      \"source_id\": \"N023\",\n      \"platforms\": [\n        {\n          \"name\": \"054A型导弹护卫舰\",\n          \"country\": \"中国\",\n          \"quantity\": 1,\n          \"quote\": \"中国海军054A型导弹护卫舰\",\n          \"quantity_quote\": \"\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"白令海\",\n        \"quote\": \"在白令海执行反潜巡逻任务\"\n      },\n      \"mission\": {\n        \"value\": \"反潜巡逻\",\n        \"quote\": \"在白令海执行反潜巡逻任务\"\n      },\n      \"start_time\": \"14:44\",\n      \"end_time\": \"16:09\",\n      \"time_quote\": \"2025年5月1日14时44分至16时09分\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"按计划保持机动并结合既定航线持续收集相关信息\"\n    },\n    {\n      \"source_id\": \"N024\",\n      \"platforms\": [\n        {\n          \"name\": \"RC-135V/W电子侦察机\",\n          \"country\": \"美国\",\n          \"quantity\": 1,\n          \"quote\": \"美国空军RC-135V/W电子侦察机\",\n          \"quantity_quote\": \"\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"东海\",\n        \"quote\": \"由外围航线进入东海执行电子侦察任务\"\n      },\n      \"mission\": {\n        \"value\": \"电子侦察\",\n        \"quote\": \"由外围航线进入东海执行电子侦察任务\"\n      },\n      \"start_time\": \"08:14\",\n      \"end_time\": \"10:39\",\n      \"time_quote\": \"2025年5月1日8时14分至10时39分\",\n      \"movement\": \"进入\",\n      \"movement_quote\": \"由外围航线进入东海\"\n    }\n  ]\n}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 16879073900,
+    "load_duration": 10120300,
+    "prompt_eval_count": 1896,
+    "prompt_eval_cached_count": 909,
+    "prompt_eval_duration": 414096000,
+    "eval_count": 933,
+    "eval_duration": 16323396000
+  }
+}

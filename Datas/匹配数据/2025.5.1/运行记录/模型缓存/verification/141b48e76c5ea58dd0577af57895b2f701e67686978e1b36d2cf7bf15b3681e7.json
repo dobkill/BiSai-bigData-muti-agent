@@ -1,0 +1,289 @@
+{
+  "role": "verification",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N032",
+      "kind": "news",
+      "title": "中国054A型导弹护卫舰在夏威夷附近海空域执行联合巡航行动",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：中国054A型导弹护卫舰在夏威夷附近海空域执行联合巡航行动\n正文：2025年5月1日17时09分至18时39分，中国054A型导弹护卫舰在夏威夷附近海空域围绕任务海域组织联合巡航，按计划保持机动并持续执行联合巡航，期间围绕共同任务保持协同行动并完成平台间的联络和行动衔接。\n\n主题词：中国  054A型导弹护卫舰  联合巡航  夏威夷附近海空域\n",
+      "platforms": [
+        {
+          "name": "054A型导弹护卫舰",
+          "country": "中国",
+          "quantity": null,
+          "quote": "中国054A型导弹护卫舰",
+          "quantity_quote": "",
+          "country_raw": "中国"
+        }
+      ],
+      "location": {
+        "raw": "夏威夷附近海空域",
+        "region": "夏威夷附近",
+        "direction": "其他",
+        "precision": "原文区域",
+        "mapping": "PDF未列入三大核心海域的区域归其他",
+        "transit": false,
+        "quote": "在夏威夷附近海空域围绕任务海域组织联合巡航"
+      },
+      "mission": {
+        "value": "联合巡航",
+        "quote": "执行联合巡航行动"
+      },
+      "start_time": "17:09",
+      "end_time": "18:39",
+      "movement": "活动"
+    },
+    "opinion": {
+      "id": "O007",
+      "kind": "opinion",
+      "title": "中国海军054A型护卫舰在孟加拉湾执行联合巡航任务",
+      "text": "时间：2025.5.1\n\n标题：中国海军054A型护卫舰在孟加拉湾执行联合巡航任务\n\n正文：据社交媒体军事观察账号报道，2025年5月1日17时09分至18时39分，中国海军一艘054A型导弹护卫舰在孟加拉湾海域按计划组织联合巡航。相关行动围绕任务海域保持协同机动，并持续执行联合巡航。这一动向被视为中国海军在远海常态化部署中协同组织与联络配合能力的体现。有分析认为，此类行动有助于进一步熟悉相关海域的流程衔接。\n",
+      "platforms": [
+        {
+          "name": "054A型导弹护卫舰",
+          "country": "中国",
+          "quantity": 1,
+          "quote": "一艘054A型导弹护卫舰",
+          "quantity_quote": "一艘054A型导弹护卫舰",
+          "country_raw": "中国"
+        }
+      ],
+      "location": {
+        "raw": "孟加拉湾海域",
+        "region": "孟加拉湾",
+        "direction": "其他",
+        "precision": "原文区域",
+        "mapping": "PDF未列入三大核心海域的区域归其他",
+        "transit": false,
+        "quote": "在孟加拉湾海域"
+      },
+      "mission": {
+        "value": "联合巡航",
+        "quote": "执行联合巡航任务"
+      },
+      "start_time": "17:09",
+      "end_time": "18:39",
+      "movement": "活动"
+    },
+    "radars": [
+      {
+        "id": "R030",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "054A型导弹护卫舰",
+            "country": "中国",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-319E08EF64FB9D",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "夏威夷附近海空域",
+          "region": "夏威夷附近",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "夏威夷附近海空域",
+            "region": "夏威夷附近",
+            "direction": "其他",
+            "precision": "原文区域",
+            "mapping": "PDF未列入三大核心海域的区域归其他",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "联合巡航",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "联合巡航"
+        ],
+        "start_time": "2025.05.01 17:09:00",
+        "end_time": "2025.05.01 18:39:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-319E08EF64FB9D",
+        "sibling_ids": [],
+        "hull_values": [
+          "TYPE-054A"
+        ],
+        "country_values": [
+          "中国"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 10
+      }
+    ],
+    "association": {
+      "opinion_edges": [
+        {
+          "candidate_id": "O007",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.85,
+          "reason": "时间（17:09-18:39）、平台型号（054A）、任务（联合巡航）完全一致。地点冲突（新闻称夏威夷，舆论称孟加拉湾）在赛题数据允许误差范围内，且雷达数据R030证实了夏威夷位置，故判定为同一活动但地点记录存在偏差。"
+        },
+        {
+          "candidate_id": "O006",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.95,
+          "reason": "地点（白令海 vs 夏威夷）和任务（反潜巡逻 vs 联合巡航）均不同，时间虽有重叠但具体时段不重合，属于不同活动。"
+        },
+        {
+          "candidate_id": "O025",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.98,
+          "reason": "平台国籍（俄罗斯 vs 中国）、型号（轰炸机 vs 护卫舰）及任务完全不同，无关联可能。"
+        }
+      ],
+      "radar_edges": [
+        {
+          "candidate_id": "R030",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 1.0,
+          "reason": "平台、时间、地点、任务与新闻完全匹配，确认为同一活动记录。"
+        },
+        {
+          "candidate_id": "R029",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.95,
+          "reason": "地点（白令海）和任务（反潜巡逻）不同，时间不重叠，属于不同活动。"
+        },
+        {
+          "candidate_id": "R042",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.98,
+          "reason": "平台型号（056A vs 054A）和地点（东海中部 vs 夏威夷）均不同，属于不同活动。"
+        }
+      ],
+      "ambiguity": "舆论O007的地点描述与新闻及雷达数据存在明显冲突，但基于时间、任务及雷达数据的强一致性，判定为同一活动下的地点记录误差。"
+    },
+    "same_batch_other_candidates": []
+  },
+  "result": {
+    "same_event": true,
+    "platforms": [
+      {
+        "platform_index": 0,
+        "platform": {
+          "claim": "054A 型导弹护卫舰",
+          "supporting_sources": [
+            "N032",
+            "O007",
+            "R030"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源均确认为 054A 型"
+        },
+        "country": {
+          "claim": "中国",
+          "supporting_sources": [
+            "N032",
+            "O007",
+            "R030"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源均确认为中国"
+        },
+        "quantity": {
+          "claim": "1 艘",
+          "supporting_sources": [
+            "O007",
+            "R030"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论明确提及“一艘”，雷达批号显示数量值为 1；新闻未说明具体数量但不构成冲突"
+        }
+      }
+    ],
+    "location": {
+      "claim": "夏威夷附近海空域",
+      "supporting_sources": [
+        "N032",
+        "R030"
+      ],
+      "conflicting_sources": [
+        "O007"
+      ],
+      "status": "supported",
+      "reason": "新闻与雷达均明确指向“夏威夷附近”，舆论称“孟加拉湾”存在明显地点冲突，但鉴于时间、任务及雷达数据的高度一致性，判定为同一事件下的地点记录偏差或误差，不否定主要事实"
+    },
+    "time": {
+      "claim": "2025 年 5 月 1 日 17:09-18:39",
+      "supporting_sources": [
+        "N032",
+        "O007",
+        "R030"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "三源时间完全一致"
+    },
+    "mission": {
+      "claim": "联合巡航",
+      "supporting_sources": [
+        "N032",
+        "O007",
+        "R030"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "三源任务描述一致"
+    },
+    "movement": {
+      "claim": "活动",
+      "supporting_sources": [
+        "N032",
+        "O007"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与舆论均描述为机动/巡航活动，雷达未说明但不构成冲突"
+    },
+    "unresolved_issues": [],
+    "explanation": "新闻、舆论、雷达三源在平台型号、国籍、时间、任务上完全一致。地点方面，新闻和雷达明确指向“夏威夷附近”，舆论指向“孟加拉湾”，存在明显冲突。但考虑到雷达数据（R030）与新闻（N032）在时空任务上的强匹配，且舆论仅作为补充视角，依据规则“不是二比一多数票”及“地点冲突需记录但未消解明确冲突前不否定主事实”，判定为同一事件，地点以高置信度的新闻和雷达为准，舆论地点视为记录偏差。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T16:46:53.1086694Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"same_event\": true, \"platforms\": [{\"platform_index\": 0, \"platform\": {\"claim\": \"054A 型导弹护卫舰\", \"supporting_sources\": [\"N032\", \"O007\", \"R030\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源均确认为 054A 型\"}, \"country\": {\"claim\": \"中国\", \"supporting_sources\": [\"N032\", \"O007\", \"R030\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源均确认为中国\"}, \"quantity\": {\"claim\": \"1 艘\", \"supporting_sources\": [\"O007\", \"R030\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"舆论明确提及“一艘”，雷达批号显示数量值为 1；新闻未说明具体数量但不构成冲突\"}}], \"location\": {\"claim\": \"夏威夷附近海空域\", \"supporting_sources\": [\"N032\", \"R030\"], \"conflicting_sources\": [\"O007\"], \"status\": \"supported\", \"reason\": \"新闻与雷达均明确指向“夏威夷附近”，舆论称“孟加拉湾”存在明显地点冲突，但鉴于时间、任务及雷达数据的高度一致性，判定为同一事件下的地点记录偏差或误差，不否定主要事实\"}, \"time\": {\"claim\": \"2025 年 5 月 1 日 17:09-18:39\", \"supporting_sources\": [\"N032\", \"O007\", \"R030\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源时间完全一致\"}, \"mission\": {\"claim\": \"联合巡航\", \"supporting_sources\": [\"N032\", \"O007\", \"R030\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源任务描述一致\"}, \"movement\": {\"claim\": \"活动\", \"supporting_sources\": [\"N032\", \"O007\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻与舆论均描述为机动/巡航活动，雷达未说明但不构成冲突\"}, \"unresolved_issues\": [],\"explanation\": \"新闻、舆论、雷达三源在平台型号、国籍、时间、任务上完全一致。地点方面，新闻和雷达明确指向“夏威夷附近”，舆论指向“孟加拉湾”，存在明显冲突。但考虑到雷达数据（R030）与新闻（N032）在时空任务上的强匹配，且舆论仅作为补充视角，依据规则“不是二比一多数票”及“地点冲突需记录但未消解明确冲突前不否定主事实”，判定为同一事件，地点以高置信度的新闻和雷达为准，舆论地点视为记录偏差。\"}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 13049699800,
+    "load_duration": 7742200,
+    "prompt_eval_count": 2131,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 829705000,
+    "eval_count": 638,
+    "eval_duration": 12032301000
+  }
+}

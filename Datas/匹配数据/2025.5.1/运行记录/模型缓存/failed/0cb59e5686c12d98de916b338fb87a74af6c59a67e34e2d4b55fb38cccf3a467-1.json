@@ -1,0 +1,21 @@
+{
+  "role": "extraction",
+  "error": "N026 字段value须来自quote原文: 舰载机起降训练",
+  "response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T15:58:13.4097511Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\n  \"items\": [\n    {\n      \"source_id\": \"N025\",\n      \"platforms\": [\n        {\n          \"name\": \"E-7A“楔尾”预警与控制机\",\n          \"country\": \"澳大利亚\",\n          \"quantity\": null,\n          \"quote\": \"澳大利亚空军E-7A“楔尾”预警与控制机\",\n          \"quantity_quote\": \"\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"渚碧礁附近海域\",\n        \"quote\": \"在渚碧礁附近海域\"\n      },\n      \"mission\": {\n        \"value\": \"预警指挥任务\",\n        \"quote\": \"执行预警指挥任务\"\n      },\n      \"start_time\": \"21:31\",\n      \"end_time\": \"22:12\",\n      \"time_quote\": \"2025年5月1日21时31分至22时12分\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"在渚碧礁附近海域持续活动\"\n    },\n    {\n      \"source_id\": \"N026\",\n      \"platforms\": [\n        {\n          \"name\": \"歼-15T舰载战斗机\",\n          \"country\": \"意大利\",\n          \"quantity\": null,\n          \"quote\": \"意大利歼-15T舰载战斗机\",\n          \"quantity_quote\": \"\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"济州岛西部海域\",\n        \"quote\": \"在济州岛西部海域\"\n      },\n      \"mission\": {\n        \"value\": \"舰载机起降训练\",\n        \"quote\": \"开展起降训练\"\n      },\n      \"start_time\": \"11:15\",\n      \"end_time\": \"13:40\",\n      \"time_quote\": \"2025年5月1日11时15分至13时40分\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"在济州岛西部海域围绕任务海域组织舰载机起降训练\"\n    },\n    {\n      \"source_id\": \"N027\",\n      \"platforms\": [\n        {\n          \"name\": \"大邱级导弹护卫舰\",\n          \"country\": \"韩国\",\n          \"quantity\": null,\n          \"quote\": \"韩国海军大邱级导弹护卫舰\",\n          \"quantity_quote\": \"\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"巴伦支海\",\n        \"quote\": \"在巴伦支海\"\n      },\n      \"mission\": {\n        \"value\": \"自由航行任务\",\n        \"quote\": \"执行自由航行任务\"\n      },\n      \"start_time\": null,\n      \"end_time\": null,\n      \"time_quote\": \"\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"在巴伦支海执行自由航行行动\"\n    },\n    {\n      \"source_id\": \"N028\",\n      \"platforms\": [\n        {\n          \"name\": \"莱库号导弹护卫舰\",\n          \"country\": \"马来西亚\",\n          \"quantity\": null,\n          \"quote\": \"马来西亚海军莱库号导弹护卫舰\",\n          \"quantity_quote\": \"\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"温州外海\",\n        \"quote\": \"在温州外海\"\n      },\n      \"mission\": {\n        \"value\": \"海上护航\",\n        \"quote\": \"执行海上护航\"\n      },\n      \"start_time\": \"14:54\",\n      \"end_time\": \"16:47\",\n      \"time_quote\": \"于14时54分至16时47分\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"在温州外海活动\"\n    }\n  ]\n}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 16375248800,
+    "load_duration": 15995200,
+    "prompt_eval_count": 1876,
+    "prompt_eval_cached_count": 930,
+    "prompt_eval_duration": 414403000,
+    "eval_count": 901,
+    "eval_duration": 15923434000
+  }
+}

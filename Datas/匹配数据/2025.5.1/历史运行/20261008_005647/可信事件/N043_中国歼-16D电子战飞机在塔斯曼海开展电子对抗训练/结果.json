@@ -1,0 +1,487 @@
+{
+  "id": "N043",
+  "news_id": "N043",
+  "opinion_id": "O001",
+  "radar_ids": [
+    "R023"
+  ],
+  "radar_slots": {
+    "0": "R023"
+  },
+  "alignment": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O001",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.98,
+        "reason": "平台（歼-16D）、地点（塔斯曼海）、任务（电子对抗训练）及时间（2025.5.1 凌晨时段）完全一致。新闻中提到的具体起止时间（02:05-04:30）与候选 O001 描述的宏观时间段吻合，且均提及‘平台间行动衔接’，属于同一事件的不同报道视角。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R023",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.95,
+        "reason": "平台（歼-16D）、任务（电子对抗训练）及精确时间（02:05-04:30）与新闻完全匹配。虽然雷达数据地点字段缺失，但其坐标范围（南纬 37-38 度，东经 160 度）地理上位于塔斯曼海，且批号唯一对应此次行动，可确认为同一活动。"
+      }
+    ],
+    "ambiguity": "无。新闻与候选 O001、R023 在核心要素（平台型号、任务性质、精确时间窗口）上高度一致，地点信息通过文本直接匹配或坐标地理映射确认，不存在歧义。"
+  },
+  "candidates": {
+    "opinion": [
+      {
+        "id": "O001",
+        "score": 4.97097,
+        "cosine": 0.97097,
+        "platform_similarity": 1.0,
+        "time_overlap": null,
+        "location_relation": "same"
+      },
+      {
+        "id": "O016",
+        "score": 2.10856,
+        "cosine": 0.70856,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O023",
+        "score": 1.96839,
+        "cosine": 0.76839,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O021",
+        "score": 1.01965,
+        "cosine": 0.81965,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O031",
+        "score": 1.00098,
+        "cosine": 0.80098,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O037",
+        "score": 0.97994,
+        "cosine": 0.77994,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O004",
+        "score": 0.77467,
+        "cosine": 0.77467,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_named_regions"
+      }
+    ],
+    "radar": [
+      {
+        "id": "R023",
+        "score": 5.33557,
+        "cosine": 0.93557,
+        "platform_similarity": 1.0,
+        "time_overlap": 1.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R034",
+        "score": 2.13726,
+        "cosine": 0.73726,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "R044",
+        "score": 2.06889,
+        "cosine": 0.66889,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "R021",
+        "score": 1.02474,
+        "cosine": 0.82474,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R002",
+        "score": 1.00797,
+        "cosine": 0.80797,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R001",
+        "score": 1.00165,
+        "cosine": 0.80165,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R017",
+        "score": 0.77043,
+        "cosine": 0.77043,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      }
+    ]
+  },
+  "verification": {
+    "same_event": true,
+    "facts": [
+      {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "歼-16D电子战飞机",
+        "supporting_sources": [
+          "N043",
+          "O001",
+          "R023"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N043': '歼-16D电子战飞机', 'O001': '歼-16D电子战机', 'R023': '歼-16D电子战飞机'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "歼-16D 电子战飞机",
+          "supporting_sources": [
+            "N043",
+            "O001",
+            "R023"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源均明确提及该机型"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "中国",
+        "supporting_sources": [
+          "N043",
+          "O001",
+          "R023"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N043': '中国', 'O001': '中国', 'R023': '中国'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "中国",
+          "supporting_sources": [
+            "N043",
+            "O001",
+            "R023"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源均明确标注国籍为中国"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "2架",
+        "supporting_sources": [
+          "O001",
+          "R023"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'O001': 2, 'R023': 2}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "2 架",
+          "supporting_sources": [
+            "O001",
+            "R023"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论与雷达均明确为 2 架，新闻虽未明示数量但无冲突"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "塔斯曼海",
+        "supporting_sources": [
+          "N043",
+          "O001"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与舆论均显式提及塔斯曼海，雷达坐标地理映射至该区域",
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "2025 年 5 月 1 日 02:05-04:30",
+        "supporting_sources": [
+          "N043",
+          "R023"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与雷达精确时间完全一致，舆论仅提及日期",
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "电子对抗训练",
+        "supporting_sources": [
+          "N043",
+          "O001",
+          "R023"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源均明确任务性质",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N043",
+          "O001"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与舆论均描述为训练活动，雷达未说明但不构成冲突",
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      }
+    ],
+    "unresolved_issues": [],
+    "explanation": "三源在平台、国籍、任务、时间及地点上高度一致。数量由舆论和雷达共同支持（2 架），新闻虽缺数量字段但无冲突，满足可信标准。"
+  },
+  "reasons": [],
+  "status": "可信事件",
+  "verified_facts": [
+    {
+      "platform_index": 0,
+      "field": "platform",
+      "claim": "歼-16D电子战飞机",
+      "supporting_sources": [
+        "N043",
+        "O001",
+        "R023"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N043': '歼-16D电子战飞机', 'O001': '歼-16D电子战机', 'R023': '歼-16D电子战飞机'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "歼-16D 电子战飞机",
+        "supporting_sources": [
+          "N043",
+          "O001",
+          "R023"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源均明确提及该机型"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "country",
+      "claim": "中国",
+      "supporting_sources": [
+        "N043",
+        "O001",
+        "R023"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N043': '中国', 'O001': '中国', 'R023': '中国'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "中国",
+        "supporting_sources": [
+          "N043",
+          "O001",
+          "R023"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源均明确标注国籍为中国"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "quantity",
+      "claim": "2架",
+      "supporting_sources": [
+        "O001",
+        "R023"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'O001': 2, 'R023': 2}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "2 架",
+        "supporting_sources": [
+          "O001",
+          "R023"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "舆论与雷达均明确为 2 架，新闻虽未明示数量但无冲突"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "location",
+      "claim": "塔斯曼海",
+      "supporting_sources": [
+        "N043",
+        "O001"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与舆论均显式提及塔斯曼海，雷达坐标地理映射至该区域",
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "time",
+      "claim": "2025 年 5 月 1 日 02:05-04:30",
+      "supporting_sources": [
+        "N043",
+        "R023"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与雷达精确时间完全一致，舆论仅提及日期",
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "mission",
+      "claim": "电子对抗训练",
+      "supporting_sources": [
+        "N043",
+        "O001",
+        "R023"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "三源均明确任务性质",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "movement",
+      "claim": "活动",
+      "supporting_sources": [
+        "N043",
+        "O001"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与舆论均描述为训练活动，雷达未说明但不构成冲突",
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    }
+  ],
+  "radar_row_count": 12,
+  "direction": "其他",
+  "report_eligible": false,
+  "directory": "可信事件/N043_中国歼-16D电子战飞机在塔斯曼海开展电子对抗训练"
+}

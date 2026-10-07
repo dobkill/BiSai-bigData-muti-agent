@@ -1,0 +1,149 @@
+{
+  "role": "extraction",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "materials": [
+      {
+        "source_id": "N033",
+        "kind": "news",
+        "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：菲律宾海军米格尔·马尔瓦尔号护卫舰在上海外海活动\n正文：2025年5月1日，菲律宾海军1艘米格尔·马尔瓦尔号导弹护卫舰在上海外海持续活动，行动范围保持在指定任务海域并围绕任务区域保持机动。\n\n主题词：菲律宾  米格尔·马尔瓦尔号  上海外海\n"
+      },
+      {
+        "source_id": "N034",
+        "kind": "news",
+        "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：日本海上自卫队村雨号护卫舰由外围航线进入东海活动\n正文：2025年5月1日，日本村雨号导弹护卫舰由外围航线进入东海任务海域，随后围绕任务区域保持机动，行动范围保持在指定任务海域。\n\n主题词：日本  村雨号导弹护卫舰  东海\n"
+      },
+      {
+        "source_id": "N035",
+        "kind": "news",
+        "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：美国海军阿利·伯克级驱逐舰在渚碧礁附近海域执行战备巡逻\n正文：2025年5月1日11时10分至13时35分，美国海军阿利·伯克级导弹驱逐舰在渚碧礁附近海域围绕任务海域组织战备巡逻，沿既定方向保持机动并维持警戒。\n\n主题词：美国海军  阿利·伯克级导弹驱逐舰  战备巡逻  渚碧礁附近海域\n"
+      },
+      {
+        "source_id": "N036",
+        "kind": "news",
+        "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：中国071型船坞登陆舰在安达曼海执行联合巡航任务行动\n正文：2025年5月1日，中国071型船坞登陆舰在安达曼海围绕任务海域组织联合巡航，自11时26分起按计划保持机动并持续执行联合巡航至13时51分。\n\n主题词：中国  071型船坞登陆舰  安达曼海  联合巡航\n"
+      }
+    ]
+  },
+  "result": {
+    "items": [
+      {
+        "source_id": "N033",
+        "platforms": [
+          {
+            "name": "米格尔·马尔瓦尔号",
+            "country": "菲律宾",
+            "quantity": 1,
+            "quote": "菲律宾海军 1 艘米格尔·马尔瓦尔号导弹护卫舰",
+            "quantity_quote": "1艘米格尔·马尔瓦尔号"
+          }
+        ],
+        "location": {
+          "value": "上海外海",
+          "quote": "上海外海"
+        },
+        "mission": {
+          "value": "持续活动",
+          "quote": "持续活动"
+        },
+        "start_time": null,
+        "end_time": null,
+        "time_quote": "",
+        "movement": "活动",
+        "movement_quote": "在上海外海持续活动"
+      },
+      {
+        "source_id": "N034",
+        "platforms": [
+          {
+            "name": "村雨号",
+            "country": "日本",
+            "quantity": null,
+            "quote": "日本村雨号导弹护卫舰",
+            "quantity_quote": ""
+          }
+        ],
+        "location": {
+          "value": "东海任务海域",
+          "quote": "进入东海任务海域"
+        },
+        "mission": {
+          "value": "围绕任务区域保持机动",
+          "quote": "随后围绕任务区域保持机动"
+        },
+        "start_time": null,
+        "end_time": null,
+        "time_quote": "",
+        "movement": "进入",
+        "movement_quote": "由外围航线进入东海任务海域"
+      },
+      {
+        "source_id": "N035",
+        "platforms": [
+          {
+            "name": "阿利·伯克级",
+            "country": "美国",
+            "quantity": null,
+            "quote": "美国海军阿利·伯克级导弹驱逐舰",
+            "quantity_quote": ""
+          }
+        ],
+        "location": {
+          "value": "渚碧礁附近海域",
+          "quote": "渚碧礁附近海域"
+        },
+        "mission": {
+          "value": "战备巡逻",
+          "quote": "执行战备巡逻"
+        },
+        "start_time": "11:10",
+        "end_time": "13:35",
+        "time_quote": "2025 年 5 月 1 日 11 时 10 分至 13 时 35 分",
+        "movement": "活动",
+        "movement_quote": "围绕任务海域组织战备巡逻"
+      },
+      {
+        "source_id": "N036",
+        "platforms": [
+          {
+            "name": "071 型",
+            "country": "中国",
+            "quantity": null,
+            "quote": "中国 071 型船坞登陆舰",
+            "quantity_quote": ""
+          }
+        ],
+        "location": {
+          "value": "安达曼海",
+          "quote": "在安达曼海"
+        },
+        "mission": {
+          "value": "联合巡航",
+          "quote": "执行联合巡航任务行动"
+        },
+        "start_time": "11:26",
+        "end_time": "13:51",
+        "time_quote": "11时26分起按计划保持机动并持续执行联合巡航至13时51分",
+        "movement": "活动",
+        "movement_quote": "保持机动并持续执行联合巡航"
+      }
+    ]
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T15:59:19.3565296Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\n  \"items\": [\n    {\n      \"source_id\": \"N033\",\n      \"platforms\": [\n        {\n          \"name\": \"米格尔·马尔瓦尔号\",\n          \"country\": \"菲律宾\",\n          \"quantity\": null,\n          \"quote\": \"菲律宾海军 1 艘米格尔·马尔瓦尔号导弹护卫舰\",\n          \"quantity_quote\": \"1 艘\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"上海外海\",\n        \"quote\": \"上海外海\"\n      },\n      \"mission\": {\n        \"value\": \"持续活动\",\n        \"quote\": \"持续活动\"\n      },\n      \"start_time\": null,\n      \"end_time\": null,\n      \"time_quote\": \"\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"在上海外海持续活动\"\n    },\n    {\n      \"source_id\": \"N034\",\n      \"platforms\": [\n        {\n          \"name\": \"村雨号\",\n          \"country\": \"日本\",\n          \"quantity\": null,\n          \"quote\": \"日本村雨号导弹护卫舰\",\n          \"quantity_quote\": \"\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"东海任务海域\",\n        \"quote\": \"进入东海任务海域\"\n      },\n      \"mission\": {\n        \"value\": \"围绕任务区域保持机动\",\n        \"quote\": \"随后围绕任务区域保持机动\"\n      },\n      \"start_time\": null,\n      \"end_time\": null,\n      \"time_quote\": \"\",\n      \"movement\": \"进入\",\n      \"movement_quote\": \"由外围航线进入东海任务海域\"\n    },\n    {\n      \"source_id\": \"N035\",\n      \"platforms\": [\n        {\n          \"name\": \"阿利·伯克级\",\n          \"country\": \"美国\",\n          \"quantity\": null,\n          \"quote\": \"美国海军阿利·伯克级导弹驱逐舰\",\n          \"quantity_quote\": \"\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"渚碧礁附近海域\",\n        \"quote\": \"渚碧礁附近海域\"\n      },\n      \"mission\": {\n        \"value\": \"战备巡逻\",\n        \"quote\": \"执行战备巡逻\"\n      },\n      \"start_time\": \"11:10\",\n      \"end_time\": \"13:35\",\n      \"time_quote\": \"2025 年 5 月 1 日 11 时 10 分至 13 时 35 分\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"围绕任务海域组织战备巡逻\"\n    },\n    {\n      \"source_id\": \"N036\",\n      \"platforms\": [\n        {\n          \"name\": \"071 型\",\n          \"country\": \"中国\",\n          \"quantity\": null,\n          \"quote\": \"中国 071 型船坞登陆舰\",\n          \"quantity_quote\": \"\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"安达曼海\",\n        \"quote\": \"在安达曼海\"\n      },\n      \"mission\": {\n        \"value\": \"联合巡航\",\n        \"quote\": \"执行联合巡航任务行动\"\n      },\n      \"start_time\": \"11:26\",\n      \"end_time\": \"13:51\",\n      \"time_quote\": \"自 11 时 26 分起...至 13 时 51 分\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"保持机动并持续执行联合巡航\"\n    }\n  ]\n}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 15691650400,
+    "load_duration": 15041200,
+    "prompt_eval_count": 1790,
+    "prompt_eval_cached_count": 881,
+    "prompt_eval_duration": 418090000,
+    "eval_count": 868,
+    "eval_duration": 15234251000
+  }
+}

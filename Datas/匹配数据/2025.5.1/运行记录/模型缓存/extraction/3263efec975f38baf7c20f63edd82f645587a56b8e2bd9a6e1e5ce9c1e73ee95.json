@@ -1,0 +1,149 @@
+{
+  "role": "extraction",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "materials": [
+      {
+        "source_id": "N001",
+        "kind": "news",
+        "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：韩国AW-159反潜直升机在阿拉伯海执行反潜巡逻任务\n正文：2025年5月1日，韩国AW-159反潜直升机在阿拉伯海展开行动，从11时37分至13时02分围绕任务海域组织反潜巡逻，按计划保持机动并持续执行反潜巡逻。\n\n主题词：韩国  AW-159  反潜直升机  阿拉伯海\n"
+      },
+      {
+        "source_id": "N002",
+        "kind": "news",
+        "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：中国轰-6K轰炸机在上海外海组织对海突击训练\n正文：2025年5月1日11时21分至13时46分，中国轰-6K轰炸机在上海外海围绕任务海域组织对海突击训练，按计划保持机动并持续执行对海突击训练。\n\n主题词：中国  轰-6K轰炸机  上海外海  对海突击训练\n"
+      },
+      {
+        "source_id": "N003",
+        "kind": "news",
+        "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：中国903A型综合补给舰在冲绳海槽持续活动\n正文：2025年5月1日，中国1艘903A型综合补给舰在冲绳海槽持续活动，围绕任务区域保持机动，行动范围保持在指定任务海域。\n\n主题词：中国  903A型综合补给舰  冲绳海槽\n"
+      },
+      {
+        "source_id": "N004",
+        "kind": "news",
+        "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：中国歼-35舰载隐身战斗机在温州外海执行战备警巡行动\n正文：2025年5月1日17时35分至19时00分，中国歼-35舰载隐身战斗机在温州外海活动，围绕任务海域组织战备警巡，按计划保持机动并持续执行战备警巡。\n\n主题词：中国  歼-35舰载隐身战斗机  温州外海  战备警巡\n"
+      }
+    ]
+  },
+  "result": {
+    "items": [
+      {
+        "source_id": "N001",
+        "platforms": [
+          {
+            "name": "AW-159 反潜直升机",
+            "country": "韩国",
+            "quantity": null,
+            "quote": "AW-159反潜直升机",
+            "quantity_quote": ""
+          }
+        ],
+        "location": {
+          "value": "阿拉伯海",
+          "quote": "在阿拉伯海展开行动"
+        },
+        "mission": {
+          "value": "反潜巡逻",
+          "quote": "执行反潜巡逻任务"
+        },
+        "start_time": "11:37",
+        "end_time": "13:02",
+        "time_quote": "从 11 时 37 分至 13 时 02 分",
+        "movement": "活动",
+        "movement_quote": "展开行动"
+      },
+      {
+        "source_id": "N002",
+        "platforms": [
+          {
+            "name": "轰 -6K 轰炸机",
+            "country": "中国",
+            "quantity": null,
+            "quote": "轰-6K轰炸机",
+            "quantity_quote": ""
+          }
+        ],
+        "location": {
+          "value": "上海外海",
+          "quote": "在上海外海"
+        },
+        "mission": {
+          "value": "对海突击训练",
+          "quote": "组织对海突击训练"
+        },
+        "start_time": "11:21",
+        "end_time": "13:46",
+        "time_quote": "11 时 21 分至 13 时 46 分",
+        "movement": "活动",
+        "movement_quote": "组织对海突击训练"
+      },
+      {
+        "source_id": "N003",
+        "platforms": [
+          {
+            "name": "903A 型综合补给舰",
+            "country": "中国",
+            "quantity": 1,
+            "quote": "903A型综合补给舰",
+            "quantity_quote": "1艘903A型综合补给舰"
+          }
+        ],
+        "location": {
+          "value": "冲绳海槽",
+          "quote": "在冲绳海槽持续活动"
+        },
+        "mission": {
+          "value": null,
+          "quote": ""
+        },
+        "start_time": null,
+        "end_time": null,
+        "time_quote": "",
+        "movement": "活动",
+        "movement_quote": "持续活动"
+      },
+      {
+        "source_id": "N004",
+        "platforms": [
+          {
+            "name": "歼 -35 舰载隐身战斗机",
+            "country": "中国",
+            "quantity": null,
+            "quote": "歼-35舰载隐身战斗机",
+            "quantity_quote": ""
+          }
+        ],
+        "location": {
+          "value": "温州外海",
+          "quote": "在温州外海活动"
+        },
+        "mission": {
+          "value": "战备警巡",
+          "quote": "执行战备警巡行动"
+        },
+        "start_time": "17:35",
+        "end_time": "19:00",
+        "time_quote": "17 时 35 分至 19 时 00 分",
+        "movement": "活动",
+        "movement_quote": "活动"
+      }
+    ]
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T15:50:30.7539484Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\n  \"items\": [\n    {\n      \"source_id\": \"N001\",\n      \"platforms\": [\n        {\n          \"name\": \"AW-159 反潜直升机\",\n          \"country\": \"韩国\",\n          \"quantity\": null,\n          \"quote\": \"\",\n          \"quantity_quote\": \"\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"阿拉伯海\",\n        \"quote\": \"在阿拉伯海展开行动\"\n      },\n      \"mission\": {\n        \"value\": \"反潜巡逻\",\n        \"quote\": \"执行反潜巡逻任务\"\n      },\n      \"start_time\": \"11:37\",\n      \"end_time\": \"13:02\",\n      \"time_quote\": \"从 11 时 37 分至 13 时 02 分\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"展开行动\"\n    },\n    {\n      \"source_id\": \"N002\",\n      \"platforms\": [\n        {\n          \"name\": \"轰 -6K 轰炸机\",\n          \"country\": \"中国\",\n          \"quantity\": null,\n          \"quote\": \"\",\n          \"quantity_quote\": \"\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"上海外海\",\n        \"quote\": \"在上海外海\"\n      },\n      \"mission\": {\n        \"value\": \"对海突击训练\",\n        \"quote\": \"组织对海突击训练\"\n      },\n      \"start_time\": \"11:21\",\n      \"end_time\": \"13:46\",\n      \"time_quote\": \"11 时 21 分至 13 时 46 分\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"组织对海突击训练\"\n    },\n    {\n      \"source_id\": \"N003\",\n      \"platforms\": [\n        {\n          \"name\": \"903A 型综合补给舰\",\n          \"country\": \"中国\",\n          \"quantity\": null,\n          \"quote\": \"\",\n          \"quantity_quote\": \"\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"冲绳海槽\",\n        \"quote\": \"在冲绳海槽持续活动\"\n      },\n      \"mission\": {\n        \"value\": null,\n        \"quote\": \"\"\n      },\n      \"start_time\": null,\n      \"end_time\": null,\n      \"time_quote\": \"\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"持续活动\"\n    },\n    {\n      \"source_id\": \"N004\",\n      \"platforms\": [\n        {\n          \"name\": \"歼 -35 舰载隐身战斗机\",\n          \"country\": \"中国\",\n          \"quantity\": null,\n          \"quote\": \"\",\n          \"quantity_quote\": \"\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"温州外海\",\n        \"quote\": \"在温州外海活动\"\n      },\n      \"mission\": {\n        \"value\": \"战备警巡\",\n        \"quote\": \"执行战备警巡行动\"\n      },\n      \"start_time\": \"17:35\",\n      \"end_time\": \"19:00\",\n      \"time_quote\": \"17 时 35 分至 19 时 00 分\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"活动\"\n    }\n  ]\n}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 15561539200,
+    "load_duration": 14402000,
+    "prompt_eval_count": 913,
+    "prompt_eval_cached_count": 909,
+    "prompt_eval_duration": 167917000,
+    "eval_count": 830,
+    "eval_duration": 15079869000
+  }
+}

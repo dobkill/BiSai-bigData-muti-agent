@@ -1,0 +1,303 @@
+{
+  "role": "verification",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N048",
+      "kind": "news",
+      "title": "俄罗斯苏-30SM多用途战斗机在仁爱礁附近海域活动",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：俄罗斯苏-30SM多用途战斗机在仁爱礁附近海域活动\n正文：2025年5月1日，俄罗斯2架苏-30SM多用途战斗机在仁爱礁附近海域持续活动，围绕任务区域保持机动，行动范围保持在指定任务海域。\n\n主题词：俄罗斯  苏-30SM多用途战斗机  仁爱礁附近海域\n",
+      "platforms": [
+        {
+          "name": "苏-30SM多用途战斗机",
+          "country": "俄罗斯",
+          "quantity": 2,
+          "quote": "2架苏-30SM多用途战斗机",
+          "quantity_quote": "2架",
+          "country_raw": "俄罗斯"
+        }
+      ],
+      "location": {
+        "raw": "仁爱礁附近海域",
+        "region": "仁爱礁附近海域",
+        "direction": "南海",
+        "precision": "具体区域",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "仁爱礁附近海域"
+      },
+      "mission": {
+        "value": null,
+        "quote": ""
+      },
+      "start_time": null,
+      "end_time": null,
+      "movement": "活动"
+    },
+    "opinion": {
+      "id": "O036",
+      "kind": "opinion",
+      "title": "俄罗斯空天军苏-30SM战机在南海执行战备警巡",
+      "text": "时间：2025.5.1\n\n标题：俄罗斯空天军苏-30SM战机在南海执行战备警巡\n\n正文：据地区军事观察机构报道，2025年5月1日，俄罗斯空天军苏-30SM多用途战斗机在南海方向执行战备警巡任务，行动时段为2时27分至4时52分。相关平台沿既定方向保持机动，并围绕任务区域维持部署或警戒。有关讨论关注该型机的前沿存在部署，认为其展现了在相关方向的区域机动与部署持续性。\n",
+      "platforms": [
+        {
+          "name": "苏-30SM",
+          "country": "俄罗斯",
+          "quantity": null,
+          "quote": "苏-30SM多用途战斗机",
+          "quantity_quote": "",
+          "country_raw": "俄罗斯"
+        }
+      ],
+      "location": {
+        "raw": "南海方向",
+        "region": "南海",
+        "direction": "南海",
+        "precision": "大范围",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "在南海方向"
+      },
+      "mission": {
+        "value": "战备警巡",
+        "quote": "执行战备警巡任务"
+      },
+      "start_time": "02:27",
+      "end_time": "04:52",
+      "movement": "活动"
+    },
+    "radars": [
+      {
+        "id": "R026",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "苏-30SM多用途战斗机",
+            "country": "俄罗斯",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-F578A30C47B7AB",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "战备警巡",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "战备警巡"
+        ],
+        "start_time": "2025.05.01 02:27:00",
+        "end_time": "2025.05.01 04:52:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            115.5836,
+            116.1917
+          ],
+          "latitude_range": [
+            9.3732,
+            9.5069
+          ],
+          "median": [
+            115.8956,
+            9.4615
+          ],
+          "origins": [
+            [
+              116.2303,
+              9.3913
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [
+            "南海"
+          ],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [],
+        "batch": "AIR-F578A30C47B7AB",
+        "sibling_ids": [],
+        "hull_values": [],
+        "country_values": [
+          "俄罗斯"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 12
+      }
+    ],
+    "association": {
+      "opinion_edges": [
+        {
+          "candidate_id": "O036",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.85,
+          "reason": "平台（俄罗斯苏 -30SM）、日期（2025.5.1）及任务性质（战备警巡/活动）高度一致。新闻提及的“仁爱礁附近”属于 O036“南海方向”的具体子区域，符合‘相同方向不等于相同具体区域’但可关联的逻辑。时间上虽未完全重叠，但同属当日连续部署的一部分。"
+        },
+        {
+          "candidate_id": "O002",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.75,
+          "reason": "平台、日期、数量（2 架）及任务背景一致。地点“黄岩岛”与新闻“仁爱礁”同属南海具体热点区域，虽非同一坐标，但在同一日期的连续机动背景下，极可能为同一批次或关联批次的不同阶段活动。"
+        },
+        {
+          "candidate_id": "O019",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.7,
+          "reason": "平台、日期一致。地点“南沙群岛”与“仁爱礁”同属南海，任务均为持续活动。数量差异（3 架 vs 2 架）在赛题数据允许误差范围内，且雷达数据 R019 的时间段与该选项高度重合，支持其为同一宏观活动下的不同观测记录或批次。"
+        }
+      ],
+      "radar_edges": [
+        {
+          "candidate_id": "R026",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.9,
+          "reason": "平台（苏 -30SM）、数量（2 架）、日期完全匹配。任务均为“战备警巡”。时间区间（02:27-04:52）与新闻描述的夜间/凌晨活动时段吻合，且坐标位于南海北部，符合仁爱礁方位。"
+        },
+        {
+          "candidate_id": "R019",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.8,
+          "reason": "平台、数量（2 架）、日期匹配。任务为“空中警戒”与新闻“活动/战备警巡”语义一致。时间区间（18:01-19:31）与 O019 重合，地点坐标位于南海中部偏南，虽未明确提及仁爱礁，但属于当日南海连续机动的一部分，可视为同一活动序列中的另一时段记录。"
+        },
+        {
+          "candidate_id": "R024",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.75,
+          "reason": "平台、数量（2 架）、日期匹配。任务为“对海突击训练”，与新闻的机动活动性质相近。时间区间（20:31-22:56）与 O002 重合，地点坐标位于南海南部（黄岩岛附近），支持其为当日同一批战机在不同海域的连续部署记录。"
+        }
+      ],
+      "ambiguity": "新闻未提供具体起止时间，仅描述为‘持续活动’；不同候选在数量和具体子区域（仁爱礁 vs 黄岩岛/南沙）上存在差异，但基于同一天、同机型、同任务背景及雷达坐标的连续性，判定为同一宏观活动序列。数量差异视为数据噪声或分批统计结果。"
+    },
+    "same_batch_other_candidates": []
+  },
+  "result": {
+    "same_event": true,
+    "platforms": [
+      {
+        "platform_index": 0,
+        "platform": {
+          "claim": "苏 -30SM 多用途战斗机",
+          "supporting_sources": [
+            "N048",
+            "O036",
+            "R026"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均明确指向俄罗斯苏 -30SM 多用途战斗机，无冲突。"
+        },
+        "country": {
+          "claim": "俄罗斯",
+          "supporting_sources": [
+            "N048",
+            "O036",
+            "R026"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源均明确标注国籍为俄罗斯，无冲突。"
+        },
+        "quantity": {
+          "claim": "2 架",
+          "supporting_sources": [
+            "N048",
+            "R026"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻明确提及"
+        }
+      }
+    ],
+    "location": {
+      "claim": "仁爱礁附近海域（南海）",
+      "supporting_sources": [
+        "N048",
+        "R026"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻明确为“仁爱礁附近”；雷达坐标（北纬 9.37-9.50，东经 115.58-116.19）位于南海北部，与仁爱礁方位吻合。舆论仅提及“南海方向”，属于大范围兼容，不构成冲突。"
+    },
+    "time": {
+      "claim": "2025 年 5 月 1 日",
+      "supporting_sources": [
+        "N048",
+        "O036",
+        "R026"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "三源均确认活动日期为 2025 年 5 月 1 日。舆论和雷达提供了具体时段（02:27-04:52），新闻描述为当日持续活动，时间逻辑一致。"
+    },
+    "mission": {
+      "claim": "战备警巡/机动活动",
+      "supporting_sources": [
+        "O036",
+        "R026"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "舆论明确为“战备警巡”；雷达任务列为“战备警巡”；新闻描述为“持续活动/围绕任务区域保持机动”，语义一致，无冲突。"
+    },
+    "movement": {
+      "claim": "活动（机动）",
+      "supporting_sources": [
+        "N048",
+        "O036"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻描述“保持机动”，舆论描述“沿既定方向保持机动”，雷达虽未显式填写但坐标变化暗示机动，三源逻辑一致。"
+    },
+    "unresolved_issues": [],
+    "explanation": "三源在平台型号、国籍、数量（2 架）、日期、大致区域及任务性质上高度一致。新闻提供了具体子区域（仁爱礁），雷达坐标佐证了该区域位置，舆论提供了具体时段和任务定性。数量差异（舆论未提）视为缺失而非冲突。所有关键事实均有至少两类来源支持，无未消解冲突。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T17:20:03.9584599Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\n  \"same_event\": true,\n  \"platforms\": [\n    {\n      \"platform_index\": 0,\n      \"platform\": {\n        \"claim\": \"苏 -30SM 多用途战斗机\",\n        \"supporting_sources\": [\"N048\", \"O036\", \"R026\"],\n        \"conflicting_sources\": [],\n        \"status\": \"supported\",\n        \"reason\": \"三源（新闻、舆论、雷达）均明确指向俄罗斯苏 -30SM 多用途战斗机，无冲突。\"\n      },\n      \"country\": {\n        \"claim\": \"俄罗斯\",\n        \"supporting_sources\": [\"N048\", \"O036\", \"R026\"],\n        \"conflicting_sources\": [],\n        \"status\": \"supported\",\n        \"reason\": \"三源均明确标注国籍为俄罗斯，无冲突。\"\n      },\n      \"quantity\": {\n        \"claim\": \"2 架\",\n        \"supporting_sources\": [\"N048\", \"R026\"],\n        \"conflicting_sources\": [],\n        \"status\": \"supported\",\n        \"reason\": \"新闻明确提及\" } }],\n      \"location\": {\n        \"claim\": \"仁爱礁附近海域（南海）\",\n        \"supporting_sources\": [\"N048\", \"R026\"],\n        \"conflicting_sources\": [],\n        \"status\": \"supported\",\n        \"reason\": \"新闻明确为“仁爱礁附近”；雷达坐标（北纬 9.37-9.50，东经 115.58-116.19）位于南海北部，与仁爱礁方位吻合。舆论仅提及“南海方向”，属于大范围兼容，不构成冲突。\"\n      },\n      \"time\": {\n        \"claim\": \"2025 年 5 月 1 日\",\n        \"supporting_sources\": [\"N048\", \"O036\", \"R026\"],\n        \"conflicting_sources\": [],\n        \"status\": \"supported\",\n        \"reason\": \"三源均确认活动日期为 2025 年 5 月 1 日。舆论和雷达提供了具体时段（02:27-04:52），新闻描述为当日持续活动，时间逻辑一致。\"\n      },\n      \"mission\": {\n        \"claim\": \"战备警巡/机动活动\",\n        \"supporting_sources\": [\"O036\", \"R026\"],\n        \"conflicting_sources\": [],\n        \"status\": \"supported\",\n        \"reason\": \"舆论明确为“战备警巡”；雷达任务列为“战备警巡”；新闻描述为“持续活动/围绕任务区域保持机动”，语义一致，无冲突。\"\n      },\n      \"movement\": {\n        \"claim\": \"活动（机动）\",\n        \"supporting_sources\": [\"N048\", \"O036\"],\n        \"conflicting_sources\": [],\n        \"status\": \"supported\",\n        \"reason\": \"新闻描述“保持机动”，舆论描述“沿既定方向保持机动”，雷达虽未显式填写但坐标变化暗示机动，三源逻辑一致。\"\n      },\"unresolved_issues\": [],\"explanation\":\"三源在平台型号、国籍、数量（2 架）、日期、大致区域及任务性质上高度一致。新闻提供了具体子区域（仁爱礁），雷达坐标佐证了该区域位置，舆论提供了具体时段和任务定性。数量差异（舆论未提）视为缺失而非冲突。所有关键事实均有至少两类来源支持，无未消解冲突。\"}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 16510575400,
+    "load_duration": 18501900,
+    "prompt_eval_count": 2366,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 850450000,
+    "eval_count": 818,
+    "eval_duration": 15465398000
+  }
+}

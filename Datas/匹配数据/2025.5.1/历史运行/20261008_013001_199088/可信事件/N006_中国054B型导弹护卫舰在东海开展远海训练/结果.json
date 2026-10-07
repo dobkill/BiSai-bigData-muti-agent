@@ -1,0 +1,695 @@
+{
+  "id": "N006",
+  "news_id": "N006",
+  "opinion_id": "O049",
+  "radar_ids": [
+    "R037"
+  ],
+  "radar_slots": {
+    "0": "R037"
+  },
+  "alignment": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O049",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.98,
+        "reason": "平台型号（054B）、国家（中国）、地点（东海）、任务（远海训练）及日期完全一致。新闻中具体的行动时间（20:20-22:45）与舆论 O049 描述的“按计划保持机动”在逻辑上兼容，属于同一事件的不同信息源描述。"
+      },
+      {
+        "candidate_id": "O015",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台型号不同（新闻为 054B，舆论为 903A 补给舰），任务性质不同（远海训练 vs 例行部署），时间区间无重叠，确认为不同活动。"
+      },
+      {
+        "candidate_id": "O029",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台国籍与型号均不同（美国驱逐舰 vs 中国护卫舰），任务不同（护航 vs 训练），时间区间无重叠，确认为不同活动。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R037",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 1.0,
+        "reason": "雷达数据 R037 与新闻 N006 在所有关键维度（平台型号、国家、地点、任务、起止时间）上完全精确匹配，确认为同一活动。"
+      },
+      {
+        "candidate_id": "R035",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "平台型号不同（美国驱逐舰 vs 中国护卫舰），地点不同（北黄海 vs 东海），任务不同，确认为不同活动。"
+      },
+      {
+        "candidate_id": "R042",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台型号不同（056A vs 054B），任务不同（反潜巡逻 vs 远海训练），时间区间无重叠，确认为不同活动。"
+      }
+    ],
+    "ambiguity": "无显著歧义，核心候选关联证据充分。"
+  },
+  "candidates": {
+    "opinion": [
+      {
+        "id": "O049",
+        "score": 4.98135,
+        "cosine": 0.98135,
+        "platform_similarity": 1.0,
+        "time_overlap": null,
+        "location_relation": "same"
+      },
+      {
+        "id": "O002",
+        "score": 1.80605,
+        "cosine": 0.69708,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.9241379310344827,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O015",
+        "score": 1.78784,
+        "cosine": 0.78784,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "same"
+      },
+      {
+        "id": "O029",
+        "score": 1.60999,
+        "cosine": 0.80999,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "same"
+      },
+      {
+        "id": "O006",
+        "score": 1.10056,
+        "cosine": 0.90056,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O007",
+        "score": 1.09063,
+        "cosine": 0.89063,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O020",
+        "score": 0.79716,
+        "cosine": 0.79716,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      }
+    ],
+    "radar": [
+      {
+        "id": "R037",
+        "score": 6.18085,
+        "cosine": 0.98085,
+        "platform_similarity": 1.0,
+        "time_overlap": 1.0,
+        "location_relation": "same"
+      },
+      {
+        "id": "R035",
+        "score": 1.99518,
+        "cosine": 0.79518,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "R040",
+        "score": 1.97621,
+        "cosine": 0.77621,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "R042",
+        "score": 1.51072,
+        "cosine": 0.83072,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "contains"
+      },
+      {
+        "id": "R054",
+        "score": 1.29147,
+        "cosine": 0.81147,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "contains"
+      },
+      {
+        "id": "R029",
+        "score": 1.08824,
+        "cosine": 0.88824,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "R030",
+        "score": 1.08048,
+        "cosine": 0.88048,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      }
+    ]
+  },
+  "verification": {
+    "same_event": true,
+    "facts": [
+      {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "054B型导弹护卫舰",
+        "supporting_sources": [
+          "N006",
+          "O049",
+          "R037"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N006': '054B型导弹护卫舰', 'O049': '054B型导弹护卫舰', 'R037': '054B型导弹护卫舰'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "054B 型导弹护卫舰",
+          "supporting_sources": [
+            "N006",
+            "O049",
+            "R037"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均明确指向 054B 型，完全一致。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "中国",
+        "supporting_sources": [
+          "N006",
+          "O049",
+          "R037"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N006': '中国', 'O049': '中国', 'R037': '中国'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "中国",
+          "supporting_sources": [
+            "N006",
+            "O049",
+            "R037"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均明确标注为中国，完全一致。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "1艘",
+        "supporting_sources": [
+          "O049",
+          "R037"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'O049': 1, 'R037': 1}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "1 艘",
+          "supporting_sources": [
+            "O049",
+            "R037"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论明确提及“一艘”，雷达批号显示数量值为 1；新闻未说明具体数量，但不构成冲突。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "东海",
+        "supporting_sources": [
+          "N006",
+          "O049",
+          "R037"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源均明确记载活动区域为“东海”，完全一致。",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "起点 20:20，终点 22:45",
+        "supporting_sources": [
+          "N006",
+          "R037"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "2025 年 5 月 1 日 20:20-22:45",
+          "supporting_sources": [
+            "N006",
+            "R037"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻与雷达均精确记录了起止时间（20:20-22:45）；舆论仅确认日期，未提供具体时刻，但不构成冲突。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "components": {
+          "start_time": {
+            "value": "20:20",
+            "support": [
+              "N006",
+              "R037"
+            ],
+            "conflicts": [],
+            "status": "supported",
+            "source_values": {
+              "N006": "20:20",
+              "R037": "20:20"
+            }
+          },
+          "end_time": {
+            "value": "22:45",
+            "support": [
+              "N006",
+              "R037"
+            ],
+            "conflicts": [],
+            "status": "supported",
+            "source_values": {
+              "N006": "22:45",
+              "R037": "22:45"
+            }
+          }
+        },
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "远海训练",
+        "supporting_sources": [
+          "N006",
+          "O049",
+          "R037"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "原文明示任务：{'N006': ['远海训练'], 'O049': ['远海训练'], 'R037': ['远海训练']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "远海训练",
+          "supporting_sources": [
+            "N006",
+            "O049",
+            "R037"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源均明确记载任务为“远海训练”，完全一致。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N006": [
+            "远海训练"
+          ],
+          "O049": [
+            "远海训练"
+          ],
+          "R037": [
+            "远海训练"
+          ]
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N006",
+          "O049"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动/机动",
+          "supporting_sources": [
+            "N006",
+            "O049"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻描述为“活动”并“保持机动”，舆论描述为“保持机动”，语义兼容且相互支持。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N006": "活动",
+          "O049": "活动",
+          "R037": "未说明"
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      }
+    ],
+    "unresolved_issues": [],
+    "explanation": "三源（新闻、舆论、雷达）在平台型号、国籍、地点、任务及时间区间上高度一致，形成稳固证据链。数量由舆论和雷达共同支持，具体时刻由新闻和雷达共同支持，无未消解冲突。"
+  },
+  "reasons": [],
+  "status": "可信事件",
+  "verified_facts": [
+    {
+      "platform_index": 0,
+      "field": "platform",
+      "claim": "054B型导弹护卫舰",
+      "supporting_sources": [
+        "N006",
+        "O049",
+        "R037"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N006': '054B型导弹护卫舰', 'O049': '054B型导弹护卫舰', 'R037': '054B型导弹护卫舰'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "054B 型导弹护卫舰",
+        "supporting_sources": [
+          "N006",
+          "O049",
+          "R037"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源（新闻、舆论、雷达）均明确指向 054B 型，完全一致。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "country",
+      "claim": "中国",
+      "supporting_sources": [
+        "N006",
+        "O049",
+        "R037"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N006': '中国', 'O049': '中国', 'R037': '中国'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "中国",
+        "supporting_sources": [
+          "N006",
+          "O049",
+          "R037"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源（新闻、舆论、雷达）均明确标注为中国，完全一致。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "quantity",
+      "claim": "1艘",
+      "supporting_sources": [
+        "O049",
+        "R037"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'O049': 1, 'R037': 1}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "1 艘",
+        "supporting_sources": [
+          "O049",
+          "R037"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "舆论明确提及“一艘”，雷达批号显示数量值为 1；新闻未说明具体数量，但不构成冲突。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "location",
+      "claim": "东海",
+      "supporting_sources": [
+        "N006",
+        "O049",
+        "R037"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "三源均明确记载活动区域为“东海”，完全一致。",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "time",
+      "claim": "起点 20:20，终点 22:45",
+      "supporting_sources": [
+        "N006",
+        "R037"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "2025 年 5 月 1 日 20:20-22:45",
+        "supporting_sources": [
+          "N006",
+          "R037"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与雷达均精确记录了起止时间（20:20-22:45）；舆论仅确认日期，未提供具体时刻，但不构成冲突。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "components": {
+        "start_time": {
+          "value": "20:20",
+          "support": [
+            "N006",
+            "R037"
+          ],
+          "conflicts": [],
+          "status": "supported",
+          "source_values": {
+            "N006": "20:20",
+            "R037": "20:20"
+          }
+        },
+        "end_time": {
+          "value": "22:45",
+          "support": [
+            "N006",
+            "R037"
+          ],
+          "conflicts": [],
+          "status": "supported",
+          "source_values": {
+            "N006": "22:45",
+            "R037": "22:45"
+          }
+        }
+      },
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "mission",
+      "claim": "远海训练",
+      "supporting_sources": [
+        "N006",
+        "O049",
+        "R037"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "原文明示任务：{'N006': ['远海训练'], 'O049': ['远海训练'], 'R037': ['远海训练']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "远海训练",
+        "supporting_sources": [
+          "N006",
+          "O049",
+          "R037"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源均明确记载任务为“远海训练”，完全一致。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N006": [
+          "远海训练"
+        ],
+        "O049": [
+          "远海训练"
+        ],
+        "R037": [
+          "远海训练"
+        ]
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "movement",
+      "claim": "活动",
+      "supporting_sources": [
+        "N006",
+        "O049"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动/机动",
+        "supporting_sources": [
+          "N006",
+          "O049"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻描述为“活动”并“保持机动”，舆论描述为“保持机动”，语义兼容且相互支持。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N006": "活动",
+        "O049": "活动",
+        "R037": "未说明"
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    }
+  ],
+  "radar_row_count": 11,
+  "direction": "东海",
+  "report_eligible": true,
+  "directory": "可信事件/N006_中国054B型导弹护卫舰在东海开展远海训练"
+}

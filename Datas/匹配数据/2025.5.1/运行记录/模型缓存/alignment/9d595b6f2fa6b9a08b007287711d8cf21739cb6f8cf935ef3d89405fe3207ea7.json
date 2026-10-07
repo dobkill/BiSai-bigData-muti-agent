@@ -1,0 +1,208 @@
+{
+  "role": "alignment",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N019",
+      "kind": "news",
+      "title": "法国E-2C预警机在仁爱礁附近海域执行空中警戒",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：法国E-2C预警机在仁爱礁附近海域执行空中警戒\n正文：2025年5月1日，法国E-2C预警机在仁爱礁附近海域活动，于5时01分至7时26分围绕任务海域组织空中警戒，并按计划保持机动持续执行任务。\n\n主题词：法国  E-2C  仁爱礁  空中警戒\n",
+      "platforms": [
+        {
+          "name": "E-2C预警机",
+          "country": "法国",
+          "quantity": null,
+          "quote": "E-2C预警机",
+          "quantity_quote": "",
+          "country_raw": "法国"
+        }
+      ],
+      "location": {
+        "raw": "仁爱礁附近海域",
+        "region": "仁爱礁附近海域",
+        "direction": "南海",
+        "precision": "具体区域",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "在仁爱礁附近海域"
+      },
+      "mission": {
+        "value": "空中警戒",
+        "quote": "执行空中警戒"
+      },
+      "start_time": "05:01",
+      "end_time": "07:26",
+      "movement": "活动"
+    },
+    "opinion_candidates": [
+      {
+        "id": "O014",
+        "kind": "opinion",
+        "title": "法国两架E-2C预警机在东海赤尾屿海域执行空中警戒",
+        "text": "时间：2025.5.1\n\n标题：法国两架E-2C预警机在东海赤尾屿海域执行空中警戒\n\n正文：据公开防务媒体报道，法国两架E-2C预警机于2025年5月1日在东海赤尾屿海域执行空中警戒任务。该机型沿既定方向保持机动，被认为围绕任务区域维持部署或警戒。相关观察关注其前沿存在，认为此类部署持续性有助于体现区域机动能力。\n",
+        "platforms": [
+          {
+            "name": "E-2C预警机",
+            "country": "法国",
+            "quantity": 2,
+            "quote": "两架E-2C预警机",
+            "quantity_quote": "两架",
+            "country_raw": "法国"
+          }
+        ],
+        "location": {
+          "raw": "东海赤尾屿海域",
+          "region": "赤尾屿海域",
+          "direction": "东海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在东海赤尾屿海域执行空中警戒任务"
+        },
+        "mission": {
+          "value": "空中警戒任务",
+          "quote": "执行空中警戒任务"
+        },
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动"
+      }
+    ],
+    "radar_candidates": [
+      {
+        "id": "R014",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "E-2C预警机",
+            "country": "法国",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-738A05E5683F27",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "空中警戒",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "空中警戒"
+        ],
+        "start_time": "2025.05.01 05:01:00",
+        "end_time": "2025.05.01 07:26:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            124.3572,
+            124.4548
+          ],
+          "latitude_range": [
+            26.0474,
+            26.1874
+          ],
+          "median": [
+            124.4071,
+            26.1354
+          ],
+          "origins": [
+            [
+              124.3802,
+              26.1553
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [
+            "东海"
+          ],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [],
+        "batch": "AIR-738A05E5683F27",
+        "sibling_ids": [],
+        "hull_values": [],
+        "country_values": [
+          "法国"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 10
+      }
+    ],
+    "recall": {
+      "review": "全局分配后未匹配材料的反证复核",
+      "other_same_platform_news": [],
+      "previous_opinion_edges": [
+        {
+          "candidate_id": "O014",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.95,
+          "reason": "平台型号相同（E-2C）且任务相同（空中警戒），但地点冲突：新闻明确为“仁爱礁附近海域”（南海），候选 O014 为“东海赤尾屿海域”。不同海域排除同一次活动。"
+        },
+        {
+          "candidate_id": "O013",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.85,
+          "reason": "平台类型相似（预警机），时间重叠，但地点均为大范围“南海方向”，无法精确匹配新闻中的“仁爱礁附近”。且候选未提及法国 E-2C，存在国籍/型号不确定性，不足以确认为同一具体活动。"
+        },
+        {
+          "candidate_id": "O005",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.8,
+          "reason": "时间完全重叠（05:45-07:10 vs 05:01-07:26），但平台型号不同（台风战机 vs E-2C 预警机），任务也不同，地点为东海，与新闻南海地点冲突。"
+        }
+      ]
+    }
+  },
+  "result": {
+    "opinion_edges": [],
+    "radar_edges": [
+      {
+        "candidate_id": "R014",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.95,
+        "reason": "时间完全一致（2025.05.01 05:01-07:26），平台型号、国籍、任务及数量均匹配。地点冲突：新闻明确为“仁爱礁附近海域”（南海），而雷达坐标辅助提示为“东海”。根据赛题规则，允许某一字段（如地点）出错或受污染，鉴于时间、机型、任务等核心要素高度吻合，判定为同一次活动，但需在 reason 中保留地点反证。"
+      }
+    ],
+    "ambiguity": "雷达坐标辅助提示指向东海，与新闻中的南海地点存在冲突，需后续核验坐标数据准确性或确认是否存在多起同名活动。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T16:51:26.3689458Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\n\"opinion_edges\": [],\n\"radar_edges\": [\n{\n\"candidate_id\": \"R014\",\n\"platform_indices\": [0],\n\"relation\": \"same\",\n\"confidence\": 0.95,\n\"reason\": \"时间完全一致（2025.05.01 05:01-07:26），平台型号、国籍、任务及数量均匹配。地点冲突：新闻明确为“仁爱礁附近海域”（南海），而雷达坐标辅助提示为“东海”。根据赛题规则，允许某一字段（如地点）出错或受污染，鉴于时间、机型、任务等核心要素高度吻合，判定为同一次活动，但需在 reason 中保留地点反证。\"\n}\n],\n\"ambiguity\": \"雷达坐标辅助提示指向东海，与新闻中的南海地点存在冲突，需后续核验坐标数据准确性或确认是否存在多起同名活动。\"\n}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 5284614400,
+    "load_duration": 17625000,
+    "prompt_eval_count": 1824,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 758425000,
+    "eval_count": 211,
+    "eval_duration": 4307986000
+  }
+}

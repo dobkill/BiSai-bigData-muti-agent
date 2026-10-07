@@ -1,0 +1,738 @@
+{
+  "id": "N021",
+  "news_id": "N021",
+  "opinion_id": "O003",
+  "radar_ids": [
+    "R009"
+  ],
+  "radar_slots": {
+    "0": "R009"
+  },
+  "alignment": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O003",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.95,
+        "reason": "平台完全一致（中国运-8），时间高度重合（新闻为全天持续活动，候选为具体时段11:59-13:24），地点均为南海北部/海域。任务性质（反潜巡逻/海上侦察巡逻）逻辑兼容。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R009",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.92,
+        "reason": "平台完全一致（中国运-8，数量2架），时间高度重合（雷达记录11:59-13:24与新闻时段吻合），任务均为海上侦察巡逻。地点虽雷达未明确具体海域但坐标提示为南海，与新闻“南海北部”方向一致，且新闻描述为“持续活动”涵盖该时段。"
+      }
+    ],
+    "ambiguity": "新闻仅提及‘南海北部’这一宏观区域，未提供精确经纬度或具体海况（如万安滩等），无法从空间精度上完全排除其他同类型活动的可能性，但基于平台型号、数量、时间及任务类型的强一致性，判定为同一活动。"
+  },
+  "candidates": {
+    "opinion": [
+      {
+        "id": "O003",
+        "score": 4.63969,
+        "cosine": 0.95969,
+        "platform_similarity": 1.0,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O016",
+        "score": 1.42331,
+        "cosine": 0.74331,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O036",
+        "score": 1.24747,
+        "cosine": 0.76747,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O028",
+        "score": 1.01805,
+        "cosine": 0.81805,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O035",
+        "score": 1.00517,
+        "cosine": 0.80517,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O021",
+        "score": 0.99513,
+        "cosine": 0.79513,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O048",
+        "score": 0.9801,
+        "cosine": 0.7801,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      }
+    ],
+    "radar": [
+      {
+        "id": "R009",
+        "score": 4.15661,
+        "cosine": 0.95661,
+        "platform_similarity": 1.0,
+        "time_overlap": null,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R044",
+        "score": 1.06986,
+        "cosine": 0.70986,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "same_direction_only"
+      },
+      {
+        "id": "R010",
+        "score": 0.9831,
+        "cosine": 0.7831,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R006",
+        "score": 0.98234,
+        "cosine": 0.78234,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R001",
+        "score": 0.97754,
+        "cosine": 0.77754,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R020",
+        "score": 0.79398,
+        "cosine": 0.79398,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "missing"
+      }
+    ]
+  },
+  "assignment_diagnostics": {
+    "opinion": [],
+    "radar": []
+  },
+  "verification": {
+    "same_event": true,
+    "facts": [
+      {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "运-8反潜巡逻机",
+        "supporting_sources": [
+          "N021",
+          "O003",
+          "R009"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N021': '运-8反潜巡逻机', 'O003': '运-8反潜巡逻机', 'R009': '运-8反潜巡逻机'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "运 -8 反潜巡逻机",
+          "supporting_sources": [
+            "N021",
+            "O003",
+            "R009"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均明确标识为运 -8 反潜巡逻机，无冲突。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "中国",
+        "supporting_sources": [
+          "N021",
+          "O003",
+          "R009"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N021': '中国', 'O003': '中国', 'R009': '中国'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "中国",
+          "supporting_sources": [
+            "N021",
+            "O003",
+            "R009"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源均明确标注国籍为中国，无冲突。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "2架",
+        "supporting_sources": [
+          "N021",
+          "R009"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N021': 2, 'R009': 2}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "2 架",
+          "supporting_sources": [
+            "N021",
+            "R009"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻明确提及"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "南海",
+        "supporting_sources": [
+          "N021",
+          "O003"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "复核明示地点和PDF包含关系：{'N021': '南海北部', 'O003': '南海'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "南海北部",
+          "supporting_sources": [
+            "N021",
+            "O003"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻明确为“南海北部”；舆论为“南海海域”，在区域逻辑上兼容（北部属于南海），两源支持。雷达坐标虽未直接文本化，但 coordinate_hint 指向南海且方向一致，作为辅助印证不产生冲突。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N021": {
+            "raw": "南海北部",
+            "region": "南海北部",
+            "direction": "南海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false,
+            "quote": "在南海北部持续活动"
+          },
+          "O003": {
+            "raw": "南海海域",
+            "region": "南海",
+            "direction": "南海",
+            "precision": "大范围",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false,
+            "quote": "在南海海域"
+          }
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "起点 11:59，终点 13:24",
+        "supporting_sources": [
+          "O003",
+          "R009"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "2025-05-01",
+          "supporting_sources": [
+            "N021",
+            "O003",
+            "R009"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源时间高度重合。新闻为"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "components": {
+          "start_time": {
+            "value": "11:59",
+            "support": [
+              "O003",
+              "R009"
+            ],
+            "conflicts": [],
+            "status": "supported",
+            "source_values": {
+              "O003": "11:59",
+              "R009": "11:59"
+            }
+          },
+          "end_time": {
+            "value": "13:24",
+            "support": [
+              "O003",
+              "R009"
+            ],
+            "conflicts": [],
+            "status": "supported",
+            "source_values": {
+              "O003": "13:24",
+              "R009": "13:24"
+            }
+          }
+        },
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "海上侦察巡逻",
+        "supporting_sources": [
+          "O003",
+          "R009"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "原文明示任务：{'N021': [], 'O003': ['海上侦察巡逻'], 'R009': ['海上侦察巡逻']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "反潜巡逻/海上侦察巡逻",
+          "supporting_sources": [
+            "O003",
+            "R009"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论明确为“海上侦察巡逻任务”；雷达任务列为“海上侦察巡逻”。新闻描述为“反潜巡逻机...持续活动”，机型与任务性质逻辑兼容，两源（舆论、雷达）提供具体任务描述支持。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N021": [],
+          "O003": [
+            "海上侦察巡逻"
+          ],
+          "R009": [
+            "海上侦察巡逻"
+          ]
+        },
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N021",
+          "O003"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "supporting_sources": [
+            "N021",
+            "O003",
+            "R009"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源均描述为活动状态（新闻“持续活动”，舆论“执行...任务”，雷达"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N021": "活动",
+          "O003": "活动",
+          "R009": "未说明"
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location_detail",
+        "claim": "南海北部",
+        "supporting_sources": [
+          "N021"
+        ],
+        "conflicting_sources": [],
+        "status": "insufficient",
+        "reason": "具体区域仅一类来源明示；结论使用共同获支持的方向，细节保留待核实",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "南海北部",
+          "supporting_sources": [
+            "N021",
+            "O003"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻明确为“南海北部”；舆论为“南海海域”，在区域逻辑上兼容（北部属于南海），两源支持。雷达坐标虽未直接文本化，但 coordinate_hint 指向南海且方向一致，作为辅助印证不产生冲突。"
+        },
+        "supporting_source_types": [
+          "news"
+        ]
+      }
+    ],
+    "unresolved_issues": [],
+    "explanation": "三类来源已关联，纳入结论的事实获得至少两类独立来源支持，未发现未消解明示反证。",
+    "model_explanation": "三源在平台型号、国籍、数量（2 架）、时间（5 月 1 日）、地点（南海北部/海域兼容）、任务性质（巡逻）上高度一致。新闻提供宏观背景，舆论和雷达提供具体时段和任务细节，相互印证形成完整证据链，无未消解冲突。"
+  },
+  "reasons": [],
+  "status": "可信事件",
+  "verified_facts": [
+    {
+      "platform_index": 0,
+      "field": "platform",
+      "claim": "运-8反潜巡逻机",
+      "supporting_sources": [
+        "N021",
+        "O003",
+        "R009"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N021': '运-8反潜巡逻机', 'O003': '运-8反潜巡逻机', 'R009': '运-8反潜巡逻机'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "运 -8 反潜巡逻机",
+        "supporting_sources": [
+          "N021",
+          "O003",
+          "R009"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源（新闻、舆论、雷达）均明确标识为运 -8 反潜巡逻机，无冲突。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "country",
+      "claim": "中国",
+      "supporting_sources": [
+        "N021",
+        "O003",
+        "R009"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N021': '中国', 'O003': '中国', 'R009': '中国'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "中国",
+        "supporting_sources": [
+          "N021",
+          "O003",
+          "R009"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源均明确标注国籍为中国，无冲突。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "quantity",
+      "claim": "2架",
+      "supporting_sources": [
+        "N021",
+        "R009"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N021': 2, 'R009': 2}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "2 架",
+        "supporting_sources": [
+          "N021",
+          "R009"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻明确提及"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "location",
+      "claim": "南海",
+      "supporting_sources": [
+        "N021",
+        "O003"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "复核明示地点和PDF包含关系：{'N021': '南海北部', 'O003': '南海'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "南海北部",
+        "supporting_sources": [
+          "N021",
+          "O003"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻明确为“南海北部”；舆论为“南海海域”，在区域逻辑上兼容（北部属于南海），两源支持。雷达坐标虽未直接文本化，但 coordinate_hint 指向南海且方向一致，作为辅助印证不产生冲突。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N021": {
+          "raw": "南海北部",
+          "region": "南海北部",
+          "direction": "南海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在南海北部持续活动"
+        },
+        "O003": {
+          "raw": "南海海域",
+          "region": "南海",
+          "direction": "南海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在南海海域"
+        }
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "time",
+      "claim": "起点 11:59，终点 13:24",
+      "supporting_sources": [
+        "O003",
+        "R009"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "2025-05-01",
+        "supporting_sources": [
+          "N021",
+          "O003",
+          "R009"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源时间高度重合。新闻为"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "components": {
+        "start_time": {
+          "value": "11:59",
+          "support": [
+            "O003",
+            "R009"
+          ],
+          "conflicts": [],
+          "status": "supported",
+          "source_values": {
+            "O003": "11:59",
+            "R009": "11:59"
+          }
+        },
+        "end_time": {
+          "value": "13:24",
+          "support": [
+            "O003",
+            "R009"
+          ],
+          "conflicts": [],
+          "status": "supported",
+          "source_values": {
+            "O003": "13:24",
+            "R009": "13:24"
+          }
+        }
+      },
+      "supporting_source_types": [
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "mission",
+      "claim": "海上侦察巡逻",
+      "supporting_sources": [
+        "O003",
+        "R009"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "原文明示任务：{'N021': [], 'O003': ['海上侦察巡逻'], 'R009': ['海上侦察巡逻']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "反潜巡逻/海上侦察巡逻",
+        "supporting_sources": [
+          "O003",
+          "R009"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "舆论明确为“海上侦察巡逻任务”；雷达任务列为“海上侦察巡逻”。新闻描述为“反潜巡逻机...持续活动”，机型与任务性质逻辑兼容，两源（舆论、雷达）提供具体任务描述支持。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N021": [],
+        "O003": [
+          "海上侦察巡逻"
+        ],
+        "R009": [
+          "海上侦察巡逻"
+        ]
+      },
+      "supporting_source_types": [
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "movement",
+      "claim": "活动",
+      "supporting_sources": [
+        "N021",
+        "O003"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N021",
+          "O003",
+          "R009"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源均描述为活动状态（新闻“持续活动”，舆论“执行...任务”，雷达"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N021": "活动",
+        "O003": "活动",
+        "R009": "未说明"
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    }
+  ],
+  "radar_row_count": 13,
+  "direction": "南海",
+  "report_eligible": true,
+  "directory": "可信事件/N021_中国运-8反潜巡逻机在南海北部持续开展活动"
+}

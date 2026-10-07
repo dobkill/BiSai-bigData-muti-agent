@@ -1,0 +1,298 @@
+{
+  "role": "verification",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N047",
+      "kind": "news",
+      "title": "意大利空军F-35B战机在永暑礁附近海域进行对海突击训练",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：意大利空军F-35B战机在永暑礁附近海域进行对海突击训练\n正文：2025年5月1日20时09分至22时34分，意大利空军F-35B短距起降战斗机在永暑礁附近海域围绕任务海域组织对海突击训练，按计划完成相关平台之间的行动衔接。\n\n主题词：意大利空军  F-35B短距起降战斗机  对海突击训练  永暑礁附近海域\n",
+      "platforms": [
+        {
+          "name": "F-35B短距起降战斗机",
+          "country": "意大利",
+          "quantity": null,
+          "quote": "意大利空军F-35B短距起降战斗机",
+          "quantity_quote": "",
+          "country_raw": "意大利空军"
+        }
+      ],
+      "location": {
+        "raw": "永暑礁附近海域",
+        "region": "永暑礁附近海域",
+        "direction": "南海",
+        "precision": "具体区域",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "永暑礁附近海域"
+      },
+      "mission": {
+        "value": "对海突击训练",
+        "quote": "组织对海突击训练"
+      },
+      "start_time": "20:09",
+      "end_time": "22:34",
+      "movement": "活动"
+    },
+    "opinion": {
+      "id": "O017",
+      "kind": "opinion",
+      "title": "意大利两架F-35B在南海进行对海突击训练",
+      "text": "时间：2025.5.1\n\n标题：意大利两架F-35B在南海进行对海突击训练\n\n正文：据公开防务媒体报道，2025年5月1日，意大利两架F-35B短距起降战斗机在南海方向执行了对海突击训练任务。报道称，这两架战机围绕既定科目组织训练，按计划完成了相关平台之间的行动衔接。这一训练活动被视为意大利加强在印太区域活动节奏的一部分。\n",
+      "platforms": [
+        {
+          "name": "F-35B短距起降战斗机",
+          "country": "意大利",
+          "quantity": 2,
+          "quote": "意大利两架F-35B短距起降战斗机",
+          "quantity_quote": "两架F-35B短距起降战斗机",
+          "country_raw": "意大利"
+        }
+      ],
+      "location": {
+        "raw": "南海方向",
+        "region": "南海",
+        "direction": "南海",
+        "precision": "大范围",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "在南海方向"
+      },
+      "mission": {
+        "value": "对海突击训练任务",
+        "quote": "执行了对海突击训练任务"
+      },
+      "start_time": null,
+      "end_time": null,
+      "movement": "活动"
+    },
+    "radars": [
+      {
+        "id": "R012",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "F-35B短距起降战斗机",
+            "country": "意大利",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-6AA063C4B12ACF",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "对海突击训练",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "对海突击训练"
+        ],
+        "start_time": "2025.05.01 20:09:00",
+        "end_time": "2025.05.01 22:34:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            112.9457,
+            113.0552
+          ],
+          "latitude_range": [
+            9.3324,
+            9.7025
+          ],
+          "median": [
+            112.9952,
+            9.5192
+          ],
+          "origins": [
+            [
+              112.9816,
+              9.6684
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [
+            "南海"
+          ],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [],
+        "batch": "AIR-6AA063C4B12ACF",
+        "sibling_ids": [],
+        "hull_values": [],
+        "country_values": [
+          "意大利"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 12
+      }
+    ],
+    "association": {
+      "opinion_edges": [
+        {
+          "candidate_id": "O013",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.95,
+          "reason": "任务类型不同：新闻为'对海突击训练'，候选 O013 为'舰载机起降训练'；时间区间无重叠（20:09-22:34 vs 05:23-07:48）。"
+        },
+        {
+          "candidate_id": "O017",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.85,
+          "reason": "任务、平台、地点（永暑礁属于南海方向）、时间（同一天）完全一致。虽未提及具体礁盘，但'南海方向'涵盖永暑礁，且任务描述高度吻合，视为同一活动报道。"
+        },
+        {
+          "candidate_id": "O002",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.98,
+          "reason": "平台完全不同（苏 -30SM vs F-35B），国籍不同（俄罗斯 vs 意大利），地点不同（黄岩岛 vs 永暑礁）。"
+        }
+      ],
+      "radar_edges": [
+        {
+          "candidate_id": "R012",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.98,
+          "reason": "时间、任务、平台、数量完全一致。坐标位于南海（永暑礁附近海域），虽地点字段缺失但辅助召回方向匹配，确认为同一活动。"
+        },
+        {
+          "candidate_id": "R027",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.95,
+          "reason": "任务不同（舰载机起降 vs 对海突击），时间无重叠（凌晨 vs 晚间）。"
+        },
+        {
+          "candidate_id": "R005",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.99,
+          "reason": "平台、国籍、任务均完全不同。"
+        }
+      ],
+      "ambiguity": "O017 仅提及'南海方向'未明确永暑礁，但结合时间任务和新闻内容可推断为同一活动；R012 坐标辅助召回方向与新闻一致，确认为同一次活动。"
+    },
+    "same_batch_other_candidates": []
+  },
+  "result": {
+    "same_event": true,
+    "platforms": [
+      {
+        "platform_index": 0,
+        "platform": {
+          "claim": "F-35B短距起降战斗机",
+          "supporting_sources": [
+            "N047",
+            "O017",
+            "R012"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均明确提及为 F-35B 短距起降战斗机，无冲突。"
+        },
+        "country": {
+          "claim": "意大利",
+          "supporting_sources": [
+            "N047",
+            "O017",
+            "R012"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均明确标注国籍为意大利，无冲突。"
+        },
+        "quantity": {
+          "claim": "2 架",
+          "supporting_sources": [
+            "O017",
+            "R012"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论和雷达均明确记录数量为 2 架；新闻虽未显式说明数量，但提及“相关平台之间的行动衔接”且与两源一致，不视为冲突。"
+        }
+      }
+    ],
+    "location": {
+      "claim": "永暑礁附近海域",
+      "supporting_sources": [
+        "N047"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻明确为“永暑礁附近海域”；舆论的“南海方向”涵盖该区域，构成支持；雷达坐标位于南海且辅助召回匹配，虽地点字段缺失但不构成冲突。"
+    },
+    "time": {
+      "claim": "2025 年 5 月 1 日 20:09-22:34",
+      "supporting_sources": [
+        "N047",
+        "R012"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻和雷达均精确记录起止时间为 20:09 至 22:34；舆论仅提及日期，未反对具体时刻。"
+    },
+    "mission": {
+      "claim": "对海突击训练",
+      "supporting_sources": [
+        "N047",
+        "O017",
+        "R012"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "三源均明确记录任务为“对海突击训练”，描述高度一致。"
+    },
+    "movement": {
+      "claim": "活动",
+      "supporting_sources": [
+        "N047",
+        "O017"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻和舆论均描述为训练活动；雷达未说明 movement 字段，但不构成冲突。"
+    },
+    "unresolved_issues": [],
+    "explanation": "三源在平台型号、国籍、任务类型及时间上完全一致。数量由舆论和雷达共同确认为 2 架，新闻虽未明示但无冲突。地点上新闻最精确（永暑礁附近），舆论范围覆盖（南海方向），雷达坐标辅助匹配，整体事实链完整且无未消解冲突。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T16:50:06.8837024Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"same_event\": true, \"platforms\": [{\"platform_index\": 0, \"platform\": {\"claim\": \"F-35B短距起降战斗机\", \"supporting_sources\": [\"N047\", \"O017\", \"R012\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源（新闻、舆论、雷达）均明确提及为 F-35B 短距起降战斗机，无冲突。\"}, \"country\": {\"claim\": \"意大利\", \"supporting_sources\": [\"N047\", \"O017\", \"R012\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源（新闻、舆论、雷达）均明确标注国籍为意大利，无冲突。\"}, \"quantity\": {\"claim\": \"2 架\", \"supporting_sources\": [\"O017\", \"R012\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"舆论和雷达均明确记录数量为 2 架；新闻虽未显式说明数量，但提及“相关平台之间的行动衔接”且与两源一致，不视为冲突。\"}}], \"location\": {\"claim\": \"永暑礁附近海域\", \"supporting_sources\": [\"N047\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻明确为“永暑礁附近海域”；舆论的“南海方向”涵盖该区域，构成支持；雷达坐标位于南海且辅助召回匹配，虽地点字段缺失但不构成冲突。\"}, \"time\": {\"claim\": \"2025 年 5 月 1 日 20:09-22:34\", \"supporting_sources\": [\"N047\", \"R012\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻和雷达均精确记录起止时间为 20:09 至 22:34；舆论仅提及日期，未反对具体时刻。\"}, \"mission\": {\"claim\": \"对海突击训练\", \"supporting_sources\": [\"N047\", \"O017\", \"R012\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源均明确记录任务为“对海突击训练”，描述高度一致。\"}, \"movement\": {\"claim\": \"活动\", \"supporting_sources\": [\"N047\", \"O017\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻和舆论均描述为训练活动；雷达未说明 movement 字段，但不构成冲突。\"}, \"unresolved_issues\": [],\"explanation\": \"三源在平台型号、国籍、任务类型及时间上完全一致。数量由舆论和雷达共同确认为 2 架，新闻虽未明示但无冲突。地点上新闻最精确（永暑礁附近），舆论范围覆盖（南海方向），雷达坐标辅助匹配，整体事实链完整且无未消解冲突。\"}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 13468323300,
+    "load_duration": 17183600,
+    "prompt_eval_count": 2162,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 824254000,
+    "eval_count": 655,
+    "eval_duration": 12425767000
+  }
+}

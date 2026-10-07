@@ -1,0 +1,535 @@
+{
+  "id": "N048",
+  "news_id": "N048",
+  "opinion_id": "O036",
+  "radar_ids": [
+    "R026"
+  ],
+  "radar_slots": {
+    "0": "R026"
+  },
+  "alignment": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O036",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.85,
+        "reason": "平台（俄苏 -30SM）、日期（2025.5.1）及任务性质（战备警巡/活动）高度一致。新闻提及“仁爱礁附近”，候选 O036 为“南海方向”且时间精确到小时，虽地点精度不同但符合包含关系。数量差异（新闻 2 架 vs 候选未提具体数字或隐含多架）在赛题允许误差范围内，不足以判定为不同活动。"
+      },
+      {
+        "candidate_id": "O002",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.75,
+        "reason": "平台、日期完全一致，任务均为活动。地点“黄岩岛”与新闻“仁爱礁”同属南海具体区域，虽非同一坐标点，但考虑到雷达数据（R024）显示该时段有苏 -30SM 在南海活动，且新闻描述为“持续活动”，可能指代同一批次战机在不同子区域的连续部署或报道侧重不同。数量均为 2 架，匹配度高。"
+      },
+      {
+        "candidate_id": "O019",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.7,
+        "reason": "平台、日期一致。地点“南沙群岛”与新闻“仁爱礁”同属南海，存在地理重叠可能。任务描述“持续活动”与新闻一致。主要冲突在于数量（新闻 2 架 vs 候选 3 架），但鉴于赛题允许字段误差且其他线索（时间、平台、大区域）强相关，仍视为同一活动的不同报道视角或统计口径差异。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R026",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.95,
+        "reason": "平台（俄苏 -30SM）、日期、任务（战备警巡）完全匹配。时间区间（02:27-04:52）与候选 O036 精确一致，且早于新闻提到的“持续活动”时段，极可能是同一事件的时间切片或起始段。地点坐标指向南海，符合新闻描述。"
+      },
+      {
+        "candidate_id": "R019",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.85,
+        "reason": "平台、日期、数量（2 架）、任务（空中警戒/活动）一致。时间区间（18:01-19:31）与候选 O019 完全重合，地点坐标位于南海（仁爱礁/南沙均在南海），支持新闻中“持续活动”的描述。"
+      },
+      {
+        "candidate_id": "R024",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.85,
+        "reason": "平台、日期、数量（2 架）一致。时间区间（20:31-22:56）与候选 O002 完全重合，地点坐标位于南海（黄岩岛附近），支持新闻中“持续活动”的描述。任务类型略有不同（对海突击训练 vs 活动），但可视为同一行动的不同定性。"
+      }
+    ],
+    "ambiguity": "新闻未提供精确时间戳和具体经纬度，仅描述为‘仁爱礁附近’及‘持续活动’。候选 O002 和 O019 提到的黄岩岛/南沙与仁爱礁虽同属南海但非同一坐标点，需假设战机进行了大范围机动或报道存在区域概括差异。数量上的微小差异（2 vs 3）在混合数据源中常见，不影响整体关联判断。"
+  },
+  "candidates": {
+    "opinion": [
+      {
+        "id": "O036",
+        "score": 4.56772,
+        "cosine": 0.88772,
+        "platform_similarity": 1.0,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O002",
+        "score": 4.29223,
+        "cosine": 0.93223,
+        "platform_similarity": 1.0,
+        "time_overlap": null,
+        "location_relation": "same_direction_only"
+      },
+      {
+        "id": "O019",
+        "score": 4.25511,
+        "cosine": 0.89511,
+        "platform_similarity": 1.0,
+        "time_overlap": null,
+        "location_relation": "same_direction_only"
+      },
+      {
+        "id": "O018",
+        "score": 1.35613,
+        "cosine": 0.87613,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O026",
+        "score": 1.03082,
+        "cosine": 0.83082,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      }
+    ],
+    "radar": [
+      {
+        "id": "R019",
+        "score": 4.11969,
+        "cosine": 0.91969,
+        "platform_similarity": 1.0,
+        "time_overlap": null,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R024",
+        "score": 4.11955,
+        "cosine": 0.91955,
+        "platform_similarity": 1.0,
+        "time_overlap": null,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R026",
+        "score": 4.11813,
+        "cosine": 0.91813,
+        "platform_similarity": 1.0,
+        "time_overlap": null,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R013",
+        "score": 1.05805,
+        "cosine": 0.85805,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R003",
+        "score": 1.05727,
+        "cosine": 0.85727,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "missing"
+      }
+    ]
+  },
+  "verification": {
+    "same_event": true,
+    "facts": [
+      {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "苏-30SM多用途战斗机",
+        "supporting_sources": [
+          "N048",
+          "O036",
+          "R026"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N048': '苏-30SM多用途战斗机', 'O036': '苏-30SM', 'R026': '苏-30SM多用途战斗机'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "苏 -30SM 多用途战斗机",
+          "supporting_sources": [
+            "N048",
+            "O036",
+            "R026"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均明确指向俄罗斯苏 -30SM 多用途战斗机，无冲突。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "俄罗斯",
+        "supporting_sources": [
+          "N048",
+          "O036",
+          "R026"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N048': '俄罗斯', 'O036': '俄罗斯', 'R026': '俄罗斯'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "俄罗斯",
+          "supporting_sources": [
+            "N048",
+            "O036",
+            "R026"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源均明确标注国籍为俄罗斯，无冲突。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "2架",
+        "supporting_sources": [
+          "N048",
+          "R026"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N048': 2, 'R026': 2}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "2 架",
+          "supporting_sources": [
+            "N048",
+            "R026"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻（N048）明确提及"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "南海",
+        "supporting_sources": [
+          "N048",
+          "O036"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "按地点归一化与包含关系确认共同可支持的区域；未核实的细节另行保留",
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ],
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "仁爱礁附近海域",
+          "supporting_sources": [
+            "N048"
+          ],
+          "conflicting_sources": [],
+          "status": "insufficient",
+          "reason": "新闻（N048）明确定位“仁爱礁附近海域”。舆论（O036）表述为“南海方向”，雷达（R026）坐标位于南海且未否定具体区域，三者兼容。；程序检查：不足两类独立来源支持",
+          "supporting_source_types": [
+            "news"
+          ]
+        },
+        "checked_by": "location_precision_guard"
+      },
+      {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "2025 年 5 月 1 日",
+        "supporting_sources": [
+          "N048",
+          "O036",
+          "R026"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源均确认活动日期为 2025 年 5 月 1 日。舆论和雷达提供了更精确的时刻（02:27-04:52），与新闻的“持续活动”描述不冲突。",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "战备警巡/活动",
+        "supporting_sources": [
+          "O036",
+          "R026"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "舆论（O036）和雷达（R026）均明确任务为“战备警巡”。新闻（N048）描述为“持续活动”，在军事语境下与战备警巡兼容，无实质冲突。",
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "机动/保持部署",
+        "supporting_sources": [
+          "N048",
+          "O036"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻（N048）描述“围绕任务区域保持机动”，舆论（O036）描述“沿既定方向保持机动”及“维持部署”，两者一致。",
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location_detail",
+        "claim": "仁爱礁附近海域",
+        "supporting_sources": [
+          "N048"
+        ],
+        "conflicting_sources": [],
+        "status": "insufficient",
+        "reason": "新闻（N048）明确定位“仁爱礁附近海域”。舆论（O036）表述为“南海方向”，雷达（R026）坐标位于南海且未否定具体区域，三者兼容。；程序检查：不足两类独立来源支持；具体地点未取得两类支持，保留为未核实线索",
+        "supporting_source_types": [
+          "news"
+        ]
+      }
+    ],
+    "unresolved_issues": [],
+    "explanation": "三源在平台型号、国籍、日期、大区域（南海/仁爱礁附近）、任务性质上高度一致。新闻提供了具体子区域（仁爱礁），舆论和雷达提供了精确时间和坐标范围，共同支撑同一事件结论。数量在两源（新闻、雷达）中确认为 2 架，舆论未提具体数量但不构成冲突。"
+  },
+  "reasons": [],
+  "status": "可信事件",
+  "verified_facts": [
+    {
+      "platform_index": 0,
+      "field": "platform",
+      "claim": "苏-30SM多用途战斗机",
+      "supporting_sources": [
+        "N048",
+        "O036",
+        "R026"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N048': '苏-30SM多用途战斗机', 'O036': '苏-30SM', 'R026': '苏-30SM多用途战斗机'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "苏 -30SM 多用途战斗机",
+        "supporting_sources": [
+          "N048",
+          "O036",
+          "R026"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源（新闻、舆论、雷达）均明确指向俄罗斯苏 -30SM 多用途战斗机，无冲突。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "country",
+      "claim": "俄罗斯",
+      "supporting_sources": [
+        "N048",
+        "O036",
+        "R026"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N048': '俄罗斯', 'O036': '俄罗斯', 'R026': '俄罗斯'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "俄罗斯",
+        "supporting_sources": [
+          "N048",
+          "O036",
+          "R026"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源均明确标注国籍为俄罗斯，无冲突。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "quantity",
+      "claim": "2架",
+      "supporting_sources": [
+        "N048",
+        "R026"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N048': 2, 'R026': 2}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "2 架",
+        "supporting_sources": [
+          "N048",
+          "R026"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻（N048）明确提及"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "location",
+      "claim": "南海",
+      "supporting_sources": [
+        "N048",
+        "O036"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "按地点归一化与包含关系确认共同可支持的区域；未核实的细节另行保留",
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ],
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "仁爱礁附近海域",
+        "supporting_sources": [
+          "N048"
+        ],
+        "conflicting_sources": [],
+        "status": "insufficient",
+        "reason": "新闻（N048）明确定位“仁爱礁附近海域”。舆论（O036）表述为“南海方向”，雷达（R026）坐标位于南海且未否定具体区域，三者兼容。；程序检查：不足两类独立来源支持",
+        "supporting_source_types": [
+          "news"
+        ]
+      },
+      "checked_by": "location_precision_guard"
+    },
+    {
+      "platform_index": -1,
+      "field": "time",
+      "claim": "2025 年 5 月 1 日",
+      "supporting_sources": [
+        "N048",
+        "O036",
+        "R026"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "三源均确认活动日期为 2025 年 5 月 1 日。舆论和雷达提供了更精确的时刻（02:27-04:52），与新闻的“持续活动”描述不冲突。",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "mission",
+      "claim": "战备警巡/活动",
+      "supporting_sources": [
+        "O036",
+        "R026"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "舆论（O036）和雷达（R026）均明确任务为“战备警巡”。新闻（N048）描述为“持续活动”，在军事语境下与战备警巡兼容，无实质冲突。",
+      "supporting_source_types": [
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "movement",
+      "claim": "机动/保持部署",
+      "supporting_sources": [
+        "N048",
+        "O036"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻（N048）描述“围绕任务区域保持机动”，舆论（O036）描述“沿既定方向保持机动”及“维持部署”，两者一致。",
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    }
+  ],
+  "radar_row_count": 12,
+  "direction": "南海",
+  "report_eligible": true,
+  "directory": "可信事件/N048_俄罗斯苏-30SM多用途战斗机在仁爱礁附近海域活动"
+}

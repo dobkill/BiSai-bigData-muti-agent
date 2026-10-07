@@ -1,0 +1,503 @@
+{
+  "id": "N041",
+  "news_id": "N041",
+  "opinion_id": "O030",
+  "radar_ids": [
+    "R049"
+  ],
+  "radar_slots": {
+    "0": "R049"
+  },
+  "alignment": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O030",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.98,
+        "reason": "平台（韩国大邱级）、时间（2025.5.1 05:12-07:37）、地点（中太平洋）及任务性质完全一致，雷达数据 R049 进一步证实了该批号目标的同一性。"
+      },
+      {
+        "candidate_id": "O024",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "虽然平台型号相同且日期一致，但地点（巴伦支海 vs 中太平洋）和时间段（08:37-10:07 vs 05:12-07:37）完全不同，属于不同活动。"
+      },
+      {
+        "candidate_id": "O008",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.99,
+        "reason": "平台型号（村雨号）、国家（日本）及地点（东海）均与新闻描述不符，时间虽有部分重叠但主体不同。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R049",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 1.0,
+        "reason": "雷达数据 R049 的批号、平台（韩国大邱级）、时间区间（05:12-07:37）和地点（中太平洋）与新闻完全匹配，确认为同一活动。"
+      },
+      {
+        "candidate_id": "R036",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台型号虽同为韩国大邱级，但地点（巴伦支海）和时间段（08:37-10:07）与新闻描述的中太平洋活动明显不同。"
+      },
+      {
+        "candidate_id": "R045",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.99,
+        "reason": "平台型号（中国 903A 补给舰）、国家及地点（冲绳海槽）均与新闻描述的韩国大邱级护卫舰在中太平洋的活动不符。"
+      }
+    ],
+    "ambiguity": "无，关键要素（平台、时间、地点）高度一致且有多源数据交叉验证。"
+  },
+  "candidates": {
+    "opinion": [
+      {
+        "id": "O030",
+        "score": 6.01986,
+        "cosine": 0.96986,
+        "platform_similarity": 0.95,
+        "time_overlap": 1.0,
+        "location_relation": "same"
+      },
+      {
+        "id": "O024",
+        "score": 3.76889,
+        "cosine": 0.91889,
+        "platform_similarity": 0.95,
+        "time_overlap": 0.0,
+        "location_relation": "different_named_regions"
+      },
+      {
+        "id": "O008",
+        "score": 1.95182,
+        "cosine": 0.7932,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.9655172413793104,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O010",
+        "score": 0.79528,
+        "cosine": 0.79528,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_named_regions"
+      },
+      {
+        "id": "O007",
+        "score": 0.79293,
+        "cosine": 0.79293,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_named_regions"
+      }
+    ],
+    "radar": [
+      {
+        "id": "R049",
+        "score": 6.02171,
+        "cosine": 0.97171,
+        "platform_similarity": 0.95,
+        "time_overlap": 1.0,
+        "location_relation": "same"
+      },
+      {
+        "id": "R036",
+        "score": 3.98914,
+        "cosine": 0.93914,
+        "platform_similarity": 0.95,
+        "time_overlap": 0.0,
+        "location_relation": "different_named_regions"
+      },
+      {
+        "id": "R045",
+        "score": 1.95638,
+        "cosine": 0.75638,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "R041",
+        "score": 1.00017,
+        "cosine": 0.80017,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "R053",
+        "score": 0.79873,
+        "cosine": 0.79873,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "R040",
+        "score": 0.79504,
+        "cosine": 0.79504,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_named_regions"
+      }
+    ]
+  },
+  "verification": {
+    "same_event": true,
+    "facts": [
+      {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "大邱级导弹护卫舰",
+        "supporting_sources": [
+          "N041",
+          "O030",
+          "R049"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N041': '大邱级导弹护卫舰', 'O030': '大邱级”导弹护卫舰', 'R049': '大邱级导弹护卫舰'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "大邱级导弹护卫舰",
+          "supporting_sources": [
+            "N041",
+            "O030",
+            "R049"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均确认为韩国大邱级导弹护卫舰，无冲突。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "韩国",
+        "supporting_sources": [
+          "N041",
+          "O030",
+          "R049"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N041': '韩国', 'O030': '韩国', 'R049': '韩国'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "韩国",
+          "supporting_sources": [
+            "N041",
+            "O030",
+            "R049"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均明确标注国籍为韩国，无冲突。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "1艘",
+        "supporting_sources": [
+          "N041",
+          "R049"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N041': 1, 'R049': 1}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "1 艘",
+          "supporting_sources": [
+            "N041",
+            "R049"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻明确提及"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "中太平洋",
+        "supporting_sources": [
+          "N041",
+          "O030",
+          "R049"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源均指向中太平洋区域，舆论表述“中太平洋海域”与新闻、雷达一致。",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "2025 年 5 月 1 日 05:12-07:37",
+        "supporting_sources": [
+          "N041",
+          "O030",
+          "R049"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻、舆论、雷达三源时间起止点完全一致。",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "海上监视侦察",
+        "supporting_sources": [
+          "O030",
+          "R049"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "舆论明确任务为“海上监视侦察”，雷达任务列亦为“海上监视侦察”；新闻仅描述“持续机动并持续活动”未明示具体任务，但结合另两源可印证。",
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动/机动",
+        "supporting_sources": [
+          "N041",
+          "O030"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻称“持续机动”，舆论称“保持机动”，雷达未说明但无冲突，两源支持。",
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      }
+    ],
+    "unresolved_issues": [],
+    "explanation": "新闻、舆论、雷达三源在平台型号、国籍、数量、地点、时间及任务性质上高度一致，形成完整证据链。新闻虽未明示具体任务，但舆论与雷达均确认为“海上监视侦察”，满足可信度要求。无未消解冲突。"
+  },
+  "reasons": [],
+  "status": "可信事件",
+  "verified_facts": [
+    {
+      "platform_index": 0,
+      "field": "platform",
+      "claim": "大邱级导弹护卫舰",
+      "supporting_sources": [
+        "N041",
+        "O030",
+        "R049"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N041': '大邱级导弹护卫舰', 'O030': '大邱级”导弹护卫舰', 'R049': '大邱级导弹护卫舰'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "大邱级导弹护卫舰",
+        "supporting_sources": [
+          "N041",
+          "O030",
+          "R049"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻、舆论、雷达三源均确认为韩国大邱级导弹护卫舰，无冲突。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "country",
+      "claim": "韩国",
+      "supporting_sources": [
+        "N041",
+        "O030",
+        "R049"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N041': '韩国', 'O030': '韩国', 'R049': '韩国'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "韩国",
+        "supporting_sources": [
+          "N041",
+          "O030",
+          "R049"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻、舆论、雷达三源均明确标注国籍为韩国，无冲突。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "quantity",
+      "claim": "1艘",
+      "supporting_sources": [
+        "N041",
+        "R049"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N041': 1, 'R049': 1}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "1 艘",
+        "supporting_sources": [
+          "N041",
+          "R049"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻明确提及"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "location",
+      "claim": "中太平洋",
+      "supporting_sources": [
+        "N041",
+        "O030",
+        "R049"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "三源均指向中太平洋区域，舆论表述“中太平洋海域”与新闻、雷达一致。",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "time",
+      "claim": "2025 年 5 月 1 日 05:12-07:37",
+      "supporting_sources": [
+        "N041",
+        "O030",
+        "R049"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻、舆论、雷达三源时间起止点完全一致。",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "mission",
+      "claim": "海上监视侦察",
+      "supporting_sources": [
+        "O030",
+        "R049"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "舆论明确任务为“海上监视侦察”，雷达任务列亦为“海上监视侦察”；新闻仅描述“持续机动并持续活动”未明示具体任务，但结合另两源可印证。",
+      "supporting_source_types": [
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "movement",
+      "claim": "活动/机动",
+      "supporting_sources": [
+        "N041",
+        "O030"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻称“持续机动”，舆论称“保持机动”，雷达未说明但无冲突，两源支持。",
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    }
+  ],
+  "radar_row_count": 11,
+  "direction": "其他",
+  "report_eligible": false,
+  "directory": "可信事件/N041_韩国大邱级导弹护卫舰在中太平洋持续机动并持续活动"
+}

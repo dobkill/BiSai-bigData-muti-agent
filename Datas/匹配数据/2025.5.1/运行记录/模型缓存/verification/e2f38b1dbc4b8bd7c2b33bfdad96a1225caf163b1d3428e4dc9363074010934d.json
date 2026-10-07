@@ -1,0 +1,298 @@
+{
+  "role": "verification",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N013",
+      "kind": "news",
+      "title": "中国空警-500预警机进入钓鱼岛海域执行情报监视侦察",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：中国空警-500预警机进入钓鱼岛海域执行情报监视侦察\n正文：2025年5月1日8时41分至10时06分，中国空警-500预警机由外围航线进入钓鱼岛海域，围绕任务海域组织情报监视侦察，按计划保持机动并持续执行情报监视侦察。\n\n主题词：中国  空警-500预警机  钓鱼岛海域  情报监视侦察\n",
+      "platforms": [
+        {
+          "name": "空警-500预警机",
+          "country": "中国",
+          "quantity": null,
+          "quote": "中国空警-500预警机",
+          "quantity_quote": "",
+          "country_raw": "中国"
+        }
+      ],
+      "location": {
+        "raw": "钓鱼岛海域",
+        "region": "钓鱼岛海域",
+        "direction": "东海",
+        "precision": "具体区域",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "进入钓鱼岛海域"
+      },
+      "mission": {
+        "value": "情报监视侦察",
+        "quote": "执行情报监视侦察"
+      },
+      "start_time": "08:41",
+      "end_time": "10:06",
+      "movement": "进入"
+    },
+    "opinion": {
+      "id": "O035",
+      "kind": "opinion",
+      "title": "中国两架空警-500预警机在东海执行情报监视侦察",
+      "text": "时间：2025.5.1\n\n标题：中国两架空警-500预警机在东海执行情报监视侦察\n\n正文：据央视新闻报道，2025年5月1日，中国两架空警-500预警机在东海方向围绕任务海域组织情报监视侦察。分析人士指出，该平台结合既定航线持续收集公开可观察信息，可能体现了其在区域侦巡中的态势感知和持续监视能力。\n",
+      "platforms": [
+        {
+          "name": "空警-500",
+          "country": "中国",
+          "quantity": 2,
+          "quote": "两架空警-500预警机",
+          "quantity_quote": "两架",
+          "country_raw": "中国"
+        }
+      ],
+      "location": {
+        "raw": "东海方向围绕任务海域",
+        "region": "东海",
+        "direction": "东海",
+        "precision": "大范围",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "在东海方向围绕任务海域"
+      },
+      "mission": {
+        "value": "情报监视侦察",
+        "quote": "组织情报监视侦察"
+      },
+      "start_time": null,
+      "end_time": null,
+      "movement": "活动"
+    },
+    "radars": [
+      {
+        "id": "R010",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "空警-500预警机",
+            "country": "中国",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-5DD82818758598",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "情报监视侦察",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "情报监视侦察"
+        ],
+        "start_time": "2025.05.01 08:41:00",
+        "end_time": "2025.05.01 10:06:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            123.1201,
+            123.2132
+          ],
+          "latitude_range": [
+            25.7002,
+            25.8402
+          ],
+          "median": [
+            123.1524,
+            25.7778
+          ],
+          "origins": [
+            [
+              123.1736,
+              25.6984
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [
+            "东海"
+          ],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [],
+        "batch": "AIR-5DD82818758598",
+        "sibling_ids": [],
+        "hull_values": [],
+        "country_values": [
+          "中国"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 12
+      }
+    ],
+    "association": {
+      "opinion_edges": [
+        {
+          "candidate_id": "O035",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.92,
+          "reason": "平台（空警 -500）、任务（情报监视侦察）、日期（2025.5.1）及大致区域（东海/钓鱼岛海域属于东海方向）完全一致。新闻明确的时间段（08:41-10:06）与雷达数据 R010 高度吻合，虽意见稿未列具体起止时间，但描述的行动性质和背景完全匹配。"
+        },
+        {
+          "candidate_id": "O028",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.85,
+          "reason": "平台、任务类型（隐含区域机动/监视）、日期及大方向（东海）一致。虽未提及具体“钓鱼岛”和精确时间，但作为对同一天同一机型在东海活动的报道，极大概率指向同一事件背景下的不同视角描述。"
+        },
+        {
+          "candidate_id": "O033",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.98,
+          "reason": "平台完全不同（航母 vs 预警机），地点完全不同（中太平洋 vs 钓鱼岛/东海），任务也不同，属于明显不同的活动。"
+        }
+      ],
+      "radar_edges": [
+        {
+          "candidate_id": "R010",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.98,
+          "reason": "平台（空警 -500）、任务（情报监视侦察）、日期（2025.5.1）及精确时间段（08:41-10:06）与新闻完全一致。坐标位于东海区域，虽地点字段缺失但时间重叠度 100%，是同一活动的直接数据源。"
+        },
+        {
+          "candidate_id": "R006",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.95,
+          "reason": "平台和时间段不同（14:17-16:42），属于同一天该机型在东海的另一次独立活动，与新闻描述的上午时段不冲突但非同一事件。"
+        },
+        {
+          "candidate_id": "R051",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.99,
+          "reason": "平台（山东号航母）、地点（中太平洋）及任务均与新闻描述的空警 -500 在钓鱼岛海域的活动完全不同。"
+        }
+      ],
+      "ambiguity": "意见稿 O028 未明确提及‘钓鱼岛’和具体起止时间，仅描述为‘东海上海外海’，理论上可能是同一天该机型在附近海域的另一次活动，但结合新闻标题的特定性和 R010 数据的精确匹配，O028 更倾向于是对同一事件宏观背景的补充报道而非独立事件。"
+    },
+    "same_batch_other_candidates": []
+  },
+  "result": {
+    "same_event": true,
+    "platforms": [
+      {
+        "platform_index": 0,
+        "platform": {
+          "claim": "空警 -500 预警机",
+          "supporting_sources": [
+            "N013",
+            "O035",
+            "R010"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源一致"
+        },
+        "country": {
+          "claim": "中国",
+          "supporting_sources": [
+            "N013",
+            "O035",
+            "R010"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源一致"
+        },
+        "quantity": {
+          "claim": "2 架",
+          "supporting_sources": [
+            "O035",
+            "R010"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论明确提及 2 架，雷达批号显示目标数量为 2，新闻未提数量但不构成冲突"
+        }
+      }
+    ],
+    "location": {
+      "claim": "钓鱼岛海域（东海）",
+      "supporting_sources": [
+        "N013"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻明确为钓鱼岛海域；舆论描述为东海方向（兼容）；雷达坐标位于东海且未提供反证地点，三源在区域层级一致"
+    },
+    "time": {
+      "claim": "2025 年 5 月 1 日 08:41-10:06",
+      "supporting_sources": [
+        "N013",
+        "R010"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与雷达时间精确匹配；舆论仅提及日期，不冲突"
+    },
+    "mission": {
+      "claim": "情报监视侦察",
+      "supporting_sources": [
+        "N013",
+        "O035",
+        "R010"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "三源均明确为情报监视侦察"
+    },
+    "movement": {
+      "claim": "进入（围绕任务海域活动）",
+      "supporting_sources": [
+        "N013",
+        "O035"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻描述进入并机动，舆论描述在东海方向活动，雷达未说明但时间地点重合，整体行动性质一致"
+    },
+    "unresolved_issues": [],
+    "explanation": "三源（新闻、舆论、雷达）在平台型号、国籍、任务类型、日期及大致区域上完全一致。数量方面，舆论和雷达均支持 2 架，新闻虽未提及但不构成冲突。地点上，新闻的“钓鱼岛海域”与舆论的“东海方向”及雷达坐标（东海）兼容。时间上新闻与雷达精确匹配。无明确冲突事实。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T17:16:06.8337344Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"same_event\": true, \"platforms\": [{\"platform_index\": 0, \"platform\": {\"claim\": \"空警 -500 预警机\", \"supporting_sources\": [\"N013\", \"O035\", \"R010\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源一致\"}, \"country\": {\"claim\": \"中国\", \"supporting_sources\": [\"N013\", \"O035\", \"R010\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源一致\"}, \"quantity\": {\"claim\": \"2 架\", \"supporting_sources\": [\"O035\", \"R010\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"舆论明确提及 2 架，雷达批号显示目标数量为 2，新闻未提数量但不构成冲突\"}}], \"location\": {\"claim\": \"钓鱼岛海域（东海）\", \"supporting_sources\": [\"N013\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻明确为钓鱼岛海域；舆论描述为东海方向（兼容）；雷达坐标位于东海且未提供反证地点，三源在区域层级一致\"}, \"time\": {\"claim\": \"2025 年 5 月 1 日 08:41-10:06\", \"supporting_sources\": [\"N013\", \"R010\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻与雷达时间精确匹配；舆论仅提及日期，不冲突\"}, \"mission\": {\"claim\": \"情报监视侦察\", \"supporting_sources\": [\"N013\", \"O035\", \"R010\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源均明确为情报监视侦察\"}, \"movement\": {\"claim\": \"进入（围绕任务海域活动）\", \"supporting_sources\": [\"N013\", \"O035\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻描述进入并机动，舆论描述在东海方向活动，雷达未说明但时间地点重合，整体行动性质一致\"}, \"unresolved_issues\": [],\"explanation\": \"三源（新闻、舆论、雷达）在平台型号、国籍、任务类型、日期及大致区域上完全一致。数量方面，舆论和雷达均支持 2 架，新闻虽未提及但不构成冲突。地点上，新闻的“钓鱼岛海域”与舆论的“东海方向”及雷达坐标（东海）兼容。时间上新闻与雷达精确匹配。无明确冲突事实。\"}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 12116898100,
+    "load_duration": 17915700,
+    "prompt_eval_count": 2257,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 859341000,
+    "eval_count": 587,
+    "eval_duration": 11040311000
+  }
+}

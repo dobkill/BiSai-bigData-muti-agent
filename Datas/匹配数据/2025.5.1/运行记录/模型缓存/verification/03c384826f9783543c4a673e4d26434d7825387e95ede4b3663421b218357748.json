@@ -1,0 +1,295 @@
+{
+  "role": "verification",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N046",
+      "kind": "news",
+      "title": "俄军图-95MS战略轰炸机在西沙群岛海域持续活动",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：俄军图-95MS战略轰炸机在西沙群岛海域持续活动\n正文：2025年5月1日，俄罗斯2架图-95MS战略轰炸机在西沙群岛海域持续活动，行动范围保持在指定任务海域并围绕任务区域保持机动。\n\n主题词：俄罗斯  图-95MS  西沙群岛\n",
+      "platforms": [
+        {
+          "name": "图-95MS战略轰炸机",
+          "country": "俄罗斯",
+          "quantity": 2,
+          "quote": "2架图-95MS战略轰炸机",
+          "quantity_quote": "2架",
+          "country_raw": "俄罗斯"
+        }
+      ],
+      "location": {
+        "raw": "西沙群岛海域",
+        "region": "西沙群岛海域",
+        "direction": "南海",
+        "precision": "具体区域",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "西沙群岛海域"
+      },
+      "mission": {
+        "value": null,
+        "quote": ""
+      },
+      "start_time": null,
+      "end_time": null,
+      "movement": "活动"
+    },
+    "opinion": {
+      "id": "O025",
+      "kind": "opinion",
+      "title": "俄军图-95MS轰炸机在南海方向组织远程轰炸训练",
+      "text": "时间：2025.5.1\n\n标题：俄军图-95MS轰炸机在南海方向组织远程轰炸训练\n\n正文：据联合早报报道，俄罗斯图-95MS战略轰炸机于2025年5月1日17时13分至19时38分在南海方向执行远程轰炸训练任务。该平台围绕既定科目组织训练，按计划完成相关平台之间的行动衔接。分析人士认为，此类训练有助于观察俄军战略航空兵在陌生海域的流程熟悉程度与训练协同水平。\n",
+      "platforms": [
+        {
+          "name": "图-95MS",
+          "country": "俄罗斯",
+          "quantity": null,
+          "quote": "俄罗斯图-95MS战略轰炸机",
+          "quantity_quote": "",
+          "country_raw": "俄罗斯"
+        }
+      ],
+      "location": {
+        "raw": "南海方向",
+        "region": "南海",
+        "direction": "南海",
+        "precision": "大范围",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "在南海方向执行远程轰炸训练任务"
+      },
+      "mission": {
+        "value": "远程轰炸训练",
+        "quote": "执行远程轰炸训练任务"
+      },
+      "start_time": "17:13",
+      "end_time": "19:38",
+      "movement": "活动"
+    },
+    "radars": [
+      {
+        "id": "R018",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "图-95MS战略轰炸机",
+            "country": "俄罗斯",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-92CF6229FD84B9",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "远程轰炸训练",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "远程轰炸训练"
+        ],
+        "start_time": "2025.05.01 17:13:00",
+        "end_time": "2025.05.01 19:38:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            112.0993,
+            112.4616
+          ],
+          "latitude_range": [
+            16.4953,
+            16.6882
+          ],
+          "median": [
+            112.3197,
+            16.5562
+          ],
+          "origins": [
+            [
+              112.4517,
+              16.4857
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [
+            "南海"
+          ],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [],
+        "batch": "AIR-92CF6229FD84B9",
+        "sibling_ids": [],
+        "hull_values": [],
+        "country_values": [
+          "俄罗斯"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 13
+      }
+    ],
+    "association": {
+      "opinion_edges": [
+        {
+          "candidate_id": "O025",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.95,
+          "reason": "平台完全一致（图-95MS），数量一致（2 架），日期一致（2025.5.1）。新闻描述“西沙群岛海域”属于雷达数据中坐标指向的南海区域，且任务性质均为远程轰炸训练。时间上新闻为全天持续活动，候选 O025 为具体时段（17:13-19:38），符合子集关系。"
+        },
+        {
+          "candidate_id": "O036",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.9,
+          "reason": "平台不同（苏 -30SM vs 图 -95MS），任务不同（战备警巡 vs 轰炸训练）。虽同属俄罗斯在南海同日活动，但无证据表明为同一编队或同一具体行动。"
+        },
+        {
+          "candidate_id": "O020",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.9,
+          "reason": "平台不同（瓦良格号巡洋舰 vs 图 -95MS），任务不同（护航 vs 轰炸）。属于同日同海域的不同军种活动，非同一事件。"
+        }
+      ],
+      "radar_edges": [
+        {
+          "candidate_id": "R018",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.92,
+          "reason": "平台完全匹配（图 -95MS），数量匹配（2 架）。雷达数据明确记录了该批次（AIR-92CF6229FD84B9）在南海方向执行“远程轰炸训练”，时间（17:13-19:38）与地点（坐标位于南海，涵盖西沙区域）与新闻高度吻合。新闻中的“持续活动”涵盖了此雷达记录的具体时段。"
+        },
+        {
+          "candidate_id": "R048",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.85,
+          "reason": "平台不同（瓦良格号 vs 图 -95MS）。虽同为俄罗斯海军/航空兵在南海同日活动，但舰艇与飞机无法构成同一具体行动单元。"
+        },
+        {
+          "candidate_id": "R024",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.8,
+          "reason": "平台不同（苏 -30SM vs 图 -95MS）。任务类型（对海突击训练）与新闻不符，且平台型号不一致。"
+        }
+      ],
+      "ambiguity": "新闻未提供具体起止时间，仅称‘持续活动’，需依赖雷达数据 R018 确认具体时段；但鉴于平台、数量、任务及海域的高度一致性，判定为同一活动的置信度较高。其他候选因平台或任务明显不同排除。"
+    },
+    "same_batch_other_candidates": []
+  },
+  "result": {
+    "same_event": true,
+    "platforms": [
+      {
+        "platform_index": 0,
+        "platform": {
+          "claim": "图 -95MS 战略轰炸机",
+          "supporting_sources": [
+            "N046",
+            "O025",
+            "R018"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源均确认为俄罗斯图 -95MS"
+        },
+        "country": {
+          "claim": "俄罗斯",
+          "supporting_sources": [
+            "N046",
+            "O025",
+            "R018"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源均明确标注国籍为俄罗斯"
+        },
+        "quantity": {
+          "claim": "2 架",
+          "supporting_sources": [
+            "N046",
+            "R018"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻 N046 与雷达 R018 均明确记录数量为 2 架；舆论 O025 未提及具体数量但不构成冲突"
+        }
+      }
+    ],
+    "location": {
+      "claim": "西沙群岛海域（南海）",
+      "supporting_sources": [
+        "N046",
+        "R018"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻 N046 明确为“西沙群岛海域”；雷达 R018 坐标位于南海且涵盖西沙区域，舆论 O025 泛称“南海方向”，三源在精度上兼容（具体区域包含于大范围），无冲突"
+    },
+    "time": {
+      "claim": "2025-05-01 17:13 至 19:38",
+      "supporting_sources": [
+        "O025",
+        "R018"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "舆论 O025 与雷达 R018 均提供精确起止时间；新闻 N046 仅称“持续活动”且日期一致，涵盖该时段，无冲突"
+    },
+    "mission": {
+      "claim": "远程轰炸训练",
+      "supporting_sources": [
+        "O025",
+        "R018"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "舆论 O025 与雷达 R018 均明确任务为“远程轰炸训练”；新闻 N046 未说明具体任务类型，但不构成冲突"
+    },
+    "movement": {
+      "claim": "活动（机动/训练）",
+      "supporting_sources": [
+        "N046",
+        "O025",
+        "R018"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "三源均描述为活动状态，新闻称“持续活动/机动”，舆论和雷达称“训练”，性质一致"
+    },
+    "unresolved_issues": [],
+    "explanation": "三类来源（新闻、舆论、雷达）在平台型号、国籍、数量（2 架）、地点（西沙/南海）、时间（5.1 日 17:13-19:38）、任务（远程轰炸训练）上高度一致。新闻的泛称与具体时段兼容，舆论未提数量但不冲突，雷达坐标支持新闻的具体区域描述。无未消解冲突。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T16:49:53.3774167Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"same_event\": true, \"platforms\": [{\"platform_index\": 0, \"platform\": {\"claim\": \"图 -95MS 战略轰炸机\", \"supporting_sources\": [\"N046\", \"O025\", \"R018\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源均确认为俄罗斯图 -95MS\"}, \"country\": {\"claim\": \"俄罗斯\", \"supporting_sources\": [\"N046\", \"O025\", \"R018\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源均明确标注国籍为俄罗斯\"}, \"quantity\": {\"claim\": \"2 架\", \"supporting_sources\": [\"N046\", \"R018\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻 N046 与雷达 R018 均明确记录数量为 2 架；舆论 O025 未提及具体数量但不构成冲突\"}}], \"location\": {\"claim\": \"西沙群岛海域（南海）\", \"supporting_sources\": [\"N046\", \"R018\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻 N046 明确为“西沙群岛海域”；雷达 R018 坐标位于南海且涵盖西沙区域，舆论 O025 泛称“南海方向”，三源在精度上兼容（具体区域包含于大范围），无冲突\"}, \"time\": {\"claim\": \"2025-05-01 17:13 至 19:38\", \"supporting_sources\": [\"O025\", \"R018\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"舆论 O025 与雷达 R018 均提供精确起止时间；新闻 N046 仅称“持续活动”且日期一致，涵盖该时段，无冲突\"}, \"mission\": {\"claim\": \"远程轰炸训练\", \"supporting_sources\": [\"O025\", \"R018\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"舆论 O025 与雷达 R018 均明确任务为“远程轰炸训练”；新闻 N046 未说明具体任务类型，但不构成冲突\"}, \"movement\": {\"claim\": \"活动（机动/训练）\", \"supporting_sources\": [\"N046\", \"O025\", \"R018\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源均描述为活动状态，新闻称“持续活动/机动”，舆论和雷达称“训练”，性质一致\"}, \"unresolved_issues\": [],\"explanation\": \"三类来源（新闻、舆论、雷达）在平台型号、国籍、数量（2 架）、地点（西沙/南海）、时间（5.1 日 17:13-19:38）、任务（远程轰炸训练）上高度一致。新闻的泛称与具体时段兼容，舆论未提数量但不冲突，雷达坐标支持新闻的具体区域描述。无未消解冲突。\"}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 14001189200,
+    "load_duration": 14321300,
+    "prompt_eval_count": 2243,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 851687000,
+    "eval_count": 699,
+    "eval_duration": 12972220000
+  }
+}

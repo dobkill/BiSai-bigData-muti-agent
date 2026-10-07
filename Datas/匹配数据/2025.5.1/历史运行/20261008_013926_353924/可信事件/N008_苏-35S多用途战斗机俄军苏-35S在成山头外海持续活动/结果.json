@@ -1,0 +1,752 @@
+{
+  "id": "N008",
+  "news_id": "N008",
+  "opinion_id": "O023",
+  "radar_ids": [
+    "R003"
+  ],
+  "radar_slots": {
+    "0": "R003"
+  },
+  "alignment": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O026",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.95,
+        "reason": "平台（俄军苏-35S）、数量（2 架）、时间（2025.5.1）及地点（黄海/成山头外海属于黄海方向）完全一致。新闻描述为“持续活动”，候选描述为“战备警巡”，任务性质在军事语境下常作为同一类持续性部署的不同表述，且无其他证据表明是不同批次或不同任务。"
+      },
+      {
+        "candidate_id": "O023",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.85,
+        "reason": "平台、数量（虽未明确写 2 但语境一致）、时间（2025.5.1）及地点（黄海方向）高度吻合。主要差异在于任务描述为“对海突击训练”且给出了具体时段（02:49-04:14）。考虑到新闻仅称“持续活动”未限定具体起止，该候选可能是同一活动中被媒体解读为训练的部分时段，或同一批次的不同任务阶段，存在一定歧义但关联度极高。"
+      },
+      {
+        "candidate_id": "O046",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.99,
+        "reason": "平台完全不同（美国“新奥尔良”号船坞运输舰 vs 俄罗斯苏-35S），属于明显不同的活动实体，排除关联。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R003",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.9,
+        "reason": "平台（俄军苏-35S）、数量（2 架）及时间（2025.5.1 凌晨）与新闻高度匹配。地点坐标（黄海海域）符合新闻“成山头外海”描述。任务标注为“对海突击训练”，虽与新闻笼统的“活动”略有差异，但考虑到雷达数据可能记录具体战术动作而新闻侧重宏观态势，且时间重叠度高，判定为同一活动的高置信度关联。"
+      },
+      {
+        "candidate_id": "R013",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.75,
+        "reason": "平台、数量（2 架）及地点（黄海坐标）一致。时间（08:03-10:28）与新闻“持续活动”的时间窗口存在重叠可能性，但任务标注为“战备警巡”。由于新闻未提供精确起止时间，无法完全排除这是同一批飞机在不同时段执行不同任务（先训练后警巡或反之），故置信度略低于 R003，但仍视为强相关候选。"
+      },
+      {
+        "candidate_id": "R024",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台型号不同（苏-30SM vs 苏-35S），且地点位于南海黄岩岛海域，与新闻中的黄海成山头外海不符，判定为不同活动。"
+      }
+    ],
+    "ambiguity": "主要存在于 O023 和 R013/R003 的任务描述差异（训练 vs 警巡/活动）及精确时间窗口的匹配度上。赛题数据允许任务字段存在解读差异或记录不全，只要核心要素（平台、地点、大致时间）一致，仍视为同一次活动的不同侧面或阶段。"
+  },
+  "candidates": {
+    "opinion": [
+      {
+        "id": "O026",
+        "score": 4.60834,
+        "cosine": 0.92834,
+        "platform_similarity": 1.0,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O023",
+        "score": 4.59177,
+        "cosine": 0.91177,
+        "platform_similarity": 1.0,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O046",
+        "score": 1.17559,
+        "cosine": 0.69559,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O002",
+        "score": 1.07711,
+        "cosine": 0.87711,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O019",
+        "score": 1.0319,
+        "cosine": 0.8319,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O021",
+        "score": 0.83471,
+        "cosine": 0.83471,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      }
+    ],
+    "radar": [
+      {
+        "id": "R003",
+        "score": 4.14759,
+        "cosine": 0.94759,
+        "platform_similarity": 1.0,
+        "time_overlap": null,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R013",
+        "score": 4.14256,
+        "cosine": 0.94256,
+        "platform_similarity": 1.0,
+        "time_overlap": null,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R024",
+        "score": 1.06659,
+        "cosine": 0.86659,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R019",
+        "score": 1.06312,
+        "cosine": 0.86312,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R026",
+        "score": 1.06095,
+        "cosine": 0.86095,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "missing"
+      }
+    ]
+  },
+  "assignment_diagnostics": {
+    "opinion": [],
+    "radar": []
+  },
+  "verification": {
+    "same_event": true,
+    "facts": [
+      {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "苏-35S多用途战斗机",
+        "supporting_sources": [
+          "N008",
+          "O023",
+          "R003"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N008': '苏-35S多用途战斗机', 'O023': '苏-35S', 'R003': '苏-35S多用途战斗机'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "苏 -35S 多用途战斗机",
+          "supporting_sources": [
+            "N008",
+            "O023",
+            "R003"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均明确指向俄罗斯苏 -35S 多用途战斗机，无冲突。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "俄罗斯",
+        "supporting_sources": [
+          "N008",
+          "O023",
+          "R003"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N008': '俄罗斯', 'O023': '俄罗斯', 'R003': '俄罗斯'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "俄罗斯",
+          "supporting_sources": [
+            "N008",
+            "O023",
+            "R003"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源均明确标注为俄罗斯（俄军/俄罗斯空天军），无冲突。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "2架",
+        "supporting_sources": [
+          "N008",
+          "R003"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N008': 2, 'R003': 2}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "2 架",
+          "supporting_sources": [
+            "N008",
+            "R003"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻明确提及"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "黄海",
+        "supporting_sources": [
+          "N008",
+          "O023"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "复核明示地点和PDF包含关系：{'N008': '成山头外海', 'O023': '黄海'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "成山头外海（黄海）",
+          "supporting_sources": [
+            "N008",
+            "R003"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻明确为“成山头外海”；雷达坐标范围（123.3-123.8E, 36.9-37.1N）经地理映射确认为成山头外海区域，舆论的“黄海方向”涵盖该具体区域。三源在宏观区域上一致，新闻与雷达在具体落点上相互印证。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N008": {
+            "raw": "成山头外海",
+            "region": "成山头外海",
+            "direction": "黄海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false,
+            "quote": "在成山头外海持续活动"
+          },
+          "O023": {
+            "raw": "黄海方向",
+            "region": "黄海",
+            "direction": "黄海",
+            "precision": "大范围",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false,
+            "quote": "在黄海方向执行对海突击训练任务"
+          }
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "起点 02:49，终点 04:14",
+        "supporting_sources": [
+          "O023",
+          "R003"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "2025 年 5 月 1 日",
+          "supporting_sources": [
+            "N008",
+            "O023",
+            "R003"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论（含具体时刻）、雷达均确认活动日期为 2025 年 5 月 1 日。舆论提供的具体时段（02:49-04:14）与雷达时间完全一致，且落在新闻“持续活动”的时间窗口内，无冲突。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "components": {
+          "start_time": {
+            "value": "02:49",
+            "support": [
+              "O023",
+              "R003"
+            ],
+            "conflicts": [],
+            "status": "supported",
+            "source_values": {
+              "O023": "02:49",
+              "R003": "02:49"
+            }
+          },
+          "end_time": {
+            "value": "04:14",
+            "support": [
+              "O023",
+              "R003"
+            ],
+            "conflicts": [],
+            "status": "supported",
+            "source_values": {
+              "O023": "04:14",
+              "R003": "04:14"
+            }
+          }
+        },
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "对海突击训练",
+        "supporting_sources": [
+          "O023",
+          "R003"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "原文明示任务：{'N008': [], 'O023': ['对海突击训练'], 'R003': ['对海突击训练']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "对海突击训练",
+          "supporting_sources": [
+            "O023",
+            "R003"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论明确描述为“对海突击训练”；雷达任务字段亦标注为“对海突击训练”。新闻仅描述为“持续活动”，属于泛称，不否定具体任务性质，且与两源的具体任务描述兼容。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N008": [],
+          "O023": [
+            "对海突击训练"
+          ],
+          "R003": [
+            "对海突击训练"
+          ]
+        },
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N008",
+          "O023"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "supporting_sources": [
+            "N008",
+            "O023"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻称“持续活动”，舆论称“执行...任务”（隐含活动状态），雷达虽未显式填写 movement 但记录了具体坐标轨迹，三源均指向动态活动状态。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N008": "活动",
+          "O023": "活动",
+          "R003": "未说明"
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location_detail",
+        "claim": "成山头外海",
+        "supporting_sources": [
+          "N008"
+        ],
+        "conflicting_sources": [],
+        "status": "insufficient",
+        "reason": "具体区域仅一类来源明示；结论使用共同获支持的方向，细节保留待核实",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "成山头外海（黄海）",
+          "supporting_sources": [
+            "N008",
+            "R003"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻明确为“成山头外海”；雷达坐标范围（123.3-123.8E, 36.9-37.1N）经地理映射确认为成山头外海区域，舆论的“黄海方向”涵盖该具体区域。三源在宏观区域上一致，新闻与雷达在具体落点上相互印证。"
+        },
+        "supporting_source_types": [
+          "news"
+        ]
+      }
+    ],
+    "unresolved_issues": [],
+    "explanation": "三类来源已关联，纳入结论的事实获得至少两类独立来源支持，未发现未消解明示反证。",
+    "model_explanation": "事件关联成立：平台、国籍、时间、地点四要素在三源中高度一致且无冲突。任务方面，舆论和雷达明确为“对海突击训练”，新闻的“持续活动”作为宏观描述兼容具体任务，不构成冲突。数量由新闻和雷达共同确认为 2 架。舆论提供了具体的起止时间，与雷达数据完全吻合。所有关键事实均有至少两类来源支持。"
+  },
+  "reasons": [],
+  "status": "可信事件",
+  "verified_facts": [
+    {
+      "platform_index": 0,
+      "field": "platform",
+      "claim": "苏-35S多用途战斗机",
+      "supporting_sources": [
+        "N008",
+        "O023",
+        "R003"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N008': '苏-35S多用途战斗机', 'O023': '苏-35S', 'R003': '苏-35S多用途战斗机'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "苏 -35S 多用途战斗机",
+        "supporting_sources": [
+          "N008",
+          "O023",
+          "R003"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源（新闻、舆论、雷达）均明确指向俄罗斯苏 -35S 多用途战斗机，无冲突。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "country",
+      "claim": "俄罗斯",
+      "supporting_sources": [
+        "N008",
+        "O023",
+        "R003"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N008': '俄罗斯', 'O023': '俄罗斯', 'R003': '俄罗斯'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "俄罗斯",
+        "supporting_sources": [
+          "N008",
+          "O023",
+          "R003"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源均明确标注为俄罗斯（俄军/俄罗斯空天军），无冲突。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "quantity",
+      "claim": "2架",
+      "supporting_sources": [
+        "N008",
+        "R003"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N008': 2, 'R003': 2}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "2 架",
+        "supporting_sources": [
+          "N008",
+          "R003"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻明确提及"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "location",
+      "claim": "黄海",
+      "supporting_sources": [
+        "N008",
+        "O023"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "复核明示地点和PDF包含关系：{'N008': '成山头外海', 'O023': '黄海'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "成山头外海（黄海）",
+        "supporting_sources": [
+          "N008",
+          "R003"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻明确为“成山头外海”；雷达坐标范围（123.3-123.8E, 36.9-37.1N）经地理映射确认为成山头外海区域，舆论的“黄海方向”涵盖该具体区域。三源在宏观区域上一致，新闻与雷达在具体落点上相互印证。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N008": {
+          "raw": "成山头外海",
+          "region": "成山头外海",
+          "direction": "黄海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在成山头外海持续活动"
+        },
+        "O023": {
+          "raw": "黄海方向",
+          "region": "黄海",
+          "direction": "黄海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在黄海方向执行对海突击训练任务"
+        }
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "time",
+      "claim": "起点 02:49，终点 04:14",
+      "supporting_sources": [
+        "O023",
+        "R003"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "2025 年 5 月 1 日",
+        "supporting_sources": [
+          "N008",
+          "O023",
+          "R003"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻、舆论（含具体时刻）、雷达均确认活动日期为 2025 年 5 月 1 日。舆论提供的具体时段（02:49-04:14）与雷达时间完全一致，且落在新闻“持续活动”的时间窗口内，无冲突。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "components": {
+        "start_time": {
+          "value": "02:49",
+          "support": [
+            "O023",
+            "R003"
+          ],
+          "conflicts": [],
+          "status": "supported",
+          "source_values": {
+            "O023": "02:49",
+            "R003": "02:49"
+          }
+        },
+        "end_time": {
+          "value": "04:14",
+          "support": [
+            "O023",
+            "R003"
+          ],
+          "conflicts": [],
+          "status": "supported",
+          "source_values": {
+            "O023": "04:14",
+            "R003": "04:14"
+          }
+        }
+      },
+      "supporting_source_types": [
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "mission",
+      "claim": "对海突击训练",
+      "supporting_sources": [
+        "O023",
+        "R003"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "原文明示任务：{'N008': [], 'O023': ['对海突击训练'], 'R003': ['对海突击训练']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "对海突击训练",
+        "supporting_sources": [
+          "O023",
+          "R003"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "舆论明确描述为“对海突击训练”；雷达任务字段亦标注为“对海突击训练”。新闻仅描述为“持续活动”，属于泛称，不否定具体任务性质，且与两源的具体任务描述兼容。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N008": [],
+        "O023": [
+          "对海突击训练"
+        ],
+        "R003": [
+          "对海突击训练"
+        ]
+      },
+      "supporting_source_types": [
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "movement",
+      "claim": "活动",
+      "supporting_sources": [
+        "N008",
+        "O023"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N008",
+          "O023"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻称“持续活动”，舆论称“执行...任务”（隐含活动状态），雷达虽未显式填写 movement 但记录了具体坐标轨迹，三源均指向动态活动状态。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N008": "活动",
+        "O023": "活动",
+        "R003": "未说明"
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    }
+  ],
+  "radar_row_count": 13,
+  "direction": "黄海",
+  "report_eligible": true,
+  "directory": "可信事件/N008_苏-35S多用途战斗机俄军苏-35S在成山头外海持续活动"
+}

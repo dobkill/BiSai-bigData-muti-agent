@@ -1,0 +1,387 @@
+{
+  "role": "verification",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N012",
+      "kind": "news",
+      "title": "美海军新奥尔良号及本福德号在北黄海执行编队警戒部署",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：美海军新奥尔良号及本福德号在北黄海执行编队警戒部署\n正文：2025年5月1日20时42分至22时07分，美国海军新奥尔良号船坞运输舰与本福德号导弹驱逐舰在北黄海执行编队警戒部署任务，编队沿既定方向保持机动并围绕任务区域维持警戒。\n\n主题词：美国  新奥尔良号  本福德号  编队警戒部署\n",
+      "platforms": [
+        {
+          "name": "新奥尔良号",
+          "country": "美国",
+          "quantity": null,
+          "quote": "美国海军新奥尔良号船坞运输舰",
+          "quantity_quote": "",
+          "country_raw": "美国"
+        },
+        {
+          "name": "本福德号",
+          "country": "美国",
+          "quantity": null,
+          "quote": "与本福德号导弹驱逐舰",
+          "quantity_quote": "",
+          "country_raw": "美国"
+        }
+      ],
+      "location": {
+        "raw": "北黄海",
+        "region": "北黄海",
+        "direction": "黄海",
+        "precision": "具体区域",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "在北黄海"
+      },
+      "mission": {
+        "value": "编队警戒部署",
+        "quote": "执行编队警戒部署任务"
+      },
+      "start_time": "20:42",
+      "end_time": "22:07",
+      "movement": "活动"
+    },
+    "opinion": {
+      "id": "O046",
+      "kind": "opinion",
+      "title": "美舰“新奥尔良”号在黄海活动，媒体关注其部署持续性",
+      "text": "时间：2025.5.1\n\n标题：美舰“新奥尔良”号在黄海活动，媒体关注其部署持续性\n\n正文：据公开防务媒体报道，美国海军“新奥尔良”号船坞运输舰于2025年5月1日在黄海海域按计划保持机动并持续执行编队警戒部署。围绕这一部署，有分析认为该舰的持续存在体现了前沿部署的常规化特点。相关讨论还聚焦于其区域机动能力，被视为检验平台在复杂海况下维持警戒状态的一种方式。\n",
+      "platforms": [
+        {
+          "name": "新奥尔良”号",
+          "country": "美国",
+          "quantity": null,
+          "quote": "新奥尔良”号船坞运输舰",
+          "quantity_quote": "",
+          "country_raw": "美国"
+        }
+      ],
+      "location": {
+        "raw": "黄海海域",
+        "region": "黄海",
+        "direction": "黄海",
+        "precision": "大范围",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "在黄海海域"
+      },
+      "mission": {
+        "value": "编队警戒部署",
+        "quote": "持续执行编队警戒部署"
+      },
+      "start_time": null,
+      "end_time": null,
+      "movement": "活动"
+    },
+    "radars": [
+      {
+        "id": "R032",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "新奥尔良号船坞运输舰",
+            "country": "美国",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-3ADA149BD25A2C",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "北黄海",
+          "region": "北黄海",
+          "direction": "黄海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "北黄海",
+            "region": "北黄海",
+            "direction": "黄海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "编队警戒部署",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "编队警戒部署"
+        ],
+        "start_time": "2025.05.01 20:42:00",
+        "end_time": "2025.05.01 22:07:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-3ADA149BD25A2C",
+        "sibling_ids": [],
+        "hull_values": [
+          "LPD-18"
+        ],
+        "country_values": [
+          "美国"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 12
+      },
+      {
+        "id": "R035",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "本福德号导弹驱逐舰",
+            "country": "美国",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-865DA28E2EA429",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "北黄海",
+          "region": "北黄海",
+          "direction": "黄海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "北黄海",
+            "region": "北黄海",
+            "direction": "黄海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "编队警戒部署",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "编队警戒部署"
+        ],
+        "start_time": "2025.05.01 20:42:00",
+        "end_time": "2025.05.01 22:07:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-865DA28E2EA429",
+        "sibling_ids": [],
+        "hull_values": [
+          "DDG-65"
+        ],
+        "country_values": [
+          "美国"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 12
+      }
+    ],
+    "association": {
+      "opinion_edges": [
+        {
+          "candidate_id": "O046",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.95,
+          "reason": "平台完全匹配（新奥尔良号、本福德号），时间区间高度重合（20:42-22:07 vs 全天机动），地点均为黄海且新闻明确为北黄海，任务一致。O002/O026 因平台不同（俄军战机）排除；O029/O033/O040/O042 因地点或平台不符排除。",
+          "model_platform_indices": [
+            0,
+            1
+          ],
+          "scope_correction": "按舆论实际出现的平台身份校正；其他成员未提及不能算支持"
+        },
+        {
+          "candidate_id": "O002",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 1.0,
+          "reason": "平台完全不同（俄军苏 -30SM 战机 vs 美海军舰艇），地点不同（黄岩岛南海 vs 北黄海），任务性质不同。"
+        },
+        {
+          "candidate_id": "O026",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 1.0,
+          "reason": "平台完全不同（俄军苏 -35S 战机 vs 美海军舰艇），地点描述模糊（黄海方向 vs 北黄海具体区域）。"
+        }
+      ],
+      "radar_edges": [
+        {
+          "candidate_id": "R035",
+          "platform_indices": [
+            1
+          ],
+          "relation": "same",
+          "confidence": 1.0,
+          "reason": "平台完全匹配（本福德号），时间、地点（北黄海）、任务（编队警戒部署）与新闻完全一致。"
+        },
+        {
+          "candidate_id": "R032",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 1.0,
+          "reason": "平台完全匹配（新奥尔良号），时间、地点（北黄海）、任务（编队警戒部署）与新闻完全一致。"
+        },
+        {
+          "candidate_id": "R037",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 1.0,
+          "reason": "平台不同（中国 054B 护卫舰 vs 美海军舰艇），地点不同（东海 vs 北黄海）。"
+        }
+      ],
+      "ambiguity": "无。新闻描述与雷达数据 R035/R032 及舆论 O046 在平台、时间、地点、任务上均高度吻合，构成同一活动证据链。其他候选因平台或地点明显冲突排除。"
+    },
+    "same_batch_other_candidates": []
+  },
+  "result": {
+    "same_event": true,
+    "platforms": [
+      {
+        "platform_index": 0,
+        "platform": {
+          "claim": "新奥尔良号船坞运输舰",
+          "supporting_sources": [
+            "N012",
+            "O046",
+            "R032"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均确认该舰存在，国籍均为美国。"
+        },
+        "country": {
+          "claim": "美国",
+          "supporting_sources": [
+            "N012",
+            "O046",
+            "R032"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源一致认定为美国海军舰艇。"
+        },
+        "quantity": {
+          "claim": "1 艘",
+          "supporting_sources": [
+            "R032"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "雷达 R032 明确记录数量为 1；新闻与舆论未提具体数量但不构成冲突，三源无未消解冲突。"
+        }
+      },
+      {
+        "platform_index": 1,
+        "platform": {
+          "claim": "本福德号导弹驱逐舰",
+          "supporting_sources": [
+            "N012",
+            "R035"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻与雷达 R035 确认该舰存在；舆论仅提及新奥尔良号，未提本福德号属于信息缺失而非反对。"
+        },
+        "country": {
+          "claim": "美国",
+          "supporting_sources": [
+            "N012",
+            "R035"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻与雷达一致认定为美国海军舰艇。"
+        },
+        "quantity": {
+          "claim": "1 艘",
+          "supporting_sources": [
+            "R035"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "雷达 R035 明确记录数量为 1；新闻与舆论未提具体数量但不构成冲突，三源无未消解冲突。"
+        }
+      }
+    ],
+    "location": {
+      "claim": "北黄海",
+      "supporting_sources": [
+        "N012",
+        "R032",
+        "R035"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与两架雷达均明确标注为“北黄海”；舆论表述为“黄海海域”，属于大范围兼容，不否定具体区域。"
+    },
+    "time": {
+      "claim": "2025 年 5 月 1 日 20:42-22:07",
+      "supporting_sources": [
+        "N012",
+        "R032",
+        "R035"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与两架雷达时间完全一致；舆论仅提及日期，未提供具体时刻但不构成冲突。"
+    },
+    "mission": {
+      "claim": "编队警戒部署",
+      "supporting_sources": [
+        "N012",
+        "O046",
+        "R032",
+        "R035"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻、舆论及两架雷达均明确记录任务为“编队警戒部署”。"
+    },
+    "movement": {
+      "claim": "活动",
+      "supporting_sources": [
+        "N012",
+        "O046"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与舆论描述为机动/活动；雷达未说明运动状态但不构成冲突。"
+    },
+    "unresolved_issues": [],
+    "explanation": "新闻 N012、舆论 O046 及雷达 R032/R035 在平台（新奥尔良号、本福德号）、国籍（美国）、地点（北黄海/黄海兼容）、时间（2025.5.1 20:42-22:07）、任务（编队警戒部署）上高度一致。雷达提供了具体的数量支持，舆论虽未提及本福德号但属于信息缺失而非反对，不构成冲突。所有关键事实均有至少两类来源支持，无未消解冲突。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T16:42:24.957358Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"same_event\": true, \"platforms\": [{\"platform_index\": 0, \"platform\": {\"claim\": \"新奥尔良号船坞运输舰\", \"supporting_sources\": [\"N012\", \"O046\", \"R032\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻、舆论、雷达三源均确认该舰存在，国籍均为美国。\"}, \"country\": {\"claim\": \"美国\", \"supporting_sources\": [\"N012\", \"O046\", \"R032\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源一致认定为美国海军舰艇。\"}, \"quantity\": {\"claim\": \"1 艘\", \"supporting_sources\": [\"R032\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"雷达 R032 明确记录数量为 1；新闻与舆论未提具体数量但不构成冲突，三源无未消解冲突。\"}}, {\"platform_index\": 1, \"platform\": {\"claim\": \"本福德号导弹驱逐舰\", \"supporting_sources\": [\"N012\", \"R035\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻与雷达 R035 确认该舰存在；舆论仅提及新奥尔良号，未提本福德号属于信息缺失而非反对。\"}, \"country\": {\"claim\": \"美国\", \"supporting_sources\": [\"N012\", \"R035\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻与雷达一致认定为美国海军舰艇。\"}, \"quantity\": {\"claim\": \"1 艘\", \"supporting_sources\": [\"R035\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"雷达 R035 明确记录数量为 1；新闻与舆论未提具体数量但不构成冲突，三源无未消解冲突。\"}}], \"location\": {\"claim\": \"北黄海\", \"supporting_sources\": [\"N012\", \"R032\", \"R035\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻与两架雷达均明确标注为“北黄海”；舆论表述为“黄海海域”，属于大范围兼容，不否定具体区域。\"}, \"time\": {\"claim\": \"2025 年 5 月 1 日 20:42-22:07\", \"supporting_sources\": [\"N012\", \"R032\", \"R035\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻与两架雷达时间完全一致；舆论仅提及日期，未提供具体时刻但不构成冲突。\"}, \"mission\": {\"claim\": \"编队警戒部署\", \"supporting_sources\": [\"N012\", \"O046\", \"R032\", \"R035\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻、舆论及两架雷达均明确记录任务为“编队警戒部署”。\"}, \"movement\": {\"claim\": \"活动\", \"supporting_sources\": [\"N012\", \"O046\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻与舆论描述为机动/活动；雷达未说明运动状态但不构成冲突。\"}, \"unresolved_issues\": [],\"explanation\": \"新闻 N012、舆论 O046 及雷达 R032/R035 在平台（新奥尔良号、本福德号）、国籍（美国）、地点（北黄海/黄海兼容）、时间（2025.5.1 20:42-22:07）、任务（编队警戒部署）上高度一致。雷达提供了具体的数量支持，舆论虽未提及本福德号但属于信息缺失而非反对，不构成冲突。所有关键事实均有至少两类来源支持，无未消解冲突。\"}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 17770676100,
+    "load_duration": 10508900,
+    "prompt_eval_count": 2514,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 975318000,
+    "eval_count": 874,
+    "eval_duration": 16589175000
+  }
+}

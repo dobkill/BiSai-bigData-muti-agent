@@ -1,0 +1,642 @@
+{
+  "role": "alignment",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N027",
+      "kind": "news",
+      "title": "韩国大邱级护卫舰在巴伦支海执行自由航行行动",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：韩国大邱级护卫舰在巴伦支海执行自由航行行动\n正文：2025年5月1日，韩国海军大邱级导弹护卫舰在巴伦支海执行自由航行任务，于8时37分至10时07分沿既定方向保持机动，围绕任务区域维持部署。\n\n主题词：韩国  大邱级  巴伦支海  自由航行\n",
+      "platforms": [
+        {
+          "name": "大邱级导弹护卫舰",
+          "country": "韩国",
+          "quantity": null,
+          "quote": "韩国海军大邱级导弹护卫舰",
+          "quantity_quote": "",
+          "country_raw": "韩国"
+        }
+      ],
+      "location": {
+        "raw": "巴伦支海",
+        "region": "巴伦支海",
+        "direction": "其他",
+        "precision": "原文区域",
+        "mapping": "PDF未列入三大核心海域的区域归其他",
+        "transit": false,
+        "quote": "在巴伦支海"
+      },
+      "mission": {
+        "value": "自由航行任务",
+        "quote": "执行自由航行任务"
+      },
+      "start_time": null,
+      "end_time": null,
+      "movement": "活动"
+    },
+    "opinion_candidates": [
+      {
+        "id": "O024",
+        "kind": "opinion",
+        "title": "法国导弹护卫舰在巴伦支海持续机动引发媒体关注",
+        "text": "时间：2025.5.1\n\n标题：法国导弹护卫舰在巴伦支海持续机动引发媒体关注\n\n正文：据今日头条报道，2025年5月1日8时37分至10时07分，法国一艘“大邱级”导弹护卫舰在巴伦支海围绕任务区域保持机动，行动范围保持在指定任务海域。有关讨论关注该型护卫舰在复杂海况下的区域机动与任务连续性表现，认为其平台运用特点可能有助于维持长时间的海上存在。\n",
+        "platforms": [
+          {
+            "name": "大邱级”导弹护卫舰",
+            "country": "法国",
+            "quantity": 1,
+            "quote": "法国一艘“大邱级”导弹护卫舰",
+            "quantity_quote": "一艘“大邱级”导弹护卫舰",
+            "country_raw": "法国"
+          }
+        ],
+        "location": {
+          "raw": "巴伦支海",
+          "region": "巴伦支海",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false,
+          "quote": "在巴伦支海围绕任务区域保持机动"
+        },
+        "mission": {
+          "value": null,
+          "quote": ""
+        },
+        "start_time": "08:37",
+        "end_time": "10:07",
+        "movement": "活动"
+      },
+      {
+        "id": "O030",
+        "kind": "opinion",
+        "title": "韩海军“大邱级”护卫舰在中太平洋执行监视侦察",
+        "text": "时间：2025.5.1\n\n标题：韩海军“大邱级”护卫舰在中太平洋执行监视侦察\n\n正文：据俄罗斯卫星通讯社报道，2025年5月1日5时12分至7时37分，韩国海军“大邱级”导弹护卫舰在中太平洋海域围绕任务海域组织海上监视侦察。分析认为，该平台按计划保持机动并持续执行海上监视侦察，有助于提升对广阔海域的态势感知能力。相关行动被视为韩国海军在远海区域侦巡活动的一部分，展现了其持续监视的意图。\n",
+        "platforms": [
+          {
+            "name": "大邱级”导弹护卫舰",
+            "country": "韩国",
+            "quantity": null,
+            "quote": "大邱级”导弹护卫舰",
+            "quantity_quote": "",
+            "country_raw": "韩国"
+          }
+        ],
+        "location": {
+          "raw": "中太平洋海域",
+          "region": "中太平洋海域",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false,
+          "quote": "在中太平洋海域"
+        },
+        "mission": {
+          "value": "海上监视侦察",
+          "quote": "组织海上监视侦察"
+        },
+        "start_time": "05:12",
+        "end_time": "07:37",
+        "movement": "活动"
+      },
+      {
+        "id": "O043",
+        "kind": "opinion",
+        "title": "韩国空军两架P-3CK反潜巡逻机在莫桑比克海峡活动",
+        "text": "时间：2025.5.1\n\n标题：韩国空军两架P-3CK反潜巡逻机在莫桑比克海峡活动\n\n正文：据社交媒体军事观察账号报道，2025年5月1日，韩国空军两架P-3CK反潜巡逻机在莫桑比克海峡相关海域持续活动。观察人士认为，这两架飞机围绕任务区域保持机动，其行动范围保持在指定任务海域。这一动向被视为韩国提升在远海区域机动和任务连续性的一种体现。\n",
+        "platforms": [
+          {
+            "name": "P-3CK",
+            "country": "韩国",
+            "quantity": 2,
+            "quote": "两架P-3CK反潜巡逻机",
+            "quantity_quote": "两架",
+            "country_raw": "韩国"
+          }
+        ],
+        "location": {
+          "raw": "莫桑比克海峡相关海域",
+          "region": "莫桑比克海峡相关海域",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false,
+          "quote": "在莫桑比克海峡相关海域"
+        },
+        "mission": {
+          "value": null,
+          "quote": ""
+        },
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动"
+      },
+      {
+        "id": "O010",
+        "kind": "opinion",
+        "title": "俄军护卫舰在菲律宾海开展联合搜救训练引关注",
+        "text": "时间：2025.5.1\n\n标题：俄军护卫舰在菲律宾海开展联合搜救训练引关注\n\n正文：据公开防务媒体报道，俄罗斯海军一艘“守护级”导弹护卫舰于2025年5月1日在菲律宾海围绕任务海域组织联合搜救训练。该舰按计划保持机动并持续执行联合搜救训练，围绕共同任务保持协同行动，完成平台间的联络和行动衔接。媒体观察认为，此类训练有助于提升参演兵力在远海非战争军事行动中的协同组织水平。相关流程的反复演练，也被视为强化联络配合与流程熟悉度的常规安排。\n",
+        "platforms": [
+          {
+            "name": "守护级”导弹护卫舰",
+            "country": "俄罗斯",
+            "quantity": 1,
+            "quote": "一艘“守护级”导弹护卫舰",
+            "quantity_quote": "一艘“守护级”导弹护卫舰",
+            "country_raw": "俄罗斯"
+          }
+        ],
+        "location": {
+          "raw": "菲律宾海",
+          "region": "菲律宾海",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false,
+          "quote": "在菲律宾海"
+        },
+        "mission": {
+          "value": "联合搜救训练",
+          "quote": "组织联合搜救训练"
+        },
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动"
+      },
+      {
+        "id": "O049",
+        "kind": "opinion",
+        "title": "中国一艘054B型导弹护卫舰在东海开展远海训练",
+        "text": "时间：2025.5.1\n\n标题：中国一艘054B型导弹护卫舰在东海开展远海训练\n\n正文：据俄罗斯卫星通讯社报道，中国海军一艘054B型导弹护卫舰于2025年5月1日在东海按计划保持机动并持续执行远海训练。该舰围绕既定科目组织训练，并按计划完成相关平台之间的行动衔接。这一动向被视为提升任务组织与训练协同水平的常规安排。\n",
+        "platforms": [
+          {
+            "name": "054B型导弹护卫舰",
+            "country": "中国",
+            "quantity": 1,
+            "quote": "一艘054B型导弹护卫舰",
+            "quantity_quote": "一艘054B型导弹护卫舰",
+            "country_raw": "中国"
+          }
+        ],
+        "location": {
+          "raw": "东海",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在东海"
+        },
+        "mission": {
+          "value": "远海训练",
+          "quote": "开展远海训练"
+        },
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动"
+      }
+    ],
+    "radar_candidates": [
+      {
+        "id": "R036",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "大邱级导弹护卫舰",
+            "country": "韩国",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-8A01BA5005E13B",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "巴伦支海",
+          "region": "巴伦支海",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "巴伦支海",
+            "region": "巴伦支海",
+            "direction": "其他",
+            "precision": "原文区域",
+            "mapping": "PDF未列入三大核心海域的区域归其他",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "自由航行",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "自由航行"
+        ],
+        "start_time": "2025.05.01 08:37:00",
+        "end_time": "2025.05.01 10:07:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-8A01BA5005E13B",
+        "sibling_ids": [],
+        "hull_values": [
+          "FFG-II"
+        ],
+        "country_values": [
+          "韩国"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 10
+      },
+      {
+        "id": "R049",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "大邱级导弹护卫舰",
+            "country": "韩国",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-C6E8F82CBFE3BF",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "中太平洋",
+          "region": "中太平洋",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "中太平洋",
+            "region": "中太平洋",
+            "direction": "其他",
+            "precision": "原文区域",
+            "mapping": "PDF未列入三大核心海域的区域归其他",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "海上监视侦察",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "海上监视侦察"
+        ],
+        "start_time": "2025.05.01 05:12:00",
+        "end_time": "2025.05.01 07:37:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-C6E8F82CBFE3BF",
+        "sibling_ids": [],
+        "hull_values": [
+          "FFG-II"
+        ],
+        "country_values": [
+          "韩国"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 11
+      },
+      {
+        "id": "R041",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "独岛级两栖攻击舰",
+            "country": "韩国",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-9E0C83A3EAACAD",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "东海南部",
+          "region": "东海南部",
+          "direction": "东海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "东海南部",
+            "region": "东海南部",
+            "direction": "东海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "两栖作战训练",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "两栖作战训练"
+        ],
+        "start_time": "2025.05.01 08:52:00",
+        "end_time": "2025.05.01 10:17:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-9E0C83A3EAACAD",
+        "sibling_ids": [],
+        "hull_values": [
+          "LPH-6111"
+        ],
+        "country_values": [
+          "韩国"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 11
+      },
+      {
+        "id": "R053",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "莱库号导弹护卫舰",
+            "country": "马来西亚",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-F96B2703727F38",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "温州外海",
+          "region": "温州外海",
+          "direction": "东海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "温州外海",
+            "region": "温州外海",
+            "direction": "东海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "海上护航",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "海上护航"
+        ],
+        "start_time": "2025.05.01 14:22:00",
+        "end_time": "2025.05.01 16:47:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-F96B2703727F38",
+        "sibling_ids": [],
+        "hull_values": [
+          "F30"
+        ],
+        "country_values": [
+          "马来西亚"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 10
+      },
+      {
+        "id": "R046",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "秋月级导弹护卫舰",
+            "country": "日本",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-B836E068CD1418",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "东海南部",
+          "region": "东海南部",
+          "direction": "东海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "东海南部",
+            "region": "东海南部",
+            "direction": "东海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "实弹射击训练",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "实弹射击训练"
+        ],
+        "start_time": "2025.05.01 14:28:00",
+        "end_time": "2025.05.01 16:53:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-B836E068CD1418",
+        "sibling_ids": [],
+        "hull_values": [
+          "DD-115"
+        ],
+        "country_values": [
+          "日本"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 12
+      }
+    ],
+    "recall": {
+      "opinion": [
+        {
+          "id": "O024",
+          "score": 4.57672,
+          "cosine": 0.92672,
+          "platform_similarity": 0.95,
+          "time_overlap": null,
+          "location_relation": "same"
+        },
+        {
+          "id": "O030",
+          "score": 3.97129,
+          "cosine": 0.92129,
+          "platform_similarity": 0.95,
+          "time_overlap": null,
+          "location_relation": "different_named_regions"
+        },
+        {
+          "id": "O043",
+          "score": 0.97311,
+          "cosine": 0.77311,
+          "platform_similarity": 0.0,
+          "time_overlap": null,
+          "location_relation": "different_named_regions"
+        },
+        {
+          "id": "O010",
+          "score": 0.77666,
+          "cosine": 0.77666,
+          "platform_similarity": 0.0,
+          "time_overlap": null,
+          "location_relation": "different_named_regions"
+        },
+        {
+          "id": "O049",
+          "score": 0.7683,
+          "cosine": 0.7683,
+          "platform_similarity": 0.0,
+          "time_overlap": null,
+          "location_relation": "different_direction"
+        }
+      ],
+      "radar": [
+        {
+          "id": "R036",
+          "score": 4.81849,
+          "cosine": 0.96849,
+          "platform_similarity": 0.95,
+          "time_overlap": null,
+          "location_relation": "same"
+        },
+        {
+          "id": "R049",
+          "score": 3.96259,
+          "cosine": 0.91259,
+          "platform_similarity": 0.95,
+          "time_overlap": null,
+          "location_relation": "different_named_regions"
+        },
+        {
+          "id": "R041",
+          "score": 0.95845,
+          "cosine": 0.75845,
+          "platform_similarity": 0.0,
+          "time_overlap": null,
+          "location_relation": "different_direction"
+        },
+        {
+          "id": "R053",
+          "score": 0.76155,
+          "cosine": 0.76155,
+          "platform_similarity": 0.0,
+          "time_overlap": null,
+          "location_relation": "different_direction"
+        },
+        {
+          "id": "R046",
+          "score": 0.75334,
+          "cosine": 0.75334,
+          "platform_similarity": 0.0,
+          "time_overlap": null,
+          "location_relation": "different_direction"
+        }
+      ]
+    }
+  },
+  "result": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O024",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.95,
+        "reason": "平台型号（大邱级）、国家（韩国）、地点（巴伦支海）、任务（自由航行）及精确时间区间（08:37-10:07）完全一致。尽管O024原文将国籍误标为法国，但结合新闻N027的明确信息及雷达数据R036的佐证，可判定为同一事件的数据录入错误，不影响关联结论。"
+      },
+      {
+        "candidate_id": "O030",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "地点冲突：新闻在巴伦支海，候选在中太平洋；任务不同（自由航行 vs 监视侦察）；时间区间不重叠。"
+      },
+      {
+        "candidate_id": "O043",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.99,
+        "reason": "平台类型完全不同（护卫舰 vs 反潜巡逻机），地点、任务均无关联。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R036",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 1.0,
+        "reason": "所有关键字段完全匹配：韩国大邱级护卫舰，巴伦支海，自由航行任务，时间精确到秒（08:37-10:07）。批号SHIP-8A01BA5005E13B为唯一标识。"
+      },
+      {
+        "candidate_id": "R049",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.99,
+        "reason": "地点（中太平洋）、任务（监视侦察）及时间区间均与新闻描述不符。"
+      },
+      {
+        "candidate_id": "R041",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.99,
+        "reason": "平台型号（独岛级两栖攻击舰）、地点（东海南部）、任务（两栖作战训练）均不匹配。"
+      }
+    ],
+    "ambiguity": "无，雷达数据R036与新闻N027在时间、地点、任务、平台及具体分钟级时间戳上完全吻合，排除了其他解释的可能性。O024虽存在国籍标注错误，但通过交叉验证已确认为同一事件。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T16:12:46.8787924Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"opinion_edges\": [{\"candidate_id\": \"O024\", \"platform_indices\": [0], \"relation\": \"same\", \"confidence\": 0.95, \"reason\": \"平台型号（大邱级）、国家（韩国）、地点（巴伦支海）、任务（自由航行）及精确时间区间（08:37-10:07）完全一致。尽管O024原文将国籍误标为法国，但结合新闻N027的明确信息及雷达数据R036的佐证，可判定为同一事件的数据录入错误，不影响关联结论。\"}, {\"candidate_id\": \"O030\", \"platform_indices\": [0], \"relation\": \"different\", \"confidence\": 0.98, \"reason\": \"地点冲突：新闻在巴伦支海，候选在中太平洋；任务不同（自由航行 vs 监视侦察）；时间区间不重叠。\"}, {\"candidate_id\": \"O043\", \"platform_indices\": [], \"relation\": \"different\", \"confidence\": 0.99, \"reason\": \"平台类型完全不同（护卫舰 vs 反潜巡逻机），地点、任务均无关联。\"}], \"radar_edges\": [{\"candidate_id\": \"R036\", \"platform_indices\": [0], \"relation\": \"same\", \"confidence\": 1.0, \"reason\": \"所有关键字段完全匹配：韩国大邱级护卫舰，巴伦支海，自由航行任务，时间精确到秒（08:37-10:07）。批号SHIP-8A01BA5005E13B为唯一标识。\"}, {\"candidate_id\": \"R049\", \"platform_indices\": [0], \"relation\": \"different\", \"confidence\": 0.99, \"reason\": \"地点（中太平洋）、任务（监视侦察）及时间区间均与新闻描述不符。\"}, {\"candidate_id\": \"R041\", \"platform_indices\": [], \"relation\": \"different\", \"confidence\": 0.99, \"reason\": \"平台型号（独岛级两栖攻击舰）、地点（东海南部）、任务（两栖作战训练）均不匹配。\"}], \"ambiguity\": \"无，雷达数据R036与新闻N027在时间、地点、任务、平台及具体分钟级时间戳上完全吻合，排除了其他解释的可能性。O024虽存在国籍标注错误，但通过交叉验证已确认为同一事件。\"}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 12308538100,
+    "load_duration": 15823500,
+    "prompt_eval_count": 4575,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 1518624000,
+    "eval_count": 540,
+    "eval_duration": 10463160000
+  }
+}

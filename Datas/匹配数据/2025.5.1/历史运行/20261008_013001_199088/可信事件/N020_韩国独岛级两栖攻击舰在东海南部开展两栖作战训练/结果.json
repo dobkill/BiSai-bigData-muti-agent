@@ -1,0 +1,683 @@
+{
+  "id": "N020",
+  "news_id": "N020",
+  "opinion_id": "O044",
+  "radar_ids": [
+    "R041"
+  ],
+  "radar_slots": {
+    "0": "R041"
+  },
+  "alignment": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O044",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.95,
+        "reason": "平台（韩国独岛级）、地点（东海方向 vs 东海南部）、任务（两栖作战训练）及日期完全一致，时间区间高度重叠。虽新闻未精确到分钟，但属于同一活动报道。"
+      },
+      {
+        "candidate_id": "O033",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "平台不同（中国山东号航母 vs 韩国独岛级），地点不同（中太平洋 vs 东海南部），任务不同，属于完全不同的活动。"
+      },
+      {
+        "candidate_id": "O015",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "平台不同（中国补给舰 vs 韩国两栖攻击舰），任务不同（例行部署 vs 两栖作战训练），时间区间无重叠，属于不同活动。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R041",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 1.0,
+        "reason": "雷达数据与新闻在平台（韩国独岛级）、地点（东海南部）、任务（两栖作战训练）及精确时间（08:52-10:17）上完全匹配，确认为同一活动。"
+      },
+      {
+        "candidate_id": "R050",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.99,
+        "reason": "平台不同（新加坡坦克登陆舰 vs 韩国独岛级），任务不同（远海训练 vs 两栖作战训练），虽地点和时间有重叠，但主体和具体行动性质不同。"
+      },
+      {
+        "candidate_id": "R036",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.99,
+        "reason": "平台不同（韩国大邱级护卫舰 vs 独岛级），地点不同（巴伦支海 vs 东海南部），任务不同，属于不同活动。"
+      }
+    ],
+    "ambiguity": "无显著歧义，核心候选与新闻信息高度一致。"
+  },
+  "candidates": {
+    "opinion": [
+      {
+        "id": "O044",
+        "score": 4.45521,
+        "cosine": 0.92521,
+        "platform_similarity": 0.95,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O033",
+        "score": 1.97318,
+        "cosine": 0.77318,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O004",
+        "score": 1.91,
+        "cosine": 0.71,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O015",
+        "score": 1.26431,
+        "cosine": 0.78431,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O030",
+        "score": 0.99639,
+        "cosine": 0.79639,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O009",
+        "score": 0.9929,
+        "cosine": 0.7929,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O037",
+        "score": 0.93447,
+        "cosine": 0.77447,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "same_direction_only"
+      }
+    ],
+    "radar": [
+      {
+        "id": "R041",
+        "score": 6.02783,
+        "cosine": 0.97783,
+        "platform_similarity": 0.95,
+        "time_overlap": 1.0,
+        "location_relation": "same"
+      },
+      {
+        "id": "R050",
+        "score": 2.76118,
+        "cosine": 0.76118,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "same"
+      },
+      {
+        "id": "R036",
+        "score": 2.02745,
+        "cosine": 0.76863,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.8823529411764706,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "R049",
+        "score": 0.98464,
+        "cosine": 0.78464,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "R028",
+        "score": 0.98071,
+        "cosine": 0.78071,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "R034",
+        "score": 0.92942,
+        "cosine": 0.76942,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "same_direction_only"
+      }
+    ]
+  },
+  "verification": {
+    "same_event": true,
+    "facts": [
+      {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "独岛级两栖攻击舰",
+        "supporting_sources": [
+          "N020",
+          "O044",
+          "R041"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N020': '独岛级两栖攻击舰', 'O044': '独岛级', 'R041': '独岛级两栖攻击舰'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "韩国独岛级两栖攻击舰",
+          "supporting_sources": [
+            "N020",
+            "O044",
+            "R041"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均明确指向韩国独岛级，无冲突"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "韩国",
+        "supporting_sources": [
+          "N020",
+          "O044",
+          "R041"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N020': '韩国', 'O044': '韩国', 'R041': '韩国'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "韩国",
+          "supporting_sources": [
+            "N020",
+            "O044",
+            "R041"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源一致确认国籍为韩国"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "1艘",
+        "supporting_sources": [
+          "O044",
+          "R041"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'O044': 1, 'R041': 1}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "1 艘",
+          "supporting_sources": [
+            "O044",
+            "R041"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论明确提及“一艘”，雷达批号显示数量值为 1，新闻虽未明示数字但描述单舰活动，两源支持"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "东海南部",
+        "supporting_sources": [
+          "N020",
+          "R041"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与雷达均精确指向“东海南部”，舆论表述为“东海方向”属大范围兼容，三源在区域层级一致",
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "起点 08:52，终点 10:17",
+        "supporting_sources": [
+          "N020",
+          "R041"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "2025 年 5 月 1 日 08:52-10:17",
+          "supporting_sources": [
+            "N020",
+            "R041"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻与雷达时间完全一致，舆论仅确认日期未涉具体时刻但不构成冲突"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "components": {
+          "start_time": {
+            "value": "08:52",
+            "support": [
+              "N020",
+              "R041"
+            ],
+            "conflicts": [],
+            "status": "supported",
+            "source_values": {
+              "N020": "08:52",
+              "R041": "08:52"
+            }
+          },
+          "end_time": {
+            "value": "10:17",
+            "support": [
+              "N020",
+              "R041"
+            ],
+            "conflicts": [],
+            "status": "supported",
+            "source_values": {
+              "N020": "10:17",
+              "R041": "10:17"
+            }
+          }
+        },
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "两栖作战训练",
+        "supporting_sources": [
+          "N020",
+          "O044",
+          "R041"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "原文明示任务：{'N020': ['两栖作战训练'], 'O044': ['两栖作战训练'], 'R041': ['两栖作战训练']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "两栖作战训练",
+          "supporting_sources": [
+            "N020",
+            "O044",
+            "R041"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源均明确记载任务为两栖作战训练"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N020": [
+            "两栖作战训练"
+          ],
+          "O044": [
+            "两栖作战训练"
+          ],
+          "R041": [
+            "两栖作战训练"
+          ]
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N020",
+          "O044"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "supporting_sources": [
+            "N020",
+            "O044"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻与舆论均描述为活动，雷达未说明但不构成冲突"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N020": "活动",
+          "O044": "活动",
+          "R041": "未说明"
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      }
+    ],
+    "unresolved_issues": [],
+    "explanation": "三源（新闻、舆论、雷达）在平台型号、国籍、任务及地点上高度一致。数量由舆论和雷达共同确认为 1 艘。时间由新闻和雷达精确匹配。无未消解冲突，满足可信标准。"
+  },
+  "reasons": [],
+  "status": "可信事件",
+  "verified_facts": [
+    {
+      "platform_index": 0,
+      "field": "platform",
+      "claim": "独岛级两栖攻击舰",
+      "supporting_sources": [
+        "N020",
+        "O044",
+        "R041"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N020': '独岛级两栖攻击舰', 'O044': '独岛级', 'R041': '独岛级两栖攻击舰'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "韩国独岛级两栖攻击舰",
+        "supporting_sources": [
+          "N020",
+          "O044",
+          "R041"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻、舆论、雷达三源均明确指向韩国独岛级，无冲突"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "country",
+      "claim": "韩国",
+      "supporting_sources": [
+        "N020",
+        "O044",
+        "R041"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N020': '韩国', 'O044': '韩国', 'R041': '韩国'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "韩国",
+        "supporting_sources": [
+          "N020",
+          "O044",
+          "R041"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源一致确认国籍为韩国"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "quantity",
+      "claim": "1艘",
+      "supporting_sources": [
+        "O044",
+        "R041"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'O044': 1, 'R041': 1}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "1 艘",
+        "supporting_sources": [
+          "O044",
+          "R041"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "舆论明确提及“一艘”，雷达批号显示数量值为 1，新闻虽未明示数字但描述单舰活动，两源支持"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "location",
+      "claim": "东海南部",
+      "supporting_sources": [
+        "N020",
+        "R041"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与雷达均精确指向“东海南部”，舆论表述为“东海方向”属大范围兼容，三源在区域层级一致",
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "time",
+      "claim": "起点 08:52，终点 10:17",
+      "supporting_sources": [
+        "N020",
+        "R041"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "2025 年 5 月 1 日 08:52-10:17",
+        "supporting_sources": [
+          "N020",
+          "R041"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与雷达时间完全一致，舆论仅确认日期未涉具体时刻但不构成冲突"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "components": {
+        "start_time": {
+          "value": "08:52",
+          "support": [
+            "N020",
+            "R041"
+          ],
+          "conflicts": [],
+          "status": "supported",
+          "source_values": {
+            "N020": "08:52",
+            "R041": "08:52"
+          }
+        },
+        "end_time": {
+          "value": "10:17",
+          "support": [
+            "N020",
+            "R041"
+          ],
+          "conflicts": [],
+          "status": "supported",
+          "source_values": {
+            "N020": "10:17",
+            "R041": "10:17"
+          }
+        }
+      },
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "mission",
+      "claim": "两栖作战训练",
+      "supporting_sources": [
+        "N020",
+        "O044",
+        "R041"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "原文明示任务：{'N020': ['两栖作战训练'], 'O044': ['两栖作战训练'], 'R041': ['两栖作战训练']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "两栖作战训练",
+        "supporting_sources": [
+          "N020",
+          "O044",
+          "R041"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源均明确记载任务为两栖作战训练"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N020": [
+          "两栖作战训练"
+        ],
+        "O044": [
+          "两栖作战训练"
+        ],
+        "R041": [
+          "两栖作战训练"
+        ]
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "movement",
+      "claim": "活动",
+      "supporting_sources": [
+        "N020",
+        "O044"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N020",
+          "O044"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与舆论均描述为活动，雷达未说明但不构成冲突"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N020": "活动",
+        "O044": "活动",
+        "R041": "未说明"
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    }
+  ],
+  "radar_row_count": 11,
+  "direction": "东海",
+  "report_eligible": true,
+  "directory": "可信事件/N020_韩国独岛级两栖攻击舰在东海南部开展两栖作战训练"
+}

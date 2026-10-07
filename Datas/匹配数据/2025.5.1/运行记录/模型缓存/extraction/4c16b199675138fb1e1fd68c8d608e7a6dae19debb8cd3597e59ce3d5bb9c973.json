@@ -1,0 +1,149 @@
+{
+  "role": "extraction",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "materials": [
+      {
+        "source_id": "N021",
+        "kind": "news",
+        "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：中国运-8反潜巡逻机在南海北部持续开展活动\n正文：2025年5月1日，中国2架运-8反潜巡逻机在南海北部持续活动，围绕任务区域保持机动，行动范围保持在指定任务海域。\n\n主题词：中国  运-8反潜巡逻机  南海北部\n"
+      },
+      {
+        "source_id": "N022",
+        "kind": "news",
+        "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：意大利莱蒙多·蒙特库科利号巡逻舰在礼乐滩海域反潜巡逻\n正文：2025年5月1日，意大利莱蒙多·蒙特库科利号多用途巡逻舰在礼乐滩海域执行任务，从14时06分至16时31分围绕任务海域组织反潜巡逻，按计划保持机动并持续执行反潜巡逻。\n\n主题词：意大利  莱蒙多·蒙特库科利号  多用途巡逻舰  礼乐滩海域\n"
+      },
+      {
+        "source_id": "N023",
+        "kind": "news",
+        "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：中国海军054A型护卫舰在白令海执行反潜巡逻\n正文：2025年5月1日14时44分至16时09分，中国海军054A型导弹护卫舰在白令海执行反潜巡逻任务，按计划保持机动并结合既定航线持续收集相关信息。围绕任务海域组织反潜巡逻。\n\n主题词：中国  054A  反潜巡逻  白令海\n"
+      },
+      {
+        "source_id": "N024",
+        "kind": "news",
+        "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：美军RC-135V/W电子侦察机由外围航线进入东海执行侦察\n正文：2025年5月1日8时14分至10时39分，美国空军RC-135V/W电子侦察机由外围航线进入东海执行电子侦察任务，期间围绕指定海域保持监视并结合既定航线持续收集相关信息。\n\n主题词：美国  RC-135V/W  电子侦察  东海\n"
+      }
+    ]
+  },
+  "result": {
+    "items": [
+      {
+        "source_id": "N021",
+        "platforms": [
+          {
+            "name": "运 -8反潜巡逻机",
+            "country": "中国",
+            "quantity": 2,
+            "quote": "2架运 -8反潜巡逻机",
+            "quantity_quote": "2架"
+          }
+        ],
+        "location": {
+          "value": "南海北部",
+          "quote": "在南海北部持续活动"
+        },
+        "mission": {
+          "value": "反潜巡逻",
+          "quote": "中国运 -8反潜巡逻机在南海北部持续开展活动"
+        },
+        "start_time": null,
+        "end_time": null,
+        "time_quote": "",
+        "movement": "活动",
+        "movement_quote": "在南海北部持续活动"
+      },
+      {
+        "source_id": "N022",
+        "platforms": [
+          {
+            "name": "莱蒙多·蒙特库科利号多用途巡逻舰",
+            "country": "意大利",
+            "quantity": null,
+            "quote": "意大利莱蒙多·蒙特库科利号多用途巡逻舰",
+            "quantity_quote": ""
+          }
+        ],
+        "location": {
+          "value": "礼乐滩海域",
+          "quote": "在礼乐滩海域执行任务"
+        },
+        "mission": {
+          "value": "反潜巡逻",
+          "quote": "围绕任务海域组织反潜巡逻"
+        },
+        "start_time": "14:06",
+        "end_time": "16:31",
+        "time_quote": "从14时06分至16时31分",
+        "movement": "活动",
+        "movement_quote": "围绕任务海域组织反潜巡逻"
+      },
+      {
+        "source_id": "N023",
+        "platforms": [
+          {
+            "name": "054A型导弹护卫舰",
+            "country": "中国",
+            "quantity": null,
+            "quote": "中国海军054A型导弹护卫舰",
+            "quantity_quote": ""
+          }
+        ],
+        "location": {
+          "value": "白令海",
+          "quote": "在白令海执行反潜巡逻任务"
+        },
+        "mission": {
+          "value": "反潜巡逻",
+          "quote": "在白令海执行反潜巡逻任务"
+        },
+        "start_time": "14:44",
+        "end_time": "16:09",
+        "time_quote": "2025年5月1日14时44分至16时09分",
+        "movement": "活动",
+        "movement_quote": "按计划保持机动并结合既定航线持续收集相关信息"
+      },
+      {
+        "source_id": "N024",
+        "platforms": [
+          {
+            "name": "RC-135V/W电子侦察机",
+            "country": "美国",
+            "quantity": null,
+            "quote": "美国空军RC-135V/W电子侦察机",
+            "quantity_quote": ""
+          }
+        ],
+        "location": {
+          "value": "东海",
+          "quote": "由外围航线进入东海执行电子侦察任务"
+        },
+        "mission": {
+          "value": "电子侦察",
+          "quote": "由外围航线进入东海执行电子侦察任务"
+        },
+        "start_time": "08:14",
+        "end_time": "10:39",
+        "time_quote": "2025年5月1日8时14分至10时39分",
+        "movement": "进入",
+        "movement_quote": "由外围航线进入东海"
+      }
+    ]
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T15:52:46.6590738Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\n  \"items\": [\n    {\n      \"source_id\": \"N021\",\n      \"platforms\": [\n        {\n          \"name\": \"运 -8反潜巡逻机\",\n          \"country\": \"中国\",\n          \"quantity\": 2,\n          \"quote\": \"2架运 -8反潜巡逻机\",\n          \"quantity_quote\": \"2架\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"南海北部\",\n        \"quote\": \"在南海北部持续活动\"\n      },\n      \"mission\": {\n        \"value\": \"反潜巡逻\",\n        \"quote\": \"中国运 -8反潜巡逻机在南海北部持续开展活动\"\n      },\n      \"start_time\": null,\n      \"end_time\": null,\n      \"time_quote\": \"\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"在南海北部持续活动\"\n    },\n    {\n      \"source_id\": \"N022\",\n      \"platforms\": [\n        {\n          \"name\": \"莱蒙多·蒙特库科利号多用途巡逻舰\",\n          \"country\": \"意大利\",\n          \"quantity\": null,\n          \"quote\": \"意大利莱蒙多·蒙特库科利号多用途巡逻舰\",\n          \"quantity_quote\": \"\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"礼乐滩海域\",\n        \"quote\": \"在礼乐滩海域执行任务\"\n      },\n      \"mission\": {\n        \"value\": \"反潜巡逻\",\n        \"quote\": \"围绕任务海域组织反潜巡逻\"\n      },\n      \"start_time\": \"14:06\",\n      \"end_time\": \"16:31\",\n      \"time_quote\": \"从14时06分至16时31分\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"围绕任务海域组织反潜巡逻\"\n    },\n    {\n      \"source_id\": \"N023\",\n      \"platforms\": [\n        {\n          \"name\": \"054A型导弹护卫舰\",\n          \"country\": \"中国\",\n          \"quantity\": null,\n          \"quote\": \"中国海军054A型导弹护卫舰\",\n          \"quantity_quote\": \"\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"白令海\",\n        \"quote\": \"在白令海执行反潜巡逻任务\"\n      },\n      \"mission\": {\n        \"value\": \"反潜巡逻\",\n        \"quote\": \"在白令海执行反潜巡逻任务\"\n      },\n      \"start_time\": \"14:44\",\n      \"end_time\": \"16:09\",\n      \"time_quote\": \"2025年5月1日14时44分至16时09分\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"按计划保持机动并结合既定航线持续收集相关信息\"\n    },\n    {\n      \"source_id\": \"N024\",\n      \"platforms\": [\n        {\n          \"name\": \"RC-135V/W电子侦察机\",\n          \"country\": \"美国\",\n          \"quantity\": null,\n          \"quote\": \"美国空军RC-135V/W电子侦察机\",\n          \"quantity_quote\": \"\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"东海\",\n        \"quote\": \"由外围航线进入东海执行电子侦察任务\"\n      },\n      \"mission\": {\n        \"value\": \"电子侦察\",\n        \"quote\": \"由外围航线进入东海执行电子侦察任务\"\n      },\n      \"start_time\": \"08:14\",\n      \"end_time\": \"10:39\",\n      \"time_quote\": \"2025年5月1日8时14分至10时39分\",\n      \"movement\": \"进入\",\n      \"movement_quote\": \"由外围航线进入东海\"\n    }\n  ]\n}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 16856491200,
+    "load_duration": 12648700,
+    "prompt_eval_count": 2880,
+    "prompt_eval_cached_count": 1892,
+    "prompt_eval_duration": 432028000,
+    "eval_count": 923,
+    "eval_duration": 16375540000
+  }
+}

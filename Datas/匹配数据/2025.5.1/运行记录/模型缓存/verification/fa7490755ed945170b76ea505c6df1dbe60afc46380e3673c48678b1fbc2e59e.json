@@ -1,0 +1,289 @@
+{
+  "role": "verification",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N034",
+      "kind": "news",
+      "title": "日本海上自卫队村雨号护卫舰由外围航线进入东海活动",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：日本海上自卫队村雨号护卫舰由外围航线进入东海活动\n正文：2025年5月1日，日本村雨号导弹护卫舰由外围航线进入东海任务海域，随后围绕任务区域保持机动，行动范围保持在指定任务海域。\n\n主题词：日本  村雨号导弹护卫舰  东海\n",
+      "platforms": [
+        {
+          "name": "村雨号",
+          "country": "日本",
+          "quantity": null,
+          "quote": "日本村雨号导弹护卫舰",
+          "quantity_quote": "",
+          "country_raw": "日本"
+        }
+      ],
+      "location": {
+        "raw": "东海任务海域",
+        "region": "东海",
+        "direction": "东海",
+        "precision": "大范围",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "进入东海任务海域"
+      },
+      "mission": {
+        "value": "围绕任务区域保持机动",
+        "quote": "随后围绕任务区域保持机动"
+      },
+      "start_time": null,
+      "end_time": null,
+      "movement": "进入"
+    },
+    "opinion": {
+      "id": "O008",
+      "kind": "opinion",
+      "title": "日本“村雨号”护卫舰在东海完成编队警戒部署",
+      "text": "时间：2025.5.1\n\n标题：日本“村雨号”护卫舰在东海完成编队警戒部署\n\n正文：据公开防务媒体报道，日本海上自卫队“村雨号”导弹护卫舰于2025年5月1日5时07分至7时32分在东海方向执行编队警戒部署任务。该舰沿既定方向保持机动，围绕任务区域维持部署与警戒。相关动向被认为展现了日本海上力量在前沿存在方面的持续投入。此次持续约两小时二十五分钟的部署行动，也体现出其区域机动与部署持续性的能力。\n",
+      "platforms": [
+        {
+          "name": "村雨号”导弹护卫舰",
+          "country": "日本",
+          "quantity": null,
+          "quote": "村雨号”导弹护卫舰",
+          "quantity_quote": "",
+          "country_raw": "日本"
+        }
+      ],
+      "location": {
+        "raw": "东海方向",
+        "region": "东海",
+        "direction": "东海",
+        "precision": "大范围",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "在东海方向"
+      },
+      "mission": {
+        "value": "编队警戒部署",
+        "quote": "执行编队警戒部署任务"
+      },
+      "start_time": "05:07",
+      "end_time": "07:32",
+      "movement": "活动"
+    },
+    "radars": [
+      {
+        "id": "R047",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "村雨号导弹护卫舰",
+            "country": "日本",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-BBD255E22D51C3",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "东海",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "东海",
+            "region": "东海",
+            "direction": "东海",
+            "precision": "大范围",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "编队警戒部署",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "编队警戒部署"
+        ],
+        "start_time": "2025.05.01 05:07:00",
+        "end_time": "2025.05.01 07:32:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-BBD255E22D51C3",
+        "sibling_ids": [],
+        "hull_values": [
+          "DD-101"
+        ],
+        "country_values": [
+          "日本"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 12
+      }
+    ],
+    "association": {
+      "opinion_edges": [
+        {
+          "candidate_id": "O008",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.95,
+          "reason": "平台完全一致（日本村雨号）、日期时间高度重合（5 月 1 日 05:07-07:32 vs 新闻仅提当日进入）、地点均为东海、任务性质（机动/警戒）逻辑兼容。新闻描述为宏观行动，O008 为具体时段内的战术动作，属于同一活动的时间切片。"
+        },
+        {
+          "candidate_id": "O045",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.9,
+          "reason": "平台型号冲突：新闻明确为“村雨号”，而 O045 描述为“秋月级”。虽同属日本护卫舰且同日在东海，但不同型号通常代表不同编队或独立行动，非同一具体活动。"
+        },
+        {
+          "candidate_id": "O040",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.95,
+          "reason": "平台国籍与名称冲突：新闻为日本“村雨号”，O040 为马来西亚“莱库号”。虽时间地点重合，但主体完全不同，属于不同活动。"
+        }
+      ],
+      "radar_edges": [
+        {
+          "candidate_id": "R047",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.98,
+          "reason": "平台、日期、时间区间（05:07-07:32）、地点（东海）及任务（编队警戒部署/机动）与新闻高度吻合。雷达数据提供了新闻中缺失的具体起止时间和精确坐标线索，确认为同一活动的详细记录。"
+        },
+        {
+          "candidate_id": "R046",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.9,
+          "reason": "平台型号冲突：新闻为“村雨号”，R046 为“秋月级”（DD-115）。虽同为日本护卫舰且同日在东海进行实弹射击，但主体不同，属于独立活动。"
+        },
+        {
+          "candidate_id": "R037",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.95,
+          "reason": "平台国籍与型号冲突：新闻为日本“村雨号”，R037 为中国"
+        }
+      ],
+      "ambiguity": "无。核心关联项（O008, R047）在平台、时间、地点、任务上形成强闭环，其他候选因平台型号或国籍明显不同被排除。"
+    },
+    "same_batch_other_candidates": []
+  },
+  "result": {
+    "same_event": true,
+    "platforms": [
+      {
+        "platform_index": 0,
+        "platform": {
+          "claim": "村雨号导弹护卫舰",
+          "supporting_sources": [
+            "N034",
+            "O008",
+            "R047"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均明确指向日本村雨号，无冲突"
+        },
+        "country": {
+          "claim": "日本",
+          "supporting_sources": [
+            "N034",
+            "O008",
+            "R047"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源一致确认国籍为日本"
+        },
+        "quantity": {
+          "claim": "1 架",
+          "supporting_sources": [
+            "R047"
+          ],
+          "conflicting_sources": [],
+          "status": "insufficient",
+          "reason": "仅雷达明确数量为 1，新闻与舆论未说明具体数量，无法构成三类支持"
+        }
+      }
+    ],
+    "location": {
+      "claim": "东海",
+      "supporting_sources": [
+        "N034",
+        "O008",
+        "R047"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "三源均明确活动区域为东海"
+    },
+    "time": {
+      "claim": "2025 年 5 月 1 日 05:07-07:32",
+      "supporting_sources": [
+        "O008",
+        "R047"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "舆论与雷达提供精确起止时间，新闻仅确认日期，时间范围兼容"
+    },
+    "mission": {
+      "claim": "编队警戒部署/机动",
+      "supporting_sources": [
+        "O008",
+        "R047"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "舆论与雷达明确任务为编队警戒部署，新闻描述为围绕区域机动，逻辑兼容"
+    },
+    "movement": {
+      "claim": "进入/活动",
+      "supporting_sources": [
+        "N034",
+        "O008"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻称进入东海任务海域，舆论称在东海方向活动，雷达未说明但时间地点重合"
+    },
+    "unresolved_issues": [],
+    "explanation": "新闻、舆论、雷达三源在平台（村雨号）、国籍（日本）、地点（东海）上完全一致；时间与任务细节由舆论和雷达互补印证，形成强关联闭环。数量仅雷达明确，其余未说明但不构成冲突。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T16:47:16.7665594Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"same_event\": true, \"platforms\": [{\"platform_index\": 0, \"platform\": {\"claim\": \"村雨号导弹护卫舰\", \"supporting_sources\": [\"N034\", \"O008\", \"R047\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源（新闻、舆论、雷达）均明确指向日本村雨号，无冲突\"}, \"country\": {\"claim\": \"日本\", \"supporting_sources\": [\"N034\", \"O008\", \"R047\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源一致确认国籍为日本\"},\"quantity\": {\"claim\": \"1 架\", \"supporting_sources\": [\"R047\"], \"conflicting_sources\": [], \"status\": \"insufficient\", \"reason\": \"仅雷达明确数量为 1，新闻与舆论未说明具体数量，无法构成三类支持\"} }], \"location\": {\"claim\": \"东海\", \"supporting_sources\": [\"N034\", \"O008\", \"R047\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源均明确活动区域为东海\"}, \"time\": {\"claim\": \"2025 年 5 月 1 日 05:07-07:32\", \"supporting_sources\": [\"O008\", \"R047\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"舆论与雷达提供精确起止时间，新闻仅确认日期，时间范围兼容\"}, \"mission\": {\"claim\": \"编队警戒部署/机动\", \"supporting_sources\": [\"O008\", \"R047\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"舆论与雷达明确任务为编队警戒部署，新闻描述为围绕区域机动，逻辑兼容\"}, \"movement\": {\"claim\": \"进入/活动\", \"supporting_sources\": [\"N034\", \"O008\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻称进入东海任务海域，舆论称在东海方向活动，雷达未说明但时间地点重合\"}, \"unresolved_issues\": [],\"explanation\": \"新闻、舆论、雷达三源在平台（村雨号）、国籍（日本）、地点（东海）上完全一致；时间与任务细节由舆论和雷达互补印证，形成强关联闭环。数量仅雷达明确，其余未说明但不构成冲突。\"}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 11486411300,
+    "load_duration": 15973400,
+    "prompt_eval_count": 2127,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 887663000,
+    "eval_count": 548,
+    "eval_duration": 10431372000
+  }
+}

@@ -1,0 +1,831 @@
+{
+  "role": "alignment",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N010",
+      "kind": "news",
+      "title": "日本秋月级护卫舰在东海南部完成实弹射击训练后离开",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：日本秋月级护卫舰在东海南部完成实弹射击训练后离开\n正文：2025年5月1日14时28分至16时53分，日本海上自卫队秋月级导弹护卫舰在东海南部执行实弹射击训练，随后沿既定航线离开该任务海域。按计划保持机动并持续执行实弹射击训练。\n\n主题词：日本  秋月级  实弹射击训练  东海南部\n",
+      "platforms": [
+        {
+          "name": "秋月级",
+          "country": "日本",
+          "quantity": null,
+          "quote": "日本海上自卫队秋月级导弹护卫舰",
+          "quantity_quote": "",
+          "country_raw": "日本"
+        }
+      ],
+      "location": {
+        "raw": "东海南部",
+        "region": "东海南部",
+        "direction": "东海",
+        "precision": "具体区域",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "东海南部"
+      },
+      "mission": {
+        "value": "实弹射击训练",
+        "quote": "执行实弹射击训练"
+      },
+      "start_time": "14:28",
+      "end_time": "16:53",
+      "movement": "离开"
+    },
+    "opinion_candidates": [
+      {
+        "id": "O045",
+        "kind": "opinion",
+        "title": "日本海上自卫队一艘秋月级护卫舰在东海实弹射击",
+        "text": "时间：2025.5.1\n\n标题：日本海上自卫队一艘秋月级护卫舰在东海实弹射击\n\n正文：据央视新闻报道，2025年5月1日，日本海上自卫队一艘秋月级导弹护卫舰在东海方向进行实弹射击训练。媒体关注到，该舰围绕既定科目组织训练并完成平台间行动衔接，这一动向被视为日本海上力量强化任务组织与流程熟悉的体现。相关分析指出，此类训练有助于检验其训练协同水平。\n",
+        "platforms": [
+          {
+            "name": "秋月级",
+            "country": "日本",
+            "quantity": 1,
+            "quote": "一艘秋月级导弹护卫舰",
+            "quantity_quote": "一艘",
+            "country_raw": "日本"
+          }
+        ],
+        "location": {
+          "raw": "东海方向",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在东海方向"
+        },
+        "mission": {
+          "value": "实弹射击训练",
+          "quote": "进行实弹射击训练"
+        },
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动"
+      },
+      {
+        "id": "O006",
+        "kind": "opinion",
+        "title": "中国海军一艘054A型护卫舰在白令海完成反潜巡逻",
+        "text": "时间：2025.5.1\n\n标题：中国海军一艘054A型护卫舰在白令海完成反潜巡逻\n\n正文：据央视新闻报道，2025年5月1日，中国海军一艘054A型导弹护卫舰在白令海相关海域执行反潜巡逻任务，行动时段为14时44分至16时09分。该舰在此期间按计划保持机动并持续执行反潜巡逻，被认为体现了在陌生海域围绕任务海域组织持续监视与区域侦巡的能力。\n",
+        "platforms": [
+          {
+            "name": "054A型导弹护卫舰",
+            "country": "中国",
+            "quantity": 1,
+            "quote": "一艘054A型导弹护卫舰",
+            "quantity_quote": "一艘054A型导弹护卫舰",
+            "country_raw": "中国"
+          }
+        ],
+        "location": {
+          "raw": "白令海相关海域",
+          "region": "白令海相关海域",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false,
+          "quote": "在白令海相关海域"
+        },
+        "mission": {
+          "value": "反潜巡逻任务",
+          "quote": "执行反潜巡逻任务"
+        },
+        "start_time": "14:44",
+        "end_time": "16:09",
+        "movement": "活动"
+      },
+      {
+        "id": "O008",
+        "kind": "opinion",
+        "title": "日本“村雨号”护卫舰在东海完成编队警戒部署",
+        "text": "时间：2025.5.1\n\n标题：日本“村雨号”护卫舰在东海完成编队警戒部署\n\n正文：据公开防务媒体报道，日本海上自卫队“村雨号”导弹护卫舰于2025年5月1日5时07分至7时32分在东海方向执行编队警戒部署任务。该舰沿既定方向保持机动，围绕任务区域维持部署与警戒。相关动向被认为展现了日本海上力量在前沿存在方面的持续投入。此次持续约两小时二十五分钟的部署行动，也体现出其区域机动与部署持续性的能力。\n",
+        "platforms": [
+          {
+            "name": "村雨号”导弹护卫舰",
+            "country": "日本",
+            "quantity": null,
+            "quote": "村雨号”导弹护卫舰",
+            "quantity_quote": "",
+            "country_raw": "日本"
+          }
+        ],
+        "location": {
+          "raw": "东海方向",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在东海方向"
+        },
+        "mission": {
+          "value": "编队警戒部署",
+          "quote": "执行编队警戒部署任务"
+        },
+        "start_time": "05:07",
+        "end_time": "07:32",
+        "movement": "活动"
+      },
+      {
+        "id": "O044",
+        "kind": "opinion",
+        "title": "韩国海军独岛级两栖攻击舰在东海开展训练引发关注",
+        "text": "时间：2025.5.1\n\n标题：韩国海军独岛级两栖攻击舰在东海开展训练引发关注\n\n正文：据公开防务媒体报道，韩国海军一艘“独岛”级两栖攻击舰于2025年5月1日在东海方向按计划组织两栖作战训练。该舰围绕任务方向展开兵力投送环节，并完成平台间的协同配合。相关媒体观察认为，此次训练体现了韩方在东海方向维持两栖投送流程的意图。围绕兵力投送与平台协同的讨论，有分析指出此类公开演训有助于外界评估其两栖战备的衔接水平。\n",
+        "platforms": [
+          {
+            "name": "独岛级",
+            "country": "韩国",
+            "quantity": 1,
+            "quote": "一艘“独岛”级两栖攻击舰",
+            "quantity_quote": "一艘",
+            "country_raw": "韩国"
+          }
+        ],
+        "location": {
+          "raw": "东海方向",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在东海方向"
+        },
+        "mission": {
+          "value": "两栖作战训练",
+          "quote": "两栖作战训练"
+        },
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动"
+      },
+      {
+        "id": "O042",
+        "kind": "opinion",
+        "title": "菲律宾海军护卫舰在东海开展远海训练引发媒体分析",
+        "text": "时间：2025.5.1\n\n标题：菲律宾海军护卫舰在东海开展远海训练引发媒体分析\n\n正文：据公开防务媒体报道，2025年5月1日，菲律宾海军“米格尔·马尔瓦尔号”导弹护卫舰在东海方向进行远海训练，训练时段为17时24分至19时49分。此次行动围绕既定科目组织训练，被视为菲律宾军方提升任务组织与流程熟悉程度的举措。分析认为，此类训练有助于强化平台间的行动衔接与训练协同。\n",
+        "platforms": [
+          {
+            "name": "米格尔·马尔瓦尔号",
+            "country": "菲律宾",
+            "quantity": null,
+            "quote": "米格尔·马尔瓦尔号”导弹护卫舰",
+            "quantity_quote": "",
+            "country_raw": "菲律宾"
+          }
+        ],
+        "location": {
+          "raw": "东海方向",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在东海方向"
+        },
+        "mission": {
+          "value": "远海训练",
+          "quote": "进行远海训练"
+        },
+        "start_time": "17:24",
+        "end_time": "19:49",
+        "movement": "活动"
+      },
+      {
+        "id": "O040",
+        "kind": "opinion",
+        "title": "马来西亚海军“莱库号”护卫舰赴东海执行海上护航",
+        "text": "时间：2025.5.1\n\n标题：马来西亚海军“莱库号”护卫舰赴东海执行海上护航\n\n正文：据今日头条报道，马来西亚海军“莱库号”导弹护卫舰于2025年5月1日14时22分起在东海方向执行海上护航任务。该舰围绕任务编组实施保障行动，按计划完成相关保障环节衔接。围绕此次部署的讨论，多聚焦于马来西亚海军在关键水道持续保障与行动续航能力的展现。\n",
+        "platforms": [
+          {
+            "name": "莱库号",
+            "country": "马来西亚",
+            "quantity": null,
+            "quote": "莱库号”导弹护卫舰",
+            "quantity_quote": "",
+            "country_raw": "马来西亚"
+          }
+        ],
+        "location": {
+          "raw": "东海方向",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在东海方向"
+        },
+        "mission": {
+          "value": "海上护航",
+          "quote": "执行海上护航任务"
+        },
+        "start_time": "14:22",
+        "end_time": null,
+        "movement": "活动"
+      }
+    ],
+    "radar_candidates": [
+      {
+        "id": "R046",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "秋月级导弹护卫舰",
+            "country": "日本",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-B836E068CD1418",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "东海南部",
+          "region": "东海南部",
+          "direction": "东海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "东海南部",
+            "region": "东海南部",
+            "direction": "东海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "实弹射击训练",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "实弹射击训练"
+        ],
+        "start_time": "2025.05.01 14:28:00",
+        "end_time": "2025.05.01 16:53:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-B836E068CD1418",
+        "sibling_ids": [],
+        "hull_values": [
+          "DD-115"
+        ],
+        "country_values": [
+          "日本"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 12
+      },
+      {
+        "id": "R053",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "莱库号导弹护卫舰",
+            "country": "马来西亚",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-F96B2703727F38",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "温州外海",
+          "region": "温州外海",
+          "direction": "东海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "温州外海",
+            "region": "温州外海",
+            "direction": "东海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "海上护航",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "海上护航"
+        ],
+        "start_time": "2025.05.01 14:22:00",
+        "end_time": "2025.05.01 16:47:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-F96B2703727F38",
+        "sibling_ids": [],
+        "hull_values": [
+          "F30"
+        ],
+        "country_values": [
+          "马来西亚"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 10
+      },
+      {
+        "id": "R008",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "苏-30MK2多用途战斗机",
+            "country": "越南",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-511B24203B9156",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "对海突击训练",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "对海突击训练"
+        ],
+        "start_time": "2025.05.01 14:55:00",
+        "end_time": "2025.05.01 16:20:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            122.887,
+            123.2551
+          ],
+          "latitude_range": [
+            35.5627,
+            35.7781
+          ],
+          "median": [
+            123.1059,
+            35.6957
+          ],
+          "origins": [
+            [
+              122.898,
+              35.7972
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [
+            "黄海"
+          ],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [
+          "同批号存在远距离起始位置簇，候选拆分不代表归属已经消解"
+        ],
+        "batch": "AIR-511B24203B9156",
+        "sibling_ids": [
+          "R007"
+        ],
+        "hull_values": [],
+        "country_values": [
+          "越南"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 6
+      },
+      {
+        "id": "R041",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "独岛级两栖攻击舰",
+            "country": "韩国",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-9E0C83A3EAACAD",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "东海南部",
+          "region": "东海南部",
+          "direction": "东海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "东海南部",
+            "region": "东海南部",
+            "direction": "东海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "两栖作战训练",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "两栖作战训练"
+        ],
+        "start_time": "2025.05.01 08:52:00",
+        "end_time": "2025.05.01 10:17:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-9E0C83A3EAACAD",
+        "sibling_ids": [],
+        "hull_values": [
+          "LPH-6111"
+        ],
+        "country_values": [
+          "韩国"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 11
+      },
+      {
+        "id": "R050",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "坚韧级坦克登陆舰",
+            "country": "新加坡",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-C79D9798414EC0",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "东海南部",
+          "region": "东海南部",
+          "direction": "东海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "东海南部",
+            "region": "东海南部",
+            "direction": "东海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "远海训练",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "远海训练"
+        ],
+        "start_time": "2025.05.01 08:08:00",
+        "end_time": "2025.05.01 10:33:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-C79D9798414EC0",
+        "sibling_ids": [],
+        "hull_values": [
+          "ENDURANCE"
+        ],
+        "country_values": [
+          "新加坡"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 10
+      },
+      {
+        "id": "R047",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "村雨号导弹护卫舰",
+            "country": "日本",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-BBD255E22D51C3",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "东海",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "东海",
+            "region": "东海",
+            "direction": "东海",
+            "precision": "大范围",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "编队警戒部署",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "编队警戒部署"
+        ],
+        "start_time": "2025.05.01 05:07:00",
+        "end_time": "2025.05.01 07:32:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-BBD255E22D51C3",
+        "sibling_ids": [],
+        "hull_values": [
+          "DD-101"
+        ],
+        "country_values": [
+          "日本"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 12
+      },
+      {
+        "id": "R045",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "903A型综合补给舰",
+            "country": "中国",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-B1BD0BF756EEB2",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "冲绳海槽",
+          "region": "冲绳海槽",
+          "direction": "东海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "冲绳海槽",
+            "region": "冲绳海槽",
+            "direction": "东海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "例行部署",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "例行部署"
+        ],
+        "start_time": "2025.05.01 05:56:00",
+        "end_time": "2025.05.01 07:21:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-B1BD0BF756EEB2",
+        "sibling_ids": [],
+        "hull_values": [
+          "TYPE-903A"
+        ],
+        "country_values": [
+          "中国"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 12
+      }
+    ],
+    "recall": {
+      "opinion": [
+        {
+          "id": "O045",
+          "score": 4.50304,
+          "cosine": 0.97304,
+          "platform_similarity": 0.95,
+          "time_overlap": null,
+          "location_relation": "contains"
+        },
+        {
+          "id": "O006",
+          "score": 1.84814,
+          "cosine": 0.64814,
+          "platform_similarity": 0.0,
+          "time_overlap": 1.0,
+          "location_relation": "different_direction"
+        },
+        {
+          "id": "O008",
+          "score": 1.40641,
+          "cosine": 0.72641,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "contains"
+        },
+        {
+          "id": "O044",
+          "score": 1.24968,
+          "cosine": 0.76968,
+          "platform_similarity": 0.0,
+          "time_overlap": null,
+          "location_relation": "contains"
+        },
+        {
+          "id": "O042",
+          "score": 1.21501,
+          "cosine": 0.73501,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "contains"
+        },
+        {
+          "id": "O040",
+          "score": 1.19662,
+          "cosine": 0.71662,
+          "platform_similarity": 0.0,
+          "time_overlap": null,
+          "location_relation": "contains"
+        }
+      ],
+      "radar": [
+        {
+          "id": "R046",
+          "score": 5.95258,
+          "cosine": 0.90258,
+          "platform_similarity": 0.95,
+          "time_overlap": 1.0,
+          "location_relation": "same"
+        },
+        {
+          "id": "R053",
+          "score": 1.97913,
+          "cosine": 0.66879,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.9586206896551724,
+          "location_relation": "same_direction_only"
+        },
+        {
+          "id": "R008",
+          "score": 1.86998,
+          "cosine": 0.66998,
+          "platform_similarity": 0.0,
+          "time_overlap": 1.0,
+          "location_relation": "missing"
+        },
+        {
+          "id": "R041",
+          "score": 1.52825,
+          "cosine": 0.72825,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "same"
+        },
+        {
+          "id": "R050",
+          "score": 1.48984,
+          "cosine": 0.68984,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "same"
+        },
+        {
+          "id": "R047",
+          "score": 1.3914,
+          "cosine": 0.7114,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "contains"
+        },
+        {
+          "id": "R045",
+          "score": 0.8652,
+          "cosine": 0.7052,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "same_direction_only"
+        }
+      ]
+    }
+  },
+  "result": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O045",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.95,
+        "reason": "平台（日本秋月级）、任务（实弹射击训练）、地点（东海南部/东海方向）及日期完全一致。新闻中具体的起止时间（14:28-16:53）与雷达数据 R046 高度吻合，虽意见类材料未提供精确分钟级时间，但描述的行动时段覆盖核心训练期，属于同一活动报道。"
+      },
+      {
+        "candidate_id": "O006",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "平台型号不同（中国 054A vs 日本秋月级）、国籍不同、任务不同（反潜巡逻 vs 实弹射击）、地点完全不同（白令海 vs 东海南部），属于完全不同的活动。"
+      },
+      {
+        "candidate_id": "O008",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台型号不同（村雨号 vs 秋月级）、任务不同（编队警戒部署 vs 实弹射击训练）。虽然同在日本、同在东海且日期相同，但具体舰艇和任务性质不符，属于同日不同活动。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R046",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 1.0,
+        "reason": "平台（秋月级导弹护卫舰）、地点（东海南部）、任务（实弹射击训练）完全匹配。时间戳（2025.05.01 14:28:00 - 16:53:00）与新闻正文精确一致，确认为同一活动的数据记录。"
+      },
+      {
+        "candidate_id": "R053",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.99,
+        "reason": "平台不同（马来西亚莱库号 vs 日本秋月级）、地点不同（温州外海 vs 东海南部）、任务不同（海上护航 vs 实弹射击训练），属于不同活动。"
+      },
+      {
+        "candidate_id": "R047",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台不同（村雨号 vs 秋月级）、任务不同（编队警戒部署 vs 实弹射击训练）。时间区间（05:07-07:32）与新闻报道的 14:28-16:53 无重叠，确认为同日不同活动。"
+      }
+    ],
+    "ambiguity": "无。雷达数据 R046 提供了精确到分钟的时间戳和具体的地点描述，与新闻文本高度一致，消除了时间或地点上的歧义。其他候选在平台型号、任务类型或地理位置上存在明显差异，可明确排除。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T16:09:05.0210721Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"opinion_edges\": [{\"candidate_id\": \"O045\", \"platform_indices\": [0], \"relation\": \"same\", \"confidence\": 0.95, \"reason\": \"平台（日本秋月级）、任务（实弹射击训练）、地点（东海南部/东海方向）及日期完全一致。新闻中具体的起止时间（14:28-16:53）与雷达数据 R046 高度吻合，虽意见类材料未提供精确分钟级时间，但描述的行动时段覆盖核心训练期，属于同一活动报道。\"}, {\"candidate_id\": \"O006\", \"platform_indices\": [0], \"relation\": \"different\", \"confidence\": 0.98, \"reason\": \"平台型号不同（中国 054A vs 日本秋月级）、国籍不同、任务不同（反潜巡逻 vs 实弹射击）、地点完全不同（白令海 vs 东海南部），属于完全不同的活动。\"}, {\"candidate_id\": \"O008\", \"platform_indices\": [0], \"relation\": \"different\", \"confidence\": 0.95, \"reason\": \"平台型号不同（村雨号 vs 秋月级）、任务不同（编队警戒部署 vs 实弹射击训练）。虽然同在日本、同在东海且日期相同，但具体舰艇和任务性质不符，属于同日不同活动。\"}], \"radar_edges\": [{\"candidate_id\": \"R046\", \"platform_indices\": [0], \"relation\": \"same\", \"confidence\": 1.0, \"reason\": \"平台（秋月级导弹护卫舰）、地点（东海南部）、任务（实弹射击训练）完全匹配。时间戳（2025.05.01 14:28:00 - 16:53:00）与新闻正文精确一致，确认为同一活动的数据记录。\"}, {\"candidate_id\": \"R053\", \"platform_indices\": [0], \"relation\": \"different\", \"confidence\": 0.99, \"reason\": \"平台不同（马来西亚莱库号 vs 日本秋月级）、地点不同（温州外海 vs 东海南部）、任务不同（海上护航 vs 实弹射击训练），属于不同活动。\"}, {\"candidate_id\": \"R047\", \"platform_indices\": [0], \"relation\": \"different\", \"confidence\": 0.95, \"reason\": \"平台不同（村雨号 vs 秋月级）、任务不同（编队警戒部署 vs 实弹射击训练）。时间区间（05:07-07:32）与新闻报道的 14:28-16:53 无重叠，确认为同日不同活动。\"}],\"ambiguity\": \"无。雷达数据 R046 提供了精确到分钟的时间戳和具体的地点描述，与新闻文本高度一致，消除了时间或地点上的歧义。其他候选在平台型号、任务类型或地理位置上存在明显差异，可明确排除。\"}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 14707206100,
+    "load_duration": 13854700,
+    "prompt_eval_count": 5844,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 1914844000,
+    "eval_count": 649,
+    "eval_duration": 12449391000
+  }
+}

@@ -1,0 +1,266 @@
+{
+  "role": "verification",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N019",
+      "kind": "news",
+      "title": "法国E-2C预警机在仁爱礁附近海域执行空中警戒",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：法国E-2C预警机在仁爱礁附近海域执行空中警戒\n正文：2025年5月1日，法国E-2C预警机在仁爱礁附近海域活动，于5时01分至7时26分围绕任务海域组织空中警戒，并按计划保持机动持续执行任务。\n\n主题词：法国  E-2C  仁爱礁  空中警戒\n",
+      "platforms": [
+        {
+          "name": "E-2C预警机",
+          "country": "法国",
+          "quantity": null,
+          "quote": "E-2C预警机",
+          "quantity_quote": "",
+          "country_raw": "法国"
+        }
+      ],
+      "location": {
+        "raw": "仁爱礁附近海域",
+        "region": "仁爱礁附近海域",
+        "direction": "南海",
+        "precision": "具体区域",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "在仁爱礁附近海域"
+      },
+      "mission": {
+        "value": "空中警戒",
+        "quote": "执行空中警戒"
+      },
+      "start_time": "05:01",
+      "end_time": "07:26",
+      "movement": "活动"
+    },
+    "opinion": null,
+    "radars": [
+      {
+        "id": "R014",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "E-2C预警机",
+            "country": "法国",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-738A05E5683F27",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "空中警戒",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "空中警戒"
+        ],
+        "start_time": "2025.05.01 05:01:00",
+        "end_time": "2025.05.01 07:26:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            124.3572,
+            124.4548
+          ],
+          "latitude_range": [
+            26.0474,
+            26.1874
+          ],
+          "median": [
+            124.4071,
+            26.1354
+          ],
+          "origins": [
+            [
+              124.3802,
+              26.1553
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [
+            "东海"
+          ],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [],
+        "batch": "AIR-738A05E5683F27",
+        "sibling_ids": [],
+        "hull_values": [],
+        "country_values": [
+          "法国"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 10
+      }
+    ],
+    "association": {
+      "opinion_edges": [
+        {
+          "candidate_id": "O014",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.95,
+          "reason": "平台型号相同（E-2C）且任务相同（空中警戒），但地点冲突：新闻明确为“仁爱礁附近海域”（南海），候选 O014 为“东海赤尾屿海域”。不同海域排除同一次活动。"
+        },
+        {
+          "candidate_id": "O013",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.85,
+          "reason": "平台类型相似（预警机），时间重叠，但地点均为大范围“南海方向”，无法精确匹配新闻中的“仁爱礁附近”。且候选未提及法国 E-2C，存在国籍/型号不确定性，不足以确认为同一具体活动。"
+        },
+        {
+          "candidate_id": "O005",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.8,
+          "reason": "时间完全重叠（05:45-07:10 vs 05:01-07:26），但平台型号不同（台风战机 vs E-2C 预警机），任务也不同，地点为东海，与新闻南海地点冲突。"
+        }
+      ],
+      "radar_edges": [
+        {
+          "candidate_id": "R014",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.98,
+          "reason": "平台型号（E-2C）、国籍（法国）、任务（空中警戒）、时间（05:01-07:26）完全一致。虽然雷达数据地点缺失，但新闻明确为仁爱礁附近，且坐标辅助提示为东海可能是误标或宽泛区域，鉴于其他核心要素高度吻合，判定为同一活动。"
+        },
+        {
+          "candidate_id": "R016",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.9,
+          "reason": "时间重叠，但平台型号不同（台风战机 vs E-2C），国籍不同（德国 vs 法国），任务不同，地点为东海，与新闻南海地点冲突。"
+        },
+        {
+          "candidate_id": "R045",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.9,
+          "reason": "时间重叠，但平台型号完全不同（补给舰 vs 预警机），国籍不同，任务不同，地点为冲绳海槽（东海），与新闻南海地点冲突。"
+        }
+      ],
+      "ambiguity": "雷达数据 R014 的坐标辅助提示为‘东海’，与新闻‘仁爱礁（南海）’存在地理方向上的潜在冲突，但考虑到该字段未经验证且仅为召回辅助，而平台、时间、任务等核心要素完全匹配，优先采信核心要素判定为 same。"
+    },
+    "same_batch_other_candidates": []
+  },
+  "result": {
+    "same_event": true,
+    "platforms": [
+      {
+        "platform_index": 0,
+        "platform": {
+          "claim": "E-2C 预警机",
+          "supporting_sources": [
+            "N019",
+            "R014"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻与雷达均明确标识为法国 E-2C 预警机，两源一致。"
+        },
+        "country": {
+          "claim": "法国",
+          "supporting_sources": [
+            "N019",
+            "R014"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻标题及正文指明“法国”，雷达数据 country_values 为“法国”，两源一致。"
+        },
+        "quantity": {
+          "claim": "2 架",
+          "supporting_sources": [
+            "R014"
+          ],
+          "conflicting_sources": [],
+          "status": "insufficient",
+          "reason": "仅雷达 R014 明确数量为 2 架，新闻 N019 未提及具体数量，无法构成三类来源支持或两源强支撑（缺新闻数量佐证）。"
+        }
+      }
+    ],
+    "location": {
+      "claim": "仁爱礁附近海域",
+      "supporting_sources": [
+        "N019"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻 N019 明确记载“在仁爱礁附近海域”。雷达 R014 地点字段缺失，坐标辅助提示为‘东海’但已标记未验证且仅为召回辅助，不作为独立反证；核心事实依赖新闻显式描述。"
+    },
+    "time": {
+      "claim": "2025-05-01 05:01 至 07:26",
+      "supporting_sources": [
+        "N019",
+        "R014"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻 N019 与雷达 R014 的时间起止完全一致，两源相互印证。"
+    },
+    "mission": {
+      "claim": "空中警戒",
+      "supporting_sources": [
+        "N019",
+        "R014"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻 N019 与雷达 R014 均明确任务为“空中警戒”，两源一致。"
+    },
+    "movement": {
+      "claim": "活动",
+      "supporting_sources": [
+        "N019"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻 N019 描述为“活动”及“保持机动持续执行任务”，雷达 R014 未说明 movement，但无冲突。"
+    },
+    "unresolved_issues": [],
+    "explanation": "平台型号、国籍、时间、任务四要素在新闻与雷达间高度一致（2/3 来源类型支持），地点由新闻明确支持且雷达坐标辅助提示存在但未验证不构成有效冲突。数量仅雷达提及，新闻缺失，故 quantity 结论为 insufficient。整体事件关联成立。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T16:43:54.077815Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"same_event\": true, \"platforms\": [{\"platform_index\": 0, \"platform\": {\"claim\": \"E-2C 预警机\", \"supporting_sources\": [\"N019\", \"R014\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻与雷达均明确标识为法国 E-2C 预警机，两源一致。\"}, \"country\": {\"claim\": \"法国\", \"supporting_sources\": [\"N019\", \"R014\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻标题及正文指明“法国”，雷达数据 country_values 为“法国”，两源一致。\"}, \"quantity\": {\"claim\": \"2 架\", \"supporting_sources\": [\"R014\"], \"conflicting_sources\": [], \"status\": \"insufficient\", \"reason\": \"仅雷达 R014 明确数量为 2 架，新闻 N019 未提及具体数量，无法构成三类来源支持或两源强支撑（缺新闻数量佐证）。\"}}], \"location\": {\"claim\": \"仁爱礁附近海域\", \"supporting_sources\": [\"N019\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻 N019 明确记载“在仁爱礁附近海域”。雷达 R014 地点字段缺失，坐标辅助提示为‘东海’但已标记未验证且仅为召回辅助，不作为独立反证；核心事实依赖新闻显式描述。\"}, \"time\": {\"claim\": \"2025-05-01 05:01 至 07:26\", \"supporting_sources\": [\"N019\", \"R014\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻 N019 与雷达 R014 的时间起止完全一致，两源相互印证。\"}, \"mission\": {\"claim\": \"空中警戒\", \"supporting_sources\": [\"N019\", \"R014\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻 N019 与雷达 R014 均明确任务为“空中警戒”，两源一致。\"}, \"movement\": {\"claim\": \"活动\", \"supporting_sources\": [\"N019\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻 N019 描述为“活动”及“保持机动持续执行任务”，雷达 R014 未说明 movement，但无冲突。\"}, \"unresolved_issues\": [],\"explanation\": \"平台型号、国籍、时间、任务四要素在新闻与雷达间高度一致（2/3 来源类型支持），地点由新闻明确支持且雷达坐标辅助提示存在但未验证不构成有效冲突。数量仅雷达提及，新闻缺失，故 quantity 结论为 insufficient。整体事件关联成立。\"}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 12849445600,
+    "load_duration": 16036500,
+    "prompt_eval_count": 1919,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 804343000,
+    "eval_count": 631,
+    "eval_duration": 11842583000
+  }
+}

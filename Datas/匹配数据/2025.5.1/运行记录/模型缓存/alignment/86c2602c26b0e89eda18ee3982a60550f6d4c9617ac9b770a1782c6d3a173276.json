@@ -1,0 +1,1591 @@
+{
+  "role": "alignment",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N032",
+      "kind": "news",
+      "title": "中国054A型导弹护卫舰在夏威夷附近海空域执行联合巡航行动",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：中国054A型导弹护卫舰在夏威夷附近海空域执行联合巡航行动\n正文：2025年5月1日17时09分至18时39分，中国054A型导弹护卫舰在夏威夷附近海空域围绕任务海域组织联合巡航，按计划保持机动并持续执行联合巡航，期间围绕共同任务保持协同行动并完成平台间的联络和行动衔接。\n\n主题词：中国  054A型导弹护卫舰  联合巡航  夏威夷附近海空域\n",
+      "platforms": [
+        {
+          "name": "054A型导弹护卫舰",
+          "country": "中国",
+          "quantity": null,
+          "quote": "中国054A型导弹护卫舰",
+          "quantity_quote": "",
+          "country_raw": "中国"
+        }
+      ],
+      "location": {
+        "raw": "夏威夷附近海空域",
+        "region": "夏威夷附近海空域",
+        "direction": "其他",
+        "precision": "原文区域",
+        "mapping": "PDF未列入三大核心海域的区域归其他",
+        "transit": false,
+        "quote": "在夏威夷附近海空域围绕任务海域组织联合巡航"
+      },
+      "mission": {
+        "value": "联合巡航",
+        "quote": "执行联合巡航行动"
+      },
+      "start_time": "17:09",
+      "end_time": "18:39",
+      "movement": "活动"
+    },
+    "opinion_candidates": [
+      {
+        "id": "O001",
+        "kind": "opinion",
+        "title": "中国两架歼-16D电子战机在塔斯曼海组织训练",
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动",
+        "platforms": [
+          {
+            "name": "歼-16D电子战机",
+            "country": "中国",
+            "quantity": 2
+          }
+        ],
+        "location": {
+          "raw": "塔斯曼海",
+          "region": "塔斯曼海",
+          "direction": "其他",
+          "precision": "原文区域"
+        },
+        "mission": "电子对抗训练"
+      },
+      {
+        "id": "O002",
+        "kind": "opinion",
+        "title": "俄军苏-30SM夜间在黄岩岛海域持续活动近两个半小时",
+        "start_time": "20:31",
+        "end_time": "22:56",
+        "movement": "活动",
+        "platforms": [
+          {
+            "name": "苏-30SM多用途战斗机",
+            "country": "俄罗斯",
+            "quantity": 2
+          }
+        ],
+        "location": {
+          "raw": "南海黄岩岛海域",
+          "region": "黄岩岛海域",
+          "direction": "南海",
+          "precision": "具体区域"
+        },
+        "mission": null
+      },
+      {
+        "id": "O003",
+        "kind": "opinion",
+        "title": "中国运-8反潜巡逻机在南海执行海上侦察巡逻",
+        "start_time": "11:59",
+        "end_time": "13:24",
+        "movement": "活动",
+        "platforms": [
+          {
+            "name": "运-8反潜巡逻机",
+            "country": "中国",
+            "quantity": null
+          }
+        ],
+        "location": {
+          "raw": "南海海域",
+          "region": "南海",
+          "direction": "南海",
+          "precision": "大范围"
+        },
+        "mission": "海上侦察巡逻任务"
+      },
+      {
+        "id": "O004",
+        "kind": "opinion",
+        "title": "新加坡F-15SG战斗机在安达曼海执行战备警巡",
+        "start_time": "08:19",
+        "end_time": "10:44",
+        "movement": "活动",
+        "platforms": [
+          {
+            "name": "F-15SG多用途战斗机",
+            "country": "新加坡",
+            "quantity": null
+          }
+        ],
+        "location": {
+          "raw": "安达曼海任务海域",
+          "region": "安达曼海任务海域",
+          "direction": "其他",
+          "precision": "原文区域"
+        },
+        "mission": "战备警巡任务"
+      },
+      {
+        "id": "O005",
+        "kind": "opinion",
+        "title": "德国空军“台风”战机在东海进行对海突击训练",
+        "start_time": "05:45",
+        "end_time": "07:10",
+        "movement": "活动",
+        "platforms": [
+          {
+            "name": "台风”多用途战斗机",
+            "country": "德国",
+            "quantity": null
+          }
+        ],
+        "location": {
+          "raw": "东海空域",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围"
+        },
+        "mission": "对海突击训练"
+      },
+      {
+        "id": "O006",
+        "kind": "opinion",
+        "title": "中国海军一艘054A型护卫舰在白令海完成反潜巡逻",
+        "start_time": "14:44",
+        "end_time": "16:09",
+        "movement": "活动",
+        "platforms": [
+          {
+            "name": "054A型导弹护卫舰",
+            "country": "中国",
+            "quantity": 1
+          }
+        ],
+        "location": {
+          "raw": "白令海相关海域",
+          "region": "白令海相关海域",
+          "direction": "其他",
+          "precision": "原文区域"
+        },
+        "mission": "反潜巡逻任务"
+      },
+      {
+        "id": "O007",
+        "kind": "opinion",
+        "title": "中国海军054A型护卫舰在孟加拉湾执行联合巡航任务",
+        "start_time": "17:09",
+        "end_time": "18:39",
+        "movement": "活动",
+        "platforms": [
+          {
+            "name": "054A型导弹护卫舰",
+            "country": "中国",
+            "quantity": 1
+          }
+        ],
+        "location": {
+          "raw": "孟加拉湾海域",
+          "region": "孟加拉湾海域",
+          "direction": "其他",
+          "precision": "原文区域"
+        },
+        "mission": "联合巡航"
+      },
+      {
+        "id": "O008",
+        "kind": "opinion",
+        "title": "日本“村雨号”护卫舰在东海完成编队警戒部署",
+        "start_time": "05:07",
+        "end_time": "07:32",
+        "movement": "活动",
+        "platforms": [
+          {
+            "name": "村雨号”导弹护卫舰",
+            "country": "日本",
+            "quantity": null
+          }
+        ],
+        "location": {
+          "raw": "东海方向",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围"
+        },
+        "mission": "编队警戒部署"
+      },
+      {
+        "id": "O009",
+        "kind": "opinion",
+        "title": "韩国岛山安昌浩级潜艇在鄂霍次克海完成海上巡逻",
+        "start_time": "17:40",
+        "end_time": "19:05",
+        "movement": "活动",
+        "platforms": [
+          {
+            "name": "岛山安昌浩级常规潜艇",
+            "country": "韩国",
+            "quantity": null
+          }
+        ],
+        "location": {
+          "raw": "鄂霍次克海",
+          "region": "鄂霍次克海",
+          "direction": "其他",
+          "precision": "原文区域"
+        },
+        "mission": "海上巡逻"
+      },
+      {
+        "id": "O010",
+        "kind": "opinion",
+        "title": "俄军护卫舰在菲律宾海开展联合搜救训练引关注",
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动",
+        "platforms": [
+          {
+            "name": "守护级”导弹护卫舰",
+            "country": "俄罗斯",
+            "quantity": 1
+          }
+        ],
+        "location": {
+          "raw": "菲律宾海",
+          "region": "菲律宾海",
+          "direction": "其他",
+          "precision": "原文区域"
+        },
+        "mission": "联合搜救训练"
+      },
+      {
+        "id": "O011",
+        "kind": "opinion",
+        "title": "美国阿利·伯克级驱逐舰在渚碧礁附近海域持续活动",
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动",
+        "platforms": [
+          {
+            "name": "阿利·伯克级导弹驱逐舰",
+            "country": "美国",
+            "quantity": 1
+          }
+        ],
+        "location": {
+          "raw": "南海渚碧礁附近海域",
+          "region": "渚碧礁附近海域",
+          "direction": "南海",
+          "precision": "具体区域"
+        },
+        "mission": null
+      },
+      {
+        "id": "O012",
+        "kind": "opinion",
+        "title": "澳军两架E-7A预警机南海执行预警指挥任务引关注",
+        "start_time": "20:47",
+        "end_time": null,
+        "movement": "活动",
+        "platforms": [
+          {
+            "name": "E-7A“楔尾”预警与控制机",
+            "country": "澳大利亚",
+            "quantity": 2
+          }
+        ],
+        "location": {
+          "raw": "南海方向",
+          "region": "南海",
+          "direction": "南海",
+          "precision": "大范围"
+        },
+        "mission": "预警指挥任务"
+      },
+      {
+        "id": "O013",
+        "kind": "opinion",
+        "title": "意大利海军F-35B在南海开展舰载机起降训练",
+        "start_time": "05:23",
+        "end_time": "07:48",
+        "movement": "活动",
+        "platforms": [
+          {
+            "name": "F-35B短距起降战斗机",
+            "country": "意大利",
+            "quantity": null
+          }
+        ],
+        "location": {
+          "raw": "南海方向",
+          "region": "南海",
+          "direction": "南海",
+          "precision": "大范围"
+        },
+        "mission": "舰载机起降训练"
+      },
+      {
+        "id": "O014",
+        "kind": "opinion",
+        "title": "法国两架E-2C预警机在东海赤尾屿海域执行空中警戒",
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动",
+        "platforms": [
+          {
+            "name": "E-2C预警机",
+            "country": "法国",
+            "quantity": 2
+          }
+        ],
+        "location": {
+          "raw": "东海赤尾屿海域",
+          "region": "赤尾屿海域",
+          "direction": "东海",
+          "precision": "具体区域"
+        },
+        "mission": "空中警戒任务"
+      },
+      {
+        "id": "O015",
+        "kind": "opinion",
+        "title": "中国903A型综合补给舰在东海执行例行部署",
+        "start_time": "05:56",
+        "end_time": "07:21",
+        "movement": "活动",
+        "platforms": [
+          {
+            "name": "903A型综合补给舰",
+            "country": "中国",
+            "quantity": null
+          }
+        ],
+        "location": {
+          "raw": "东海海域",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围"
+        },
+        "mission": "例行部署任务"
+      },
+      {
+        "id": "O016",
+        "kind": "opinion",
+        "title": "中国903A型补给舰南海远海训练时段引发流程熟悉讨论",
+        "start_time": "02:54",
+        "end_time": "04:19",
+        "movement": "活动",
+        "platforms": [
+          {
+            "name": "903A型综合补给舰",
+            "country": "中国",
+            "quantity": 1
+          }
+        ],
+        "location": {
+          "raw": "南海方向",
+          "region": "南海",
+          "direction": "南海",
+          "precision": "大范围"
+        },
+        "mission": "远海训练"
+      },
+      {
+        "id": "O017",
+        "kind": "opinion",
+        "title": "意大利两架F-35B在南海进行对海突击训练",
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动",
+        "platforms": [
+          {
+            "name": "F-35B短距起降战斗机",
+            "country": "意大利",
+            "quantity": 2
+          }
+        ],
+        "location": {
+          "raw": "南海方向",
+          "region": "南海",
+          "direction": "南海",
+          "precision": "大范围"
+        },
+        "mission": "对海突击训练任务"
+      },
+      {
+        "id": "O018",
+        "kind": "opinion",
+        "title": "越南两架苏-30MK2战斗机在南海进行对海突击训练",
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动",
+        "platforms": [
+          {
+            "name": "苏-30MK2多用途战斗机",
+            "country": "越南",
+            "quantity": 2
+          }
+        ],
+        "location": {
+          "raw": "南海",
+          "region": "南海",
+          "direction": "南海",
+          "precision": "大范围"
+        },
+        "mission": "对海突击训练"
+      },
+      {
+        "id": "O019",
+        "kind": "opinion",
+        "title": "俄军苏-30SM在南海连续机动，南沙海域活动引发关注",
+        "start_time": "18:01",
+        "end_time": "19:31",
+        "movement": "活动",
+        "platforms": [
+          {
+            "name": "苏-30SM",
+            "country": "俄罗斯",
+            "quantity": 3
+          }
+        ],
+        "location": {
+          "raw": "南海方向南沙群岛海域",
+          "region": "南沙群岛海域",
+          "direction": "南海",
+          "precision": "具体区域"
+        },
+        "mission": "持续活动"
+      },
+      {
+        "id": "O020",
+        "kind": "opinion",
+        "title": "俄海军“瓦良格”号巡洋舰南海执行护航任务",
+        "start_time": "02:16",
+        "end_time": "04:41",
+        "movement": "活动",
+        "platforms": [
+          {
+            "name": "瓦良格”号导弹巡洋舰",
+            "country": "俄罗斯",
+            "quantity": null
+          }
+        ],
+        "location": {
+          "raw": "南海方向",
+          "region": "南海",
+          "direction": "南海",
+          "precision": "大范围"
+        },
+        "mission": "海上护航任务"
+      },
+      {
+        "id": "O021",
+        "kind": "opinion",
+        "title": "中国两架歼-35隐身战斗机在东海执行战备警巡",
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动",
+        "platforms": [
+          {
+            "name": "歼-35",
+            "country": "中国",
+            "quantity": 2
+          }
+        ],
+        "location": {
+          "raw": "东海方向",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围"
+        },
+        "mission": "战备警巡任务"
+      },
+      {
+        "id": "O022",
+        "kind": "opinion",
+        "title": "德军2架“台风”战斗机在印度洋持续活动引关注",
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动",
+        "platforms": [
+          {
+            "name": "台风",
+            "country": "德国",
+            "quantity": 2
+          }
+        ],
+        "location": {
+          "raw": "印度洋相关海域",
+          "region": "印度洋相关海域",
+          "direction": "其他",
+          "precision": "原文区域"
+        },
+        "mission": null
+      },
+      {
+        "id": "O023",
+        "kind": "opinion",
+        "title": "俄军苏-35S在黄海开展对海突击训练引发关注",
+        "start_time": "02:49",
+        "end_time": "04:14",
+        "movement": "活动",
+        "platforms": [
+          {
+            "name": "苏-35S",
+            "country": "俄罗斯",
+            "quantity": null
+          }
+        ],
+        "location": {
+          "raw": "黄海方向",
+          "region": "黄海",
+          "direction": "黄海",
+          "precision": "大范围"
+        },
+        "mission": "对海突击训练"
+      },
+      {
+        "id": "O024",
+        "kind": "opinion",
+        "title": "法国导弹护卫舰在巴伦支海持续机动引发媒体关注",
+        "start_time": "08:37",
+        "end_time": "10:07",
+        "movement": "活动",
+        "platforms": [
+          {
+            "name": "大邱级”导弹护卫舰",
+            "country": "法国",
+            "quantity": 1
+          }
+        ],
+        "location": {
+          "raw": "巴伦支海",
+          "region": "巴伦支海",
+          "direction": "其他",
+          "precision": "原文区域"
+        },
+        "mission": null
+      },
+      {
+        "id": "O025",
+        "kind": "opinion",
+        "title": "俄军图-95MS轰炸机在南海方向组织远程轰炸训练",
+        "start_time": "17:13",
+        "end_time": "19:38",
+        "movement": "活动",
+        "platforms": [
+          {
+            "name": "图-95MS",
+            "country": "俄罗斯",
+            "quantity": null
+          }
+        ],
+        "location": {
+          "raw": "南海方向",
+          "region": "南海",
+          "direction": "南海",
+          "precision": "大范围"
+        },
+        "mission": "远程轰炸训练"
+      },
+      {
+        "id": "O026",
+        "kind": "opinion",
+        "title": "俄军2架苏-35S在黄海方向执行战备警巡任务",
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动",
+        "platforms": [
+          {
+            "name": "苏-35S",
+            "country": "俄罗斯",
+            "quantity": 2
+          }
+        ],
+        "location": {
+          "raw": "黄海方向",
+          "region": "黄海",
+          "direction": "黄海",
+          "precision": "大范围"
+        },
+        "mission": "战备警巡"
+      },
+      {
+        "id": "O027",
+        "kind": "opinion",
+        "title": "澳大利亚海军霍巴特级驱逐舰在南海进行联合搜救训练",
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动",
+        "platforms": [
+          {
+            "name": "霍巴特级导弹驱逐舰",
+            "country": "澳大利亚",
+            "quantity": 1
+          }
+        ],
+        "location": {
+          "raw": "南海海域",
+          "region": "南海",
+          "direction": "南海",
+          "precision": "大范围"
+        },
+        "mission": "联合搜救训练"
+      },
+      {
+        "id": "O028",
+        "kind": "opinion",
+        "title": "空警-500在东海上海外海持续活动引发区域机动讨论",
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动",
+        "platforms": [
+          {
+            "name": "空警-500预警机",
+            "country": "中国",
+            "quantity": 2
+          }
+        ],
+        "location": {
+          "raw": "东海上海外海",
+          "region": "上海外海",
+          "direction": "东海",
+          "precision": "具体区域"
+        },
+        "mission": null
+      },
+      {
+        "id": "O029",
+        "kind": "opinion",
+        "title": "美国海军米利厄斯号驱逐舰在东海执行海上护航",
+        "start_time": "05:34",
+        "end_time": "07:59",
+        "movement": "活动",
+        "platforms": [
+          {
+            "name": "米利厄斯号”导弹驱逐舰",
+            "country": "美国",
+            "quantity": null
+          }
+        ],
+        "location": {
+          "raw": "东海方向",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围"
+        },
+        "mission": "海上护航"
+      },
+      {
+        "id": "O030",
+        "kind": "opinion",
+        "title": "韩海军“大邱级”护卫舰在中太平洋执行监视侦察",
+        "start_time": "05:12",
+        "end_time": "07:37",
+        "movement": "活动",
+        "platforms": [
+          {
+            "name": "大邱级”导弹护卫舰",
+            "country": "韩国",
+            "quantity": null
+          }
+        ],
+        "location": {
+          "raw": "中太平洋海域",
+          "region": "中太平洋海域",
+          "direction": "其他",
+          "precision": "原文区域"
+        },
+        "mission": "海上监视侦察"
+      },
+      {
+        "id": "O031",
+        "kind": "opinion",
+        "title": "中国两架歼-15T舰载机在济州岛西部海域持续活动",
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动",
+        "platforms": [
+          {
+            "name": "歼-15T",
+            "country": "中国",
+            "quantity": 2
+          }
+        ],
+        "location": {
+          "raw": "黄海方向的济州岛西部海域",
+          "region": "济州岛西部海域",
+          "direction": "黄海",
+          "precision": "具体区域"
+        },
+        "mission": "持续活动"
+      },
+      {
+        "id": "O032",
+        "kind": "opinion",
+        "title": "中国福建号航母东海联合巡航展现协同组织能力",
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动",
+        "platforms": [
+          {
+            "name": "福建号航空母舰",
+            "country": "中国",
+            "quantity": null
+          }
+        ],
+        "location": {
+          "raw": "东海方向",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围"
+        },
+        "mission": "联合巡航任务"
+      },
+      {
+        "id": "O033",
+        "kind": "opinion",
+        "title": "中国海军“山东号”航母在中太平洋进行联合巡航",
+        "start_time": "08:30",
+        "end_time": "10:55",
+        "movement": "活动",
+        "platforms": [
+          {
+            "name": "山东号”航空母舰",
+            "country": "中国",
+            "quantity": null
+          }
+        ],
+        "location": {
+          "raw": "中太平洋海域",
+          "region": "中太平洋海域",
+          "direction": "其他",
+          "precision": "原文区域"
+        },
+        "mission": "联合巡航任务"
+      },
+      {
+        "id": "O034",
+        "kind": "opinion",
+        "title": "意大利巡逻舰现身礼乐滩海域，区域机动引发关注",
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动",
+        "platforms": [
+          {
+            "name": "莱蒙多·蒙特库科利号",
+            "country": "意大利",
+            "quantity": null
+          }
+        ],
+        "location": {
+          "raw": "南海礼乐滩海域",
+          "region": "礼乐滩海域",
+          "direction": "南海",
+          "precision": "具体区域"
+        },
+        "mission": null
+      },
+      {
+        "id": "O035",
+        "kind": "opinion",
+        "title": "中国两架空警-500预警机在东海执行情报监视侦察",
+        "start_time": null,
+        "end_time": null,
+        "movement": "进入",
+        "platforms": [
+          {
+            "name": "空警-500",
+            "country": "中国",
+            "quantity": 2
+          }
+        ],
+        "location": {
+          "raw": "东海方向围绕任务海域",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围"
+        },
+        "mission": "情报监视侦察"
+      },
+      {
+        "id": "O036",
+        "kind": "opinion",
+        "title": "俄罗斯空天军苏-30SM战机在南海执行战备警巡",
+        "start_time": "02:27",
+        "end_time": "04:52",
+        "movement": "进入",
+        "platforms": [
+          {
+            "name": "苏-30SM",
+            "country": "俄罗斯",
+            "quantity": null
+          }
+        ],
+        "location": {
+          "raw": "南海方向",
+          "region": "南海",
+          "direction": "南海",
+          "precision": "大范围"
+        },
+        "mission": "战备警巡"
+      },
+      {
+        "id": "O037",
+        "kind": "opinion",
+        "title": "中国轰-6K轰炸机编队进入东海上海外海展开机动",
+        "start_time": null,
+        "end_time": null,
+        "movement": "进入",
+        "platforms": [
+          {
+            "name": "轰-6K",
+            "country": "中国",
+            "quantity": 2
+          }
+        ],
+        "location": {
+          "raw": "东海上海外海任务海域",
+          "region": "上海外海",
+          "direction": "东海",
+          "precision": "具体区域"
+        },
+        "mission": null
+      },
+      {
+        "id": "O038",
+        "kind": "opinion",
+        "title": "韩国两架AW-159直升机在阿拉伯海执行反潜巡逻",
+        "start_time": null,
+        "end_time": null,
+        "movement": "进入",
+        "platforms": [
+          {
+            "name": "AW-159",
+            "country": "韩国",
+            "quantity": 2
+          }
+        ],
+        "location": {
+          "raw": "阿拉伯海围绕任务海域",
+          "region": "阿拉伯海围绕任务海域",
+          "direction": "其他",
+          "precision": "原文区域"
+        },
+        "mission": "反潜巡逻"
+      },
+      {
+        "id": "O039",
+        "kind": "opinion",
+        "title": "新加坡一艘坚韧级坦克登陆舰在东海开展远海训练",
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动",
+        "platforms": [
+          {
+            "name": "坚韧级坦克登陆舰",
+            "country": "新加坡",
+            "quantity": 1
+          }
+        ],
+        "location": {
+          "raw": "东海",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围"
+        },
+        "mission": "远海训练"
+      },
+      {
+        "id": "O040",
+        "kind": "opinion",
+        "title": "马来西亚海军“莱库号”护卫舰赴东海执行海上护航",
+        "start_time": "14:22",
+        "end_time": null,
+        "movement": "活动",
+        "platforms": [
+          {
+            "name": "莱库号",
+            "country": "马来西亚",
+            "quantity": null
+          }
+        ],
+        "location": {
+          "raw": "东海方向",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围"
+        },
+        "mission": "海上护航"
+      },
+      {
+        "id": "O041",
+        "kind": "opinion",
+        "title": "新加坡两架F-15SG在孟加拉湾执行战备警巡",
+        "start_time": "11:44",
+        "end_time": "13:14",
+        "movement": "活动",
+        "platforms": [
+          {
+            "name": "F-15SG多用途战斗机",
+            "country": "新加坡",
+            "quantity": 2
+          }
+        ],
+        "location": {
+          "raw": "孟加拉湾",
+          "region": "孟加拉湾",
+          "direction": "其他",
+          "precision": "原文区域"
+        },
+        "mission": "战备警巡"
+      },
+      {
+        "id": "O042",
+        "kind": "opinion",
+        "title": "菲律宾海军护卫舰在东海开展远海训练引发媒体分析",
+        "start_time": "17:24",
+        "end_time": "19:49",
+        "movement": "活动",
+        "platforms": [
+          {
+            "name": "米格尔·马尔瓦尔号",
+            "country": "菲律宾",
+            "quantity": null
+          }
+        ],
+        "location": {
+          "raw": "东海方向",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围"
+        },
+        "mission": "远海训练"
+      },
+      {
+        "id": "O043",
+        "kind": "opinion",
+        "title": "韩国空军两架P-3CK反潜巡逻机在莫桑比克海峡活动",
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动",
+        "platforms": [
+          {
+            "name": "P-3CK",
+            "country": "韩国",
+            "quantity": 2
+          }
+        ],
+        "location": {
+          "raw": "莫桑比克海峡相关海域",
+          "region": "莫桑比克海峡相关海域",
+          "direction": "其他",
+          "precision": "原文区域"
+        },
+        "mission": null
+      },
+      {
+        "id": "O044",
+        "kind": "opinion",
+        "title": "韩国海军独岛级两栖攻击舰在东海开展训练引发关注",
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动",
+        "platforms": [
+          {
+            "name": "独岛级",
+            "country": "韩国",
+            "quantity": 1
+          }
+        ],
+        "location": {
+          "raw": "东海方向",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围"
+        },
+        "mission": "两栖作战训练"
+      },
+      {
+        "id": "O045",
+        "kind": "opinion",
+        "title": "日本海上自卫队一艘秋月级护卫舰在东海实弹射击",
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动",
+        "platforms": [
+          {
+            "name": "秋月级",
+            "country": "日本",
+            "quantity": 1
+          }
+        ],
+        "location": {
+          "raw": "东海方向",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围"
+        },
+        "mission": "实弹射击训练"
+      },
+      {
+        "id": "O046",
+        "kind": "opinion",
+        "title": "美舰“新奥尔良”号在黄海活动，媒体关注其部署持续性",
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动",
+        "platforms": [
+          {
+            "name": "新奥尔良”号",
+            "country": "美国",
+            "quantity": null
+          }
+        ],
+        "location": {
+          "raw": "黄海海域",
+          "region": "黄海",
+          "direction": "黄海",
+          "precision": "大范围"
+        },
+        "mission": "编队警戒部署"
+      },
+      {
+        "id": "O047",
+        "kind": "opinion",
+        "title": "中国071型船坞登陆舰现身安达曼海持续活动",
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动",
+        "platforms": [
+          {
+            "name": "071型船坞登陆舰",
+            "country": "中国",
+            "quantity": 1
+          }
+        ],
+        "location": {
+          "raw": "安达曼海相关海域",
+          "region": "安达曼海相关海域",
+          "direction": "其他",
+          "precision": "原文区域"
+        },
+        "mission": "持续活动"
+      },
+      {
+        "id": "O048",
+        "kind": "opinion",
+        "title": "东海反潜巡逻常态化 039A型潜艇持续监视受关注",
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动",
+        "platforms": [
+          {
+            "name": "039A型常规潜艇",
+            "country": "中国",
+            "quantity": 1
+          }
+        ],
+        "location": {
+          "raw": "东海围绕任务海域",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围"
+        },
+        "mission": "反潜巡逻"
+      },
+      {
+        "id": "O049",
+        "kind": "opinion",
+        "title": "中国一艘054B型导弹护卫舰在东海开展远海训练",
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动",
+        "platforms": [
+          {
+            "name": "054B型导弹护卫舰",
+            "country": "中国",
+            "quantity": 1
+          }
+        ],
+        "location": {
+          "raw": "东海",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围"
+        },
+        "mission": "远海训练"
+      },
+      {
+        "id": "O050",
+        "kind": "opinion",
+        "title": "美军RC-135V/W侦察机五一当天在东海执行电子侦察任务",
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动",
+        "platforms": [
+          {
+            "name": "RC-135V/W电子侦察机",
+            "country": "美国",
+            "quantity": 1
+          }
+        ],
+        "location": {
+          "raw": "东海方向",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围"
+        },
+        "mission": "电子侦察"
+      }
+    ],
+    "radar_candidates": [
+      {
+        "id": "R030",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "054A型导弹护卫舰",
+            "country": "中国",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-319E08EF64FB9D",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "夏威夷附近海空域",
+          "region": "夏威夷附近海空域",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "夏威夷附近海空域",
+            "region": "夏威夷附近海空域",
+            "direction": "其他",
+            "precision": "原文区域",
+            "mapping": "PDF未列入三大核心海域的区域归其他",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "联合巡航",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "联合巡航"
+        ],
+        "start_time": "2025.05.01 17:09:00",
+        "end_time": "2025.05.01 18:39:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-319E08EF64FB9D",
+        "sibling_ids": [],
+        "hull_values": [
+          "TYPE-054A"
+        ],
+        "country_values": [
+          "中国"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 10
+      },
+      {
+        "id": "R029",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "054A型导弹护卫舰",
+            "country": "中国",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-1C9CA139F307B4",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "白令海",
+          "region": "白令海",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "白令海",
+            "region": "白令海",
+            "direction": "其他",
+            "precision": "原文区域",
+            "mapping": "PDF未列入三大核心海域的区域归其他",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "反潜巡逻",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "反潜巡逻"
+        ],
+        "start_time": "2025.05.01 14:44:00",
+        "end_time": "2025.05.01 16:09:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-1C9CA139F307B4",
+        "sibling_ids": [],
+        "hull_values": [
+          "TYPE-054A"
+        ],
+        "country_values": [
+          "中国"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 11
+      },
+      {
+        "id": "R042",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "056A型轻型护卫舰",
+            "country": "中国",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-A285C8EADAC3BB",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "东海中部",
+          "region": "东海中部",
+          "direction": "东海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "东海中部",
+            "region": "东海中部",
+            "direction": "东海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "反潜巡逻",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "反潜巡逻"
+        ],
+        "start_time": "2025.05.01 17:02:00",
+        "end_time": "2025.05.01 19:27:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-A285C8EADAC3BB",
+        "sibling_ids": [],
+        "hull_values": [
+          "TYPE-056A"
+        ],
+        "country_values": [
+          "中国"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 11
+      },
+      {
+        "id": "R037",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "054B型导弹护卫舰",
+            "country": "中国",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-8ACA1251205294",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "东海",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "东海",
+            "region": "东海",
+            "direction": "东海",
+            "precision": "大范围",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "远海训练",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "远海训练"
+        ],
+        "start_time": "2025.05.01 20:20:00",
+        "end_time": "2025.05.01 22:45:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-8ACA1251205294",
+        "sibling_ids": [],
+        "hull_values": [
+          "TYPE-054B"
+        ],
+        "country_values": [
+          "中国"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 11
+      },
+      {
+        "id": "R034",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "福建号航空母舰",
+            "country": "中国",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-6A461B63B28D56",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "钓鱼岛海域",
+          "region": "钓鱼岛海域",
+          "direction": "东海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "钓鱼岛海域",
+            "region": "钓鱼岛海域",
+            "direction": "东海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "联合巡航",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "联合巡航"
+        ],
+        "start_time": "2025.05.01 02:38:00",
+        "end_time": "2025.05.01 04:03:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-6A461B63B28D56",
+        "sibling_ids": [],
+        "hull_values": [
+          "18"
+        ],
+        "country_values": [
+          "中国"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 12
+      }
+    ],
+    "recall": {
+      "review": "缺源扩大检索，保留反证，不强行凑组",
+      "opinion": [
+        {
+          "id": "O007",
+          "score": 5.33016,
+          "cosine": 0.93016,
+          "platform_similarity": 1.0,
+          "time_overlap": 1.0,
+          "location_relation": "different_named_regions"
+        },
+        {
+          "id": "O006",
+          "score": 4.12373,
+          "cosine": 0.92373,
+          "platform_similarity": 1.0,
+          "time_overlap": 0.0,
+          "location_relation": "different_named_regions"
+        },
+        {
+          "id": "O025",
+          "score": 1.88406,
+          "cosine": 0.73739,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.9555555555555556,
+          "location_relation": "different_direction"
+        },
+        {
+          "id": "O049",
+          "score": 1.08426,
+          "cosine": 0.88426,
+          "platform_similarity": 0.0,
+          "time_overlap": null,
+          "location_relation": "different_direction"
+        },
+        {
+          "id": "O029",
+          "score": 0.80322,
+          "cosine": 0.80322,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "different_direction"
+        },
+        {
+          "id": "O020",
+          "score": 0.79725,
+          "cosine": 0.79725,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "different_direction"
+        }
+      ],
+      "radar": [
+        {
+          "id": "R030",
+          "score": 6.18362,
+          "cosine": 0.98362,
+          "platform_similarity": 1.0,
+          "time_overlap": 1.0,
+          "location_relation": "same"
+        },
+        {
+          "id": "R029",
+          "score": 4.11188,
+          "cosine": 0.91188,
+          "platform_similarity": 1.0,
+          "time_overlap": 0.0,
+          "location_relation": "different_named_regions"
+        },
+        {
+          "id": "R042",
+          "score": 2.25389,
+          "cosine": 0.85389,
+          "platform_similarity": 0.0,
+          "time_overlap": 1.0,
+          "location_relation": "different_direction"
+        },
+        {
+          "id": "R037",
+          "score": 1.08367,
+          "cosine": 0.88367,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "different_direction"
+        },
+        {
+          "id": "R034",
+          "score": 1.00766,
+          "cosine": 0.80766,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "different_direction"
+        }
+      ]
+    }
+  },
+  "result": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O007",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.93,
+        "reason": "平台（中国054A型护卫舰）、时间（2025.5.1 17:09-18:39）、任务（联合巡航）完全一致。地点差异（新闻称夏威夷，候选称孟加拉湾）属于数据录入错误，因其他核心要素高度吻合且雷达数据R030证实了夏威夷位置，故判定为同一活动。"
+      },
+      {
+        "candidate_id": "O006",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.92,
+        "reason": "平台相同（中国054A型），但地点（白令海）与新闻（夏威夷）冲突，且时间区间不重叠（14:44-16:09 vs 17:09-18:39），任务也不同（反潜巡逻 vs 联合巡航），确认为不同活动。"
+      },
+      {
+        "candidate_id": "O025",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.74,
+        "reason": "平台类型完全不同（俄军图-95MS轰炸机 vs 中国护卫舰），地点方向虽同为南海/其他但具体区域无交集，时间虽有部分重叠但主体不符，确认为不同活动。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R030",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 1.0,
+        "reason": "雷达数据与新闻在所有关键维度（平台型号、国家、精确时间戳、地点、任务）完全匹配，确认为同一活动记录。"
+      },
+      {
+        "candidate_id": "R029",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.91,
+        "reason": "平台相同但地点（白令海）与新闻（夏威夷）冲突，时间不重叠，任务不同，确认为不同活动。"
+      },
+      {
+        "candidate_id": "R042",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.85,
+        "reason": "平台型号不同（056A vs 054A），地点（东海中部）与新闻冲突，任务不同，确认为不同活动。"
+      }
+    ],
+    "ambiguity": "无。雷达数据R030提供了精确的坐标和批号，消除了舆论中关于地点的错误描述，确认了活动的唯一性。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T16:18:27.9810068Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"opinion_edges\": [{\"candidate_id\": \"O007\", \"platform_indices\": [0], \"relation\": \"same\", \"confidence\": 0.93, \"reason\": \"平台（中国054A型护卫舰）、时间（2025.5.1 17:09-18:39）、任务（联合巡航）完全一致。地点差异（新闻称夏威夷，候选称孟加拉湾）属于数据录入错误，因其他核心要素高度吻合且雷达数据R030证实了夏威夷位置，故判定为同一活动。\"}, {\"candidate_id\": \"O006\", \"platform_indices\": [0], \"relation\": \"different\", \"confidence\": 0.92, \"reason\": \"平台相同（中国054A型），但地点（白令海）与新闻（夏威夷）冲突，且时间区间不重叠（14:44-16:09 vs 17:09-18:39），任务也不同（反潜巡逻 vs 联合巡航），确认为不同活动。\"}, {\"candidate_id\": \"O025\", \"platform_indices\": [], \"relation\": \"different\", \"confidence\": 0.74, \"reason\": \"平台类型完全不同（俄军图-95MS轰炸机 vs 中国护卫舰），地点方向虽同为南海/其他但具体区域无交集，时间虽有部分重叠但主体不符，确认为不同活动。\"}], \"radar_edges\": [{\"candidate_id\": \"R030\", \"platform_indices\": [0], \"relation\": \"same\", \"confidence\": 1.0, \"reason\": \"雷达数据与新闻在所有关键维度（平台型号、国家、精确时间戳、地点、任务）完全匹配，确认为同一活动记录。\"}, {\"candidate_id\": \"R029\", \"platform_indices\": [0], \"relation\": \"different\", \"confidence\": 0.91, \"reason\": \"平台相同但地点（白令海）与新闻（夏威夷）冲突，时间不重叠，任务不同，确认为不同活动。\"}, {\"candidate_id\": \"R042\", \"platform_indices\": [], \"relation\": \"different\", \"confidence\": 0.85, \"reason\": \"平台型号不同（056A vs 054A），地点（东海中部）与新闻冲突，任务不同，确认为不同活动。\"}],\"ambiguity\": \"无。雷达数据R030提供了精确的坐标和批号，消除了舆论中关于地点的错误描述，确认了活动的唯一性。\"}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 14541252700,
+    "load_duration": 19634100,
+    "prompt_eval_count": 9401,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 3106168000,
+    "eval_count": 556,
+    "eval_duration": 10974705000
+  }
+}

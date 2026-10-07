@@ -1,0 +1,503 @@
+{
+  "id": "N037",
+  "news_id": "N037",
+  "opinion_id": "O028",
+  "radar_ids": [
+    "R006"
+  ],
+  "radar_slots": {
+    "0": "R006"
+  },
+  "alignment": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O028",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.95,
+        "reason": "平台（空警 -500）、地点（上海外海/东海）、时间（2025.5.1）及任务性质（空中警戒/区域机动）完全一致。新闻明确的时间段（14:17-16:42）与舆论描述的行动时段吻合，虽舆论未列具体起止点，但“持续活动”的描述符合新闻事实。"
+      },
+      {
+        "candidate_id": "O035",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.85,
+        "reason": "平台、地点（东海方向/上海外海）、时间一致。任务描述为“情报监视侦察”，与新闻的“空中警戒”在预警机常规职能上存在重叠，属于同一类活动范畴，但具体任务名称略有差异，故置信度略低于 O028。"
+      },
+      {
+        "candidate_id": "O037",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.9,
+        "reason": "地点和时间重合，但平台型号不同（轰 -6K 轰炸机 vs 空警 -500 预警机），且任务性质（机动/区域控制 vs 空中警戒）不同，判定为同一时间地点的不同活动。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R006",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 1.0,
+        "reason": "平台、任务（空中警戒）、时间（2025.05.01 14:17-16:42）与新闻完全精确匹配。坐标范围覆盖上海外海，虽地点字段缺失但坐标辅助召回指向一致，确认为同一次活动。"
+      },
+      {
+        "candidate_id": "R010",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台相同（空警 -500），时间同为 2025.05.01，但时间段（08:41-10:06）与新闻（14:17-16:42）无重叠，且任务为“情报监视侦察”，判定为同日不同活动。"
+      },
+      {
+        "candidate_id": "R029",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台（054A 护卫舰）、地点（白令海 vs 上海外海）、任务均完全不同，尽管时间重叠，但属于完全不同的活动。"
+      }
+    ],
+    "ambiguity": "O035 的任务描述与新闻略有差异，但在预警机语境下可视为同一活动的不同表述；R006 坐标未经验证，仅作为辅助召回依据，需结合文本确认。"
+  },
+  "candidates": {
+    "opinion": [
+      {
+        "id": "O028",
+        "score": 4.93731,
+        "cosine": 0.93731,
+        "platform_similarity": 1.0,
+        "time_overlap": null,
+        "location_relation": "same"
+      },
+      {
+        "id": "O035",
+        "score": 4.6227,
+        "cosine": 0.9427,
+        "platform_similarity": 1.0,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O006",
+        "score": 2.15865,
+        "cosine": 0.75865,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O037",
+        "score": 1.81116,
+        "cosine": 0.81116,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "same"
+      },
+      {
+        "id": "O021",
+        "score": 1.52855,
+        "cosine": 0.84855,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O003",
+        "score": 1.00758,
+        "cosine": 0.80758,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      }
+    ],
+    "radar": [
+      {
+        "id": "R006",
+        "score": 5.32901,
+        "cosine": 0.92901,
+        "platform_similarity": 1.0,
+        "time_overlap": 1.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R010",
+        "score": 4.11327,
+        "cosine": 0.91327,
+        "platform_similarity": 1.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R029",
+        "score": 2.15484,
+        "cosine": 0.75484,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "R002",
+        "score": 1.02515,
+        "cosine": 0.82515,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R001",
+        "score": 1.01606,
+        "cosine": 0.81606,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R021",
+        "score": 1.01258,
+        "cosine": 0.81258,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      }
+    ]
+  },
+  "verification": {
+    "same_event": true,
+    "facts": [
+      {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "空警-500",
+        "supporting_sources": [
+          "N037",
+          "O028",
+          "R006"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N037': '空警-500', 'O028': '空警-500预警机', 'R006': '空警-500预警机'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "空警 -500",
+          "supporting_sources": [
+            "N037",
+            "O028",
+            "R006"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均明确指向空警 -500 预警机，且雷达批号与新闻时间完全吻合。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "中国",
+        "supporting_sources": [
+          "N037",
+          "O028",
+          "R006"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N037': '中国', 'O028': '中国', 'R006': '中国'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "中国",
+          "supporting_sources": [
+            "N037",
+            "O028",
+            "R006"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源均明确标注国籍为中国，无冲突。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "2架",
+        "supporting_sources": [
+          "O028",
+          "R006"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'O028': 2, 'R006': 2}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "2 架",
+          "supporting_sources": [
+            "O028",
+            "R006"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论明确提及“两架”，雷达批号 AIR-27690DA07C1736 显示数量值为 2；新闻未说明具体数量，但不构成冲突，由另外两类来源确证。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "上海外海",
+        "supporting_sources": [
+          "N037",
+          "O028"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与舆论均明确提及“上海外海”，雷达坐标范围（122.9-123.2E, 30.7-31.0N）地理上覆盖上海外海区域，虽雷达文本字段缺失但坐标辅助印证一致。",
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "2025-05-01 14:17 - 16:42",
+        "supporting_sources": [
+          "N037",
+          "R006"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与雷达时间精确匹配（14:17-16:42）；舆论仅提及“持续活动”及日期，未提供具体时刻，但不构成冲突，由新闻和雷达确证。",
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "空中警戒",
+        "supporting_sources": [
+          "N037",
+          "R006"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与雷达均明确任务为“空中警戒”；舆论描述为“区域机动/持续活动”，属于对同一任务的泛称或不同表述，无实质冲突。",
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N037",
+          "O028"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻描述“保持机动并持续执行”，舆论描述“保持机动”，均确认为活动状态；雷达未说明 movement 字段，但不影响整体结论。",
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      }
+    ],
+    "unresolved_issues": [],
+    "explanation": "三源（新闻、舆论、雷达）在平台型号、国籍、任务性质及时间地点上高度一致。数量由舆论和雷达共同确证（2 架），新闻虽未提及数量但不构成冲突。雷达坐标范围与文本描述的上海外海地理兼容。舆论中的“区域机动”与新闻/雷达的“空中警戒”视为同一任务的合理表述，无未消解冲突。"
+  },
+  "reasons": [],
+  "status": "可信事件",
+  "verified_facts": [
+    {
+      "platform_index": 0,
+      "field": "platform",
+      "claim": "空警-500",
+      "supporting_sources": [
+        "N037",
+        "O028",
+        "R006"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N037': '空警-500', 'O028': '空警-500预警机', 'R006': '空警-500预警机'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "空警 -500",
+        "supporting_sources": [
+          "N037",
+          "O028",
+          "R006"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源（新闻、舆论、雷达）均明确指向空警 -500 预警机，且雷达批号与新闻时间完全吻合。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "country",
+      "claim": "中国",
+      "supporting_sources": [
+        "N037",
+        "O028",
+        "R006"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N037': '中国', 'O028': '中国', 'R006': '中国'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "中国",
+        "supporting_sources": [
+          "N037",
+          "O028",
+          "R006"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源均明确标注国籍为中国，无冲突。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "quantity",
+      "claim": "2架",
+      "supporting_sources": [
+        "O028",
+        "R006"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'O028': 2, 'R006': 2}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "2 架",
+        "supporting_sources": [
+          "O028",
+          "R006"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "舆论明确提及“两架”，雷达批号 AIR-27690DA07C1736 显示数量值为 2；新闻未说明具体数量，但不构成冲突，由另外两类来源确证。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "location",
+      "claim": "上海外海",
+      "supporting_sources": [
+        "N037",
+        "O028"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与舆论均明确提及“上海外海”，雷达坐标范围（122.9-123.2E, 30.7-31.0N）地理上覆盖上海外海区域，虽雷达文本字段缺失但坐标辅助印证一致。",
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "time",
+      "claim": "2025-05-01 14:17 - 16:42",
+      "supporting_sources": [
+        "N037",
+        "R006"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与雷达时间精确匹配（14:17-16:42）；舆论仅提及“持续活动”及日期，未提供具体时刻，但不构成冲突，由新闻和雷达确证。",
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "mission",
+      "claim": "空中警戒",
+      "supporting_sources": [
+        "N037",
+        "R006"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与雷达均明确任务为“空中警戒”；舆论描述为“区域机动/持续活动”，属于对同一任务的泛称或不同表述，无实质冲突。",
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "movement",
+      "claim": "活动",
+      "supporting_sources": [
+        "N037",
+        "O028"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻描述“保持机动并持续执行”，舆论描述“保持机动”，均确认为活动状态；雷达未说明 movement 字段，但不影响整体结论。",
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    }
+  ],
+  "radar_row_count": 13,
+  "direction": "东海",
+  "report_eligible": true,
+  "directory": "可信事件/N037_中国空警-500预警机在上海外海执行空中警戒任务"
+}

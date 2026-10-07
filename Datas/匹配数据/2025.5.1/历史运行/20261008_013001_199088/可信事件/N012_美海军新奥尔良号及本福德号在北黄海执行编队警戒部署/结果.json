@@ -1,0 +1,820 @@
+{
+  "id": "N012",
+  "news_id": "N012",
+  "opinion_id": "O046",
+  "radar_ids": [
+    "R032",
+    "R035"
+  ],
+  "radar_slots": {
+    "0": "R032",
+    "1": "R035"
+  },
+  "alignment": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O046",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.95,
+        "reason": "平台完全匹配（新奥尔良号、本福德号），时间区间高度重合（20:42-22:07 vs 全天机动），地点均为黄海且新闻明确为北黄海，任务一致。O002/O026 因平台不同（俄军战机）排除；O029/O033/O040/O042 因地点或平台不符排除。",
+        "model_platform_indices": [
+          0,
+          1
+        ],
+        "scope_correction": "按舆论实际出现的平台身份校正；其他成员未提及不能算支持"
+      },
+      {
+        "candidate_id": "O002",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 1.0,
+        "reason": "平台完全不同（俄军苏 -30SM 战机 vs 美海军舰艇），地点不同（黄岩岛南海 vs 北黄海），任务性质不同。"
+      },
+      {
+        "candidate_id": "O026",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 1.0,
+        "reason": "平台完全不同（俄军苏 -35S 战机 vs 美海军舰艇），地点描述模糊（黄海方向 vs 北黄海具体区域）。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R035",
+        "platform_indices": [
+          1
+        ],
+        "relation": "same",
+        "confidence": 1.0,
+        "reason": "平台完全匹配（本福德号），时间、地点（北黄海）、任务（编队警戒部署）与新闻完全一致。"
+      },
+      {
+        "candidate_id": "R032",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 1.0,
+        "reason": "平台完全匹配（新奥尔良号），时间、地点（北黄海）、任务（编队警戒部署）与新闻完全一致。"
+      },
+      {
+        "candidate_id": "R037",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 1.0,
+        "reason": "平台不同（中国 054B 护卫舰 vs 美海军舰艇），地点不同（东海 vs 北黄海）。"
+      }
+    ],
+    "ambiguity": "无。新闻描述与雷达数据 R035/R032 及舆论 O046 在平台、时间、地点、任务上均高度吻合，构成同一活动证据链。其他候选因平台或地点明显冲突排除。"
+  },
+  "candidates": {
+    "opinion": [
+      {
+        "id": "O046",
+        "score": 4.45052,
+        "cosine": 0.92052,
+        "platform_similarity": 0.95,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O002",
+        "score": 1.89943,
+        "cosine": 0.69943,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O026",
+        "score": 1.20727,
+        "cosine": 0.72727,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O029",
+        "score": 0.99113,
+        "cosine": 0.79113,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O033",
+        "score": 0.77628,
+        "cosine": 0.77628,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O040",
+        "score": 0.77182,
+        "cosine": 0.77182,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O042",
+        "score": 0.77175,
+        "cosine": 0.77175,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      }
+    ],
+    "radar": [
+      {
+        "id": "R035",
+        "score": 5.93787,
+        "cosine": 0.88787,
+        "platform_similarity": 0.95,
+        "time_overlap": 1.0,
+        "location_relation": "same"
+      },
+      {
+        "id": "R032",
+        "score": 5.91741,
+        "cosine": 0.86741,
+        "platform_similarity": 0.95,
+        "time_overlap": 1.0,
+        "location_relation": "same"
+      },
+      {
+        "id": "R037",
+        "score": 1.9222,
+        "cosine": 0.7222,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "R031",
+        "score": 0.96577,
+        "cosine": 0.76577,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "R038",
+        "score": 0.95172,
+        "cosine": 0.75172,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "R051",
+        "score": 0.75823,
+        "cosine": 0.75823,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      }
+    ]
+  },
+  "verification": {
+    "same_event": true,
+    "facts": [
+      {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "新奥尔良号",
+        "supporting_sources": [
+          "N012",
+          "O046",
+          "R032"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N012': '新奥尔良号', 'O046': '新奥尔良”号', 'R032': '新奥尔良号船坞运输舰'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "新奥尔良号船坞运输舰",
+          "supporting_sources": [
+            "N012",
+            "O046",
+            "R032"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均确认该舰存在，国籍均为美国。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "美国",
+        "supporting_sources": [
+          "N012",
+          "O046",
+          "R032"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N012': '美国', 'O046': '美国', 'R032': '美国'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "美国",
+          "supporting_sources": [
+            "N012",
+            "O046",
+            "R032"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源一致认定为美国海军舰艇。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "1艘",
+        "supporting_sources": [
+          "R032"
+        ],
+        "conflicting_sources": [],
+        "status": "insufficient",
+        "reason": "程序按已关联平台的明示字段复核：{'R032': 1}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "1 艘",
+          "supporting_sources": [
+            "R032"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "雷达 R032 明确记录数量为 1；新闻与舆论未提具体数量但不构成冲突，三源无未消解冲突。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 1,
+        "field": "platform",
+        "claim": "本福德号",
+        "supporting_sources": [
+          "N012",
+          "R035"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N012': '本福德号', 'R035': '本福德号导弹驱逐舰'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 1,
+          "field": "platform",
+          "claim": "本福德号导弹驱逐舰",
+          "supporting_sources": [
+            "N012",
+            "R035"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻与雷达 R035 确认该舰存在；舆论仅提及新奥尔良号，未提本福德号属于信息缺失而非反对。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 1,
+        "field": "country",
+        "claim": "美国",
+        "supporting_sources": [
+          "N012",
+          "R035"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N012': '美国', 'R035': '美国'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 1,
+          "field": "country",
+          "claim": "美国",
+          "supporting_sources": [
+            "N012",
+            "R035"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻与雷达一致认定为美国海军舰艇。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 1,
+        "field": "quantity",
+        "claim": "1艘",
+        "supporting_sources": [
+          "R035"
+        ],
+        "conflicting_sources": [],
+        "status": "insufficient",
+        "reason": "程序按已关联平台的明示字段复核：{'R035': 1}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 1,
+          "field": "quantity",
+          "claim": "1 艘",
+          "supporting_sources": [
+            "R035"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "雷达 R035 明确记录数量为 1；新闻与舆论未提具体数量但不构成冲突，三源无未消解冲突。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "北黄海",
+        "supporting_sources": [
+          "N012",
+          "R032",
+          "R035"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与两架雷达均明确标注为“北黄海”；舆论表述为“黄海海域”，属于大范围兼容，不否定具体区域。",
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "起点 20:42，终点 22:07",
+        "supporting_sources": [
+          "N012",
+          "R032",
+          "R035"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "2025 年 5 月 1 日 20:42-22:07",
+          "supporting_sources": [
+            "N012",
+            "R032",
+            "R035"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻与两架雷达时间完全一致；舆论仅提及日期，未提供具体时刻但不构成冲突。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "components": {
+          "start_time": {
+            "value": "20:42",
+            "support": [
+              "N012",
+              "R032",
+              "R035"
+            ],
+            "conflicts": [],
+            "status": "supported",
+            "source_values": {
+              "N012": "20:42",
+              "R032": "20:42",
+              "R035": "20:42"
+            }
+          },
+          "end_time": {
+            "value": "22:07",
+            "support": [
+              "N012",
+              "R032",
+              "R035"
+            ],
+            "conflicts": [],
+            "status": "supported",
+            "source_values": {
+              "N012": "22:07",
+              "R032": "22:07",
+              "R035": "22:07"
+            }
+          }
+        },
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "编队警戒部署",
+        "supporting_sources": [
+          "N012",
+          "O046",
+          "R032",
+          "R035"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "原文明示任务：{'N012': ['编队警戒部署'], 'O046': ['编队警戒部署'], 'R032': ['编队警戒部署'], 'R035': ['编队警戒部署']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "编队警戒部署",
+          "supporting_sources": [
+            "N012",
+            "O046",
+            "R032",
+            "R035"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论及两架雷达均明确记录任务为“编队警戒部署”。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N012": [
+            "编队警戒部署"
+          ],
+          "O046": [
+            "编队警戒部署"
+          ],
+          "R032": [
+            "编队警戒部署"
+          ],
+          "R035": [
+            "编队警戒部署"
+          ]
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N012",
+          "O046"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "supporting_sources": [
+            "N012",
+            "O046"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻与舆论描述为机动/活动；雷达未说明运动状态但不构成冲突。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N012": "活动",
+          "O046": "活动",
+          "R032": "未说明",
+          "R035": "未说明"
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      }
+    ],
+    "unresolved_issues": [],
+    "explanation": "新闻 N012、舆论 O046 及雷达 R032/R035 在平台（新奥尔良号、本福德号）、国籍（美国）、地点（北黄海/黄海兼容）、时间（2025.5.1 20:42-22:07）、任务（编队警戒部署）上高度一致。雷达提供了具体的数量支持，舆论虽未提及本福德号但属于信息缺失而非反对，不构成冲突。所有关键事实均有至少两类来源支持，无未消解冲突。"
+  },
+  "reasons": [],
+  "status": "可信事件",
+  "verified_facts": [
+    {
+      "platform_index": 0,
+      "field": "platform",
+      "claim": "新奥尔良号",
+      "supporting_sources": [
+        "N012",
+        "O046",
+        "R032"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N012': '新奥尔良号', 'O046': '新奥尔良”号', 'R032': '新奥尔良号船坞运输舰'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "新奥尔良号船坞运输舰",
+        "supporting_sources": [
+          "N012",
+          "O046",
+          "R032"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻、舆论、雷达三源均确认该舰存在，国籍均为美国。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "country",
+      "claim": "美国",
+      "supporting_sources": [
+        "N012",
+        "O046",
+        "R032"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N012': '美国', 'O046': '美国', 'R032': '美国'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "美国",
+        "supporting_sources": [
+          "N012",
+          "O046",
+          "R032"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源一致认定为美国海军舰艇。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 1,
+      "field": "platform",
+      "claim": "本福德号",
+      "supporting_sources": [
+        "N012",
+        "R035"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N012': '本福德号', 'R035': '本福德号导弹驱逐舰'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 1,
+        "field": "platform",
+        "claim": "本福德号导弹驱逐舰",
+        "supporting_sources": [
+          "N012",
+          "R035"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与雷达 R035 确认该舰存在；舆论仅提及新奥尔良号，未提本福德号属于信息缺失而非反对。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 1,
+      "field": "country",
+      "claim": "美国",
+      "supporting_sources": [
+        "N012",
+        "R035"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N012': '美国', 'R035': '美国'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 1,
+        "field": "country",
+        "claim": "美国",
+        "supporting_sources": [
+          "N012",
+          "R035"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与雷达一致认定为美国海军舰艇。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "location",
+      "claim": "北黄海",
+      "supporting_sources": [
+        "N012",
+        "R032",
+        "R035"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与两架雷达均明确标注为“北黄海”；舆论表述为“黄海海域”，属于大范围兼容，不否定具体区域。",
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "time",
+      "claim": "起点 20:42，终点 22:07",
+      "supporting_sources": [
+        "N012",
+        "R032",
+        "R035"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "2025 年 5 月 1 日 20:42-22:07",
+        "supporting_sources": [
+          "N012",
+          "R032",
+          "R035"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与两架雷达时间完全一致；舆论仅提及日期，未提供具体时刻但不构成冲突。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "components": {
+        "start_time": {
+          "value": "20:42",
+          "support": [
+            "N012",
+            "R032",
+            "R035"
+          ],
+          "conflicts": [],
+          "status": "supported",
+          "source_values": {
+            "N012": "20:42",
+            "R032": "20:42",
+            "R035": "20:42"
+          }
+        },
+        "end_time": {
+          "value": "22:07",
+          "support": [
+            "N012",
+            "R032",
+            "R035"
+          ],
+          "conflicts": [],
+          "status": "supported",
+          "source_values": {
+            "N012": "22:07",
+            "R032": "22:07",
+            "R035": "22:07"
+          }
+        }
+      },
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "mission",
+      "claim": "编队警戒部署",
+      "supporting_sources": [
+        "N012",
+        "O046",
+        "R032",
+        "R035"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "原文明示任务：{'N012': ['编队警戒部署'], 'O046': ['编队警戒部署'], 'R032': ['编队警戒部署'], 'R035': ['编队警戒部署']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "编队警戒部署",
+        "supporting_sources": [
+          "N012",
+          "O046",
+          "R032",
+          "R035"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻、舆论及两架雷达均明确记录任务为“编队警戒部署”。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N012": [
+          "编队警戒部署"
+        ],
+        "O046": [
+          "编队警戒部署"
+        ],
+        "R032": [
+          "编队警戒部署"
+        ],
+        "R035": [
+          "编队警戒部署"
+        ]
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "movement",
+      "claim": "活动",
+      "supporting_sources": [
+        "N012",
+        "O046"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N012",
+          "O046"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与舆论描述为机动/活动；雷达未说明运动状态但不构成冲突。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N012": "活动",
+        "O046": "活动",
+        "R032": "未说明",
+        "R035": "未说明"
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    }
+  ],
+  "radar_row_count": 24,
+  "direction": "黄海",
+  "report_eligible": true,
+  "directory": "可信事件/N012_美海军新奥尔良号及本福德号在北黄海执行编队警戒部署"
+}

@@ -1,0 +1,281 @@
+{
+  "role": "verification",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N049",
+      "kind": "news",
+      "title": "美国米利厄斯号导弹驱逐舰在温州外海持续开展活动",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：美国米利厄斯号导弹驱逐舰在温州外海持续开展活动\n正文：2025年5月1日，美国1艘米利厄斯号导弹驱逐舰在温州外海持续活动，围绕任务区域保持机动，行动范围保持在指定任务海域。\n\n主题词：美国  米利厄斯号导弹驱逐舰  温州外海\n",
+      "platforms": [
+        {
+          "name": "米利厄斯号导弹驱逐舰",
+          "country": "美国",
+          "quantity": 1,
+          "quote": "美国1艘米利厄斯号导弹驱逐舰",
+          "quantity_quote": "1艘米利厄斯号导弹驱逐舰",
+          "country_raw": "美国"
+        }
+      ],
+      "location": {
+        "raw": "温州外海",
+        "region": "温州外海",
+        "direction": "东海",
+        "precision": "具体区域",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "在温州外海持续活动"
+      },
+      "mission": {
+        "value": "围绕任务区域保持机动，行动范围保持在指定任务海域",
+        "quote": "围绕任务区域保持机动，行动范围保持在指定任务海域"
+      },
+      "start_time": null,
+      "end_time": null,
+      "movement": "活动"
+    },
+    "opinion": {
+      "id": "O029",
+      "kind": "opinion",
+      "title": "美国海军米利厄斯号驱逐舰在东海执行海上护航",
+      "text": "时间：2025.5.1\n\n标题：美国海军米利厄斯号驱逐舰在东海执行海上护航\n\n正文：据公开防务媒体报道，2025年5月1日，美国海军“米利厄斯号”导弹驱逐舰在东海方向执行海上护航任务，行动时段为5时34分至7时59分。该舰围绕任务编组实施保障行动，并按计划完成相关保障环节衔接。观察人士认为，此次部署体现了持续保障能力，其行动续航和保障协同水平受到关注。\n",
+      "platforms": [
+        {
+          "name": "米利厄斯号”导弹驱逐舰",
+          "country": "美国",
+          "quantity": null,
+          "quote": "米利厄斯号”导弹驱逐舰",
+          "quantity_quote": "",
+          "country_raw": "美国"
+        }
+      ],
+      "location": {
+        "raw": "东海方向",
+        "region": "东海",
+        "direction": "东海",
+        "precision": "大范围",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "在东海方向"
+      },
+      "mission": {
+        "value": "海上护航",
+        "quote": "执行海上护航任务"
+      },
+      "start_time": "05:34",
+      "end_time": "07:59",
+      "movement": "活动"
+    },
+    "radars": [
+      {
+        "id": "R031",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "米利厄斯号导弹驱逐舰",
+            "country": "美国",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-39FDA03DC44CAC",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "温州外海",
+          "region": "温州外海",
+          "direction": "东海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "温州外海",
+            "region": "温州外海",
+            "direction": "东海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "海上护航",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "海上护航"
+        ],
+        "start_time": "2025.05.01 05:34:00",
+        "end_time": "2025.05.01 07:59:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-39FDA03DC44CAC",
+        "sibling_ids": [],
+        "hull_values": [
+          "DDG-69"
+        ],
+        "country_values": [
+          "美国"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 11
+      }
+    ],
+    "association": {
+      "opinion_edges": [
+        {
+          "candidate_id": "O029",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.95,
+          "reason": "平台名称（米利厄斯号）、日期（2025.5.1）、地点（温州外海/东海方向）及任务性质（机动/护航）高度一致。雷达数据R031证实了该舰在温州外海的具体活动时段，舆论O029的时间段（05:34-07:59）与雷达记录吻合，属于同一活动的不同报道视角。"
+        },
+        {
+          "candidate_id": "O050",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.98,
+          "reason": "平台完全不同（RC-135V/W侦察机 vs 米利厄斯号驱逐舰），任务性质不同（电子侦察 vs 机动/护航），虽同处东海且同日，但属于不同活动。"
+        },
+        {
+          "candidate_id": "O049",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.98,
+          "reason": "平台完全不同（中国054B型护卫舰 vs 美国米利厄斯号驱逐舰），国籍和任务均不匹配，属于不同活动。"
+        }
+      ],
+      "radar_edges": [
+        {
+          "candidate_id": "R031",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.98,
+          "reason": "平台（米利厄斯号）、地点（温州外海）、日期（2025.05.01）完全匹配。雷达记录提供了具体的活动时段（05:34-07:59），与舆论O029的时间段一致，确认为同一活动。"
+        },
+        {
+          "candidate_id": "R053",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.98,
+          "reason": "平台不同（马来西亚莱库号 vs 美国米利厄斯号），虽地点同为温州外海且同日，但属于不同舰艇的不同活动。"
+        },
+        {
+          "candidate_id": "R037",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.98,
+          "reason": "平台不同（中国054B型护卫舰 vs 美国米利厄斯号），地点范围较宽泛（东海 vs 温州外海），任务不同，属于不同活动。"
+        }
+      ],
+      "ambiguity": "无显著歧义，雷达数据与舆论报道在平台、时间、地点上形成强互证。"
+    },
+    "same_batch_other_candidates": []
+  },
+  "result": {
+    "same_event": true,
+    "platforms": [
+      {
+        "platform_index": 0,
+        "platform": {
+          "claim": "米利厄斯号导弹驱逐舰",
+          "supporting_sources": [
+            "N049",
+            "O029",
+            "R031"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均确认为美国米利厄斯号"
+        },
+        "country": {
+          "claim": "美国",
+          "supporting_sources": [
+            "N049",
+            "O029",
+            "R031"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源一致标注国籍为美国"
+        },
+        "quantity": {
+          "claim": "1 艘",
+          "supporting_sources": [
+            "N049",
+            "R031"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻明确提及 1 艘，雷达批号确认数量为 1；舆论未提数量但不构成冲突"
+        }
+      }
+    ],
+    "location": {
+      "claim": "温州外海",
+      "supporting_sources": [
+        "N049",
+        "R031"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与雷达均明确标注为温州外海，舆论的“东海方向”兼容该具体区域"
+    },
+    "time": {
+      "claim": "2025-05-01 05:34 至 07:59",
+      "supporting_sources": [
+        "O029",
+        "R031"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "舆论与雷达时间完全吻合，新闻仅确认日期"
+    },
+    "mission": {
+      "claim": "海上护航/任务区域机动",
+      "supporting_sources": [
+        "O029",
+        "R031"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "舆论明确为“海上护航”，雷达任务列为“海上护航”，新闻描述为“围绕任务区域保持机动”属同一活动范畴"
+    },
+    "movement": {
+      "claim": "活动",
+      "supporting_sources": [
+        "N049",
+        "O029"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与舆论均描述为持续活动，雷达虽未显式说明但时空重合确认为同一活动"
+    },
+    "unresolved_issues": [],
+    "explanation": "三源在平台、国籍、地点（温州外海）、时间（05:34-07:59）及任务性质（护航/机动）上高度一致。新闻提供数量支持，舆论与雷达提供精确时间支持，雷达确认具体位置与数量。无未消解冲突。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T16:50:35.6015336Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"same_event\": true, \"platforms\": [{\"platform_index\": 0, \"platform\": {\"claim\": \"米利厄斯号导弹驱逐舰\", \"supporting_sources\": [\"N049\", \"O029\", \"R031\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源（新闻、舆论、雷达）均确认为美国米利厄斯号\"}, \"country\": {\"claim\": \"美国\", \"supporting_sources\": [\"N049\", \"O029\", \"R031\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源一致标注国籍为美国\"}, \"quantity\": {\"claim\": \"1 艘\", \"supporting_sources\": [\"N049\", \"R031\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻明确提及 1 艘，雷达批号确认数量为 1；舆论未提数量但不构成冲突\"}}], \"location\": {\"claim\": \"温州外海\", \"supporting_sources\": [\"N049\", \"R031\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻与雷达均明确标注为温州外海，舆论的“东海方向”兼容该具体区域\"}, \"time\": {\"claim\": \"2025-05-01 05:34 至 07:59\", \"supporting_sources\": [\"O029\", \"R031\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"舆论与雷达时间完全吻合，新闻仅确认日期\"}, \"mission\": {\"claim\": \"海上护航/任务区域机动\", \"supporting_sources\": [\"O029\", \"R031\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"舆论明确为“海上护航”，雷达任务列为“海上护航”，新闻描述为“围绕任务区域保持机动”属同一活动范畴\"}, \"movement\": {\"claim\": \"活动\", \"supporting_sources\": [\"N049\", \"O029\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻与舆论均描述为持续活动，雷达虽未显式说明但时空重合确认为同一活动\"}, \"unresolved_issues\": [],\"explanation\":\"三源在平台、国籍、地点（温州外海）、时间（05:34-07:59）及任务性质（护航/机动）上高度一致。新闻提供数量支持，舆论与雷达提供精确时间支持，雷达确认具体位置与数量。无未消解冲突。\"}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 11831428300,
+    "load_duration": 17362200,
+    "prompt_eval_count": 2130,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 874477000,
+    "eval_count": 576,
+    "eval_duration": 10773959000
+  }
+}

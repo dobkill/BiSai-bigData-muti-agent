@@ -1,0 +1,489 @@
+{
+  "id": "N007",
+  "news_id": "N007",
+  "opinion_id": "O005",
+  "radar_ids": [
+    "R016"
+  ],
+  "radar_slots": {
+    "0": "R016"
+  },
+  "alignment": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O005",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.95,
+        "reason": "平台（德国台风战机）、数量（2 架）、日期（5 月 1 日）及地点（东海油气田/空域）完全吻合。新闻描述为“持续活动”，雷达数据 R016 显示同一批号（AIR-8638D8B9232003）在相近时间进行“对海突击训练”，任务性质一致，属于同一次具体行动。"
+      },
+      {
+        "candidate_id": "O022",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.9,
+        "reason": "虽然平台、数量、日期相同，但地点明确为“印度洋相关海域”，与新闻中的“东海油气田海域”存在根本性地理冲突，属于不同活动。"
+      },
+      {
+        "candidate_id": "O021",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台型号（歼 -35）、国籍（中国）与新闻中的德国台风战机完全不同，属于无关材料。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R016",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.92,
+        "reason": "平台、数量、日期一致。关键证据为批号完全匹配（AIR-8638D8B9232003），且坐标辅助提示指向东海，任务均为对海突击/活动，确认为同一事件的数据源。"
+      },
+      {
+        "candidate_id": "R011",
+        "platform_indices": [
+          0
+        ],
+        "relation": "uncertain",
+        "confidence": 0.6,
+        "reason": "平台、数量、日期一致，但批号不同（AIR-69195164BFB455），任务为战备警巡。由于缺乏地点坐标验证且时间重叠度未知，无法排除是同一批次战机在不同时段执行的不同任务，亦不能确认为同一次活动。"
+      },
+      {
+        "candidate_id": "R047",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台为日本村雨号护卫舰，与新闻中的德国台风战机完全不同，属于无关材料。"
+      }
+    ],
+    "ambiguity": "R011 因批号不同且地点缺失，存在同机多任务或不同批次误召回的歧义；O005 与 R016 虽任务描述略有差异（活动 vs 训练），但在军事语境下通常视为同一行动的不同表述。"
+  },
+  "candidates": {
+    "opinion": [
+      {
+        "id": "O005",
+        "score": 4.48322,
+        "cosine": 0.95322,
+        "platform_similarity": 0.95,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O022",
+        "score": 3.92076,
+        "cosine": 0.87076,
+        "platform_similarity": 0.95,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O021",
+        "score": 1.23454,
+        "cosine": 0.75454,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O037",
+        "score": 0.93124,
+        "cosine": 0.77124,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "same_direction_only"
+      },
+      {
+        "id": "O002",
+        "score": 0.75507,
+        "cosine": 0.75507,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      }
+    ],
+    "radar": [
+      {
+        "id": "R016",
+        "score": 3.98796,
+        "cosine": 0.93796,
+        "platform_similarity": 0.95,
+        "time_overlap": null,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R011",
+        "score": 3.96192,
+        "cosine": 0.91192,
+        "platform_similarity": 0.95,
+        "time_overlap": null,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R047",
+        "score": 1.14349,
+        "cosine": 0.66349,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "R003",
+        "score": 0.75053,
+        "cosine": 0.75053,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R008",
+        "score": 0.74579,
+        "cosine": 0.74579,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R013",
+        "score": 0.73924,
+        "cosine": 0.73924,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "missing"
+      }
+    ]
+  },
+  "verification": {
+    "same_event": true,
+    "facts": [
+      {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "台风”多用途战斗机",
+        "supporting_sources": [
+          "N007",
+          "O005",
+          "R016"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N007': '台风”多用途战斗机', 'O005': '台风”多用途战斗机', 'R016': '“台风”多用途战斗机'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "德国“台风”多用途战斗机",
+          "supporting_sources": [
+            "N007",
+            "O005",
+            "R016"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均明确指向德国台风战机，无冲突。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "德国",
+        "supporting_sources": [
+          "N007",
+          "O005",
+          "R016"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N007': '德国', 'O005': '德国', 'R016': '德国'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "德国",
+          "supporting_sources": [
+            "N007",
+            "O005",
+            "R016"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源一致确认国籍为德国。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "2架",
+        "supporting_sources": [
+          "N007",
+          "R016"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N007': 2, 'R016': 2}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "2 架",
+          "supporting_sources": [
+            "N007",
+            "R016"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻明确提及"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "东海油气田海域",
+        "supporting_sources": [
+          "N007"
+        ],
+        "conflicting_sources": [],
+        "status": "insufficient",
+        "reason": "仅新闻提供具体区域\"东海油气田海域\"；舆论为\"东海空域\"（大范围兼容），雷达坐标辅助提示指向东海但未验证精确边界。因缺乏雷达或舆论对\"油气田\"的具体印证，精度受限于新闻源，但事件地点整体成立。；程序检查：不足两类独立来源支持",
+        "supporting_source_types": [
+          "news"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "2025 年 5 月 1 日",
+        "supporting_sources": [
+          "N007",
+          "O005",
+          "R016"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源均确认日期为 2025 年 5 月 1 日。舆论和雷达提供了具体时刻（05:45-07:10），新闻仅确认日期，无时间冲突。",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "对海突击训练/持续活动",
+        "supporting_sources": [
+          "O005",
+          "R016"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "舆论明确为\"对海突击训练\"，雷达任务列也为\"对海突击训练\"；新闻描述为\"持续活动\"。在军事语境下，具体任务与泛称活动不冲突，且两源（舆论、雷达）相互印证具体任务性质。",
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N007",
+          "O005"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源均描述为活动状态，无冲突。；程序剔除缺失或精度不足的支持引用：['R016']",
+        "rejected_supports": [
+          "R016"
+        ],
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      }
+    ],
+    "unresolved_issues": [],
+    "explanation": "事件关联成立：新闻、舆论、雷达三源在平台（德国台风）、国籍、日期及大致地点（东海）上高度一致。数量由新闻和雷达共同支持（2 架）。任务性质由舆论和雷达明确为\"对海突击训练\"，与新闻的\"持续活动\"兼容。地点精度主要依赖新闻的\"东海油气田海域\"描述，舆论和大范围坐标辅助未提供更高精度的反证或补充，但足以支撑事件发生在该区域。无未消解冲突。"
+  },
+  "reasons": [
+    "活动地点未获得两类来源在明确精度上的印证"
+  ],
+  "status": "不可信事件",
+  "verified_facts": [
+    {
+      "platform_index": 0,
+      "field": "platform",
+      "claim": "台风”多用途战斗机",
+      "supporting_sources": [
+        "N007",
+        "O005",
+        "R016"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N007': '台风”多用途战斗机', 'O005': '台风”多用途战斗机', 'R016': '“台风”多用途战斗机'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "德国“台风”多用途战斗机",
+        "supporting_sources": [
+          "N007",
+          "O005",
+          "R016"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源（新闻、舆论、雷达）均明确指向德国台风战机，无冲突。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "country",
+      "claim": "德国",
+      "supporting_sources": [
+        "N007",
+        "O005",
+        "R016"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N007': '德国', 'O005': '德国', 'R016': '德国'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "德国",
+        "supporting_sources": [
+          "N007",
+          "O005",
+          "R016"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源一致确认国籍为德国。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "quantity",
+      "claim": "2架",
+      "supporting_sources": [
+        "N007",
+        "R016"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N007': 2, 'R016': 2}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "2 架",
+        "supporting_sources": [
+          "N007",
+          "R016"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻明确提及"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "time",
+      "claim": "2025 年 5 月 1 日",
+      "supporting_sources": [
+        "N007",
+        "O005",
+        "R016"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "三源均确认日期为 2025 年 5 月 1 日。舆论和雷达提供了具体时刻（05:45-07:10），新闻仅确认日期，无时间冲突。",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "mission",
+      "claim": "对海突击训练/持续活动",
+      "supporting_sources": [
+        "O005",
+        "R016"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "舆论明确为\"对海突击训练\"，雷达任务列也为\"对海突击训练\"；新闻描述为\"持续活动\"。在军事语境下，具体任务与泛称活动不冲突，且两源（舆论、雷达）相互印证具体任务性质。",
+      "supporting_source_types": [
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "movement",
+      "claim": "活动",
+      "supporting_sources": [
+        "N007",
+        "O005"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "三源均描述为活动状态，无冲突。；程序剔除缺失或精度不足的支持引用：['R016']",
+      "rejected_supports": [
+        "R016"
+      ],
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    }
+  ],
+  "radar_row_count": 13,
+  "direction": "东海",
+  "report_eligible": false,
+  "directory": "不可信事件/N007_德国“台风”多用途战斗机在东海油气田海域活动"
+}

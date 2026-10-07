@@ -1,0 +1,899 @@
+{
+  "id": "N004",
+  "news_id": "N004",
+  "opinion_id": "O021",
+  "radar_ids": [
+    "R002",
+    "R001"
+  ],
+  "radar_slots": {
+    "0": "R002"
+  },
+  "alignment": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O021",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.95,
+        "reason": "平台（歼 -35）、任务（战备警巡）、日期（2025.5.1）及大致海域（东海/温州外海属于东海）完全一致。新闻提供了精确时间区间，舆论虽无具体时间但描述为“按计划保持机动”，符合同一行动特征。"
+      },
+      {
+        "candidate_id": "O042",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "平台完全不同（菲律宾护卫舰 vs 中国歼 -35），任务不同（远海训练 vs 战备警巡），虽时间和海域重叠，但属于不同国家的独立行动。"
+      },
+      {
+        "candidate_id": "O025",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.99,
+        "reason": "平台（俄军轰炸机）、任务（远程轰炸训练）及海域（南海方向）均与新闻不符，属于不同活动。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R002",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.92,
+        "reason": "平台型号、数量（2 架）、任务（战备警巡）及时间区间高度吻合。坐标虽显示为南海方向簇，但标注为未验证且存在同批号远距离簇异常，结合新闻明确的“温州外海”和舆论佐证，判定为同一活动中的不同数据簇或坐标偏差。"
+      },
+      {
+        "candidate_id": "R001",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.92,
+        "reason": "同属批号 AIR-0435F7FE86050A，平台、任务、时间一致。坐标显示南海方向，但鉴于新闻明确地点为温州外海（东海），且雷达数据存在“同批号远距离起始位置簇”的异常说明，判定为同一活动的不同数据片段或坐标误差，非独立活动。"
+      },
+      {
+        "candidate_id": "R042",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台类型完全不同（护卫舰 vs 战斗机），任务不同（反潜巡逻 vs 战备警巡），虽时间和海域重叠，但属于伴随或独立的不同行动。"
+      }
+    ],
+    "ambiguity": "雷达数据 R001/R002 的坐标方向与新闻地点存在明显冲突（南海 vs 东海），但考虑到雷达数据标注了‘未验证’及‘同批号远距离簇’异常，且舆论 O021 明确支持东海方向，故判定为同一活动而非不同活动。"
+  },
+  "candidates": {
+    "opinion": [
+      {
+        "id": "O021",
+        "score": 4.58126,
+        "cosine": 0.90126,
+        "platform_similarity": 1.0,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O042",
+        "score": 2.39862,
+        "cosine": 0.71862,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O025",
+        "score": 1.92989,
+        "cosine": 0.72989,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O035",
+        "score": 1.47816,
+        "cosine": 0.79816,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O031",
+        "score": 0.99874,
+        "cosine": 0.79874,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O026",
+        "score": 0.81107,
+        "cosine": 0.81107,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O023",
+        "score": 0.80537,
+        "cosine": 0.80537,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      }
+    ],
+    "radar": [
+      {
+        "id": "R002",
+        "score": 5.34654,
+        "cosine": 0.94654,
+        "platform_similarity": 1.0,
+        "time_overlap": 1.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R001",
+        "score": 5.33425,
+        "cosine": 0.93425,
+        "platform_similarity": 1.0,
+        "time_overlap": 1.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R042",
+        "score": 2.28109,
+        "cosine": 0.72109,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "same_direction_only"
+      },
+      {
+        "id": "R021",
+        "score": 1.03397,
+        "cosine": 0.83397,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R006",
+        "score": 0.99013,
+        "cosine": 0.79013,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R013",
+        "score": 0.80471,
+        "cosine": 0.80471,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      }
+    ]
+  },
+  "assignment_diagnostics": {
+    "opinion": [],
+    "radar": [
+      {
+        "candidate_id": "R001",
+        "current_owner": null,
+        "weight_margin": 0.01229,
+        "assumption": "每篇舆论/每个雷达候选唯一归属；分数差不是校准概率",
+        "platform_index": 0
+      }
+    ]
+  },
+  "radar_bundle_expansions": [
+    {
+      "sheet": "飞机",
+      "batch": "AIR-0435F7FE86050A",
+      "added": [
+        "R001"
+      ],
+      "reason": "同批号全部空间分支随组保存；归属/轨迹异常仍未消解，不增加独立来源类型"
+    }
+  ],
+  "verification": {
+    "same_event": true,
+    "facts": [
+      {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "歼-35舰载隐身战斗机",
+        "supporting_sources": [
+          "N004",
+          "O021",
+          "R001",
+          "R002"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N004': '歼-35舰载隐身战斗机', 'O021': '歼-35', 'R002': '歼-35舰载隐身战斗机', 'R001': '歼-35舰载隐身战斗机'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "歼-35舰载隐身战斗机",
+          "supporting_sources": [
+            "N004",
+            "O021",
+            "R001",
+            "R002"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论及两架雷达数据均确认为中国歼-35"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "中国",
+        "supporting_sources": [
+          "N004",
+          "O021",
+          "R001",
+          "R002"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N004': '中国', 'O021': '中国', 'R002': '中国', 'R001': '中国'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "中国",
+          "supporting_sources": [
+            "N004",
+            "O021",
+            "R001",
+            "R002"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论及两架雷达数据均确认为中国"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "2架",
+        "supporting_sources": [
+          "O021",
+          "R001",
+          "R002"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'O021': 2, 'R002': 2, 'R001': 2}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "2 架",
+          "supporting_sources": [
+            "O021",
+            "R001",
+            "R002"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论明确提及“两架”，两架雷达数据均显示数量为 2；新闻未说明具体数量但不构成冲突"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "东海",
+        "supporting_sources": [
+          "N004",
+          "O021"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "复核明示地点和PDF包含关系：{'N004': '温州外海', 'O021': '东海'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "温州外海（东海）",
+          "supporting_sources": [
+            "N004",
+            "O021"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻明确“温州外海”，舆论支持“东海方向”；雷达坐标虽显示南海簇但标注为未验证且存在同批号远距离簇异常，结合文本证据判定地点为东海"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N004": {
+            "raw": "温州外海",
+            "region": "温州外海",
+            "direction": "东海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false,
+            "quote": "在温州外海活动"
+          },
+          "O021": {
+            "raw": "东海方向",
+            "region": "东海",
+            "direction": "东海",
+            "precision": "大范围",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false,
+            "quote": "在东海方向"
+          }
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "起点 17:35，终点 19:00",
+        "supporting_sources": [
+          "N004",
+          "R001",
+          "R002"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突；起点明示值：{'N004': '17:35', 'R001': '17:35'}；终点明示值：{'N004': '19:00', 'R002': '19:00', 'R001': '19:00'}",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "2025 年 5 月 1 日 17:35-19:00",
+          "supporting_sources": [
+            "N004",
+            "R001",
+            "R002"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻提供精确起止时间，雷达 R001/R002 时间区间高度吻合（17:35-19:00）；舆论仅确认日期"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "components": {
+          "start_time": {
+            "value": "17:35",
+            "support": [
+              "N004",
+              "R001"
+            ],
+            "conflicts": [],
+            "status": "supported",
+            "source_values": {
+              "N004": "17:35",
+              "R001": "17:35"
+            },
+            "radar_batch_observations": [
+              {
+                "sheet": "飞机",
+                "batch": "AIR-0435F7FE86050A",
+                "branch_values": {
+                  "R002": 1069,
+                  "R001": 1055
+                },
+                "boundary_sources": [
+                  "R001"
+                ],
+                "reason": "位置观测分支按同批号合并覆盖区间；较晚出现的子分支首点不是另一次活动开始断言"
+              }
+            ]
+          },
+          "end_time": {
+            "value": "19:00",
+            "support": [
+              "N004",
+              "R002",
+              "R001"
+            ],
+            "conflicts": [],
+            "status": "supported",
+            "source_values": {
+              "N004": "19:00",
+              "R002": "19:00",
+              "R001": "19:00"
+            },
+            "radar_batch_observations": [
+              {
+                "sheet": "飞机",
+                "batch": "AIR-0435F7FE86050A",
+                "branch_values": {
+                  "R002": 1140,
+                  "R001": 1140
+                },
+                "boundary_sources": [
+                  "R002",
+                  "R001"
+                ],
+                "reason": "位置观测分支按同批号合并覆盖区间；较晚出现的子分支首点不是另一次活动开始断言"
+              }
+            ]
+          }
+        },
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "战备警巡",
+        "supporting_sources": [
+          "N004",
+          "O021",
+          "R001",
+          "R002"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "原文明示任务：{'N004': ['战备警巡'], 'O021': ['战备警巡'], 'R002': ['战备警巡'], 'R001': ['战备警巡']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "战备警巡",
+          "supporting_sources": [
+            "N004",
+            "O021",
+            "R001",
+            "R002"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论及两架雷达数据均明确任务为“战备警巡”"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N004": [
+            "战备警巡"
+          ],
+          "O021": [
+            "战备警巡"
+          ],
+          "R002": [
+            "战备警巡"
+          ],
+          "R001": [
+            "战备警巡"
+          ]
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N004",
+          "O021"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "supporting_sources": [
+            "N004",
+            "O021",
+            "R001",
+            "R002"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻描述“活动”，舆论描述“保持机动”，雷达描述“未说明”但不冲突"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N004": "活动",
+          "O021": "活动",
+          "R002": "未说明",
+          "R001": "未说明"
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location_detail",
+        "claim": "温州外海",
+        "supporting_sources": [
+          "N004"
+        ],
+        "conflicting_sources": [],
+        "status": "insufficient",
+        "reason": "具体区域仅一类来源明示；结论使用共同获支持的方向，细节保留待核实",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "温州外海（东海）",
+          "supporting_sources": [
+            "N004",
+            "O021"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻明确“温州外海”，舆论支持“东海方向”；雷达坐标虽显示南海簇但标注为未验证且存在同批号远距离簇异常，结合文本证据判定地点为东海"
+        },
+        "supporting_source_types": [
+          "news"
+        ]
+      }
+    ],
+    "unresolved_issues": [
+      "雷达 R001/R002 坐标簇显示南海方向，与新闻/舆论的东海地点存在空间差异，但已标注为同批号远距离簇异常且未验证，暂不视为独立事件冲突"
+    ],
+    "explanation": "程序核验未通过：R002：同批号存在远距离起始位置簇，候选拆分不代表归属已经消解；R001：同批号存在远距离起始位置簇，候选拆分不代表归属已经消解；雷达 R001/R002 坐标簇显示南海方向，与新闻/舆论的东海地点存在空间差异，但已标注为同批号远距离簇异常且未验证，暂不视为独立事件冲突",
+    "model_explanation": "三类来源（新闻、舆论、雷达）在平台型号、国籍、任务、时间及大致海域上高度一致。数量由舆论和雷达共同支持（2 架）。地点虽有雷达坐标偏差，但结合文本证据及雷达异常标注，判定为同一事件。"
+  },
+  "reasons": [
+    "R002：同批号存在远距离起始位置簇，候选拆分不代表归属已经消解",
+    "R001：同批号存在远距离起始位置簇，候选拆分不代表归属已经消解",
+    "雷达 R001/R002 坐标簇显示南海方向，与新闻/舆论的东海地点存在空间差异，但已标注为同批号远距离簇异常且未验证，暂不视为独立事件冲突"
+  ],
+  "status": "不可信事件",
+  "verified_facts": [
+    {
+      "platform_index": 0,
+      "field": "platform",
+      "claim": "歼-35舰载隐身战斗机",
+      "supporting_sources": [
+        "N004",
+        "O021",
+        "R001",
+        "R002"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N004': '歼-35舰载隐身战斗机', 'O021': '歼-35', 'R002': '歼-35舰载隐身战斗机', 'R001': '歼-35舰载隐身战斗机'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "歼-35舰载隐身战斗机",
+        "supporting_sources": [
+          "N004",
+          "O021",
+          "R001",
+          "R002"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻、舆论及两架雷达数据均确认为中国歼-35"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "country",
+      "claim": "中国",
+      "supporting_sources": [
+        "N004",
+        "O021",
+        "R001",
+        "R002"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N004': '中国', 'O021': '中国', 'R002': '中国', 'R001': '中国'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "中国",
+        "supporting_sources": [
+          "N004",
+          "O021",
+          "R001",
+          "R002"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻、舆论及两架雷达数据均确认为中国"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "quantity",
+      "claim": "2架",
+      "supporting_sources": [
+        "O021",
+        "R001",
+        "R002"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'O021': 2, 'R002': 2, 'R001': 2}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "2 架",
+        "supporting_sources": [
+          "O021",
+          "R001",
+          "R002"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "舆论明确提及“两架”，两架雷达数据均显示数量为 2；新闻未说明具体数量但不构成冲突"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "location",
+      "claim": "东海",
+      "supporting_sources": [
+        "N004",
+        "O021"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "复核明示地点和PDF包含关系：{'N004': '温州外海', 'O021': '东海'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "温州外海（东海）",
+        "supporting_sources": [
+          "N004",
+          "O021"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻明确“温州外海”，舆论支持“东海方向”；雷达坐标虽显示南海簇但标注为未验证且存在同批号远距离簇异常，结合文本证据判定地点为东海"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N004": {
+          "raw": "温州外海",
+          "region": "温州外海",
+          "direction": "东海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在温州外海活动"
+        },
+        "O021": {
+          "raw": "东海方向",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在东海方向"
+        }
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "time",
+      "claim": "起点 17:35，终点 19:00",
+      "supporting_sources": [
+        "N004",
+        "R001",
+        "R002"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突；起点明示值：{'N004': '17:35', 'R001': '17:35'}；终点明示值：{'N004': '19:00', 'R002': '19:00', 'R001': '19:00'}",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "2025 年 5 月 1 日 17:35-19:00",
+        "supporting_sources": [
+          "N004",
+          "R001",
+          "R002"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻提供精确起止时间，雷达 R001/R002 时间区间高度吻合（17:35-19:00）；舆论仅确认日期"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "components": {
+        "start_time": {
+          "value": "17:35",
+          "support": [
+            "N004",
+            "R001"
+          ],
+          "conflicts": [],
+          "status": "supported",
+          "source_values": {
+            "N004": "17:35",
+            "R001": "17:35"
+          },
+          "radar_batch_observations": [
+            {
+              "sheet": "飞机",
+              "batch": "AIR-0435F7FE86050A",
+              "branch_values": {
+                "R002": 1069,
+                "R001": 1055
+              },
+              "boundary_sources": [
+                "R001"
+              ],
+              "reason": "位置观测分支按同批号合并覆盖区间；较晚出现的子分支首点不是另一次活动开始断言"
+            }
+          ]
+        },
+        "end_time": {
+          "value": "19:00",
+          "support": [
+            "N004",
+            "R002",
+            "R001"
+          ],
+          "conflicts": [],
+          "status": "supported",
+          "source_values": {
+            "N004": "19:00",
+            "R002": "19:00",
+            "R001": "19:00"
+          },
+          "radar_batch_observations": [
+            {
+              "sheet": "飞机",
+              "batch": "AIR-0435F7FE86050A",
+              "branch_values": {
+                "R002": 1140,
+                "R001": 1140
+              },
+              "boundary_sources": [
+                "R002",
+                "R001"
+              ],
+              "reason": "位置观测分支按同批号合并覆盖区间；较晚出现的子分支首点不是另一次活动开始断言"
+            }
+          ]
+        }
+      },
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "mission",
+      "claim": "战备警巡",
+      "supporting_sources": [
+        "N004",
+        "O021",
+        "R001",
+        "R002"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "原文明示任务：{'N004': ['战备警巡'], 'O021': ['战备警巡'], 'R002': ['战备警巡'], 'R001': ['战备警巡']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "战备警巡",
+        "supporting_sources": [
+          "N004",
+          "O021",
+          "R001",
+          "R002"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻、舆论及两架雷达数据均明确任务为“战备警巡”"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N004": [
+          "战备警巡"
+        ],
+        "O021": [
+          "战备警巡"
+        ],
+        "R002": [
+          "战备警巡"
+        ],
+        "R001": [
+          "战备警巡"
+        ]
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "movement",
+      "claim": "活动",
+      "supporting_sources": [
+        "N004",
+        "O021"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N004",
+          "O021",
+          "R001",
+          "R002"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻描述“活动”，舆论描述“保持机动”，雷达描述“未说明”但不冲突"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N004": "活动",
+        "O021": "活动",
+        "R002": "未说明",
+        "R001": "未说明"
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    }
+  ],
+  "radar_row_count": 13,
+  "direction": "东海",
+  "report_eligible": false,
+  "directory": "不可信事件/N004_中国歼-35舰载隐身战斗机在温州外海执行战备警巡行动"
+}

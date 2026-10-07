@@ -1,0 +1,728 @@
+{
+  "id": "N045",
+  "news_id": "N045",
+  "opinion_id": "O039",
+  "radar_ids": [
+    "R050"
+  ],
+  "radar_slots": {
+    "0": "R050"
+  },
+  "alignment": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O039",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.95,
+        "reason": "平台（新加坡坚韧级坦克登陆舰）、日期（2025.5.1）、地点（东海/东海南部）及任务性质（训练）高度一致。新闻中的具体时间段（08:08-10:33）与雷达数据 R050 完全吻合，虽 O039 未提供具体时间，但描述为“围绕既定科目组织远海训练”，与新闻的“两栖作战训练”在广义任务类别上兼容，且无其他新加坡舰艇在同一时段于同一海域执行相同任务的冲突记录。"
+      },
+      {
+        "candidate_id": "O044",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "平台型号不同（韩国独岛级两栖攻击舰 vs 新加坡坚韧级坦克登陆舰），国家不同，虽同在日本海/东海方向进行类似训练，但属于不同国家的独立活动。"
+      },
+      {
+        "candidate_id": "O004",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.99,
+        "reason": "平台类型完全不同（战斗机 vs 登陆舰），且地点为安达曼海，与新闻所述的东海南部不符。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R050",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 1.0,
+        "reason": "完全匹配：平台（新加坡坚韧级坦克登陆舰）、时间（2025.05.01 08:08:00-10:33:00）、地点（东海南部）及任务（远海训练/两栖作战训练）均与新闻 N045 精确对应。批号 SHIP-C79D9798414EC0 进一步确认了目标身份。"
+      },
+      {
+        "candidate_id": "R041",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 1.0,
+        "reason": "平台不同（韩国独岛级两栖攻击舰），虽时间地点重叠，但属于另一艘舰艇的独立活动。"
+      },
+      {
+        "candidate_id": "R004",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台不同（新加坡 F-15SG 战斗机），虽时间地点重叠，但属于空军行动，与新闻中的海军舰艇活动无关。"
+      }
+    ],
+    "ambiguity": "无。新闻 N045 与雷达数据 R050 及舆论 O039 在关键要素上形成强关联，足以判定为同一次活动。其他候选因平台、国家或地点明显不同而被排除。"
+  },
+  "candidates": {
+    "opinion": [
+      {
+        "id": "O039",
+        "score": 4.49808,
+        "cosine": 0.96808,
+        "platform_similarity": 0.95,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O004",
+        "score": 1.99914,
+        "cosine": 0.69017,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.9241379310344827,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O024",
+        "score": 1.85452,
+        "cosine": 0.65452,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O042",
+        "score": 1.23268,
+        "cosine": 0.75268,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O044",
+        "score": 1.2259,
+        "cosine": 0.7459,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O040",
+        "score": 1.21892,
+        "cosine": 0.73892,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O020",
+        "score": 0.73635,
+        "cosine": 0.73635,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      }
+    ],
+    "radar": [
+      {
+        "id": "R050",
+        "score": 6.01764,
+        "cosine": 0.96764,
+        "platform_similarity": 0.95,
+        "time_overlap": 1.0,
+        "location_relation": "same"
+      },
+      {
+        "id": "R041",
+        "score": 2.78509,
+        "cosine": 0.78509,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "same"
+      },
+      {
+        "id": "R004",
+        "score": 1.99443,
+        "cosine": 0.68547,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.9241379310344827,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R046",
+        "score": 1.51137,
+        "cosine": 0.71137,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "same"
+      },
+      {
+        "id": "R043",
+        "score": 1.26606,
+        "cosine": 0.7206,
+        "platform_similarity": 0.18182,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "R053",
+        "score": 0.87409,
+        "cosine": 0.71409,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "same_direction_only"
+      }
+    ]
+  },
+  "assignment_diagnostics": {
+    "opinion": [],
+    "radar": []
+  },
+  "verification": {
+    "same_event": true,
+    "facts": [
+      {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "坚韧级坦克登陆舰",
+        "supporting_sources": [
+          "N045",
+          "O039",
+          "R050"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N045': '坚韧级坦克登陆舰', 'O039': '坚韧级坦克登陆舰', 'R050': '坚韧级坦克登陆舰'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "新加坡坚韧级坦克登陆舰",
+          "supporting_sources": [
+            "N045",
+            "O039",
+            "R050"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均明确指向同一平台型号及国籍，无冲突。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "新加坡",
+        "supporting_sources": [
+          "N045",
+          "O039",
+          "R050"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N045': '新加坡', 'O039': '新加坡', 'R050': '新加坡'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "新加坡",
+          "supporting_sources": [
+            "N045",
+            "O039",
+            "R050"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源一致确认国籍为新加坡。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "1艘",
+        "supporting_sources": [
+          "O039",
+          "R050"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'O039': 1, 'R050': 1}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "1 架/艘",
+          "supporting_sources": [
+            "O039",
+            "R050"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论明确提及“一艘”，雷达批号显示数量值为 1；新闻虽未明示具体数字但描述为单舰活动，与两源支持的数量一致。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "东海南部",
+        "supporting_sources": [
+          "N045",
+          "R050"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "复核明示地点和PDF包含关系：{'N045': '东海南部', 'O039': '东海', 'R050': '东海南部'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "东海南部",
+          "supporting_sources": [
+            "N045",
+            "R050"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻与雷达均精确指向“东海南部”，舆论的“东海”为兼容的大范围描述，三者在区域层级上无冲突。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N045": {
+            "raw": "东海南部",
+            "region": "东海南部",
+            "direction": "东海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false,
+            "quote": "东海南部"
+          },
+          "O039": {
+            "raw": "东海",
+            "region": "东海",
+            "direction": "东海",
+            "precision": "大范围",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false,
+            "quote": "在东海"
+          },
+          "R050": {
+            "raw": "东海南部",
+            "region": "东海南部",
+            "direction": "东海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        },
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "起点 08:08，终点 10:33",
+        "supporting_sources": [
+          "N045",
+          "R050"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "2025 年 5 月 1 日 08:08-10:33",
+          "supporting_sources": [
+            "N045",
+            "R050"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻与雷达的时间起止点完全吻合；舆论仅确认日期，未提供具体时刻，不构成冲突。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "components": {
+          "start_time": {
+            "value": "08:08",
+            "support": [
+              "N045",
+              "R050"
+            ],
+            "conflicts": [],
+            "status": "supported",
+            "source_values": {
+              "N045": "08:08",
+              "R050": "08:08"
+            }
+          },
+          "end_time": {
+            "value": "10:33",
+            "support": [
+              "N045",
+              "R050"
+            ],
+            "conflicts": [],
+            "status": "supported",
+            "source_values": {
+              "N045": "10:33",
+              "R050": "10:33"
+            }
+          }
+        },
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "远海训练",
+        "supporting_sources": [
+          "O039",
+          "R050"
+        ],
+        "conflicting_sources": [
+          "N045"
+        ],
+        "status": "conflict",
+        "reason": "原文明示任务：{'N045': ['两栖作战训练'], 'O039': ['远海训练'], 'R050': ['远海训练']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "两栖作战训练/远海训练",
+          "supporting_sources": [
+            "N045",
+            "R050"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻明确为“两栖作战训练”，雷达任务列为“远海训练”。两者在广义军事训练范畴内兼容，且无其他来源提出具体任务冲突。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N045": [
+            "两栖作战训练"
+          ],
+          "O039": [
+            "远海训练"
+          ],
+          "R050": [
+            "远海训练"
+          ]
+        },
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N045",
+          "O039"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动/机动",
+          "supporting_sources": [
+            "N045",
+            "O039"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻描述“保持机动”，舆论描述“保持机动”，雷达虽未显式填写但时间跨度与地点变化隐含移动，三源逻辑一致。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N045": "活动",
+          "O039": "活动",
+          "R050": "未说明"
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      }
+    ],
+    "unresolved_issues": [],
+    "explanation": "程序核验未通过：mission关键事实冲突：原文明示任务：{'N045': ['两栖作战训练'], 'O039': ['远海训练'], 'R050': ['远海训练']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+    "model_explanation": "新闻 N045、舆论 O039 与雷达 R050 在平台身份（新加坡坚韧级）、活动日期（2025.5.1）、具体时段（08:08-10:33）及海域（东海南部）上高度一致。数量方面，舆论和雷达明确支持"
+  },
+  "reasons": [
+    "mission关键事实冲突：原文明示任务：{'N045': ['两栖作战训练'], 'O039': ['远海训练'], 'R050': ['远海训练']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决"
+  ],
+  "status": "不可信事件",
+  "verified_facts": [
+    {
+      "platform_index": 0,
+      "field": "platform",
+      "claim": "坚韧级坦克登陆舰",
+      "supporting_sources": [
+        "N045",
+        "O039",
+        "R050"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N045': '坚韧级坦克登陆舰', 'O039': '坚韧级坦克登陆舰', 'R050': '坚韧级坦克登陆舰'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "新加坡坚韧级坦克登陆舰",
+        "supporting_sources": [
+          "N045",
+          "O039",
+          "R050"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源（新闻、舆论、雷达）均明确指向同一平台型号及国籍，无冲突。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "country",
+      "claim": "新加坡",
+      "supporting_sources": [
+        "N045",
+        "O039",
+        "R050"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N045': '新加坡', 'O039': '新加坡', 'R050': '新加坡'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "新加坡",
+        "supporting_sources": [
+          "N045",
+          "O039",
+          "R050"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源一致确认国籍为新加坡。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "quantity",
+      "claim": "1艘",
+      "supporting_sources": [
+        "O039",
+        "R050"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'O039': 1, 'R050': 1}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "1 架/艘",
+        "supporting_sources": [
+          "O039",
+          "R050"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "舆论明确提及“一艘”，雷达批号显示数量值为 1；新闻虽未明示具体数字但描述为单舰活动，与两源支持的数量一致。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "location",
+      "claim": "东海南部",
+      "supporting_sources": [
+        "N045",
+        "R050"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "复核明示地点和PDF包含关系：{'N045': '东海南部', 'O039': '东海', 'R050': '东海南部'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "东海南部",
+        "supporting_sources": [
+          "N045",
+          "R050"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与雷达均精确指向“东海南部”，舆论的“东海”为兼容的大范围描述，三者在区域层级上无冲突。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N045": {
+          "raw": "东海南部",
+          "region": "东海南部",
+          "direction": "东海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "东海南部"
+        },
+        "O039": {
+          "raw": "东海",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在东海"
+        },
+        "R050": {
+          "raw": "东海南部",
+          "region": "东海南部",
+          "direction": "东海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        }
+      },
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "time",
+      "claim": "起点 08:08，终点 10:33",
+      "supporting_sources": [
+        "N045",
+        "R050"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "2025 年 5 月 1 日 08:08-10:33",
+        "supporting_sources": [
+          "N045",
+          "R050"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与雷达的时间起止点完全吻合；舆论仅确认日期，未提供具体时刻，不构成冲突。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "components": {
+        "start_time": {
+          "value": "08:08",
+          "support": [
+            "N045",
+            "R050"
+          ],
+          "conflicts": [],
+          "status": "supported",
+          "source_values": {
+            "N045": "08:08",
+            "R050": "08:08"
+          }
+        },
+        "end_time": {
+          "value": "10:33",
+          "support": [
+            "N045",
+            "R050"
+          ],
+          "conflicts": [],
+          "status": "supported",
+          "source_values": {
+            "N045": "10:33",
+            "R050": "10:33"
+          }
+        }
+      },
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "movement",
+      "claim": "活动",
+      "supporting_sources": [
+        "N045",
+        "O039"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动/机动",
+        "supporting_sources": [
+          "N045",
+          "O039"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻描述“保持机动”，舆论描述“保持机动”，雷达虽未显式填写但时间跨度与地点变化隐含移动，三源逻辑一致。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N045": "活动",
+        "O039": "活动",
+        "R050": "未说明"
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    }
+  ],
+  "radar_row_count": 10,
+  "direction": "东海",
+  "report_eligible": false,
+  "directory": "不可信事件/N045_新加坡坚韧级坦克登陆舰在东海南部实施两栖作战训练"
+}

@@ -1,0 +1,665 @@
+{
+  "id": "N031",
+  "news_id": "N031",
+  "opinion_id": "O033",
+  "radar_ids": [
+    "R051"
+  ],
+  "radar_slots": {
+    "0": "R051"
+  },
+  "alignment": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O033",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.95,
+        "reason": "平台完全一致（山东号航母）、时间重叠（新闻为全天活动，意见为具体时段）、地点一致（中太平洋）、任务性质高度相关（持续活动 vs 联合巡航）。"
+      },
+      {
+        "candidate_id": "O030",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.9,
+        "reason": "平台不同（韩国大邱级护卫舰 vs 中国山东号航母），虽同在中太平洋同日，但属于不同国家不同平台的独立行动。"
+      },
+      {
+        "candidate_id": "O032",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.9,
+        "reason": "平台不同（福建号航母 vs 山东号航母），且地点冲突（东海 vs 中太平洋）。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R051",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.98,
+        "reason": "平台、时间、地点、任务完全匹配。雷达数据中的批号SHIP-D66A2E15996BA5与新闻描述的具体活动时段（08:30-10:55）及区域（中太平洋）高度吻合，确认为同一事件的数据源。"
+      },
+      {
+        "candidate_id": "R049",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.9,
+        "reason": "平台不同（韩国大邱级护卫舰），虽同在中太平洋同日，但属于独立行动。"
+      },
+      {
+        "candidate_id": "R034",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.9,
+        "reason": "平台不同（福建号航母），且地点冲突（钓鱼岛海域/东海 vs 中太平洋）。"
+      }
+    ],
+    "ambiguity": "无。新闻描述为宏观活动，O033和R051提供了具体的微观时段和任务细节，两者在平台、时间、地点、任务上均无冲突，可确认为同一事件的不同粒度描述。其他候选因平台或地点明显不同而排除。"
+  },
+  "candidates": {
+    "opinion": [
+      {
+        "id": "O033",
+        "score": 4.80208,
+        "cosine": 0.95208,
+        "platform_similarity": 0.95,
+        "time_overlap": null,
+        "location_relation": "same"
+      },
+      {
+        "id": "O030",
+        "score": 1.52201,
+        "cosine": 0.72201,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "same"
+      },
+      {
+        "id": "O032",
+        "score": 1.05896,
+        "cosine": 0.85896,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O037",
+        "score": 1.01018,
+        "cosine": 0.81018,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O031",
+        "score": 0.99932,
+        "cosine": 0.79932,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O040",
+        "score": 0.79865,
+        "cosine": 0.79865,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      }
+    ],
+    "radar": [
+      {
+        "id": "R051",
+        "score": 4.79314,
+        "cosine": 0.94314,
+        "platform_similarity": 0.95,
+        "time_overlap": null,
+        "location_relation": "same"
+      },
+      {
+        "id": "R049",
+        "score": 1.52759,
+        "cosine": 0.72759,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "same"
+      },
+      {
+        "id": "R034",
+        "score": 1.03133,
+        "cosine": 0.83133,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "R045",
+        "score": 0.98673,
+        "cosine": 0.78673,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "R021",
+        "score": 0.96827,
+        "cosine": 0.76827,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R043",
+        "score": 0.96596,
+        "cosine": 0.76596,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_named_regions"
+      }
+    ]
+  },
+  "verification": {
+    "same_event": true,
+    "facts": [
+      {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "山东号航空母舰",
+        "supporting_sources": [
+          "N031",
+          "O033",
+          "R051"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N031': '山东号航空母舰', 'O033': '山东号”航空母舰', 'R051': '山东号航空母舰'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "山东号航空母舰",
+          "supporting_sources": [
+            "N031",
+            "O033",
+            "R051"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均明确指向山东号航空母舰，无冲突。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "中国",
+        "supporting_sources": [
+          "N031",
+          "O033",
+          "R051"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N031': '中国', 'O033': '中国', 'R051': '中国'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "中国",
+          "supporting_sources": [
+            "N031",
+            "O033",
+            "R051"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均明确标注国籍为中国，无冲突。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "1艘",
+        "supporting_sources": [
+          "N031",
+          "R051"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N031': 1, 'R051': 1}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "1 架/艘",
+          "supporting_sources": [
+            "N031",
+            "R051"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻明确提及"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "中太平洋",
+        "supporting_sources": [
+          "N031",
+          "O033",
+          "R051"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源均指向中太平洋区域，舆论和雷达提供了更精确的时间段支持该区域活动。",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "起点 08:30，终点 10:55",
+        "supporting_sources": [
+          "O033",
+          "R051"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "2025 年 5 月 1 日 08:30-10:55",
+          "supporting_sources": [
+            "O033",
+            "R051"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论和雷达提供了具体的起止时间，新闻仅提及日期，三源在日期上一致，具体时刻由两源支持。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "components": {
+          "start_time": {
+            "value": "08:30",
+            "support": [
+              "O033",
+              "R051"
+            ],
+            "conflicts": [],
+            "status": "supported",
+            "source_values": {
+              "O033": "08:30",
+              "R051": "08:30"
+            }
+          },
+          "end_time": {
+            "value": "10:55",
+            "support": [
+              "O033",
+              "R051"
+            ],
+            "conflicts": [],
+            "status": "supported",
+            "source_values": {
+              "O033": "10:55",
+              "R051": "10:55"
+            }
+          }
+        },
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "联合巡航",
+        "supporting_sources": [
+          "O033",
+          "R051"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "原文明示任务：{'N031': [], 'O033': ['联合巡航'], 'R051': ['联合巡航']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "联合巡航/持续活动",
+          "supporting_sources": [
+            "N031",
+            "O033",
+            "R051"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻描述为"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N031": [],
+          "O033": [
+            "联合巡航"
+          ],
+          "R051": [
+            "联合巡航"
+          ]
+        },
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N031",
+          "O033"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "supporting_sources": [
+            "N031",
+            "O033",
+            "R051"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源均表明平台处于活动状态。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N031": "活动",
+          "O033": "活动",
+          "R051": "未说明"
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      }
+    ],
+    "unresolved_issues": [],
+    "explanation": "新闻、舆论和雷达三源在平台型号、国籍、地点（中太平洋）、时间（2025 年 5 月 1 日）及任务性质上高度一致。舆论和雷达提供了具体的时间段（08:30-10:55），新闻确认了全天活动背景，三者共同支持同一事件的发生，无未消解冲突。"
+  },
+  "reasons": [],
+  "status": "可信事件",
+  "verified_facts": [
+    {
+      "platform_index": 0,
+      "field": "platform",
+      "claim": "山东号航空母舰",
+      "supporting_sources": [
+        "N031",
+        "O033",
+        "R051"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N031': '山东号航空母舰', 'O033': '山东号”航空母舰', 'R051': '山东号航空母舰'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "山东号航空母舰",
+        "supporting_sources": [
+          "N031",
+          "O033",
+          "R051"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源（新闻、舆论、雷达）均明确指向山东号航空母舰，无冲突。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "country",
+      "claim": "中国",
+      "supporting_sources": [
+        "N031",
+        "O033",
+        "R051"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N031': '中国', 'O033': '中国', 'R051': '中国'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "中国",
+        "supporting_sources": [
+          "N031",
+          "O033",
+          "R051"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源（新闻、舆论、雷达）均明确标注国籍为中国，无冲突。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "quantity",
+      "claim": "1艘",
+      "supporting_sources": [
+        "N031",
+        "R051"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N031': 1, 'R051': 1}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "1 架/艘",
+        "supporting_sources": [
+          "N031",
+          "R051"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻明确提及"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "location",
+      "claim": "中太平洋",
+      "supporting_sources": [
+        "N031",
+        "O033",
+        "R051"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "三源均指向中太平洋区域，舆论和雷达提供了更精确的时间段支持该区域活动。",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "time",
+      "claim": "起点 08:30，终点 10:55",
+      "supporting_sources": [
+        "O033",
+        "R051"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "2025 年 5 月 1 日 08:30-10:55",
+        "supporting_sources": [
+          "O033",
+          "R051"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "舆论和雷达提供了具体的起止时间，新闻仅提及日期，三源在日期上一致，具体时刻由两源支持。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "components": {
+        "start_time": {
+          "value": "08:30",
+          "support": [
+            "O033",
+            "R051"
+          ],
+          "conflicts": [],
+          "status": "supported",
+          "source_values": {
+            "O033": "08:30",
+            "R051": "08:30"
+          }
+        },
+        "end_time": {
+          "value": "10:55",
+          "support": [
+            "O033",
+            "R051"
+          ],
+          "conflicts": [],
+          "status": "supported",
+          "source_values": {
+            "O033": "10:55",
+            "R051": "10:55"
+          }
+        }
+      },
+      "supporting_source_types": [
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "mission",
+      "claim": "联合巡航",
+      "supporting_sources": [
+        "O033",
+        "R051"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "原文明示任务：{'N031': [], 'O033': ['联合巡航'], 'R051': ['联合巡航']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "联合巡航/持续活动",
+        "supporting_sources": [
+          "N031",
+          "O033",
+          "R051"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻描述为"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N031": [],
+        "O033": [
+          "联合巡航"
+        ],
+        "R051": [
+          "联合巡航"
+        ]
+      },
+      "supporting_source_types": [
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "movement",
+      "claim": "活动",
+      "supporting_sources": [
+        "N031",
+        "O033"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N031",
+          "O033",
+          "R051"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源均表明平台处于活动状态。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N031": "活动",
+        "O033": "活动",
+        "R051": "未说明"
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    }
+  ],
+  "radar_row_count": 11,
+  "direction": "其他",
+  "report_eligible": false,
+  "directory": "可信事件/N031_中国山东号航空母舰在中太平洋海域持续活动"
+}

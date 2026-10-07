@@ -1,0 +1,149 @@
+{
+  "role": "extraction",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "materials": [
+      {
+        "source_id": "O011",
+        "kind": "opinion",
+        "text": "时间：2025.5.1\n\n标题：美国阿利·伯克级驱逐舰在渚碧礁附近海域持续活动\n\n正文：据联合早报报道，2025年5月1日，美国一艘阿利·伯克级导弹驱逐舰在南海渚碧礁附近海域活动。报道分析，该舰行动范围保持在指定任务海域，围绕任务区域保持机动，这种部署方式可能体现了其任务连续性和区域机动能力。\n"
+      },
+      {
+        "source_id": "O012",
+        "kind": "opinion",
+        "text": "时间：2025.5.1\n\n标题：澳军两架E-7A预警机南海执行预警指挥任务引关注\n\n正文：据地区军事观察机构报道，2025年5月1日，澳大利亚空军两架E-7A“楔尾”预警与控制机在南海方向执行预警指挥任务，于20时47分开始围绕任务海域组织行动。相关动态显示，该型平台具备较强的空中态势感知与持续监视能力，其活动有助于在既定航线收集公开可观察信息。有关讨论关注，此类区域侦巡行动正成为域外力量介入南海的常态化方式。\n"
+      },
+      {
+        "source_id": "O013",
+        "kind": "opinion",
+        "text": "时间：2025.5.1\n\n标题：意大利海军F-35B在南海开展舰载机起降训练\n\n正文：据央视新闻报道，2025年5月1日5时23分至7时48分，意大利海军在南海方向组织F-35B短距起降战斗机进行舰载机起降训练。围绕这一部署，有分析认为相关行动有助于提升参演兵力在远海环境下的任务组织水平。围绕训练协同维度的讨论指出，此类按计划保持机动并持续执行舰载机起降训练的模式，被视为对流程熟悉程度的有效检验。\n"
+      },
+      {
+        "source_id": "O014",
+        "kind": "opinion",
+        "text": "时间：2025.5.1\n\n标题：法国两架E-2C预警机在东海赤尾屿海域执行空中警戒\n\n正文：据公开防务媒体报道，法国两架E-2C预警机于2025年5月1日在东海赤尾屿海域执行空中警戒任务。该机型沿既定方向保持机动，被认为围绕任务区域维持部署或警戒。相关观察关注其前沿存在，认为此类部署持续性有助于体现区域机动能力。\n"
+      }
+    ]
+  },
+  "result": {
+    "items": [
+      {
+        "source_id": "O011",
+        "platforms": [
+          {
+            "name": "阿利·伯克级导弹驱逐舰",
+            "country": "美国",
+            "quantity": 1,
+            "quote": "一艘阿利·伯克级导弹驱逐舰",
+            "quantity_quote": "一艘阿利·伯克级导弹驱逐舰"
+          }
+        ],
+        "location": {
+          "value": "南海渚碧礁附近海域",
+          "quote": "在南海渚碧礁附近海域活动"
+        },
+        "mission": {
+          "value": null,
+          "quote": ""
+        },
+        "start_time": null,
+        "end_time": null,
+        "time_quote": "",
+        "movement": "活动",
+        "movement_quote": "在南海渚碧礁附近海域活动"
+      },
+      {
+        "source_id": "O012",
+        "platforms": [
+          {
+            "name": "E-7A“楔尾”预警与控制机",
+            "country": "澳大利亚",
+            "quantity": 2,
+            "quote": "两架E-7A“楔尾”预警与控制机",
+            "quantity_quote": "两架"
+          }
+        ],
+        "location": {
+          "value": "南海方向",
+          "quote": "在南海方向执行预警指挥任务"
+        },
+        "mission": {
+          "value": "预警指挥任务",
+          "quote": "执行预警指挥任务"
+        },
+        "start_time": "20:47",
+        "end_time": null,
+        "time_quote": "于 20 时 47 分开始围绕任务海域组织行动",
+        "movement": "活动",
+        "movement_quote": "围绕任务海域组织行动"
+      },
+      {
+        "source_id": "O013",
+        "platforms": [
+          {
+            "name": "F-35B 短距起降战斗机",
+            "country": "意大利",
+            "quantity": null,
+            "quote": "F-35B 短距起降战斗机",
+            "quantity_quote": ""
+          }
+        ],
+        "location": {
+          "value": "南海方向",
+          "quote": "在南海方向组织 F-35B 短距起降战斗机进行舰载机起降训练"
+        },
+        "mission": {
+          "value": "舰载机起降训练",
+          "quote": "进行舰载机起降训练"
+        },
+        "start_time": "05:23",
+        "end_time": "07:48",
+        "time_quote": "2025 年 5 月 1 日 5 时 23 分至 7 时 48 分",
+        "movement": "活动",
+        "movement_quote": "组织 F-35B 短距起降战斗机进行舰载机起降训练"
+      },
+      {
+        "source_id": "O014",
+        "platforms": [
+          {
+            "name": "E-2C 预警机",
+            "country": "法国",
+            "quantity": 2,
+            "quote": "两架 E-2C 预警机",
+            "quantity_quote": "两架"
+          }
+        ],
+        "location": {
+          "value": "东海赤尾屿海域",
+          "quote": "在东海赤尾屿海域执行空中警戒任务"
+        },
+        "mission": {
+          "value": "空中警戒任务",
+          "quote": "执行空中警戒任务"
+        },
+        "start_time": null,
+        "end_time": null,
+        "time_quote": "",
+        "movement": "活动",
+        "movement_quote": "在东海赤尾屿海域执行空中警戒任务"
+      }
+    ]
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T16:01:23.4885802Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\n  \"items\": [\n    {\n      \"source_id\": \"O011\",\n      \"platforms\": [\n        {\n          \"name\": \"阿利·伯克级导弹驱逐舰\",\n          \"country\": \"美国\",\n          \"quantity\": null,\n          \"quote\": \"一艘阿利·伯克级导弹驱逐舰\",\n          \"quantity_quote\": \"一艘阿利·伯克级导弹驱逐舰\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"南海渚碧礁附近海域\",\n        \"quote\": \"在南海渚碧礁附近海域活动\"\n      },\n      \"mission\": {\n        \"value\": null,\n        \"quote\": \"\"\n      },\n      \"start_time\": null,\n      \"end_time\": null,\n      \"time_quote\": \"\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"在南海渚碧礁附近海域活动\"\n    },\n    {\n      \"source_id\": \"O012\",\n      \"platforms\": [\n        {\n          \"name\": \"E-7A“楔尾”预警与控制机\",\n          \"country\": \"澳大利亚\",\n          \"quantity\": 2,\n          \"quote\": \"两架E-7A“楔尾”预警与控制机\",\n          \"quantity_quote\": \"两架\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"南海方向\",\n        \"quote\": \"在南海方向执行预警指挥任务\"\n      },\n      \"mission\": {\n        \"value\": \"预警指挥任务\",\n        \"quote\": \"执行预警指挥任务\"\n      },\n      \"start_time\": \"20:47\",\n      \"end_time\": null,\n      \"time_quote\": \"于 20 时 47 分开始围绕任务海域组织行动\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"围绕任务海域组织行动\"\n    },\n    {\n      \"source_id\": \"O013\",\n      \"platforms\": [\n        {\n          \"name\": \"F-35B 短距起降战斗机\",\n          \"country\": \"意大利\",\n          \"quantity\": null,\n          \"quote\": \"F-35B 短距起降战斗机\",\n          \"quantity_quote\": \"\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"南海方向\",\n        \"quote\": \"在南海方向组织 F-35B 短距起降战斗机进行舰载机起降训练\"\n      },\n      \"mission\": {\n        \"value\": \"舰载机起降训练\",\n        \"quote\": \"进行舰载机起降训练\"\n      },\n      \"start_time\": \"05:23\",\n      \"end_time\": \"07:48\",\n      \"time_quote\": \"2025 年 5 月 1 日 5 时 23 分至 7 时 48 分\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"组织 F-35B 短距起降战斗机进行舰载机起降训练\"\n    },\n    {\n      \"source_id\": \"O014\",\n      \"platforms\": [\n        {\n          \"name\": \"E-2C 预警机\",\n          \"country\": \"法国\",\n          \"quantity\": 2,\n          \"quote\": \"两架 E-2C 预警机\",\n          \"quantity_quote\": \"两架\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"东海赤尾屿海域\",\n        \"quote\": \"在东海赤尾屿海域执行空中警戒任务\"\n      },\n      \"mission\": {\n        \"value\": \"空中警戒任务\",\n        \"quote\": \"执行空中警戒任务\"\n      },\n      \"start_time\": null,\n      \"end_time\": null,\n      \"time_quote\": \"\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"在东海赤尾屿海域执行空中警戒任务\"\n    }\n  ]\n}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 18149962400,
+    "load_duration": 14680400,
+    "prompt_eval_count": 896,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 406989000,
+    "eval_count": 930,
+    "eval_duration": 17598797000
+  }
+}

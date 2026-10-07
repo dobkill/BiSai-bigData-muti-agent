@@ -1,0 +1,887 @@
+{
+  "role": "alignment",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N043",
+      "kind": "news",
+      "title": "中国歼-16D电子战飞机在塔斯曼海开展电子对抗训练",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：中国歼-16D电子战飞机在塔斯曼海开展电子对抗训练\n正文：2025年5月1日2时05分至4时30分，中国歼-16D电子战飞机在塔斯曼海围绕任务海域组织电子对抗训练，按计划保持机动并持续执行电子对抗训练，围绕既定科目组织训练并完成相关平台之间的行动衔接。\n\n主题词：中国  歼-16D电子战飞机  电子对抗训练  塔斯曼海\n",
+      "platforms": [
+        {
+          "name": "歼-16D电子战飞机",
+          "country": "中国",
+          "quantity": null,
+          "quote": "中国歼-16D电子战飞机",
+          "quantity_quote": "",
+          "country_raw": "中国"
+        }
+      ],
+      "location": {
+        "raw": "塔斯曼海",
+        "region": "塔斯曼海",
+        "direction": "其他",
+        "precision": "原文区域",
+        "mapping": "PDF未列入三大核心海域的区域归其他",
+        "transit": false,
+        "quote": "在塔斯曼海"
+      },
+      "mission": {
+        "value": "电子对抗训练",
+        "quote": "开展电子对抗训练"
+      },
+      "start_time": "02:05",
+      "end_time": "04:30",
+      "movement": "活动"
+    },
+    "opinion_candidates": [
+      {
+        "id": "O001",
+        "kind": "opinion",
+        "title": "中国两架歼-16D电子战机在塔斯曼海组织训练",
+        "text": "时间：2025.5.1\n\n标题：中国两架歼-16D电子战机在塔斯曼海组织训练\n\n正文：据公开防务媒体报道，2025年5月1日，中国两架歼-16D电子战飞机在塔斯曼海围绕既定科目组织电子对抗训练，并按计划完成相关平台之间的行动衔接。相关动态被视为检验远海训练协同能力的重要窗口。有助于评估在复杂电磁环境下任务组织的熟悉程度。\n",
+        "platforms": [
+          {
+            "name": "歼-16D电子战机",
+            "country": "中国",
+            "quantity": 2,
+            "quote": "中国两架歼-16D电子战飞机",
+            "quantity_quote": "两架歼-16D电子战机",
+            "country_raw": "中国"
+          }
+        ],
+        "location": {
+          "raw": "塔斯曼海",
+          "region": "塔斯曼海",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false,
+          "quote": "在塔斯曼海围绕既定科目组织电子对抗训练"
+        },
+        "mission": {
+          "value": "电子对抗训练",
+          "quote": "组织电子对抗训练"
+        },
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动"
+      },
+      {
+        "id": "O016",
+        "kind": "opinion",
+        "title": "中国903A型补给舰南海远海训练时段引发流程熟悉讨论",
+        "text": "时间：2025.5.1\n\n标题：中国903A型补给舰南海远海训练时段引发流程熟悉讨论\n\n正文：据央视新闻报道，2025年5月1日2时54分至4时19分，中国一艘903A型综合补给舰在南海方向按计划组织了远海训练。有关讨论关注到，该舰围绕既定科目完成相关平台之间的行动衔接，这一过程有助于检验任务组织和训练协同水平。\n",
+        "platforms": [
+          {
+            "name": "903A型综合补给舰",
+            "country": "中国",
+            "quantity": 1,
+            "quote": "中国一艘903A型综合补给舰",
+            "quantity_quote": "一艘903A型综合补给舰",
+            "country_raw": "中国"
+          }
+        ],
+        "location": {
+          "raw": "南海方向",
+          "region": "南海",
+          "direction": "南海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在南海方向"
+        },
+        "mission": {
+          "value": "远海训练",
+          "quote": "组织了远海训练"
+        },
+        "start_time": "02:54",
+        "end_time": "04:19",
+        "movement": "活动"
+      },
+      {
+        "id": "O023",
+        "kind": "opinion",
+        "title": "俄军苏-35S在黄海开展对海突击训练引发关注",
+        "text": "时间：2025.5.1\n\n标题：俄军苏-35S在黄海开展对海突击训练引发关注\n\n正文：据联合早报报道，俄罗斯空天军苏-35S多用途战斗机于2025年5月1日凌晨在黄海方向执行对海突击训练任务，训练自2时49分开始，至4时14分结束。相关动态引发外界对俄军在该方向任务组织模式的讨论。有分析认为，此类训练有助于部队进一步熟悉复杂海空环境下的流程衔接，围绕训练协同与流程熟悉的观察也随之增多。\n",
+        "platforms": [
+          {
+            "name": "苏-35S",
+            "country": "俄罗斯",
+            "quantity": null,
+            "quote": "俄罗斯空天军苏-35S多用途战斗机",
+            "quantity_quote": "2025年5月1日凌晨在黄海方向执行对海突击训练任务，训练自2时49分开始，至4时14分结束。相关动态引发外界对俄军在该方向任务组织模式的讨论。有分析认为，此类训练有助于部队进一步熟悉复杂海空环境下的流程衔接，围绕训练协同与流程熟悉的观察也随之增多",
+            "country_raw": "俄罗斯"
+          }
+        ],
+        "location": {
+          "raw": "黄海方向",
+          "region": "黄海",
+          "direction": "黄海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在黄海方向执行对海突击训练任务"
+        },
+        "mission": {
+          "value": "对海突击训练",
+          "quote": "执行对海突击训练任务"
+        },
+        "start_time": "02:49",
+        "end_time": "04:14",
+        "movement": "活动"
+      },
+      {
+        "id": "O021",
+        "kind": "opinion",
+        "title": "中国两架歼-35隐身战斗机在东海执行战备警巡",
+        "text": "时间：2025.5.1\n\n标题：中国两架歼-35隐身战斗机在东海执行战备警巡\n\n正文：据央视新闻报道，2025年5月1日，中国两架歼-35舰载隐身战斗机在东海方向按计划保持机动并持续执行战备警巡任务。围绕此次平台运用的讨论认为，该行动有助于维持前沿存在和部署持续性，展现了在特定方向的区域机动能力。\n",
+        "platforms": [
+          {
+            "name": "歼-35",
+            "country": "中国",
+            "quantity": 2,
+            "quote": "两架歼-35舰载隐身战斗机",
+            "quantity_quote": "两架歼-35舰载隐身战斗机",
+            "country_raw": "中国"
+          }
+        ],
+        "location": {
+          "raw": "东海方向",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在东海方向"
+        },
+        "mission": {
+          "value": "战备警巡任务",
+          "quote": "执行战备警巡任务"
+        },
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动"
+      },
+      {
+        "id": "O031",
+        "kind": "opinion",
+        "title": "中国两架歼-15T舰载机在济州岛西部海域持续活动",
+        "text": "时间：2025.5.1\n\n标题：中国两架歼-15T舰载机在济州岛西部海域持续活动\n\n正文：据央视新闻报道，2025年5月1日，中国两架歼-15T舰载战斗机在黄海方向的济州岛西部海域持续活动。从公开信息看，相关兵力围绕任务区域保持机动，行动范围保持在指定任务海域。这一部署被认为展现了良好的行动组织能力，其区域机动样式也体现出对任务连续性的有效维持。\n",
+        "platforms": [
+          {
+            "name": "歼-15T",
+            "country": "中国",
+            "quantity": 2,
+            "quote": "两架歼-15T舰载战斗机",
+            "quantity_quote": "两架歼-15T舰载战斗机在黄海方向的济州岛西部海域持续活动。从公开信息看，相关兵力围绕任务区域保持机动，行动范围保持在指定任务海域。这一部署被认为展现了良好的行动组织能力，其区域机动样式也体现出对任务连续性的有效维持",
+            "country_raw": "中国"
+          }
+        ],
+        "location": {
+          "raw": "黄海方向的济州岛西部海域",
+          "region": "济州岛西部海域",
+          "direction": "黄海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在黄海方向的济州岛西部海域持续活动"
+        },
+        "mission": {
+          "value": "持续活动",
+          "quote": "在黄海方向的济州岛西部海域持续活动"
+        },
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动"
+      },
+      {
+        "id": "O037",
+        "kind": "opinion",
+        "title": "中国轰-6K轰炸机编队进入东海上海外海展开机动",
+        "text": "时间：2025.5.1\n\n标题：中国轰-6K轰炸机编队进入东海上海外海展开机动\n\n正文：据地区军事观察机构报道，2025年5月1日，中国空军2架轰-6K轰炸机由外围航线进入东海上海外海任务海域，随后围绕任务区域保持机动，行动范围保持在指定任务海域。有关讨论关注到，此次行动在组织上呈现出清晰的批次衔接与区域控制特征，被视为检验轰炸机单元在近海复杂环境下任务连续性的一次常规安排。\n",
+        "platforms": [
+          {
+            "name": "轰-6K",
+            "country": "中国",
+            "quantity": 2,
+            "quote": "2架轰-6K轰炸机",
+            "quantity_quote": "2架",
+            "country_raw": "中国"
+          }
+        ],
+        "location": {
+          "raw": "东海上海外海任务海域",
+          "region": "上海外海",
+          "direction": "东海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "进入东海上海外海任务海域"
+        },
+        "mission": {
+          "value": null,
+          "quote": ""
+        },
+        "start_time": null,
+        "end_time": null,
+        "movement": "进入"
+      },
+      {
+        "id": "O004",
+        "kind": "opinion",
+        "title": "新加坡F-15SG战斗机在安达曼海执行战备警巡",
+        "text": "时间：2025.5.1\n\n标题：新加坡F-15SG战斗机在安达曼海执行战备警巡\n\n正文：据联合早报报道，2025年5月1日8时19分至10时44分，新加坡空军F-15SG多用途战斗机在安达曼海任务海域执行战备警巡任务。该机沿既定方向保持机动并围绕任务区域维持警戒，这一动向被视为展现前沿存在和部署持续性的常规安排。\n",
+        "platforms": [
+          {
+            "name": "F-15SG多用途战斗机",
+            "country": "新加坡",
+            "quantity": null,
+            "quote": "新加坡空军F-15SG多用途战斗机",
+            "quantity_quote": "",
+            "country_raw": "新加坡"
+          }
+        ],
+        "location": {
+          "raw": "安达曼海任务海域",
+          "region": "安达曼海任务海域",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false,
+          "quote": "在安达曼海任务海域"
+        },
+        "mission": {
+          "value": "战备警巡任务",
+          "quote": "执行战备警巡任务"
+        },
+        "start_time": "08:19",
+        "end_time": "10:44",
+        "movement": "活动"
+      }
+    ],
+    "radar_candidates": [
+      {
+        "id": "R023",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "歼-16D电子战飞机",
+            "country": "中国",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-E0C394489245A4",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "电子对抗训练",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "电子对抗训练"
+        ],
+        "start_time": "2025.05.01 02:05:00",
+        "end_time": "2025.05.01 04:30:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            160.1665,
+            160.3599
+          ],
+          "latitude_range": [
+            -38.0066,
+            -37.848
+          ],
+          "median": [
+            160.2562,
+            -37.9369
+          ],
+          "origins": [
+            [
+              160.1838,
+              -37.8926
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [],
+        "batch": "AIR-E0C394489245A4",
+        "sibling_ids": [],
+        "hull_values": [],
+        "country_values": [
+          "中国"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 12
+      },
+      {
+        "id": "R034",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "福建号航空母舰",
+            "country": "中国",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-6A461B63B28D56",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "钓鱼岛海域",
+          "region": "钓鱼岛海域",
+          "direction": "东海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "钓鱼岛海域",
+            "region": "钓鱼岛海域",
+            "direction": "东海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "联合巡航",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "联合巡航"
+        ],
+        "start_time": "2025.05.01 02:38:00",
+        "end_time": "2025.05.01 04:03:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-6A461B63B28D56",
+        "sibling_ids": [],
+        "hull_values": [
+          "18"
+        ],
+        "country_values": [
+          "中国"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 12
+      },
+      {
+        "id": "R044",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "903A型综合补给舰",
+            "country": "中国",
+            "quantity": 2,
+            "quote": "舰船工作表，批号SHIP-A9774AF7379E78",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "万安滩海域",
+          "region": "万安滩海域",
+          "direction": "南海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "万安滩海域",
+            "region": "万安滩海域",
+            "direction": "南海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "远海训练",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "远海训练"
+        ],
+        "start_time": "2025.05.01 02:54:00",
+        "end_time": "2025.05.01 04:19:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-A9774AF7379E78",
+        "sibling_ids": [],
+        "hull_values": [
+          "TYPE-903A"
+        ],
+        "country_values": [
+          "中国"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 10
+      },
+      {
+        "id": "R021",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "歼-15T舰载战斗机",
+            "country": "中国",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-BD03273DD4DAFA",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "舰载机起降训练",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "舰载机起降训练"
+        ],
+        "start_time": "2025.05.01 11:15:00",
+        "end_time": "2025.05.01 13:40:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            125.6488,
+            125.803
+          ],
+          "latitude_range": [
+            33.4253,
+            33.7729
+          ],
+          "median": [
+            125.7383,
+            33.6055
+          ],
+          "origins": [
+            [
+              125.7821,
+              33.7251
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [
+            "黄海"
+          ],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [],
+        "batch": "AIR-BD03273DD4DAFA",
+        "sibling_ids": [],
+        "hull_values": [],
+        "country_values": [
+          "中国"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 10
+      },
+      {
+        "id": "R002",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "歼-35舰载隐身战斗机",
+            "country": "中国",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-0435F7FE86050A",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "战备警巡",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "战备警巡"
+        ],
+        "start_time": "2025.05.01 17:49:10",
+        "end_time": "2025.05.01 19:00:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            122.1749,
+            122.4161
+          ],
+          "latitude_range": [
+            27.6146,
+            27.8573
+          ],
+          "median": [
+            122.2806,
+            27.772
+          ],
+          "origins": [
+            [
+              122.4117,
+              27.8816
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [
+            "东海"
+          ],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [
+          "同批号存在远距离起始位置簇，候选拆分不代表归属已经消解"
+        ],
+        "batch": "AIR-0435F7FE86050A",
+        "sibling_ids": [
+          "R001"
+        ],
+        "hull_values": [],
+        "country_values": [
+          "中国"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 6
+      },
+      {
+        "id": "R001",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "歼-35舰载隐身战斗机",
+            "country": "中国",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-0435F7FE86050A",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "战备警巡",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "战备警巡"
+        ],
+        "start_time": "2025.05.01 17:35:00",
+        "end_time": "2025.05.01 19:00:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            114.281,
+            114.3812
+          ],
+          "latitude_range": [
+            15.1769,
+            15.2435
+          ],
+          "median": [
+            114.2998,
+            15.2165
+          ],
+          "origins": [
+            [
+              114.2637,
+              15.2165
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [
+            "南海"
+          ],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [
+          "同批号存在远距离起始位置簇，候选拆分不代表归属已经消解"
+        ],
+        "batch": "AIR-0435F7FE86050A",
+        "sibling_ids": [
+          "R002"
+        ],
+        "hull_values": [],
+        "country_values": [
+          "中国"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 7
+      },
+      {
+        "id": "R017",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "F-15SG多用途战斗机",
+            "country": "新加坡",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-86FAD17E60C49E",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "对海突击训练",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "对海突击训练"
+        ],
+        "start_time": "2025.05.01 11:44:00",
+        "end_time": "2025.05.01 13:14:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            88.0461,
+            88.1408
+          ],
+          "latitude_range": [
+            14.9136,
+            15.319
+          ],
+          "median": [
+            88.1218,
+            15.1564
+          ],
+          "origins": [
+            [
+              88.0934,
+              14.8873
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [],
+        "batch": "AIR-86FAD17E60C49E",
+        "sibling_ids": [],
+        "hull_values": [],
+        "country_values": [
+          "新加坡"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 10
+      }
+    ],
+    "recall": {
+      "opinion": [
+        {
+          "id": "O001",
+          "score": 4.97097,
+          "cosine": 0.97097,
+          "platform_similarity": 1.0,
+          "time_overlap": null,
+          "location_relation": "same"
+        },
+        {
+          "id": "O016",
+          "score": 2.10856,
+          "cosine": 0.70856,
+          "platform_similarity": 0.0,
+          "time_overlap": 1.0,
+          "location_relation": "different_direction"
+        },
+        {
+          "id": "O023",
+          "score": 1.96839,
+          "cosine": 0.76839,
+          "platform_similarity": 0.0,
+          "time_overlap": 1.0,
+          "location_relation": "different_direction"
+        },
+        {
+          "id": "O021",
+          "score": 1.01965,
+          "cosine": 0.81965,
+          "platform_similarity": 0.0,
+          "time_overlap": null,
+          "location_relation": "different_direction"
+        },
+        {
+          "id": "O031",
+          "score": 1.00098,
+          "cosine": 0.80098,
+          "platform_similarity": 0.0,
+          "time_overlap": null,
+          "location_relation": "different_direction"
+        },
+        {
+          "id": "O037",
+          "score": 0.97994,
+          "cosine": 0.77994,
+          "platform_similarity": 0.0,
+          "time_overlap": null,
+          "location_relation": "different_direction"
+        },
+        {
+          "id": "O004",
+          "score": 0.77271,
+          "cosine": 0.77271,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "different_named_regions"
+        }
+      ],
+      "radar": [
+        {
+          "id": "R023",
+          "score": 5.33557,
+          "cosine": 0.93557,
+          "platform_similarity": 1.0,
+          "time_overlap": 1.0,
+          "location_relation": "missing"
+        },
+        {
+          "id": "R034",
+          "score": 2.13726,
+          "cosine": 0.73726,
+          "platform_similarity": 0.0,
+          "time_overlap": 1.0,
+          "location_relation": "different_direction"
+        },
+        {
+          "id": "R044",
+          "score": 2.06889,
+          "cosine": 0.66889,
+          "platform_similarity": 0.0,
+          "time_overlap": 1.0,
+          "location_relation": "different_direction"
+        },
+        {
+          "id": "R021",
+          "score": 1.02474,
+          "cosine": 0.82474,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "missing"
+        },
+        {
+          "id": "R002",
+          "score": 1.00797,
+          "cosine": 0.80797,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "missing"
+        },
+        {
+          "id": "R001",
+          "score": 1.00165,
+          "cosine": 0.80165,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "missing"
+        },
+        {
+          "id": "R017",
+          "score": 0.77043,
+          "cosine": 0.77043,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "missing"
+        }
+      ]
+    }
+  },
+  "result": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O001",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.98,
+        "reason": "平台（歼 -16D）、地点（塔斯曼海）、任务（电子对抗训练）及时间区间（2025.5.1 凌晨）完全一致。新闻中提到的具体起止时间（02:05-04:30）与候选 O001 描述的时间段吻合，且均提及“围绕既定科目”和“平台间行动衔接”，属于同一事件的不同报道视角。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R023",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.95,
+        "reason": "平台（歼 -16D）、任务（电子对抗训练）及精确时间戳（02:05-04:30）与新闻完全匹配。虽然雷达数据中地点字段缺失，但其坐标范围（南纬 37-38 度，东经 160 度）地理上位于塔斯曼海，且批号 AIR-E0C394489245A4 为唯一标识，足以确认关联。"
+      }
+    ],
+    "ambiguity": "无。新闻与候选 O001、R023 在核心要素上高度一致，其他候选因平台型号、海域或任务类型不同被排除。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T16:16:17.4646047Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\n  \"opinion_edges\": [\n    {\n      \"candidate_id\": \"O001\",\n      \"platform_indices\": [0],\n      \"relation\": \"same\",\n      \"confidence\": 0.98,\n      \"reason\": \"平台（歼 -16D）、地点（塔斯曼海）、任务（电子对抗训练）及时间区间（2025.5.1 凌晨）完全一致。新闻中提到的具体起止时间（02:05-04:30）与候选 O001 描述的时间段吻合，且均提及“围绕既定科目”和“平台间行动衔接”，属于同一事件的不同报道视角。\"\n    }\n  ],\n  \"radar_edges\": [\n    {\n      \"candidate_id\": \"R023\",\n      \"platform_indices\": [0],\n      \"relation\": \"same\",\n      \"confidence\": 0.95,\n      \"reason\": \"平台（歼 -16D）、任务（电子对抗训练）及精确时间戳（02:05-04:30）与新闻完全匹配。虽然雷达数据中地点字段缺失，但其坐标范围（南纬 37-38 度，东经 160 度）地理上位于塔斯曼海，且批号 AIR-E0C394489245A4 为唯一标识，足以确认关联。\"\n    }\n  ],\n  \"ambiguity\": \"无。新闻与候选 O001、R023 在核心要素上高度一致，其他候选因平台型号、海域或任务类型不同被排除。\"\n}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 10096156400,
+    "load_duration": 17742500,
+    "prompt_eval_count": 6669,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 2208841000,
+    "eval_count": 373,
+    "eval_duration": 7564948000
+  }
+}

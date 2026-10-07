@@ -1,0 +1,149 @@
+{
+  "role": "extraction",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "materials": [
+      {
+        "source_id": "N041",
+        "kind": "news",
+        "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：韩国大邱级导弹护卫舰在中太平洋持续机动并持续活动\n正文：2025年5月1日5时12分至7时37分，韩国海军1艘大邱级导弹护卫舰在中太平洋活动，围绕任务区域保持机动，行动范围保持在指定任务海域。\n\n主题词：韩国  大邱级导弹护卫舰  中太平洋\n"
+      },
+      {
+        "source_id": "N042",
+        "kind": "news",
+        "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：新加坡F-15SG战斗机在安达曼海持续活动\n正文：2025年5月1日，新加坡2架F-15SG多用途战斗机在安达曼海持续活动，自8时19分起围绕任务区域保持机动，行动范围保持在指定任务海域，至10时44分结束。\n\n主题词：新加坡  F-15SG  安达曼海\n"
+      },
+      {
+        "source_id": "N043",
+        "kind": "news",
+        "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：中国歼-16D电子战飞机在塔斯曼海开展电子对抗训练\n正文：2025年5月1日2时05分至4时30分，中国歼-16D电子战飞机在塔斯曼海围绕任务海域组织电子对抗训练，按计划保持机动并持续执行电子对抗训练，围绕既定科目组织训练并完成相关平台之间的行动衔接。\n\n主题词：中国  歼-16D电子战飞机  电子对抗训练  塔斯曼海\n"
+      },
+      {
+        "source_id": "N044",
+        "kind": "news",
+        "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：苏-30SM多用途战斗机俄军苏-30SM在南沙群岛海域执行空中警戒任务\n正文：2025年5月1日，俄罗斯2架苏-30SM多用途战斗机在南沙群岛海域活动，于18时01分至19时31分围绕任务海域组织空中警戒，期间沿既定方向保持机动并持续维持部署。\n\n主题词：俄罗斯  苏-30SM  南沙群岛  空中警戒\n"
+      }
+    ]
+  },
+  "result": {
+    "items": [
+      {
+        "source_id": "N041",
+        "platforms": [
+          {
+            "name": "大邱级导弹护卫舰",
+            "country": "韩国",
+            "quantity": 1,
+            "quote": "韩国海军 1 艘大邱级导弹护卫舰",
+            "quantity_quote": "1艘大邱级导弹护卫舰"
+          }
+        ],
+        "location": {
+          "value": "中太平洋",
+          "quote": "中太平洋"
+        },
+        "mission": {
+          "value": null,
+          "quote": ""
+        },
+        "start_time": "05:12",
+        "end_time": "07:37",
+        "time_quote": "2025 年 5 月 1 日 5 时 12 分至 7 时 37 分",
+        "movement": "活动",
+        "movement_quote": "在中太平洋活动"
+      },
+      {
+        "source_id": "N042",
+        "platforms": [
+          {
+            "name": "F-15SG多用途战斗机",
+            "country": "新加坡",
+            "quantity": 2,
+            "quote": "新加坡 2 架 F-15SG 多用途战斗机",
+            "quantity_quote": "2架F-15SG多用途战斗机"
+          }
+        ],
+        "location": {
+          "value": "安达曼海",
+          "quote": "在安达曼海持续活动"
+        },
+        "mission": {
+          "value": null,
+          "quote": ""
+        },
+        "start_time": "08:19",
+        "end_time": "10:44",
+        "time_quote": "8时19分起围绕任务区域保持机动，行动范围保持在指定任务海域，至10时44分",
+        "movement": "活动",
+        "movement_quote": "在安达曼海持续活动"
+      },
+      {
+        "source_id": "N043",
+        "platforms": [
+          {
+            "name": "歼 -16D 电子战飞机",
+            "country": "中国",
+            "quantity": null,
+            "quote": "中国歼 -16D 电子战飞机",
+            "quantity_quote": ""
+          }
+        ],
+        "location": {
+          "value": "塔斯曼海",
+          "quote": "在塔斯曼海"
+        },
+        "mission": {
+          "value": "电子对抗训练",
+          "quote": "开展电子对抗训练"
+        },
+        "start_time": "02:05",
+        "end_time": "04:30",
+        "time_quote": "2025 年 5 月 1 日 2 时 05 分至 4 时 30 分",
+        "movement": "活动",
+        "movement_quote": "围绕任务海域组织电子对抗训练"
+      },
+      {
+        "source_id": "N044",
+        "platforms": [
+          {
+            "name": "苏 -30SM 多用途战斗机",
+            "country": "俄罗斯",
+            "quantity": 2,
+            "quote": "俄罗斯 2 架苏 -30SM 多用途战斗机",
+            "quantity_quote": "2架苏-30SM多用途战斗机"
+          }
+        ],
+        "location": {
+          "value": "南沙群岛海域",
+          "quote": "在南沙群岛海域活动"
+        },
+        "mission": {
+          "value": "空中警戒",
+          "quote": "组织空中警戒"
+        },
+        "start_time": "18:01",
+        "end_time": "19:31",
+        "time_quote": "于 18 时 01 分至 19 时 31 分",
+        "movement": "活动",
+        "movement_quote": "在南沙群岛海域活动"
+      }
+    ]
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T15:59:55.1803015Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\n  \"items\": [\n    {\n      \"source_id\": \"N041\",\n      \"platforms\": [\n        {\n          \"name\": \"大邱级导弹护卫舰\",\n          \"country\": \"韩国\",\n          \"quantity\": null,\n          \"quote\": \"韩国海军 1 艘大邱级导弹护卫舰\",\n          \"quantity_quote\": \"1 艘大邱级导弹护卫舰\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"中太平洋\",\n        \"quote\": \"中太平洋\"\n      },\n      \"mission\": {\n        \"value\": null,\n        \"quote\": \"\"\n      },\n      \"start_time\": \"05:12\",\n      \"end_time\": \"07:37\",\n      \"time_quote\": \"2025 年 5 月 1 日 5 时 12 分至 7 时 37 分\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"在中太平洋活动\"\n    },\n    {\n      \"source_id\": \"N042\",\n      \"platforms\": [\n        {\n          \"name\": \"F-15SG多用途战斗机\",\n          \"country\": \"新加坡\",\n          \"quantity\": null,\n          \"quote\": \"新加坡 2 架 F-15SG 多用途战斗机\",\n          \"quantity_quote\": \"2 架 F-15SG 多用途战斗机\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"安达曼海\",\n        \"quote\": \"在安达曼海持续活动\"\n      },\n      \"mission\": {\n        \"value\": null,\n        \"quote\": \"\"\n      },\n      \"start_time\": \"08:19\",\n      \"end_time\": \"10:44\",\n      \"time_quote\": \"自 8 时 19 分起...至 10 时 44 分结束\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"在安达曼海持续活动\"\n    },\n    {\n      \"source_id\": \"N043\",\n      \"platforms\": [\n        {\n          \"name\": \"歼 -16D 电子战飞机\",\n          \"country\": \"中国\",\n          \"quantity\": null,\n          \"quote\": \"中国歼 -16D 电子战飞机\",\n          \"quantity_quote\": \"\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"塔斯曼海\",\n        \"quote\": \"在塔斯曼海\"\n      },\n      \"mission\": {\n        \"value\": \"电子对抗训练\",\n        \"quote\": \"开展电子对抗训练\"\n      },\n      \"start_time\": \"02:05\",\n      \"end_time\": \"04:30\",\n      \"time_quote\": \"2025 年 5 月 1 日 2 时 05 分至 4 时 30 分\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"围绕任务海域组织电子对抗训练\"\n    },\n    {\n      \"source_id\": \"N044\",\n      \"platforms\": [\n        {\n          \"name\": \"苏 -30SM 多用途战斗机\",\n          \"country\": \"俄罗斯\",\n          \"quantity\": null,\n          \"quote\": \"俄罗斯 2 架苏 -30SM 多用途战斗机\",\n          \"quantity_quote\": \"2 架苏 -30SM 多用途战斗机\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"南沙群岛海域\",\n        \"quote\": \"在南沙群岛海域活动\"\n      },\n      \"mission\": {\n        \"value\": \"空中警戒\",\n        \"quote\": \"组织空中警戒\"\n      },\n      \"start_time\": \"18:01\",\n      \"end_time\": \"19:31\",\n      \"time_quote\": \"于 18 时 01 分至 19 时 31 分\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"在南沙群岛海域活动\"\n    }\n  ]\n}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 18646931300,
+    "load_duration": 8519900,
+    "prompt_eval_count": 921,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 412181000,
+    "eval_count": 972,
+    "eval_duration": 18069643000
+  }
+}

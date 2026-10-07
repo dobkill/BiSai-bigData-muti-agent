@@ -1,0 +1,283 @@
+{
+  "role": "verification",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N038",
+      "kind": "news",
+      "title": "俄海军守护级护卫舰在菲律宾海组织联合搜救训练",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：俄海军守护级护卫舰在菲律宾海组织联合搜救训练\n正文：2025年5月1日20时58分至22时23分，俄罗斯守护级导弹护卫舰在菲律宾海围绕任务海域组织联合搜救训练，期间按计划保持机动并持续执行联合搜救训练，围绕共同任务保持协同行动并完成平台间的联络和行动衔接。\n\n主题词：俄罗斯  守护级导弹护卫舰  菲律宾海  联合搜救训练\n",
+      "platforms": [
+        {
+          "name": "守护级导弹护卫舰",
+          "country": "俄罗斯",
+          "quantity": null,
+          "quote": "俄罗斯守护级导弹护卫舰",
+          "quantity_quote": "",
+          "country_raw": "俄罗斯"
+        }
+      ],
+      "location": {
+        "raw": "菲律宾海",
+        "region": "菲律宾海",
+        "direction": "其他",
+        "precision": "原文区域",
+        "mapping": "PDF未列入三大核心海域的区域归其他",
+        "transit": false,
+        "quote": "菲律宾海"
+      },
+      "mission": {
+        "value": "联合搜救训练",
+        "quote": "组织联合搜救训练"
+      },
+      "start_time": "20:58",
+      "end_time": "22:23",
+      "movement": "活动"
+    },
+    "opinion": {
+      "id": "O010",
+      "kind": "opinion",
+      "title": "俄军护卫舰在菲律宾海开展联合搜救训练引关注",
+      "text": "时间：2025.5.1\n\n标题：俄军护卫舰在菲律宾海开展联合搜救训练引关注\n\n正文：据公开防务媒体报道，俄罗斯海军一艘“守护级”导弹护卫舰于2025年5月1日在菲律宾海围绕任务海域组织联合搜救训练。该舰按计划保持机动并持续执行联合搜救训练，围绕共同任务保持协同行动，完成平台间的联络和行动衔接。媒体观察认为，此类训练有助于提升参演兵力在远海非战争军事行动中的协同组织水平。相关流程的反复演练，也被视为强化联络配合与流程熟悉度的常规安排。\n",
+      "platforms": [
+        {
+          "name": "守护级”导弹护卫舰",
+          "country": "俄罗斯",
+          "quantity": 1,
+          "quote": "一艘“守护级”导弹护卫舰",
+          "quantity_quote": "一艘“守护级”导弹护卫舰",
+          "country_raw": "俄罗斯"
+        }
+      ],
+      "location": {
+        "raw": "菲律宾海",
+        "region": "菲律宾海",
+        "direction": "其他",
+        "precision": "原文区域",
+        "mapping": "PDF未列入三大核心海域的区域归其他",
+        "transit": false,
+        "quote": "在菲律宾海"
+      },
+      "mission": {
+        "value": "联合搜救训练",
+        "quote": "组织联合搜救训练"
+      },
+      "start_time": null,
+      "end_time": null,
+      "movement": "活动"
+    },
+    "radars": [
+      {
+        "id": "R040",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "守护级导弹护卫舰",
+            "country": "俄罗斯",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-9CDE3E6146927C",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "菲律宾海",
+          "region": "菲律宾海",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "菲律宾海",
+            "region": "菲律宾海",
+            "direction": "其他",
+            "precision": "原文区域",
+            "mapping": "PDF未列入三大核心海域的区域归其他",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "联合搜救训练",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "联合搜救训练"
+        ],
+        "start_time": "2025.05.01 20:58:00",
+        "end_time": "2025.05.01 22:23:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-9CDE3E6146927C",
+        "sibling_ids": [],
+        "hull_values": [
+          "PROJECT-20380"
+        ],
+        "country_values": [
+          "俄罗斯"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 11
+      }
+    ],
+    "association": {
+      "opinion_edges": [
+        {
+          "candidate_id": "O010",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.95,
+          "reason": "平台（守护级）、地点（菲律宾海）、任务（联合搜救训练）及时间区间完全一致，属于同一活动的舆论报道。"
+        },
+        {
+          "candidate_id": "O002",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.98,
+          "reason": "平台类型不同（战斗机 vs 护卫舰），地点不同（黄岩岛海域 vs 菲律宾海），任务性质不同，属于不同活动。"
+        },
+        {
+          "candidate_id": "O020",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.98,
+          "reason": "平台型号不同（瓦良格号巡洋舰 vs 守护级护卫舰），地点不同（南海方向 vs 菲律宾海），任务不同，属于不同活动。"
+        }
+      ],
+      "radar_edges": [
+        {
+          "candidate_id": "R040",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 1.0,
+          "reason": "雷达数据与新闻在平台型号、地点、任务、起止时间上完全匹配，确认为同一活动。"
+        },
+        {
+          "candidate_id": "R024",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.95,
+          "reason": "平台类型不同（战斗机 vs 护卫舰），任务不同（对海突击 vs 搜救训练），地点缺失但时间重叠，属于不同活动。"
+        },
+        {
+          "candidate_id": "R048",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.95,
+          "reason": "平台型号不同（瓦良格号巡洋舰 vs 守护级护卫舰），地点不同（礼乐滩海域 vs 菲律宾海），任务不同，属于不同活动。"
+        }
+      ],
+      "ambiguity": "无显著歧义，核心候选关联充分。"
+    },
+    "same_batch_other_candidates": []
+  },
+  "result": {
+    "same_event": true,
+    "platforms": [
+      {
+        "platform_index": 0,
+        "platform": {
+          "claim": "守护级导弹护卫舰",
+          "supporting_sources": [
+            "N038",
+            "O010",
+            "R040"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均确认为俄罗斯守护级导弹护卫舰，无冲突。"
+        },
+        "country": {
+          "claim": "俄罗斯",
+          "supporting_sources": [
+            "N038",
+            "O010",
+            "R040"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均明确标注国籍为俄罗斯，无冲突。"
+        },
+        "quantity": {
+          "claim": "1 架/艘",
+          "supporting_sources": [
+            "O010",
+            "R040"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论明确提及“一艘”，雷达批号显示数量"
+        }
+      }
+    ],
+    "location": {
+      "claim": "菲律宾海",
+      "supporting_sources": [
+        "N038",
+        "O010",
+        "R040"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "三源均明确标注地点为菲律宾海，无冲突。"
+    },
+    "time": {
+      "claim": "2025 年 5 月 1 日 20:58-22:23",
+      "supporting_sources": [
+        "N038",
+        "R040"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与雷达起止时间完全一致；舆论仅提及日期，未提供具体时刻但不构成冲突。"
+    },
+    "mission": {
+      "claim": "联合搜救训练",
+      "supporting_sources": [
+        "N038",
+        "O010",
+        "R040"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "三源均明确任务为联合搜救训练，无冲突。"
+    },
+    "movement": {
+      "claim": "活动",
+      "supporting_sources": [
+        "N038",
+        "O010"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与舆论均描述为保持机动/持续执行训练的活动状态；雷达未说明具体运动形态但不构成冲突。"
+    },
+    "unresolved_issues": [],
+    "explanation": "三源（新闻、舆论、雷达）在平台型号、国籍、数量、地点、任务及时间区间上高度一致，核心事实均有至少两类来源支持且无未消解冲突，确认为同一事件。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T16:48:09.6144944Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"same_event\": true, \"platforms\": [{\"platform_index\": 0, \"platform\": {\"claim\": \"守护级导弹护卫舰\", \"supporting_sources\": [\"N038\", \"O010\", \"R040\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻、舆论、雷达三源均确认为俄罗斯守护级导弹护卫舰，无冲突。\"}, \"country\": {\"claim\": \"俄罗斯\", \"supporting_sources\": [\"N038\", \"O010\", \"R040\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻、舆论、雷达三源均明确标注国籍为俄罗斯，无冲突。\"}, \"quantity\": {\"claim\": \"1 架/艘\", \"supporting_sources\": [\"O010\", \"R040\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"舆论明确提及“一艘”，雷达批号显示数量\" }\n}\n], \"location\": {\"claim\": \"菲律宾海\", \"supporting_sources\": [\"N038\", \"O010\", \"R040\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源均明确标注地点为菲律宾海，无冲突。\"}, \"time\": {\"claim\": \"2025 年 5 月 1 日 20:58-22:23\", \"supporting_sources\": [\"N038\", \"R040\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻与雷达起止时间完全一致；舆论仅提及日期，未提供具体时刻但不构成冲突。\"}, \"mission\": {\"claim\": \"联合搜救训练\", \"supporting_sources\": [\"N038\", \"O010\", \"R040\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源均明确任务为联合搜救训练，无冲突。\"}, \"movement\": {\"claim\": \"活动\", \"supporting_sources\": [\"N038\", \"O010\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻与舆论均描述为保持机动/持续执行训练的活动状态；雷达未说明具体运动形态但不构成冲突。\"}, \"unresolved_issues\": [],\"explanation\": \"三源（新闻、舆论、雷达）在平台型号、国籍、数量、地点、任务及时间区间上高度一致，核心事实均有至少两类来源支持且无未消解冲突，确认为同一事件。\"}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 12285482800,
+    "load_duration": 9722900,
+    "prompt_eval_count": 2020,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 766279000,
+    "eval_count": 563,
+    "eval_duration": 11296433000
+  }
+}

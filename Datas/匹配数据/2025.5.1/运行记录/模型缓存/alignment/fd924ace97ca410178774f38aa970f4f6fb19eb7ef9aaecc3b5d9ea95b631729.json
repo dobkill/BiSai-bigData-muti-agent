@@ -1,0 +1,859 @@
+{
+  "role": "alignment",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N035",
+      "kind": "news",
+      "title": "美国海军阿利·伯克级驱逐舰在渚碧礁附近海域执行战备巡逻",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：美国海军阿利·伯克级驱逐舰在渚碧礁附近海域执行战备巡逻\n正文：2025年5月1日11时10分至13时35分，美国海军阿利·伯克级导弹驱逐舰在渚碧礁附近海域围绕任务海域组织战备巡逻，沿既定方向保持机动并维持警戒。\n\n主题词：美国海军  阿利·伯克级导弹驱逐舰  战备巡逻  渚碧礁附近海域\n",
+      "platforms": [
+        {
+          "name": "阿利·伯克级",
+          "country": "美国",
+          "quantity": null,
+          "quote": "美国海军阿利·伯克级导弹驱逐舰",
+          "quantity_quote": "",
+          "country_raw": "美国"
+        }
+      ],
+      "location": {
+        "raw": "渚碧礁附近海域",
+        "region": "渚碧礁附近海域",
+        "direction": "南海",
+        "precision": "具体区域",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "渚碧礁附近海域"
+      },
+      "mission": {
+        "value": "战备巡逻",
+        "quote": "执行战备巡逻"
+      },
+      "start_time": "11:10",
+      "end_time": "13:35",
+      "movement": "活动"
+    },
+    "opinion_candidates": [
+      {
+        "id": "O011",
+        "kind": "opinion",
+        "title": "美国阿利·伯克级驱逐舰在渚碧礁附近海域持续活动",
+        "text": "时间：2025.5.1\n\n标题：美国阿利·伯克级驱逐舰在渚碧礁附近海域持续活动\n\n正文：据联合早报报道，2025年5月1日，美国一艘阿利·伯克级导弹驱逐舰在南海渚碧礁附近海域活动。报道分析，该舰行动范围保持在指定任务海域，围绕任务区域保持机动，这种部署方式可能体现了其任务连续性和区域机动能力。\n",
+        "platforms": [
+          {
+            "name": "阿利·伯克级导弹驱逐舰",
+            "country": "美国",
+            "quantity": 1,
+            "quote": "一艘阿利·伯克级导弹驱逐舰",
+            "quantity_quote": "一艘阿利·伯克级导弹驱逐舰",
+            "country_raw": "美国"
+          }
+        ],
+        "location": {
+          "raw": "南海渚碧礁附近海域",
+          "region": "渚碧礁附近海域",
+          "direction": "南海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在南海渚碧礁附近海域活动"
+        },
+        "mission": {
+          "value": null,
+          "quote": ""
+        },
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动"
+      },
+      {
+        "id": "O003",
+        "kind": "opinion",
+        "title": "中国运-8反潜巡逻机在南海执行海上侦察巡逻",
+        "text": "时间：2025.5.1\n\n标题：中国运-8反潜巡逻机在南海执行海上侦察巡逻\n\n正文：据社交媒体军事观察账号报道，2025年5月1日11时59分至13时24分，中国运-8反潜巡逻机在南海海域执行海上侦察巡逻任务。从公开信息看，该机围绕指定海域保持巡逻监视并结合既定航线持续收集信息，被认为有助于提升态势感知和持续监视水平。\n",
+        "platforms": [
+          {
+            "name": "运-8反潜巡逻机",
+            "country": "中国",
+            "quantity": null,
+            "quote": "中国运-8反潜巡逻机",
+            "quantity_quote": "",
+            "country_raw": "中国"
+          }
+        ],
+        "location": {
+          "raw": "南海海域",
+          "region": "南海",
+          "direction": "南海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在南海海域"
+        },
+        "mission": {
+          "value": "海上侦察巡逻任务",
+          "quote": "执行海上侦察巡逻任务"
+        },
+        "start_time": "11:59",
+        "end_time": "13:24",
+        "movement": "活动"
+      },
+      {
+        "id": "O041",
+        "kind": "opinion",
+        "title": "新加坡两架F-15SG在孟加拉湾执行战备警巡",
+        "text": "时间：2025.5.1\n\n标题：新加坡两架F-15SG在孟加拉湾执行战备警巡\n\n正文：据公开防务媒体报道，新加坡空军两架F-15SG多用途战斗机于2025年5月1日11时44分至13时14分在孟加拉湾围绕任务海域组织战备警巡。相关平台按计划保持机动并持续执行战备警巡，沿既定方向维持部署或警戒。这一行动被视为展现前沿存在和部署持续性的常规安排。\n",
+        "platforms": [
+          {
+            "name": "F-15SG多用途战斗机",
+            "country": "新加坡",
+            "quantity": 2,
+            "quote": "两架F-15SG多用途战斗机",
+            "quantity_quote": "两架F-15SG多用途战斗机",
+            "country_raw": "新加坡"
+          }
+        ],
+        "location": {
+          "raw": "孟加拉湾",
+          "region": "孟加拉湾",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false,
+          "quote": "在孟加拉湾"
+        },
+        "mission": {
+          "value": "战备警巡",
+          "quote": "执行战备警巡"
+        },
+        "start_time": "11:44",
+        "end_time": "13:14",
+        "movement": "活动"
+      },
+      {
+        "id": "O046",
+        "kind": "opinion",
+        "title": "美舰“新奥尔良”号在黄海活动，媒体关注其部署持续性",
+        "text": "时间：2025.5.1\n\n标题：美舰“新奥尔良”号在黄海活动，媒体关注其部署持续性\n\n正文：据公开防务媒体报道，美国海军“新奥尔良”号船坞运输舰于2025年5月1日在黄海海域按计划保持机动并持续执行编队警戒部署。围绕这一部署，有分析认为该舰的持续存在体现了前沿部署的常规化特点。相关讨论还聚焦于其区域机动能力，被视为检验平台在复杂海况下维持警戒状态的一种方式。\n",
+        "platforms": [
+          {
+            "name": "新奥尔良”号",
+            "country": "美国",
+            "quantity": null,
+            "quote": "新奥尔良”号船坞运输舰",
+            "quantity_quote": "",
+            "country_raw": "美国"
+          }
+        ],
+        "location": {
+          "raw": "黄海海域",
+          "region": "黄海",
+          "direction": "黄海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在黄海海域"
+        },
+        "mission": {
+          "value": "编队警戒部署",
+          "quote": "持续执行编队警戒部署"
+        },
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动"
+      },
+      {
+        "id": "O040",
+        "kind": "opinion",
+        "title": "马来西亚海军“莱库号”护卫舰赴东海执行海上护航",
+        "text": "时间：2025.5.1\n\n标题：马来西亚海军“莱库号”护卫舰赴东海执行海上护航\n\n正文：据今日头条报道，马来西亚海军“莱库号”导弹护卫舰于2025年5月1日14时22分起在东海方向执行海上护航任务。该舰围绕任务编组实施保障行动，按计划完成相关保障环节衔接。围绕此次部署的讨论，多聚焦于马来西亚海军在关键水道持续保障与行动续航能力的展现。\n",
+        "platforms": [
+          {
+            "name": "莱库号",
+            "country": "马来西亚",
+            "quantity": null,
+            "quote": "莱库号”导弹护卫舰",
+            "quantity_quote": "",
+            "country_raw": "马来西亚"
+          }
+        ],
+        "location": {
+          "raw": "东海方向",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在东海方向"
+        },
+        "mission": {
+          "value": "海上护航",
+          "quote": "执行海上护航任务"
+        },
+        "start_time": "14:22",
+        "end_time": null,
+        "movement": "活动"
+      },
+      {
+        "id": "O033",
+        "kind": "opinion",
+        "title": "中国海军“山东号”航母在中太平洋进行联合巡航",
+        "text": "时间：2025.5.1\n\n标题：中国海军“山东号”航母在中太平洋进行联合巡航\n\n正文：据联合早报报道，2025年5月1日8时30分至10时55分，中国海军“山东号”航空母舰在中太平洋海域按计划保持机动并持续执行联合巡航任务。相关分析认为，此次行动可能体现了中国海军围绕共同任务保持协同行动的能力，有助于加强平台间的联络配合和流程熟悉。\n",
+        "platforms": [
+          {
+            "name": "山东号”航空母舰",
+            "country": "中国",
+            "quantity": null,
+            "quote": "中国海军“山东号”航空母舰",
+            "quantity_quote": "",
+            "country_raw": "中国"
+          }
+        ],
+        "location": {
+          "raw": "中太平洋海域",
+          "region": "中太平洋",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false,
+          "quote": "在中太平洋海域按计划保持机动并持续执行联合巡航任务"
+        },
+        "mission": {
+          "value": "联合巡航任务",
+          "quote": "在中太平洋海域按计划保持机动并持续执行联合巡航任务"
+        },
+        "start_time": "08:30",
+        "end_time": "10:55",
+        "movement": "活动"
+      },
+      {
+        "id": "O042",
+        "kind": "opinion",
+        "title": "菲律宾海军护卫舰在东海开展远海训练引发媒体分析",
+        "text": "时间：2025.5.1\n\n标题：菲律宾海军护卫舰在东海开展远海训练引发媒体分析\n\n正文：据公开防务媒体报道，2025年5月1日，菲律宾海军“米格尔·马尔瓦尔号”导弹护卫舰在东海方向进行远海训练，训练时段为17时24分至19时49分。此次行动围绕既定科目组织训练，被视为菲律宾军方提升任务组织与流程熟悉程度的举措。分析认为，此类训练有助于强化平台间的行动衔接与训练协同。\n",
+        "platforms": [
+          {
+            "name": "米格尔·马尔瓦尔号",
+            "country": "菲律宾",
+            "quantity": null,
+            "quote": "米格尔·马尔瓦尔号”导弹护卫舰",
+            "quantity_quote": "",
+            "country_raw": "菲律宾"
+          }
+        ],
+        "location": {
+          "raw": "东海方向",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在东海方向"
+        },
+        "mission": {
+          "value": "远海训练",
+          "quote": "进行远海训练"
+        },
+        "start_time": "17:24",
+        "end_time": "19:49",
+        "movement": "活动"
+      }
+    ],
+    "radar_candidates": [
+      {
+        "id": "R038",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "阿利·伯克级导弹驱逐舰",
+            "country": "美国",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-95BD7FF01070D4",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "渚碧礁附近海域",
+          "region": "渚碧礁附近海域",
+          "direction": "南海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "渚碧礁附近海域",
+            "region": "渚碧礁附近海域",
+            "direction": "南海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "战备巡逻",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "战备巡逻"
+        ],
+        "start_time": "2025.05.01 11:10:00",
+        "end_time": "2025.05.01 13:35:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-95BD7FF01070D4",
+        "sibling_ids": [],
+        "hull_values": [
+          "DDG-51"
+        ],
+        "country_values": [
+          "美国"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 12
+      },
+      {
+        "id": "R033",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "霍巴特级导弹驱逐舰",
+            "country": "澳大利亚",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-42C2AB30541F18",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "琼州海峡",
+          "region": "琼州海峡",
+          "direction": "南海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "琼州海峡",
+            "region": "琼州海峡",
+            "direction": "南海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "联合搜救训练",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "联合搜救训练"
+        ],
+        "start_time": "2025.05.01 11:48:00",
+        "end_time": "2025.05.01 13:13:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-42C2AB30541F18",
+        "sibling_ids": [],
+        "hull_values": [
+          "DDG-39"
+        ],
+        "country_values": [
+          "澳大利亚"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 11
+      },
+      {
+        "id": "R009",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "运-8反潜巡逻机",
+            "country": "中国",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-5D6843E21B99FB",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "海上侦察巡逻",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "海上侦察巡逻"
+        ],
+        "start_time": "2025.05.01 11:59:00",
+        "end_time": "2025.05.01 13:24:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            114.545,
+            114.7987
+          ],
+          "latitude_range": [
+            18.6881,
+            19.2611
+          ],
+          "median": [
+            114.6987,
+            19.0272
+          ],
+          "origins": [
+            [
+              114.5862,
+              18.728
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [
+            "南海"
+          ],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [],
+        "batch": "AIR-5D6843E21B99FB",
+        "sibling_ids": [],
+        "hull_values": [],
+        "country_values": [
+          "中国"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 13
+      },
+      {
+        "id": "R035",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "本福德号导弹驱逐舰",
+            "country": "美国",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-865DA28E2EA429",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "北黄海",
+          "region": "北黄海",
+          "direction": "黄海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "北黄海",
+            "region": "北黄海",
+            "direction": "黄海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "编队警戒部署",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "编队警戒部署"
+        ],
+        "start_time": "2025.05.01 20:42:00",
+        "end_time": "2025.05.01 22:07:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-865DA28E2EA429",
+        "sibling_ids": [],
+        "hull_values": [
+          "DDG-65"
+        ],
+        "country_values": [
+          "美国"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 12
+      },
+      {
+        "id": "R032",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "新奥尔良号船坞运输舰",
+            "country": "美国",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-3ADA149BD25A2C",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "北黄海",
+          "region": "北黄海",
+          "direction": "黄海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "北黄海",
+            "region": "北黄海",
+            "direction": "黄海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "编队警戒部署",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "编队警戒部署"
+        ],
+        "start_time": "2025.05.01 20:42:00",
+        "end_time": "2025.05.01 22:07:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-3ADA149BD25A2C",
+        "sibling_ids": [],
+        "hull_values": [
+          "LPD-18"
+        ],
+        "country_values": [
+          "美国"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 12
+      },
+      {
+        "id": "R051",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "山东号航空母舰",
+            "country": "中国",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-D66A2E15996BA5",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "中太平洋",
+          "region": "中太平洋",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "中太平洋",
+            "region": "中太平洋",
+            "direction": "其他",
+            "precision": "原文区域",
+            "mapping": "PDF未列入三大核心海域的区域归其他",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "联合巡航",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "联合巡航"
+        ],
+        "start_time": "2025.05.01 08:30:00",
+        "end_time": "2025.05.01 10:55:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-D66A2E15996BA5",
+        "sibling_ids": [],
+        "hull_values": [
+          "17"
+        ],
+        "country_values": [
+          "中国"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 11
+      },
+      {
+        "id": "R034",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "福建号航空母舰",
+            "country": "中国",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-6A461B63B28D56",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "钓鱼岛海域",
+          "region": "钓鱼岛海域",
+          "direction": "东海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "钓鱼岛海域",
+            "region": "钓鱼岛海域",
+            "direction": "东海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "联合巡航",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "联合巡航"
+        ],
+        "start_time": "2025.05.01 02:38:00",
+        "end_time": "2025.05.01 04:03:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-6A461B63B28D56",
+        "sibling_ids": [],
+        "hull_values": [
+          "18"
+        ],
+        "country_values": [
+          "中国"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 12
+      }
+    ],
+    "recall": {
+      "opinion": [
+        {
+          "id": "O011",
+          "score": 4.76569,
+          "cosine": 0.91569,
+          "platform_similarity": 0.95,
+          "time_overlap": null,
+          "location_relation": "same"
+        },
+        {
+          "id": "O003",
+          "score": 2.3806,
+          "cosine": 0.7006,
+          "platform_similarity": 0.0,
+          "time_overlap": 1.0,
+          "location_relation": "contains"
+        },
+        {
+          "id": "O041",
+          "score": 1.88502,
+          "cosine": 0.68502,
+          "platform_similarity": 0.0,
+          "time_overlap": 1.0,
+          "location_relation": "different_direction"
+        },
+        {
+          "id": "O046",
+          "score": 0.9818,
+          "cosine": 0.7818,
+          "platform_similarity": 0.0,
+          "time_overlap": null,
+          "location_relation": "different_direction"
+        },
+        {
+          "id": "O040",
+          "score": 0.76099,
+          "cosine": 0.76099,
+          "platform_similarity": 0.0,
+          "time_overlap": null,
+          "location_relation": "different_direction"
+        },
+        {
+          "id": "O033",
+          "score": 0.74908,
+          "cosine": 0.74908,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "different_direction"
+        },
+        {
+          "id": "O042",
+          "score": 0.74127,
+          "cosine": 0.74127,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "different_direction"
+        }
+      ],
+      "radar": [
+        {
+          "id": "R038",
+          "score": 5.97125,
+          "cosine": 0.92125,
+          "platform_similarity": 0.95,
+          "time_overlap": 1.0,
+          "location_relation": "same"
+        },
+        {
+          "id": "R033",
+          "score": 2.07829,
+          "cosine": 0.71829,
+          "platform_similarity": 0.0,
+          "time_overlap": 1.0,
+          "location_relation": "same_direction_only"
+        },
+        {
+          "id": "R009",
+          "score": 1.88162,
+          "cosine": 0.68162,
+          "platform_similarity": 0.0,
+          "time_overlap": 1.0,
+          "location_relation": "missing"
+        },
+        {
+          "id": "R035",
+          "score": 0.94822,
+          "cosine": 0.74822,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "different_direction"
+        },
+        {
+          "id": "R032",
+          "score": 0.94641,
+          "cosine": 0.74641,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "different_direction"
+        },
+        {
+          "id": "R051",
+          "score": 0.74192,
+          "cosine": 0.74192,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "different_direction"
+        },
+        {
+          "id": "R034",
+          "score": 0.72827,
+          "cosine": 0.72827,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "different_direction"
+        }
+      ]
+    }
+  },
+  "result": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O011",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.95,
+        "reason": "平台（美国阿利·伯克级）、地点（渚碧礁附近海域）、时间（2025.5.1）及任务（战备巡逻/活动）完全一致。新闻提供了精确起止时间，意见文章确认了同一天同一区域的活动性质，虽无具体分钟级时间重叠数据，但描述高度吻合，视为同一次活动的不同报道视角。"
+      },
+      {
+        "candidate_id": "O003",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.9,
+        "reason": "平台完全不同（中国运 -8 vs 美国阿利·伯克级），任务性质不同（海上侦察巡逻 vs 战备巡逻）。尽管时间地点有重叠，但属于不同实体在同一海域的独立行动。"
+      },
+      {
+        "candidate_id": "O041",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台、国家、地点（孟加拉湾 vs 南海）均完全不同，明显为不同活动。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R038",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 1.0,
+        "reason": "雷达数据与新闻在平台型号、具体地点（渚碧礁附近海域）、精确时间区间（11:10-13:35）及任务（战备巡逻）上完全匹配。批号信息虽未直接显示在新闻文本中，但时空特征的一致性足以确认为同一事件记录。"
+      },
+      {
+        "candidate_id": "R033",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台（澳大利亚霍巴特级）、地点（琼州海峡）与新闻不符，属于不同活动。"
+      },
+      {
+        "candidate_id": "R009",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.85,
+        "reason": "平台（中国运 -8）与新闻不符。虽然时间地点重叠且任务相似，但主体不同，判定为不同活动。"
+      }
+    ],
+    "ambiguity": "无显著歧义，核心候选R038与O011与新闻N035特征高度一致，可确认为same。其他候选因平台或地点差异明显排除。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T16:32:19.9663982Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"opinion_edges\": [{\"candidate_id\": \"O011\", \"platform_indices\": [0], \"relation\": \"same\", \"confidence\": 0.95, \"reason\": \"平台（美国阿利·伯克级）、地点（渚碧礁附近海域）、时间（2025.5.1）及任务（战备巡逻/活动）完全一致。新闻提供了精确起止时间，意见文章确认了同一天同一区域的活动性质，虽无具体分钟级时间重叠数据，但描述高度吻合，视为同一次活动的不同报道视角。\"}, {\"candidate_id\": \"O003\", \"platform_indices\": [], \"relation\": \"different\", \"confidence\": 0.9, \"reason\": \"平台完全不同（中国运 -8 vs 美国阿利·伯克级），任务性质不同（海上侦察巡逻 vs 战备巡逻）。尽管时间地点有重叠，但属于不同实体在同一海域的独立行动。\"}, {\"candidate_id\": \"O041\", \"platform_indices\": [], \"relation\": \"different\", \"confidence\": 0.95, \"reason\": \"平台、国家、地点（孟加拉湾 vs 南海）均完全不同，明显为不同活动。\"}], \"radar_edges\": [{\"candidate_id\": \"R038\", \"platform_indices\": [0], \"relation\": \"same\", \"confidence\": 1.0, \"reason\": \"雷达数据与新闻在平台型号、具体地点（渚碧礁附近海域）、精确时间区间（11:10-13:35）及任务（战备巡逻）上完全匹配。批号信息虽未直接显示在新闻文本中，但时空特征的一致性足以确认为同一事件记录。\"}, {\"candidate_id\": \"R033\", \"platform_indices\": [], \"relation\": \"different\", \"confidence\": 0.95, \"reason\": \"平台（澳大利亚霍巴特级）、地点（琼州海峡）与新闻不符，属于不同活动。\"}, {\"candidate_id\": \"R009\", \"platform_indices\": [], \"relation\": \"different\", \"confidence\": 0.85, \"reason\": \"平台（中国运 -8）与新闻不符。虽然时间地点重叠且任务相似，但主体不同，判定为不同活动。\"}],\"ambiguity\":\"无显著歧义，核心候选R038与O011与新闻N035特征高度一致，可确认为same。其他候选因平台或地点差异明显排除。\"}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 12792791400,
+    "load_duration": 15990600,
+    "prompt_eval_count": 6206,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 2040309000,
+    "eval_count": 536,
+    "eval_duration": 10444388000
+  }
+}

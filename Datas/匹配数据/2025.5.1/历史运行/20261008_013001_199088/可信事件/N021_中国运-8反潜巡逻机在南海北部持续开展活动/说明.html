@@ -1,0 +1,13 @@
+<!doctype html><html lang="zh"><meta charset="utf-8"><title>事件证据</title><style>body{font:16px system-ui;margin:30px;line-height:1.6}table{border-collapse:collapse;width:100%}td,th{border:1px solid #ccd4df;padding:8px;text-align:left}pre{white-space:pre-wrap;background:#f3f6fa;padding:16px}a{color:#155baa}</style><p><a href="../../浏览.html">返回总表</a></p><h1>N021：中国运-8反潜巡逻机在南海北部持续开展活动</h1><p><strong>可信事件</strong> · 雷达 13 条</p><p><a href="新闻.txt">新闻原文</a> · <a href="舆论.txt">舆论原文</a> · <a href="雷达.xlsx">雷达记录</a> · <a href="关联候选.csv">关联候选</a> · <a href="结果.json">完整结果</a></p><h2>分类依据</h2><p>三源在平台型号、国籍、数量（2 架）、时间（5 月 1 日）、地点（南海北部/海域兼容）、任务性质（巡逻）上高度一致。新闻提供宏观背景，舆论和雷达提供具体时段和任务细节，相互印证形成完整证据链，无未消解冲突。</p><ul></ul><h2>事实核验</h2><table><thead><tr><th>平台索引</th><th>字段</th><th>事实</th><th>状态</th><th>支持来源</th><th>反对来源</th><th>说明</th></tr></thead><tbody><tr><td>0</td><td>platform</td><td>运-8反潜巡逻机</td><td>supported</td><td>N021, O003, R009</td><td></td><td>程序按已关联平台的明示字段复核：{&#x27;N021&#x27;: &#x27;运-8反潜巡逻机&#x27;, &#x27;O003&#x27;: &#x27;运-8反潜巡逻机&#x27;, &#x27;R009&#x27;: &#x27;运-8反潜巡逻机&#x27;}；缺失不支持也不反对</td></tr><tr><td>0</td><td>country</td><td>中国</td><td>supported</td><td>N021, O003, R009</td><td></td><td>程序按已关联平台的明示字段复核：{&#x27;N021&#x27;: &#x27;中国&#x27;, &#x27;O003&#x27;: &#x27;中国&#x27;, &#x27;R009&#x27;: &#x27;中国&#x27;}；缺失不支持也不反对</td></tr><tr><td>0</td><td>quantity</td><td>2架</td><td>supported</td><td>N021, R009</td><td></td><td>程序按已关联平台的明示字段复核：{&#x27;N021&#x27;: 2, &#x27;R009&#x27;: 2}；缺失不支持也不反对</td></tr><tr><td>-1</td><td>location</td><td>南海北部</td><td>supported</td><td>N021, O003</td><td></td><td>新闻明确为“南海北部”；舆论为“南海海域”，在区域逻辑上兼容（北部属于南海），两源支持。雷达坐标虽未直接文本化，但 coordinate_hint 指向南海且方向一致，作为辅助印证不产生冲突。</td></tr><tr><td>-1</td><td>time</td><td>起点 11:59，终点 13:24</td><td>supported</td><td>O003, R009</td><td></td><td>逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突</td></tr><tr><td>-1</td><td>mission</td><td>海上侦察巡逻</td><td>supported</td><td>O003, R009</td><td></td><td>原文明示任务：{&#x27;N021&#x27;: [], &#x27;O003&#x27;: [&#x27;海上侦察巡逻&#x27;], &#x27;R009&#x27;: [&#x27;海上侦察巡逻&#x27;]}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决</td></tr><tr><td>-1</td><td>movement</td><td>活动</td><td>supported</td><td>N021, O003</td><td></td><td>活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values</td></tr></tbody></table><h2>新闻原文</h2><pre>抄收时间：2025.5.1
+发文时间：2025.5.1
+
+标题：中国运-8反潜巡逻机在南海北部持续开展活动
+正文：2025年5月1日，中国2架运-8反潜巡逻机在南海北部持续活动，围绕任务区域保持机动，行动范围保持在指定任务海域。
+
+主题词：中国  运-8反潜巡逻机  南海北部
+</pre><h2>舆论原文</h2><pre>时间：2025.5.1
+
+标题：中国运-8反潜巡逻机在南海执行海上侦察巡逻
+
+正文：据社交媒体军事观察账号报道，2025年5月1日11时59分至13时24分，中国运-8反潜巡逻机在南海海域执行海上侦察巡逻任务。从公开信息看，该机围绕指定海域保持巡逻监视并结合既定航线持续收集信息，被认为有助于提升态势感知和持续监视水平。
+</pre><p>模型初步结果，未经过人工真值评估。异常、剩余材料和原始引用均保留。</p></html>

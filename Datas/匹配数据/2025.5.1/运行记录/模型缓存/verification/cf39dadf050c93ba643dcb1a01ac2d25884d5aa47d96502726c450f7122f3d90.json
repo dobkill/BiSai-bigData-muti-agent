@@ -1,0 +1,298 @@
+{
+  "role": "verification",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N009",
+      "kind": "news",
+      "title": "俄军苏-35S多用途战斗机在南黄海执行战备警巡行动",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：俄军苏-35S多用途战斗机在南黄海执行战备警巡行动\n正文：2025年5月1日，俄罗斯苏-35S多用途战斗机在南黄海活动，于8时03分至10时28分围绕任务海域组织战备警巡，期间沿既定方向保持机动并维持警戒部署。\n\n主题词：俄罗斯  苏-35S  南黄海  战备警巡\n",
+      "platforms": [
+        {
+          "name": "苏-35S",
+          "country": "俄罗斯",
+          "quantity": null,
+          "quote": "俄罗斯苏-35S多用途战斗机",
+          "quantity_quote": "",
+          "country_raw": "俄罗斯"
+        }
+      ],
+      "location": {
+        "raw": "南黄海",
+        "region": "南黄海",
+        "direction": "黄海",
+        "precision": "具体区域",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "南黄海"
+      },
+      "mission": {
+        "value": "战备警巡",
+        "quote": "执行战备警巡行动"
+      },
+      "start_time": "08:03",
+      "end_time": "10:28",
+      "movement": "活动"
+    },
+    "opinion": {
+      "id": "O026",
+      "kind": "opinion",
+      "title": "俄军2架苏-35S在黄海方向执行战备警巡任务",
+      "text": "时间：2025.5.1\n\n标题：俄军2架苏-35S在黄海方向执行战备警巡任务\n\n正文：据社交媒体军事观察账号报道，俄罗斯2架苏-35S多用途战斗机于2025年5月1日在黄海方向执行战备警巡任务。相关平台沿既定方向保持机动，围绕任务区域维持部署或警戒。这一动向被视为俄军在东亚前沿存在和部署持续性的常规体现。\n",
+      "platforms": [
+        {
+          "name": "苏-35S",
+          "country": "俄罗斯",
+          "quantity": 2,
+          "quote": "俄罗斯2架苏-35S多用途战斗机",
+          "quantity_quote": "俄罗斯2架苏-35S多用途战斗机",
+          "country_raw": "俄罗斯"
+        }
+      ],
+      "location": {
+        "raw": "黄海方向",
+        "region": "黄海",
+        "direction": "黄海",
+        "precision": "大范围",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "在黄海方向执行战备警巡任务"
+      },
+      "mission": {
+        "value": "战备警巡",
+        "quote": "执行战备警巡任务"
+      },
+      "start_time": null,
+      "end_time": null,
+      "movement": "活动"
+    },
+    "radars": [
+      {
+        "id": "R013",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "苏-35S多用途战斗机",
+            "country": "俄罗斯",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-6F90A554286ABB",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "战备警巡",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "战备警巡"
+        ],
+        "start_time": "2025.05.01 08:03:00",
+        "end_time": "2025.05.01 10:28:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            122.9366,
+            123.1371
+          ],
+          "latitude_range": [
+            33.7597,
+            33.9651
+          ],
+          "median": [
+            123.0737,
+            33.834
+          ],
+          "origins": [
+            [
+              123.1298,
+              33.9373
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [
+            "黄海"
+          ],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [],
+        "batch": "AIR-6F90A554286ABB",
+        "sibling_ids": [],
+        "hull_values": [],
+        "country_values": [
+          "俄罗斯"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 13
+      }
+    ],
+    "association": {
+      "opinion_edges": [
+        {
+          "candidate_id": "O026",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.95,
+          "reason": "平台（苏 -35S）、国家（俄罗斯）、任务（战备警巡）及日期完全一致；新闻明确的时间段（08:03-10:28）与雷达数据 R013 高度吻合，虽意见未提具体起止时间，但描述的行动性质和区域（黄海方向/南黄海）无冲突。"
+        },
+        {
+          "candidate_id": "O023",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.98,
+          "reason": "任务类型不同：新闻为“战备警巡”，该候选明确描述为“对海突击训练”；且时间区间不重叠（新闻 08:03-10:28 vs 候选 02:49-04:14），属于同一天不同活动。"
+        },
+        {
+          "candidate_id": "O024",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.99,
+          "reason": "平台完全不同：新闻为俄罗斯苏 -35S 战斗机，该候选为法国导弹护卫舰；地点也不同（南黄海 vs 巴伦支海），属于完全不同的活动。"
+        }
+      ],
+      "radar_edges": [
+        {
+          "candidate_id": "R013",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.98,
+          "reason": "平台型号、国家、任务完全一致；时间戳（2025.05.01 08:03:00 - 10:28:00）与新闻正文精确匹配；坐标辅助提示为黄海，与新闻“南黄海”区域归属一致。"
+        },
+        {
+          "candidate_id": "R003",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.95,
+          "reason": "任务不同：雷达数据标记为“对海突击训练”，而新闻明确为“战备警巡”；且时间区间（02:49-04:14）与新闻时段无重叠，判定为同一天不同活动。"
+        },
+        {
+          "candidate_id": "R010",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.99,
+          "reason": "平台完全不同：雷达数据为中国空警 -500 预警机，新闻为俄罗斯苏 -35S 战斗机；任务也不同（情报监视侦察 vs 战备警巡），属于不同活动。"
+        }
+      ],
+      "ambiguity": "无显著歧义，关键要素（平台、时间、任务）匹配度极高或差异明显。"
+    },
+    "same_batch_other_candidates": []
+  },
+  "result": {
+    "same_event": true,
+    "platforms": [
+      {
+        "platform_index": 0,
+        "platform": {
+          "claim": "苏 -35S",
+          "supporting_sources": [
+            "N009",
+            "O026",
+            "R013"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均确认为苏 -35S 多用途战斗机，型号一致。"
+        },
+        "country": {
+          "claim": "俄罗斯",
+          "supporting_sources": [
+            "N009",
+            "O026",
+            "R013"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均明确标注国籍为俄罗斯，无冲突。"
+        },
+        "quantity": {
+          "claim": "2 架",
+          "supporting_sources": [
+            "O026",
+            "R013"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论明确提及"
+        }
+      }
+    ],
+    "location": {
+      "claim": "南黄海",
+      "supporting_sources": [
+        "N009"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻明确定位为“南黄海”；舆论表述为“黄海方向”，属于大范围兼容，可支持具体区域结论；雷达坐标经辅助提示指向黄海，虽未直接文本确认但无冲突。"
+    },
+    "time": {
+      "claim": "2025-05-01 08:03 - 10:28",
+      "supporting_sources": [
+        "N009",
+        "R013"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与雷达数据的时间起止点完全一致（08:03-10:28），舆论仅确认日期未提具体时刻，不构成冲突。"
+    },
+    "mission": {
+      "claim": "战备警巡",
+      "supporting_sources": [
+        "N009",
+        "O026",
+        "R013"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "三源（新闻、舆论、雷达）均明确任务为“战备警巡”，完全一致。"
+    },
+    "movement": {
+      "claim": "活动",
+      "supporting_sources": [
+        "N009",
+        "O026"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻描述为“活动”及“机动”，舆论描述为“保持机动”，两者语义等价，雷达未说明但不构成冲突。"
+    },
+    "unresolved_issues": [],
+    "explanation": "三源在平台型号、国籍、任务类型上完全一致；时间与地点方面，新闻与雷达高度吻合，舆论作为大范围描述兼容具体事实，无未消解冲突。数量由舆论和雷达共同支持（2 架），满足可信度要求。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T16:41:40.7835623Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"same_event\": true, \"platforms\": [{\"platform_index\": 0, \"platform\": {\"claim\": \"苏 -35S\", \"supporting_sources\": [\"N009\", \"O026\", \"R013\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源（新闻、舆论、雷达）均确认为苏 -35S 多用途战斗机，型号一致。\"}, \"country\": {\"claim\": \"俄罗斯\", \"supporting_sources\": [\"N009\", \"O026\", \"R013\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源（新闻、舆论、雷达）均明确标注国籍为俄罗斯，无冲突。\"}, \"quantity\": {\"claim\": \"2 架\", \"supporting_sources\": [\"O026\", \"R013\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"舆论明确提及\" }}\n],\"location\": {\"claim\": \"南黄海\", \"supporting_sources\": [\"N009\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻明确定位为“南黄海”；舆论表述为“黄海方向”，属于大范围兼容，可支持具体区域结论；雷达坐标经辅助提示指向黄海，虽未直接文本确认但无冲突。\"}, \"time\": {\"claim\": \"2025-05-01 08:03 - 10:28\", \"supporting_sources\": [\"N009\", \"R013\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻与雷达数据的时间起止点完全一致（08:03-10:28），舆论仅确认日期未提具体时刻，不构成冲突。\"}, \"mission\": {\"claim\": \"战备警巡\", \"supporting_sources\": [\"N009\", \"O026\", \"R013\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源（新闻、舆论、雷达）均明确任务为“战备警巡”，完全一致。\"}, \"movement\": {\"claim\": \"活动\", \"supporting_sources\": [\"N009\", \"O026\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻描述为“活动”及“机动”，舆论描述为“保持机动”，两者语义等价，雷达未说明但不构成冲突。\"}, \"unresolved_issues\": [],\"explanation\": \"三源在平台型号、国籍、任务类型上完全一致；时间与地点方面，新闻与雷达高度吻合，舆论作为大范围描述兼容具体事实，无未消解冲突。数量由舆论和雷达共同支持（2 架），满足可信度要求。\"}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 12525569500,
+    "load_duration": 16153700,
+    "prompt_eval_count": 2238,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 867326000,
+    "eval_count": 608,
+    "eval_duration": 11461008000
+  }
+}

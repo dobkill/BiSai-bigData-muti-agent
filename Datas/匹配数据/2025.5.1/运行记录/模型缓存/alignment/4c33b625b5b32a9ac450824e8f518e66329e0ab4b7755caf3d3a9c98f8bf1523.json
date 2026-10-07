@@ -1,0 +1,863 @@
+{
+  "role": "alignment",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N014",
+      "kind": "news",
+      "title": "越南苏-30MK2多用途战斗机在礼乐滩海域进行对海突击训练",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：越南苏-30MK2多用途战斗机在礼乐滩海域进行对海突击训练\n正文：2025年5月1日，越南苏-30MK2多用途战斗机在礼乐滩海域活动，从14时55分至16时20分围绕任务海域组织对海突击训练，按计划保持机动并持续执行对海突击训练。\n\n主题词：越南  苏-30MK2  多用途战斗机  礼乐滩海域\n",
+      "platforms": [
+        {
+          "name": "苏-30MK2多用途战斗机",
+          "country": "越南",
+          "quantity": null,
+          "quote": "越南苏-30MK2多用途战斗机",
+          "quantity_quote": "",
+          "country_raw": "越南"
+        }
+      ],
+      "location": {
+        "raw": "礼乐滩海域",
+        "region": "礼乐滩海域",
+        "direction": "南海",
+        "precision": "具体区域",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "在礼乐滩海域活动"
+      },
+      "mission": {
+        "value": "对海突击训练",
+        "quote": "组织对海突击训练"
+      },
+      "start_time": "14:55",
+      "end_time": "16:20",
+      "movement": "活动"
+    },
+    "opinion_candidates": [
+      {
+        "id": "O018",
+        "kind": "opinion",
+        "title": "越南两架苏-30MK2战斗机在南海进行对海突击训练",
+        "text": "时间：2025.5.1\n\n标题：越南两架苏-30MK2战斗机在南海进行对海突击训练\n\n正文：据央视新闻报道，越南空军两架苏-30MK2多用途战斗机于2025年5月1日在南海围绕既定科目组织对海突击训练。相关行动按计划完成平台之间的行动衔接，被认为有助于飞行员熟悉海上任务流程。\n",
+        "platforms": [
+          {
+            "name": "苏-30MK2多用途战斗机",
+            "country": "越南",
+            "quantity": 2,
+            "quote": "越南空军两架苏-30MK2多用途战斗机",
+            "quantity_quote": "两架苏-30MK2多用途战斗机",
+            "country_raw": "越南"
+          }
+        ],
+        "location": {
+          "raw": "南海",
+          "region": "南海",
+          "direction": "南海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在南海"
+        },
+        "mission": {
+          "value": "对海突击训练",
+          "quote": "组织对海突击训练"
+        },
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动"
+      },
+      {
+        "id": "O006",
+        "kind": "opinion",
+        "title": "中国海军一艘054A型护卫舰在白令海完成反潜巡逻",
+        "text": "时间：2025.5.1\n\n标题：中国海军一艘054A型护卫舰在白令海完成反潜巡逻\n\n正文：据央视新闻报道，2025年5月1日，中国海军一艘054A型导弹护卫舰在白令海相关海域执行反潜巡逻任务，行动时段为14时44分至16时09分。该舰在此期间按计划保持机动并持续执行反潜巡逻，被认为体现了在陌生海域围绕任务海域组织持续监视与区域侦巡的能力。\n",
+        "platforms": [
+          {
+            "name": "054A型导弹护卫舰",
+            "country": "中国",
+            "quantity": 1,
+            "quote": "一艘054A型导弹护卫舰",
+            "quantity_quote": "一艘054A型导弹护卫舰",
+            "country_raw": "中国"
+          }
+        ],
+        "location": {
+          "raw": "白令海相关海域",
+          "region": "白令海",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false,
+          "quote": "在白令海相关海域"
+        },
+        "mission": {
+          "value": "反潜巡逻任务",
+          "quote": "执行反潜巡逻任务"
+        },
+        "start_time": "14:44",
+        "end_time": "16:09",
+        "movement": "活动"
+      },
+      {
+        "id": "O034",
+        "kind": "opinion",
+        "title": "意大利巡逻舰现身礼乐滩海域，区域机动引发关注",
+        "text": "时间：2025.5.1\n\n标题：意大利巡逻舰现身礼乐滩海域，区域机动引发关注\n\n正文：据今日头条报道，2025年5月1日，意大利海军“莱蒙多·蒙特库科利号”多用途巡逻舰在南海礼乐滩海域活动。该舰围绕任务区域保持机动，行动范围保持在指定任务海域。有分析认为，这一动向可能体现其任务连续性的组织特点。相关行动在敏感水域的持续存在，被视为区域机动能力的一种展现。\n",
+        "platforms": [
+          {
+            "name": "莱蒙多·蒙特库科利号",
+            "country": "意大利",
+            "quantity": null,
+            "quote": "意大利海军“莱蒙多·蒙特库科利号”多用途巡逻舰",
+            "quantity_quote": "",
+            "country_raw": "意大利"
+          }
+        ],
+        "location": {
+          "raw": "南海礼乐滩海域",
+          "region": "礼乐滩海域",
+          "direction": "南海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在南海礼乐滩海域活动"
+        },
+        "mission": {
+          "value": null,
+          "quote": ""
+        },
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动"
+      },
+      {
+        "id": "O036",
+        "kind": "opinion",
+        "title": "俄罗斯空天军苏-30SM战机在南海执行战备警巡",
+        "text": "时间：2025.5.1\n\n标题：俄罗斯空天军苏-30SM战机在南海执行战备警巡\n\n正文：据地区军事观察机构报道，2025年5月1日，俄罗斯空天军苏-30SM多用途战斗机在南海方向执行战备警巡任务，行动时段为2时27分至4时52分。相关平台沿既定方向保持机动，并围绕任务区域维持部署或警戒。有关讨论关注该型机的前沿存在部署，认为其展现了在相关方向的区域机动与部署持续性。\n",
+        "platforms": [
+          {
+            "name": "苏-30SM",
+            "country": "俄罗斯",
+            "quantity": null,
+            "quote": "苏-30SM多用途战斗机",
+            "quantity_quote": "",
+            "country_raw": "俄罗斯"
+          }
+        ],
+        "location": {
+          "raw": "南海方向",
+          "region": "南海",
+          "direction": "南海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在南海方向"
+        },
+        "mission": {
+          "value": "战备警巡",
+          "quote": "执行战备警巡任务"
+        },
+        "start_time": "02:27",
+        "end_time": "04:52",
+        "movement": "活动"
+      },
+      {
+        "id": "O002",
+        "kind": "opinion",
+        "title": "俄军苏-30SM夜间在黄岩岛海域持续活动近两个半小时",
+        "text": "时间：2025.5.1\n\n标题：俄军苏-30SM夜间在黄岩岛海域持续活动近两个半小时\n\n正文：据联合早报报道，俄罗斯空天军两架苏-30SM多用途战斗机于2025年5月1日20时31分至22时56分在南海黄岩岛海域展开夜间活动。从公开信息看，这两架战机在近两个半小时内围绕任务区域保持机动，行动范围保持在指定任务海域，展现出良好的任务连续性。这一动向被视为俄方在南海保持常态化存在的一部分，其区域机动能力受到外界关注。\n",
+        "platforms": [
+          {
+            "name": "苏-30SM多用途战斗机",
+            "country": "俄罗斯",
+            "quantity": 2,
+            "quote": "俄罗斯空天军两架苏-30SM多用途战斗机",
+            "quantity_quote": "两架苏-30SM多用途战斗机",
+            "country_raw": "俄罗斯"
+          }
+        ],
+        "location": {
+          "raw": "南海黄岩岛海域",
+          "region": "黄岩岛海域",
+          "direction": "南海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在南海黄岩岛海域展开夜间活动"
+        },
+        "mission": {
+          "value": null,
+          "quote": ""
+        },
+        "start_time": "20:31",
+        "end_time": "22:56",
+        "movement": "活动"
+      },
+      {
+        "id": "O019",
+        "kind": "opinion",
+        "title": "俄军苏-30SM在南海连续机动，南沙海域活动引发关注",
+        "text": "时间：2025.5.1\n\n标题：俄军苏-30SM在南海连续机动，南沙海域活动引发关注\n\n正文：据今日头条报道，俄罗斯3架苏-30SM多用途战斗机于2025年5月1日18时01分至19时31分在南海方向南沙群岛海域持续活动。相关平台围绕任务区域保持机动，行动范围保持在指定任务海域。媒体观察认为，此次长时间连续部署体现了较高的任务连续性，有助于外界评估该型机在远海环境下的区域机动能力。\n",
+        "platforms": [
+          {
+            "name": "苏-30SM",
+            "country": "俄罗斯",
+            "quantity": 3,
+            "quote": "3架苏-30SM多用途战斗机",
+            "quantity_quote": "3架苏-30SM多用途战斗机",
+            "country_raw": "俄罗斯"
+          }
+        ],
+        "location": {
+          "raw": "南海方向南沙群岛海域",
+          "region": "南沙群岛海域",
+          "direction": "南海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在南海方向南沙群岛海域"
+        },
+        "mission": {
+          "value": "持续活动",
+          "quote": "持续活动"
+        },
+        "start_time": "18:01",
+        "end_time": "19:31",
+        "movement": "活动"
+      },
+      {
+        "id": "O004",
+        "kind": "opinion",
+        "title": "新加坡F-15SG战斗机在安达曼海执行战备警巡",
+        "text": "时间：2025.5.1\n\n标题：新加坡F-15SG战斗机在安达曼海执行战备警巡\n\n正文：据联合早报报道，2025年5月1日8时19分至10时44分，新加坡空军F-15SG多用途战斗机在安达曼海任务海域执行战备警巡任务。该机沿既定方向保持机动并围绕任务区域维持警戒，这一动向被视为展现前沿存在和部署持续性的常规安排。\n",
+        "platforms": [
+          {
+            "name": "F-15SG多用途战斗机",
+            "country": "新加坡",
+            "quantity": null,
+            "quote": "新加坡空军F-15SG多用途战斗机",
+            "quantity_quote": "",
+            "country_raw": "新加坡"
+          }
+        ],
+        "location": {
+          "raw": "安达曼海任务海域",
+          "region": "安达曼海",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false,
+          "quote": "在安达曼海任务海域"
+        },
+        "mission": {
+          "value": "战备警巡任务",
+          "quote": "执行战备警巡任务"
+        },
+        "start_time": "08:19",
+        "end_time": "10:44",
+        "movement": "活动"
+      }
+    ],
+    "radar_candidates": [
+      {
+        "id": "R007",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "苏-30MK2多用途战斗机",
+            "country": "越南",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-511B24203B9156",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "对海突击训练",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "对海突击训练"
+        ],
+        "start_time": "2025.05.01 14:55:00",
+        "end_time": "2025.05.01 16:20:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            116.2459,
+            116.6193
+          ],
+          "latitude_range": [
+            10.9836,
+            11.2514
+          ],
+          "median": [
+            116.5012,
+            11.1115
+          ],
+          "origins": [
+            [
+              116.6321,
+              11.031
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [
+            "南海"
+          ],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [
+          "同批号存在远距离起始位置簇，候选拆分不代表归属已经消解"
+        ],
+        "batch": "AIR-511B24203B9156",
+        "sibling_ids": [
+          "R008"
+        ],
+        "hull_values": [],
+        "country_values": [
+          "越南"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 6
+      },
+      {
+        "id": "R008",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "苏-30MK2多用途战斗机",
+            "country": "越南",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-511B24203B9156",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "对海突击训练",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "对海突击训练"
+        ],
+        "start_time": "2025.05.01 14:55:00",
+        "end_time": "2025.05.01 16:20:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            122.887,
+            123.2551
+          ],
+          "latitude_range": [
+            35.5627,
+            35.7781
+          ],
+          "median": [
+            123.1059,
+            35.6957
+          ],
+          "origins": [
+            [
+              122.898,
+              35.7972
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [
+            "黄海"
+          ],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [
+          "同批号存在远距离起始位置簇，候选拆分不代表归属已经消解"
+        ],
+        "batch": "AIR-511B24203B9156",
+        "sibling_ids": [
+          "R007"
+        ],
+        "hull_values": [],
+        "country_values": [
+          "越南"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 6
+      },
+      {
+        "id": "R052",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "莱蒙多·蒙特库科利号多用途巡逻舰",
+            "country": "意大利",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-D9EF439959529B",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "礼乐滩海域",
+          "region": "礼乐滩海域",
+          "direction": "南海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "礼乐滩海域",
+            "region": "礼乐滩海域",
+            "direction": "南海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "反潜巡逻",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "反潜巡逻"
+        ],
+        "start_time": "2025.05.01 14:06:00",
+        "end_time": "2025.05.01 16:31:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-D9EF439959529B",
+        "sibling_ids": [],
+        "hull_values": [
+          "P432"
+        ],
+        "country_values": [
+          "意大利"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 11
+      },
+      {
+        "id": "R024",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "苏-30SM多用途战斗机",
+            "country": "俄罗斯",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-E782041C6BA813",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "对海突击训练",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "对海突击训练"
+        ],
+        "start_time": "2025.05.01 20:31:00",
+        "end_time": "2025.05.01 22:56:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            117.7421,
+            118.0858
+          ],
+          "latitude_range": [
+            15.1728,
+            15.4443
+          ],
+          "median": [
+            117.9379,
+            15.2699
+          ],
+          "origins": [
+            [
+              118.0904,
+              15.4308
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [
+            "南海"
+          ],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [],
+        "batch": "AIR-E782041C6BA813",
+        "sibling_ids": [],
+        "hull_values": [],
+        "country_values": [
+          "俄罗斯"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 13
+      },
+      {
+        "id": "R019",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "苏-30SM多用途战斗机",
+            "country": "俄罗斯",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-A0120D04094501",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "空中警戒",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "空中警戒"
+        ],
+        "start_time": "2025.05.01 18:01:00",
+        "end_time": "2025.05.01 19:31:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            113.9154,
+            114.1456
+          ],
+          "latitude_range": [
+            9.8518,
+            10.3448
+          ],
+          "median": [
+            114.0221,
+            10.1463
+          ],
+          "origins": [
+            [
+              113.9029,
+              9.8194
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [
+            "南海"
+          ],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [],
+        "batch": "AIR-A0120D04094501",
+        "sibling_ids": [],
+        "hull_values": [],
+        "country_values": [
+          "俄罗斯"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 10
+      },
+      {
+        "id": "R026",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "苏-30SM多用途战斗机",
+            "country": "俄罗斯",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-F578A30C47B7AB",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "战备警巡",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "战备警巡"
+        ],
+        "start_time": "2025.05.01 02:27:00",
+        "end_time": "2025.05.01 04:52:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            115.5836,
+            116.1917
+          ],
+          "latitude_range": [
+            9.3732,
+            9.5069
+          ],
+          "median": [
+            115.8956,
+            9.4615
+          ],
+          "origins": [
+            [
+              116.2303,
+              9.3913
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [
+            "南海"
+          ],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [],
+        "batch": "AIR-F578A30C47B7AB",
+        "sibling_ids": [],
+        "hull_values": [],
+        "country_values": [
+          "俄罗斯"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 12
+      }
+    ],
+    "recall": {
+      "opinion": [
+        {
+          "id": "O018",
+          "score": 4.62866,
+          "cosine": 0.94866,
+          "platform_similarity": 1.0,
+          "time_overlap": null,
+          "location_relation": "contains"
+        },
+        {
+          "id": "O006",
+          "score": 1.70077,
+          "cosine": 0.65607,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.8705882352941177,
+          "location_relation": "different_direction"
+        },
+        {
+          "id": "O034",
+          "score": 1.51627,
+          "cosine": 0.71627,
+          "platform_similarity": 0.0,
+          "time_overlap": null,
+          "location_relation": "same"
+        },
+        {
+          "id": "O036",
+          "score": 1.30286,
+          "cosine": 0.82286,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "contains"
+        },
+        {
+          "id": "O002",
+          "score": 1.02637,
+          "cosine": 0.86637,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "same_direction_only"
+        },
+        {
+          "id": "O019",
+          "score": 0.97794,
+          "cosine": 0.81794,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "same_direction_only"
+        },
+        {
+          "id": "O004",
+          "score": 0.77589,
+          "cosine": 0.77589,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "different_direction"
+        }
+      ],
+      "radar": [
+        {
+          "id": "R007",
+          "score": 5.34186,
+          "cosine": 0.94186,
+          "platform_similarity": 1.0,
+          "time_overlap": 1.0,
+          "location_relation": "missing"
+        },
+        {
+          "id": "R008",
+          "score": 5.33722,
+          "cosine": 0.93722,
+          "platform_similarity": 1.0,
+          "time_overlap": 1.0,
+          "location_relation": "missing"
+        },
+        {
+          "id": "R052",
+          "score": 2.72119,
+          "cosine": 0.72119,
+          "platform_similarity": 0.0,
+          "time_overlap": 1.0,
+          "location_relation": "same"
+        },
+        {
+          "id": "R024",
+          "score": 0.87243,
+          "cosine": 0.87243,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "missing"
+        },
+        {
+          "id": "R019",
+          "score": 0.85645,
+          "cosine": 0.85645,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "missing"
+        },
+        {
+          "id": "R026",
+          "score": 0.85212,
+          "cosine": 0.85212,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "missing"
+        }
+      ]
+    }
+  },
+  "result": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O018",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.95,
+        "reason": "平台（越南苏 -30MK2）、任务（对海突击训练）、日期（2025.5.1）及时间区间高度重合。新闻明确限定为“礼乐滩海域”，而候选 O018 描述为“南海”大范围，符合“相同方向不等于相同具体区域”的关联规则，且无其他冲突线索。"
+      },
+      {
+        "candidate_id": "O034",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.9,
+        "reason": "平台类型不同（意大利巡逻舰 vs 越南战斗机），国籍不同，任务描述缺失或不明，虽地点同为礼乐滩但主体完全不一致，属于不同活动。"
+      },
+      {
+        "candidate_id": "O036",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.9,
+        "reason": "平台型号不同（苏 -30SM vs 苏 -30MK2），国籍不同（俄罗斯 vs 越南），任务不同（战备警巡 vs 对海突击训练），时间区间无重叠，确认为不同活动。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R007",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.98,
+        "reason": "平台（越南苏 -30MK2）、任务（对海突击训练）、时间区间完全一致。尽管坐标簇存在远距离异常（黄海），但根据赛题规则“同批号 sibling_ids 是共同归属疑点，拆分后的不同坐标簇不能因为有一个符合新闻就丢掉其余簇”，且新闻明确指向礼乐滩，故判定为同一活动，坐标异常视为数据噪声或辅助召回误差。"
+      },
+      {
+        "candidate_id": "R052",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.9,
+        "reason": "平台（意大利巡逻舰）与新闻主体（越南战斗机）完全不同，虽地点和时间有重叠，但属于不同实体活动。"
+      },
+      {
+        "candidate_id": "R024",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.9,
+        "reason": "平台型号不同（苏 -30SM vs 苏 -30MK2），国籍不同，任务虽相似但主体不符，时间区间无重叠，确认为不同活动。"
+      }
+    ],
+    "ambiguity": "雷达数据 R007/R008 存在同批号远距离坐标簇（黄海），需依赖新闻文本中的具体地点“礼乐滩”进行最终归属判定，排除坐标异常干扰。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T17:11:01.2140896Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"opinion_edges\": [{\"candidate_id\": \"O018\", \"platform_indices\": [0], \"relation\": \"same\", \"confidence\": 0.95, \"reason\": \"平台（越南苏 -30MK2）、任务（对海突击训练）、日期（2025.5.1）及时间区间高度重合。新闻明确限定为“礼乐滩海域”，而候选 O018 描述为“南海”大范围，符合“相同方向不等于相同具体区域”的关联规则，且无其他冲突线索。\"}, {\"candidate_id\": \"O034\", \"platform_indices\": [0], \"relation\": \"different\", \"confidence\": 0.9, \"reason\": \"平台类型不同（意大利巡逻舰 vs 越南战斗机），国籍不同，任务描述缺失或不明，虽地点同为礼乐滩但主体完全不一致，属于不同活动。\"}, {\"candidate_id\": \"O036\", \"platform_indices\": [0], \"relation\": \"different\", \"confidence\": 0.9, \"reason\": \"平台型号不同（苏 -30SM vs 苏 -30MK2），国籍不同（俄罗斯 vs 越南），任务不同（战备警巡 vs 对海突击训练），时间区间无重叠，确认为不同活动。\"}], \"radar_edges\": [{\"candidate_id\": \"R007\", \"platform_indices\": [0], \"relation\": \"same\", \"confidence\": 0.98, \"reason\": \"平台（越南苏 -30MK2）、任务（对海突击训练）、时间区间完全一致。尽管坐标簇存在远距离异常（黄海），但根据赛题规则“同批号 sibling_ids 是共同归属疑点，拆分后的不同坐标簇不能因为有一个符合新闻就丢掉其余簇”，且新闻明确指向礼乐滩，故判定为同一活动，坐标异常视为数据噪声或辅助召回误差。\"}, {\"candidate_id\": \"R052\", \"platform_indices\": [0], \"relation\": \"different\", \"confidence\": 0.9, \"reason\": \"平台（意大利巡逻舰）与新闻主体（越南战斗机）完全不同，虽地点和时间有重叠，但属于不同实体活动。\"}, {\"candidate_id\": \"R024\", \"platform_indices\": [0], \"relation\": \"different\", \"confidence\": 0.9, \"reason\": \"平台型号不同（苏 -30SM vs 苏 -30MK2），国籍不同，任务虽相似但主体不符，时间区间无重叠，确认为不同活动。\"}],\"ambiguity\": \"雷达数据 R007/R008 存在同批号远距离坐标簇（黄海），需依赖新闻文本中的具体地点“礼乐滩”进行最终归属判定，排除坐标异常干扰。\"}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 13955028700,
+    "load_duration": 16002200,
+    "prompt_eval_count": 6212,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 2062791000,
+    "eval_count": 597,
+    "eval_duration": 11603435000
+  }
+}

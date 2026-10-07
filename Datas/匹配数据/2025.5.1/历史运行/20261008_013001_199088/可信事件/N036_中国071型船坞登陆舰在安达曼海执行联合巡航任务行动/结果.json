@@ -1,0 +1,677 @@
+{
+  "id": "N036",
+  "news_id": "N036",
+  "opinion_id": "O047",
+  "radar_ids": [
+    "R043"
+  ],
+  "radar_slots": {
+    "0": "R043"
+  },
+  "alignment": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O047",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.95,
+        "reason": "平台（中国 071 型）、地点（安达曼海）、任务（联合巡航/持续活动）及日期完全一致。新闻提供了精确的时间窗口（11:26-13:51），而意见材料描述为“持续活动”且无具体时间，符合子集关系，判定为同一次活动。"
+      },
+      {
+        "candidate_id": "O003",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "平台完全不同（运 -8 反潜巡逻机 vs 071 型船坞登陆舰），地点不同（南海 vs 安达曼海），虽时间重叠但属于不同活动。"
+      },
+      {
+        "candidate_id": "O041",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "平台完全不同（新加坡 F-15SG），地点不同（孟加拉湾 vs 安达曼海），国籍不同，属于不同活动。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R043",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 1.0,
+        "reason": "雷达数据与新闻在平台型号（071 型）、地点（安达曼海）、任务（联合巡航）及精确时间（2025.05.01 11:26-13:51）上完全匹配，确认为同一次活动。"
+      },
+      {
+        "candidate_id": "R009",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "平台不同（运 -8），地点缺失但坐标提示为南海，与安达曼海不符，属于不同活动。"
+      },
+      {
+        "candidate_id": "R022",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "平台不同（轰 -6K），任务不同（对海突击训练），坐标位于东海，与安达曼海不符，属于不同活动。"
+      }
+    ],
+    "ambiguity": "无。雷达数据 R043 提供了精确的时间戳和地点，与新闻完全吻合；意见材料 O047 虽无具体时间但描述的行为模式与新闻一致，且无其他合理解释能将其关联到其他活动。"
+  },
+  "candidates": {
+    "opinion": [
+      {
+        "id": "O047",
+        "score": 4.89841,
+        "cosine": 0.89841,
+        "platform_similarity": 1.0,
+        "time_overlap": null,
+        "location_relation": "same"
+      },
+      {
+        "id": "O003",
+        "score": 2.13937,
+        "cosine": 0.73937,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O041",
+        "score": 1.88581,
+        "cosine": 0.68581,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "different_named_regions"
+      },
+      {
+        "id": "O032",
+        "score": 1.00729,
+        "cosine": 0.80729,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O033",
+        "score": 1.00459,
+        "cosine": 0.80459,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_named_regions"
+      },
+      {
+        "id": "O015",
+        "score": 0.97367,
+        "cosine": 0.77367,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O007",
+        "score": 0.96787,
+        "cosine": 0.76787,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_named_regions"
+      }
+    ],
+    "radar": [
+      {
+        "id": "R043",
+        "score": 6.11364,
+        "cosine": 0.91364,
+        "platform_similarity": 1.0,
+        "time_overlap": 1.0,
+        "location_relation": "same"
+      },
+      {
+        "id": "R009",
+        "score": 2.13119,
+        "cosine": 0.73119,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R022",
+        "score": 2.08809,
+        "cosine": 0.72947,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.9655172413793104,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R051",
+        "score": 1.00626,
+        "cosine": 0.80626,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_named_regions"
+      },
+      {
+        "id": "R034",
+        "score": 0.99546,
+        "cosine": 0.79546,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "R030",
+        "score": 0.97879,
+        "cosine": 0.77879,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_named_regions"
+      },
+      {
+        "id": "R042",
+        "score": 0.95609,
+        "cosine": 0.75609,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      }
+    ]
+  },
+  "verification": {
+    "same_event": true,
+    "facts": [
+      {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "071型",
+        "supporting_sources": [
+          "N036",
+          "O047",
+          "R043"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N036': '071型', 'O047': '071型船坞登陆舰', 'R043': '071型船坞登陆舰'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "中国 071 型船坞登陆舰",
+          "supporting_sources": [
+            "N036",
+            "O047",
+            "R043"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均明确指向中国 071 型船坞登陆舰，无冲突。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "中国",
+        "supporting_sources": [
+          "N036",
+          "O047",
+          "R043"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N036': '中国', 'O047': '中国', 'R043': '中国'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "中国",
+          "supporting_sources": [
+            "N036",
+            "O047",
+            "R043"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源一致确认国籍为中国。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "1艘",
+        "supporting_sources": [
+          "O047",
+          "R043"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'O047': 1, 'R043': 1}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "1 艘",
+          "supporting_sources": [
+            "O047",
+            "R043"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论明确提及“一艘”，雷达批号数据确认数量为 1；新闻未提具体数量但不构成冲突，两源支持。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "安达曼海",
+        "supporting_sources": [
+          "N036",
+          "O047",
+          "R043"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源均明确标注地点为安达曼海（舆论为“相关海域”），无冲突。",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "起点 11:26，终点 13:51",
+        "supporting_sources": [
+          "N036",
+          "R043"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "2025 年 5 月 1 日 11:26-13:51",
+          "supporting_sources": [
+            "N036",
+            "R043"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻与雷达精确匹配起止时间；舆论仅确认日期和持续活动，未提具体时刻但不构成冲突，两源支持。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "components": {
+          "start_time": {
+            "value": "11:26",
+            "support": [
+              "N036",
+              "R043"
+            ],
+            "conflicts": [],
+            "status": "supported",
+            "source_values": {
+              "N036": "11:26",
+              "R043": "11:26"
+            }
+          },
+          "end_time": {
+            "value": "13:51",
+            "support": [
+              "N036",
+              "R043"
+            ],
+            "conflicts": [],
+            "status": "supported",
+            "source_values": {
+              "N036": "13:51",
+              "R043": "13:51"
+            }
+          }
+        },
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "联合巡航",
+        "supporting_sources": [
+          "N036",
+          "R043"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "原文明示任务：{'N036': ['联合巡航'], 'O047': [], 'R043': ['联合巡航']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "联合巡航",
+          "supporting_sources": [
+            "N036",
+            "R043"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻与雷达明确任务为“联合巡航”；舆论描述为“持续活动”，属于泛称，不与具体任务冲突，两源支持。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N036": [
+            "联合巡航"
+          ],
+          "O047": [],
+          "R043": [
+            "联合巡航"
+          ]
+        },
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N036",
+          "O047"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "机动/活动",
+          "supporting_sources": [
+            "N036",
+            "O047"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻描述为“保持机动”，舆论描述为“持续活动”，两者语义兼容，两源支持。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N036": "活动",
+          "O047": "活动",
+          "R043": "未说明"
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      }
+    ],
+    "unresolved_issues": [],
+    "explanation": "三源（新闻、舆论、雷达）在平台型号、国籍、地点、时间窗口及任务性质上高度一致。数量由舆论和雷达共同确认（1 艘），具体时刻由新闻和雷达共同确认。舆论的“持续活动”与新闻/雷达的“联合巡航”无实质冲突。所有关键事实均有至少两类来源支持，无未消解冲突。"
+  },
+  "reasons": [],
+  "status": "可信事件",
+  "verified_facts": [
+    {
+      "platform_index": 0,
+      "field": "platform",
+      "claim": "071型",
+      "supporting_sources": [
+        "N036",
+        "O047",
+        "R043"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N036': '071型', 'O047': '071型船坞登陆舰', 'R043': '071型船坞登陆舰'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "中国 071 型船坞登陆舰",
+        "supporting_sources": [
+          "N036",
+          "O047",
+          "R043"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻、舆论、雷达三源均明确指向中国 071 型船坞登陆舰，无冲突。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "country",
+      "claim": "中国",
+      "supporting_sources": [
+        "N036",
+        "O047",
+        "R043"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N036': '中国', 'O047': '中国', 'R043': '中国'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "中国",
+        "supporting_sources": [
+          "N036",
+          "O047",
+          "R043"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源一致确认国籍为中国。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "quantity",
+      "claim": "1艘",
+      "supporting_sources": [
+        "O047",
+        "R043"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'O047': 1, 'R043': 1}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "1 艘",
+        "supporting_sources": [
+          "O047",
+          "R043"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "舆论明确提及“一艘”，雷达批号数据确认数量为 1；新闻未提具体数量但不构成冲突，两源支持。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "location",
+      "claim": "安达曼海",
+      "supporting_sources": [
+        "N036",
+        "O047",
+        "R043"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "三源均明确标注地点为安达曼海（舆论为“相关海域”），无冲突。",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "time",
+      "claim": "起点 11:26，终点 13:51",
+      "supporting_sources": [
+        "N036",
+        "R043"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "2025 年 5 月 1 日 11:26-13:51",
+        "supporting_sources": [
+          "N036",
+          "R043"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与雷达精确匹配起止时间；舆论仅确认日期和持续活动，未提具体时刻但不构成冲突，两源支持。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "components": {
+        "start_time": {
+          "value": "11:26",
+          "support": [
+            "N036",
+            "R043"
+          ],
+          "conflicts": [],
+          "status": "supported",
+          "source_values": {
+            "N036": "11:26",
+            "R043": "11:26"
+          }
+        },
+        "end_time": {
+          "value": "13:51",
+          "support": [
+            "N036",
+            "R043"
+          ],
+          "conflicts": [],
+          "status": "supported",
+          "source_values": {
+            "N036": "13:51",
+            "R043": "13:51"
+          }
+        }
+      },
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "mission",
+      "claim": "联合巡航",
+      "supporting_sources": [
+        "N036",
+        "R043"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "原文明示任务：{'N036': ['联合巡航'], 'O047': [], 'R043': ['联合巡航']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "联合巡航",
+        "supporting_sources": [
+          "N036",
+          "R043"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与雷达明确任务为“联合巡航”；舆论描述为“持续活动”，属于泛称，不与具体任务冲突，两源支持。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N036": [
+          "联合巡航"
+        ],
+        "O047": [],
+        "R043": [
+          "联合巡航"
+        ]
+      },
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "movement",
+      "claim": "活动",
+      "supporting_sources": [
+        "N036",
+        "O047"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "机动/活动",
+        "supporting_sources": [
+          "N036",
+          "O047"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻描述为“保持机动”，舆论描述为“持续活动”，两者语义兼容，两源支持。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N036": "活动",
+        "O047": "活动",
+        "R043": "未说明"
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    }
+  ],
+  "radar_row_count": 11,
+  "direction": "其他",
+  "report_eligible": false,
+  "directory": "可信事件/N036_中国071型船坞登陆舰在安达曼海执行联合巡航任务行动"
+}

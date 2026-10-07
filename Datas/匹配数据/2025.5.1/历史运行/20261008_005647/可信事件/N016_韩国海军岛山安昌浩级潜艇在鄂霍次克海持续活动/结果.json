@@ -1,0 +1,483 @@
+{
+  "id": "N016",
+  "news_id": "N016",
+  "opinion_id": "O009",
+  "radar_ids": [
+    "R028"
+  ],
+  "radar_slots": {
+    "0": "R028"
+  },
+  "alignment": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O009",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.95,
+        "reason": "平台（韩国岛山安昌浩级潜艇）、地点（鄂霍次克海）、时间（2025.5.1）及任务性质（巡逻/活动）完全一致。雷达数据 R028 提供了精确的时间窗口（17:40-19:05），与新闻描述的“持续活动”逻辑吻合，虽新闻未列具体起止时间，但属于同一事件的不同信息源补充。"
+      },
+      {
+        "candidate_id": "O044",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "平台型号不同（独岛级两栖攻击舰 vs 岛山安昌浩级潜艇），地点不同（东海 vs 鄂霍次克海），任务不同（两栖训练 vs 潜艇活动），确认为不同活动。"
+      },
+      {
+        "candidate_id": "O038",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.99,
+        "reason": "平台类型完全不同（直升机 vs 潜艇），地点不同（阿拉伯海 vs 鄂霍次克海），确认为不同活动。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R028",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 1.0,
+        "reason": "平台、地点、时间完全匹配。新闻描述为宏观的“持续活动”，雷达数据提供了具体的任务类型（海上巡逻）和精确时间段，两者互为印证，确认为同一事件。"
+      },
+      {
+        "candidate_id": "R041",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "平台型号不同（独岛级 vs 岛山安昌浩级），地点不同（东海南部 vs 鄂霍次克海），确认为不同活动。"
+      },
+      {
+        "candidate_id": "R036",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.99,
+        "reason": "平台型号不同（大邱级护卫舰 vs 潜艇），地点不同（巴伦支海 vs 鄂霍次克海），确认为不同活动。"
+      }
+    ],
+    "ambiguity": "无。新闻与雷达数据 R028 在核心要素上高度一致，不存在歧义。其他候选因平台、地点或任务明显冲突被排除。"
+  },
+  "candidates": {
+    "opinion": [
+      {
+        "id": "O009",
+        "score": 4.81789,
+        "cosine": 0.96789,
+        "platform_similarity": 0.95,
+        "time_overlap": null,
+        "location_relation": "same"
+      },
+      {
+        "id": "O044",
+        "score": 0.96329,
+        "cosine": 0.76329,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O038",
+        "score": 0.94979,
+        "cosine": 0.74979,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_named_regions"
+      },
+      {
+        "id": "O048",
+        "score": 0.76141,
+        "cosine": 0.76141,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O037",
+        "score": 0.75591,
+        "cosine": 0.75591,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      }
+    ],
+    "radar": [
+      {
+        "id": "R028",
+        "score": 4.81558,
+        "cosine": 0.96558,
+        "platform_similarity": 0.95,
+        "time_overlap": null,
+        "location_relation": "same"
+      },
+      {
+        "id": "R041",
+        "score": 0.97231,
+        "cosine": 0.77231,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "R036",
+        "score": 0.93416,
+        "cosine": 0.73416,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_named_regions"
+      },
+      {
+        "id": "R049",
+        "score": 0.93227,
+        "cosine": 0.73227,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_named_regions"
+      },
+      {
+        "id": "R039",
+        "score": 0.73956,
+        "cosine": 0.73956,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      }
+    ]
+  },
+  "verification": {
+    "same_event": true,
+    "facts": [
+      {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "岛山安昌浩级常规潜艇",
+        "supporting_sources": [
+          "N016",
+          "O009",
+          "R028"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N016': '岛山安昌浩级常规潜艇', 'O009': '岛山安昌浩级常规潜艇', 'R028': '岛山安昌浩级常规潜艇'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "韩国海军岛山安昌浩级常规潜艇",
+          "supporting_sources": [
+            "N016",
+            "O009",
+            "R028"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均明确指向该型号及国籍，无冲突。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "韩国",
+        "supporting_sources": [
+          "N016",
+          "O009",
+          "R028"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N016': '韩国', 'O009': '韩国', 'R028': '韩国'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "韩国",
+          "supporting_sources": [
+            "N016",
+            "O009",
+            "R028"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源一致确认国籍为韩国。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "1艘",
+        "supporting_sources": [
+          "N016",
+          "R028"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N016': 1, 'R028': 1}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "1 艘",
+          "supporting_sources": [
+            "N016",
+            "R028"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻明确提及"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "鄂霍次克海",
+        "supporting_sources": [
+          "N016",
+          "O009",
+          "R028"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源均明确标注活动区域为鄂霍次克海。",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "2025 年 5 月 1 日 17:40-19:05",
+        "supporting_sources": [
+          "O009",
+          "R028"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "舆论与雷达提供精确起止时间，新闻仅确认日期，三者在时间维度上兼容（具体时刻不否定宏观日期）。",
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "海上巡逻/持续活动",
+        "supporting_sources": [
+          "O009",
+          "R028"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "舆论与雷达明确任务为“海上巡逻”，新闻描述为“持续活动”及“围绕任务区域保持机动”，两者逻辑一致，互为补充。",
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动/机动",
+        "supporting_sources": [
+          "N016",
+          "O009"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻提及“保持机动”，舆论提及“沿既定方向保持机动”，雷达虽未显式描述运动状态但确认了活动事实，三源均支持存在活动。",
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      }
+    ],
+    "unresolved_issues": [],
+    "explanation": "新闻、舆论、雷达三类来源在平台型号、国籍、地点、时间及任务性质上高度一致。数量由新闻和雷达共同支持（2 票），其余关键事实均有至少两类来源支持且无未消解冲突，确认为同一事件。"
+  },
+  "reasons": [],
+  "status": "可信事件",
+  "verified_facts": [
+    {
+      "platform_index": 0,
+      "field": "platform",
+      "claim": "岛山安昌浩级常规潜艇",
+      "supporting_sources": [
+        "N016",
+        "O009",
+        "R028"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N016': '岛山安昌浩级常规潜艇', 'O009': '岛山安昌浩级常规潜艇', 'R028': '岛山安昌浩级常规潜艇'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "韩国海军岛山安昌浩级常规潜艇",
+        "supporting_sources": [
+          "N016",
+          "O009",
+          "R028"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻、舆论、雷达三源均明确指向该型号及国籍，无冲突。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "country",
+      "claim": "韩国",
+      "supporting_sources": [
+        "N016",
+        "O009",
+        "R028"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N016': '韩国', 'O009': '韩国', 'R028': '韩国'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "韩国",
+        "supporting_sources": [
+          "N016",
+          "O009",
+          "R028"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源一致确认国籍为韩国。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "quantity",
+      "claim": "1艘",
+      "supporting_sources": [
+        "N016",
+        "R028"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N016': 1, 'R028': 1}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "1 艘",
+        "supporting_sources": [
+          "N016",
+          "R028"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻明确提及"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "location",
+      "claim": "鄂霍次克海",
+      "supporting_sources": [
+        "N016",
+        "O009",
+        "R028"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "三源均明确标注活动区域为鄂霍次克海。",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "time",
+      "claim": "2025 年 5 月 1 日 17:40-19:05",
+      "supporting_sources": [
+        "O009",
+        "R028"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "舆论与雷达提供精确起止时间，新闻仅确认日期，三者在时间维度上兼容（具体时刻不否定宏观日期）。",
+      "supporting_source_types": [
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "mission",
+      "claim": "海上巡逻/持续活动",
+      "supporting_sources": [
+        "O009",
+        "R028"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "舆论与雷达明确任务为“海上巡逻”，新闻描述为“持续活动”及“围绕任务区域保持机动”，两者逻辑一致，互为补充。",
+      "supporting_source_types": [
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "movement",
+      "claim": "活动/机动",
+      "supporting_sources": [
+        "N016",
+        "O009"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻提及“保持机动”，舆论提及“沿既定方向保持机动”，雷达虽未显式描述运动状态但确认了活动事实，三源均支持存在活动。",
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    }
+  ],
+  "radar_row_count": 11,
+  "direction": "其他",
+  "report_eligible": false,
+  "directory": "可信事件/N016_韩国海军岛山安昌浩级潜艇在鄂霍次克海持续活动"
+}

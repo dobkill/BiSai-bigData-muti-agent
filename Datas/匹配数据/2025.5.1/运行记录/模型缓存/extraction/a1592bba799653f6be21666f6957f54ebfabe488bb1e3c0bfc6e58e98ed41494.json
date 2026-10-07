@@ -1,0 +1,156 @@
+{
+  "role": "extraction",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "materials": [
+      {
+        "source_id": "N013",
+        "kind": "news",
+        "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：中国空警-500预警机进入钓鱼岛海域执行情报监视侦察\n正文：2025年5月1日8时41分至10时06分，中国空警-500预警机由外围航线进入钓鱼岛海域，围绕任务海域组织情报监视侦察，按计划保持机动并持续执行情报监视侦察。\n\n主题词：中国  空警-500预警机  钓鱼岛海域  情报监视侦察\n"
+      },
+      {
+        "source_id": "N014",
+        "kind": "news",
+        "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：越南苏-30MK2多用途战斗机在礼乐滩海域进行对海突击训练\n正文：2025年5月1日，越南苏-30MK2多用途战斗机在礼乐滩海域活动，从14时55分至16时20分围绕任务海域组织对海突击训练，按计划保持机动并持续执行对海突击训练。\n\n主题词：越南  苏-30MK2  多用途战斗机  礼乐滩海域\n"
+      },
+      {
+        "source_id": "N015",
+        "kind": "news",
+        "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：中国海军039A型潜艇与056A型护卫舰在东海中部执行反潜巡逻\n正文：2025年5月1日17时02分至19时27分，中国海军039A型常规潜艇和056A型轻型护卫舰在东海中部围绕任务海域组织反潜巡逻，期间按计划保持机动并结合既定航线持续收集相关信息。\n\n主题词：中国海军  039A型常规潜艇  056A型轻型护卫舰  反潜巡逻\n"
+      },
+      {
+        "source_id": "N016",
+        "kind": "news",
+        "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：韩国海军岛山安昌浩级潜艇在鄂霍次克海持续活动\n正文：2025年5月1日，韩国海军1艘岛山安昌浩级常规潜艇在鄂霍次克海持续活动，围绕任务区域保持机动，行动范围保持在指定任务海域。\n\n主题词：韩国海军  岛山安昌浩级常规潜艇  鄂霍次克海\n"
+      }
+    ]
+  },
+  "result": {
+    "items": [
+      {
+        "source_id": "N013",
+        "platforms": [
+          {
+            "name": "空警 -500预警机",
+            "country": "中国",
+            "quantity": null,
+            "quote": "中国空警 -500预警机",
+            "quantity_quote": ""
+          }
+        ],
+        "location": {
+          "value": "钓鱼岛海域",
+          "quote": "进入钓鱼岛海域"
+        },
+        "mission": {
+          "value": "情报监视侦察",
+          "quote": "执行情报监视侦察"
+        },
+        "start_time": "08:41",
+        "end_time": "10:06",
+        "time_quote": "2025年5月1日8时41分至10时06分",
+        "movement": "进入",
+        "movement_quote": "由外围航线进入钓鱼岛海域"
+      },
+      {
+        "source_id": "N014",
+        "platforms": [
+          {
+            "name": "苏 -30MK2多用途战斗机",
+            "country": "越南",
+            "quantity": null,
+            "quote": "越南苏 -30MK2多用途战斗机",
+            "quantity_quote": ""
+          }
+        ],
+        "location": {
+          "value": "礼乐滩海域",
+          "quote": "在礼乐滩海域活动"
+        },
+        "mission": {
+          "value": "对海突击训练",
+          "quote": "组织对海突击训练"
+        },
+        "start_time": "14:55",
+        "end_time": "16:20",
+        "time_quote": "从14时55分至16时20分",
+        "movement": "活动",
+        "movement_quote": "在礼乐滩海域活动"
+      },
+      {
+        "source_id": "N015",
+        "platforms": [
+          {
+            "name": "039A型常规潜艇",
+            "country": "中国",
+            "quantity": null,
+            "quote": "039A型常规潜艇",
+            "quantity_quote": ""
+          },
+          {
+            "name": "056A型轻型护卫舰",
+            "country": "中国",
+            "quantity": null,
+            "quote": "056A型轻型护卫舰",
+            "quantity_quote": ""
+          }
+        ],
+        "location": {
+          "value": "东海中部",
+          "quote": "在东海中部"
+        },
+        "mission": {
+          "value": "反潜巡逻",
+          "quote": "执行反潜巡逻"
+        },
+        "start_time": "17:02",
+        "end_time": "19:27",
+        "time_quote": "2025年5月1日17时02分至19时27分",
+        "movement": "活动",
+        "movement_quote": "在东海中部围绕任务海域组织反潜巡逻"
+      },
+      {
+        "source_id": "N016",
+        "platforms": [
+          {
+            "name": "岛山安昌浩级常规潜艇",
+            "country": "韩国",
+            "quantity": 1,
+            "quote": "岛山安昌浩级常规潜艇",
+            "quantity_quote": "1艘岛山安昌浩级常规潜艇"
+          }
+        ],
+        "location": {
+          "value": "鄂霍次克海",
+          "quote": "在鄂霍次克海持续活动"
+        },
+        "mission": {
+          "value": null,
+          "quote": ""
+        },
+        "start_time": null,
+        "end_time": null,
+        "time_quote": "",
+        "movement": "活动",
+        "movement_quote": "在鄂霍次克海持续活动"
+      }
+    ]
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T15:51:38.6888633Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\n  \"items\": [\n    {\n      \"source_id\": \"N013\",\n      \"platforms\": [\n        {\n          \"name\": \"空警 -500预警机\",\n          \"country\": \"中国\",\n          \"quantity\": null,\n          \"quote\": \"中国空警 -500预警机\",\n          \"quantity_quote\": \"\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"钓鱼岛海域\",\n        \"quote\": \"进入钓鱼岛海域\"\n      },\n      \"mission\": {\n        \"value\": \"情报监视侦察\",\n        \"quote\": \"执行情报监视侦察\"\n      },\n      \"start_time\": \"08:41\",\n      \"end_time\": \"10:06\",\n      \"time_quote\": \"2025年5月1日8时41分至10时06分\",\n      \"movement\": \"进入\",\n      \"movement_quote\": \"由外围航线进入钓鱼岛海域\"\n    },\n    {\n      \"source_id\": \"N014\",\n      \"platforms\": [\n        {\n          \"name\": \"苏 -30MK2多用途战斗机\",\n          \"country\": \"越南\",\n          \"quantity\": null,\n          \"quote\": \"越南苏 -30MK2多用途战斗机\",\n          \"quantity_quote\": \"\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"礼乐滩海域\",\n        \"quote\": \"在礼乐滩海域活动\"\n      },\n      \"mission\": {\n        \"value\": \"对海突击训练\",\n        \"quote\": \"组织对海突击训练\"\n      },\n      \"start_time\": \"14:55\",\n      \"end_time\": \"16:20\",\n      \"time_quote\": \"从14时55分至16时20分\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"在礼乐滩海域活动\"\n    },\n    {\n      \"source_id\": \"N015\",\n      \"platforms\": [\n        {\n          \"name\": \"039A型常规潜艇\",\n          \"country\": \"中国\",\n          \"quantity\": null,\n          \"quote\": \"039A型常规潜艇\",\n          \"quantity_quote\": \"\"\n        },\n        {\n          \"name\": \"056A型轻型护卫舰\",\n          \"country\": \"中国\",\n          \"quantity\": null,\n          \"quote\": \"056A型轻型护卫舰\",\n          \"quantity_quote\": \"\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"东海中部\",\n        \"quote\": \"在东海中部\"\n      },\n      \"mission\": {\n        \"value\": \"反潜巡逻\",\n        \"quote\": \"执行反潜巡逻\"\n      },\n      \"start_time\": \"17:02\",\n      \"end_time\": \"19:27\",\n      \"time_quote\": \"2025年5月1日17时02分至19时27分\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"在东海中部围绕任务海域组织反潜巡逻\"\n    },\n    {\n      \"source_id\": \"N016\",\n      \"platforms\": [\n        {\n          \"name\": \"岛山安昌浩级常规潜艇\",\n          \"country\": \"韩国\",\n          \"quantity\": null,\n          \"quote\": \"岛山安昌浩级常规潜艇\",\n          \"quantity_quote\": \"\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"鄂霍次克海\",\n        \"quote\": \"在鄂霍次克海持续活动\"\n      },\n      \"mission\": {\n        \"value\": null,\n        \"quote\": \"\"\n      },\n      \"start_time\": null,\n      \"end_time\": null,\n      \"time_quote\": \"\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"在鄂霍次克海持续活动\"\n    }\n  ]\n}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 18166964600,
+    "load_duration": 13859100,
+    "prompt_eval_count": 943,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 425185000,
+    "eval_count": 935,
+    "eval_duration": 17505078000
+  }
+}

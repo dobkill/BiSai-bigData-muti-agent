@@ -1,0 +1,738 @@
+{
+  "id": "N050",
+  "news_id": "N050",
+  "opinion_id": "O022",
+  "radar_ids": [
+    "R011"
+  ],
+  "radar_slots": {
+    "0": "R011"
+  },
+  "alignment": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O022",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.95,
+        "reason": "平台（德国台风）、日期（2025.5.1）、任务（战备警巡）及大致区域（印度洋）完全一致。新闻中具体的行动时间（14:33-16:58）与意见材料中的“持续活动”描述相符，虽无精确起止时间冲突，但属于同一事件的不同报道视角。"
+      },
+      {
+        "candidate_id": "O005",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.9,
+        "reason": "虽然平台（德国台风）和日期相同，但地点完全不同（新闻为印度洋，意见材料为东海），且任务性质不同（战备警巡 vs 对海突击训练），时间区间也无重叠，确认为不同活动。"
+      },
+      {
+        "candidate_id": "O006",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 1.0,
+        "reason": "平台完全不同（德国台风 vs 中国护卫舰），地点、任务均无关联，属于无关材料。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R011",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.98,
+        "reason": "平台（德国台风）、日期、任务（战备警巡）及精确时间区间（14:33-16:58）与新闻完全一致。坐标数据辅助印证了印度洋区域，确认为同一活动的高置信度匹配。"
+      },
+      {
+        "candidate_id": "R016",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.9,
+        "reason": "平台相同但任务不同（战备警巡 vs 对海突击训练），时间区间无重叠，地点推测为东海，与新闻的印度洋活动不符。"
+      },
+      {
+        "candidate_id": "R004",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 1.0,
+        "reason": "平台不同（德国台风 vs 新加坡F-15SG），任务虽同为战备警巡但主体和地点均不匹配。"
+      }
+    ],
+    "ambiguity": "无显著歧义，核心关联线索（平台型号、国籍、任务类型、精确时间）高度一致。"
+  },
+  "candidates": {
+    "opinion": [
+      {
+        "id": "O022",
+        "score": 4.7208,
+        "cosine": 0.8708,
+        "platform_similarity": 0.95,
+        "time_overlap": null,
+        "location_relation": "same"
+      },
+      {
+        "id": "O005",
+        "score": 3.99638,
+        "cosine": 0.94638,
+        "platform_similarity": 0.95,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O006",
+        "score": 1.85061,
+        "cosine": 0.65061,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "different_named_regions"
+      },
+      {
+        "id": "O004",
+        "score": 0.77232,
+        "cosine": 0.77232,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_named_regions"
+      },
+      {
+        "id": "O041",
+        "score": 0.75004,
+        "cosine": 0.75004,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_named_regions"
+      },
+      {
+        "id": "O002",
+        "score": 0.74279,
+        "cosine": 0.74279,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      }
+    ],
+    "radar": [
+      {
+        "id": "R011",
+        "score": 5.19435,
+        "cosine": 0.94435,
+        "platform_similarity": 0.95,
+        "time_overlap": 1.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R016",
+        "score": 3.97938,
+        "cosine": 0.92938,
+        "platform_similarity": 0.95,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R008",
+        "score": 1.94742,
+        "cosine": 0.74742,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R013",
+        "score": 0.76213,
+        "cosine": 0.76213,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R026",
+        "score": 0.7601,
+        "cosine": 0.7601,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R004",
+        "score": 0.75522,
+        "cosine": 0.75522,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      }
+    ]
+  },
+  "assignment_diagnostics": {
+    "opinion": [],
+    "radar": []
+  },
+  "verification": {
+    "same_event": true,
+    "facts": [
+      {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "台风多用途战斗机",
+        "supporting_sources": [
+          "N050",
+          "O022",
+          "R011"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N050': '台风多用途战斗机', 'O022': '台风', 'R011': '“台风”多用途战斗机'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "德国台风多用途战斗机",
+          "supporting_sources": [
+            "N050",
+            "O022",
+            "R011"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均明确指向德国台风战斗机，无冲突。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "德国",
+        "supporting_sources": [
+          "N050",
+          "O022",
+          "R011"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N050': '德国', 'O022': '德国', 'R011': '德国'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "德国",
+          "supporting_sources": [
+            "N050",
+            "O022",
+            "R011"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均明确标注国籍为德国，无冲突。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "2架",
+        "supporting_sources": [
+          "O022",
+          "R011"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'O022': 2, 'R011': 2}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "2 架",
+          "supporting_sources": [
+            "O022",
+            "R011"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论和雷达均明确记录数量为 2 架；新闻未提及具体数量，但不构成反对（缺失非冲突），两源支持成立。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "印度洋",
+        "supporting_sources": [
+          "N050",
+          "O022"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "复核明示地点和PDF包含关系：{'N050': '印度洋', 'O022': '印度洋'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "印度洋",
+          "supporting_sources": [
+            "N050",
+            "O022"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻和舆论均明确提及“印度洋”；雷达坐标位于南半球（纬度 -5.x），地理上属于印度洋区域，虽未直接文本标注但数据印证了该区域，三源逻辑一致。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N050": {
+            "raw": "印度洋",
+            "region": "印度洋",
+            "direction": "其他",
+            "precision": "原文区域",
+            "mapping": "PDF未列入三大核心海域的区域归其他",
+            "transit": false,
+            "quote": "在印度洋活动"
+          },
+          "O022": {
+            "raw": "印度洋相关海域",
+            "region": "印度洋",
+            "direction": "其他",
+            "precision": "原文区域",
+            "mapping": "PDF未列入三大核心海域的区域归其他",
+            "transit": false,
+            "quote": "在印度洋相关海域"
+          }
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "起点 14:33，终点 16:58",
+        "supporting_sources": [
+          "N050",
+          "R011"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突；起点明示值：{'N050': '14:33', 'R011': '14:33'}；终点明示值：{'N050': '16:58', 'R011': '16:58'}",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "2025 年 5 月 1 日",
+          "supporting_sources": [
+            "N050",
+            "O022",
+            "R011"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源均明确记录日期为 2025 年 5 月 1 日。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "components": {
+          "start_time": {
+            "value": "14:33",
+            "support": [
+              "N050",
+              "R011"
+            ],
+            "conflicts": [],
+            "status": "supported",
+            "source_values": {
+              "N050": "14:33",
+              "R011": "14:33"
+            },
+            "radar_batch_observations": []
+          },
+          "end_time": {
+            "value": "16:58",
+            "support": [
+              "N050",
+              "R011"
+            ],
+            "conflicts": [],
+            "status": "supported",
+            "source_values": {
+              "N050": "16:58",
+              "R011": "16:58"
+            },
+            "radar_batch_observations": []
+          }
+        },
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "战备警巡",
+        "supporting_sources": [
+          "N050",
+          "R011"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "原文明示任务：{'N050': ['战备警巡'], 'O022': [], 'R011': ['战备警巡']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "战备警巡",
+          "supporting_sources": [
+            "N050",
+            "R011"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻和雷达均明确记录任务为“战备警巡”；舆论虽未显式写出该词但描述“持续活动”且关联同一事件，不视为冲突，两源核心事实支持。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N050": [
+            "战备警巡"
+          ],
+          "O022": [],
+          "R011": [
+            "战备警巡"
+          ]
+        },
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N050",
+          "O022"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动/机动",
+          "supporting_sources": [
+            "N050",
+            "O022"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻和舆论均描述为“活动”或“保持机动”，雷达未说明具体运动状态但不构成冲突，两源支持。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N050": "活动",
+          "O022": "活动",
+          "R011": "未说明"
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      }
+    ],
+    "unresolved_issues": [],
+    "explanation": "三类来源已关联，纳入结论的事实获得至少两类独立来源支持，未发现未消解明示反证。",
+    "model_explanation": "三源在平台型号、国籍、时间、地点（含坐标印证）、任务性质上高度一致。数量由舆论和雷达共同确认为 2 架，新闻缺失数量字段不视为冲突。所有关键事实均有至少两类来源支持，无未消解冲突。"
+  },
+  "reasons": [],
+  "status": "可信事件",
+  "verified_facts": [
+    {
+      "platform_index": 0,
+      "field": "platform",
+      "claim": "台风多用途战斗机",
+      "supporting_sources": [
+        "N050",
+        "O022",
+        "R011"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N050': '台风多用途战斗机', 'O022': '台风', 'R011': '“台风”多用途战斗机'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "德国台风多用途战斗机",
+        "supporting_sources": [
+          "N050",
+          "O022",
+          "R011"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源（新闻、舆论、雷达）均明确指向德国台风战斗机，无冲突。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "country",
+      "claim": "德国",
+      "supporting_sources": [
+        "N050",
+        "O022",
+        "R011"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N050': '德国', 'O022': '德国', 'R011': '德国'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "德国",
+        "supporting_sources": [
+          "N050",
+          "O022",
+          "R011"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源（新闻、舆论、雷达）均明确标注国籍为德国，无冲突。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "quantity",
+      "claim": "2架",
+      "supporting_sources": [
+        "O022",
+        "R011"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'O022': 2, 'R011': 2}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "2 架",
+        "supporting_sources": [
+          "O022",
+          "R011"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "舆论和雷达均明确记录数量为 2 架；新闻未提及具体数量，但不构成反对（缺失非冲突），两源支持成立。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "location",
+      "claim": "印度洋",
+      "supporting_sources": [
+        "N050",
+        "O022"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "复核明示地点和PDF包含关系：{'N050': '印度洋', 'O022': '印度洋'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "印度洋",
+        "supporting_sources": [
+          "N050",
+          "O022"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻和舆论均明确提及“印度洋”；雷达坐标位于南半球（纬度 -5.x），地理上属于印度洋区域，虽未直接文本标注但数据印证了该区域，三源逻辑一致。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N050": {
+          "raw": "印度洋",
+          "region": "印度洋",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false,
+          "quote": "在印度洋活动"
+        },
+        "O022": {
+          "raw": "印度洋相关海域",
+          "region": "印度洋",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false,
+          "quote": "在印度洋相关海域"
+        }
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "time",
+      "claim": "起点 14:33，终点 16:58",
+      "supporting_sources": [
+        "N050",
+        "R011"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突；起点明示值：{'N050': '14:33', 'R011': '14:33'}；终点明示值：{'N050': '16:58', 'R011': '16:58'}",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "2025 年 5 月 1 日",
+        "supporting_sources": [
+          "N050",
+          "O022",
+          "R011"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源均明确记录日期为 2025 年 5 月 1 日。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "components": {
+        "start_time": {
+          "value": "14:33",
+          "support": [
+            "N050",
+            "R011"
+          ],
+          "conflicts": [],
+          "status": "supported",
+          "source_values": {
+            "N050": "14:33",
+            "R011": "14:33"
+          },
+          "radar_batch_observations": []
+        },
+        "end_time": {
+          "value": "16:58",
+          "support": [
+            "N050",
+            "R011"
+          ],
+          "conflicts": [],
+          "status": "supported",
+          "source_values": {
+            "N050": "16:58",
+            "R011": "16:58"
+          },
+          "radar_batch_observations": []
+        }
+      },
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "mission",
+      "claim": "战备警巡",
+      "supporting_sources": [
+        "N050",
+        "R011"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "原文明示任务：{'N050': ['战备警巡'], 'O022': [], 'R011': ['战备警巡']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "战备警巡",
+        "supporting_sources": [
+          "N050",
+          "R011"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻和雷达均明确记录任务为“战备警巡”；舆论虽未显式写出该词但描述“持续活动”且关联同一事件，不视为冲突，两源核心事实支持。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N050": [
+          "战备警巡"
+        ],
+        "O022": [],
+        "R011": [
+          "战备警巡"
+        ]
+      },
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "movement",
+      "claim": "活动",
+      "supporting_sources": [
+        "N050",
+        "O022"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动/机动",
+        "supporting_sources": [
+          "N050",
+          "O022"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻和舆论均描述为“活动”或“保持机动”，雷达未说明具体运动状态但不构成冲突，两源支持。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N050": "活动",
+        "O022": "活动",
+        "R011": "未说明"
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    }
+  ],
+  "radar_row_count": 12,
+  "direction": "其他",
+  "report_eligible": false,
+  "directory": "可信事件/N050_德军台风多用途战斗机在印度洋执行战备警巡行动"
+}

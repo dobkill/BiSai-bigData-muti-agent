@@ -1,0 +1,281 @@
+{
+  "role": "verification",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N022",
+      "kind": "news",
+      "title": "意大利莱蒙多·蒙特库科利号巡逻舰在礼乐滩海域反潜巡逻",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：意大利莱蒙多·蒙特库科利号巡逻舰在礼乐滩海域反潜巡逻\n正文：2025年5月1日，意大利莱蒙多·蒙特库科利号多用途巡逻舰在礼乐滩海域执行任务，从14时06分至16时31分围绕任务海域组织反潜巡逻，按计划保持机动并持续执行反潜巡逻。\n\n主题词：意大利  莱蒙多·蒙特库科利号  多用途巡逻舰  礼乐滩海域\n",
+      "platforms": [
+        {
+          "name": "莱蒙多·蒙特库科利号多用途巡逻舰",
+          "country": "意大利",
+          "quantity": null,
+          "quote": "意大利莱蒙多·蒙特库科利号多用途巡逻舰",
+          "quantity_quote": "",
+          "country_raw": "意大利"
+        }
+      ],
+      "location": {
+        "raw": "礼乐滩海域",
+        "region": "礼乐滩海域",
+        "direction": "南海",
+        "precision": "具体区域",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "在礼乐滩海域执行任务"
+      },
+      "mission": {
+        "value": "反潜巡逻",
+        "quote": "围绕任务海域组织反潜巡逻"
+      },
+      "start_time": "14:06",
+      "end_time": "16:31",
+      "movement": "活动"
+    },
+    "opinion": {
+      "id": "O034",
+      "kind": "opinion",
+      "title": "意大利巡逻舰现身礼乐滩海域，区域机动引发关注",
+      "text": "时间：2025.5.1\n\n标题：意大利巡逻舰现身礼乐滩海域，区域机动引发关注\n\n正文：据今日头条报道，2025年5月1日，意大利海军“莱蒙多·蒙特库科利号”多用途巡逻舰在南海礼乐滩海域活动。该舰围绕任务区域保持机动，行动范围保持在指定任务海域。有分析认为，这一动向可能体现其任务连续性的组织特点。相关行动在敏感水域的持续存在，被视为区域机动能力的一种展现。\n",
+      "platforms": [
+        {
+          "name": "莱蒙多·蒙特库科利号",
+          "country": "意大利",
+          "quantity": null,
+          "quote": "意大利海军“莱蒙多·蒙特库科利号”多用途巡逻舰",
+          "quantity_quote": "",
+          "country_raw": "意大利"
+        }
+      ],
+      "location": {
+        "raw": "南海礼乐滩海域",
+        "region": "礼乐滩海域",
+        "direction": "南海",
+        "precision": "具体区域",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "在南海礼乐滩海域活动"
+      },
+      "mission": {
+        "value": null,
+        "quote": ""
+      },
+      "start_time": null,
+      "end_time": null,
+      "movement": "活动"
+    },
+    "radars": [
+      {
+        "id": "R052",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "莱蒙多·蒙特库科利号多用途巡逻舰",
+            "country": "意大利",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-D9EF439959529B",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "礼乐滩海域",
+          "region": "礼乐滩海域",
+          "direction": "南海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "礼乐滩海域",
+            "region": "礼乐滩海域",
+            "direction": "南海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "反潜巡逻",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "反潜巡逻"
+        ],
+        "start_time": "2025.05.01 14:06:00",
+        "end_time": "2025.05.01 16:31:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-D9EF439959529B",
+        "sibling_ids": [],
+        "hull_values": [
+          "P432"
+        ],
+        "country_values": [
+          "意大利"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 11
+      }
+    ],
+    "association": {
+      "opinion_edges": [
+        {
+          "candidate_id": "O034",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.95,
+          "reason": "平台名称、国籍、地点（礼乐滩海域）、任务（反潜巡逻）及时间区间完全一致，舆论报道与新闻事实高度吻合。"
+        },
+        {
+          "candidate_id": "O006",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 1.0,
+          "reason": "平台型号不同（054A 护卫舰 vs 意大利巡逻舰）、地点不同（白令海 vs 礼乐滩）、国籍不同，属于完全不同的活动。"
+        },
+        {
+          "candidate_id": "O020",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 1.0,
+          "reason": "平台型号不同（瓦良格号巡洋舰 vs 意大利巡逻舰）、任务不同（护航 vs 反潜巡逻）、时间区间不重叠，属于不同活动。"
+        }
+      ],
+      "radar_edges": [
+        {
+          "candidate_id": "R052",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 1.0,
+          "reason": "平台名称、国籍、地点、任务、起止时间精确匹配，且批号一致，确认为同一活动。"
+        },
+        {
+          "candidate_id": "R048",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.95,
+          "reason": "虽然地点相同（礼乐滩海域），但平台不同（瓦良格号巡洋舰 vs 意大利巡逻舰）、任务不同（护航 vs 反潜巡逻）、时间不重叠，属于同一区域的不同活动。"
+        },
+        {
+          "candidate_id": "R029",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 1.0,
+          "reason": "平台型号、地点（白令海 vs 礼乐滩）、国籍均不同，属于完全不同的活动。"
+        }
+      ],
+      "ambiguity": "无显著歧义，核心候选关联证据充分。"
+    },
+    "same_batch_other_candidates": []
+  },
+  "result": {
+    "same_event": true,
+    "platforms": [
+      {
+        "platform_index": 0,
+        "platform": {
+          "claim": "意大利莱蒙多·蒙特库科利号多用途巡逻舰",
+          "supporting_sources": [
+            "N022",
+            "O034",
+            "R052"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均明确指向该舰"
+        },
+        "country": {
+          "claim": "意大利",
+          "supporting_sources": [
+            "N022",
+            "O034",
+            "R052"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源一致确认国籍为意大利"
+        },
+        "quantity": {
+          "claim": "1 架/艘",
+          "supporting_sources": [
+            "R052"
+          ],
+          "conflicting_sources": [],
+          "status": "insufficient",
+          "reason": "仅雷达明确数量为 1，新闻与舆论未说明具体数量"
+        }
+      }
+    ],
+    "location": {
+      "claim": "礼乐滩海域",
+      "supporting_sources": [
+        "N022",
+        "O034",
+        "R052"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "三源均明确提及礼乐滩海域"
+    },
+    "time": {
+      "claim": "2025 年 5 月 1 日 14:06-16:31",
+      "supporting_sources": [
+        "N022",
+        "R052"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与雷达时间精确匹配，舆论仅确认日期"
+    },
+    "mission": {
+      "claim": "反潜巡逻",
+      "supporting_sources": [
+        "N022",
+        "R052"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与雷达明确任务为反潜巡逻，舆论未提及具体任务但不构成冲突"
+    },
+    "movement": {
+      "claim": "活动",
+      "supporting_sources": [
+        "N022",
+        "O034"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻描述机动巡逻，舆论描述区域机动，雷达未说明但无冲突"
+    },
+    "unresolved_issues": [],
+    "explanation": "三源在平台、国籍、地点、时间区间及任务上高度一致。数量仅雷达明确，新闻舆论缺失但不构成冲突；舆论未提具体任务不视为反对。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T16:44:35.7396854Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"same_event\": true, \"platforms\": [{\"platform_index\": 0, \"platform\": {\"claim\": \"意大利莱蒙多·蒙特库科利号多用途巡逻舰\", \"supporting_sources\": [\"N022\", \"O034\", \"R052\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻、舆论、雷达三源均明确指向该舰\"}, \"country\": {\"claim\": \"意大利\", \"supporting_sources\": [\"N022\", \"O034\", \"R052\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源一致确认国籍为意大利\"}, \"quantity\": {\"claim\": \"1 架/艘\", \"supporting_sources\": [\"R052\"], \"conflicting_sources\": [], \"status\": \"insufficient\", \"reason\": \"仅雷达明确数量为 1，新闻与舆论未说明具体数量\"}}], \"location\": {\"claim\": \"礼乐滩海域\", \"supporting_sources\": [\"N022\", \"O034\", \"R052\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源均明确提及礼乐滩海域\"}, \"time\": {\"claim\": \"2025 年 5 月 1 日 14:06-16:31\", \"supporting_sources\": [\"N022\", \"R052\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻与雷达时间精确匹配，舆论仅确认日期\"}, \"mission\": {\"claim\": \"反潜巡逻\", \"supporting_sources\": [\"N022\", \"R052\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻与雷达明确任务为反潜巡逻，舆论未提及具体任务但不构成冲突\"}, \"movement\": {\"claim\": \"活动\", \"supporting_sources\": [\"N022\", \"O034\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻描述机动巡逻，舆论描述区域机动，雷达未说明但无冲突\"}, \"unresolved_issues\": [],\"explanation\": \"三源在平台、国籍、地点、时间区间及任务上高度一致。数量仅雷达明确，新闻舆论缺失但不构成冲突；舆论未提具体任务不视为反对。\"}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 11443588900,
+    "load_duration": 16879700,
+    "prompt_eval_count": 2068,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 839839000,
+    "eval_count": 517,
+    "eval_duration": 10363042000
+  }
+}

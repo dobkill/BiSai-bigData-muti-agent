@@ -1,0 +1,149 @@
+{
+  "role": "extraction",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "materials": [
+      {
+        "source_id": "O023",
+        "kind": "opinion",
+        "text": "时间：2025.5.1\n\n标题：俄军苏-35S在黄海开展对海突击训练引发关注\n\n正文：据联合早报报道，俄罗斯空天军苏-35S多用途战斗机于2025年5月1日凌晨在黄海方向执行对海突击训练任务，训练自2时49分开始，至4时14分结束。相关动态引发外界对俄军在该方向任务组织模式的讨论。有分析认为，此类训练有助于部队进一步熟悉复杂海空环境下的流程衔接，围绕训练协同与流程熟悉的观察也随之增多。\n"
+      },
+      {
+        "source_id": "O024",
+        "kind": "opinion",
+        "text": "时间：2025.5.1\n\n标题：法国导弹护卫舰在巴伦支海持续机动引发媒体关注\n\n正文：据今日头条报道，2025年5月1日8时37分至10时07分，法国一艘“大邱级”导弹护卫舰在巴伦支海围绕任务区域保持机动，行动范围保持在指定任务海域。有关讨论关注该型护卫舰在复杂海况下的区域机动与任务连续性表现，认为其平台运用特点可能有助于维持长时间的海上存在。\n"
+      },
+      {
+        "source_id": "O025",
+        "kind": "opinion",
+        "text": "时间：2025.5.1\n\n标题：俄军图-95MS轰炸机在南海方向组织远程轰炸训练\n\n正文：据联合早报报道，俄罗斯图-95MS战略轰炸机于2025年5月1日17时13分至19时38分在南海方向执行远程轰炸训练任务。该平台围绕既定科目组织训练，按计划完成相关平台之间的行动衔接。分析人士认为，此类训练有助于观察俄军战略航空兵在陌生海域的流程熟悉程度与训练协同水平。\n"
+      },
+      {
+        "source_id": "O026",
+        "kind": "opinion",
+        "text": "时间：2025.5.1\n\n标题：俄军2架苏-35S在黄海方向执行战备警巡任务\n\n正文：据社交媒体军事观察账号报道，俄罗斯2架苏-35S多用途战斗机于2025年5月1日在黄海方向执行战备警巡任务。相关平台沿既定方向保持机动，围绕任务区域维持部署或警戒。这一动向被视为俄军在东亚前沿存在和部署持续性的常规体现。\n"
+      }
+    ]
+  },
+  "result": {
+    "items": [
+      {
+        "source_id": "O023",
+        "platforms": [
+          {
+            "name": "苏 -35S",
+            "country": "俄罗斯",
+            "quantity": null,
+            "quote": "俄罗斯空天军苏-35S 多用途战斗机",
+            "quantity_quote": "2025 年 5 月 1 日凌晨在黄海方向执行对海突击训练任务，训练自 2 时 49 分开始，至 4 时 14 分结束。相关动态引发外界对俄军在该方向任务组织模式的讨论。有分析认为，此类训练有助于部队进一步熟悉复杂海空环境下的流程衔接，围绕训练协同与流程熟悉的观察也随之增多。"
+          }
+        ],
+        "location": {
+          "value": "黄海方向",
+          "quote": "在黄海方向执行对海突击训练任务"
+        },
+        "mission": {
+          "value": "对海突击训练",
+          "quote": "执行对海突击训练任务"
+        },
+        "start_time": "02:49",
+        "end_time": "04:14",
+        "time_quote": "训练自 2 时 49 分开始，至 4 时 14 分结束",
+        "movement": "活动",
+        "movement_quote": "在黄海方向执行对海突击训练任务"
+      },
+      {
+        "source_id": "O024",
+        "platforms": [
+          {
+            "name": "“大邱级”导弹护卫舰",
+            "country": "法国",
+            "quantity": 1,
+            "quote": "法国一艘“大邱级”导弹护卫舰",
+            "quantity_quote": "一艘“大邱级”导弹护卫舰"
+          }
+        ],
+        "location": {
+          "value": "巴伦支海",
+          "quote": "在巴伦支海围绕任务区域保持机动"
+        },
+        "mission": {
+          "value": null,
+          "quote": ""
+        },
+        "start_time": "08:37",
+        "end_time": "10:07",
+        "time_quote": "2025 年 5 月 1 日 8 时 37 分至 10 时 07 分",
+        "movement": "活动",
+        "movement_quote": "在巴伦支海围绕任务区域保持机动"
+      },
+      {
+        "source_id": "O025",
+        "platforms": [
+          {
+            "name": "图 -95MS",
+            "country": "俄罗斯",
+            "quantity": null,
+            "quote": "俄罗斯图-95MS 战略轰炸机",
+            "quantity_quote": ""
+          }
+        ],
+        "location": {
+          "value": "南海方向",
+          "quote": "在南海方向执行远程轰炸训练任务"
+        },
+        "mission": {
+          "value": "远程轰炸训练",
+          "quote": "执行远程轰炸训练任务"
+        },
+        "start_time": "17:13",
+        "end_time": "19:38",
+        "time_quote": "于 2025 年 5 月 1 日 17 时 13 分至 19 时 38 分在南海方向执行远程轰炸训练任务",
+        "movement": "活动",
+        "movement_quote": "在南海方向执行远程轰炸训练任务"
+      },
+      {
+        "source_id": "O026",
+        "platforms": [
+          {
+            "name": "苏 -35S",
+            "country": "俄罗斯",
+            "quantity": 2,
+            "quote": "俄罗斯 2 架苏-35S 多用途战斗机",
+            "quantity_quote": "俄罗斯 2 架苏-35S 多用途战斗机"
+          }
+        ],
+        "location": {
+          "value": "黄海方向",
+          "quote": "在黄海方向执行战备警巡任务"
+        },
+        "mission": {
+          "value": "战备警巡",
+          "quote": "执行战备警巡任务"
+        },
+        "start_time": null,
+        "end_time": null,
+        "time_quote": "",
+        "movement": "活动",
+        "movement_quote": "在黄海方向执行战备警巡任务"
+      }
+    ]
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T16:02:33.578195Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\n  \"items\": [\n    {\n      \"source_id\": \"O023\",\n      \"platforms\": [\n        {\n          \"name\": \"苏 -35S\",\n          \"country\": \"俄罗斯\",\n          \"quantity\": null,\n          \"quote\": \"俄罗斯空天军苏-35S 多用途战斗机\",\n          \"quantity_quote\": \"2025 年 5 月 1 日凌晨在黄海方向执行对海突击训练任务，训练自 2 时 49 分开始，至 4 时 14 分结束。相关动态引发外界对俄军在该方向任务组织模式的讨论。有分析认为，此类训练有助于部队进一步熟悉复杂海空环境下的流程衔接，围绕训练协同与流程熟悉的观察也随之增多。\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"黄海方向\",\n        \"quote\": \"在黄海方向执行对海突击训练任务\"\n      },\n      \"mission\": {\n        \"value\": \"对海突击训练\",\n        \"quote\": \"执行对海突击训练任务\"\n      },\n      \"start_time\": \"02:49\",\n      \"end_time\": \"04:14\",\n      \"time_quote\": \"训练自 2 时 49 分开始，至 4 时 14 分结束\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"在黄海方向执行对海突击训练任务\"\n    },\n    {\n      \"source_id\": \"O024\",\n      \"platforms\": [\n        {\n          \"name\": \"“大邱级”导弹护卫舰\",\n          \"country\": \"法国\",\n          \"quantity\": null,\n          \"quote\": \"法国一艘“大邱级”导弹护卫舰\",\n          \"quantity_quote\": \"\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"巴伦支海\",\n        \"quote\": \"在巴伦支海围绕任务区域保持机动\"\n      },\n      \"mission\": {\n        \"value\": null,\n        \"quote\": \"\"\n      },\n      \"start_time\": \"08:37\",\n      \"end_time\": \"10:07\",\n      \"time_quote\": \"2025 年 5 月 1 日 8 时 37 分至 10 时 07 分\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"在巴伦支海围绕任务区域保持机动\"\n    },\n    {\n      \"source_id\": \"O025\",\n      \"platforms\": [\n        {\n          \"name\": \"图 -95MS\",\n          \"country\": \"俄罗斯\",\n          \"quantity\": null,\n          \"quote\": \"俄罗斯图-95MS 战略轰炸机\",\n          \"quantity_quote\": \"\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"南海方向\",\n        \"quote\": \"在南海方向执行远程轰炸训练任务\"\n      },\n      \"mission\": {\n        \"value\": \"远程轰炸训练\",\n        \"quote\": \"执行远程轰炸训练任务\"\n      },\n      \"start_time\": \"17:13\",\n      \"end_time\": \"19:38\",\n      \"time_quote\": \"于 2025 年 5 月 1 日 17 时 13 分至 19 时 38 分在南海方向执行远程轰炸训练任务\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"在南海方向执行远程轰炸训练任务\"\n    },\n    {\n      \"source_id\": \"O026\",\n      \"platforms\": [\n        {\n          \"name\": \"苏 -35S\",\n          \"country\": \"俄罗斯\",\n          \"quantity\": 2,\n          \"quote\": \"俄罗斯 2 架苏-35S 多用途战斗机\",\n          \"quantity_quote\": \"俄罗斯 2 架苏-35S 多用途战斗机\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"黄海方向\",\n        \"quote\": \"在黄海方向执行战备警巡任务\"\n      },\n      \"mission\": {\n        \"value\": \"战备警巡\",\n        \"quote\": \"执行战备警巡任务\"\n      },\n      \"start_time\": null,\n      \"end_time\": null,\n      \"time_quote\": \"\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"在黄海方向执行战备警巡任务\"\n    }\n  ]\n}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 20499409500,
+    "load_duration": 7154700,
+    "prompt_eval_count": 887,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 421529000,
+    "eval_count": 1056,
+    "eval_duration": 19864425000
+  }
+}

@@ -1,0 +1,832 @@
+{
+  "role": "alignment",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N047",
+      "kind": "news",
+      "title": "意大利空军F-35B战机在永暑礁附近海域进行对海突击训练",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：意大利空军F-35B战机在永暑礁附近海域进行对海突击训练\n正文：2025年5月1日20时09分至22时34分，意大利空军F-35B短距起降战斗机在永暑礁附近海域围绕任务海域组织对海突击训练，按计划完成相关平台之间的行动衔接。\n\n主题词：意大利空军  F-35B短距起降战斗机  对海突击训练  永暑礁附近海域\n",
+      "platforms": [
+        {
+          "name": "F-35B短距起降战斗机",
+          "country": "意大利",
+          "quantity": null,
+          "quote": "意大利空军F-35B短距起降战斗机",
+          "quantity_quote": "",
+          "country_raw": "意大利空军"
+        }
+      ],
+      "location": {
+        "raw": "永暑礁附近海域",
+        "region": "永暑礁附近海域",
+        "direction": "南海",
+        "precision": "具体区域",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "永暑礁附近海域"
+      },
+      "mission": {
+        "value": "对海突击训练",
+        "quote": "组织对海突击训练"
+      },
+      "start_time": "20:09",
+      "end_time": "22:34",
+      "movement": "活动"
+    },
+    "opinion_candidates": [
+      {
+        "id": "O013",
+        "kind": "opinion",
+        "title": "意大利海军F-35B在南海开展舰载机起降训练",
+        "text": "时间：2025.5.1\n\n标题：意大利海军F-35B在南海开展舰载机起降训练\n\n正文：据央视新闻报道，2025年5月1日5时23分至7时48分，意大利海军在南海方向组织F-35B短距起降战斗机进行舰载机起降训练。围绕这一部署，有分析认为相关行动有助于提升参演兵力在远海环境下的任务组织水平。围绕训练协同维度的讨论指出，此类按计划保持机动并持续执行舰载机起降训练的模式，被视为对流程熟悉程度的有效检验。\n",
+        "platforms": [
+          {
+            "name": "F-35B短距起降战斗机",
+            "country": "意大利",
+            "quantity": null,
+            "quote": "F-35B短距起降战斗机",
+            "quantity_quote": "",
+            "country_raw": "意大利"
+          }
+        ],
+        "location": {
+          "raw": "南海方向",
+          "region": "南海",
+          "direction": "南海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在南海方向组织F-35B短距起降战斗机进行舰载机起降训练"
+        },
+        "mission": {
+          "value": "舰载机起降训练",
+          "quote": "进行舰载机起降训练"
+        },
+        "start_time": "05:23",
+        "end_time": "07:48",
+        "movement": "活动"
+      },
+      {
+        "id": "O017",
+        "kind": "opinion",
+        "title": "意大利两架F-35B在南海进行对海突击训练",
+        "text": "时间：2025.5.1\n\n标题：意大利两架F-35B在南海进行对海突击训练\n\n正文：据公开防务媒体报道，2025年5月1日，意大利两架F-35B短距起降战斗机在南海方向执行了对海突击训练任务。报道称，这两架战机围绕既定科目组织训练，按计划完成了相关平台之间的行动衔接。这一训练活动被视为意大利加强在印太区域活动节奏的一部分。\n",
+        "platforms": [
+          {
+            "name": "F-35B短距起降战斗机",
+            "country": "意大利",
+            "quantity": 2,
+            "quote": "意大利两架F-35B短距起降战斗机",
+            "quantity_quote": "两架F-35B短距起降战斗机",
+            "country_raw": "意大利"
+          }
+        ],
+        "location": {
+          "raw": "南海方向",
+          "region": "南海",
+          "direction": "南海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在南海方向"
+        },
+        "mission": {
+          "value": "对海突击训练任务",
+          "quote": "执行了对海突击训练任务"
+        },
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动"
+      },
+      {
+        "id": "O002",
+        "kind": "opinion",
+        "title": "俄军苏-30SM夜间在黄岩岛海域持续活动近两个半小时",
+        "text": "时间：2025.5.1\n\n标题：俄军苏-30SM夜间在黄岩岛海域持续活动近两个半小时\n\n正文：据联合早报报道，俄罗斯空天军两架苏-30SM多用途战斗机于2025年5月1日20时31分至22时56分在南海黄岩岛海域展开夜间活动。从公开信息看，这两架战机在近两个半小时内围绕任务区域保持机动，行动范围保持在指定任务海域，展现出良好的任务连续性。这一动向被视为俄方在南海保持常态化存在的一部分，其区域机动能力受到外界关注。\n",
+        "platforms": [
+          {
+            "name": "苏-30SM多用途战斗机",
+            "country": "俄罗斯",
+            "quantity": 2,
+            "quote": "俄罗斯空天军两架苏-30SM多用途战斗机",
+            "quantity_quote": "两架苏-30SM多用途战斗机",
+            "country_raw": "俄罗斯"
+          }
+        ],
+        "location": {
+          "raw": "南海黄岩岛海域",
+          "region": "黄岩岛海域",
+          "direction": "南海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在南海黄岩岛海域展开夜间活动"
+        },
+        "mission": {
+          "value": null,
+          "quote": ""
+        },
+        "start_time": "20:31",
+        "end_time": "22:56",
+        "movement": "活动"
+      },
+      {
+        "id": "O023",
+        "kind": "opinion",
+        "title": "俄军苏-35S在黄海开展对海突击训练引发关注",
+        "text": "时间：2025.5.1\n\n标题：俄军苏-35S在黄海开展对海突击训练引发关注\n\n正文：据联合早报报道，俄罗斯空天军苏-35S多用途战斗机于2025年5月1日凌晨在黄海方向执行对海突击训练任务，训练自2时49分开始，至4时14分结束。相关动态引发外界对俄军在该方向任务组织模式的讨论。有分析认为，此类训练有助于部队进一步熟悉复杂海空环境下的流程衔接，围绕训练协同与流程熟悉的观察也随之增多。\n",
+        "platforms": [
+          {
+            "name": "苏-35S",
+            "country": "俄罗斯",
+            "quantity": null,
+            "quote": "俄罗斯空天军苏-35S多用途战斗机",
+            "quantity_quote": "2025年5月1日凌晨在黄海方向执行对海突击训练任务，训练自2时49分开始，至4时14分结束。相关动态引发外界对俄军在该方向任务组织模式的讨论。有分析认为，此类训练有助于部队进一步熟悉复杂海空环境下的流程衔接，围绕训练协同与流程熟悉的观察也随之增多",
+            "country_raw": "俄罗斯"
+          }
+        ],
+        "location": {
+          "raw": "黄海方向",
+          "region": "黄海",
+          "direction": "黄海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在黄海方向执行对海突击训练任务"
+        },
+        "mission": {
+          "value": "对海突击训练",
+          "quote": "执行对海突击训练任务"
+        },
+        "start_time": "02:49",
+        "end_time": "04:14",
+        "movement": "活动"
+      },
+      {
+        "id": "O021",
+        "kind": "opinion",
+        "title": "中国两架歼-35隐身战斗机在东海执行战备警巡",
+        "text": "时间：2025.5.1\n\n标题：中国两架歼-35隐身战斗机在东海执行战备警巡\n\n正文：据央视新闻报道，2025年5月1日，中国两架歼-35舰载隐身战斗机在东海方向按计划保持机动并持续执行战备警巡任务。围绕此次平台运用的讨论认为，该行动有助于维持前沿存在和部署持续性，展现了在特定方向的区域机动能力。\n",
+        "platforms": [
+          {
+            "name": "歼-35",
+            "country": "中国",
+            "quantity": 2,
+            "quote": "两架歼-35舰载隐身战斗机",
+            "quantity_quote": "两架歼-35舰载隐身战斗机",
+            "country_raw": "中国"
+          }
+        ],
+        "location": {
+          "raw": "东海方向",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在东海方向"
+        },
+        "mission": {
+          "value": "战备警巡任务",
+          "quote": "执行战备警巡任务"
+        },
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动"
+      },
+      {
+        "id": "O026",
+        "kind": "opinion",
+        "title": "俄军2架苏-35S在黄海方向执行战备警巡任务",
+        "text": "时间：2025.5.1\n\n标题：俄军2架苏-35S在黄海方向执行战备警巡任务\n\n正文：据社交媒体军事观察账号报道，俄罗斯2架苏-35S多用途战斗机于2025年5月1日在黄海方向执行战备警巡任务。相关平台沿既定方向保持机动，围绕任务区域维持部署或警戒。这一动向被视为俄军在东亚前沿存在和部署持续性的常规体现。\n",
+        "platforms": [
+          {
+            "name": "苏-35S",
+            "country": "俄罗斯",
+            "quantity": 2,
+            "quote": "俄罗斯2架苏-35S多用途战斗机",
+            "quantity_quote": "俄罗斯2架苏-35S多用途战斗机",
+            "country_raw": "俄罗斯"
+          }
+        ],
+        "location": {
+          "raw": "黄海方向",
+          "region": "黄海",
+          "direction": "黄海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在黄海方向执行战备警巡任务"
+        },
+        "mission": {
+          "value": "战备警巡",
+          "quote": "执行战备警巡任务"
+        },
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动"
+      }
+    ],
+    "radar_candidates": [
+      {
+        "id": "R012",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "F-35B短距起降战斗机",
+            "country": "意大利",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-6AA063C4B12ACF",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "对海突击训练",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "对海突击训练"
+        ],
+        "start_time": "2025.05.01 20:09:00",
+        "end_time": "2025.05.01 22:34:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            112.9457,
+            113.0552
+          ],
+          "latitude_range": [
+            9.3324,
+            9.7025
+          ],
+          "median": [
+            112.9952,
+            9.5192
+          ],
+          "origins": [
+            [
+              112.9816,
+              9.6684
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [
+            "南海"
+          ],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [],
+        "batch": "AIR-6AA063C4B12ACF",
+        "sibling_ids": [],
+        "hull_values": [],
+        "country_values": [
+          "意大利"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 12
+      },
+      {
+        "id": "R027",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "F-35B短距起降战斗机",
+            "country": "意大利",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-FE3B02517D3201",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "舰载机起降训练",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "舰载机起降训练"
+        ],
+        "start_time": "2025.05.01 05:23:00",
+        "end_time": "2025.05.01 07:48:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            113.8457,
+            114.0318
+          ],
+          "latitude_range": [
+            9.9281,
+            10.1122
+          ],
+          "median": [
+            113.9522,
+            10.0739
+          ],
+          "origins": [
+            [
+              114.0615,
+              10.0999
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [
+            "南海"
+          ],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [],
+        "batch": "AIR-FE3B02517D3201",
+        "sibling_ids": [],
+        "hull_values": [],
+        "country_values": [
+          "意大利"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 12
+      },
+      {
+        "id": "R005",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "E-7A“楔尾”预警与控制机",
+            "country": "澳大利亚",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-1E8932535F4C00",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "预警指挥",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "预警指挥"
+        ],
+        "start_time": "2025.05.01 20:47:00",
+        "end_time": "2025.05.01 22:12:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            114.0365,
+            114.309
+          ],
+          "latitude_range": [
+            10.8438,
+            11.0568
+          ],
+          "median": [
+            114.1968,
+            10.9882
+          ],
+          "origins": [
+            [
+              114.3492,
+              10.8698
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [
+            "南海"
+          ],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [],
+        "batch": "AIR-1E8932535F4C00",
+        "sibling_ids": [],
+        "hull_values": [],
+        "country_values": [
+          "澳大利亚"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 10
+      },
+      {
+        "id": "R003",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "苏-35S多用途战斗机",
+            "country": "俄罗斯",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-059D33759B03E0",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "对海突击训练",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "对海突击训练"
+        ],
+        "start_time": "2025.05.01 02:49:00",
+        "end_time": "2025.05.01 04:14:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            123.3186,
+            123.8023
+          ],
+          "latitude_range": [
+            36.8715,
+            37.1399
+          ],
+          "median": [
+            123.5398,
+            37.0232
+          ],
+          "origins": [
+            [
+              123.3549,
+              36.8994
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [
+            "黄海"
+          ],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [],
+        "batch": "AIR-059D33759B03E0",
+        "sibling_ids": [],
+        "hull_values": [],
+        "country_values": [
+          "俄罗斯"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 13
+      },
+      {
+        "id": "R001",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "歼-35舰载隐身战斗机",
+            "country": "中国",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-0435F7FE86050A",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "战备警巡",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "战备警巡"
+        ],
+        "start_time": "2025.05.01 17:35:00",
+        "end_time": "2025.05.01 19:00:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            114.281,
+            114.3812
+          ],
+          "latitude_range": [
+            15.1769,
+            15.2435
+          ],
+          "median": [
+            114.2998,
+            15.2165
+          ],
+          "origins": [
+            [
+              114.2637,
+              15.2165
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [
+            "南海"
+          ],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [
+          "同批号存在远距离起始位置簇，候选拆分不代表归属已经消解"
+        ],
+        "batch": "AIR-0435F7FE86050A",
+        "sibling_ids": [
+          "R002"
+        ],
+        "hull_values": [],
+        "country_values": [
+          "中国"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 7
+      },
+      {
+        "id": "R002",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "歼-35舰载隐身战斗机",
+            "country": "中国",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-0435F7FE86050A",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "战备警巡",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "战备警巡"
+        ],
+        "start_time": "2025.05.01 17:49:10",
+        "end_time": "2025.05.01 19:00:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            122.1749,
+            122.4161
+          ],
+          "latitude_range": [
+            27.6146,
+            27.8573
+          ],
+          "median": [
+            122.2806,
+            27.772
+          ],
+          "origins": [
+            [
+              122.4117,
+              27.8816
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [
+            "东海"
+          ],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [
+          "同批号存在远距离起始位置簇，候选拆分不代表归属已经消解"
+        ],
+        "batch": "AIR-0435F7FE86050A",
+        "sibling_ids": [
+          "R001"
+        ],
+        "hull_values": [],
+        "country_values": [
+          "中国"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 6
+      }
+    ],
+    "recall": {
+      "opinion": [
+        {
+          "id": "O013",
+          "score": 4.64068,
+          "cosine": 0.96068,
+          "platform_similarity": 1.0,
+          "time_overlap": 0.0,
+          "location_relation": "contains"
+        },
+        {
+          "id": "O017",
+          "score": 4.64024,
+          "cosine": 0.96024,
+          "platform_similarity": 1.0,
+          "time_overlap": null,
+          "location_relation": "contains"
+        },
+        {
+          "id": "O002",
+          "score": 1.91947,
+          "cosine": 0.74154,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.8482758620689655,
+          "location_relation": "same_direction_only"
+        },
+        {
+          "id": "O023",
+          "score": 0.79687,
+          "cosine": 0.79687,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "different_direction"
+        },
+        {
+          "id": "O021",
+          "score": 0.77289,
+          "cosine": 0.77289,
+          "platform_similarity": 0.0,
+          "time_overlap": null,
+          "location_relation": "different_direction"
+        },
+        {
+          "id": "O026",
+          "score": 0.7592,
+          "cosine": 0.7592,
+          "platform_similarity": 0.0,
+          "time_overlap": null,
+          "location_relation": "different_direction"
+        }
+      ],
+      "radar": [
+        {
+          "id": "R012",
+          "score": 5.35407,
+          "cosine": 0.95407,
+          "platform_similarity": 1.0,
+          "time_overlap": 1.0,
+          "location_relation": "missing"
+        },
+        {
+          "id": "R027",
+          "score": 4.13971,
+          "cosine": 0.93971,
+          "platform_similarity": 1.0,
+          "time_overlap": 0.0,
+          "location_relation": "missing"
+        },
+        {
+          "id": "R005",
+          "score": 1.89364,
+          "cosine": 0.69364,
+          "platform_similarity": 0.0,
+          "time_overlap": 1.0,
+          "location_relation": "missing"
+        },
+        {
+          "id": "R003",
+          "score": 0.7939,
+          "cosine": 0.7939,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "missing"
+        },
+        {
+          "id": "R001",
+          "score": 0.79337,
+          "cosine": 0.79337,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "missing"
+        },
+        {
+          "id": "R002",
+          "score": 0.7888,
+          "cosine": 0.7888,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "missing"
+        }
+      ]
+    }
+  },
+  "result": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O013",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "任务类型不同：新闻为'对海突击训练'，候选 O013 为'舰载机起降训练'；时间区间无重叠（20:09-22:34 vs 05:23-07:48）。"
+      },
+      {
+        "candidate_id": "O017",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.85,
+        "reason": "任务、平台、地点（永暑礁属于南海方向）、时间（同一天）完全一致。虽未提及具体礁盘，但'南海方向'涵盖永暑礁，且任务描述高度吻合，视为同一活动报道。"
+      },
+      {
+        "candidate_id": "O002",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "平台完全不同（苏 -30SM vs F-35B），国籍不同（俄罗斯 vs 意大利），地点不同（黄岩岛 vs 永暑礁）。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R012",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.98,
+        "reason": "时间、任务、平台、数量完全一致。坐标位于南海（永暑礁附近海域），虽地点字段缺失但辅助召回方向匹配，确认为同一活动。"
+      },
+      {
+        "candidate_id": "R027",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "任务不同（舰载机起降 vs 对海突击），时间无重叠（凌晨 vs 晚间）。"
+      },
+      {
+        "candidate_id": "R005",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.99,
+        "reason": "平台、国籍、任务均完全不同。"
+      }
+    ],
+    "ambiguity": "O017 仅提及'南海方向'未明确永暑礁，但结合时间任务和新闻内容可推断为同一活动；R012 坐标辅助召回方向与新闻一致，确认为同一次活动。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T16:17:12.3144305Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"opinion_edges\": [{\"candidate_id\": \"O013\", \"platform_indices\": [0], \"relation\": \"different\", \"confidence\": 0.95, \"reason\": \"任务类型不同：新闻为'对海突击训练'，候选 O013 为'舰载机起降训练'；时间区间无重叠（20:09-22:34 vs 05:23-07:48）。\"}, {\"candidate_id\": \"O017\", \"platform_indices\": [0], \"relation\": \"same\", \"confidence\": 0.85, \"reason\": \"任务、平台、地点（永暑礁属于南海方向）、时间（同一天）完全一致。虽未提及具体礁盘，但'南海方向'涵盖永暑礁，且任务描述高度吻合，视为同一活动报道。\"}, {\"candidate_id\": \"O002\", \"platform_indices\": [], \"relation\": \"different\", \"confidence\": 0.98, \"reason\": \"平台完全不同（苏 -30SM vs F-35B），国籍不同（俄罗斯 vs 意大利），地点不同（黄岩岛 vs 永暑礁）。\"}], \"radar_edges\": [{\"candidate_id\": \"R012\", \"platform_indices\": [0], \"relation\": \"same\", \"confidence\": 0.98, \"reason\": \"时间、任务、平台、数量完全一致。坐标位于南海（永暑礁附近海域），虽地点字段缺失但辅助召回方向匹配，确认为同一活动。\"}, {\"candidate_id\": \"R027\", \"platform_indices\": [0], \"relation\": \"different\", \"confidence\": 0.95, \"reason\": \"任务不同（舰载机起降 vs 对海突击），时间无重叠（凌晨 vs 晚间）。\"}, {\"candidate_id\": \"R005\", \"platform_indices\": [], \"relation\": \"different\", \"confidence\": 0.99, \"reason\": \"平台、国籍、任务均完全不同。\"}],\"ambiguity\": \"O017 仅提及'南海方向'未明确永暑礁，但结合时间任务和新闻内容可推断为同一活动；R012 坐标辅助召回方向与新闻一致，确认为同一次活动。\"}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 11664804900,
+    "load_duration": 16530300,
+    "prompt_eval_count": 5963,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 1981838000,
+    "eval_count": 495,
+    "eval_duration": 9356592000
+  }
+}

@@ -1,0 +1,711 @@
+{
+  "id": "N040",
+  "news_id": "N040",
+  "opinion_id": "O041",
+  "radar_ids": [
+    "R017"
+  ],
+  "radar_slots": {
+    "0": "R017"
+  },
+  "alignment": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O041",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.95,
+        "reason": "平台（新加坡 F-15SG）、日期（2025.5.1）、时间区间（11:44-13:14）及地点（孟加拉湾）完全一致。任务描述“对海突击训练”与“战备警巡”在语境下可视为同一行动的不同表述或报道侧重差异，且雷达数据 R017 佐证了该时段存在同型号、同数量、同任务的记录。"
+      },
+      {
+        "candidate_id": "O004",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.9,
+        "reason": "地点不同（安达曼海 vs 孟加拉湾），时间区间不重叠（08:19-10:44 vs 11:44-13:14），属于同一天不同次活动。"
+      },
+      {
+        "candidate_id": "O003",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台国籍及型号完全不同（中国运 -8 vs 新加坡 F-15SG），地点不同（南海 vs 孟加拉湾）。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R017",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.92,
+        "reason": "平台（新加坡 F-15SG）、时间（11:44-13:14）、任务（对海突击训练）与新闻完全匹配。虽然雷达地点字段缺失，但坐标范围（88°E, 14°N-15°N）位于孟加拉湾海域，且批次号唯一对应此次行动，可确认为同一事件的数据源。"
+      },
+      {
+        "candidate_id": "R004",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.88,
+        "reason": "时间不重叠（08:19-10:44），任务不同（战备警巡 vs 对海突击训练），坐标位于安达曼海，属于同一天另一批次活动。"
+      },
+      {
+        "candidate_id": "R021",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台国籍及型号完全不同（中国歼 -15T vs 新加坡 F-15SG），地点坐标位于黄海/济州岛方向，与新闻无关。"
+      }
+    ],
+    "ambiguity": "任务名称表述差异（对海突击训练 vs 战备警巡）在军事报道中常见，结合精确的时间、地点及雷达数据佐证，判定为同一活动。"
+  },
+  "candidates": {
+    "opinion": [
+      {
+        "id": "O041",
+        "score": 6.13234,
+        "cosine": 0.93234,
+        "platform_similarity": 1.0,
+        "time_overlap": 1.0,
+        "location_relation": "same"
+      },
+      {
+        "id": "O004",
+        "score": 4.10397,
+        "cosine": 0.90397,
+        "platform_similarity": 1.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_named_regions"
+      },
+      {
+        "id": "O003",
+        "score": 1.78952,
+        "cosine": 0.73069,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.8823529411764706,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O031",
+        "score": 0.78712,
+        "cosine": 0.78712,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O023",
+        "score": 0.77821,
+        "cosine": 0.77821,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O036",
+        "score": 0.76112,
+        "cosine": 0.76112,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      }
+    ],
+    "radar": [
+      {
+        "id": "R017",
+        "score": 5.32263,
+        "cosine": 0.92263,
+        "platform_similarity": 1.0,
+        "time_overlap": 1.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R004",
+        "score": 4.08393,
+        "cosine": 0.88393,
+        "platform_similarity": 1.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R021",
+        "score": 1.98658,
+        "cosine": 0.78658,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R003",
+        "score": 0.76209,
+        "cosine": 0.76209,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R024",
+        "score": 0.75847,
+        "cosine": 0.75847,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      }
+    ]
+  },
+  "assignment_diagnostics": {
+    "opinion": [],
+    "radar": []
+  },
+  "verification": {
+    "same_event": true,
+    "facts": [
+      {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "F-15SG",
+        "supporting_sources": [
+          "N040",
+          "O041",
+          "R017"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N040': 'F-15SG', 'O041': 'F-15SG多用途战斗机', 'R017': 'F-15SG多用途战斗机'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "新加坡 F-15SG",
+          "supporting_sources": [
+            "N040",
+            "O041",
+            "R017"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均明确指向新加坡 F-15SG，无冲突。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "新加坡",
+        "supporting_sources": [
+          "N040",
+          "O041",
+          "R017"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N040': '新加坡', 'O041': '新加坡', 'R017': '新加坡'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "新加坡",
+          "supporting_sources": [
+            "N040",
+            "O041",
+            "R017"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源一致确认国籍为新加坡。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "2架",
+        "supporting_sources": [
+          "O041",
+          "R017"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'O041': 2, 'R017': 2}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "2 架",
+          "supporting_sources": [
+            "O041",
+            "R017"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论明确提及“两架”，雷达批号 AIR-86FAD17E60C49E 数量列为 2；新闻未说明具体数量，但不构成冲突。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "孟加拉湾",
+        "supporting_sources": [
+          "N040",
+          "O041"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "复核明示地点和PDF包含关系：{'N040': '孟加拉湾', 'O041': '孟加拉湾'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "孟加拉湾",
+          "supporting_sources": [
+            "N040",
+            "O041"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻与舆论均明确表述为“孟加拉湾”；雷达坐标范围（88°E, 14°N-15°N）地理上位于孟加拉湾，佐证了该地点结论。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N040": {
+            "raw": "孟加拉湾",
+            "region": "孟加拉湾",
+            "direction": "其他",
+            "precision": "原文区域",
+            "mapping": "PDF未列入三大核心海域的区域归其他",
+            "transit": false,
+            "quote": "孟加拉湾"
+          },
+          "O041": {
+            "raw": "孟加拉湾",
+            "region": "孟加拉湾",
+            "direction": "其他",
+            "precision": "原文区域",
+            "mapping": "PDF未列入三大核心海域的区域归其他",
+            "transit": false,
+            "quote": "在孟加拉湾"
+          }
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "起点 11:44，终点 13:14",
+        "supporting_sources": [
+          "N040",
+          "O041",
+          "R017"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "2025.5.1 11:44-13:14",
+          "supporting_sources": [
+            "N040",
+            "O041",
+            "R017"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源在日期、开始及结束时间上完全一致。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "components": {
+          "start_time": {
+            "value": "11:44",
+            "support": [
+              "N040",
+              "O041",
+              "R017"
+            ],
+            "conflicts": [],
+            "status": "supported",
+            "source_values": {
+              "N040": "11:44",
+              "O041": "11:44",
+              "R017": "11:44"
+            }
+          },
+          "end_time": {
+            "value": "13:14",
+            "support": [
+              "N040",
+              "O041",
+              "R017"
+            ],
+            "conflicts": [],
+            "status": "supported",
+            "source_values": {
+              "N040": "13:14",
+              "O041": "13:14",
+              "R017": "13:14"
+            }
+          }
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "对海突击训练",
+        "supporting_sources": [
+          "N040",
+          "R017"
+        ],
+        "conflicting_sources": [
+          "O041"
+        ],
+        "status": "conflict",
+        "reason": "原文明示任务：{'N040': ['对海突击训练'], 'O041': ['战备警巡'], 'R017': ['对海突击训练']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "对海突击训练/战备警巡",
+          "supporting_sources": [
+            "N040",
+            "O041",
+            "R017"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻称“对海突击训练”，舆论称“战备警巡”，雷达任务列为“对海突击训练”。结合精确的时间、地点及平台数据，两者视为同一行动的不同表述或报道侧重差异，无实质冲突。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N040": [
+            "对海突击训练"
+          ],
+          "O041": [
+            "战备警巡"
+          ],
+          "R017": [
+            "对海突击训练"
+          ]
+        },
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N040",
+          "O041"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "supporting_sources": [
+            "N040",
+            "O041"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻与舆论均描述为围绕任务海域组织行动并保持机动，符合“活动”特征；雷达虽未显式说明 movement 但时间地点匹配。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N040": "活动",
+          "O041": "活动",
+          "R017": "未说明"
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      }
+    ],
+    "unresolved_issues": [],
+    "explanation": "程序核验未通过：mission关键事实冲突：原文明示任务：{'N040': ['对海突击训练'], 'O041': ['战备警巡'], 'R017': ['对海突击训练']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+    "model_explanation": "三源（新闻、舆论、雷达）在平台型号国籍、活动时间地点上高度一致。数量由舆论和雷达共同支持（2 架）。任务名称虽有“对海突击训练”与“战备警巡”之别，但结合精确时空坐标及雷达数据佐证，判定为同一事件的不同表述，无未消解冲突。"
+  },
+  "reasons": [
+    "mission关键事实冲突：原文明示任务：{'N040': ['对海突击训练'], 'O041': ['战备警巡'], 'R017': ['对海突击训练']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决"
+  ],
+  "status": "不可信事件",
+  "verified_facts": [
+    {
+      "platform_index": 0,
+      "field": "platform",
+      "claim": "F-15SG",
+      "supporting_sources": [
+        "N040",
+        "O041",
+        "R017"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N040': 'F-15SG', 'O041': 'F-15SG多用途战斗机', 'R017': 'F-15SG多用途战斗机'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "新加坡 F-15SG",
+        "supporting_sources": [
+          "N040",
+          "O041",
+          "R017"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻、舆论、雷达三源均明确指向新加坡 F-15SG，无冲突。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "country",
+      "claim": "新加坡",
+      "supporting_sources": [
+        "N040",
+        "O041",
+        "R017"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N040': '新加坡', 'O041': '新加坡', 'R017': '新加坡'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "新加坡",
+        "supporting_sources": [
+          "N040",
+          "O041",
+          "R017"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源一致确认国籍为新加坡。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "quantity",
+      "claim": "2架",
+      "supporting_sources": [
+        "O041",
+        "R017"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'O041': 2, 'R017': 2}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "2 架",
+        "supporting_sources": [
+          "O041",
+          "R017"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "舆论明确提及“两架”，雷达批号 AIR-86FAD17E60C49E 数量列为 2；新闻未说明具体数量，但不构成冲突。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "location",
+      "claim": "孟加拉湾",
+      "supporting_sources": [
+        "N040",
+        "O041"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "复核明示地点和PDF包含关系：{'N040': '孟加拉湾', 'O041': '孟加拉湾'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "孟加拉湾",
+        "supporting_sources": [
+          "N040",
+          "O041"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与舆论均明确表述为“孟加拉湾”；雷达坐标范围（88°E, 14°N-15°N）地理上位于孟加拉湾，佐证了该地点结论。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N040": {
+          "raw": "孟加拉湾",
+          "region": "孟加拉湾",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false,
+          "quote": "孟加拉湾"
+        },
+        "O041": {
+          "raw": "孟加拉湾",
+          "region": "孟加拉湾",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false,
+          "quote": "在孟加拉湾"
+        }
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "time",
+      "claim": "起点 11:44，终点 13:14",
+      "supporting_sources": [
+        "N040",
+        "O041",
+        "R017"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "2025.5.1 11:44-13:14",
+        "supporting_sources": [
+          "N040",
+          "O041",
+          "R017"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源在日期、开始及结束时间上完全一致。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "components": {
+        "start_time": {
+          "value": "11:44",
+          "support": [
+            "N040",
+            "O041",
+            "R017"
+          ],
+          "conflicts": [],
+          "status": "supported",
+          "source_values": {
+            "N040": "11:44",
+            "O041": "11:44",
+            "R017": "11:44"
+          }
+        },
+        "end_time": {
+          "value": "13:14",
+          "support": [
+            "N040",
+            "O041",
+            "R017"
+          ],
+          "conflicts": [],
+          "status": "supported",
+          "source_values": {
+            "N040": "13:14",
+            "O041": "13:14",
+            "R017": "13:14"
+          }
+        }
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "movement",
+      "claim": "活动",
+      "supporting_sources": [
+        "N040",
+        "O041"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N040",
+          "O041"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与舆论均描述为围绕任务海域组织行动并保持机动，符合“活动”特征；雷达虽未显式说明 movement 但时间地点匹配。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N040": "活动",
+        "O041": "活动",
+        "R017": "未说明"
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    }
+  ],
+  "radar_row_count": 10,
+  "direction": "其他",
+  "report_eligible": false,
+  "directory": "不可信事件/N040_新加坡F-15SG多用途战斗机在孟加拉湾开展对海突击训练"
+}

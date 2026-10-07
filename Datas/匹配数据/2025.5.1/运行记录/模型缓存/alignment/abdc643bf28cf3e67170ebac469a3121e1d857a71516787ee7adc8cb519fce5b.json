@@ -1,0 +1,638 @@
+{
+  "role": "alignment",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N016",
+      "kind": "news",
+      "title": "韩国海军岛山安昌浩级潜艇在鄂霍次克海持续活动",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：韩国海军岛山安昌浩级潜艇在鄂霍次克海持续活动\n正文：2025年5月1日，韩国海军1艘岛山安昌浩级常规潜艇在鄂霍次克海持续活动，围绕任务区域保持机动，行动范围保持在指定任务海域。\n\n主题词：韩国海军  岛山安昌浩级常规潜艇  鄂霍次克海\n",
+      "platforms": [
+        {
+          "name": "岛山安昌浩级常规潜艇",
+          "country": "韩国",
+          "quantity": 1,
+          "quote": "岛山安昌浩级常规潜艇",
+          "quantity_quote": "1艘岛山安昌浩级常规潜艇",
+          "country_raw": "韩国"
+        }
+      ],
+      "location": {
+        "raw": "鄂霍次克海",
+        "region": "鄂霍次克海",
+        "direction": "其他",
+        "precision": "原文区域",
+        "mapping": "PDF未列入三大核心海域的区域归其他",
+        "transit": false,
+        "quote": "在鄂霍次克海持续活动"
+      },
+      "mission": {
+        "value": null,
+        "quote": ""
+      },
+      "start_time": null,
+      "end_time": null,
+      "movement": "活动"
+    },
+    "opinion_candidates": [
+      {
+        "id": "O009",
+        "kind": "opinion",
+        "title": "韩国岛山安昌浩级潜艇在鄂霍次克海完成海上巡逻",
+        "text": "时间：2025.5.1\n\n标题：韩国岛山安昌浩级潜艇在鄂霍次克海完成海上巡逻\n\n正文：据俄罗斯卫星通讯社报道，2025年5月1日17时40分至19时05分，韩国岛山安昌浩级常规潜艇在鄂霍次克海执行了海上巡逻任务。媒体关注到，该平台沿既定方向保持机动，围绕任务区域维持部署与警戒。这一行动被认为展现了韩国海军在该方向的前沿存在和部署持续性。\n",
+        "platforms": [
+          {
+            "name": "岛山安昌浩级常规潜艇",
+            "country": "韩国",
+            "quantity": null,
+            "quote": "韩国岛山安昌浩级常规潜艇",
+            "quantity_quote": "",
+            "country_raw": "韩国"
+          }
+        ],
+        "location": {
+          "raw": "鄂霍次克海",
+          "region": "鄂霍次克海",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false,
+          "quote": "在鄂霍次克海"
+        },
+        "mission": {
+          "value": "海上巡逻",
+          "quote": "执行了海上巡逻任务"
+        },
+        "start_time": "17:40",
+        "end_time": "19:05",
+        "movement": "活动"
+      },
+      {
+        "id": "O044",
+        "kind": "opinion",
+        "title": "韩国海军独岛级两栖攻击舰在东海开展训练引发关注",
+        "text": "时间：2025.5.1\n\n标题：韩国海军独岛级两栖攻击舰在东海开展训练引发关注\n\n正文：据公开防务媒体报道，韩国海军一艘“独岛”级两栖攻击舰于2025年5月1日在东海方向按计划组织两栖作战训练。该舰围绕任务方向展开兵力投送环节，并完成平台间的协同配合。相关媒体观察认为，此次训练体现了韩方在东海方向维持两栖投送流程的意图。围绕兵力投送与平台协同的讨论，有分析指出此类公开演训有助于外界评估其两栖战备的衔接水平。\n",
+        "platforms": [
+          {
+            "name": "独岛级",
+            "country": "韩国",
+            "quantity": 1,
+            "quote": "一艘“独岛”级两栖攻击舰",
+            "quantity_quote": "一艘",
+            "country_raw": "韩国"
+          }
+        ],
+        "location": {
+          "raw": "东海方向",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在东海方向"
+        },
+        "mission": {
+          "value": "两栖作战训练",
+          "quote": "两栖作战训练"
+        },
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动"
+      },
+      {
+        "id": "O038",
+        "kind": "opinion",
+        "title": "韩国两架AW-159直升机在阿拉伯海执行反潜巡逻",
+        "text": "时间：2025.5.1\n\n标题：韩国两架AW-159直升机在阿拉伯海执行反潜巡逻\n\n正文：据社交媒体军事观察账号报道，韩国海军两架AW-159反潜直升机于2025年5月1日在阿拉伯海围绕任务海域组织反潜巡逻。相关平台按计划保持机动并持续执行反潜巡逻，结合既定航线持续收集公开可观察信息。围绕态势感知维度的讨论认为，这一部署有助于维持对关键水道的持续监视能力。\n",
+        "platforms": [
+          {
+            "name": "AW-159",
+            "country": "韩国",
+            "quantity": 2,
+            "quote": "两架AW-159反潜直升机",
+            "quantity_quote": "两架",
+            "country_raw": "韩国"
+          }
+        ],
+        "location": {
+          "raw": "阿拉伯海围绕任务海域",
+          "region": "阿拉伯海",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false,
+          "quote": "在阿拉伯海围绕任务海域"
+        },
+        "mission": {
+          "value": "反潜巡逻",
+          "quote": "组织反潜巡逻"
+        },
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动"
+      },
+      {
+        "id": "O048",
+        "kind": "opinion",
+        "title": "东海反潜巡逻常态化 039A型潜艇持续监视受关注",
+        "text": "时间：2025.5.1\n\n标题：东海反潜巡逻常态化 039A型潜艇持续监视受关注\n\n正文：据地区军事观察机构报道，2025年5月1日，中国一艘039A型常规潜艇在东海围绕任务海域组织反潜巡逻。该平台按计划保持机动并持续执行反潜巡逻，结合既定航线持续收集公开可观察信息。这一动向被视为中国海军强化区域侦巡与持续监视能力的体现。相关行动围绕指定海域保持巡逻或监视，有助于提升水下态势感知的连续性。\n",
+        "platforms": [
+          {
+            "name": "039A型常规潜艇",
+            "country": "中国",
+            "quantity": 1,
+            "quote": "一艘039A型常规潜艇",
+            "quantity_quote": "一艘039A型常规潜艇",
+            "country_raw": "中国"
+          }
+        ],
+        "location": {
+          "raw": "东海围绕任务海域",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在东海围绕任务海域"
+        },
+        "mission": {
+          "value": "反潜巡逻",
+          "quote": "组织反潜巡逻"
+        },
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动"
+      },
+      {
+        "id": "O037",
+        "kind": "opinion",
+        "title": "中国轰-6K轰炸机编队进入东海上海外海展开机动",
+        "text": "时间：2025.5.1\n\n标题：中国轰-6K轰炸机编队进入东海上海外海展开机动\n\n正文：据地区军事观察机构报道，2025年5月1日，中国空军2架轰-6K轰炸机由外围航线进入东海上海外海任务海域，随后围绕任务区域保持机动，行动范围保持在指定任务海域。有关讨论关注到，此次行动在组织上呈现出清晰的批次衔接与区域控制特征，被视为检验轰炸机单元在近海复杂环境下任务连续性的一次常规安排。\n",
+        "platforms": [
+          {
+            "name": "轰-6K",
+            "country": "中国",
+            "quantity": 2,
+            "quote": "2架轰-6K轰炸机",
+            "quantity_quote": "2架",
+            "country_raw": "中国"
+          }
+        ],
+        "location": {
+          "raw": "东海上海外海任务海域",
+          "region": "上海外海",
+          "direction": "东海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "进入东海上海外海任务海域"
+        },
+        "mission": {
+          "value": null,
+          "quote": ""
+        },
+        "start_time": null,
+        "end_time": null,
+        "movement": "进入"
+      }
+    ],
+    "radar_candidates": [
+      {
+        "id": "R028",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "岛山安昌浩级常规潜艇",
+            "country": "韩国",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-10B1685DD16775",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "鄂霍次克海",
+          "region": "鄂霍次克海",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "鄂霍次克海",
+            "region": "鄂霍次克海",
+            "direction": "其他",
+            "precision": "原文区域",
+            "mapping": "PDF未列入三大核心海域的区域归其他",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "海上巡逻",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "海上巡逻"
+        ],
+        "start_time": "2025.05.01 17:40:00",
+        "end_time": "2025.05.01 19:05:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-10B1685DD16775",
+        "sibling_ids": [],
+        "hull_values": [
+          "KSS-III"
+        ],
+        "country_values": [
+          "韩国"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 11
+      },
+      {
+        "id": "R041",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "独岛级两栖攻击舰",
+            "country": "韩国",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-9E0C83A3EAACAD",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "东海南部",
+          "region": "东海南部",
+          "direction": "东海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "东海南部",
+            "region": "东海南部",
+            "direction": "东海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "两栖作战训练",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "两栖作战训练"
+        ],
+        "start_time": "2025.05.01 08:52:00",
+        "end_time": "2025.05.01 10:17:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-9E0C83A3EAACAD",
+        "sibling_ids": [],
+        "hull_values": [
+          "LPH-6111"
+        ],
+        "country_values": [
+          "韩国"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 11
+      },
+      {
+        "id": "R036",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "大邱级导弹护卫舰",
+            "country": "韩国",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-8A01BA5005E13B",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "巴伦支海",
+          "region": "巴伦支海",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "巴伦支海",
+            "region": "巴伦支海",
+            "direction": "其他",
+            "precision": "原文区域",
+            "mapping": "PDF未列入三大核心海域的区域归其他",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "自由航行",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "自由航行"
+        ],
+        "start_time": "2025.05.01 08:37:00",
+        "end_time": "2025.05.01 10:07:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-8A01BA5005E13B",
+        "sibling_ids": [],
+        "hull_values": [
+          "FFG-II"
+        ],
+        "country_values": [
+          "韩国"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 10
+      },
+      {
+        "id": "R049",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "大邱级导弹护卫舰",
+            "country": "韩国",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-C6E8F82CBFE3BF",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "中太平洋",
+          "region": "中太平洋",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "中太平洋",
+            "region": "中太平洋",
+            "direction": "其他",
+            "precision": "原文区域",
+            "mapping": "PDF未列入三大核心海域的区域归其他",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "海上监视侦察",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "海上监视侦察"
+        ],
+        "start_time": "2025.05.01 05:12:00",
+        "end_time": "2025.05.01 07:37:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-C6E8F82CBFE3BF",
+        "sibling_ids": [],
+        "hull_values": [
+          "FFG-II"
+        ],
+        "country_values": [
+          "韩国"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 11
+      },
+      {
+        "id": "R039",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "039A型常规潜艇",
+            "country": "中国",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-99D68A95107CA3",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "东海中部",
+          "region": "东海中部",
+          "direction": "东海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "东海中部",
+            "region": "东海中部",
+            "direction": "东海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "反潜巡逻",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "反潜巡逻"
+        ],
+        "start_time": "2025.05.01 17:02:00",
+        "end_time": "2025.05.01 19:27:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-99D68A95107CA3",
+        "sibling_ids": [],
+        "hull_values": [
+          "TYPE-039A"
+        ],
+        "country_values": [
+          "中国"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 11
+      }
+    ],
+    "recall": {
+      "opinion": [
+        {
+          "id": "O009",
+          "score": 4.81789,
+          "cosine": 0.96789,
+          "platform_similarity": 0.95,
+          "time_overlap": null,
+          "location_relation": "same"
+        },
+        {
+          "id": "O044",
+          "score": 0.96329,
+          "cosine": 0.76329,
+          "platform_similarity": 0.0,
+          "time_overlap": null,
+          "location_relation": "different_direction"
+        },
+        {
+          "id": "O038",
+          "score": 0.95169,
+          "cosine": 0.75169,
+          "platform_similarity": 0.0,
+          "time_overlap": null,
+          "location_relation": "different_named_regions"
+        },
+        {
+          "id": "O048",
+          "score": 0.76141,
+          "cosine": 0.76141,
+          "platform_similarity": 0.0,
+          "time_overlap": null,
+          "location_relation": "different_direction"
+        },
+        {
+          "id": "O037",
+          "score": 0.75591,
+          "cosine": 0.75591,
+          "platform_similarity": 0.0,
+          "time_overlap": null,
+          "location_relation": "different_direction"
+        }
+      ],
+      "radar": [
+        {
+          "id": "R028",
+          "score": 4.81558,
+          "cosine": 0.96558,
+          "platform_similarity": 0.95,
+          "time_overlap": null,
+          "location_relation": "same"
+        },
+        {
+          "id": "R041",
+          "score": 0.97231,
+          "cosine": 0.77231,
+          "platform_similarity": 0.0,
+          "time_overlap": null,
+          "location_relation": "different_direction"
+        },
+        {
+          "id": "R036",
+          "score": 0.93416,
+          "cosine": 0.73416,
+          "platform_similarity": 0.0,
+          "time_overlap": null,
+          "location_relation": "different_named_regions"
+        },
+        {
+          "id": "R049",
+          "score": 0.93227,
+          "cosine": 0.73227,
+          "platform_similarity": 0.0,
+          "time_overlap": null,
+          "location_relation": "different_named_regions"
+        },
+        {
+          "id": "R039",
+          "score": 0.73956,
+          "cosine": 0.73956,
+          "platform_similarity": 0.0,
+          "time_overlap": null,
+          "location_relation": "different_direction"
+        }
+      ]
+    }
+  },
+  "result": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O009",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.95,
+        "reason": "平台（韩国岛山安昌浩级潜艇）、地点（鄂霍次克海）、时间（2025.5.1）及任务性质（巡逻/活动）完全一致。雷达数据 R028 提供了精确的时间窗口（17:40-19:05），与新闻描述的“持续活动”逻辑吻合，虽新闻未列具体起止时间，但属于同一事件的不同信息源补充。"
+      },
+      {
+        "candidate_id": "O044",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "平台型号不同（独岛级两栖攻击舰 vs 岛山安昌浩级潜艇），地点不同（东海 vs 鄂霍次克海），任务不同（两栖训练 vs 潜艇活动），确认为不同活动。"
+      },
+      {
+        "candidate_id": "O038",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "平台类型完全不同（直升机 vs 潜艇），地点不同（阿拉伯海 vs 鄂霍次克海），确认为不同活动。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R028",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 1.0,
+        "reason": "平台、地点、时间完全匹配。新闻描述为宏观的“持续活动”，雷达数据提供了具体的批次号（SHIP-10B1685DD16775）和精确时间段，两者互为印证，确认为同一事件。"
+      },
+      {
+        "candidate_id": "R041",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "平台型号不同（独岛级 vs 岛山安昌浩级），地点不同（东海南部 vs 鄂霍次克海），确认为不同活动。"
+      },
+      {
+        "candidate_id": "R036",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "平台型号不同（大邱级护卫舰 vs 潜艇），地点不同（巴伦支海 vs 鄂霍次克海），确认为不同活动。"
+      }
+    ],
+    "ambiguity": "无。新闻与雷达数据 R028 在平台、时间、地点上高度一致，新闻的模糊描述被雷达数据的精确记录所补充，不存在歧义。其他候选因平台或地点明显冲突排除。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T17:11:14.9196187Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"opinion_edges\": [{\"candidate_id\": \"O009\", \"platform_indices\": [0], \"relation\": \"same\", \"confidence\": 0.95, \"reason\": \"平台（韩国岛山安昌浩级潜艇）、地点（鄂霍次克海）、时间（2025.5.1）及任务性质（巡逻/活动）完全一致。雷达数据 R028 提供了精确的时间窗口（17:40-19:05），与新闻描述的“持续活动”逻辑吻合，虽新闻未列具体起止时间，但属于同一事件的不同信息源补充。\"}, {\"candidate_id\": \"O044\", \"platform_indices\": [], \"relation\": \"different\", \"confidence\": 0.98, \"reason\": \"平台型号不同（独岛级两栖攻击舰 vs 岛山安昌浩级潜艇），地点不同（东海 vs 鄂霍次克海），任务不同（两栖训练 vs 潜艇活动），确认为不同活动。\"}, {\"candidate_id\": \"O038\", \"platform_indices\": [], \"relation\": \"different\", \"confidence\": 0.98, \"reason\": \"平台类型完全不同（直升机 vs 潜艇），地点不同（阿拉伯海 vs 鄂霍次克海），确认为不同活动。\"}], \"radar_edges\": [{\"candidate_id\": \"R028\", \"platform_indices\": [0], \"relation\": \"same\", \"confidence\": 1.0, \"reason\": \"平台、地点、时间完全匹配。新闻描述为宏观的“持续活动”，雷达数据提供了具体的批次号（SHIP-10B1685DD16775）和精确时间段，两者互为印证，确认为同一事件。\"}, {\"candidate_id\": \"R041\", \"platform_indices\": [], \"relation\": \"different\", \"confidence\": 0.98, \"reason\": \"平台型号不同（独岛级 vs 岛山安昌浩级），地点不同（东海南部 vs 鄂霍次克海），确认为不同活动。\"}, {\"candidate_id\": \"R036\", \"platform_indices\": [], \"relation\": \"different\", \"confidence\": 0.98, \"reason\": \"平台型号不同（大邱级护卫舰 vs 潜艇），地点不同（巴伦支海 vs 鄂霍次克海），确认为不同活动。\"}],\"ambiguity\": \"无。新闻与雷达数据 R028 在平台、时间、地点上高度一致，新闻的模糊描述被雷达数据的精确记录所补充，不存在歧义。其他候选因平台或地点明显冲突排除。\"}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 13683851800,
+    "load_duration": 10662800,
+    "prompt_eval_count": 4612,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 1541519000,
+    "eval_count": 571,
+    "eval_duration": 11823056000
+  }
+}

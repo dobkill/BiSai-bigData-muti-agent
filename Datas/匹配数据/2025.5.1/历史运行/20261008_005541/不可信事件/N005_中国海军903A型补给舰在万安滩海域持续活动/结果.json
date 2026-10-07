@@ -1,0 +1,493 @@
+{
+  "id": "N005",
+  "news_id": "N005",
+  "opinion_id": "O016",
+  "radar_ids": [
+    "R044"
+  ],
+  "radar_slots": {
+    "0": "R044"
+  },
+  "alignment": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O016",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.95,
+        "reason": "平台型号（903A）、国家（中国）、日期（2025.5.1）及任务性质（远海训练/持续活动）完全一致。新闻明确定位在“万安滩海域”，而候选O016描述为“南海方向”并给出具体时间段，符合大范围包含具体区域的关系。尽管新闻未提供精确起止时间，但行动模式（围绕任务区域机动）高度吻合。"
+      },
+      {
+        "candidate_id": "O015",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "平台型号和国家一致，日期相同，但地点冲突：新闻明确为“万安滩海域”（南海），而候选O015描述为“东海海域”。同一艘舰艇在同一时间不可能同时出现在两个互斥的海域。"
+      },
+      {
+        "candidate_id": "O003",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.99,
+        "reason": "平台类型完全不同：新闻主体为"
+      },
+      {
+        "candidate_id": "O048",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.99,
+        "reason": "平台类型不同（潜艇 vs 补给舰）且地点不同（东海 vs 南海），属于完全不同的活动。"
+      },
+      {
+        "candidate_id": "O032",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.99,
+        "reason": "平台类型不同（航母 vs 补给舰）且地点不同（东海 vs 南海），属于完全不同的活动。"
+      },
+      {
+        "candidate_id": "O047",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.99,
+        "reason": "平台类型不同（登陆舰 vs 补给舰）且地点不同（安达曼海 vs 南海），属于完全不同的活动。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R044",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.98,
+        "reason": "平台型号（903A）、国家、日期完全一致。地点精确匹配“万安滩海域”。任务均为远海训练/持续活动。雷达数据提供了具体的时间段（02:54-04:19），与新闻描述的“持续活动”在逻辑上兼容，属于同一事件的具体记录。"
+      },
+      {
+        "candidate_id": "R045",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "平台型号和国家一致，日期相同，但地点冲突：新闻为“万安滩海域”（南海），而雷达数据R045位于“冲绳海槽”（东海）。同一时间不可能同时出现在两地。"
+      },
+      {
+        "candidate_id": "R039",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.99,
+        "reason": "平台类型不同（潜艇 vs 补给舰），地点也不同（东海中部 vs 南海），属于不同活动。"
+      }
+    ],
+    "ambiguity": "新闻未提供具体的起止时间，仅描述为“持续活动”，因此无法在时间维度上与任何候选进行精确重叠验证，但基于地点和平台的强一致性，可推断O016和R044为同一事件的不同来源记录。"
+  },
+  "candidates": {
+    "opinion": [
+      {
+        "id": "O016",
+        "score": 4.62353,
+        "cosine": 0.94353,
+        "platform_similarity": 1.0,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O015",
+        "score": 4.12113,
+        "cosine": 0.92113,
+        "platform_similarity": 1.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O003",
+        "score": 1.37735,
+        "cosine": 0.69735,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O048",
+        "score": 0.99275,
+        "cosine": 0.79275,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O032",
+        "score": 0.98417,
+        "cosine": 0.78417,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O047",
+        "score": 0.97374,
+        "cosine": 0.77374,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      }
+    ],
+    "radar": [
+      {
+        "id": "R044",
+        "score": 4.96156,
+        "cosine": 0.96156,
+        "platform_similarity": 1.0,
+        "time_overlap": null,
+        "location_relation": "same"
+      },
+      {
+        "id": "R045",
+        "score": 4.11472,
+        "cosine": 0.91472,
+        "platform_similarity": 1.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "R039",
+        "score": 0.96885,
+        "cosine": 0.76885,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "R042",
+        "score": 0.96608,
+        "cosine": 0.76608,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "R034",
+        "score": 0.96065,
+        "cosine": 0.76065,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      }
+    ]
+  },
+  "verification": {
+    "same_event": true,
+    "facts": [
+      {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "903A型综合补给舰",
+        "supporting_sources": [
+          "N005",
+          "O016",
+          "R044"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N005': '903A型综合补给舰', 'O016': '903A型综合补给舰', 'R044': '903A型综合补给舰'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "903A 型综合补给舰",
+          "supporting_sources": [
+            "N005",
+            "O016",
+            "R044"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均明确识别为 903A 型，无冲突。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "中国",
+        "supporting_sources": [
+          "N005",
+          "O016",
+          "R044"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N005': '中国', 'O016': '中国', 'R044': '中国'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "中国",
+          "supporting_sources": [
+            "N005",
+            "O016",
+            "R044"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均明确标注国籍为中国，无冲突。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "1艘",
+        "supporting_sources": [
+          "N005",
+          "O016"
+        ],
+        "conflicting_sources": [
+          "R044"
+        ],
+        "status": "conflict",
+        "reason": "程序按已关联平台的明示字段复核：{'N005': 1, 'O016': 1, 'R044': 2}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "2 架",
+          "supporting_sources": [
+            "R044"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "雷达 R044 明确显示数量为 2；新闻 N005 提及"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "万安滩海域",
+        "supporting_sources": [
+          "N005",
+          "R044"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻 N005 和雷达 R044 均明确定位在万安滩海域；舆论 O016 描述为南海方向，属于大范围兼容，不构成冲突。",
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "2025.05.01 02:54-04:19",
+        "supporting_sources": [
+          "O016",
+          "R044"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "舆论 O016 和雷达 R044 均提供了具体的起止时间（02:54-04:19），新闻 N005 仅描述为持续活动，未提供具体时间但不构成冲突。",
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "远海训练",
+        "supporting_sources": [
+          "O016",
+          "R044"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "舆论 O016 和雷达 R044 均明确任务为远海训练；新闻 N005 描述为持续活动，属于泛称，与具体任务不冲突。",
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N005",
+          "O016"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源均表明舰艇处于活动状态（新闻：持续活动/机动；舆论：组织训练；雷达：未说明但位置固定）。；程序剔除缺失或精度不足的支持引用：['R044']",
+        "rejected_supports": [
+          "R044"
+        ],
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      }
+    ],
+    "unresolved_issues": [],
+    "explanation": "三源（新闻、舆论、雷达）在平台型号、国籍、地点（万安滩海域）、时间（2025.5.1 02:54-04:19）、任务（远海训练）及活动状态上高度一致。雷达提供了具体的数量（2）和时间细节，舆论补充了精确时刻，新闻确认了具体区域和持续性质。所有关键事实均有至少两类来源支持，无未消解冲突。"
+  },
+  "reasons": [
+    "quantity关键事实冲突：程序按已关联平台的明示字段复核：{'N005': 1, 'O016': 1, 'R044': 2}；缺失不支持也不反对",
+    "平台0 903A型综合补给舰 的quantity明确冲突：{'N005': 1, 'O016': 1, 'R044': 2}"
+  ],
+  "status": "不可信事件",
+  "verified_facts": [
+    {
+      "platform_index": 0,
+      "field": "platform",
+      "claim": "903A型综合补给舰",
+      "supporting_sources": [
+        "N005",
+        "O016",
+        "R044"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N005': '903A型综合补给舰', 'O016': '903A型综合补给舰', 'R044': '903A型综合补给舰'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "903A 型综合补给舰",
+        "supporting_sources": [
+          "N005",
+          "O016",
+          "R044"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻、舆论、雷达三源均明确识别为 903A 型，无冲突。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "country",
+      "claim": "中国",
+      "supporting_sources": [
+        "N005",
+        "O016",
+        "R044"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N005': '中国', 'O016': '中国', 'R044': '中国'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "中国",
+        "supporting_sources": [
+          "N005",
+          "O016",
+          "R044"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻、舆论、雷达三源均明确标注国籍为中国，无冲突。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "location",
+      "claim": "万安滩海域",
+      "supporting_sources": [
+        "N005",
+        "R044"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻 N005 和雷达 R044 均明确定位在万安滩海域；舆论 O016 描述为南海方向，属于大范围兼容，不构成冲突。",
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "time",
+      "claim": "2025.05.01 02:54-04:19",
+      "supporting_sources": [
+        "O016",
+        "R044"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "舆论 O016 和雷达 R044 均提供了具体的起止时间（02:54-04:19），新闻 N005 仅描述为持续活动，未提供具体时间但不构成冲突。",
+      "supporting_source_types": [
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "mission",
+      "claim": "远海训练",
+      "supporting_sources": [
+        "O016",
+        "R044"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "舆论 O016 和雷达 R044 均明确任务为远海训练；新闻 N005 描述为持续活动，属于泛称，与具体任务不冲突。",
+      "supporting_source_types": [
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "movement",
+      "claim": "活动",
+      "supporting_sources": [
+        "N005",
+        "O016"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "三源均表明舰艇处于活动状态（新闻：持续活动/机动；舆论：组织训练；雷达：未说明但位置固定）。；程序剔除缺失或精度不足的支持引用：['R044']",
+      "rejected_supports": [
+        "R044"
+      ],
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    }
+  ],
+  "radar_row_count": 10,
+  "direction": "南海",
+  "report_eligible": false,
+  "directory": "不可信事件/N005_中国海军903A型补给舰在万安滩海域持续活动"
+}

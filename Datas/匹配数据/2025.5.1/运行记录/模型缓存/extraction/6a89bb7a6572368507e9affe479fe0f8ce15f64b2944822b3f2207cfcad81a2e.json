@@ -1,0 +1,149 @@
+{
+  "role": "extraction",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "materials": [
+      {
+        "source_id": "O015",
+        "kind": "opinion",
+        "text": "时间：2025.5.1\n\n标题：中国903A型综合补给舰在东海执行例行部署\n\n正文：据联合早报报道，2025年5月1日5时56分至7时21分，中国海军903A型综合补给舰在东海海域执行例行部署任务。媒体关注到，该舰沿既定方向保持机动并围绕任务区域维持部署，体现了部署持续性和区域机动能力。\n"
+      },
+      {
+        "source_id": "O016",
+        "kind": "opinion",
+        "text": "时间：2025.5.1\n\n标题：中国903A型补给舰南海远海训练时段引发流程熟悉讨论\n\n正文：据央视新闻报道，2025年5月1日2时54分至4时19分，中国一艘903A型综合补给舰在南海方向按计划组织了远海训练。有关讨论关注到，该舰围绕既定科目完成相关平台之间的行动衔接，这一过程有助于检验任务组织和训练协同水平。\n"
+      },
+      {
+        "source_id": "O017",
+        "kind": "opinion",
+        "text": "时间：2025.5.1\n\n标题：意大利两架F-35B在南海进行对海突击训练\n\n正文：据公开防务媒体报道，2025年5月1日，意大利两架F-35B短距起降战斗机在南海方向执行了对海突击训练任务。报道称，这两架战机围绕既定科目组织训练，按计划完成了相关平台之间的行动衔接。这一训练活动被视为意大利加强在印太区域活动节奏的一部分。\n"
+      },
+      {
+        "source_id": "O018",
+        "kind": "opinion",
+        "text": "时间：2025.5.1\n\n标题：越南两架苏-30MK2战斗机在南海进行对海突击训练\n\n正文：据央视新闻报道，越南空军两架苏-30MK2多用途战斗机于2025年5月1日在南海围绕既定科目组织对海突击训练。相关行动按计划完成平台之间的行动衔接，被认为有助于飞行员熟悉海上任务流程。\n"
+      }
+    ]
+  },
+  "result": {
+    "items": [
+      {
+        "source_id": "O015",
+        "platforms": [
+          {
+            "name": "903A 型综合补给舰",
+            "country": "中国",
+            "quantity": null,
+            "quote": "中国海军 903A 型综合补给舰",
+            "quantity_quote": ""
+          }
+        ],
+        "location": {
+          "value": "东海海域",
+          "quote": "在东海海域"
+        },
+        "mission": {
+          "value": "例行部署任务",
+          "quote": "执行例行部署任务"
+        },
+        "start_time": "05:56",
+        "end_time": "07:21",
+        "time_quote": "5 时 56 分至 7 时 21 分",
+        "movement": "活动",
+        "movement_quote": "在东海海域执行例行部署任务"
+      },
+      {
+        "source_id": "O016",
+        "platforms": [
+          {
+            "name": "903A 型综合补给舰",
+            "country": "中国",
+            "quantity": 1,
+            "quote": "中国一艘 903A 型综合补给舰",
+            "quantity_quote": "一艘903A型综合补给舰"
+          }
+        ],
+        "location": {
+          "value": "南海方向",
+          "quote": "在南海方向"
+        },
+        "mission": {
+          "value": "远海训练",
+          "quote": "组织了远海训练"
+        },
+        "start_time": "02:54",
+        "end_time": "04:19",
+        "time_quote": "2 时 54 分至 4 时 19 分",
+        "movement": "活动",
+        "movement_quote": "在南海方向按计划组织了远海训练"
+      },
+      {
+        "source_id": "O017",
+        "platforms": [
+          {
+            "name": "F-35B 短距起降战斗机",
+            "country": "意大利",
+            "quantity": 2,
+            "quote": "意大利两架 F-35B 短距起降战斗机",
+            "quantity_quote": "两架F-35B短距起降战斗机"
+          }
+        ],
+        "location": {
+          "value": "南海方向",
+          "quote": "在南海方向"
+        },
+        "mission": {
+          "value": "对海突击训练任务",
+          "quote": "执行了对海突击训练任务"
+        },
+        "start_time": null,
+        "end_time": null,
+        "time_quote": "",
+        "movement": "活动",
+        "movement_quote": "在南海方向执行了对海突击训练任务"
+      },
+      {
+        "source_id": "O018",
+        "platforms": [
+          {
+            "name": "苏 -30MK2 多用途战斗机",
+            "country": "越南",
+            "quantity": 2,
+            "quote": "越南空军两架苏 -30MK2 多用途战斗机",
+            "quantity_quote": "两架苏-30MK2多用途战斗机"
+          }
+        ],
+        "location": {
+          "value": "南海",
+          "quote": "在南海"
+        },
+        "mission": {
+          "value": "对海突击训练",
+          "quote": "组织对海突击训练"
+        },
+        "start_time": null,
+        "end_time": null,
+        "time_quote": "",
+        "movement": "活动",
+        "movement_quote": "在南海围绕既定科目组织对海突击训练"
+      }
+    ]
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T16:01:39.9973484Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\n  \"items\": [\n    {\n      \"source_id\": \"O015\",\n      \"platforms\": [\n        {\n          \"name\": \"903A 型综合补给舰\",\n          \"country\": \"中国\",\n          \"quantity\": null,\n          \"quote\": \"中国海军 903A 型综合补给舰\",\n          \"quantity_quote\": \"\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"东海海域\",\n        \"quote\": \"在东海海域\"\n      },\n      \"mission\": {\n        \"value\": \"例行部署任务\",\n        \"quote\": \"执行例行部署任务\"\n      },\n      \"start_time\": \"05:56\",\n      \"end_time\": \"07:21\",\n      \"time_quote\": \"5 时 56 分至 7 时 21 分\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"在东海海域执行例行部署任务\"\n    },\n    {\n      \"source_id\": \"O016\",\n      \"platforms\": [\n        {\n          \"name\": \"903A 型综合补给舰\",\n          \"country\": \"中国\",\n          \"quantity\": null,\n          \"quote\": \"中国一艘 903A 型综合补给舰\",\n          \"quantity_quote\": \"\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"南海方向\",\n        \"quote\": \"在南海方向\"\n      },\n      \"mission\": {\n        \"value\": \"远海训练\",\n        \"quote\": \"组织了远海训练\"\n      },\n      \"start_time\": \"02:54\",\n      \"end_time\": \"04:19\",\n      \"time_quote\": \"2 时 54 分至 4 时 19 分\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"在南海方向按计划组织了远海训练\"\n    },\n    {\n      \"source_id\": \"O017\",\n      \"platforms\": [\n        {\n          \"name\": \"F-35B 短距起降战斗机\",\n          \"country\": \"意大利\",\n          \"quantity\": null,\n          \"quote\": \"意大利两架 F-35B 短距起降战斗机\",\n          \"quantity_quote\": \"\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"南海方向\",\n        \"quote\": \"在南海方向\"\n      },\n      \"mission\": {\n        \"value\": \"对海突击训练任务\",\n        \"quote\": \"执行了对海突击训练任务\"\n      },\n      \"start_time\": null,\n      \"end_time\": null,\n      \"time_quote\": \"\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"在南海方向执行了对海突击训练任务\"\n    },\n    {\n      \"source_id\": \"O018\",\n      \"platforms\": [\n        {\n          \"name\": \"苏 -30MK2 多用途战斗机\",\n          \"country\": \"越南\",\n          \"quantity\": null,\n          \"quote\": \"越南空军两架苏 -30MK2 多用途战斗机\",\n          \"quantity_quote\": \"\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"南海\",\n        \"quote\": \"在南海\"\n      },\n      \"mission\": {\n        \"value\": \"对海突击训练\",\n        \"quote\": \"组织对海突击训练\"\n      },\n      \"start_time\": null,\n      \"end_time\": null,\n      \"time_quote\": \"\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"在南海围绕既定科目组织对海突击训练\"\n    }\n  ]\n}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 16479843000,
+    "load_duration": 14365300,
+    "prompt_eval_count": 818,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 406755000,
+    "eval_count": 868,
+    "eval_duration": 15923780000
+  }
+}

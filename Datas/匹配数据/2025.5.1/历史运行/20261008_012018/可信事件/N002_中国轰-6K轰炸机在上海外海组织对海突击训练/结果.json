@@ -1,0 +1,523 @@
+{
+  "id": "N002",
+  "news_id": "N002",
+  "opinion_id": "O037",
+  "radar_ids": [
+    "R022"
+  ],
+  "radar_slots": {
+    "0": "R022"
+  },
+  "alignment": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O037",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.95,
+        "reason": "平台（轰-6K）、地点（上海外海/东海）、任务（对海突击训练）及时间区间（11:21-13:46 vs 11:xx-13:xx）完全一致。虽O037未明确起止分钟，但描述的行动特征（进入、机动、区域控制）与新闻高度吻合，属于同一活动报道。"
+      },
+      {
+        "candidate_id": "O005",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.9,
+        "reason": "平台不同（德国台风 vs 中国轰-6K），时间不重叠（05:45-07:10 vs 11:21-13:46），地点虽同为东海但具体区域无重合证据，确认为不同活动。"
+      },
+      {
+        "candidate_id": "O021",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.85,
+        "reason": "平台不同（歼-35 vs 轰-6K），任务不同（战备警巡 vs 对海突击训练）。虽同在东海且时间有重叠，但缺乏同一编队协同或共同海域的具体描述，视为不同活动。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R022",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 1.0,
+        "reason": "平台（轰-6K）、任务（对海突击训练）、时间（11:21-13:46）与新闻完全一致。坐标范围（122.97-123.30E, 30.98-31.19N）精确覆盖上海外海区域，确认为同一活动的数据源。"
+      },
+      {
+        "candidate_id": "R021",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台不同（歼-15T vs 轰-6K），任务不同（舰载机起降 vs 对海突击），坐标位于黄海方向，与新闻地点不符。"
+      },
+      {
+        "candidate_id": "R016",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.9,
+        "reason": "平台不同（德国台风 vs 中国轰-6K），时间不重叠，虽坐标在东海但无关联证据，确认为不同活动。"
+      }
+    ],
+    "ambiguity": "O037未提供精确起止时间，仅凭标题和正文描述推断为同一活动；R022坐标为宽泛矩形辅助召回，需结合新闻文本确认具体海域边界，但整体指向一致。"
+  },
+  "candidates": {
+    "opinion": [
+      {
+        "id": "O037",
+        "score": 4.94217,
+        "cosine": 0.94217,
+        "platform_similarity": 1.0,
+        "time_overlap": null,
+        "location_relation": "same"
+      },
+      {
+        "id": "O003",
+        "score": 2.16439,
+        "cosine": 0.76439,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O041",
+        "score": 1.90195,
+        "cosine": 0.70195,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O021",
+        "score": 1.47247,
+        "cosine": 0.79247,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O005",
+        "score": 1.26381,
+        "cosine": 0.78381,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O031",
+        "score": 0.98655,
+        "cosine": 0.78655,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O023",
+        "score": 0.79025,
+        "cosine": 0.79025,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      }
+    ],
+    "radar": [
+      {
+        "id": "R022",
+        "score": 5.36815,
+        "cosine": 0.96815,
+        "platform_similarity": 1.0,
+        "time_overlap": 1.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R021",
+        "score": 2.14998,
+        "cosine": 0.79963,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.9586206896551724,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R009",
+        "score": 2.1467,
+        "cosine": 0.7467,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R034",
+        "score": 1.13954,
+        "cosine": 0.77954,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "same_direction_only"
+      },
+      {
+        "id": "R023",
+        "score": 0.9769,
+        "cosine": 0.7769,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R016",
+        "score": 0.77328,
+        "cosine": 0.77328,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      }
+    ]
+  },
+  "verification": {
+    "same_event": true,
+    "facts": [
+      {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "轰-6K轰炸机",
+        "supporting_sources": [
+          "N002",
+          "O037",
+          "R022"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N002': '轰-6K轰炸机', 'O037': '轰-6K', 'R022': '轰-6K轰炸机'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "轰 -6K 轰炸机",
+          "supporting_sources": [
+            "N002",
+            "O037",
+            "R022"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均确认为中国轰 -6K，无冲突"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "中国",
+        "supporting_sources": [
+          "N002",
+          "O037",
+          "R022"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N002': '中国', 'O037': '中国', 'R022': '中国'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "中国",
+          "supporting_sources": [
+            "N002",
+            "O037",
+            "R022"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均明确标注为中国，无冲突"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "2架",
+        "supporting_sources": [
+          "O037",
+          "R022"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'O037': 2, 'R022': 2}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "2 架",
+          "supporting_sources": [
+            "O037",
+            "R022"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论明确提及"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "上海外海（东海）",
+        "supporting_sources": [
+          "N002",
+          "O037"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与舆论直接描述为“上海外海”，雷达坐标范围覆盖该区域，三源一致；程序剔除缺失或精度不足的支持引用：['R022']",
+        "rejected_supports": [
+          "R022"
+        ],
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "2025 年 5 月 1 日 11:21-13:46",
+        "supporting_sources": [
+          "N002",
+          "R022"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与雷达精确时间完全一致；舆论仅提及日期，不冲突也不构成反证",
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "对海突击训练",
+        "supporting_sources": [
+          "N002",
+          "R022"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与雷达明确任务为“对海突击训练”；舆论描述为“机动/区域控制”，属于同一活动的泛称，无实质冲突",
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动（含进入、机动）",
+        "supporting_sources": [
+          "N002",
+          "O037"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻描述“保持机动”，舆论描述“进入...展开机动”，雷达虽未显式写 movement 但坐标变化隐含活动，三源逻辑一致；程序剔除缺失或精度不足的支持引用：['R022']",
+        "rejected_supports": [
+          "R022"
+        ],
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      }
+    ],
+    "unresolved_issues": [],
+    "explanation": "新闻、舆论、雷达三类来源在平台型号（轰 -6K）、国籍（中国）、地点（上海外海）、时间（5.1 11:21-13:46）及任务（对海突击训练）上高度一致。数量"
+  },
+  "reasons": [],
+  "status": "可信事件",
+  "verified_facts": [
+    {
+      "platform_index": 0,
+      "field": "platform",
+      "claim": "轰-6K轰炸机",
+      "supporting_sources": [
+        "N002",
+        "O037",
+        "R022"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N002': '轰-6K轰炸机', 'O037': '轰-6K', 'R022': '轰-6K轰炸机'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "轰 -6K 轰炸机",
+        "supporting_sources": [
+          "N002",
+          "O037",
+          "R022"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源（新闻、舆论、雷达）均确认为中国轰 -6K，无冲突"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "country",
+      "claim": "中国",
+      "supporting_sources": [
+        "N002",
+        "O037",
+        "R022"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N002': '中国', 'O037': '中国', 'R022': '中国'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "中国",
+        "supporting_sources": [
+          "N002",
+          "O037",
+          "R022"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源（新闻、舆论、雷达）均明确标注为中国，无冲突"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "quantity",
+      "claim": "2架",
+      "supporting_sources": [
+        "O037",
+        "R022"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'O037': 2, 'R022': 2}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "2 架",
+        "supporting_sources": [
+          "O037",
+          "R022"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "舆论明确提及"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "location",
+      "claim": "上海外海（东海）",
+      "supporting_sources": [
+        "N002",
+        "O037"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与舆论直接描述为“上海外海”，雷达坐标范围覆盖该区域，三源一致；程序剔除缺失或精度不足的支持引用：['R022']",
+      "rejected_supports": [
+        "R022"
+      ],
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "time",
+      "claim": "2025 年 5 月 1 日 11:21-13:46",
+      "supporting_sources": [
+        "N002",
+        "R022"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与雷达精确时间完全一致；舆论仅提及日期，不冲突也不构成反证",
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "mission",
+      "claim": "对海突击训练",
+      "supporting_sources": [
+        "N002",
+        "R022"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与雷达明确任务为“对海突击训练”；舆论描述为“机动/区域控制”，属于同一活动的泛称，无实质冲突",
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "movement",
+      "claim": "活动（含进入、机动）",
+      "supporting_sources": [
+        "N002",
+        "O037"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻描述“保持机动”，舆论描述“进入...展开机动”，雷达虽未显式写 movement 但坐标变化隐含活动，三源逻辑一致；程序剔除缺失或精度不足的支持引用：['R022']",
+      "rejected_supports": [
+        "R022"
+      ],
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    }
+  ],
+  "radar_row_count": 13,
+  "direction": "东海",
+  "report_eligible": true,
+  "directory": "可信事件/N002_中国轰-6K轰炸机在上海外海组织对海突击训练"
+}

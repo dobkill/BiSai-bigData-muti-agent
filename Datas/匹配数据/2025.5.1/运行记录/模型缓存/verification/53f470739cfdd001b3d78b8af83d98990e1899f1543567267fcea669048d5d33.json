@@ -1,0 +1,302 @@
+{
+  "role": "verification",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N029",
+      "kind": "news",
+      "title": "意大利F-35B在南沙群岛海域持续开展活动",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：意大利F-35B在南沙群岛海域持续开展活动\n正文：2025年5月1日，意大利2架F-35B短距起降战斗机在南沙群岛海域持续活动，围绕任务区域保持机动，行动范围保持在指定任务海域。\n\n主题词：意大利  F-35B  南沙群岛  活动\n",
+      "platforms": [
+        {
+          "name": "F-35B",
+          "country": "意大利",
+          "quantity": 2,
+          "quote": "2架F-35B短距起降战斗机",
+          "quantity_quote": "2架F-35B短距起降战斗机",
+          "country_raw": "意大利"
+        }
+      ],
+      "location": {
+        "raw": "南沙群岛海域",
+        "region": "南沙群岛海域",
+        "direction": "南海",
+        "precision": "具体区域",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "在南沙群岛海域持续活动"
+      },
+      "mission": {
+        "value": "活动",
+        "quote": "持续开展活动"
+      },
+      "start_time": null,
+      "end_time": null,
+      "movement": "活动"
+    },
+    "opinion": {
+      "id": "O013",
+      "kind": "opinion",
+      "title": "意大利海军F-35B在南海开展舰载机起降训练",
+      "text": "时间：2025.5.1\n\n标题：意大利海军F-35B在南海开展舰载机起降训练\n\n正文：据央视新闻报道，2025年5月1日5时23分至7时48分，意大利海军在南海方向组织F-35B短距起降战斗机进行舰载机起降训练。围绕这一部署，有分析认为相关行动有助于提升参演兵力在远海环境下的任务组织水平。围绕训练协同维度的讨论指出，此类按计划保持机动并持续执行舰载机起降训练的模式，被视为对流程熟悉程度的有效检验。\n",
+      "platforms": [
+        {
+          "name": "F-35B短距起降战斗机",
+          "country": "意大利",
+          "quantity": null,
+          "quote": "F-35B短距起降战斗机",
+          "quantity_quote": "",
+          "country_raw": "意大利"
+        }
+      ],
+      "location": {
+        "raw": "南海方向",
+        "region": "南海",
+        "direction": "南海",
+        "precision": "大范围",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "在南海方向组织F-35B短距起降战斗机进行舰载机起降训练"
+      },
+      "mission": {
+        "value": "舰载机起降训练",
+        "quote": "进行舰载机起降训练"
+      },
+      "start_time": "05:23",
+      "end_time": "07:48",
+      "movement": "活动"
+    },
+    "radars": [
+      {
+        "id": "R027",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "F-35B短距起降战斗机",
+            "country": "意大利",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-FE3B02517D3201",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "舰载机起降训练",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "舰载机起降训练"
+        ],
+        "start_time": "2025.05.01 05:23:00",
+        "end_time": "2025.05.01 07:48:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            113.8457,
+            114.0318
+          ],
+          "latitude_range": [
+            9.9281,
+            10.1122
+          ],
+          "median": [
+            113.9522,
+            10.0739
+          ],
+          "origins": [
+            [
+              114.0615,
+              10.0999
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [
+            "南海"
+          ],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [],
+        "batch": "AIR-FE3B02517D3201",
+        "sibling_ids": [],
+        "hull_values": [],
+        "country_values": [
+          "意大利"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 12
+      }
+    ],
+    "association": {
+      "opinion_edges": [
+        {
+          "candidate_id": "O017",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.92,
+          "reason": "平台（意大利 2 架 F-35B）、时间（2025.5.1）、地点（南海/南沙）完全一致。新闻描述为‘持续活动’，候选 O017 描述为‘对海突击训练’，属于同一行动的不同表述或任务细化，非冲突。"
+        },
+        {
+          "candidate_id": "O013",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.88,
+          "reason": "平台、时间、地点一致。新闻未指定具体任务类型，候选 O013 明确为‘舰载机起降训练’且给出了具体时间窗口（05:23-07:48），与新闻中‘持续活动’的描述兼容，视为同一活动的具体执行阶段。"
+        },
+        {
+          "candidate_id": "O019",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.95,
+          "reason": "平台型号不同（苏 -30SM vs F-35B），国籍不同（俄罗斯 vs 意大利），虽时间和地点重合，但属于完全不同的军事单位活动。"
+        }
+      ],
+      "radar_edges": [
+        {
+          "candidate_id": "R012",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.85,
+          "reason": "平台（意大利 2 架 F-35B）、时间（2025.5.1 晚间）与新闻一致。雷达数据坐标位于南海，任务为‘对海突击训练’，与新闻描述的活动性质相符，视为同一活动的雷达记录。"
+        },
+        {
+          "candidate_id": "R027",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.85,
+          "reason": "平台（意大利 2 架 F-35B）、时间（2025.5.1 早晨）与新闻一致。雷达数据坐标位于南海，任务为‘舰载机起降训练’，与候选 O013 及新闻描述高度吻合，视为同一活动的具体时段记录。"
+        },
+        {
+          "candidate_id": "R052",
+          "platform_indices": [
+            0
+          ],
+          "relation": "uncertain",
+          "confidence": 0.6,
+          "reason": "平台为意大利舰艇（莱蒙多·蒙特库科利号），非新闻提及的 F-35B，但同属意大利海军在南沙海域的活动。可能是伴随行动或同一编队内的不同单元活动，因缺乏直接关联证据暂定为 uncertain。"
+        }
+      ],
+      "ambiguity": "新闻未明确具体任务类型（训练还是巡逻），仅描述为‘持续活动’，导致 O017/O013/R012/R027 均可能属于同一活动的不同侧面或连续阶段；R052 虽同国同海域但平台类型不同，存在伴随行动的可能性。"
+    },
+    "same_batch_other_candidates": []
+  },
+  "result": {
+    "same_event": true,
+    "platforms": [
+      {
+        "platform_index": 0,
+        "platform": {
+          "claim": "F-35B",
+          "supporting_sources": [
+            "N029",
+            "O013",
+            "R027"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均确认为意大利 F-35B"
+        },
+        "country": {
+          "claim": "意大利",
+          "supporting_sources": [
+            "N029",
+            "O013",
+            "R027"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均确认为意大利"
+        },
+        "quantity": {
+          "claim": "2 架",
+          "supporting_sources": [
+            "N029",
+            "R027"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻明确提及 2 架，雷达批号 AIR-FE3B02517D3201 确认数量为 2；舆论未提数量但不构成冲突"
+        }
+      }
+    ],
+    "location": {
+      "claim": "南沙群岛海域",
+      "supporting_sources": [
+        "N029"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻明确位于南沙群岛海域；舆论提及南海方向（兼容）；雷达坐标位于南海且未提供精确地点文本，不冲突"
+    },
+    "time": {
+      "claim": "2025 年 5 月 1 日",
+      "supporting_sources": [
+        "N029",
+        "O013",
+        "R027"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻、舆论、雷达三源时间一致"
+    },
+    "mission": {
+      "claim": "舰载机起降训练",
+      "supporting_sources": [
+        "O013",
+        "R027"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "舆论明确为舰载机起降训练，雷达任务列示为舰载机起降训练；新闻描述为持续活动，兼容具体训练任务"
+    },
+    "movement": {
+      "claim": "活动",
+      "supporting_sources": [
+        "N029",
+        "O013"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻、舆论均描述为活动/机动"
+    },
+    "unresolved_issues": [],
+    "explanation": "三源在平台型号、国籍、时间、地点（精度不同但兼容）、任务性质上高度一致。数量由新闻和雷达共同支持，舆论缺失但不冲突。舆论提供了具体时刻，雷达提供了精确坐标范围，新闻提供了宏观区域描述，无未消解冲突。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T16:46:14.4425272Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"same_event\": true, \"platforms\": [{\"platform_index\": 0, \"platform\": {\"claim\": \"F-35B\", \"supporting_sources\": [\"N029\", \"O013\", \"R027\"], \"conflicting_sources\": [],\"status\": \"supported\",\"reason\": \"新闻、舆论、雷达三源均确认为意大利 F-35B\"}, \"country\": {\"claim\": \"意大利\", \"supporting_sources\": [\"N029\", \"O013\", \"R027\"], \"conflicting_sources\": [],\"status\": \"supported\",\"reason\": \"新闻、舆论、雷达三源均确认为意大利\"}, \"quantity\": {\"claim\": \"2 架\", \"supporting_sources\": [\"N029\", \"R027\"], \"conflicting_sources\": [],\"status\": \"supported\",\"reason\": \"新闻明确提及 2 架，雷达批号 AIR-FE3B02517D3201 确认数量为 2；舆论未提数量但不构成冲突\"}}], \"location\": {\"claim\": \"南沙群岛海域\", \"supporting_sources\": [\"N029\"], \"conflicting_sources\": [],\"status\": \"supported\",\"reason\": \"新闻明确位于南沙群岛海域；舆论提及南海方向（兼容）；雷达坐标位于南海且未提供精确地点文本，不冲突\"}, \"time\": {\"claim\": \"2025 年 5 月 1 日\", \"supporting_sources\": [\"N029\", \"O013\", \"R027\"], \"conflicting_sources\": [],\"status\": \"supported\",\"reason\": \"新闻、舆论、雷达三源时间一致\"}, \"mission\": {\"claim\": \"舰载机起降训练\", \"supporting_sources\": [\"O013\", \"R027\"], \"conflicting_sources\": [],\"status\": \"supported\",\"reason\": \"舆论明确为舰载机起降训练，雷达任务列示为舰载机起降训练；新闻描述为持续活动，兼容具体训练任务\"}, \"movement\": {\"claim\": \"活动\", \"supporting_sources\": [\"N029\", \"O013\"], \"conflicting_sources\": [],\"status\": \"supported\",\"reason\": \"新闻、舆论均描述为活动/机动\"}, \"unresolved_issues\": [],\"explanation\": \"三源在平台型号、国籍、时间、地点（精度不同但兼容）、任务性质上高度一致。数量由新闻和雷达共同支持，舆论缺失但不冲突。舆论提供了具体时刻，雷达提供了精确坐标范围，新闻提供了宏观区域描述，无未消解冲突。\"}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 12535575400,
+    "load_duration": 18419500,
+    "prompt_eval_count": 2329,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 895004000,
+    "eval_count": 566,
+    "eval_duration": 11451170000
+  }
+}

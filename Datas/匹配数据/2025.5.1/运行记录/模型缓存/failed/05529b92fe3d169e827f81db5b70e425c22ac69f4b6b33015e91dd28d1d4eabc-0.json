@@ -1,0 +1,21 @@
+{
+  "role": "extraction",
+  "error": "O019 字段value须来自quote原文: 机动",
+  "response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T16:01:57.1103433Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\n  \"items\": [\n    {\n      \"source_id\": \"O019\",\n      \"platforms\": [\n        {\n          \"name\": \"苏 -30SM\",\n          \"country\": \"俄罗斯\",\n          \"quantity\": 3,\n          \"quote\": \"3架苏-30SM多用途战斗机\",\n          \"quantity_quote\": \"3架苏-30SM多用途战斗机\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"南海方向南沙群岛海域\",\n        \"quote\": \"在南海方向南沙群岛海域\"\n      },\n      \"mission\": {\n        \"value\": \"机动\",\n        \"quote\": \"持续活动\"\n      },\n      \"start_time\": \"18:01\",\n      \"end_time\": \"19:31\",\n      \"time_quote\": \"于2025年5月1日18时01分至19时31分\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"在南海方向南沙群岛海域持续活动\"\n    },\n    {\n      \"source_id\": \"O020\",\n      \"platforms\": [\n        {\n          \"name\": \"“瓦良格”号导弹巡洋舰\",\n          \"country\": \"俄罗斯\",\n          \"quantity\": 1,\n          \"quote\": \"“瓦良格”号导弹巡洋舰\",\n          \"quantity_quote\": \"\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"南海方向\",\n        \"quote\": \"在南海方向\"\n      },\n      \"mission\": {\n        \"value\": \"海上护航任务\",\n        \"quote\": \"执行海上护航任务\"\n      },\n      \"start_time\": \"02:16\",\n      \"end_time\": \"04:41\",\n      \"time_quote\": \"于2025年5月1日2时16分至4时41分\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"在南海方向执行海上护航任务\"\n    },\n    {\n      \"source_id\": \"O021\",\n      \"platforms\": [\n        {\n          \"name\": \"歼 -35\",\n          \"country\": \"中国\",\n          \"quantity\": 2,\n          \"quote\": \"两架歼-35舰载隐身战斗机\",\n          \"quantity_quote\": \"两架歼-35舰载隐身战斗机\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"东海方向\",\n        \"quote\": \"在东海方向\"\n      },\n      \"mission\": {\n        \"value\": \"战备警巡任务\",\n        \"quote\": \"执行战备警巡任务\"\n      },\n      \"start_time\": null,\n      \"end_time\": null,\n      \"time_quote\": \"\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"按计划保持机动并持续执行战备警巡任务\"\n    },\n    {\n      \"source_id\": \"O022\",\n      \"platforms\": [\n        {\n          \"name\": \"“台风”\",\n          \"country\": \"德国\",\n          \"quantity\": 2,\n          \"quote\": \"2架“台风”多用途战斗机\",\n          \"quantity_quote\": \"2架“台风”多用途战斗机\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"印度洋相关海域\",\n        \"quote\": \"在印度洋相关海域\"\n      },\n      \"mission\": {\n        \"value\": null,\n        \"quote\": \"\"\n      },\n      \"start_time\": null,\n      \"end_time\": null,\n      \"time_quote\": \"\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"在印度洋相关海域持续活动\"\n    }\n  ]\n}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 17095793200,
+    "load_duration": 12157200,
+    "prompt_eval_count": 851,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 389476000,
+    "eval_count": 878,
+    "eval_duration": 16561333999
+  }
+}

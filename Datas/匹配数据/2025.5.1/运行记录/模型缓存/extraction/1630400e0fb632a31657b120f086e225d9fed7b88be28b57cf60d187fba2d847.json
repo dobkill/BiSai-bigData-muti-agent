@@ -1,0 +1,149 @@
+{
+  "role": "extraction",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "materials": [
+      {
+        "source_id": "N017",
+        "kind": "news",
+        "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：俄军瓦良格号巡洋舰在礼乐滩海域持续开展活动\n正文：2025年5月1日，俄罗斯海军瓦良格号导弹巡洋舰在礼乐滩海域持续活动，围绕任务区域保持机动，行动范围保持在指定任务海域。\n\n主题词：俄罗斯  瓦良格号  礼乐滩  活动\n"
+      },
+      {
+        "source_id": "N018",
+        "kind": "news",
+        "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：中国海军福建号航母在钓鱼岛海域执行联合巡航任务行动\n正文：2025年5月1日2时38分至4时03分，中国海军福建号航空母舰在钓鱼岛海域围绕任务海域组织联合巡航，按计划完成平台间的联络和行动衔接。按计划保持机动并持续执行联合巡航。\n\n主题词：中国海军  福建号航空母舰  联合巡航  钓鱼岛海域\n"
+      },
+      {
+        "source_id": "N019",
+        "kind": "news",
+        "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：法国E-2C预警机在仁爱礁附近海域执行空中警戒\n正文：2025年5月1日，法国E-2C预警机在仁爱礁附近海域活动，于5时01分至7时26分围绕任务海域组织空中警戒，并按计划保持机动持续执行任务。\n\n主题词：法国  E-2C  仁爱礁  空中警戒\n"
+      },
+      {
+        "source_id": "N020",
+        "kind": "news",
+        "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：韩国独岛级两栖攻击舰在东海南部开展两栖作战训练\n正文：2025年5月1日，韩国独岛级两栖攻击舰在东海南部活动，于8时52分至10时17分围绕任务海域组织两栖作战训练，期间围绕任务方向组织兵力投送并完成平台协同。\n\n主题词：韩国  独岛级  东海南部  两栖作战训练\n"
+      }
+    ]
+  },
+  "result": {
+    "items": [
+      {
+        "source_id": "N017",
+        "platforms": [
+          {
+            "name": "瓦良格号导弹巡洋舰",
+            "country": "俄罗斯",
+            "quantity": null,
+            "quote": "瓦良格号导弹巡洋舰",
+            "quantity_quote": ""
+          }
+        ],
+        "location": {
+          "value": "礼乐滩海域",
+          "quote": "在礼乐滩海域"
+        },
+        "mission": {
+          "value": "活动",
+          "quote": "持续开展活动"
+        },
+        "start_time": null,
+        "end_time": null,
+        "time_quote": "",
+        "movement": "活动",
+        "movement_quote": "在礼乐滩海域持续活动"
+      },
+      {
+        "source_id": "N018",
+        "platforms": [
+          {
+            "name": "福建号航空母舰",
+            "country": "中国",
+            "quantity": null,
+            "quote": "福建号航空母舰",
+            "quantity_quote": ""
+          }
+        ],
+        "location": {
+          "value": "钓鱼岛海域",
+          "quote": "在钓鱼岛海域"
+        },
+        "mission": {
+          "value": "联合巡航任务行动",
+          "quote": "执行联合巡航任务行动"
+        },
+        "start_time": "02:38",
+        "end_time": "04:03",
+        "time_quote": "2时38分至4时03分",
+        "movement": "活动",
+        "movement_quote": "在钓鱼岛海域围绕任务海域组织联合巡航"
+      },
+      {
+        "source_id": "N019",
+        "platforms": [
+          {
+            "name": "E-2C预警机",
+            "country": "法国",
+            "quantity": null,
+            "quote": "E-2C预警机",
+            "quantity_quote": ""
+          }
+        ],
+        "location": {
+          "value": "仁爱礁附近海域",
+          "quote": "在仁爱礁附近海域"
+        },
+        "mission": {
+          "value": "空中警戒",
+          "quote": "执行空中警戒"
+        },
+        "start_time": "05:01",
+        "end_time": "07:26",
+        "time_quote": "于5时01分至7时26分",
+        "movement": "活动",
+        "movement_quote": "在仁爱礁附近海域活动"
+      },
+      {
+        "source_id": "N020",
+        "platforms": [
+          {
+            "name": "独岛级两栖攻击舰",
+            "country": "韩国",
+            "quantity": null,
+            "quote": "独岛级两栖攻击舰",
+            "quantity_quote": ""
+          }
+        ],
+        "location": {
+          "value": "东海南部",
+          "quote": "在东海南部"
+        },
+        "mission": {
+          "value": "两栖作战训练",
+          "quote": "开展两栖作战训练"
+        },
+        "start_time": "08:52",
+        "end_time": "10:17",
+        "time_quote": "于8时52分至10时17分",
+        "movement": "活动",
+        "movement_quote": "在东海南部活动"
+      }
+    ]
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T15:51:54.8805575Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\n  \"items\": [\n    {\n      \"source_id\": \"N017\",\n      \"platforms\": [\n        {\n          \"name\": \"瓦良格号导弹巡洋舰\",\n          \"country\": \"俄罗斯\",\n          \"quantity\": null,\n          \"quote\": \"瓦良格号导弹巡洋舰\",\n          \"quantity_quote\": \"\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"礼乐滩海域\",\n        \"quote\": \"在礼乐滩海域\"\n      },\n      \"mission\": {\n        \"value\": \"活动\",\n        \"quote\": \"持续开展活动\"\n      },\n      \"start_time\": null,\n      \"end_time\": null,\n      \"time_quote\": \"\",\"movement\": \"活动\",\n      \"movement_quote\": \"在礼乐滩海域持续活动\"\n    },\n    {\n      \"source_id\": \"N018\",\n      \"platforms\": [\n        {\n          \"name\": \"福建号航空母舰\",\n          \"country\": \"中国\",\n          \"quantity\": null,\n          \"quote\": \"福建号航空母舰\",\n          \"quantity_quote\": \"\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"钓鱼岛海域\",\n        \"quote\": \"在钓鱼岛海域\"\n      },\n      \"mission\": {\n        \"value\": \"联合巡航任务行动\",\n        \"quote\": \"执行联合巡航任务行动\"\n      },\n      \"start_time\": \"02:38\",\n      \"end_time\": \"04:03\",\n      \"time_quote\": \"2时38分至4时03分\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"在钓鱼岛海域围绕任务海域组织联合巡航\"\n    },\n    {\n      \"source_id\": \"N019\",\n      \"platforms\": [\n        {\n          \"name\": \"E-2C预警机\",\n          \"country\": \"法国\",\n          \"quantity\": null,\n          \"quote\": \"E-2C预警机\",\n          \"quantity_quote\": \"\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"仁爱礁附近海域\",\n        \"quote\": \"在仁爱礁附近海域\"\n      },\n      \"mission\": {\n        \"value\": \"空中警戒\",\n        \"quote\": \"执行空中警戒\"\n      },\n      \"start_time\": \"05:01\",\n      \"end_time\": \"07:26\",\n      \"time_quote\": \"于5时01分至7时26分\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"在仁爱礁附近海域活动\"\n    },\n    {\n      \"source_id\": \"N020\",\n      \"platforms\": [\n        {\n          \"name\": \"独岛级两栖攻击舰\",\n          \"country\": \"韩国\",\n          \"quantity\": null,\n          \"quote\": \"独岛级两栖攻击舰\",\n          \"quantity_quote\": \"\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"东海南部\",\n        \"quote\": \"在东海南部\"\n      },\n      \"mission\": {\n        \"value\": \"两栖作战训练\",\n        \"quote\": \"开展两栖作战训练\"\n      },\n      \"start_time\": \"08:52\",\n      \"end_time\": \"10:17\",\n      \"time_quote\": \"于8时52分至10时17分\",\n      \"movement\": \"活动\",\n      \"movement_quote\": \"在东海南部活动\"\n    }\n  ]\n}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 16151030700,
+    "load_duration": 17734200,
+    "prompt_eval_count": 885,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 385716000,
+    "eval_count": 836,
+    "eval_duration": 15595838000
+  }
+}

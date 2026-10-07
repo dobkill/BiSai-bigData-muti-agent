@@ -1,0 +1,505 @@
+{
+  "id": "N024",
+  "news_id": "N024",
+  "opinion_id": "O050",
+  "radar_ids": [
+    "R025"
+  ],
+  "radar_slots": {
+    "0": "R025"
+  },
+  "alignment": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O050",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.98,
+        "reason": "平台（RC-135V/W）、国家（美国）、任务（电子侦察）及日期（2025.5.1）完全一致。新闻提供了精确的时间区间（08:14-10:39），而候选 O050 虽无具体时间但描述为“五一当天在东海方向”，时间范围包含新闻时段，地点均为大范围东海，属于同一活动报道。"
+      },
+      {
+        "candidate_id": "O035",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台不同（空警 -500 vs RC-135V/W），国家不同（中国 vs 美国）。虽同一天同在东海执行类似侦察任务，但主体和具体行动对象不同，属于同一海域的不同活动。"
+      },
+      {
+        "candidate_id": "O024",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.99,
+        "reason": "平台（法国护卫舰）、国家（法国）、地点（巴伦支海）均与新闻完全不符，属于不同海域的不同活动。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R025",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 1.0,
+        "reason": "平台型号、国家、任务类型、日期及精确时间区间（08:14-10:39）与新闻完全一致。坐标辅助指向东海，虽雷达数据地点字段缺失，但时间戳和平台特征确认为同一事件的数据源。"
+      },
+      {
+        "candidate_id": "R041",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.99,
+        "reason": "平台（韩国独岛级两栖攻击舰）、国家、任务（两栖作战训练）及地点（东海南部）均与新闻不符，属于不同活动。"
+      },
+      {
+        "candidate_id": "R010",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台为中国空警 -500，虽任务相似且时间重叠，但主体国家及机型与新闻中的美国 RC-135V/W 不同，属于同一海域的不同活动。"
+      }
+    ],
+    "ambiguity": "无。新闻与候选 O050 及雷达数据 R025 在核心要素（平台、时间、任务）上高度吻合，足以判定为同一次活动。其他候选因平台或地点明显冲突被排除。"
+  },
+  "candidates": {
+    "opinion": [
+      {
+        "id": "O050",
+        "score": 4.97626,
+        "cosine": 0.97626,
+        "platform_similarity": 1.0,
+        "time_overlap": null,
+        "location_relation": "same"
+      },
+      {
+        "id": "O024",
+        "score": 1.86173,
+        "cosine": 0.66173,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O004",
+        "score": 1.85057,
+        "cosine": 0.69195,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.9655172413793104,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O035",
+        "score": 1.6085,
+        "cosine": 0.8085,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "same"
+      },
+      {
+        "id": "O021",
+        "score": 1.592,
+        "cosine": 0.792,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "same"
+      },
+      {
+        "id": "O037",
+        "score": 1.25709,
+        "cosine": 0.77709,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O023",
+        "score": 0.7807,
+        "cosine": 0.7807,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      }
+    ],
+    "radar": [
+      {
+        "id": "R025",
+        "score": 5.36678,
+        "cosine": 0.96678,
+        "platform_similarity": 1.0,
+        "time_overlap": 1.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R041",
+        "score": 2.40431,
+        "cosine": 0.72431,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "contains"
+      },
+      {
+        "id": "R050",
+        "score": 2.29335,
+        "cosine": 0.663,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.9586206896551724,
+        "location_relation": "contains"
+      },
+      {
+        "id": "R010",
+        "score": 1.97856,
+        "cosine": 0.77856,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R002",
+        "score": 0.77572,
+        "cosine": 0.77572,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R006",
+        "score": 0.77556,
+        "cosine": 0.77556,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R014",
+        "score": 0.76975,
+        "cosine": 0.76975,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      }
+    ]
+  },
+  "verification": {
+    "same_event": true,
+    "facts": [
+      {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "RC-135V/W电子侦察机",
+        "supporting_sources": [
+          "N024",
+          "O050",
+          "R025"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N024': 'RC-135V/W电子侦察机', 'O050': 'RC-135V/W电子侦察机', 'R025': 'RC-135V/W电子侦察机'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "RC-135V/W",
+          "supporting_sources": [
+            "N024",
+            "O050",
+            "R025"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均明确指向 RC-135V/W 电子侦察机。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "美国",
+        "supporting_sources": [
+          "N024",
+          "O050",
+          "R025"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N024': '美国', 'O050': '美国', 'R025': '美国'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "美国",
+          "supporting_sources": [
+            "N024",
+            "O050",
+            "R025"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻称“美国空军”，舆论称“美国”，雷达批号及国家值均为“美国”。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "1架",
+        "supporting_sources": [
+          "O050",
+          "R025"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'O050': 1, 'R025': 1}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "1 架",
+          "supporting_sources": [
+            "O050",
+            "R025"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论明确提及“一架”，雷达批号 AIR-EB9F718D91A49B 对应数量值为 1。新闻虽未显式数字，但描述为单数主体执行任务，与两源一致。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "东海",
+        "supporting_sources": [
+          "N024",
+          "O050"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻明确“进入东海”，舆论称“东海方向”。雷达坐标范围（北纬 28.7-29.1，东经 124.1-124.2）位于南海北部/东海南部海域，结合候选关联中的“东海”提示及任务背景，三源在宏观区域上无冲突，支持“东海”结论。",
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "2025 年 5 月 1 日 08:14 - 10:39",
+        "supporting_sources": [
+          "N024",
+          "R025"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻提供精确起止时间，雷达数据完全匹配该时间戳。舆论仅确认日期，不冲突也不削弱具体时刻的结论。",
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "电子侦察",
+        "supporting_sources": [
+          "N024",
+          "O050",
+          "R025"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源均明确标注任务为“电子侦察”。",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "进入/活动",
+        "supporting_sources": [
+          "N024"
+        ],
+        "conflicting_sources": [],
+        "status": "insufficient",
+        "reason": "新闻明确描述“由外围航线进入东海”。舆论描述为“在东海方向开展...活动”，雷达未说明运动状态。新闻提供了具体的进出动作，舆论和雷达不冲突。；程序检查：不足两类独立来源支持",
+        "supporting_source_types": [
+          "news"
+        ]
+      }
+    ],
+    "unresolved_issues": [],
+    "explanation": "新闻 N024、舆论 O050 与雷达 R025 在平台型号、国籍、任务类型、活动日期及精确时间区间上完全一致。数量方面，舆论和雷达明确支持"
+  },
+  "reasons": [],
+  "status": "可信事件",
+  "verified_facts": [
+    {
+      "platform_index": 0,
+      "field": "platform",
+      "claim": "RC-135V/W电子侦察机",
+      "supporting_sources": [
+        "N024",
+        "O050",
+        "R025"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N024': 'RC-135V/W电子侦察机', 'O050': 'RC-135V/W电子侦察机', 'R025': 'RC-135V/W电子侦察机'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "RC-135V/W",
+        "supporting_sources": [
+          "N024",
+          "O050",
+          "R025"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻、舆论、雷达三源均明确指向 RC-135V/W 电子侦察机。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "country",
+      "claim": "美国",
+      "supporting_sources": [
+        "N024",
+        "O050",
+        "R025"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N024': '美国', 'O050': '美国', 'R025': '美国'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "美国",
+        "supporting_sources": [
+          "N024",
+          "O050",
+          "R025"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻称“美国空军”，舆论称“美国”，雷达批号及国家值均为“美国”。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "quantity",
+      "claim": "1架",
+      "supporting_sources": [
+        "O050",
+        "R025"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'O050': 1, 'R025': 1}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "1 架",
+        "supporting_sources": [
+          "O050",
+          "R025"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "舆论明确提及“一架”，雷达批号 AIR-EB9F718D91A49B 对应数量值为 1。新闻虽未显式数字，但描述为单数主体执行任务，与两源一致。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "location",
+      "claim": "东海",
+      "supporting_sources": [
+        "N024",
+        "O050"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻明确“进入东海”，舆论称“东海方向”。雷达坐标范围（北纬 28.7-29.1，东经 124.1-124.2）位于南海北部/东海南部海域，结合候选关联中的“东海”提示及任务背景，三源在宏观区域上无冲突，支持“东海”结论。",
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "time",
+      "claim": "2025 年 5 月 1 日 08:14 - 10:39",
+      "supporting_sources": [
+        "N024",
+        "R025"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻提供精确起止时间，雷达数据完全匹配该时间戳。舆论仅确认日期，不冲突也不削弱具体时刻的结论。",
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "mission",
+      "claim": "电子侦察",
+      "supporting_sources": [
+        "N024",
+        "O050",
+        "R025"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "三源均明确标注任务为“电子侦察”。",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    }
+  ],
+  "radar_row_count": 13,
+  "direction": "东海",
+  "report_eligible": true,
+  "directory": "可信事件/N024_美军RC-135V_W电子侦察机由外围航线进入东海执行侦察"
+}

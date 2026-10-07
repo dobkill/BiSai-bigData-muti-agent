@@ -1,0 +1,284 @@
+{
+  "role": "verification",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N031",
+      "kind": "news",
+      "title": "中国山东号航空母舰在中太平洋海域持续活动",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：中国山东号航空母舰在中太平洋海域持续活动\n正文：2025年5月1日，中国海军1艘山东号航空母舰在中太平洋相关海域持续活动，围绕任务区域保持机动，行动范围保持在指定任务海域。\n\n主题词：中国  山东号航空母舰  中太平洋\n",
+      "platforms": [
+        {
+          "name": "山东号航空母舰",
+          "country": "中国",
+          "quantity": 1,
+          "quote": "1艘山东号航空母舰",
+          "quantity_quote": "1艘山东号航空母舰",
+          "country_raw": "中国"
+        }
+      ],
+      "location": {
+        "raw": "中太平洋相关海域",
+        "region": "中太平洋",
+        "direction": "其他",
+        "precision": "原文区域",
+        "mapping": "PDF未列入三大核心海域的区域归其他",
+        "transit": false,
+        "quote": "在中太平洋相关海域持续活动"
+      },
+      "mission": {
+        "value": "活动",
+        "quote": "持续活动"
+      },
+      "start_time": null,
+      "end_time": null,
+      "movement": "活动"
+    },
+    "opinion": {
+      "id": "O033",
+      "kind": "opinion",
+      "title": "中国海军“山东号”航母在中太平洋进行联合巡航",
+      "text": "时间：2025.5.1\n\n标题：中国海军“山东号”航母在中太平洋进行联合巡航\n\n正文：据联合早报报道，2025年5月1日8时30分至10时55分，中国海军“山东号”航空母舰在中太平洋海域按计划保持机动并持续执行联合巡航任务。相关分析认为，此次行动可能体现了中国海军围绕共同任务保持协同行动的能力，有助于加强平台间的联络配合和流程熟悉。\n",
+      "platforms": [
+        {
+          "name": "山东号”航空母舰",
+          "country": "中国",
+          "quantity": null,
+          "quote": "中国海军“山东号”航空母舰",
+          "quantity_quote": "",
+          "country_raw": "中国"
+        }
+      ],
+      "location": {
+        "raw": "中太平洋海域",
+        "region": "中太平洋",
+        "direction": "其他",
+        "precision": "原文区域",
+        "mapping": "PDF未列入三大核心海域的区域归其他",
+        "transit": false,
+        "quote": "在中太平洋海域按计划保持机动并持续执行联合巡航任务"
+      },
+      "mission": {
+        "value": "联合巡航任务",
+        "quote": "在中太平洋海域按计划保持机动并持续执行联合巡航任务"
+      },
+      "start_time": "08:30",
+      "end_time": "10:55",
+      "movement": "活动"
+    },
+    "radars": [
+      {
+        "id": "R051",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "山东号航空母舰",
+            "country": "中国",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-D66A2E15996BA5",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "中太平洋",
+          "region": "中太平洋",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "中太平洋",
+            "region": "中太平洋",
+            "direction": "其他",
+            "precision": "原文区域",
+            "mapping": "PDF未列入三大核心海域的区域归其他",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "联合巡航",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "联合巡航"
+        ],
+        "start_time": "2025.05.01 08:30:00",
+        "end_time": "2025.05.01 10:55:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-D66A2E15996BA5",
+        "sibling_ids": [],
+        "hull_values": [
+          "17"
+        ],
+        "country_values": [
+          "中国"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 11
+      }
+    ],
+    "association": {
+      "opinion_edges": [
+        {
+          "candidate_id": "O033",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.95,
+          "reason": "平台完全一致（山东号航母）、时间重叠（新闻为全天活动，意见为具体时段）、地点一致（中太平洋）、任务性质高度相关（持续活动 vs 联合巡航）。"
+        },
+        {
+          "candidate_id": "O030",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.9,
+          "reason": "平台不同（韩国大邱级护卫舰 vs 中国山东号航母），虽同在中太平洋同日，但属于不同国家不同平台的独立行动。"
+        },
+        {
+          "candidate_id": "O032",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.9,
+          "reason": "平台不同（福建号航母 vs 山东号航母），且地点冲突（东海 vs 中太平洋）。"
+        }
+      ],
+      "radar_edges": [
+        {
+          "candidate_id": "R051",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.98,
+          "reason": "平台、时间、地点、任务完全匹配。雷达数据中的批号SHIP-D66A2E15996BA5与新闻描述的具体活动时段（08:30-10:55）及区域（中太平洋）高度吻合，确认为同一事件的数据源。"
+        },
+        {
+          "candidate_id": "R049",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.9,
+          "reason": "平台不同（韩国大邱级护卫舰），虽同在中太平洋同日，但属于独立行动。"
+        },
+        {
+          "candidate_id": "R034",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.9,
+          "reason": "平台不同（福建号航母），且地点冲突（钓鱼岛海域/东海 vs 中太平洋）。"
+        }
+      ],
+      "ambiguity": "无。新闻描述为宏观活动，O033和R051提供了具体的微观时段和任务细节，两者在平台、时间、地点、任务上均无冲突，可确认为同一事件的不同粒度描述。其他候选因平台或地点明显不同而排除。"
+    },
+    "same_batch_other_candidates": []
+  },
+  "result": {
+    "same_event": true,
+    "platforms": [
+      {
+        "platform_index": 0,
+        "platform": {
+          "claim": "山东号航空母舰",
+          "supporting_sources": [
+            "N031",
+            "O033",
+            "R051"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均明确指向山东号航空母舰，无冲突。"
+        },
+        "country": {
+          "claim": "中国",
+          "supporting_sources": [
+            "N031",
+            "O033",
+            "R051"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均明确标注国籍为中国，无冲突。"
+        },
+        "quantity": {
+          "claim": "1 架/艘",
+          "supporting_sources": [
+            "N031",
+            "R051"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻明确提及"
+        }
+      }
+    ],
+    "location": {
+      "claim": "中太平洋",
+      "supporting_sources": [
+        "N031",
+        "O033",
+        "R051"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "三源均指向中太平洋区域，舆论和雷达提供了更精确的时间段支持该区域活动。"
+    },
+    "time": {
+      "claim": "2025 年 5 月 1 日 08:30-10:55",
+      "supporting_sources": [
+        "O033",
+        "R051"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "舆论和雷达提供了具体的起止时间，新闻仅提及日期，三源在日期上一致，具体时刻由两源支持。"
+    },
+    "mission": {
+      "claim": "联合巡航/持续活动",
+      "supporting_sources": [
+        "N031",
+        "O033",
+        "R051"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻描述为"
+    },
+    "movement": {
+      "claim": "活动",
+      "supporting_sources": [
+        "N031",
+        "O033",
+        "R051"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "三源均表明平台处于活动状态。"
+    },
+    "unresolved_issues": [],
+    "explanation": "新闻、舆论和雷达三源在平台型号、国籍、地点（中太平洋）、时间（2025 年 5 月 1 日）及任务性质上高度一致。舆论和雷达提供了具体的时间段（08:30-10:55），新闻确认了全天活动背景，三者共同支持同一事件的发生，无未消解冲突。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T16:46:40.0327255Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"same_event\": true, \"platforms\": [{\"platform_index\": 0, \"platform\": {\"claim\": \"山东号航空母舰\", \"supporting_sources\": [\"N031\", \"O033\", \"R051\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源（新闻、舆论、雷达）均明确指向山东号航空母舰，无冲突。\"}, \"country\": {\"claim\": \"中国\", \"supporting_sources\": [\"N031\", \"O033\", \"R051\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源（新闻、舆论、雷达）均明确标注国籍为中国，无冲突。\"}, \"quantity\": {\"claim\": \"1 架/艘\", \"supporting_sources\": [\"N031\", \"R051\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻明确提及\" }\n}\n],\"location\":{\"claim\":\"中太平洋\",\"supporting_sources\":[\"N031\",\"O033\",\"R051\"],\"conflicting_sources\":[],\"status\":\"supported\",\"reason\":\"三源均指向中太平洋区域，舆论和雷达提供了更精确的时间段支持该区域活动。\"},\"time\":{\"claim\":\"2025 年 5 月 1 日 08:30-10:55\",\"supporting_sources\":[\"O033\",\"R051\"],\"conflicting_sources\":[],\"status\":\"supported\",\"reason\":\"舆论和雷达提供了具体的起止时间，新闻仅提及日期，三源在日期上一致，具体时刻由两源支持。\"},\"mission\":{\"claim\":\"联合巡航/持续活动\",\"supporting_sources\":[\"N031\",\"O033\",\"R051\"],\"conflicting_sources\":[],\"status\":\"supported\",\"reason\":\"新闻描述为\" },\"movement\":{\"claim\":\"活动\",\"supporting_sources\":[\"N031\",\"O033\",\"R051\"],\"conflicting_sources\":[],\"status\":\"supported\",\"reason\":\"三源均表明平台处于活动状态。\"},\"unresolved_issues\":[],\"explanation\":\"新闻、舆论和雷达三源在平台型号、国籍、地点（中太平洋）、时间（2025 年 5 月 1 日）及任务性质上高度一致。舆论和雷达提供了具体的时间段（08:30-10:55），新闻确认了全天活动背景，三者共同支持同一事件的发生，无未消解冲突。\"}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 12759430000,
+    "load_duration": 7503000,
+    "prompt_eval_count": 2030,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 750007000,
+    "eval_count": 542,
+    "eval_duration": 11858158000
+  }
+}

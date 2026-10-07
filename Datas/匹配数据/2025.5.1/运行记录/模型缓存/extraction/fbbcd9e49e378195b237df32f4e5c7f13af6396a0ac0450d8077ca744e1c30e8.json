@@ -1,0 +1,149 @@
+{
+  "role": "extraction",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "materials": [
+      {
+        "source_id": "O035",
+        "kind": "opinion",
+        "text": "时间：2025.5.1\n\n标题：中国两架空警-500预警机在东海执行情报监视侦察\n\n正文：据央视新闻报道，2025年5月1日，中国两架空警-500预警机在东海方向围绕任务海域组织情报监视侦察。分析人士指出，该平台结合既定航线持续收集公开可观察信息，可能体现了其在区域侦巡中的态势感知和持续监视能力。\n"
+      },
+      {
+        "source_id": "O036",
+        "kind": "opinion",
+        "text": "时间：2025.5.1\n\n标题：俄罗斯空天军苏-30SM战机在南海执行战备警巡\n\n正文：据地区军事观察机构报道，2025年5月1日，俄罗斯空天军苏-30SM多用途战斗机在南海方向执行战备警巡任务，行动时段为2时27分至4时52分。相关平台沿既定方向保持机动，并围绕任务区域维持部署或警戒。有关讨论关注该型机的前沿存在部署，认为其展现了在相关方向的区域机动与部署持续性。\n"
+      },
+      {
+        "source_id": "O037",
+        "kind": "opinion",
+        "text": "时间：2025.5.1\n\n标题：中国轰-6K轰炸机编队进入东海上海外海展开机动\n\n正文：据地区军事观察机构报道，2025年5月1日，中国空军2架轰-6K轰炸机由外围航线进入东海上海外海任务海域，随后围绕任务区域保持机动，行动范围保持在指定任务海域。有关讨论关注到，此次行动在组织上呈现出清晰的批次衔接与区域控制特征，被视为检验轰炸机单元在近海复杂环境下任务连续性的一次常规安排。\n"
+      },
+      {
+        "source_id": "O038",
+        "kind": "opinion",
+        "text": "时间：2025.5.1\n\n标题：韩国两架AW-159直升机在阿拉伯海执行反潜巡逻\n\n正文：据社交媒体军事观察账号报道，韩国海军两架AW-159反潜直升机于2025年5月1日在阿拉伯海围绕任务海域组织反潜巡逻。相关平台按计划保持机动并持续执行反潜巡逻，结合既定航线持续收集公开可观察信息。围绕态势感知维度的讨论认为，这一部署有助于维持对关键水道的持续监视能力。\n"
+      }
+    ]
+  },
+  "result": {
+    "items": [
+      {
+        "source_id": "O035",
+        "platforms": [
+          {
+            "name": "空警 -500",
+            "country": "中国",
+            "quantity": 2,
+            "quote": "两架空警 -500 预警机",
+            "quantity_quote": "两架"
+          }
+        ],
+        "location": {
+          "value": "东海方向围绕任务海域",
+          "quote": "在东海方向围绕任务海域"
+        },
+        "mission": {
+          "value": "情报监视侦察",
+          "quote": "组织情报监视侦察"
+        },
+        "start_time": null,
+        "end_time": null,
+        "time_quote": "",
+        "movement": "进入",
+        "movement_quote": "在东海方向围绕任务海域组织情报监视侦察"
+      },
+      {
+        "source_id": "O036",
+        "platforms": [
+          {
+            "name": "苏 -30SM",
+            "country": "俄罗斯",
+            "quantity": null,
+            "quote": "苏 -30SM 多用途战斗机",
+            "quantity_quote": ""
+          }
+        ],
+        "location": {
+          "value": "南海方向",
+          "quote": "在南海方向"
+        },
+        "mission": {
+          "value": "战备警巡",
+          "quote": "执行战备警巡任务"
+        },
+        "start_time": "02:27",
+        "end_time": "04:52",
+        "time_quote": "行动时段为 2 时 27 分至 4 时 52 分",
+        "movement": "进入",
+        "movement_quote": "在南海方向执行战备警巡任务"
+      },
+      {
+        "source_id": "O037",
+        "platforms": [
+          {
+            "name": "轰 -6K",
+            "country": "中国",
+            "quantity": 2,
+            "quote": "2 架轰 -6K 轰炸机",
+            "quantity_quote": "2 架"
+          }
+        ],
+        "location": {
+          "value": "东海上海外海任务海域",
+          "quote": "进入东海上海外海任务海域"
+        },
+        "mission": {
+          "value": null,
+          "quote": ""
+        },
+        "start_time": null,
+        "end_time": null,
+        "time_quote": "",
+        "movement": "进入",
+        "movement_quote": "由外围航线进入东海上海外海任务海域"
+      },
+      {
+        "source_id": "O038",
+        "platforms": [
+          {
+            "name": "AW-159",
+            "country": "韩国",
+            "quantity": 2,
+            "quote": "两架 AW-159 反潜直升机",
+            "quantity_quote": "两架"
+          }
+        ],
+        "location": {
+          "value": "阿拉伯海围绕任务海域",
+          "quote": "在阿拉伯海围绕任务海域"
+        },
+        "mission": {
+          "value": "反潜巡逻",
+          "quote": "组织反潜巡逻"
+        },
+        "start_time": null,
+        "end_time": null,
+        "time_quote": "",
+        "movement": "进入",
+        "movement_quote": "在阿拉伯海围绕任务海域组织反潜巡逻"
+      }
+    ]
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T16:03:28.2057991Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\n  \"items\": [\n    {\n      \"source_id\": \"O035\",\n      \"platforms\": [\n        {\n          \"name\": \"空警 -500\",\n          \"country\": \"中国\",\n          \"quantity\": 2,\n          \"quote\": \"两架空警 -500 预警机\",\n          \"quantity_quote\": \"两架\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"东海方向围绕任务海域\",\n        \"quote\": \"在东海方向围绕任务海域\"\n      },\n      \"mission\": {\n        \"value\": \"情报监视侦察\",\n        \"quote\": \"组织情报监视侦察\"\n      },\n      \"start_time\": null,\n      \"end_time\": null,\n      \"time_quote\": \"\",\n      \"movement\": \"进入\",\n      \"movement_quote\": \"在东海方向围绕任务海域组织情报监视侦察\"\n    },\n    {\n      \"source_id\": \"O036\",\n      \"platforms\": [\n        {\n          \"name\": \"苏 -30SM\",\n          \"country\": \"俄罗斯\",\n          \"quantity\": null,\n          \"quote\": \"苏 -30SM 多用途战斗机\",\n          \"quantity_quote\": \"\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"南海方向\",\n        \"quote\": \"在南海方向\"\n      },\n      \"mission\": {\n        \"value\": \"战备警巡\",\n        \"quote\": \"执行战备警巡任务\"\n      },\n      \"start_time\": \"02:27\",\n      \"end_time\": \"04:52\",\n      \"time_quote\": \"行动时段为 2 时 27 分至 4 时 52 分\",\n      \"movement\": \"进入\",\n      \"movement_quote\": \"在南海方向执行战备警巡任务\"\n    },\n    {\n      \"source_id\": \"O037\",\n      \"platforms\": [\n        {\n          \"name\": \"轰 -6K\",\n          \"country\": \"中国\",\n          \"quantity\": 2,\n          \"quote\": \"2 架轰 -6K 轰炸机\",\n          \"quantity_quote\": \"2 架\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"东海上海外海任务海域\",\n        \"quote\": \"进入东海上海外海任务海域\"\n      },\n      \"mission\": {\n        \"value\": null,\n        \"quote\": \"\"\n      },\n      \"start_time\": null,\n      \"end_time\": null,\n      \"time_quote\": \"\",\n      \"movement\": \"进入\",\n      \"movement_quote\": \"由外围航线进入东海上海外海任务海域\"\n    },\n    {\n      \"source_id\": \"O038\",\n      \"platforms\": [\n        {\n          \"name\": \"AW-159\",\n          \"country\": \"韩国\",\n          \"quantity\": 2,\n          \"quote\": \"两架 AW-159 反潜直升机\",\n          \"quantity_quote\": \"两架\"\n        }\n      ],\n      \"location\": {\n        \"value\": \"阿拉伯海围绕任务海域\",\n        \"quote\": \"在阿拉伯海围绕任务海域\"\n      },\n      \"mission\": {\n        \"value\": \"反潜巡逻\",\n        \"quote\": \"组织反潜巡逻\"\n      },\n      \"start_time\": null,\n      \"end_time\": null,\n      \"time_quote\": \"\",\n      \"movement\": \"进入\",\n      \"movement_quote\": \"在阿拉伯海围绕任务海域组织反潜巡逻\"\n    }\n  ]\n}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 16287089000,
+    "load_duration": 11134800,
+    "prompt_eval_count": 881,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 394485000,
+    "eval_count": 847,
+    "eval_duration": 15751622000
+  }
+}

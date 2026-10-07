@@ -1,0 +1,281 @@
+{
+  "role": "verification",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N011",
+      "kind": "news",
+      "title": "澳大利亚霍巴特级导弹驱逐舰在琼州海峡完成联合搜救训练后离开",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：澳大利亚霍巴特级导弹驱逐舰在琼州海峡完成联合搜救训练后离开\n正文：2025年5月1日，澳大利亚霍巴特级导弹驱逐舰在琼州海峡围绕任务海域组织联合搜救训练，自11时48分起按计划保持机动并持续执行任务，于13时13分沿既定航线离开该海域。\n\n主题词：澳大利亚  霍巴特级  琼州海峡  联合搜救训练\n",
+      "platforms": [
+        {
+          "name": "霍巴特级",
+          "country": "澳大利亚",
+          "quantity": null,
+          "quote": "澳大利亚霍巴特级导弹驱逐舰",
+          "quantity_quote": "",
+          "country_raw": "澳大利亚"
+        }
+      ],
+      "location": {
+        "raw": "琼州海峡",
+        "region": "琼州海峡",
+        "direction": "南海",
+        "precision": "具体区域",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "在琼州海峡"
+      },
+      "mission": {
+        "value": "联合搜救训练",
+        "quote": "组织联合搜救训练"
+      },
+      "start_time": "11:48",
+      "end_time": "13:13",
+      "movement": "离开"
+    },
+    "opinion": {
+      "id": "O027",
+      "kind": "opinion",
+      "title": "澳大利亚海军霍巴特级驱逐舰在南海进行联合搜救训练",
+      "text": "时间：2025.5.1\n\n标题：澳大利亚海军霍巴特级驱逐舰在南海进行联合搜救训练\n\n正文：据央视新闻报道，2025年5月1日，澳大利亚海军一艘霍巴特级导弹驱逐舰在南海海域按计划组织联合搜救训练。从公开信息看，该舰围绕共同任务保持协同行动，并完成了平台间的联络和行动衔接，被视为检验协同组织与流程熟悉程度的一次实践。\n",
+      "platforms": [
+        {
+          "name": "霍巴特级导弹驱逐舰",
+          "country": "澳大利亚",
+          "quantity": 1,
+          "quote": "一艘霍巴特级导弹驱逐舰",
+          "quantity_quote": "一艘霍巴特级导弹驱逐舰",
+          "country_raw": "澳大利亚"
+        }
+      ],
+      "location": {
+        "raw": "南海海域",
+        "region": "南海",
+        "direction": "南海",
+        "precision": "大范围",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "在南海海域"
+      },
+      "mission": {
+        "value": "联合搜救训练",
+        "quote": "进行联合搜救训练"
+      },
+      "start_time": null,
+      "end_time": null,
+      "movement": "活动"
+    },
+    "radars": [
+      {
+        "id": "R033",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "霍巴特级导弹驱逐舰",
+            "country": "澳大利亚",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-42C2AB30541F18",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "琼州海峡",
+          "region": "琼州海峡",
+          "direction": "南海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "琼州海峡",
+            "region": "琼州海峡",
+            "direction": "南海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "联合搜救训练",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "联合搜救训练"
+        ],
+        "start_time": "2025.05.01 11:48:00",
+        "end_time": "2025.05.01 13:13:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-42C2AB30541F18",
+        "sibling_ids": [],
+        "hull_values": [
+          "DDG-39"
+        ],
+        "country_values": [
+          "澳大利亚"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 11
+      }
+    ],
+    "association": {
+      "opinion_edges": [
+        {
+          "candidate_id": "O027",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.95,
+          "reason": "平台（澳大利亚霍巴特级）、任务（联合搜救训练）、时间（2025.5.1）完全一致；地点“南海海域”包含新闻中的“琼州海峡”，符合大范围包含关系。"
+        },
+        {
+          "candidate_id": "O003",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.98,
+          "reason": "平台完全不同（中国运 -8 vs 澳大利亚霍巴特级），任务不同（侦察巡逻 vs 搜救训练），虽时间和地点重叠，但主体和目的均不一致。"
+        },
+        {
+          "candidate_id": "O041",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.99,
+          "reason": "平台、国家、地点（孟加拉湾 vs 琼州海峡）完全不同，时间重叠仅为巧合或数据污染。"
+        }
+      ],
+      "radar_edges": [
+        {
+          "candidate_id": "R033",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 1.0,
+          "reason": "雷达数据与新闻在平台型号（霍巴特级）、国家（澳大利亚）、地点（琼州海峡）、任务（联合搜救训练）及起止时间（11:48-13:13）上完全精确匹配，确认为同一活动。"
+        },
+        {
+          "candidate_id": "R038",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.95,
+          "reason": "平台不同（美国阿利·伯克级），任务不同（战备巡逻 vs 搜救训练），地点虽同在南海但具体区域不同（渚碧礁附近 vs 琼州海峡）。"
+        },
+        {
+          "candidate_id": "R021",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.95,
+          "reason": "平台不同（中国歼 -15T），任务不同，且地点缺失/坐标指向黄海方向，与新闻的琼州海峡不符。"
+        }
+      ],
+      "ambiguity": "无显著歧义，核心候选O027和R033均提供充分证据支持same结论。其他候选因平台、任务或地点明显冲突判定为different。"
+    },
+    "same_batch_other_candidates": []
+  },
+  "result": {
+    "same_event": true,
+    "platforms": [
+      {
+        "platform_index": 0,
+        "platform": {
+          "claim": "霍巴特级导弹驱逐舰",
+          "supporting_sources": [
+            "N011",
+            "O027",
+            "R033"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均确认为澳大利亚霍巴特级导弹驱逐舰，完全一致。"
+        },
+        "country": {
+          "claim": "澳大利亚",
+          "supporting_sources": [
+            "N011",
+            "O027",
+            "R033"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均明确标注国籍为澳大利亚，完全一致。"
+        },
+        "quantity": {
+          "claim": "1 架/艘",
+          "supporting_sources": [
+            "O027",
+            "R033"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论明确提及“一艘”，雷达批号显示数量值为"
+        }
+      }
+    ],
+    "location": {
+      "claim": "琼州海峡",
+      "supporting_sources": [
+        "N011",
+        "R033"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与雷达均精确指向“琼州海峡”；舆论提及的“南海海域”为大范围描述，兼容具体区域，无冲突。"
+    },
+    "time": {
+      "claim": "2025 年 5 月 1 日 11:48-13:13",
+      "supporting_sources": [
+        "N011",
+        "R033"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与雷达起止时间完全精确匹配；舆论仅确认日期，未提供具体时刻，不构成冲突。"
+    },
+    "mission": {
+      "claim": "联合搜救训练",
+      "supporting_sources": [
+        "N011",
+        "O027",
+        "R033"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "三源（新闻、舆论、雷达）均明确任务为“联合搜救训练”，完全一致。"
+    },
+    "movement": {
+      "claim": "离开该海域",
+      "supporting_sources": [
+        "N011"
+      ],
+      "conflicting_sources": [],
+      "status": "insufficient",
+      "reason": "仅新闻提及“离开”，雷达未说明运动状态，舆论仅称“活动”。因缺乏多源印证且无明确冲突，结论为 insufficient（非 conflict）。"
+    },
+    "unresolved_issues": [],
+    "explanation": "核心事实（平台、国籍、地点、时间、任务）均有至少两类来源支持且三源一致或兼容。数量由舆论和雷达共同确认为 1。运动状态仅新闻提及，其余未说明，无冲突证据，故不判定为 conflict。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T16:42:07.1768312Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"same_event\": true, \"platforms\": [{\"platform_index\": 0, \"platform\": {\"claim\": \"霍巴特级导弹驱逐舰\", \"supporting_sources\": [\"N011\", \"O027\", \"R033\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源（新闻、舆论、雷达）均确认为澳大利亚霍巴特级导弹驱逐舰，完全一致。\"}, \"country\": {\"claim\": \"澳大利亚\", \"supporting_sources\": [\"N011\", \"O027\", \"R033\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源（新闻、舆论、雷达）均明确标注国籍为澳大利亚，完全一致。\"}, \"quantity\": {\"claim\": \"1 架/艘\", \"supporting_sources\": [\"O027\", \"R033\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"舆论明确提及“一艘”，雷达批号显示数量值为\" }\n}\n], \"location\": {\"claim\": \"琼州海峡\", \"supporting_sources\": [\"N011\", \"R033\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻与雷达均精确指向“琼州海峡”；舆论提及的“南海海域”为大范围描述，兼容具体区域，无冲突。\"}, \"time\": {\"claim\": \"2025 年 5 月 1 日 11:48-13:13\", \"supporting_sources\": [\"N011\", \"R033\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻与雷达起止时间完全精确匹配；舆论仅确认日期，未提供具体时刻，不构成冲突。\"}, \"mission\": {\"claim\": \"联合搜救训练\", \"supporting_sources\": [\"N011\", \"O027\", \"R033\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源（新闻、舆论、雷达）均明确任务为“联合搜救训练”，完全一致。\"}, \"movement\": {\"claim\": \"离开该海域\", \"supporting_sources\": [\"N011\"], \"conflicting_sources\": [], \"status\": \"insufficient\", \"reason\": \"仅新闻提及“离开”，雷达未说明运动状态，舆论仅称“活动”。因缺乏多源印证且无明确冲突，结论为 insufficient（非 conflict）。\"}, \"unresolved_issues\": [],\"explanation\": \"核心事实（平台、国籍、地点、时间、任务）均有至少两类来源支持且三源一致或兼容。数量由舆论和雷达共同确认为 1。运动状态仅新闻提及，其余未说明，无冲突证据，故不判定为 conflict。\"}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 13625602200,
+    "load_duration": 10409300,
+    "prompt_eval_count": 2042,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 762279000,
+    "eval_count": 606,
+    "eval_duration": 12642008000
+  }
+}

@@ -1,0 +1,727 @@
+{
+  "id": "N025",
+  "news_id": "N025",
+  "opinion_id": "O012",
+  "radar_ids": [
+    "R005"
+  ],
+  "radar_slots": {
+    "0": "R005"
+  },
+  "alignment": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O012",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.95,
+        "reason": "平台（澳大利亚 E-7A）、任务（预警指挥）、日期（2025.5.1）及大致时间区间高度重合。新闻明确定位在“渚碧礁附近”，候选虽表述为“南海方向”但结合雷达数据 R005 的坐标范围（约北纬 10.8-11.0，东经 114.0-114.3）及时间重叠度，可判定为同一具体活动。数量差异（新闻未提 vs 候选称两架）视为数据缺失或统计口径不同，不影响关联结论。"
+      },
+      {
+        "candidate_id": "O011",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "平台类型完全不同（驱逐舰 vs 预警机），任务性质不同（活动/巡逻 vs 预警指挥），且新闻未提及美军舰艇参与，故排除。"
+      },
+      {
+        "candidate_id": "O027",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "平台类型不同（霍巴特级驱逐舰 vs E-7A 预警机），任务不同（搜救训练 vs 预警指挥），且新闻未提及澳海军舰艇参与，故排除。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R005",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.98,
+        "reason": "平台（澳大利亚 E-7A）、任务（预警指挥）、日期完全一致。时间区间高度重叠（新闻 21:31-22:12，雷达 20:47-22:12）。虽然雷达地点字段缺失，但其坐标范围（北纬 10.84-11.05）与渚碧礁海域地理特征吻合，且时间上的强重叠及平台一致性足以确认属于同一次活动。数量差异（新闻未提 vs 雷达称 2 架）不影响关联。"
+      },
+      {
+        "candidate_id": "R038",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台不同（美国阿利·伯克级驱逐舰 vs E-7A），任务不同（战备巡逻 vs 预警指挥），时间无重叠，故排除。"
+      },
+      {
+        "candidate_id": "R033",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台不同（澳大利亚霍巴特级驱逐舰 vs E-7A），地点不同（琼州海峡 vs 渚碧礁），任务不同，故排除。"
+      }
+    ],
+    "ambiguity": "主要存在于 O012 和 R005 的数量描述差异（新闻未明确数量，雷达显示 2 架，候选称 2 架），但这属于数据粒度问题而非事实冲突，不影响判定为同一次活动。其他候选因平台、任务或地点明显不符已排除。"
+  },
+  "candidates": {
+    "opinion": [
+      {
+        "id": "O012",
+        "score": 4.64587,
+        "cosine": 0.96587,
+        "platform_similarity": 1.0,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O002",
+        "score": 2.02744,
+        "cosine": 0.66744,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "same_direction_only"
+      },
+      {
+        "id": "O011",
+        "score": 1.49284,
+        "cosine": 0.69284,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "same"
+      },
+      {
+        "id": "O027",
+        "score": 1.37709,
+        "cosine": 0.69709,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O036",
+        "score": 1.17996,
+        "cosine": 0.69996,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O014",
+        "score": 0.73076,
+        "cosine": 0.73076,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O028",
+        "score": 0.69774,
+        "cosine": 0.69774,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      }
+    ],
+    "radar": [
+      {
+        "id": "R005",
+        "score": 5.3544,
+        "cosine": 0.9544,
+        "platform_similarity": 1.0,
+        "time_overlap": 1.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R012",
+        "score": 1.87746,
+        "cosine": 0.67746,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R024",
+        "score": 1.87148,
+        "cosine": 0.67148,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R038",
+        "score": 1.50024,
+        "cosine": 0.70024,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "same"
+      },
+      {
+        "id": "R033",
+        "score": 1.05546,
+        "cosine": 0.69546,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "same_direction_only"
+      },
+      {
+        "id": "R014",
+        "score": 0.70954,
+        "cosine": 0.70954,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R010",
+        "score": 0.69459,
+        "cosine": 0.69459,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      }
+    ]
+  },
+  "assignment_diagnostics": {
+    "opinion": [],
+    "radar": []
+  },
+  "verification": {
+    "same_event": true,
+    "facts": [
+      {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "E-7A“楔尾”预警与控制机",
+        "supporting_sources": [
+          "N025",
+          "O012",
+          "R005"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N025': 'E-7A“楔尾”预警与控制机', 'O012': 'E-7A“楔尾”预警与控制机', 'R005': 'E-7A“楔尾”预警与控制机'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "E-7A“楔尾”预警与控制机",
+          "supporting_sources": [
+            "N025",
+            "O012",
+            "R005"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源一致"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "澳大利亚",
+        "supporting_sources": [
+          "N025",
+          "O012",
+          "R005"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N025': '澳大利亚', 'O012': '澳大利亚', 'R005': '澳大利亚'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "澳大利亚",
+          "supporting_sources": [
+            "N025",
+            "O012",
+            "R005"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源一致"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "2架",
+        "supporting_sources": [
+          "O012",
+          "R005"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'O012': 2, 'R005': 2}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "2 架",
+          "supporting_sources": [
+            "O012",
+            "R005"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论与雷达均明确提及 2 架，新闻未说明数量视为缺失而非反对"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "南海",
+        "supporting_sources": [
+          "N025",
+          "O012"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "复核明示地点和PDF包含关系：{'N025': '渚碧礁附近海域', 'O012': '南海'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "渚碧礁附近海域",
+          "supporting_sources": [
+            "N025"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻明确定位；舆论“南海方向”及雷达坐标范围（北纬 10.8-11.0，东经 114.0-114.3）兼容该具体区域"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N025": {
+            "raw": "渚碧礁附近海域",
+            "region": "渚碧礁附近海域",
+            "direction": "南海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false,
+            "quote": "在渚碧礁附近海域"
+          },
+          "O012": {
+            "raw": "南海方向",
+            "region": "南海",
+            "direction": "南海",
+            "precision": "大范围",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false,
+            "quote": "在南海方向执行预警指挥任务"
+          }
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "起点 20:47，终点 22:12",
+        "supporting_sources": [
+          "O012",
+          "R005"
+        ],
+        "conflicting_sources": [
+          "N025"
+        ],
+        "status": "conflict",
+        "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "2025 年 5 月 1 日 20:47 至 22:12",
+          "supporting_sources": [
+            "O012",
+            "R005"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论与雷达时间区间高度重叠且覆盖新闻时段；新闻具体时刻（21:31-22:12）包含在雷达/舆论的大致活动时间内"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "components": {
+          "start_time": {
+            "value": "20:47",
+            "support": [
+              "O012",
+              "R005"
+            ],
+            "conflicts": [
+              "N025"
+            ],
+            "status": "conflict",
+            "source_values": {
+              "N025": "21:31",
+              "O012": "20:47",
+              "R005": "20:47"
+            }
+          },
+          "end_time": {
+            "value": "22:12",
+            "support": [
+              "N025",
+              "R005"
+            ],
+            "conflicts": [],
+            "status": "supported",
+            "source_values": {
+              "N025": "22:12",
+              "R005": "22:12"
+            }
+          }
+        },
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "预警指挥",
+        "supporting_sources": [
+          "N025",
+          "O012",
+          "R005"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "原文明示任务：{'N025': ['预警指挥'], 'O012': ['预警指挥'], 'R005': ['预警指挥']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "预警指挥任务",
+          "supporting_sources": [
+            "N025",
+            "O012",
+            "R005"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源均明确提及预警指挥相关任务"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N025": [
+            "预警指挥"
+          ],
+          "O012": [
+            "预警指挥"
+          ],
+          "R005": [
+            "预警指挥"
+          ]
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N025",
+          "O012"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "supporting_sources": [
+            "N025",
+            "O012"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻与舆论均描述为围绕海域机动/组织行动，雷达虽未显式说明但坐标变化暗示活动"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N025": "活动",
+          "O012": "活动",
+          "R005": "未说明"
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location_detail",
+        "claim": "渚碧礁附近海域",
+        "supporting_sources": [
+          "N025"
+        ],
+        "conflicting_sources": [],
+        "status": "insufficient",
+        "reason": "具体区域仅一类来源明示；结论使用共同获支持的方向，细节保留待核实",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "渚碧礁附近海域",
+          "supporting_sources": [
+            "N025"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻明确定位；舆论“南海方向”及雷达坐标范围（北纬 10.8-11.0，东经 114.0-114.3）兼容该具体区域"
+        },
+        "supporting_source_types": [
+          "news"
+        ]
+      }
+    ],
+    "unresolved_issues": [],
+    "explanation": "程序核验未通过：time关键事实冲突：逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突",
+    "model_explanation": "三源在平台型号、国籍、任务性质及大致时间地点上高度一致。数量方面，舆论和雷达明确支持"
+  },
+  "reasons": [
+    "time关键事实冲突：逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突"
+  ],
+  "status": "不可信事件",
+  "verified_facts": [
+    {
+      "platform_index": 0,
+      "field": "platform",
+      "claim": "E-7A“楔尾”预警与控制机",
+      "supporting_sources": [
+        "N025",
+        "O012",
+        "R005"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N025': 'E-7A“楔尾”预警与控制机', 'O012': 'E-7A“楔尾”预警与控制机', 'R005': 'E-7A“楔尾”预警与控制机'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "E-7A“楔尾”预警与控制机",
+        "supporting_sources": [
+          "N025",
+          "O012",
+          "R005"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源一致"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "country",
+      "claim": "澳大利亚",
+      "supporting_sources": [
+        "N025",
+        "O012",
+        "R005"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N025': '澳大利亚', 'O012': '澳大利亚', 'R005': '澳大利亚'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "澳大利亚",
+        "supporting_sources": [
+          "N025",
+          "O012",
+          "R005"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源一致"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "quantity",
+      "claim": "2架",
+      "supporting_sources": [
+        "O012",
+        "R005"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'O012': 2, 'R005': 2}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "2 架",
+        "supporting_sources": [
+          "O012",
+          "R005"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "舆论与雷达均明确提及 2 架，新闻未说明数量视为缺失而非反对"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "location",
+      "claim": "南海",
+      "supporting_sources": [
+        "N025",
+        "O012"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "复核明示地点和PDF包含关系：{'N025': '渚碧礁附近海域', 'O012': '南海'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "渚碧礁附近海域",
+        "supporting_sources": [
+          "N025"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻明确定位；舆论“南海方向”及雷达坐标范围（北纬 10.8-11.0，东经 114.0-114.3）兼容该具体区域"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N025": {
+          "raw": "渚碧礁附近海域",
+          "region": "渚碧礁附近海域",
+          "direction": "南海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在渚碧礁附近海域"
+        },
+        "O012": {
+          "raw": "南海方向",
+          "region": "南海",
+          "direction": "南海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在南海方向执行预警指挥任务"
+        }
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "mission",
+      "claim": "预警指挥",
+      "supporting_sources": [
+        "N025",
+        "O012",
+        "R005"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "原文明示任务：{'N025': ['预警指挥'], 'O012': ['预警指挥'], 'R005': ['预警指挥']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "预警指挥任务",
+        "supporting_sources": [
+          "N025",
+          "O012",
+          "R005"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源均明确提及预警指挥相关任务"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N025": [
+          "预警指挥"
+        ],
+        "O012": [
+          "预警指挥"
+        ],
+        "R005": [
+          "预警指挥"
+        ]
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "movement",
+      "claim": "活动",
+      "supporting_sources": [
+        "N025",
+        "O012"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N025",
+          "O012"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与舆论均描述为围绕海域机动/组织行动，雷达虽未显式说明但坐标变化暗示活动"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N025": "活动",
+        "O012": "活动",
+        "R005": "未说明"
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    }
+  ],
+  "radar_row_count": 10,
+  "direction": "南海",
+  "report_eligible": false,
+  "directory": "不可信事件/N025_澳大利亚E-7A预警机在渚碧礁附近海域持续活动"
+}

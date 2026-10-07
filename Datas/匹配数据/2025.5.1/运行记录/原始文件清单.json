@@ -1,0 +1,611 @@
+{
+  "texts": [
+    {
+      "id": "N001",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\001_开源军情-韩国AW-159反潜直升机在阿拉伯海执行反潜巡逻任务.txt",
+      "sha256": "9d50dd77514f76dac181fadf22b766bfdf5861d9973a4979df45c3e1ef57af2c"
+    },
+    {
+      "id": "N002",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\002_开源军情-中国轰-6K轰炸机在上海外海组织对海突击训练.txt",
+      "sha256": "95df3abc369527119bf84a2df79c3e3b66b32671b9936d5efc5b88e902fc2ca6"
+    },
+    {
+      "id": "N003",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\003_开源军情-中国903A型综合补给舰在冲绳海槽持续活动.txt",
+      "sha256": "a22b78e2db3fd8578e05ee5ee815918e9f8c4fc8d5a764118def760b285b10b8"
+    },
+    {
+      "id": "N004",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\004_开源军情-中国歼-35舰载隐身战斗机在温州外海执行战备警巡行动.txt",
+      "sha256": "884fc42f12b444dcace1a63a683032a0bcf1c6141b07644c03c721cd40d46136"
+    },
+    {
+      "id": "N005",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\005_开源军情-中国海军903A型补给舰在万安滩海域持续活动.txt",
+      "sha256": "dcdddb110f7f2f833f29f0c26ba1a1528d8e2f539ceda456a68e8df6c0652a1d"
+    },
+    {
+      "id": "N006",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\006_开源军情-中国054B型导弹护卫舰在东海开展远海训练.txt",
+      "sha256": "885e9cdf05b149f91f9cc7cabcd88ad661421217937d105ad09c891a3dbb17df"
+    },
+    {
+      "id": "N007",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\007_开源军情-德国“台风”多用途战斗机在东海油气田海域活动.txt",
+      "sha256": "7ac7839b68655fc6bdc1015b9e5d48f2f9b1c0222c65b22da390f04950e5c03c"
+    },
+    {
+      "id": "N008",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\008_开源军情-苏-35S多用途战斗机俄军苏-35S在成山头外海持续活动.txt",
+      "sha256": "95c65acbe4d313ddee9cf0ac6c6d99b51e0afcdecfd91527ad469cb84eb51b6f"
+    },
+    {
+      "id": "N009",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\009_开源军情-俄军苏-35S多用途战斗机在南黄海执行战备警巡行动.txt",
+      "sha256": "79329a4251422cd184f0db25651174445358b6868a88becefb8a714e69417ba0"
+    },
+    {
+      "id": "N010",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\010_开源军情-日本秋月级护卫舰在东海南部完成实弹射击训练后离开.txt",
+      "sha256": "72dcbf340a6ca39aaf0d96ed571c99d4f84aca29da9cb7a822eb9e91b847f8d7"
+    },
+    {
+      "id": "N011",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\011_开源军情-澳大利亚霍巴特级导弹驱逐舰在琼州海峡完成联合搜救训练后离开.txt",
+      "sha256": "1f8a17bc60c58e7e1e30e0b03613e362b012aaedc90b3bd62bb718ef6683d15c"
+    },
+    {
+      "id": "N012",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\012_开源军情-美海军新奥尔良号及本福德号在北黄海执行编队警戒部署.txt",
+      "sha256": "6acdad7c75399e0f6c76cce751bb37197824e26fc938eeb52f7f3f5d286fe070"
+    },
+    {
+      "id": "N013",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\013_开源军情-中国空警-500预警机进入钓鱼岛海域执行情报监视侦察.txt",
+      "sha256": "ad24b95b9daf98a93c78fe87a39c5844c59abbfebe1a808f069602f74da4c0db"
+    },
+    {
+      "id": "N014",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\014_开源军情-越南苏-30MK2多用途战斗机在礼乐滩海域进行对海突击训练.txt",
+      "sha256": "b47d75fc915b402a14f6ee50138ce7645b2e4d210e3e2f50a18fabc8aee6625c"
+    },
+    {
+      "id": "N015",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\015_开源军情-中国海军039A型潜艇与056A型护卫舰在东海中部执行反潜巡逻.txt",
+      "sha256": "d73f051baaa5332610066e0fff61bbdbd240d9b8106105fcf11277c247a8f581"
+    },
+    {
+      "id": "N016",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\016_开源军情-韩国海军岛山安昌浩级潜艇在鄂霍次克海持续活动.txt",
+      "sha256": "2b46078a05cef7b78b07bdfca1078e28ded83bf93ffc50d31511df2deb80183b"
+    },
+    {
+      "id": "N017",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\017_开源军情-俄军瓦良格号巡洋舰在礼乐滩海域持续开展活动.txt",
+      "sha256": "ad55d873a870420984f420eadd88f42a3708b215e66c3c5c0a43822eaeea10b4"
+    },
+    {
+      "id": "N018",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\018_开源军情-中国海军福建号航母在钓鱼岛海域执行联合巡航任务行动.txt",
+      "sha256": "b8f6165c699c20d48288209120cab718cf107522956374fe3fcf8944ce1cf6b9"
+    },
+    {
+      "id": "N019",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\019_开源军情-法国E-2C预警机在仁爱礁附近海域执行空中警戒.txt",
+      "sha256": "aece6d6fe596759309ca00315aea53f8e5722dafe56de329bb4d11dfbda8c630"
+    },
+    {
+      "id": "N020",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\020_开源军情-韩国独岛级两栖攻击舰在东海南部开展两栖作战训练.txt",
+      "sha256": "e72a3dab1a9bc65a7ec152c1c1f17326c2b60c9b45bd0ccec7a3423ced6f59a0"
+    },
+    {
+      "id": "N021",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\021_开源军情-中国运-8反潜巡逻机在南海北部持续开展活动.txt",
+      "sha256": "6dee3aa3d28d9969a74485e9d6eff4e4ecf7a836ccfc0c3b33780010c1d296ad"
+    },
+    {
+      "id": "N022",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\022_开源军情-意大利莱蒙多·蒙特库科利号巡逻舰在礼乐滩海域反潜巡逻.txt",
+      "sha256": "73a667dccc9d3308e6210cf639adfff65091d390af808abb58b7d50e218ee554"
+    },
+    {
+      "id": "N023",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\023_开源军情-中国海军054A型护卫舰在白令海执行反潜巡逻.txt",
+      "sha256": "178d97925bbc347b64c678e1522db55fd4771e569c6faa1f851b6fd1e9248705"
+    },
+    {
+      "id": "N024",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\024_开源军情-美军RC-135V_W电子侦察机由外围航线进入东海执行侦察.txt",
+      "sha256": "607663ff13a4621dbabf35aa382279d77dd7c2595afa66b1af4d2685171268f3"
+    },
+    {
+      "id": "N025",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\025_开源军情-澳大利亚E-7A预警机在渚碧礁附近海域持续活动.txt",
+      "sha256": "b0374375163e3330f8fcbf4cfd869a1c1c4d9fd2b68d50ddccfaf9e29a97e212"
+    },
+    {
+      "id": "N026",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\026_开源军情-意大利歼-15T舰载战斗机在济州岛西部海域开展起降训练.txt",
+      "sha256": "5ffc9f0e7c78e3317d94c05f479a66f796a24f585cc099626aa6a1bbb5cbe58e"
+    },
+    {
+      "id": "N027",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\027_开源军情-韩国大邱级护卫舰在巴伦支海执行自由航行行动.txt",
+      "sha256": "25cf10534180dda9e10965bdb813e40dcee34c1875d2d68a823a720e134d5f36"
+    },
+    {
+      "id": "N028",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\028_开源军情-马来西亚海军莱库号导弹护卫舰在温州外海执行海上护航.txt",
+      "sha256": "d80930253f2c1df1deaa471b28b4ca66fdfa84c59414edcbbc8e0bb771ddaae8"
+    },
+    {
+      "id": "N029",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\029_开源军情-意大利F-35B在南沙群岛海域持续开展活动.txt",
+      "sha256": "bf1b45412c4d4b71a08530fb5264860fb4dd070dfc80cc7a7ef7498bfb69e3f1"
+    },
+    {
+      "id": "N030",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\030_开源军情-韩国P-3CK反潜巡逻机在莫桑比克海峡执行联合巡逻.txt",
+      "sha256": "a161252ecd6aeafa048827c44290d8c65dab1afeef3dbf73999e8c23e70c9be9"
+    },
+    {
+      "id": "N031",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\031_开源军情-中国山东号航空母舰在中太平洋海域持续活动.txt",
+      "sha256": "d761583bcec9cf0d0043b042b20a928595d77c67cfbb06770fb207c11dd5a4a1"
+    },
+    {
+      "id": "N032",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\032_开源军情-中国054A型导弹护卫舰在夏威夷附近海空域执行联合巡航行动.txt",
+      "sha256": "cb00377b21060d674c5bcdbbd5780e6dd7e585231babaee1c7f2f18647a87bbd"
+    },
+    {
+      "id": "N033",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\033_开源军情-菲律宾海军米格尔·马尔瓦尔号护卫舰在上海外海活动.txt",
+      "sha256": "18ad93fad2772ae88c6341a6e715f6310781ee6b5da923b022c9b98a783fb45c"
+    },
+    {
+      "id": "N034",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\034_开源军情-日本海上自卫队村雨号护卫舰由外围航线进入东海活动.txt",
+      "sha256": "4f9dc5ecfcf6d641937be4042211439c671713d0e216e07bbfaae90e94a697e8"
+    },
+    {
+      "id": "N035",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\035_开源军情-美国海军阿利·伯克级驱逐舰在渚碧礁附近海域执行战备巡逻.txt",
+      "sha256": "7734374263310f0fc0f7fb5dc5bdf85371fd67d07765577e236fd1555e6ff766"
+    },
+    {
+      "id": "N036",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\036_开源军情-中国071型船坞登陆舰在安达曼海执行联合巡航任务行动.txt",
+      "sha256": "9d59e7514fcba504ee1a4131fdc1c0ce463cf6191ffe24ed39874c34233659ea"
+    },
+    {
+      "id": "N037",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\037_开源军情-中国空警-500预警机在上海外海执行空中警戒任务.txt",
+      "sha256": "69fc7211fd344e5d90911f66e1f299b17989a61714f54b4c0c6e27c65bdacaac"
+    },
+    {
+      "id": "N038",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\038_开源军情-俄海军守护级护卫舰在菲律宾海组织联合搜救训练.txt",
+      "sha256": "67de5da507b5b8de7287b3d7c2e121ec9fe1812e2bd785f22050d861624f8860"
+    },
+    {
+      "id": "N039",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\039_开源军情-苏-30SM多用途战斗机俄军苏-30SM在黄岩岛海域组织夜间对海突击训练.txt",
+      "sha256": "57055f860c26f199ba896130a8e039214f7d78d693cebf94bece114614b45f65"
+    },
+    {
+      "id": "N040",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\040_开源军情-新加坡F-15SG多用途战斗机在孟加拉湾开展对海突击训练.txt",
+      "sha256": "042109d74339a5e1f84ac8432549428aeebffeadd712019ca1dab2a766f9d5c7"
+    },
+    {
+      "id": "N041",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\041_开源军情-韩国大邱级导弹护卫舰在中太平洋持续机动并持续活动.txt",
+      "sha256": "157e4fdde7e39c2559452c3cafb335cf741e5d6d23368b12667ace3ffa0a6572"
+    },
+    {
+      "id": "N042",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\042_开源军情-新加坡F-15SG战斗机在安达曼海持续活动.txt",
+      "sha256": "396fec7baf3831c031721f5df98adb4a66a46aca0aa68d60739eb4136ece7738"
+    },
+    {
+      "id": "N043",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\043_开源军情-中国歼-16D电子战飞机在塔斯曼海开展电子对抗训练.txt",
+      "sha256": "086306dc902cbb8e2ca73da9632ec2e88654adf5aeb3100d25c4076038cd0bca"
+    },
+    {
+      "id": "N044",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\044_开源军情-苏-30SM多用途战斗机俄军苏-30SM在南沙群岛海域执行空中警戒任务.txt",
+      "sha256": "77380a4c7e11aec19d82e5058627907a2f2dbcccdc633ad0b3730a416e1845f8"
+    },
+    {
+      "id": "N045",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\045_开源军情-新加坡坚韧级坦克登陆舰在东海南部实施两栖作战训练.txt",
+      "sha256": "2f74b8a0fd24731c6615c5c09f097d25207ef6991d1c767b42b986d4d7e4a48e"
+    },
+    {
+      "id": "N046",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\046_开源军情-俄军图-95MS战略轰炸机在西沙群岛海域持续活动.txt",
+      "sha256": "a3de5d89147cd90b7d27395632db8d33ed0da3660f8ce7863437deda4bf0a359"
+    },
+    {
+      "id": "N047",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\047_开源军情-意大利空军F-35B战机在永暑礁附近海域进行对海突击训练.txt",
+      "sha256": "b8a53fa10897b9ed2388b77ff873b77ce0192c03d5e29b97dcedb45dbbd62b6f"
+    },
+    {
+      "id": "N048",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\048_开源军情-俄罗斯苏-30SM多用途战斗机在仁爱礁附近海域活动.txt",
+      "sha256": "fde05737ca79da58943991743a94bc4333a18fea01dca40c90cdc9cc2bea63bc"
+    },
+    {
+      "id": "N049",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\049_开源军情-美国米利厄斯号导弹驱逐舰在温州外海持续开展活动.txt",
+      "sha256": "24aaeb59e867fa073b4de9e825a926e005a9ce94c7bfc8878cf6ca0cf1266a74"
+    },
+    {
+      "id": "N050",
+      "kind": "news",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\开源军情\\050_开源军情-德军台风多用途战斗机在印度洋执行战备警巡行动.txt",
+      "sha256": "0da6dbe1578167d1628f9bd874c2f3043bd06aae90394c0d907c2aaa09e05712"
+    },
+    {
+      "id": "O001",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\001_(网上舆情)-中国两架歼-16D电子战机在塔斯曼海组织训练.txt",
+      "sha256": "aa871fcf2b61e6b36136ae038cca1c894fde4cd99f4587da0add0805ab3e3506"
+    },
+    {
+      "id": "O002",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\002_(网上舆情)-俄军苏-30SM夜间在黄岩岛海域持续活动近两个半小时.txt",
+      "sha256": "82cfaa9af1361a1fd41437d4599a64176c3228e151ee9e8aa2d0c20e0d17c989"
+    },
+    {
+      "id": "O003",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\003_(网上舆情)-中国运-8反潜巡逻机在南海执行海上侦察巡逻.txt",
+      "sha256": "fbf33b152c6780bf4ed57aa2f42aab49276b7958eaee0aed3168018943cad14c"
+    },
+    {
+      "id": "O004",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\004_(网上舆情)-新加坡F-15SG战斗机在安达曼海执行战备警巡.txt",
+      "sha256": "0c352443c2a5992632ca830fab8f5963301c11c1b931bae83cefc82e9e255e7e"
+    },
+    {
+      "id": "O005",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\005_(网上舆情)-德国空军“台风”战机在东海进行对海突击训练.txt",
+      "sha256": "ddf20487448c71a42ad27f8d84ac478e5d3abbafcd049e19a170a60ad8489c85"
+    },
+    {
+      "id": "O006",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\006_(网上舆情)-中国海军一艘054A型护卫舰在白令海完成反潜巡逻.txt",
+      "sha256": "bc534a2c813ef52c1d5705316cc43fa584ff9d1955e31b06359714aa09b204d2"
+    },
+    {
+      "id": "O007",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\007_(网上舆情)-中国海军054A型护卫舰在孟加拉湾执行联合巡航任务.txt",
+      "sha256": "ecc727076019218fa260085deecce5efd64fd2d2d6c0a0d53a79dd037187335a"
+    },
+    {
+      "id": "O008",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\008_(网上舆情)-日本“村雨号”护卫舰在东海完成编队警戒部署.txt",
+      "sha256": "fd0e9db69bbca4f7abf1b4083ccf2cef0f5a1e58611c10b68d7236a37b699188"
+    },
+    {
+      "id": "O009",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\009_(网上舆情)-韩国岛山安昌浩级潜艇在鄂霍次克海完成海上巡逻.txt",
+      "sha256": "fcf0da5d3aa828023ea61bcc03c764447a2323eeb409ae7b63269563c8124a77"
+    },
+    {
+      "id": "O010",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\010_(网上舆情)-俄军护卫舰在菲律宾海开展联合搜救训练引关注.txt",
+      "sha256": "391321c04dbb85d15bb2b8e5e771edd127f38b2636984ae2bd1a117cc172a525"
+    },
+    {
+      "id": "O011",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\011_(网上舆情)-美国阿利·伯克级驱逐舰在渚碧礁附近海域持续活动.txt",
+      "sha256": "3120fd7fd3d39b35bd12e332507708684a7bc6b63ad8012e6d291e0beb20b67b"
+    },
+    {
+      "id": "O012",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\012_(网上舆情)-澳军两架E-7A预警机南海执行预警指挥任务引关注.txt",
+      "sha256": "b4805899e192f593fbf12f2fbe43bf03d62d947466d3b7d9b3704f17488817d9"
+    },
+    {
+      "id": "O013",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\013_(网上舆情)-意大利海军F-35B在南海开展舰载机起降训练.txt",
+      "sha256": "6bbbde32c8a5bff4f7da23741882ead302a22eb11bb7744a22d7d5edf5d2d3e5"
+    },
+    {
+      "id": "O014",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\014_(网上舆情)-法国两架E-2C预警机在东海赤尾屿海域执行空中警戒.txt",
+      "sha256": "e270dca5f19bbe3cf9cb4b3492d56f75d542e4ae1203a57854b3186f2d5971b6"
+    },
+    {
+      "id": "O015",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\015_(网上舆情)-中国903A型综合补给舰在东海执行例行部署.txt",
+      "sha256": "eac7e600ebe104d95ab563491d5cf0c3983fad4e00ae68587da069e70e8aa728"
+    },
+    {
+      "id": "O016",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\016_(网上舆情)-中国903A型补给舰南海远海训练时段引发流程熟悉讨论.txt",
+      "sha256": "500088004a30fe383fce41ce7db183dea6cfc73724a54259d1a3c0982af73d62"
+    },
+    {
+      "id": "O017",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\017_(网上舆情)-意大利两架F-35B在南海进行对海突击训练.txt",
+      "sha256": "d26163d6088fbb59df128f8e8d4a5a8103d504def1722cf0bb4bb3a224edb77b"
+    },
+    {
+      "id": "O018",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\018_(网上舆情)-越南两架苏-30MK2战斗机在南海进行对海突击训练.txt",
+      "sha256": "32b60f5606c069344d9b5a7a3b66e0c6776159eb3a6cdd4a40d9e14de0fa2191"
+    },
+    {
+      "id": "O019",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\019_(网上舆情)-俄军苏-30SM在南海连续机动，南沙海域活动引发关注.txt",
+      "sha256": "50346eab76c05ed9c8f9eb11a6498c8d2c67659498b276b287f93b28e982234d"
+    },
+    {
+      "id": "O020",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\020_(网上舆情)-俄海军“瓦良格”号巡洋舰南海执行护航任务.txt",
+      "sha256": "564858a935d0c856608912017fbf006d9c2750b3b4494ad24ec15e95ccd5b49f"
+    },
+    {
+      "id": "O021",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\021_(网上舆情)-中国两架歼-35隐身战斗机在东海执行战备警巡.txt",
+      "sha256": "98ead1851e13647fd96cf0f7c11061eb30e9e9d5178040277a0788cca538243b"
+    },
+    {
+      "id": "O022",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\022_(网上舆情)-德军2架“台风”战斗机在印度洋持续活动引关注.txt",
+      "sha256": "9ca77676a1bf85bb1afc686962e71914261c67a6be4f399eec076231676360d0"
+    },
+    {
+      "id": "O023",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\023_(网上舆情)-俄军苏-35S在黄海开展对海突击训练引发关注.txt",
+      "sha256": "bc422428f6d243169ad967e2c42bb631054ec2b03d672947b2343f722d40ed25"
+    },
+    {
+      "id": "O024",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\024_(网上舆情)-法国导弹护卫舰在巴伦支海持续机动引发媒体关注.txt",
+      "sha256": "42d40379599b497ae33d9d5bc522fde92e22d17700fc7bab845a7601bcb1f032"
+    },
+    {
+      "id": "O025",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\025_(网上舆情)-俄军图-95MS轰炸机在南海方向组织远程轰炸训练.txt",
+      "sha256": "4ee6c533a69cd5d8dff46f17fe9ab4c0dfc95c182de3a7a57199f92cfc1f9dcf"
+    },
+    {
+      "id": "O026",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\026_(网上舆情)-俄军2架苏-35S在黄海方向执行战备警巡任务.txt",
+      "sha256": "11c0fc79cb0a5a68f8210e51e7415ba9732d287b0d301fee9d9e42dfcbe2de32"
+    },
+    {
+      "id": "O027",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\027_(网上舆情)-澳大利亚海军霍巴特级驱逐舰在南海进行联合搜救训练.txt",
+      "sha256": "ecb1085760297a139c774664e9d631c2ca1ee2f6c818a925ef6a1f8ae42a9c07"
+    },
+    {
+      "id": "O028",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\028_(网上舆情)-空警-500在东海上海外海持续活动引发区域机动讨论.txt",
+      "sha256": "fc8983da8856d502140cba740166de78847c815c1246d0ec1874514be1274cd8"
+    },
+    {
+      "id": "O029",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\029_(网上舆情)-美国海军米利厄斯号驱逐舰在东海执行海上护航.txt",
+      "sha256": "2262491aea0c0f1d990dd40b5d2c67f64db93e8afb692ca777334d33d3e52f76"
+    },
+    {
+      "id": "O030",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\030_(网上舆情)-韩海军“大邱级”护卫舰在中太平洋执行监视侦察.txt",
+      "sha256": "3d29dafdbdff49b2524be3e7b6f564ad43d3045226e4ae8639ae82dd0dc73895"
+    },
+    {
+      "id": "O031",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\031_(网上舆情)-中国两架歼-15T舰载机在济州岛西部海域持续活动.txt",
+      "sha256": "a6b85b10fbd7afd4d236616847350b291661ef03ceac808137b7d7ceab8537a2"
+    },
+    {
+      "id": "O032",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\032_(网上舆情)-中国福建号航母东海联合巡航展现协同组织能力.txt",
+      "sha256": "db30fb934bd13e370481863376cdf14b27f6109f55c011cd71b3e427987260dd"
+    },
+    {
+      "id": "O033",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\033_(网上舆情)-中国海军“山东号”航母在中太平洋进行联合巡航.txt",
+      "sha256": "19c893f39171e641265ddd6dd1b2cdf99fe2ceab2509f37c55b0037955bb7e84"
+    },
+    {
+      "id": "O034",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\034_(网上舆情)-意大利巡逻舰现身礼乐滩海域，区域机动引发关注.txt",
+      "sha256": "e0d335c17fb89af87b433d21a92d3dfa409325de09f03f9cca60dc6431402378"
+    },
+    {
+      "id": "O035",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\035_(网上舆情)-中国两架空警-500预警机在东海执行情报监视侦察.txt",
+      "sha256": "bff52eafb5521e2767043f15d32a9d672628c5d9e26f05ce33bc8628a7ae5f60"
+    },
+    {
+      "id": "O036",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\036_(网上舆情)-俄罗斯空天军苏-30SM战机在南海执行战备警巡.txt",
+      "sha256": "63a848a88604ec644518991a0d96ecf61c937199a7f8528df965b44082c39d87"
+    },
+    {
+      "id": "O037",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\037_(网上舆情)-中国轰-6K轰炸机编队进入东海上海外海展开机动.txt",
+      "sha256": "cc6992d9111624699a2e21f56175dfdf92bd158a668ee74bf481456a1c30645e"
+    },
+    {
+      "id": "O038",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\038_(网上舆情)-韩国两架AW-159直升机在阿拉伯海执行反潜巡逻.txt",
+      "sha256": "4b26d972d009f65203ba1b35244b9d148a288590198f93ddf419b551409aedd2"
+    },
+    {
+      "id": "O039",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\039_(网上舆情)-新加坡一艘坚韧级坦克登陆舰在东海开展远海训练.txt",
+      "sha256": "a2e14208cf319b0eeac828460ae073cac65d345b896d97bbb7b43d443d30e456"
+    },
+    {
+      "id": "O040",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\040_(网上舆情)-马来西亚海军“莱库号”护卫舰赴东海执行海上护航.txt",
+      "sha256": "9264a3f634e5d011307e802273407116cf972e34b4afc53b60470266e98e46f0"
+    },
+    {
+      "id": "O041",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\041_(网上舆情)-新加坡两架F-15SG在孟加拉湾执行战备警巡.txt",
+      "sha256": "404551b7df2ebd9c539a218075137247d45d614724ddf794b805cecb05a6c5fe"
+    },
+    {
+      "id": "O042",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\042_(网上舆情)-菲律宾海军护卫舰在东海开展远海训练引发媒体分析.txt",
+      "sha256": "15b2c641f71110b87e28876752bd3ee7f01c544a55a25ea87c3fdf7c9050b348"
+    },
+    {
+      "id": "O043",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\043_(网上舆情)-韩国空军两架P-3CK反潜巡逻机在莫桑比克海峡活动.txt",
+      "sha256": "60cbce669324df6a8affe9f0f2e378995ac8401528bee59791d8e46c41cab7fb"
+    },
+    {
+      "id": "O044",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\044_(网上舆情)-韩国海军独岛级两栖攻击舰在东海开展训练引发关注.txt",
+      "sha256": "13bda78a1aa2dd25b96aae0e82f272796ec177cb57a74fb055830095dbfbba3d"
+    },
+    {
+      "id": "O045",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\045_(网上舆情)-日本海上自卫队一艘秋月级护卫舰在东海实弹射击.txt",
+      "sha256": "47ec9d4208f08baa0f892bfb22493e24c4aa6c8d0b623821c56c37972d96379d"
+    },
+    {
+      "id": "O046",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\046_(网上舆情)-美舰“新奥尔良”号在黄海活动，媒体关注其部署持续性.txt",
+      "sha256": "49eb3fa26af1eb51c6a2afafe80024dfd63eb8b0c321c21512ee9c12415173ee"
+    },
+    {
+      "id": "O047",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\047_(网上舆情)-中国071型船坞登陆舰现身安达曼海持续活动.txt",
+      "sha256": "c6681dc8747afcdf035e1c030eee61a8c8bc7afd484c63c6255c40116b2fbd3e"
+    },
+    {
+      "id": "O048",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\048_(网上舆情)-东海反潜巡逻常态化 039A型潜艇持续监视受关注.txt",
+      "sha256": "ee9757a3047d69b507ad827ea58bfb5b9d6b6eaafbbe1b50566607447501dff1"
+    },
+    {
+      "id": "O049",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\049_(网上舆情)-中国一艘054B型导弹护卫舰在东海开展远海训练.txt",
+      "sha256": "f3ce21e33fb63f6fefda7e00f2e885791979d11603481db9b4d71566d685d626"
+    },
+    {
+      "id": "O050",
+      "kind": "opinion",
+      "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\网上舆论\\050_(网上舆情)-美军RC-135V_W侦察机五一当天在东海执行电子侦察任务.txt",
+      "sha256": "680004acdeb782463a76bafd42e013af025ee6985454278af056befed75ff6dc"
+    }
+  ],
+  "radar": {
+    "path": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1\\雷达信息表_2025.5.1.xlsx",
+    "sha256": "6b2ba641a2e6293a301244d81b24c56bda8375fa1104c601244be5d00d83f6f9",
+    "rows": 600,
+    "batches": 52,
+    "activities": 54
+  }
+}

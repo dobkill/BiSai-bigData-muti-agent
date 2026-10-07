@@ -1,0 +1,777 @@
+{
+  "role": "alignment",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N007",
+      "kind": "news",
+      "title": "德国“台风”多用途战斗机在东海油气田海域活动",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：德国“台风”多用途战斗机在东海油气田海域活动\n正文：2025年5月1日，德国2架“台风”多用途战斗机在东海油气田海域持续活动，围绕任务区域保持机动，行动范围保持在指定任务海域。\n\n主题词：德国  “台风”多用途战斗机  东海油气田海域\n",
+      "platforms": [
+        {
+          "name": "台风”多用途战斗机",
+          "country": "德国",
+          "quantity": 2,
+          "quote": "2架“台风”多用途战斗机",
+          "quantity_quote": "2架“台风”多用途战斗机",
+          "country_raw": "德国"
+        }
+      ],
+      "location": {
+        "raw": "东海油气田海域",
+        "region": "东海油气田海域",
+        "direction": "东海",
+        "precision": "具体区域",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "在东海油气田海域持续活动"
+      },
+      "mission": {
+        "value": null,
+        "quote": ""
+      },
+      "start_time": null,
+      "end_time": null,
+      "movement": "活动"
+    },
+    "opinion_candidates": [
+      {
+        "id": "O005",
+        "kind": "opinion",
+        "title": "德国空军“台风”战机在东海进行对海突击训练",
+        "text": "时间：2025.5.1\n\n标题：德国空军“台风”战机在东海进行对海突击训练\n\n正文：据央视新闻报道，2025年5月1日5时45分至7时10分，德国空军“台风”多用途战斗机在东海空域组织了对海突击训练。此次训练围绕既定科目组织训练，按计划完成相关平台之间的行动衔接。有分析认为，这一动向体现了德国空军在印太方向任务组织方式的调整，相关行动被视为有助于提升训练协同与流程熟悉程度。\n",
+        "platforms": [
+          {
+            "name": "台风”多用途战斗机",
+            "country": "德国",
+            "quantity": null,
+            "quote": "德国空军“台风”多用途战斗机",
+            "quantity_quote": "",
+            "country_raw": "德国"
+          }
+        ],
+        "location": {
+          "raw": "东海空域",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在东海空域"
+        },
+        "mission": {
+          "value": "对海突击训练",
+          "quote": "组织了对海突击训练"
+        },
+        "start_time": "05:45",
+        "end_time": "07:10",
+        "movement": "活动"
+      },
+      {
+        "id": "O022",
+        "kind": "opinion",
+        "title": "德军2架“台风”战斗机在印度洋持续活动引关注",
+        "text": "时间：2025.5.1\n\n标题：德军2架“台风”战斗机在印度洋持续活动引关注\n\n正文：据央视新闻报道，德国2架“台风”多用途战斗机于2025年5月1日在印度洋相关海域持续活动。相关平台围绕任务区域保持机动，行动范围保持在指定任务海域。这一部署有助于观察德军远程兵力投送后的行动组织与区域机动能力。\n",
+        "platforms": [
+          {
+            "name": "台风",
+            "country": "德国",
+            "quantity": 2,
+            "quote": "2架“台风”多用途战斗机",
+            "quantity_quote": "2架“台风”多用途战斗机",
+            "country_raw": "德国"
+          }
+        ],
+        "location": {
+          "raw": "印度洋相关海域",
+          "region": "印度洋相关海域",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false,
+          "quote": "在印度洋相关海域"
+        },
+        "mission": {
+          "value": null,
+          "quote": ""
+        },
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动"
+      },
+      {
+        "id": "O021",
+        "kind": "opinion",
+        "title": "中国两架歼-35隐身战斗机在东海执行战备警巡",
+        "text": "时间：2025.5.1\n\n标题：中国两架歼-35隐身战斗机在东海执行战备警巡\n\n正文：据央视新闻报道，2025年5月1日，中国两架歼-35舰载隐身战斗机在东海方向按计划保持机动并持续执行战备警巡任务。围绕此次平台运用的讨论认为，该行动有助于维持前沿存在和部署持续性，展现了在特定方向的区域机动能力。\n",
+        "platforms": [
+          {
+            "name": "歼-35",
+            "country": "中国",
+            "quantity": 2,
+            "quote": "两架歼-35舰载隐身战斗机",
+            "quantity_quote": "两架歼-35舰载隐身战斗机",
+            "country_raw": "中国"
+          }
+        ],
+        "location": {
+          "raw": "东海方向",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在东海方向"
+        },
+        "mission": {
+          "value": "战备警巡任务",
+          "quote": "执行战备警巡任务"
+        },
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动"
+      },
+      {
+        "id": "O037",
+        "kind": "opinion",
+        "title": "中国轰-6K轰炸机编队进入东海上海外海展开机动",
+        "text": "时间：2025.5.1\n\n标题：中国轰-6K轰炸机编队进入东海上海外海展开机动\n\n正文：据地区军事观察机构报道，2025年5月1日，中国空军2架轰-6K轰炸机由外围航线进入东海上海外海任务海域，随后围绕任务区域保持机动，行动范围保持在指定任务海域。有关讨论关注到，此次行动在组织上呈现出清晰的批次衔接与区域控制特征，被视为检验轰炸机单元在近海复杂环境下任务连续性的一次常规安排。\n",
+        "platforms": [
+          {
+            "name": "轰-6K",
+            "country": "中国",
+            "quantity": 2,
+            "quote": "2架轰-6K轰炸机",
+            "quantity_quote": "2架",
+            "country_raw": "中国"
+          }
+        ],
+        "location": {
+          "raw": "东海上海外海任务海域",
+          "region": "上海外海",
+          "direction": "东海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "进入东海上海外海任务海域"
+        },
+        "mission": {
+          "value": null,
+          "quote": ""
+        },
+        "start_time": null,
+        "end_time": null,
+        "movement": "进入"
+      },
+      {
+        "id": "O002",
+        "kind": "opinion",
+        "title": "俄军苏-30SM夜间在黄岩岛海域持续活动近两个半小时",
+        "text": "时间：2025.5.1\n\n标题：俄军苏-30SM夜间在黄岩岛海域持续活动近两个半小时\n\n正文：据联合早报报道，俄罗斯空天军两架苏-30SM多用途战斗机于2025年5月1日20时31分至22时56分在南海黄岩岛海域展开夜间活动。从公开信息看，这两架战机在近两个半小时内围绕任务区域保持机动，行动范围保持在指定任务海域，展现出良好的任务连续性。这一动向被视为俄方在南海保持常态化存在的一部分，其区域机动能力受到外界关注。\n",
+        "platforms": [
+          {
+            "name": "苏-30SM多用途战斗机",
+            "country": "俄罗斯",
+            "quantity": 2,
+            "quote": "俄罗斯空天军两架苏-30SM多用途战斗机",
+            "quantity_quote": "两架苏-30SM多用途战斗机",
+            "country_raw": "俄罗斯"
+          }
+        ],
+        "location": {
+          "raw": "南海黄岩岛海域",
+          "region": "黄岩岛海域",
+          "direction": "南海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在南海黄岩岛海域展开夜间活动"
+        },
+        "mission": {
+          "value": null,
+          "quote": ""
+        },
+        "start_time": "20:31",
+        "end_time": "22:56",
+        "movement": "活动"
+      }
+    ],
+    "radar_candidates": [
+      {
+        "id": "R016",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "“台风”多用途战斗机",
+            "country": "德国",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-8638D8B9232003",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "对海突击训练",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "对海突击训练"
+        ],
+        "start_time": "2025.05.01 05:45:00",
+        "end_time": "2025.05.01 07:10:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            125.1685,
+            125.7821
+          ],
+          "latitude_range": [
+            28.1741,
+            28.7536
+          ],
+          "median": [
+            125.4888,
+            28.5021
+          ],
+          "origins": [
+            [
+              125.1984,
+              28.7048
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [
+            "东海"
+          ],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [],
+        "batch": "AIR-8638D8B9232003",
+        "sibling_ids": [],
+        "hull_values": [],
+        "country_values": [
+          "德国"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 13
+      },
+      {
+        "id": "R011",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "“台风”多用途战斗机",
+            "country": "德国",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-69195164BFB455",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "战备警巡",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "战备警巡"
+        ],
+        "start_time": "2025.05.01 14:33:00",
+        "end_time": "2025.05.01 16:58:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            80.1207,
+            80.2073
+          ],
+          "latitude_range": [
+            -5.211,
+            -5.1211
+          ],
+          "median": [
+            80.1943,
+            -5.1483
+          ],
+          "origins": [
+            [
+              80.1632,
+              -5.1366
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [],
+        "batch": "AIR-69195164BFB455",
+        "sibling_ids": [],
+        "hull_values": [],
+        "country_values": [
+          "德国"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 12
+      },
+      {
+        "id": "R047",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "村雨号导弹护卫舰",
+            "country": "日本",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-BBD255E22D51C3",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "东海",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "东海",
+            "region": "东海",
+            "direction": "东海",
+            "precision": "大范围",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "编队警戒部署",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "编队警戒部署"
+        ],
+        "start_time": "2025.05.01 05:07:00",
+        "end_time": "2025.05.01 07:32:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-BBD255E22D51C3",
+        "sibling_ids": [],
+        "hull_values": [
+          "DD-101"
+        ],
+        "country_values": [
+          "日本"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 12
+      },
+      {
+        "id": "R003",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "苏-35S多用途战斗机",
+            "country": "俄罗斯",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-059D33759B03E0",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "对海突击训练",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "对海突击训练"
+        ],
+        "start_time": "2025.05.01 02:49:00",
+        "end_time": "2025.05.01 04:14:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            123.3186,
+            123.8023
+          ],
+          "latitude_range": [
+            36.8715,
+            37.1399
+          ],
+          "median": [
+            123.5398,
+            37.0232
+          ],
+          "origins": [
+            [
+              123.3549,
+              36.8994
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [
+            "黄海"
+          ],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [],
+        "batch": "AIR-059D33759B03E0",
+        "sibling_ids": [],
+        "hull_values": [],
+        "country_values": [
+          "俄罗斯"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 13
+      },
+      {
+        "id": "R008",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "苏-30MK2多用途战斗机",
+            "country": "越南",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-511B24203B9156",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "对海突击训练",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "对海突击训练"
+        ],
+        "start_time": "2025.05.01 14:55:00",
+        "end_time": "2025.05.01 16:20:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            122.887,
+            123.2551
+          ],
+          "latitude_range": [
+            35.5627,
+            35.7781
+          ],
+          "median": [
+            123.1059,
+            35.6957
+          ],
+          "origins": [
+            [
+              122.898,
+              35.7972
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [
+            "黄海"
+          ],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [
+          "同批号存在远距离起始位置簇，候选拆分不代表归属已经消解"
+        ],
+        "batch": "AIR-511B24203B9156",
+        "sibling_ids": [
+          "R007"
+        ],
+        "hull_values": [],
+        "country_values": [
+          "越南"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 6
+      },
+      {
+        "id": "R013",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "苏-35S多用途战斗机",
+            "country": "俄罗斯",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-6F90A554286ABB",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "战备警巡",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "战备警巡"
+        ],
+        "start_time": "2025.05.01 08:03:00",
+        "end_time": "2025.05.01 10:28:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            122.9366,
+            123.1371
+          ],
+          "latitude_range": [
+            33.7597,
+            33.9651
+          ],
+          "median": [
+            123.0737,
+            33.834
+          ],
+          "origins": [
+            [
+              123.1298,
+              33.9373
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [
+            "黄海"
+          ],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [],
+        "batch": "AIR-6F90A554286ABB",
+        "sibling_ids": [],
+        "hull_values": [],
+        "country_values": [
+          "俄罗斯"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 13
+      }
+    ],
+    "recall": {
+      "opinion": [
+        {
+          "id": "O005",
+          "score": 4.48322,
+          "cosine": 0.95322,
+          "platform_similarity": 0.95,
+          "time_overlap": null,
+          "location_relation": "contains"
+        },
+        {
+          "id": "O022",
+          "score": 3.93022,
+          "cosine": 0.88022,
+          "platform_similarity": 0.95,
+          "time_overlap": null,
+          "location_relation": "different_direction"
+        },
+        {
+          "id": "O021",
+          "score": 1.23454,
+          "cosine": 0.75454,
+          "platform_similarity": 0.0,
+          "time_overlap": null,
+          "location_relation": "contains"
+        },
+        {
+          "id": "O037",
+          "score": 0.93124,
+          "cosine": 0.77124,
+          "platform_similarity": 0.0,
+          "time_overlap": null,
+          "location_relation": "same_direction_only"
+        },
+        {
+          "id": "O002",
+          "score": 0.75507,
+          "cosine": 0.75507,
+          "platform_similarity": 0.0,
+          "time_overlap": null,
+          "location_relation": "different_direction"
+        }
+      ],
+      "radar": [
+        {
+          "id": "R016",
+          "score": 3.98796,
+          "cosine": 0.93796,
+          "platform_similarity": 0.95,
+          "time_overlap": null,
+          "location_relation": "missing"
+        },
+        {
+          "id": "R011",
+          "score": 3.96192,
+          "cosine": 0.91192,
+          "platform_similarity": 0.95,
+          "time_overlap": null,
+          "location_relation": "missing"
+        },
+        {
+          "id": "R047",
+          "score": 1.14349,
+          "cosine": 0.66349,
+          "platform_similarity": 0.0,
+          "time_overlap": null,
+          "location_relation": "contains"
+        },
+        {
+          "id": "R003",
+          "score": 0.75053,
+          "cosine": 0.75053,
+          "platform_similarity": 0.0,
+          "time_overlap": null,
+          "location_relation": "missing"
+        },
+        {
+          "id": "R008",
+          "score": 0.74579,
+          "cosine": 0.74579,
+          "platform_similarity": 0.0,
+          "time_overlap": null,
+          "location_relation": "missing"
+        },
+        {
+          "id": "R013",
+          "score": 0.73924,
+          "cosine": 0.73924,
+          "platform_similarity": 0.0,
+          "time_overlap": null,
+          "location_relation": "missing"
+        }
+      ]
+    }
+  },
+  "result": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O005",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.95,
+        "reason": "平台（德国台风战机）、数量（2 架）、日期（5 月 1 日）及地点（东海油气田/空域）完全吻合。新闻描述为“持续活动”，雷达数据 R016 显示同一批号（AIR-8638D8B9232003）在相近时间进行“对海突击训练”，任务性质一致，属于同一次具体行动。"
+      },
+      {
+        "candidate_id": "O022",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.9,
+        "reason": "虽然平台、数量、日期相同，但地点明确为“印度洋相关海域”，与新闻中的“东海油气田海域”存在根本性地理冲突，属于不同活动。"
+      },
+      {
+        "candidate_id": "O021",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台型号（歼 -35）、国籍（中国）与新闻中的德国台风战机完全不同，属于无关材料。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R016",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.92,
+        "reason": "平台、数量、日期一致。关键证据为批号完全匹配（AIR-8638D8B9232003），且坐标辅助提示指向东海，任务均为对海突击/活动，确认为同一事件的数据源。"
+      },
+      {
+        "candidate_id": "R011",
+        "platform_indices": [
+          0
+        ],
+        "relation": "uncertain",
+        "confidence": 0.6,
+        "reason": "平台、数量、日期一致，但批号不同（AIR-69195164BFB455），任务为战备警巡。由于缺乏地点坐标验证且时间重叠度未知，无法排除是同一批次活动中的另一时段或不同编队，存在歧义。"
+      },
+      {
+        "candidate_id": "R047",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台为日本村雨号护卫舰，与新闻中的德国台风战机完全不同，属于无关材料。"
+      }
+    ],
+    "ambiguity": "R011 因批号不同且无地点坐标验证，无法完全排除其与新闻事件的时间重叠或同属一次大规模演习的可能性，但当前证据不足以判定为 same。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T16:08:18.9489204Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"opinion_edges\": [{\"candidate_id\": \"O005\", \"platform_indices\": [0], \"relation\": \"same\", \"confidence\": 0.95, \"reason\": \"平台（德国台风战机）、数量（2 架）、日期（5 月 1 日）及地点（东海油气田/空域）完全吻合。新闻描述为“持续活动”，雷达数据 R016 显示同一批号（AIR-8638D8B9232003）在相近时间进行“对海突击训练”，任务性质一致，属于同一次具体行动。\"}, {\"candidate_id\": \"O022\", \"platform_indices\": [0], \"relation\": \"different\", \"confidence\": 0.9, \"reason\": \"虽然平台、数量、日期相同，但地点明确为“印度洋相关海域”，与新闻中的“东海油气田海域”存在根本性地理冲突，属于不同活动。\"}, {\"candidate_id\": \"O021\", \"platform_indices\": [0], \"relation\": \"different\", \"confidence\": 0.95, \"reason\": \"平台型号（歼 -35）、国籍（中国）与新闻中的德国台风战机完全不同，属于无关材料。\"}],\"radar_edges\": [{\"candidate_id\": \"R016\", \"platform_indices\": [0], \"relation\": \"same\", \"confidence\": 0.92, \"reason\": \"平台、数量、日期一致。关键证据为批号完全匹配（AIR-8638D8B9232003），且坐标辅助提示指向东海，任务均为对海突击/活动，确认为同一事件的数据源。\"}, {\"candidate_id\": \"R011\", \"platform_indices\": [0], \"relation\": \"uncertain\", \"confidence\": 0.6, \"reason\": \"平台、数量、日期一致，但批号不同（AIR-69195164BFB455），任务为战备警巡。由于缺乏地点坐标验证且时间重叠度未知，无法排除是同一批次活动中的另一时段或不同编队，存在歧义。\"}, {\"candidate_id\": \"R047\", \"platform_indices\": [0], \"relation\": \"different\", \"confidence\": 0.95, \"reason\": \"平台为日本村雨号护卫舰，与新闻中的德国台风战机完全不同，属于无关材料。\"}],\"ambiguity\": \"R011 因批号不同且无地点坐标验证，无法完全排除其与新闻事件的时间重叠或同属一次大规模演习的可能性，但当前证据不足以判定为 same。\"\n}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 13355173100,
+    "load_duration": 18732000,
+    "prompt_eval_count": 5216,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 1751148000,
+    "eval_count": 573,
+    "eval_duration": 11218000000
+  }
+}

@@ -1,0 +1,314 @@
+{
+  "role": "verification",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N001",
+      "kind": "news",
+      "title": "韩国AW-159反潜直升机在阿拉伯海执行反潜巡逻任务",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：韩国AW-159反潜直升机在阿拉伯海执行反潜巡逻任务\n正文：2025年5月1日，韩国AW-159反潜直升机在阿拉伯海展开行动，从11时37分至13时02分围绕任务海域组织反潜巡逻，按计划保持机动并持续执行反潜巡逻。\n\n主题词：韩国  AW-159  反潜直升机  阿拉伯海\n",
+      "platforms": [
+        {
+          "name": "AW-159反潜直升机",
+          "country": "韩国",
+          "quantity": null,
+          "quote": "AW-159反潜直升机",
+          "quantity_quote": "",
+          "country_raw": "韩国"
+        }
+      ],
+      "location": {
+        "raw": "阿拉伯海",
+        "region": "阿拉伯海",
+        "direction": "其他",
+        "precision": "原文区域",
+        "mapping": "PDF未列入三大核心海域的区域归其他",
+        "transit": false,
+        "quote": "在阿拉伯海展开行动"
+      },
+      "mission": {
+        "value": "反潜巡逻",
+        "quote": "执行反潜巡逻任务"
+      },
+      "start_time": "11:37",
+      "end_time": "13:02",
+      "movement": "活动"
+    },
+    "opinion": {
+      "id": "O038",
+      "kind": "opinion",
+      "title": "韩国两架AW-159直升机在阿拉伯海执行反潜巡逻",
+      "text": "时间：2025.5.1\n\n标题：韩国两架AW-159直升机在阿拉伯海执行反潜巡逻\n\n正文：据社交媒体军事观察账号报道，韩国海军两架AW-159反潜直升机于2025年5月1日在阿拉伯海围绕任务海域组织反潜巡逻。相关平台按计划保持机动并持续执行反潜巡逻，结合既定航线持续收集公开可观察信息。围绕态势感知维度的讨论认为，这一部署有助于维持对关键水道的持续监视能力。\n",
+      "platforms": [
+        {
+          "name": "AW-159",
+          "country": "韩国",
+          "quantity": 2,
+          "quote": "两架AW-159反潜直升机",
+          "quantity_quote": "两架",
+          "country_raw": "韩国"
+        }
+      ],
+      "location": {
+        "raw": "阿拉伯海围绕任务海域",
+        "region": "阿拉伯海围绕任务海域",
+        "direction": "其他",
+        "precision": "原文区域",
+        "mapping": "PDF未列入三大核心海域的区域归其他",
+        "transit": false,
+        "quote": "在阿拉伯海围绕任务海域"
+      },
+      "mission": {
+        "value": "反潜巡逻",
+        "quote": "组织反潜巡逻"
+      },
+      "start_time": null,
+      "end_time": null,
+      "movement": "进入"
+    },
+    "radars": [
+      {
+        "id": "R015",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "AW-159反潜直升机",
+            "country": "韩国",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-81CE19F6AAF402",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "反潜巡逻",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "反潜巡逻"
+        ],
+        "start_time": "2025.05.01 11:37:00",
+        "end_time": "2025.05.01 13:02:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            64.6321,
+            65.3483
+          ],
+          "latitude_range": [
+            15.0122,
+            15.3933
+          ],
+          "median": [
+            64.9826,
+            15.1915
+          ],
+          "origins": [
+            [
+              65.3031,
+              15.0383
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [],
+        "batch": "AIR-81CE19F6AAF402",
+        "sibling_ids": [],
+        "hull_values": [],
+        "country_values": [
+          "韩国"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 12
+      }
+    ],
+    "association": {
+      "opinion_edges": [
+        {
+          "candidate_id": "O038",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.95,
+          "reason": "平台完全一致（韩国 AW-159），任务相同（反潜巡逻），时间高度重合（新闻 11:37-13:02，意见仅提日期但描述行动性质一致），地点均为阿拉伯海。意见中提到的“两架”与新闻未明确数量不冲突，属于同一活动报道角度不同。"
+        },
+        {
+          "candidate_id": "O041",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.98,
+          "reason": "平台完全不同（新加坡 F-15SG vs 韩国 AW-159），地点不同（孟加拉湾 vs 阿拉伯海），任务不同（战备警巡 vs 反潜巡逻）。"
+        },
+        {
+          "candidate_id": "O030",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.98,
+          "reason": "平台完全不同（韩国护卫舰 vs 韩国直升机），地点不同（中太平洋 vs 阿拉伯海），时间区间无重叠。"
+        }
+      ],
+      "radar_edges": [
+        {
+          "candidate_id": "R015",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.98,
+          "reason": "雷达数据与新闻在平台型号（AW-159）、国籍（韩国）、任务（反潜巡逻）、时间区间（11:37-13:02）上完全精确匹配。地点虽雷达未填但坐标范围位于阿拉伯海区域，确认为同一活动。"
+        },
+        {
+          "candidate_id": "R021",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.98,
+          "reason": "平台不同（中国歼 -15T vs 韩国 AW-159），任务不同，地点坐标显示为黄海/东海方向，与阿拉伯海不符。"
+        },
+        {
+          "candidate_id": "R022",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.98,
+          "reason": "平台不同（中国轰 -6K vs 韩国 AW-159），任务不同，地点坐标显示为东海方向，与阿拉伯海不符。"
+        }
+      ],
+      "ambiguity": "无显著歧义，核心证据链（平台 + 时间 + 任务）高度一致指向同一活动。"
+    },
+    "same_batch_other_candidates": []
+  },
+  "result": {
+    "same_event": true,
+    "facts": [
+      {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "阿拉伯海",
+        "supporting_sources": [
+          "N001",
+          "O038",
+          "R015"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻 N001 明确记载“在阿拉伯海展开行动”；意见 O038 称“在阿拉伯海围绕任务海域”；雷达 R015 坐标范围（北纬 15.0-15.4，东经 64.6-65.3）位于阿拉伯海海域。三类来源一致支持该地点事实。"
+      },
+      {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "2025 年 5 月 1 日 11:37-13:02",
+        "supporting_sources": [
+          "N001",
+          "R015"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻 N001 提供精确起止时间（11:37-13:02）；雷达 R015 时间戳完全匹配。意见 O038 仅提及日期，未构成冲突但也不支持具体时刻。核心时间事实由两类来源确证。"
+      },
+      {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "反潜巡逻",
+        "supporting_sources": [
+          "N001",
+          "O038",
+          "R015"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻 N001、意见 O038 及雷达 R015 均明确标注任务为“反潜巡逻”，三类来源完全一致。"
+      },
+      {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动/机动",
+        "supporting_sources": [
+          "N001",
+          "O038"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻 N001 描述为“围绕任务海域组织反潜巡逻”、“保持机动”；意见 O038 提及“按计划保持机动”。雷达 R015 标记为“未说明”但坐标显示有范围，主要事实由新闻和意见支持。"
+      },
+      {
+        "platform_index": -1,
+        "field": "quantity",
+        "claim": "2 架",
+        "supporting_sources": [
+          "O038",
+          "R015"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "意见 O038 明确称“两架 AW-159 反潜直升机”；雷达 R015 批号数据列示数量为 2。新闻 N001 未提及具体数量，不构成冲突但也不支持该数值，故由两类来源确证。"
+      },
+      {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "AW-159 反潜直升机",
+        "supporting_sources": [
+          "N001"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻 N001 标题及正文明确标识平台为"
+      },
+      {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "韩国",
+        "supporting_sources": [
+          "N001"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻 N001 标题及正文明确标识国籍为"
+      },
+      {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "未说明/缺失",
+        "supporting_sources": [
+          "N001"
+        ],
+        "conflicting_sources": [],
+        "status": "insufficient",
+        "reason": "新闻 N001 正文中未提及具体数量，仅泛指"
+      }
+    ],
+    "unresolved_issues": [
+      "新闻 N001 未明确提及直升机具体数量，而意见 O038 和雷达 R015 均确认为'2 架’。鉴于任务、时间、地点高度重合，且雷达数据通常具备更高精度，判定数量为 2 架可信，但新闻原文存在信息缺失而非直接冲突。"
+    ],
+    "explanation": "事件关联成立。平台（韩国 AW-159）、地点（阿拉伯海）、任务（反潜巡逻）、时间（2025.5.1 11:37-13:02）在新闻、意见及雷达数据三类来源中高度一致，满足可信标准。数量'2 架’由意见和雷达共同支持，新闻虽未明示但不构成冲突。新闻平台 0 的 platform/country 信息明确，quantity 字段因原文缺失标记为 insufficient，不影响整体事件核验结论。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T16:19:24.52042Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\n  \"same_event\": true,\n  \"facts\": [\n    {\n      \"platform_index\": -1,\n      \"field\": \"location\",\n      \"claim\": \"阿拉伯海\",\n      \"supporting_sources\": [\"N001\", \"O038\", \"R015\"],\n      \"conflicting_sources\": [],\n      \"status\": \"supported\",\n      \"reason\": \"新闻 N001 明确记载“在阿拉伯海展开行动”；意见 O038 称“在阿拉伯海围绕任务海域”；雷达 R015 坐标范围（北纬 15.0-15.4，东经 64.6-65.3）位于阿拉伯海海域。三类来源一致支持该地点事实。\"\n    },\n    {\n      \"platform_index\": -1,\n      \"field\": \"time\",\n      \"claim\": \"2025 年 5 月 1 日 11:37-13:02\",\n      \"supporting_sources\": [\"N001\", \"R015\"],\n      \"conflicting_sources\": [],\n      \"status\": \"supported\",\n      \"reason\": \"新闻 N001 提供精确起止时间（11:37-13:02）；雷达 R015 时间戳完全匹配。意见 O038 仅提及日期，未构成冲突但也不支持具体时刻。核心时间事实由两类来源确证。\"\n    },\n    {\n      \"platform_index\": -1,\n      \"field\": \"mission\",\n      \"claim\": \"反潜巡逻\",\n      \"supporting_sources\": [\"N001\", \"O038\", \"R015\"],\n      \"conflicting_sources\": [],\n      \"status\": \"supported\",\n      \"reason\": \"新闻 N001、意见 O038 及雷达 R015 均明确标注任务为“反潜巡逻”，三类来源完全一致。\"\n    },\n    {\n      \"platform_index\": -1,\n      \"field\": \"movement\",\n      \"claim\": \"活动/机动\",\n      \"supporting_sources\": [\"N001\", \"O038\"],\n      \"conflicting_sources\": [],\n      \"status\": \"supported\",\n      \"reason\": \"新闻 N001 描述为“围绕任务海域组织反潜巡逻”、“保持机动”；意见 O038 提及“按计划保持机动”。雷达 R015 标记为“未说明”但坐标显示有范围，主要事实由新闻和意见支持。\"\n    },\n    {\n      \"platform_index\": -1,\n      \"field\": \"quantity\",\n      \"claim\": \"2 架\",\n      \"supporting_sources\": [\"O038\", \"R015\"],\n      \"conflicting_sources\": [],\n      \"status\": \"supported\",\n      \"reason\": \"意见 O038 明确称“两架 AW-159 反潜直升机”；雷达 R015 批号数据列示数量为 2。新闻 N001 未提及具体数量，不构成冲突但也不支持该数值，故由两类来源确证。\"\n    },\n    {\n      \"platform_index\": 0,\n      \"field\": \"platform\",\n      \"claim\": \"AW-159 反潜直升机\",\n      \"supporting_sources\": [\"N001\"],\n      \"conflicting_sources\": [],\n      \"status\": \"supported\",\n      \"reason\": \"新闻 N001 标题及正文明确标识平台为\"\n    },\n    {\n      \"platform_index\": 0,\n      \"field\": \"country\",\n      \"claim\": \"韩国\",\n      \"supporting_sources\": [\"N001\"],\n      \"conflicting_sources\": [],\n      \"status\": \"supported\",\n      \"reason\": \"新闻 N001 标题及正文明确标识国籍为\"\n    },\n    {\n      \"platform_index\": 0,\n      \"field\": \"quantity\",\n      \"claim\": \"未说明/缺失\",\n      \"supporting_sources\": [\"N001\"],\n      \"conflicting_sources\": [],\n      \"status\": \"insufficient\",\n      \"reason\": \"新闻 N001 正文中未提及具体数量，仅泛指\"\n    }\n  ],\n  \"unresolved_issues\": [\n    \"新闻 N001 未明确提及直升机具体数量，而意见 O038 和雷达 R015 均确认为'2 架’。鉴于任务、时间、地点高度重合，且雷达数据通常具备更高精度，判定数量为 2 架可信，但新闻原文存在信息缺失而非直接冲突。\"\n  ],\n  \"explanation\": \"事件关联成立。平台（韩国 AW-159）、地点（阿拉伯海）、任务（反潜巡逻）、时间（2025.5.1 11:37-13:02）在新闻、意见及雷达数据三类来源中高度一致，满足可信标准。数量'2 架’由意见和雷达共同支持，新闻虽未明示但不构成冲突。新闻平台 0 的 platform/country 信息明确，quantity 字段因原文缺失标记为 insufficient，不影响整体事件核验结论。\"\n}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 22119737100,
+    "load_duration": 15897500,
+    "prompt_eval_count": 3884,
+    "prompt_eval_cached_count": 2936,
+    "prompt_eval_duration": 409671000,
+    "eval_count": 1201,
+    "eval_duration": 21629085000
+  }
+}
