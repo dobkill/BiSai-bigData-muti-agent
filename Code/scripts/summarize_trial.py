@@ -27,7 +27,7 @@ def summarize(trial_dir: Path, baseline_dir: Path, day: str) -> dict:
     trial = DayResult.model_validate_json((trial_dir / "daily" / f"{day}.json").read_text(encoding="utf-8"))
     baseline = DayResult.model_validate_json((baseline_dir / f"{day}.json").read_text(encoding="utf-8"))
     text_obs = [o for o in trial.observations if o.source != "radar"]
-    modeled = [o for o in text_obs if o.metadata.get("extractor") == "llm_validated+rules"]
+    modeled = [o for o in text_obs if o.metadata.get("extractor") in {"llm_validated+rules", "llm_semantic"}]
     if len(modeled) != len(text_obs) or manifest["llm_fallbacks"]:
         raise ValueError("部分文本未成功使用模型，请先查看运行日志")
     if {o.id for o in trial.observations} != {o.id for o in baseline.observations}:
@@ -39,12 +39,13 @@ def summarize(trial_dir: Path, baseline_dir: Path, day: str) -> dict:
     added_fields = 0
     for obs in modeled:
         raw = obs.metadata["llm_extraction"]
-        before = obs.metadata["rule_facts"]
-        validated = obs.metadata["llm_validated_facts"]
+        before = obs.metadata.get("rule_candidates", obs.metadata.get("rule_facts", {}))
+        validated = obs.metadata.get("llm_validated_facts", obs.facts)
         has_added = False
         warnings.update(w for w in obs.warnings if w.startswith("llm_"))
         for field in FACT_FIELDS:
-            claims = raw.get(field, [])
+            claims = ([c for a in raw["activities"] for c in a.get(field, [])]
+                      if "activities" in raw else raw.get(field, []))
             claims_count += len(claims)
             additions = [v for v in obs.facts.get(field, []) if v not in before.get(field, [])]
             if additions:

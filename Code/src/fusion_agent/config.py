@@ -25,6 +25,7 @@ class OllamaSettings(BaseModel):
     model: str = ""
     keep_alive: str = "5m"
     num_ctx: int = Field(default=8192, ge=1024)
+    review_num_ctx: int | None = Field(default=None, ge=1024)
     think: bool | None = None
     num_predict: int = Field(default=2048, ge=128)
 
@@ -101,6 +102,7 @@ class AlignmentSettings(BaseModel):
     ambiguity_margin: float = Field(default=3, ge=0)
     llm_review: bool = True
     max_llm_reviews: int = Field(default=8, ge=0, le=50)
+    semantic_candidates: int = Field(default=5, ge=1, le=20)
     candidate_gap_hours: float = Field(default=3, ge=0, le=24)
     overlap_slack_minutes: float = Field(default=15, ge=0, le=60)
 
@@ -120,6 +122,13 @@ class VerificationSettings(BaseModel):
         return self
 
 
+class WorkflowSettings(BaseModel):
+    enabled: bool = False
+    max_recovery_rounds: int = Field(default=2, ge=0, le=3)
+    recovery_batch_size: int = Field(default=8, ge=1, le=12)
+    max_recovered_candidates: int = Field(default=3, ge=1, le=5)
+
+
 class ReportSettings(BaseModel):
     lookback_days: int = Field(default=7, ge=1)
     node_dates: list[str] = []
@@ -135,6 +144,7 @@ class Settings(BaseModel):
     extraction: ExtractionSettings = Field(default_factory=ExtractionSettings)
     alignment: AlignmentSettings = Field(default_factory=AlignmentSettings)
     verification: VerificationSettings = Field(default_factory=VerificationSettings)
+    workflow: WorkflowSettings = Field(default_factory=WorkflowSettings)
     report: ReportSettings = Field(default_factory=ReportSettings)
     review_export: ReviewExportSettings = Field(default_factory=ReviewExportSettings)
 

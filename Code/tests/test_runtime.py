@@ -13,6 +13,7 @@ from fusion_agent.config import AdaptiveConcurrencySettings, LLMSettings, Paths,
 from fusion_agent.llm import LLMClient
 from fusion_agent.runtime import add_llm_arguments, apply_llm_arguments, estimate_request_budget
 from test_pipeline import dataset
+from semantic_fixture import fixture_reply
 
 
 def arguments(*values):
@@ -62,7 +63,7 @@ def test_full_cli_budgets_all_dates_and_resumes_llama_cpp(tmp_path, monkeypatch,
         if request.method == "GET":
             return httpx.Response(200, json={"total_slots": 2})
         requests.append(json.loads(request.content))
-        return httpx.Response(200, json={"choices": [{"message": {"content": "{}"}}]})
+        return httpx.Response(200, json={"choices": [{"message": {"content": json.dumps(fixture_reply(requests[-1]), ensure_ascii=False)}}]})
 
     def init(self, *args, **kwargs):
         original_init(self, *args, **kwargs)
@@ -77,14 +78,15 @@ def test_full_cli_budgets_all_dates_and_resumes_llama_cpp(tmp_path, monkeypatch,
     first = json.loads(capsys.readouterr().out)
     assert first["processed_dates"] == ["2025-05-10", "2025-05-11"]
     assert first["model_provider"] == "llama_cpp" and first["model_name"] == "local-model"
-    assert first["llm_requests"] == 4 and first["llm_fallbacks"] == 0
+    assert first["llm_requests"] == 8 and first["llm_fallbacks"] == 0
+    assert first["llm_verifications"] == 2 and first["decision_engine"] == "llm_semantic"
     assert first["llm_concurrency"]["maximum"] == 2
-    assert settings.llm.max_calls == estimate_request_budget(settings, first["processed_dates"]) == 8
+    assert settings.llm.max_calls == estimate_request_budget(settings, first["processed_dates"]) == 16
     assert (tmp_path / "out/reports/2025-05-11.md").is_file()
     cli.main()
     second = json.loads(capsys.readouterr().out)
     assert second["llm_requests"] == 0
-    assert len(requests) == 4
+    assert len(requests) == 8
 
 
 def test_explicit_full_budget_is_preserved(tmp_path, monkeypatch, capsys):
@@ -109,6 +111,60 @@ def test_explicit_full_budget_is_preserved(tmp_path, monkeypatch, capsys):
     cli.main()
     capsys.readouterr()
     assert seen["max_calls"] == 3
+
+
+def test_full_workflow_budget_accounts_for_recovery_and_entity_review(tmp_path):
+    root = tmp_path / "data"
+    dataset(root)
+    settings = Settings(paths=Paths(data_dir=root, output_dir=tmp_path / "out", cache_dir=tmp_path / "cache"))
+    targets = ["2025-05-10"]
+    old = estimate_request_budget(settings, targets)
+    settings.workflow.enabled = True
+    settings.workflow.max_recovery_rounds = 2
+    with_recovery = estimate_request_budget(settings, targets)
+    assert with_recovery > old
+    settings.workflow.max_recovery_rounds = 0
+    assert old < estimate_request_budget(settings, targets) < with_recovery
+    settings.alignment.mode = "legacy"
+    settings.workflow.enabled = False
+    legacy = estimate_request_budget(settings, targets)
+    settings.workflow.enabled = True
+    assert estimate_request_budget(settings, targets) == legacy
+
+
+def test_cli_runs_agent_workflow_and_exports_state_trace(tmp_path, monkeypatch, capsys):
+    root = tmp_path / "data"
+    dataset(root)
+    out = tmp_path / "workflow"
+    settings = Settings(paths=Paths(data_dir=root, output_dir=out, cache_dir=tmp_path / "cache"))
+    settings.llm.ollama.model = "fixture-model"
+    original_init = LLMClient.__init__
+
+    def handler(request):
+        reply = fixture_reply(json.loads(request.content))
+        return httpx.Response(200, json={"message": {"content": json.dumps(reply, ensure_ascii=False)}})
+
+    def init(self, *args, **kwargs):
+        original_init(self, *args, **kwargs)
+        self.http.close()
+        self.http = httpx.Client(transport=httpx.MockTransport(handler))
+
+    monkeypatch.setattr(LLMClient, "__init__", init)
+    monkeypatch.setattr(cli, "load_settings", lambda p: settings)
+    monkeypatch.setattr(sys, "argv", ["fusion_agent", "run", "--date", "2025-05-10", "--single-day",
+                                    "--use-llm", "--strict-llm", "--agent-workflow", "--output-dir", str(out)])
+    cli.main()
+    manifest = json.loads(capsys.readouterr().out)
+    assert manifest["agent_workflow_enabled"]
+    assert manifest["llm_requests"] > 0 and manifest["llm_fallbacks"] == 0
+    assert manifest["llm_verifications"] == 1
+    day = json.loads((out / "daily/2025-05-10.json").read_text(encoding="utf-8"))
+    trace = next(t for t in day["trace"] if t["agent"] == "workflow")
+    assert next(t for t in day["trace"] if t["agent"] == "alignment")["llm_validated_reviews"] == 1
+    assert trace["transitions"][0]["to"] == "source_completeness"
+    assert trace["transitions"][-1]["to"] == "output"
+    assert day["events"][0]["semantic_review"]["workflow_diagnostics"]["source_coverage"] == "complete"
+    assert (out / "review/2025-05-10/README.md").is_file()
 
 
 def test_launcher_enables_batching_and_preserves_per_slot_context(monkeypatch, tmp_path):
@@ -153,7 +209,7 @@ def test_full_script_selected_backend_validates_every_day_and_redacts_keys(tmp_p
         assert request.headers["Authorization"] == "Bearer llama-secret"
         if request.method == "GET":
             return httpx.Response(200, json={"total_slots": 2})
-        return httpx.Response(200, json={"choices": [{"message": {"content": "{}"}}]})
+        return httpx.Response(200, json={"choices": [{"message": {"content": json.dumps(fixture_reply(json.loads(request.content)), ensure_ascii=False)}}]})
 
     def init(self, *args, **kwargs):
         original_init(self, *args, **kwargs)
@@ -169,7 +225,7 @@ def test_full_script_selected_backend_validates_every_day_and_redacts_keys(tmp_p
     job = json.loads(capsys.readouterr().out)
     assert job["status"] == "complete" and job["validated_days"] == 2
     assert job["provider"] == "llama_cpp" and job["model"] == "local-model"
-    assert job["llm_fallbacks"] == 0 and job["llm_requests"] == 2
+    assert job["llm_fallbacks"] == 0 and job["llm_requests"] == 6
     validations = json.loads((out / "structure_validation.json").read_text(encoding="utf-8"))
     assert [v["date"] for v in validations] == ["2025-05-10", "2025-05-11"]
     for name in ("effective_settings.json", "full_run.json", "progress.json", "manifest.json"):

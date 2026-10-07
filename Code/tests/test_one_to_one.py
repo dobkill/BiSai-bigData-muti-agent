@@ -149,21 +149,24 @@ def test_quoted_llm_review_cannot_turn_equivalent_assignments_into_confirmed_fac
     class Reviewer:
         settings = SimpleNamespace(fail_on_error=True)
         def complete_json(self, *args):
-            return {"opinion_id": "p2", "decision": "same_event", "news_quote": "中国054A", "opinion_quote": "中国054A", "reason": "同平台"}
+            return {"decisions": [{"opinion_id": oid, "decision": "uncertain", "news_quote": "中国054A",
+                                   "opinion_quote": "中国054A", "reason": "同平台不足以区分两个候选"}
+                                  for oid in ("p1", "p2")]}
     observations = [observation("n", "open_source"), observation("p1", "opinion"), observation("p2", "opinion")]
     docs = [Document(id=o.id, date=o.date, source=o.source, path=o.path, text="中国054A在东海活动") for o in observations]
     agent = AlignmentAgent(AlignmentSettings(), Reviewer())
     group = agent.run(observations, docs)[0]
-    assert group.assignment["opinion_id"] == "p2"
+    assert group.assignment["opinion_id"] in {"p1", "p2"}
     assert group.relation_status == "candidate" and group.assignment["evidence_margin"] == 0
     assert agent.audit["llm_validated_reviews"] == 1
 
 
 def test_unanchored_llm_review_is_ignored():
     class Reviewer:
-        settings = SimpleNamespace(fail_on_error=True)
+        settings = SimpleNamespace(fail_on_error=False)
         def complete_json(self, *args):
-            return {"opinion_id": "p2", "decision": "same_event", "news_quote": "不存在的证据", "opinion_quote": "不存在的证据", "reason": ""}
+            return {"decisions": [{"opinion_id": oid, "decision": "same_event", "news_quote": "不存在的证据",
+                                   "opinion_quote": "不存在的证据", "reason": ""} for oid in ("p1", "p2")]}
     observations = [observation("n", "open_source"), observation("p1", "opinion"), observation("p2", "opinion")]
     docs = [Document(id=o.id, date=o.date, source=o.source, path=o.path, text="中国054A在东海活动") for o in observations]
     agent = AlignmentAgent(AlignmentSettings(), Reviewer())

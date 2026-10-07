@@ -76,15 +76,16 @@ def test_radar_batch_preserves_internal_count_noise():
 
 class FakeLLM:
     def complete_json(self, *args):
-        return {"quantity": [{"value": 99, "quote": "根本不存在的引文"}],
-                "country": [{"value": "美国", "quote": "中国"}]}
+        return {"activities": [{"activity_id": "one", "platform_kind": "ship",
+                                "quantity": [{"value": 99, "quote": "根本不存在的引文"}],
+                                "country": [{"value": "美国", "quote": "中国"}]}]}
 
 
 def test_llm_hallucination_cannot_add_unsupported_fact():
     doc = Document(id="d", date="2025-05-10", source="open_source", path="d.txt",
                    text="标题：中国054A型护卫舰在南海活动\n正文：中国054A型护卫舰在南海活动。")
     obs = ExtractionAgent(Settings(), FakeLLM()).text(doc)
-    assert obs.facts["country"] == ["中国"]
+    assert not obs.facts.get("country")  # do not repair a bad model value with rule facts
     assert "quantity" not in obs.facts
     assert "llm_unanchored_claim:quantity" in obs.warnings
 
@@ -99,7 +100,10 @@ def test_llm_hallucination_cannot_add_unsupported_fact():
 def test_llm_platform_descriptors_do_not_create_false_multi_platform(text, quote, expected):
     class DescriptorLLM:
         def complete_json(self, *args):
-            return {"platform": [{"value": quote, "quote": quote}]}
+            return {"activities": [
+                        {"activity_id": str(i), "platform_kind": "unknown",
+                         "platform": [{"value": value.removeprefix("generic:"), "quote": text}]}
+                        for i, value in enumerate(expected)]}
 
     doc = Document(id="d", date="2025-05-10", source="open_source", path="d.txt", text=text)
     agent = ExtractionAgent(Settings(), DescriptorLLM())
@@ -107,8 +111,6 @@ def test_llm_platform_descriptors_do_not_create_false_multi_platform(text, quote
     obs = agent.text(doc)
     assert obs.facts["platform"] == expected
     assert ("multiple_platforms_unresolved" in obs.warnings) == (len(expected) > 1)
-    if any(not v.startswith("generic:") for v in expected):
-        assert obs.metadata["llm_ignored_descriptors"][0]["quote"] == quote
-    else:
-        assert "llm_ignored_descriptors" not in obs.metadata
+    assert obs.metadata["extractor"] == "llm_semantic"
+    assert len(obs.metadata["semantic_activities"]) == len(expected)
 

@@ -9,6 +9,39 @@ from fusion_agent.config import APISettings, LLMSettings, OllamaSettings, LlamaC
 from fusion_agent.llm import LLMClient, LLMError
 
 
+def test_invalid_schema_cache_is_replaced_and_bad_reply_retried(tmp_path):
+    settings = LLMSettings(provider="ollama", ollama=OllamaSettings(model="test"), retries=1)
+    client = LLMClient(settings, tmp_path)
+    schema = {"type": "object", "required": ["decision"],
+              "properties": {"decision": {"type": "string", "enum": ["uncertain"]}}}
+    path = client.response_path("review", "evidence", schema)
+    path.parent.mkdir(parents=True)
+    path.write_text('{}', encoding="utf-8")
+    replies = iter(['{"decision": "invented-status"}', '{"decision": "uncertain"}'])
+    client.http.close()
+    client.http = httpx.Client(transport=httpx.MockTransport(
+        lambda request: httpx.Response(200, json={"message": {"content": next(replies)}})))
+    try:
+        assert client.complete_json("review", "evidence", schema) == {"decision": "uncertain"}
+        assert client.calls == 2 and client.cache_hits == 0
+        assert json.loads(path.read_text(encoding="utf-8")) == {"decision": "uncertain"}
+    finally:
+        client.close()
+
+
+def test_ollama_token_truncation_is_not_cached_as_success(tmp_path):
+    client = LLMClient(LLMSettings(ollama=OllamaSettings(model="test"), retries=0), tmp_path)
+    client.http.close()
+    client.http = httpx.Client(transport=httpx.MockTransport(lambda request: httpx.Response(
+        200, json={"message": {"content": "{}"}, "done_reason": "length"})))
+    try:
+        with pytest.raises(LLMError):
+            client.complete_json("review", "evidence", {})
+        assert not list(tmp_path.rglob("*.json"))
+    finally:
+        client.close()
+
+
 @pytest.mark.parametrize("provider", ["api", "ollama"])
 def test_both_provider_payloads_and_cache(tmp_path, provider):
     calls = []

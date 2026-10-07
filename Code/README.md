@@ -4,11 +4,25 @@
 
 当前默认采用新闻主组与整体一一对应：每篇新闻固定一个主组，最多配一篇舆论和各平台对应的雷达批次。可信事件必须完成三类来源的同一事件关联、关键事实至少两类来源相互支持，且第三类来源未给出明确冲突值；其余全部归入不可信事件。证据不足时不强行凑齐来源。阅读副本在 `../Datas_分组_新版/`，默认分析目录为 `outputs/one_to_one_trial/`。
 
-当前已按两类规则重算 `2025-05-01`，结果在 `outputs/one_to_one_20250501_local/`：50个新闻主组，可信事件35、不可信事件15，覆盖52批/600条雷达和100篇原文，无重复归属或遗漏。本次复用100条真实本地模型抽取缓存，无规则回退；147项测试通过。
+已实现受控 Agent 工作流 v1：源内字段复核 → 实体名称与类型解析 → 多路召回 → 活动关联 → 全局分配 → 事实核验 → 有上限的异常复查。按证据是否改变决定重新核验或复用结论，保存每轮候选、引用、来源覆盖和停止原因。配置默认开启，`--no-agent-workflow` 可对照旧流程。设计及运行方法见 [agent_workflow.md](docs/agent_workflow.md)，独立实测结果见 [试验说明](outputs/agent_workflow_20250501/试验说明.md)。下述正式分组属于此前结果，试验不自动替换它。
 
-目录只分为 **可信事件、不可信事件**。雷达作为时空、数量和轨迹核验依据之一，不作为无条件优先真值。9个可信事件在核心海域之外，所以当天日报接纳26项；可信与日报范围分别判断。旧版分析保留用于对照；备选对应保存到主组的 `对应候选.csv`，不另计主组。
+新工作流已用真实本地模型完成5月1日试验：可信33→36，不可信17→14，舆论对应45→46，日报接纳30→31。目标 `03f0424e704a90e8d1ff` 对应舆论046及两批雷达，恢复可信；新闻026仍保留意大利/中国国籍冲突。两轮异常复查提议6个候选，额外确认0组；未变证据复用核验100组次。226项测试通过，100篇原文、600条雷达记录完整且唯一覆盖，101个源文件及58份原有人工复核文件哈希未变。以已有抽取快照为起点，进行源内补证及新工作流推理；可信数量变化不代表准确率变化。
 
-这里采用共享结构化状态的多角色 Agent 工作流。模型负责有证据约束的抽取，算法负责关联及核验；日报由已核验事实生成。无需配置模型也可以执行完整规则基线。
+2026-10-07 已用真实本地 Ollama `qwen3.5:9b-q8_0` 完成 `2025-05-01` 重跑并更新正式阅读目录。50个新闻主组：可信33、不可信17；日报接纳30。45篇舆论完成对应，51个雷达活动、575条记录已归属，另外5篇舆论及3个雷达活动、25条记录单独保留；100篇原文和600条雷达记录完整覆盖。209项测试通过，101个源文件和52份原有人工复核表哈希未变。见 [重跑说明](outputs/ollama_20250501_semantic_local/重跑说明.txt)。
+
+目录只分为 **可信事件、不可信事件**。不可信包含活动归属和字段证据不足，并非全都存在冲突。雷达参与核验，不作为无条件真值。3个可信事件在核心海域之外，因此33个可信事件中30项进入日报。未归属材料单独保留，不另计新闻主组。
+
+默认流程现由模型负责主体/活动/语义角色抽取、新闻与舆论及雷达的活动归属审查、八字段三源核验；代码负责引用校验、来源计数、时空与数量计算、一一归属和原始记录保存。模型拟排除文本事实时，另由模型只看该事实原文审查角色，避免用其他来源的多数值把明确反证改成背景；角色未定的事实仍保留。规则候选不再与模型事实自动取并集，也不覆盖模型已引用的活动时间。`--offline` 可显式运行规则基线，日报仍从已核验事实生成。
+
+同日早些时候的模型文件读取异常曾阻止 Ollama 推理；本次真实连接、推理和整日运行均已通过。完成运行新增HTTP请求19次、真实请求缓存命中220次，证据校验修正14次，50次最终语义核验通过，规则回退0次。抽取使用8K上下文，候选审查及最终核验使用16K。独立离线预览38/12和此前对话审查回放40/10保留为历史对照；最终效果以本次本地模型结果为准。
+
+此前对话模型对当天100篇文本、雷达活动及候选的明确语义选择已保存，通过实际代码回放得到40可信、10待核实，29项进入日报；网络模型请求为0。测试也修正了未确认活动归属时硬算位置冲突、按任务字典名称直接判冲突的问题，并向候选审查提供原始雷达坐标及时间。保存的决策绑定源数据指纹，不对新数据自动作判断。入口：[测试说明](outputs/assistant_review_20250501/测试说明.txt)、[测试分组](outputs/assistant_review_20250501/review/2025-05-01/README.md)。这是保存的对话审查结果回放，无自动API推理，也无真值标注可计算准确率。
+
+在项目根目录复现这份审查（输出须位于 `Code/outputs` 的独立子目录）：
+
+```powershell
+python Code/scripts/run_assistant_review.py --plan Code/outputs/assistant_review_20250501/assistant_decisions.json --output-dir Code/outputs/assistant_review_20250501_replay
+```
 
 ## 先用本地模型跑一天
 
@@ -17,20 +31,20 @@
 打开 Ollama，然后执行：
 
 ```powershell
-.\Code\scripts\run.cmd --date 2025-05-01 --single-day --use-llm --strict-llm --max-llm-calls 324 --force --output-dir Code\outputs\one_to_one_20250501_local --review-dir Datas_分组_新版
+.\Code\scripts\run.cmd --date 2025-05-01 --single-day --use-llm --strict-llm --no-agent-workflow --max-llm-calls 600 --force --output-dir Code\outputs\ollama_20250501_semantic_local --review-dir Datas_分组_新版
 
 # 生成重分组效果说明，并核对全部阅读副本（不再次调用模型）
-& D:\APP\miniconda\envs\multimodal-agent\python.exe .\Code\scripts\validate_one_to_one.py --analysis-dir Code\outputs\one_to_one_20250501_local --date 2025-05-01 --reference Code\outputs\structure_audit\2025-05-01_新闻舆论雷达对应核对.csv
+& D:\APP\miniconda\envs\multimodal-agent\python.exe .\Code\scripts\validate_one_to_one.py --analysis-dir Code\outputs\ollama_20250501_semantic_local --date 2025-05-01
 ```
 
-处理顺序：读取材料 → 模型或规则抽取 → 地点/型号归一化 → 保存SQLite证据库 → 检索当天证据 → 整体一一匹配新闻与舆论 → 按平台槽位分配雷达 → 逐字段核验 → 日报和阅读副本。联合活动在组内按平台核验，不另拆主组。
+处理顺序：读取材料 → 模型按主体和活动抽取 → 校验连续原文引用并归一化 → 保存SQLite证据库 → 召回当天候选 → 模型审查舆论及雷达活动归属 → 整体一一分配 → 模型三源语义核验及代码证据检查 → 日报和阅读副本。联合活动在组内按平台核验，不另拆主组。
 
 **看结果的顺序：**
 
-1. [结构验证](outputs/one_to_one_20250501_local/structure_validation.json)：主组数、唯一归属、原文副本与原始雷达逐行核对。
+1. [结构验证](outputs/ollama_20250501_semantic_local/structure_validation.json)：主组数、唯一归属、原文副本与原始雷达逐行核对。
 2. [阅读导航](../Datas_分组_新版/README.md) 或 [索引.csv](../Datas_分组_新版/索引.csv)：选择事件。
 3. 每组 `README.md` 简述关联依据；`关联说明.md` 提供完整字段对照，再并排阅读新闻、舆论、雷达。
-4. [当天日报](outputs/one_to_one_20250501_local/reports/2025-05-01.md)：查看通过核验后进入核心海域日报的事实。
+4. [当天日报](outputs/ollama_20250501_semantic_local/reports/2025-05-01.md)：查看通过核验后进入核心海域日报的事实。
 
 旧版多组合修复记录保存在 `outputs/constraints_trial/`；以下是历史对照命令，不用于新版主组结构验证：
 
@@ -42,17 +56,18 @@
 | --- | --- | --- |
 | `--date` | 指定日期，格式为 `YYYY-MM-DD` | 可改用 `--nodes` 或 `--all` |
 | `--single-day` | 只处理指定日期的材料 | 使用 `report.lookback_days`，默认是截至当天共 7 天 |
-| `--use-llm` | 启用 Ollama/API 抽取 | 使用配置中的 `llm.enabled`，当前为 `false` |
-| `--strict-llm` | 任何模型错误立即停止 | 允许规则回退，并在结果中记录回退数量 |
+| `--use-llm` | 启用模型抽取、活动归属和三源核验 | 配置默认为 `true` |
+| `--strict-llm` | 模型或证据校验失败立即停止 | 配置默认严格；非严格失败也会保持不可信 |
+| `--agent-workflow` | 启用源内复核、实体解析、召回与有上限的复查 | 配置默认开启；`--no-agent-workflow` 可运行旧流程 |
 | `--output-dir` | 保存一份独立试跑结果 | 输出到 `paths.output_dir`；阅读分组到 `paths.review_dir` |
 | `--review-dir` | 另行指定人工阅读资料目录 | 指定 `--output-dir` 后自动用其 `review/` 子目录 |
 | `--force` | 重算关联与核验 | 复用有效的日缓存；加此参数仍会复用相同模型请求缓存 |
 
 指定 `--output-dir` 或 `--review-dir` 的相对路径以**当前工作目录**为基准。`config.toml` 内的相对路径以**配置文件所在目录**为基准。只选 `--date` 并不表示只处理一天，单日试跑请同时加 `--single-day`。
 
-初次无缓存时单日通常发起 100 个模型请求，重试可能增加次数。复跑可复用结果，查看 `manifest.json` 中的 `llm_requests`、`llm_cache_hits`、`llm_fallbacks` 区分真实请求、请求缓存和回退。如果整天命中日缓存，请求数为 0；当天保存的抽取元数据和 trace 仍可查看。
+初次无缓存时，50 个主组的一天包含约 200 个基础模型任务：100 篇抽取、50 次候选归属审查、50 次最终核验。无法确定角色的国家提及由独立模型请求复核；无效响应的有限修正和 HTTP 重试也可能增加次数。复跑可复用结果，查看 `manifest.json` 中的 `llm_requests`、`llm_cache_hits`、`llm_fallbacks`、`llm_validation_repairs` 区分真实请求、缓存、回退和证据校验修正。如果整天命中日缓存，请求数为 0；当天保存的抽取元数据和 trace 仍可查看。
 
-首次真实模型请求记录在 `outputs/ollama_trial/inference_run.json`。当前 `outputs/one_to_one_trial/manifest.json` 记录请求计数；逐字段模型声明及引文保存在日结果中。`validate_one_to_one.py` 验证当前主组；两个旧版summarize脚本只用于历史试跑。
+首次真实模型请求记录在 `outputs/ollama_trial/inference_run.json`。本次 `outputs/ollama_20250501_semantic_local/manifest.json` 记录请求计数；逐字段模型声明及引文保存在日结果中。`validate_one_to_one.py` 验证当前主组；两个旧版summarize脚本只用于历史试跑。
 
 若要比较规则结果：
 
@@ -102,9 +117,9 @@ python -m fusion_agent run --nodes --offline
 
 所有参数集中在 `config.toml`：数据路径、输出路径、模型服务、预算、并发、关联时间窗口、核验容差、历史窗口、研判日期。相对路径始终按配置文件所在目录解析，因此从其他工作目录启动也不会改变数据位置。
 
-默认 `llm.enabled = false`，这是无需模型的基线。接入模型后，设置为 `true` 或运行时加 `--use-llm`。规则基线可以用 `--offline` 强制开启。
+默认 `llm.enabled = true` 且 `fail_on_error = true`，需要可用模型服务。规则基线通过 `--offline` 显式运行。
 
-`extraction.mode = "rules"` 只运行规则；`hybrid` 和当前的 `llm` 模式都会合并规则与模型引用校验结果，保留规则发现的冲突。模型无法直接裁决事件真伪，也不会直接生成开放式研判内容。
+`extraction.mode = "rules"` 只运行规则；`hybrid` 和 `llm` 均以模型语义抽取为主，规则仅用于候选召回和格式/引用检查。模型须给出三源活动归属和逐字段结论，代码检查完整证据覆盖、两类来源支持、明确矛盾、时空及数量约束。模型失败或无效响应会停止严格运行；非严格模式也不能把回退结果判为可信，失败回复和日结果不作为有效缓存。
 
 ### Ollama
 
@@ -120,11 +135,12 @@ base_url = "http://localhost:11434"
 model = "qwen3.5:9b-q8_0"
 keep_alive = "10m"
 num_ctx = 8192
+review_num_ctx = 16384
 think = false
-num_predict = 2048
+num_predict = 4096
 ```
 
-本机 `model` 已填写为 `qwen3.5:9b-q8_0`，不用重新下载。`think = false` 请求关闭思考输出，用于这次事实抽取试跑；需要时可改为 `true`。`concurrency = 1` 让本地模型逐篇处理。保留原配置里的其他参数。连接测试命令在项目根目录执行：
+本机 `model` 已填写为 `qwen3.5:9b-q8_0`；2026-10-07 已重新通过真实推理连接测试。`num_ctx = 8192` 用于抽取，`review_num_ctx = 16384` 用于候选审查及三源核验，避免长输入被截断；两种上下文使用不同请求缓存。`think = false` 请求关闭思考输出，需要时可改为 `true`。`concurrency = 1` 让本地模型逐篇处理。连接测试命令在项目根目录执行：
 
 ```powershell
 & D:\APP\miniconda\Scripts\conda.exe run --no-capture-output -n multimodal-agent python -m fusion_agent doctor --check-llm
@@ -178,7 +194,7 @@ $env:LLM_API_KEY = "你的密钥"
 
 ```powershell
 & D:\APP\miniconda\envs\multimodal-agent\python.exe -m fusion_agent doctor --check-llm --provider llama_cpp --adaptive-concurrency --concurrency 4
-.\Code\scripts\run.cmd --date 2025-05-01 --single-day --use-llm --strict-llm --provider llama_cpp --adaptive-concurrency --concurrency 4 --max-llm-calls 324 --output-dir Code\outputs\llama_trial
+.\Code\scripts\run.cmd --date 2025-05-01 --single-day --use-llm --strict-llm --provider llama_cpp --adaptive-concurrency --concurrency 4 --max-llm-calls 600 --output-dir Code\outputs\llama_trial
 ```
 
 动态调度只用于**与程序在同一台机器的 llama.cpp 服务**，通过 `nvidia-smi` 读取配置中 `gpu_index` 的显存。远程服务需要在远程机器运行调度程序，或用 `--fixed-concurrency`，不能用客户端本机显存估计远程服务器容量。缺少显存读数时保持 1 路。
@@ -209,19 +225,19 @@ $env:LLM_API_KEY = "你的密钥"
 | --- | --- | --- |
 | `llm.provider` | `ollama` / `llama_cpp` / `api` | `ollama` |
 | `llm.ollama.model` | 必须与本地模型完整名称一致 | `qwen3.5:9b-q8_0` |
-| `llm.enabled` | 是否默认启用模型 | `false`，试跑命令用 `--use-llm` 开启 |
+| `llm.enabled` | 是否默认启用模型 | `true`；离线对照使用 `--offline` |
 | `llm.concurrency` | 固定并发数，或动态并发上限 | `1`；llama.cpp 用 `--concurrency 4` 覆盖 |
-| `llm.max_calls` | 一次运行最多实际 HTTP 请求数，含重试 | `200`，适合单日试跑 |
+| `llm.max_calls` | 一次运行最多实际 HTTP 请求数，含重试 | `200`；50 组单日含重试建议 `--max-llm-calls 600` |
 | `llm.timeout_seconds` | 每个模型请求的超时 | `300` 秒 |
-| `llm.fail_on_error` | 模型失败是否终止 | `false`；试跑用 `--strict-llm` 覆盖 |
+| `llm.fail_on_error` | 模型或引用失败是否终止 | `true`；非严格失败也不自动判可信 |
 | `alignment.candidate_gap_hours` | 活动区间相隔几小时仍保留候选，不自动确认 | `3` 小时 |
 | `alignment.overlap_slack_minutes` | 区间接壤容差，有身份依据时才用于确认 | `15` 分钟 |
 | `verification.time_tolerance_minutes` | 日报中精确起止边界的跨源支持容差 | `5` 分钟；与活动区间关联窗口不同 |
 | `report.lookback_days` | 日报历史窗口含当天的总天数 | `7`；单日试跑覆盖为 `1` |
-| `paths.review_dir` | 默认人工阅读目录 | `../Datas_分组` |
+| `paths.review_dir` | 默认人工阅读目录 | `../Datas_分组_新版` |
 | `review_export.enabled` | 运行后自动复制阅读资料 | `true` |
 
-全量 80 天共有 8,000 篇文本；`run --all` 和 `run_full_local.py` 会自动按文件数计算全量请求预算，可用 `--max-llm-calls` 显式限制。多个研判节点也会加载各自的历史窗口，`--nodes` 仍遵守配置的 `max_calls`。建议先检查一天结果，再扩大范围。
+全量 80 天共有 8,000 篇文本；`run --all` 和 `run_full_local.py` 会自动按抽取、每篇新闻归属审查、最终核验及重试计算全量请求预算，可用 `--max-llm-calls` 显式限制。多个研判节点也会加载各自的历史窗口，`--nodes` 仍遵守配置的 `max_calls`。建议先检查一天结果，再扩大范围。
 
 ### 常用命令
 
@@ -364,11 +380,11 @@ flowchart LR
 2. 国家地区、平台、活动方向默认是必核字段，每个字段须获得至少两类来源支持；可在配置中增加必核字段。
 3. 所有抽取到的任务、数量、时间、区域等字段都检查显式冲突。即使其余两源一致，第三源明确冲突仍归为不可信事件。同一来源内部冲突也保留。
 4. 仅获得一个来源支持的非必核字段不会写入日报，未写数量不表示数量为 1。
-5. 雷达作为时空、数量和轨迹核验依据之一，不作为无条件优先真值。雷达按批号聚合轨迹点，轨迹行数不作为目标数量。同一批号的不同显式数量、国别、平台、区域、任务值不会用多数票覆盖。
+5. 雷达作为时空、数量和轨迹核验依据之一，不作为无条件优先真值。批号是原始记录容器；按明确目标编号或型号、位置和时间区分活动，不能自动把同批号所有位置连为同一目标的轨迹。已确认目标的异常移动和同一活动内的显式数量、国别、平台、区域、任务冲突仍保留，轨迹行数不作为目标数量。
 6. 两个不同子海域不能只因同属南海而被认定为区域一致。方向泛称不能单独证明具体子海域。
 7. 通行区域按 PDF 口径归为“其他”；原文明确出现核心海域时保留核心方向证据，跨区域过程仍需进一步事件拆分。
-8. 无法消解的关联歧义、多平台混合、跨方向轨迹、时间异常、平台类别冲突或不合理轨迹跳变会排除事件。可拆分的多平台材料先按子事件核验。
-9. 模型输出必须带真实原文片段，字段值独立从该引用验证；模型不能删除规则已识别的明确冲突。
+8. 无法消解的关联歧义、多平台混合、时间异常、平台类别冲突或已确认具体目标的不合理轨迹跳变会排除事件。不同目标或不同活动的方向差异不直接作为事实冲突；可区分的雷达活动及多平台材料先分别关联，再核验。
+9. 模型输出必须带真实原文片段，字段值独立从该引用验证；全部已抽取事实须被核验或有明确角色排除理由。同活动的明确数值矛盾不能被多数票覆盖；任务的包含关系等语义由模型判断。
 10. 同国家同型号多日出现仅作为类型级观察，不假定是同一具体舰机持续部署。
 
 `quality` 是字段支持覆盖程度，assignment.score是对应排序依据，均不是校准后的正确概率。排序不能裁决事实真假。区间相容也不等于起止边界相同：日报只写有至少两类来源支持的实际时间边界。
@@ -397,7 +413,7 @@ outputs/
 
 当前版本是保守基线，尚无标准答案可以计算比赛分数。飞机坐标采用粗粒度包围框，边界附近输出未知；这不能替代精确空间匹配。多平台正文仅在平台与局部或共同上下文可明确归属时拆分；进入/离开等多阶段过程尚未完整建模。默认 7 天历史窗口是实现参数，并非官方指定。日报建议目前采用可追溯的规则生成；尚未接入开放式模型研判或外部知识库。
 
-API 协议经过模拟 HTTP 测试；本机 Ollama 已连接 `qwen3.5:9b-q8_0` 做单日真实试跑，实际记录见 [试跑说明](outputs/ollama_trial/试跑说明.md) 和 `outputs/ollama_trial/manifest.json`。模型原始结构化输出保存在每日观测的 `metadata.llm_extraction`，独立校验后的字段保存在 `metadata.llm_validated_facts`，合并前规则结果保存在 `metadata.rule_facts`。各事件的 `事件信息.json` 也包含这些信息。
+API 协议经过模拟 HTTP 测试；本机 Ollama 已连接 `qwen3.5:9b-q8_0` 做单日真实试跑，实际记录见 [试跑说明](outputs/ollama_trial/试跑说明.md) 和 `outputs/ollama_trial/manifest.json`。新版模型活动及引用保存在 `metadata.llm_extraction` 和 `metadata.semantic_activities`，规则候选保存为 `metadata.rule_candidates`；归属审查在候选的 `assignment.semantic_link_reviews`，三源字段证据和代码检查在事件的 `semantic_review`。`事件信息.json` 和 `关联说明.md` 都记录判断来源。旧缓存格式仍保留在历史输出，不代表新版已运行。
 
 ## 常见问题
 

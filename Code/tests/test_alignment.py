@@ -132,13 +132,13 @@ def test_broad_direction_does_not_hide_different_specific_regions():
     assert relation.fields["region"] == "conflict"
 
 
-def test_conflicting_hull_numbers_cannot_be_hidden_by_same_class():
+def test_different_hull_numbers_do_not_prove_same_ship_or_fact_conflict():
     a, b = obs(), obs("radar", "r")
     a.metadata["individual_ids"] = ["DDG173"]
     b.metadata["individual_ids"] = ["DDG174"]
     relation = RelationMatcher(AlignmentSettings()).compare(a, b)
-    assert relation.status == "conflicted"
-    assert relation.fields["individual"] == "conflict"
+    assert relation.status == "unrelated" and not relation.conflicts
+    assert relation.fields["individual"] == "different"
 
 
 def test_nearby_hours_alternative_does_not_override_clear_overlap():

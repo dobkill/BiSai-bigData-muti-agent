@@ -34,9 +34,23 @@ def apply_llm_arguments(settings, args):
 
 
 def estimate_request_budget(settings, targets) -> int:
-    """Cover each actual text file and per-day reviews, including allowed retries."""
+    """Estimate extraction, association, verification and recovery requests."""
     folders = IngestionAgent(settings.paths.data_dir).dates()
     text_count = sum(sum(1 for path in (folders[day] / name).glob("*.txt") if not path.name.startswith("~$"))
                      for day in set(targets) for name in ("开源军情", "网上舆论"))
-    reviews = len(set(targets)) * settings.alignment.max_llm_reviews if settings.alignment.llm_review else 0
-    return max(1, (text_count + reviews) * (settings.llm.retries + 1))
+    news_count = sum(sum(1 for path in (folders[day] / "开源军情").glob("*.txt") if not path.name.startswith("~$"))
+                     for day in set(targets))
+    if settings.alignment.mode == "one_to_one":
+        reviews = news_count if settings.alignment.llm_review else 0
+        verifications = news_count
+    else:
+        # Legacy all-combinations mode has no bounded final model review count.
+        reviews, verifications = 0, 0
+    extra = 0
+    if (settings.workflow.enabled and settings.alignment.mode == "one_to_one"
+            and settings.alignment.llm_review and settings.extraction.mode != "rules"):
+        rounds = settings.workflow.max_recovery_rounds
+        # Allow source completeness and name ambiguity checks, new link/fact reviews after each
+        # recovery round, and one exception search per missing source type.
+        extra = text_count * 2 + rounds * (reviews + verifications + news_count * 2)
+    return max(1, (text_count + reviews + verifications + extra) * (settings.llm.retries + 1))

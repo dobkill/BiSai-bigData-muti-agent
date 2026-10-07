@@ -29,6 +29,8 @@ COUNTRY_ALIASES = {
 }
 TASKS = ["对海突击训练", "实弹射击训练", "远程轰炸训练", "电子对抗训练", "情报监视侦察", "海上侦察巡逻", "编队警戒部署", "两栖作战训练", "海上补给训练", "联合搜救训练", "反潜巡逻", "联合巡逻", "联合巡航", "战备警巡", "战备巡逻", "空中警戒", "电子侦察", "远海训练", "搜救训练", "海上巡逻", "自由航行", "例行部署", "友好访问", "海上护航", "海上监视侦察", "空中加油支援", "舰载机起降训练", "远程兵力投送", "防空反导训练", "预警指挥"]
 TASK_ALIASES = {"战备巡航": "战备巡逻", "情报监视与侦察": "情报监视侦察", "海上护航行动": "海上护航", "海上护航": "海上护航"}
+TASK_ALIASES.update({"围绕任务区域保持机动": "区域机动", "围绕任务海域保持机动": "区域机动",
+                     "在指定任务区域保持机动": "区域机动"})
 PLATFORM_ALIASES = {
     "阵风M": ["阵风M", "阵风”M", "阵风“M", "阵风 M"],
     "台风": ["台风"], "无敌级": ["无敌级", "无敌号"],
@@ -66,6 +68,9 @@ def regions(text: str) -> list[str]:
     spans = []
     for token in sorted(tokens, key=len, reverse=True):
         for match in re.finditer(re.escape(token), text):
+            # Offline candidate recall: a navy's name is not a sea name.
+            if token == "菲律宾海" and text[match.end():].startswith("军"):
+                continue
             if any(a <= match.start() and match.end() <= b for a, b in spans):
                 continue
             spans.append(match.span())
@@ -120,6 +125,29 @@ def platform_catalog(labels: list[str]) -> dict[str, list[str]]:
             if name not in PLATFORM_ALIASES:
                 result[name] = [match.group(1)]
     return result
+
+
+def canonical_platform(value: str, quote: str = "", aliases: dict[str, list[str]] | None = None) -> str:
+    """Normalize the selected entity using its citation, without adding subjects.
+
+    A missing ship-name suffix is recoverable only when the complete name is
+    explicitly cited. Bare names alone never equate a ship with a class/model.
+    """
+    key = clean(str(value))
+    names = platforms(key, aliases)
+    if key.endswith(("号", "级")):
+        names = [name for name in names if not name.endswith(("号", "级")) or name[-1] == key[-1]]
+        return names[0] if len(names) == 1 else key
+    if quote and not MODEL_RE.fullmatch(key):
+        cited = clean(quote)
+        ship, ship_class = key + "号", key + "级"
+        if ship in cited and ship_class in cited:
+            return key  # Citation does not identify a unique entity grain.
+        quoted_name = re.search(r'["“‘\']\s*' + re.escape(str(value).strip()) + r'\s*["”’\']\s*号', quote, re.I)
+        if ship in cited and (ship in {**PLATFORM_ALIASES, **(aliases or {})}
+                              or quoted_name and "ship" in platform_kinds(quote)):
+            return ship
+    return names[0] if len(names) == 1 else key
 
 
 def platform_kinds(text: str) -> list[str]:

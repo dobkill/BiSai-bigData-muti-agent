@@ -3,7 +3,7 @@ from copy import deepcopy
 from datetime import datetime
 import re
 
-from ..domain import MODEL_RE, PLATFORM_ALIASES, regions, REGION_DIRECTION, tasks, countries, platform_kinds
+from ..domain import MODEL_RE, PLATFORM_ALIASES, canonical_platform, regions, REGION_DIRECTION, tasks, countries, platform_kinds
 from ..models import Document, Observation
 from ..relations import platform_key
 from ..utils import stable_id, unique
@@ -15,6 +15,30 @@ class EventUnitAgent:
 
     def canonicalize(self, obs: Observation, text: str = "") -> Observation:
         result = obs.model_copy(deep=True)
+        if result.metadata.get("extractor") == "llm_semantic":
+            # Also normalize older saved model observations, keeping every
+            # semantic activity and the parent document in the same namespace.
+            containers = [result.model_dump()] + result.metadata.get("semantic_activities", [])
+            for container in containers:
+                quote = "\n".join(container.get("quotes", {}).get("platform", []))
+                values = container["facts"].get("platform", [])
+                canonical_values = [canonical_platform(value, quote) for value in values]
+                for before, after in zip(values, canonical_values):
+                    if before != after:
+                        container["metadata"].setdefault("entity_normalizations", []).append(
+                            {"field": "platform", "model_value": before, "canonical_value": after,
+                             "quote": quote, "basis": "selected_entity_and_cited_spelling"})
+                if values:
+                    container["facts"]["platform"] = unique(canonical_values)
+            result.facts = containers[0]["facts"]
+            result.metadata["entity_normalizations"] = containers[0]["metadata"].get("entity_normalizations", [])
+            # Semantic roles/boundaries are already cited. Never reparse the
+            # whole document and overwrite them with background keywords.
+            result.metadata["time_role"] = "reported_activity_window"
+            result.metadata["event_date"] = next(iter(result.facts.get("start", [])), result.date)[:10]
+            result.metadata["time_precision"] = ("interval" if result.facts.get("end") else
+                                                 "point" if result.facts.get("start") else "date_only")
+            return result
         # 具体舰级后的括号舷号/项目代号是身份补充，不是另一个平台。
         auxiliary = []
         individuals = []
@@ -35,7 +59,8 @@ class EventUnitAgent:
             normalized.append(value)
             seen.add(key)
         result.facts["platform"] = normalized
-        result.metadata["individual_ids"] = unique(individuals + [platform_key(v) for v in normalized if v.endswith("号")])
+        result.metadata["individual_ids"] = unique(result.metadata.get("individual_ids", []) + individuals
+                                                  + [platform_key(v) for v in normalized if v.endswith("号")])
         if auxiliary:
             result.metadata["platform_designations"] = auxiliary
         result.warnings = [w for w in result.warnings if w != "multiple_platforms_unresolved"]
@@ -71,6 +96,8 @@ class EventUnitAgent:
         return sorted(hits, key=lambda m: m.start())
 
     def split(self, obs: Observation, text: str) -> list[Observation]:
+        if obs.metadata.get("extractor") == "llm_semantic":
+            return [Observation.model_validate(u) for u in obs.metadata["semantic_activities"]]
         names = [v for v in obs.facts.get("platform", []) if not v.startswith("generic:")]
         if len(names) < 2:
             return [obs]
@@ -138,7 +165,7 @@ class EventUnitAgent:
             canonical = self.canonicalize(obs, text)
             units = self.split(canonical, text) if text else [canonical]
             if keep_documents:
-                if len(units) > 1:
+                if len(units) > 1 or canonical.metadata.get("extractor") == "llm_semantic":
                     canonical.metadata["platform_units"] = [u.model_dump(mode="json") for u in units]
                     canonical.warnings = [w for w in canonical.warnings if w != "multiple_platforms_unresolved"]
                 result.append(canonical)

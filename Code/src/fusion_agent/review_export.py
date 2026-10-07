@@ -51,7 +51,11 @@ REASON_NAMES = {
     "insufficient_radar_points": "雷达记录点数量不足",
     "radar_cross_direction_track": "雷达轨迹跨越多个方向，需要核验",
     "radar_implausible_track_jump": "雷达轨迹出现不合理的位置跳变",
+    "radar_individual_identity_conflict": "已关联的同一目标存在编号或名称冲突，需要核验",
     "multiple_compatible_hypotheses": "存在多个合理的对应组合，已全部保留，需人工确认归属",
+    "semantic_opinion_association_uncertain": "模型尚不能确认新闻与舆论属于同一次活动",
+    "semantic_radar_association_uncertain": "模型尚不能确认所选雷达属于该活动",
+    "semantic_verification_failed": "模型核验失败或证据校验不通过，保持不可信",
 }
 INDEX_COLUMNS = ["日期", "状态", "事件ID", "三源齐全", "日报接纳", "国家地区", "平台", "方向",
                  "新闻标题", "舆论标题", "雷达批号", "雷达记录数", "需要确认的问题", "分组目录", "分组依据", "字段核验",
@@ -74,6 +78,10 @@ def explain(reason: str) -> str:
         return "模型抽取回退到规则抽取：" + value
     if prefix == "association_not_confirmed":
         return "事件关联尚未确认：" + RELATION_NAMES.get(value, value)
+    if prefix == "semantic_association_not_confirmed":
+        return "模型未确认同一活动：" + {"different_activity": "材料描述不同活动", "uncertain": "归属证据不足"}.get(value, value)
+    if prefix == "semantic_extraction_invalid":
+        return "模型抽取未通过证据校验，需重新核验原文"
     if prefix == "llm_unanchored_claim":
         return "模型的" + FIELD_NAMES.get(value, value) + "声明缺少连续原文引用，未采用"
     if prefix == "llm_unvalidated_claim":
@@ -289,6 +297,10 @@ class ReviewExporter:
             lines += ["", f"本组只对应原文中的 **{obs.metadata['unit_platform']}** 子事件；完整原文仍保留。"]
             if obs.metadata.get("unassigned_fields"):
                 lines.append("原文中无法明确分配给该平台的字段：" + "、".join(FIELD_NAMES[f] for f in obs.metadata["unassigned_fields"]) + "，未自动补全。")
+        for obs in members:
+            if obs.metadata.get("parent_radar_id"):
+                lines += ["", f"雷达批号 `{obs.metadata['batch']}` 已区分为 {obs.metadata['batch_activity_count']} 个活动观测；"
+                          f"本组对应原始行 {obs.metadata['row_numbers']}。其他行分别关联或保留在未归属材料中，不作为本事件的反证。"]
         lines += ["", "打开 [关联说明.md](关联说明.md) 查看三源字段与原始位置；人工意见填写 `人工复核.csv`。", ""]
         return "\n".join(lines)
 
@@ -355,12 +367,75 @@ class ReviewExporter:
         for file in files:
             lines += [f"- [{file['source_name']}：{file['file']}](<{quote(file['file'])}>)。原始位置：`{file['original_path']}`。"]
         if any(o.source == "radar" for o in members):
-            lines += ["- [雷达.xlsx](雷达.xlsx)：只包含该分组对应批号的记录，增加原始 Excel 行号并按观测时间排序。"]
+            lines += ["- [雷达.xlsx](雷达.xlsx)：包含该分组对应雷达活动的原始记录，增加原始 Excel 行号并按观测时间排序。"]
         lines += ["", "## 关联与核验问题", ""]
         if issues:
             lines += ["- " + issue for issue in issues]
         else:
-            lines += ["当前规则未发现关联歧义或关键事实冲突。"]
+            lines += ["本次核验未发现关联歧义或关键事实冲突。"]
+        diagnostic = candidate.assignment.get("opinion_diagnostics", {})
+        if diagnostic:
+            outcomes = {"selected": "已选定对应舆论", "no_materials": "当天没有舆论材料",
+                        "no_candidates_recalled": "代码未召回舆论候选，尚未交给模型审查",
+                        "llm_rejected_all": "模型已审查候选舆论，全部判为不同活动",
+                        "review_failed_or_not_run": "候选已召回，但模型审查未完成",
+                        "global_assignment_not_selected": "存在候选，但整体分配未选定对应"}
+            lines += ["", "## 舆论关联过程", "",
+                      f"当天舆论 {diagnostic['total_opinions']} 篇；召回 {len(diagnostic['recalled_opinion_ids'])} 篇；模型审查 {len(diagnostic['reviewed_opinion_ids'])} 篇。",
+                      outcomes.get(diagnostic["outcome"], diagnostic["outcome"]) + "。",
+                      "过滤阶段与具体原因见事件信息.json 的 assignment.opinion_diagnostics。"]
+        workflow = candidate.assignment.get("workflow", {})
+        if workflow:
+            lines += ["", "## 工作流与异常复查", "",
+                      "实体解析、多路候选检索、活动关联、整体分配和事实核验分阶段执行；复查提议不直接改变可信度。"]
+            for step in workflow.get("recovery", []):
+                lines += [f"- 第 {step['round']} 轮复查{SOURCE_NAMES[step['source']]}：读取 {len(step['inspected_ids'])} 个原始候选，提议 {len(step['proposed_ids'])} 个候选重新审查。"]
+            axes = event.semantic_review.get("workflow_diagnostics", {})
+            if axes:
+                names = {"complete": "三源齐全", "missing_source": "尚未关联齐三源", "same_activity": "同一次活动",
+                         "different_activity": "不同活动", "uncertain": "未确认", "conflict": "存在冲突",
+                         "supported": "关键字段已支持", "insufficient": "支持不足"}
+                lines += ["- 来源覆盖：" + names[axes["source_coverage"]] + "；活动关联：" + names[axes["association"]]
+                          + "；事实核验：" + names[axes["facts"]] + "。"]
+                for source, coverage in axes["search_coverage"].items():
+                    if not any(o.source == source for o in members):
+                        lines += [f"- {SOURCE_NAMES[source]}已检查 {len(coverage['inspected_ids'])}/{coverage['corpus_size']} 份材料；"
+                                  + ("该日候选检查已完成。" if coverage["complete"] else "搜索尚未覆盖全部材料，不能据此确认原始材料不存在。")]
+        normalizations = [(SOURCE_NAMES[o.source], entry) for o in members for entry in o.metadata.get("entity_normalizations", [])]
+        if normalizations:
+            lines += ["", "## 实体名称规范化", ""]
+            for source, entry in normalizations:
+                lines += [f"- {source}：模型值“{entry['model_value']}” → 标准值“{entry['canonical_value']}”；原始值与对应引文保留在事件信息.json。"]
+        type_changes = [(SOURCE_NAMES[o.source], entry) for o in members for entry in o.metadata.get("entity_type_resolutions", [])]
+        if type_changes:
+            lines += ["", "## 平台类型复核", ""]
+            for source, entry in type_changes:
+                lines += [f"- {source}：{entry['model_value']} → {entry['canonical_value']}；依据原文：{entry['quote']}。"]
+        rechecks = [(SOURCE_NAMES[o.source], check) for o in members for check in o.metadata.get("source_rechecks", [])]
+        if rechecks:
+            lines += ["", "## 源内字段完整性复核", "", "只读取各来源自己的原文，不借用其他来源补事实。原始抽取及复核回复均保留。"]
+            for source, check in rechecks:
+                for unit, fields in check["response"].items():
+                    for field, decision in fields.items():
+                        if decision["claims"]:
+                            lines += [f"- {source}活动 {unit}，{FIELD_NAMES[field]}：{claim['value']}；原文：{claim['quote']}。"
+                                      for claim in decision["claims"]]
+                        elif decision["status"] == "uncertain":
+                            lines += [f"- {source}活动 {unit}，{FIELD_NAMES[field]}：角色未确认，保持未知。"]
+        if event.semantic_review:
+            review = event.semantic_review
+            engine = "模型语义核验及代码证据检查" if review.get("method") != "offline_rules" else "离线规则基线"
+            lines += ["", "## 判断来源", "", f"本事件判断方式：{engine}。"]
+            if review.get("response"):
+                response = review["response"]
+                association_label = {"same_activity": "同一次活动", "different_activity": "不同活动", "uncertain": "尚不确定"}[response["association"]]
+                lines += ["以下保留模型原始说明，便于与原文对照；最终字段状态、事实值和支持来源见下方核验结论。",
+                          f"- 模型活动归属说明：{association_label}；{response['reason']}"]
+                lines += [f"- 模型{FIELD_NAMES[f['field']]}说明：{f['reason']}" for f in response["fields"]]
+                if response.get("excluded_claims"):
+                    lines += [f"- 排除候选 {e['claim_id']}：{e['role']}；{e['reason']}" for e in response["excluded_claims"]]
+            if review.get("status") == "failed":
+                lines += ["- 模型核验失败，保持不可信；详见事件信息中的失败原因。"]
         if candidate.relation_status is not None:
             source = {o.id: SOURCE_NAMES[o.source] for o in members}
             lines += ["", "## 关联判定依据", "", "强字段冲突不能靠其他信息抵消；缺失记为未知。关联状态与字段核验分别记录。", "",
@@ -401,6 +476,10 @@ class ReviewExporter:
             if obs.source == "radar":
                 lines += [f"- `{obs.path}` / {obs.metadata['sheet']} / 批号 `{obs.metadata['batch']}`；"
                           f"原始行号：{obs.metadata['row_numbers']}。"]
+                if obs.metadata.get("parent_radar_id"):
+                    lines += [f"  - 原批号共有 {len(obs.metadata['batch_row_numbers'])} 条记录，区分为 "
+                              f"{obs.metadata['batch_activity_count']} 个活动观测；本组只核验上述行。{obs.metadata['activity_basis']}。"]
+                lines += [f"  - 目标身份依据：{obs.metadata.get('identity_basis', '未提供')}。"]
         lines += ["", "## 人工复核", "", "请填写同目录的 `人工复核.csv`。该文件只在首次导出时创建，重复导出会保留填写内容。", ""]
         if stale:
             lines += ["**当前材料或程序核验结果与复核表记录的版本不同。既有意见已保留，请按本次材料重新确认。**", ""]
@@ -408,7 +487,10 @@ class ReviewExporter:
         return "\n".join(lines)
 
     def export_day(self, day: DayResult) -> dict:
-        if (any(e.classification is None for e in day.events) or not any(
+        has_semantic_review = any(e.semantic_review.get("method") == "llm_semantic_three_source_v1" for e in day.events)
+        if has_semantic_review and any(e.classification is None for e in day.events):
+            raise ValueError("语义核验快照缺少分类；须重新运行模型核验，不能用规则覆盖")
+        if not has_semantic_review and (any(e.classification is None for e in day.events) or not any(
                 t.get("agent") == "verification" and t.get("method") == VERIFICATION_METHOD for t in day.trace)):
             # Reverify historical snapshots under the current trust policy.
             rules = next((t.get("rules", {}) for t in day.trace if t.get("agent") == "verification"), {})
@@ -416,6 +498,7 @@ class ReviewExporter:
             verifier = VerificationAgent(VerificationSettings.model_validate(rules), AlignmentSettings.model_validate(alignment))
             day = day.model_copy(update={"events": verifier.run(day.candidates, day.observations)})
         texts, radar = self.preflight(day)
+        original_text_hashes = {hashlib.sha256(content).hexdigest() for content in texts.values()}
         day_dir = self.target(self.output_dir / day.date)
         observations = {o.id: o for o in day.observations}
         events = {e.id: e for e in day.events}
@@ -471,6 +554,32 @@ class ReviewExporter:
                               "sha256": hashlib.sha256(texts[obs.id]).hexdigest()})
             if any(o.source == "radar" for o in members):
                 self.write_radar(self.target(folder / "雷达.xlsx"), members, radar)
+            archived = list(old_meta.get("archived_materials", []))
+            current_files = {entry["file"] for entry in files}
+            if any(o.source == "radar" for o in members):
+                current_files.add("雷达.xlsx")
+            old_files = {entry["file"] for entry in old_meta.get("copied_texts", [])}
+            if any(o.get("source") == "radar" for o in old_meta.get("observations", [])):
+                old_files.add("雷达.xlsx")
+            for old_file in list(folder.iterdir()):
+                if not old_file.is_file() or old_file.name in current_files:
+                    continue
+                generated_name = bool(re.fullmatch(r"(?:新闻|舆论)(?:_\d+)?\.txt", old_file.name))
+                owned = old_file.name in old_files or (generated_name and
+                    hashlib.sha256(old_file.read_bytes()).hexdigest() in original_text_hashes)
+                if not owned:
+                    continue
+                source = self.target(old_file)
+                revision = stable_id(str(old_meta.get("fingerprint", "legacy")))
+                destination = self.target(folder / "历史材料" / f"{revision}_{old_file.name}")
+                counter = 1
+                while destination.exists():
+                    destination = self.target(folder / "历史材料" / f"{revision}_{counter}_{old_file.name}")
+                    counter += 1
+                destination.parent.mkdir(parents=True, exist_ok=True)
+                source.rename(destination)
+                archived.append({"file": destination.relative_to(folder).as_posix(),
+                                 "former_file": old_file.name, "reason": "not_in_current_assignment"})
             fingerprint = stable_id(json.dumps({"candidate": candidate.model_dump(), "event": event.model_dump(),
                                                 "observations": [o.model_dump() for o in members], "files": files},
                                                ensure_ascii=False, sort_keys=True, default=str))
@@ -487,6 +596,8 @@ class ReviewExporter:
                              if not w.startswith("llm_un")])
             if stale:
                 issues.append("现有人工复核表对应旧版本，请重新确认")
+            if archived:
+                issues.append("旧版未参与当前关联的自动生成材料已保存在历史材料目录")
             write_text(self.target(folder / "关联说明.md"), self.description(candidate, event, members, status, files, issues, stale))
             write_text(self.target(folder / "README.md"), self.group_readme(candidate, event, members, status))
             if candidate.assignment:
@@ -501,7 +612,7 @@ class ReviewExporter:
             write_json(self.target(folder / "事件信息.json"), {"format": FORMAT, "status": status, "fingerprint": fingerprint,
                        "review_record_stale": stale, "candidate": candidate.model_dump(mode="json"),
                        "event": event.model_dump(mode="json"), "observations": [o.model_dump(mode="json") for o in members],
-                       "copied_texts": files})
+                       "copied_texts": files, "archived_materials": archived})
             def values(field):
                 return display(event.facts.get(field) or unique([v for o in members for v in o.facts.get(field, [])]))
             groups.append({"date": day.date, "status": status, "id": candidate.id,
@@ -608,6 +719,7 @@ class ReviewExporter:
                      "- **来源缺失**：缺失记未知；即使已有两类来源一致，缺少第三类关联材料仍归入不可信。第三类已关联但未给出某字段时，不构成该字段冲突。",
                      "- **逐字段核验**：可信事件仅保留已交叉印证的字段；数量或任务只有单类来源支持时记未知，不补全。",
                      "- **雷达依据**：雷达记录作为时空、数量和轨迹核验依据之一，不作为无条件优先真值；任一来源的明确冲突均不能被另外两类来源一致抵消。",
+                     "- **目标与活动范围**：飞机、舰艇等均先区分具体目标和活动；批号、型号不自动代表同一目标。批号内不同活动分别关联，明确目标的异常移动及同一活动内的事实冲突仍保留。",
                      "- **时空与歧义**：同一天、同方向不足以证明同一活动；数小时差距或多个合理对应仅保留候选。",
                      "- **日报范围**：可信事件与日报接纳分别记录，核心海域以外的可信活动也保留在可信事件中。", ""]
             if one_to_one:
@@ -615,7 +727,7 @@ class ReviewExporter:
                           "联合活动按平台分别核验，仍计一个主组；备选对应保留在组内，不另计事件。", ""]
         lines += [
                   "先打开 `索引.csv` 筛选，再读每组 `README.md` 的依据；完整字段见 `关联说明.md`。" +
-                  ("原文按字节复制，主组来源不重复；雷达子表包含该主组对应的全部批次。" if one_to_one else
+                  ("原文按字节复制，主组来源不重复；雷达子表包含该主组对应活动的原始行，同批号其他活动分别关联或保留为未归属材料。" if one_to_one else
                    "原文按字节复制，雷达只筛对应记录；同一原文可因子事件或多个候选出现在不同组中。"), "",
                   "人工意见填写 `人工复核.csv`，重复导出保留；意见暂不自动重算。", ""]
         if not category:

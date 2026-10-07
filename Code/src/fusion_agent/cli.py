@@ -102,6 +102,8 @@ def main():
     run.add_argument("--output-dir", type=Path, help="本次结果目录；相对路径按当前工作目录解析，阅读资料默认存到其 review 子目录")
     run.add_argument("--review-dir", type=Path, help="本次人工阅读目录；相对路径按当前工作目录解析")
     run.add_argument("--strict-llm", action="store_true", help="模型失败立即终止，避免把规则回退当成模型试跑")
+    run.add_argument("--agent-workflow", action=argparse.BooleanOptionalAction, default=None,
+                     help="启用实体解析和异常复查工作流；--no-agent-workflow 运行原有顺序流程")
     run.add_argument("--max-llm-calls", type=int, help="本次模型实际 HTTP 请求上限（含重试）；全量运行可覆盖配置中的单日预算")
     add_llm_arguments(run)
     export = sub.add_parser("export", help="导出内部 JSONL；官方格式待补充")
@@ -132,6 +134,8 @@ def main():
         else:
             if args.use_llm and args.offline:
                 raise ValueError("--use-llm 与 --offline 不能同时使用")
+            if args.agent_workflow is not None:
+                settings.workflow.enabled = args.agent_workflow
             if args.use_llm:
                 settings.llm.enabled = True
                 if settings.extraction.mode == "rules":

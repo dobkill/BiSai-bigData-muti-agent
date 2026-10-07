@@ -8,15 +8,17 @@ from ..models import Candidate, Event, FACT_FIELDS, FieldVerdict, Observation
 from ..utils import unique
 from ..relations import RelationMatcher, event_window, platform_key, time_relation
 
-METHOD = "three_source_verification_v2"
+METHOD = "three_source_semantic_verification_v4"
 
 
 class VerificationAgent:
     name = "verification"
 
-    def __init__(self, settings: VerificationSettings, alignment: AlignmentSettings | None = None):
+    def __init__(self, settings: VerificationSettings, alignment: AlignmentSettings | None = None, llm=None):
         self.settings = settings
         self.alignment = alignment or AlignmentSettings()
+        self.llm = llm
+        self.audit = {}
 
     def association_reasons(self, candidate: Candidate, members: list[Observation]) -> list[str]:
         if candidate.relation_status is not None and candidate.relation_status != "confirmed":
@@ -133,9 +135,14 @@ class VerificationAgent:
                              {platform_key(p) for p in u.facts.get("platform", [])}), None)
                 if unit is None:
                     unit = obs.model_copy(deep=True)
-                    unit.facts["platform"] = [name]
-                    if len(obs.facts.get("platform", [])) > 1:
-                        unit.facts.pop("quantity", None)
+                else:
+                    unit = unit.model_copy(deep=True)
+                # A model may put several platforms in one shared activity.
+                # The other participant is not a conflicting platform name,
+                # and a shared quantity cannot be assigned to either one.
+                if len(unit.facts.get("platform", [])) > 1:
+                    unit.facts.pop("quantity", None)
+                unit.facts["platform"] = [name]
                 unit.id = obs.id  # verdict evidence IDs always refer to public source records
                 scoped.append(unit)
             per_platform[name] = {f: self.time_field(f, scoped) if f in {"start", "end"}
@@ -173,15 +180,44 @@ class VerificationAgent:
                                                           if status == "supported" else evidence), values_by_source=values)
         return aggregate, per_platform
 
-    def run(self, candidates: list[Candidate], observations: list[Observation]) -> list[Event]:
+    def run(self, candidates: list[Candidate], observations: list[Observation], docs=None) -> list[Event]:
         index = {o.id: o for o in observations}
+        documents = {d.id: d.text for d in (docs or [])}
+        self.audit = {"decision_engine": "llm_semantic" if self.llm else "offline_rules",
+                      "llm_verifications": 0, "llm_verification_fallbacks": 0}
         events = []
-        blocking_warnings = {"invalid_time_interval", "radar_date_mismatch", "text_date_mismatch",
-                             "radar_cross_direction_track", "radar_implausible_track_jump", "multiple_platforms_unresolved"}
+        blocking_warnings = {"country_role_uncertain", "invalid_time_interval", "radar_date_mismatch", "text_date_mismatch",
+                             "radar_cross_direction_track", "radar_implausible_track_jump",
+                             "radar_individual_identity_conflict", "multiple_platforms_unresolved"}
         for candidate in candidates:
             members = [index[i] for i in candidate.observation_ids]
             reasons = list(candidate.warnings)
-            reasons.extend(self.association_reasons(candidate, members))
+            semantic_review = {"method": "offline_rules"}
+            semantic_verdicts = None
+            semantic_platforms = {}
+            if self.llm:
+                from .semantic_verification import SemanticVerifier
+                try:
+                    semantic_verdicts, semantic_platforms, semantic_review = SemanticVerifier(self.llm).review(
+                        candidate, members, documents, self)
+                    self.audit["llm_verifications"] += 1
+                    if semantic_review["response"]["association"] != "same_activity":
+                        reasons.append("semantic_association_not_confirmed:" + semantic_review["response"]["association"])
+                        candidate.relation_status = "candidate"
+                    else:
+                        # Keep rule comparisons as recall/audit signals, with
+                        # the actual semantic association separately visible.
+                        candidate.assignment["rule_relation_signals"] = [r.model_dump(mode="json") for r in candidate.relations]
+                        candidate.assignment["semantic_association"] = semantic_review["response"]["association"]
+                        candidate.relation_status = "conflicted" if any(v.status == "conflict" for v in semantic_verdicts.values()) else "confirmed"
+                except Exception as exc:
+                    if self.llm.settings.fail_on_error:
+                        raise
+                    self.audit["llm_verification_fallbacks"] += 1
+                    reasons.append("semantic_verification_failed")
+                    semantic_review = {"method": "llm_semantic_three_source_v1", "status": "failed", "error": str(exc)}
+            else:
+                reasons.extend(self.association_reasons(candidate, members))
             sources = {o.source for o in members}
             if sources != {"open_source", "opinion", "radar"}:
                 reasons.append("three_sources_not_linked")
@@ -189,12 +225,16 @@ class VerificationAgent:
                 reasons.append("fewer_than_two_source_types")
             for obs in members:
                 reasons.extend(w for w in obs.warnings if w in blocking_warnings)
+                if self.llm and any(w.startswith("llm_") for w in obs.warnings):
+                    reasons.append("semantic_extraction_invalid:" + obs.id)
             kinds = unique([k for o in members for k in o.metadata.get("platform_kinds", [])])
             if len(kinds) > 1:
                 reasons.append("platform_kind_conflict")
             news = next((o for o in members if o.source == "open_source"), None)
             platform_verdicts = {}
-            if candidate.assignment and news and news.metadata.get("platform_units"):
+            if semantic_verdicts is not None:
+                verdicts, platform_verdicts = semantic_verdicts, semantic_platforms
+            elif candidate.assignment and news and news.metadata.get("platform_units"):
                 verdicts, platform_verdicts = self.joint_fields(members, news)
             else:
                 verdicts = {name: (self.time_field(name, members) if candidate.relation_status is not None
@@ -216,6 +256,7 @@ class VerificationAgent:
             events.append(Event(id=candidate.id, date=candidate.date, accepted=classification == "trusted" and not report_reasons,
                                 facts=facts, verdicts=verdicts, evidence_ids=candidate.observation_ids,
                                 reasons=unique(report_reasons), quality=round(quality, 3), platform_verdicts=platform_verdicts,
-                                classification=classification, verification_reasons=reasons))
+                                classification=classification, verification_reasons=reasons,
+                                semantic_review=semantic_review))
         return events
 

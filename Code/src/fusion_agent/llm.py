@@ -1,6 +1,8 @@
 """统一 HTTP 模型入口：Ollama、llama.cpp 与兼容 API。"""
 from concurrent.futures import ThreadPoolExecutor, wait, FIRST_COMPLETED
+from contextlib import contextmanager
 import json
+import logging
 import os
 from pathlib import Path
 import re
@@ -14,9 +16,47 @@ from .config import LLMSettings
 from .concurrency import ConcurrencyController, RequestMeasurement
 from .utils import stable_id, write_json
 
+logger = logging.getLogger(__name__)
+
 
 class LLMError(RuntimeError):
     pass
+
+
+def validate_response_schema(data, schema, root=None):
+    """Validate the JSON-schema subset produced by our Pydantic contracts."""
+    root = schema if root is None else root
+    if "$ref" in schema:
+        target = root
+        for part in schema["$ref"].removeprefix("#/").split("/"):
+            target = target[part]
+        return validate_response_schema(data, target, root)
+    if "anyOf" in schema:
+        for option in schema["anyOf"]:
+            try:
+                validate_response_schema(data, option, root)
+                return
+            except ValueError:
+                pass
+        raise ValueError("JSON 值不符合 schema 的任何允许类型")
+    kind = schema.get("type")
+    valid = {"object": isinstance(data, dict), "array": isinstance(data, list),
+             "string": isinstance(data, str), "integer": isinstance(data, int) and not isinstance(data, bool),
+             "number": isinstance(data, (int, float)) and not isinstance(data, bool),
+             "boolean": isinstance(data, bool), "null": data is None}
+    if kind in valid and not valid[kind]:
+        raise ValueError("JSON 值类型不符合 schema")
+    if "enum" in schema and data not in schema["enum"]:
+        raise ValueError("JSON 枚举值不合法")
+    if kind == "object":
+        if any(key not in data for key in schema.get("required", [])):
+            raise ValueError("JSON 缺少 schema 必填字段")
+        for key, value in data.items():
+            if key in schema.get("properties", {}):
+                validate_response_schema(value, schema["properties"][key], root)
+    elif kind == "array":
+        for value in data:
+            validate_response_schema(value, schema.get("items", {}), root)
 
 
 class LLMClient:
@@ -25,6 +65,7 @@ class LLMClient:
         self.cache_dir = cache_dir / "llm"
         self.calls = 0
         self.cache_hits = 0
+        self.validation_repairs = 0
         self.lock = Lock()
         self.key_locks = {}
         self.local = local()
@@ -33,6 +74,16 @@ class LLMClient:
 
     def close(self):
         self.http.close()
+
+    @contextmanager
+    def review_context(self):
+        previous = self.settings.ollama.num_ctx
+        if self.settings.provider == "ollama" and self.settings.ollama.review_num_ctx is not None:
+            self.settings.ollama.num_ctx = max(previous, self.settings.ollama.review_num_ctx)
+        try:
+            yield
+        finally:
+            self.settings.ollama.num_ctx = previous
 
     def validate(self):
         s = self.settings
@@ -133,6 +184,43 @@ class LLMClient:
         measurement = getattr(self.local, "measurement", None)
         if measurement is None:
             measurement = RequestMeasurement()
+        path = self.response_path(system, user, schema)
+        if s.cache:
+            with self.lock:
+                key_lock = self.key_locks.setdefault(path.stem, Lock())
+            with key_lock:
+                return self._complete_json(s, endpoint, system, user, schema, path, measurement)
+        return self._complete_json(s, endpoint, system, user, schema, path, measurement)
+
+    def validated_json(self, system, user, schema, validator):
+        """Ask the model to repair a rejected reply without relaxing evidence checks.
+
+        A repaired request has its own cache key. Rejected replies are archived
+        for audit and removed from the successful response cache.
+        """
+        request = user
+        for attempt in range(self.settings.retries + 1):
+            data = self.complete_json(system, request, schema)
+            try:
+                return validator(data)
+            except ValueError as exc:
+                rejection = self.cache_dir.parent / 'llm_rejections' / (self.response_path(system, request, schema).stem +
+                                                                       f'-{time.time_ns()}.json')
+                write_json(rejection, {'system': system, 'user': request, 'schema': schema,
+                                       'response': data, 'validation_error': str(exc)})
+                self.invalidate_response(system, request, schema)
+                if attempt == self.settings.retries:
+                    raise
+                with self.lock:
+                    self.validation_repairs += 1
+                logger.warning('模型回复未通过证据校验，要求纠正（%d/%d）：%s', attempt + 1, self.settings.retries, exc)
+                request = (user + '\n\n上次 JSON 未通过代码证据校验，请重新审查并纠正，仍须满足全部原任务要求。'
+                           '\nquote 必须逐字复制原文连续片段，不改写时间、不拼接日期；未知事实使用空数组，不填 null/空引用条目。'
+                           '\n不得删除不利事实、编造引用或用多数票覆盖同活动反证。'
+                           '\n校验错误：' + str(exc) + '\n上次 JSON：' + json.dumps(data, ensure_ascii=False))
+
+    def response_path(self, system, user, schema):
+        s, endpoint = self.settings, self.settings.endpoint
         # 密钥永不进入缓存键、缓存内容、日志。
         cache_values = {"provider": s.provider, "url": endpoint.base_url, "model": endpoint.model,
                         "temperature": s.temperature, "schema": schema, "system": system,
@@ -143,15 +231,11 @@ class LLMClient:
             cache_values.update(num_ctx=endpoint.num_ctx, think=endpoint.think,
                                 num_predict=endpoint.num_predict, json_mode="schema")
         key = stable_id(json.dumps(cache_values, ensure_ascii=False, sort_keys=True))
-        path = self.cache_dir / (key + ".json")
-        if s.cache:
-            # Identical articles can arrive concurrently from different sources.
-            # Coalesce them, avoiding duplicate inference and Windows replace races.
-            with self.lock:
-                key_lock = self.key_locks.setdefault(key, Lock())
-            with key_lock:
-                return self._complete_json(s, endpoint, system, user, schema, path, measurement)
-        return self._complete_json(s, endpoint, system, user, schema, path, measurement)
+        return self.cache_dir / (key + ".json")
+
+    def invalidate_response(self, system, user, schema):
+        # Application-level citation/coverage failures must not survive reruns.
+        self.response_path(system, user, schema).unlink(missing_ok=True)
 
     def _complete_json(self, s, endpoint, system, user, schema, path, measurement):
         if s.cache and path.exists():
@@ -159,6 +243,7 @@ class LLMClient:
                 data = json.loads(path.read_text(encoding="utf-8"))
                 if not isinstance(data, dict):
                     raise ValueError("缓存必须是 JSON 对象")
+                validate_response_schema(data, schema)
                 with self.lock:
                     self.cache_hits += 1
                 return data
@@ -207,6 +292,8 @@ class LLMClient:
                         raise ValueError("模型输出被 token 上限截断")
                     content = body["choices"][0]["message"]["content"]
                 else:
+                    if body.get("done_reason") == "length":
+                        raise ValueError("模型输出被 token 上限截断")
                     content = body["message"]["content"]
                 content = re.sub(r"<think>.*?</think>", "", content, flags=re.DOTALL).strip()
                 if content.startswith("```"):
@@ -214,6 +301,7 @@ class LLMClient:
                 data = json.loads(content)
                 if not isinstance(data, dict):
                     raise ValueError("模型必须返回 JSON 对象")
+                validate_response_schema(data, schema)
                 if s.cache:
                     write_json(path, data)
                 measurement.success = True
@@ -230,7 +318,7 @@ class LLMClient:
             except (httpx.RequestError, ValueError, KeyError, IndexError, TypeError) as exc:
                 if isinstance(exc, httpx.RequestError):
                     measurement.pressure = True
-                error = f"模型请求/JSON 解析失败：{type(exc).__name__}"
+                error = f"模型请求/JSON 解析失败：{type(exc).__name__}: {exc}"
             if attempt < s.retries:
                 time.sleep(min(2 ** attempt, 8))
         raise LLMError(error)

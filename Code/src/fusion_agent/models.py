@@ -4,6 +4,16 @@ from pydantic import BaseModel, Field, field_validator
 
 Source = Literal["open_source", "opinion", "radar"]
 FACT_FIELDS = ("country", "platform", "direction", "region", "quantity", "task", "start", "end")
+FACT_DEFINITIONS = {
+    "country": "当前活动主体、平台或执行方所属国家；主体国籍就是事实，不是背景。不是活动发生地国家，也不是媒体或评论者国别。",
+    "platform": "当前活动主体的型号、舰级或具体机舰名，区分类型与个体身份；主体身份也是事实。",
+    "direction": "赛题海区分类：东海、南海、黄海或其他；由活动海域/坐标规范化得到，不是罗盘航向。",
+    "region": "当前主体实际活动地点或海域；组织名称、媒体国籍、纯背景地点不属于活动地点。",
+    "quantity": "明确陈述的该主体架数/艘数；不能将编队总数复制给每个主体。",
+    "task": "当前主体明确执行的任务；能力、影响、可能性分析不等于已经执行的任务。",
+    "start": "正文活动开始时刻；不是发布时间，不能从只有日期的原文补时分。",
+    "end": "正文活动结束时刻；不是发布时间，窗口重叠不能证明结束边界相同。",
+}
 
 
 class Document(BaseModel):
@@ -81,6 +91,7 @@ class Event(BaseModel):
     platform_verdicts: dict[str, dict[str, FieldVerdict]] = Field(default_factory=dict)
     classification: Literal["trusted", "untrusted"] | None = None
     verification_reasons: list[str] = Field(default_factory=list)
+    semantic_review: dict[str, Any] = Field(default_factory=dict)
 
     @field_validator("classification", mode="before")
     @classmethod

@@ -220,3 +220,31 @@ def test_saved_two_source_trusted_snapshot_is_reverified(review_data):
     metadata = json.loads((settings.paths.review_dir / group["path"] / "事件信息.json").read_text(encoding="utf-8"))
     assert metadata["event"]["classification"] == "untrusted"
     assert "three_sources_not_linked" in metadata["event"]["verification_reasons"]
+
+
+def test_inactive_generated_material_is_archived_and_human_files_are_preserved(review_data):
+    settings, day = review_data
+    exporter = ReviewExporter(settings.paths.data_dir, settings.paths.review_dir)
+    exporter.export([day])
+    old = group_folder(settings, day, "可信事件")
+    opinion_bytes = (old / "舆论.txt").read_bytes()
+    review_bytes = (old / "人工复核.csv").read_bytes()
+    (old / "我的笔记.txt").write_text("保留复核笔记", encoding="utf-8")
+    candidate = next(c for c in day.candidates if next(e for e in day.events if e.id == c.id).accepted)
+    oid = next(o.id for o in day.observations if o.source == "opinion" and o.id in candidate.observation_ids)
+    candidate.observation_ids.remove(oid)
+    candidate.relations = [r for r in candidate.relations if oid not in (r.left_id, r.right_id)]
+    day.unassigned_observation_ids.append(oid)
+    event = next(e for e in day.events if e.id == candidate.id)
+    event.accepted, event.classification = False, "untrusted"
+    event.evidence_ids = candidate.observation_ids[:]
+    exporter.export([day])
+    folder = settings.paths.review_dir / day.date / "不可信事件" / old.name
+    assert not (folder / "舆论.txt").exists()
+    metadata = json.loads((folder / "事件信息.json").read_text(encoding="utf-8"))
+    archived = metadata["archived_materials"]
+    assert len(archived) == 1 and (folder / archived[0]["file"]).read_bytes() == opinion_bytes
+    assert (folder / "人工复核.csv").read_bytes() == review_bytes
+    assert (folder / "我的笔记.txt").read_text(encoding="utf-8") == "保留复核笔记"
+    exporter.export([day])
+    assert len(json.loads((folder / "事件信息.json").read_text(encoding="utf-8"))["archived_materials"]) == 1

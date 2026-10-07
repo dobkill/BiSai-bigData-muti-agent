@@ -6,16 +6,16 @@ cache_dir = ".cache"
 review_dir = "../Datas_分组_新版"      # 新闻主组阅读资料，历史组合由导出器归档
 
 [llm]
-# 首次运行可保持 false，完整规则基线无需模型服务。
-enabled = false
+# 默认由模型判断语义；规则基线使用 --offline 显式运行。
+enabled = true
 provider = "ollama"                 # ollama / llama_cpp / api，可用 --provider 切换
 temperature = 0.0
 timeout_seconds = 300
 retries = 2
 concurrency = 1                      # 固定并发或动态上限；llama_cpp 建议命令行覆盖为 4
-max_calls = 200                      # 每次运行最多实际 HTTP 请求数（含重试）
+max_calls = 600                      # 每次运行最多实际 HTTP 请求数（含重试及异常复查）
 cache = true
-fail_on_error = false                # false 时记录错误并使用规则抽取
+fail_on_error = true                 # 模型/引用失败显式报错；非严格回退也不能自动判为可信
 
 [llm.api]
 base_url = "https://api.example.com/v1"
@@ -25,12 +25,13 @@ api_key_env = "LLM_API_KEY"
 json_mode = true                     # 服务商不支持 response_format 时改为 false
 
 [llm.ollama]
+review_num_ctx = 16384              # 候选归属和三源核验保留足够回复空间；抽取仍用 num_ctx
 base_url = "http://localhost:11434"
-model = "qwen3.5:9b-q8_0"            # 本机已安装并用于单日试跑
+model = "qwen3.5:9b-q8_0"
 keep_alive = "10m"
 num_ctx = 8192
 think = false                       # 事实抽取关闭思考输出，减少耗时；需要时可改 true
-num_predict = 2048                  # 单篇最多生成 token 数；截断/无效 JSON 视为错误
+num_predict = 4096                  # 支持逐活动抽取及完整八字段核验；截断视为错误
 
 [llm.llama_cpp]
 base_url = "http://localhost:8080/v1"
@@ -55,14 +56,15 @@ min_gain = 0.05                     # 升档吞吐改善不足 5% 时退回更�
 memory_poll_seconds = 2
 
 [extraction]
-mode = "hybrid"                     # rules / llm / hybrid；后两者需要 llm.enabled
+mode = "llm"                        # llm / hybrid 均为模型主导；rules 为显式离线基线
 
 [alignment]
 mode = "one_to_one"                 # 每篇新闻一个主组；legacy 保留旧版多组合对照
 minimum_pair_score = 22              # 关联排序依据，不是事实正确概率
 ambiguity_margin = 3                # 禁用所选对应后，整体目标差距过小则保留歧义
-llm_review = true                   # 启用模型时审查难以区分的文本对应，必须引用两篇原文
-max_llm_reviews = 8
+llm_review = true                   # 每篇新闻审查召回的舆论及雷达活动，引用原文/原始行号
+max_llm_reviews = 8                  # 保留旧配置兼容；新版按每篇新闻审查，不受此上限限制
+semantic_candidates = 5             # 每篇新闻最多召回该数量舆论/雷达候选供模型审查
 candidate_gap_hours = 3              # 不重叠区间相隔不超过 3 小时仅保留候选，不能直接确认
 overlap_slack_minutes = 15           # 区间接壤的时钟误差容差；确认仍需身份/上下文一致且无歧义
 
@@ -81,4 +83,10 @@ node_dates = ["2025-05-10", "2025-05-18", "2025-05-30", "2025-06-09", "2025-06-1
 
 [review_export]
 enabled = true                      # run 自动导出本次处理日期的三源人工阅读分组
+
+[workflow]
+enabled = true                      # 源内复核→实体解析→多路召回→关联→全局分配→核验→异常复查
+max_recovery_rounds = 2             # 无新增候选时提前停止；保持未确认及覆盖范围
+recovery_batch_size = 6             # 每个缺源事件每轮读取原始候选的上限
+max_recovered_candidates = 3       # 复查只提议候选，仍须独立关联与事实核验
 

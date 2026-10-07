@@ -1,4 +1,5 @@
 from datetime import date, datetime, timedelta, timezone
+from contextlib import nullcontext
 import hashlib
 import json
 import logging
@@ -20,6 +21,7 @@ from .llm import LLMClient
 from .models import DayResult
 from .review_export import ReviewExporter
 from .utils import stable_id, write_json, write_text
+from .workflow import EvidenceWorkflow
 
 logger = logging.getLogger(__name__)
 
@@ -38,7 +40,9 @@ class AgentPipeline:
         self.event_units = EventUnitAgent()
         self.alignment = AlignmentAgent(settings.alignment, self.llm)
         self.store = EvidenceStore(settings.paths.output_dir / "evidence.sqlite")
-        self.verification = VerificationAgent(settings.verification, settings.alignment)
+        self.verification = VerificationAgent(settings.verification, settings.alignment, self.llm)
+        self.workflow = (EvidenceWorkflow(settings, self.llm) if settings.workflow.enabled and self.llm
+                         and settings.alignment.mode == "one_to_one" else None)
         self.temporal = TemporalAgent(settings.report.lookback_days)
         self.report = ReportAgent()
 
@@ -76,20 +80,38 @@ class AgentPipeline:
         trace.append({"agent": "ingestion", "seconds": round(time.perf_counter()-start, 3), **counts})
         start = time.perf_counter()
         observations = self.extraction.run(docs, batches)
-        fallbacks = sum(any(w.startswith("llm_fallback") for w in o.warnings) for o in observations)
+        fallbacks = sum(any(w.startswith("llm_") for w in o.warnings) for o in observations)
         trace.append({"agent": "extraction", "seconds": round(time.perf_counter()-start, 3),
                       "observations": len(observations), "llm_fallbacks": fallbacks,
                       "llm_concurrency": self.llm.concurrency_snapshot() if self.llm else None})
-        start = time.perf_counter()
-        observations = self.event_units.run(docs, observations, keep_documents=self.settings.alignment.mode == "one_to_one")
-        trace.append({"agent": "event_units", "seconds": round(time.perf_counter()-start, 3),
-                      "original_documents": len(docs), "event_observations": len(observations),
-                      "split_units": sum(bool(o.metadata.get("parent_observation_id")) for o in observations)})
-        start = time.perf_counter()
-        # Canonical regions and PDF directions are persisted before retrieval.
-        self.store.replace_day(day, observations, docs)
-        observations = self.store.observations(day)
-        candidates = self.alignment.run(observations, self.store.documents(day))
+        if self.workflow:
+            observations, candidates, events, workflow_trace = self.workflow.run(observations, docs, self.store)
+            trace.extend(workflow_trace)
+            self.alignment.unassigned_observation_ids = self.workflow.unassigned_observation_ids
+            self.alignment.audit = next(t for t in workflow_trace if t["agent"] == "alignment")
+            self.verification.audit = next(t for t in workflow_trace if t["agent"] == "verification")
+        else:
+            start = time.perf_counter()
+            observations = self.event_units.run(docs, observations, keep_documents=self.settings.alignment.mode == "one_to_one")
+            trace.append({"agent": "event_units", "seconds": round(time.perf_counter()-start, 3),
+                          "original_documents": len(docs), "event_observations": len(observations),
+                          "split_units": sum(bool(o.metadata.get("parent_observation_id")) for o in observations)})
+            start = time.perf_counter()
+            self.store.replace_day(day, observations, docs)
+            observations = self.store.observations(day)
+            with self.llm.review_context() if isinstance(self.llm, LLMClient) else nullcontext():
+                candidates = self.alignment.run(observations, self.store.documents(day))
+            trace.append({"agent": "alignment", "seconds": round(time.perf_counter()-start, 3), "candidates": len(candidates),
+                          "method": self.alignment.audit.get("method"), "rules": self.settings.alignment.model_dump(),
+                          **self.alignment.audit})
+            start = time.perf_counter()
+            with self.llm.review_context() if isinstance(self.llm, LLMClient) else nullcontext():
+                events = self.verification.run(candidates, observations, docs)
+            trace.append({"agent": "verification", "seconds": round(time.perf_counter()-start, 3),
+                          "method": VERIFICATION_METHOD, "rules": self.settings.verification.model_dump(),
+                          **self.verification.audit,
+                          "classification": {s: sum(e.classification == s for e in events) for s in ("trusted", "untrusted")},
+                          "accepted": sum(e.accepted for e in events), "rejected": sum(not e.accepted for e in events)})
         previous = self.store.latest(day)
         previous_groups = {c.id: c for c in previous.candidates} if previous else {}
         for candidate in candidates:
@@ -97,20 +119,11 @@ class AgentPipeline:
             if old and old.observation_ids != candidate.observation_ids:
                 candidate.assignment["previous_assignment"] = old.observation_ids
                 candidate.assignment["change_basis"] = "按当前全部证据重算整体归属，未锁定旧对应"
-        trace.append({"agent": "alignment", "seconds": round(time.perf_counter()-start, 3), "candidates": len(candidates),
-                      "method": self.alignment.audit.get("method"), "rules": self.settings.alignment.model_dump(),
-                      **self.alignment.audit})
-        start = time.perf_counter()
-        events = self.verification.run(candidates, observations)
-        trace.append({"agent": "verification", "seconds": round(time.perf_counter()-start, 3),
-                      "method": VERIFICATION_METHOD, "rules": self.settings.verification.model_dump(),
-                      "classification": {s: sum(e.classification == s for e in events) for s in ("trusted", "untrusted")},
-                      "accepted": sum(e.accepted for e in events), "rejected": sum(not e.accepted for e in events)})
         result = DayResult(date=day, observations=observations, candidates=candidates, events=events, trace=trace,
                            unassigned_observation_ids=self.alignment.unassigned_observation_ids)
         self.store.record(result)
         # 网络异常回退结果仍写审计，但不缓存为成功的模型运行，重跑可以恢复。
-        if not fallbacks and not self.alignment.audit.get("llm_review_fallbacks"):
+        if not fallbacks and not self.alignment.audit.get("llm_review_fallbacks") and not self.verification.audit.get("llm_verification_fallbacks"):
             write_json(path, result.model_dump(mode="json"))
         logger.info("%s 观测 %d，候选 %d，接纳 %d，模型回退 %d", day, len(observations), len(candidates), sum(e.accepted for e in events), fallbacks)
         return result
@@ -146,6 +159,7 @@ class AgentPipeline:
                 "strict_llm": self.settings.llm.fail_on_error,
                 "llm_requests": self.llm.calls if self.llm else 0,
                 "llm_cache_hits": self.llm.cache_hits if self.llm else 0,
+                "llm_validation_repairs": getattr(self.llm, "validation_repairs", 0),
                 "llm_concurrency": self.llm.concurrency_snapshot() if self.llm else None,
                 "error": error,
             })
@@ -176,17 +190,24 @@ class AgentPipeline:
         fallback_count = sum(t.get("llm_fallbacks", 0) for d in days for t in d.trace)
         methods = sorted({t["method"] for d in days for t in d.trace if t.get("agent") == "alignment" and t.get("method")})
         manifest = {"version": __version__, "target_dates": sorted(set(targets)), "processed_dates": sorted(needed),
+                    "agent_workflow_enabled": self.workflow is not None,
                     "model_enabled": self.llm is not None, "llm_requests": self.llm.calls if self.llm else 0,
                     "model_provider": self.settings.llm.provider if self.llm else None,
                     "model_name": self.settings.llm.endpoint.model if self.llm else None,
                     "llm_concurrency": self.llm.concurrency_snapshot() if self.llm else None,
                     "lookback_days": self.settings.report.lookback_days,
                     "llm_cache_hits": self.llm.cache_hits if self.llm else 0, "llm_fallbacks": fallback_count,
+                    "llm_validation_repairs": getattr(self.llm, "validation_repairs", 0),
+                    "ollama_context_tokens": {"extraction": self.settings.llm.ollama.num_ctx,
+                        "review": max(self.settings.llm.ollama.num_ctx, self.settings.llm.ollama.review_num_ctx or 0)} if self.settings.llm.provider == "ollama" else None,
                     "accepted_events": sum(e.accepted for d in days for e in d.events),
                     "event_classification": {s: sum(e.classification == s for d in days for e in d.events)
                                              for s in ("trusted", "untrusted")},
                     "association_method": methods[0] if len(methods) == 1 else "mixed",
                     "llm_review_fallbacks": sum(t.get("llm_review_fallbacks", 0) for d in days for t in d.trace),
+                    "decision_engine": "llm_semantic" if self.llm else "offline_rules",
+                    "llm_verifications": sum(t.get("llm_verifications", 0) for d in days for t in d.trace),
+                    "llm_verification_fallbacks": sum(t.get("llm_verification_fallbacks", 0) for d in days for t in d.trace),
                     "unassigned_observations": sum(len(d.unassigned_observation_ids) for d in days),
                     "evidence_database": str(self.settings.paths.output_dir / "evidence.sqlite"),
                     "association_states": {s: sum(c.relation_status == s for d in days for c in d.candidates)

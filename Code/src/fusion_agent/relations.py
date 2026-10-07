@@ -5,6 +5,7 @@ import re
 from .config import AlignmentSettings
 from .domain import REGIONS, region_compatible
 from .models import Observation, PairRelation
+from .radar_units import identifier_kind
 
 RELATION_NAMES = {"confirmed": "可确认关联", "candidate": "相关候选",
                   "conflicted": "疑似相关但有冲突", "unmatched": "未找到关联", "unrelated": "不构成候选"}
@@ -18,7 +19,22 @@ def platform_key(value: str) -> str:
 
 
 def specific_platforms(obs: Observation) -> set[str]:
-    return {platform_key(v) for v in obs.facts.get("platform", []) if not str(v).startswith("generic:")}
+    from .domain import canonical_platform
+    quote = "\n".join(obs.quotes.get("platform", []))
+    return {platform_key(canonical_platform(v, quote)) for v in obs.facts.get("platform", [])
+            if not str(v).startswith("generic:")}
+
+
+def individual_identifier_difference(a: Observation, b: Observation) -> bool:
+    ai, bi = (set(o.metadata.get("individual_ids", [])) for o in (a, b))
+    return any({v for v in ai if identifier_kind(v) == k} and {v for v in bi if identifier_kind(v) == k}
+               and not ({v for v in ai if identifier_kind(v) == k} & {v for v in bi if identifier_kind(v) == k})
+               for k in ("number", "name"))
+
+
+def distinct_individuals(a: Observation, b: Observation) -> bool:
+    shared = set(a.metadata.get("individual_ids", [])) & set(b.metadata.get("individual_ids", []))
+    return not shared and individual_identifier_difference(a, b)
 
 
 def event_window(obs: Observation):
@@ -82,13 +98,10 @@ class RelationMatcher:
             fields["platform"] = "conflict"
         ai = set(a.metadata.get("individual_ids", []))
         bi = set(b.metadata.get("individual_ids", []))
-        def identifier_kind(value):
-            return "hull" if re.fullmatch(r"(?:DDG|FFH|CVN|CG)\d+", value) else "name"
-        id_conflict = any({v for v in ai if identifier_kind(v) == kind}
-                          and {v for v in bi if identifier_kind(v) == kind}
-                          and not ({v for v in ai if identifier_kind(v) == kind} & {v for v in bi if identifier_kind(v) == kind})
-                          for kind in ("hull", "name"))
-        fields["individual"] = "conflict" if id_conflict else "equal" if ai & bi else "unknown"
+        different_subject = distinct_individuals(a, b)
+        fields["individual"] = ("different" if different_subject else
+                                "conflict" if ai & bi and individual_identifier_difference(a, b) else
+                                "equal" if ai & bi else "unknown")
         if fields["quantity"] == "compatible":
             fields["quantity"] = "conflict"
         ar, br = a.facts.get("region", []), b.facts.get("region", [])
@@ -123,10 +136,16 @@ class RelationMatcher:
         # 同源或多平台内部不同值不能被集合交集掩盖。
         if any(len(set(o.facts.get(f, []))) > 1 for o in (a, b) for f in ("country", "direction")):
             conflicts.append("country/direction_internal")
+        if any("radar_individual_identity_conflict" in o.warnings for o in (a, b)):
+            conflicts.append("individual_internal")
         # 同一舰名、同一天、同一区域仍可能有多次活动，不能替代时段对应。
         discriminating = precise
         blocked = any("multiple_platforms_unresolved" in o.warnings for o in (a, b))
-        if not plausible:
+        if different_subject:
+            # Different named ships / numbered aircraft cannot contradict each other
+            # just because their model and observation times happen to match.
+            status, conflicts = "unrelated", []
+        elif not plausible:
             status = "unrelated"
         elif conflicts:
             status = "conflicted"
@@ -140,6 +159,8 @@ class RelationMatcher:
                      "date_only": "至少一方仅有日期，不能证明时段对应", "different_date": "事件日期不对应",
                      "far": "活动区间间隔超过候选窗口"}
         basis.append(time_text.get(timing, "活动时段未知"))
+        if different_subject:
+            basis.append("具体目标编号或名称不同，未建立同一目标关联，不作为事实冲突")
         if exact_region:
             basis.append("具体区域相同")
         elif fields["region"] == "compatible":
