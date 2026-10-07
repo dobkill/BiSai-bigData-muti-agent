@@ -11,6 +11,7 @@ from event_matcher.data import country, load_radar, load_texts, platform_similar
 from event_matcher.export import export_results
 from event_matcher.geography import location_relation, normalize_location
 from event_matcher.literal_facts import check_common_facts, check_location_fact, repair_source_assertions
+from event_matcher.quality import audit_quality
 from event_matcher.matching import allocate, apply_guards, assignment_competitors, bundle_radar_evidence, counterevidence_hint, review_unmatched_opinions
 
 
@@ -25,6 +26,13 @@ class MatchingTests(unittest.TestCase):
                 best=max(sum(weights[i][j] for i,j in enumerate(p)) for p in itertools.permutations(range(n+1),n))
                 self.assertEqual(actual,best)
                 self.assertEqual(len(set(chosen)),n)
+
+    def test_publication_rejects_trusted_group_with_single_source(self):
+        group={"id":"N001","news_id":"N001","opinion_id":None,"radar_ids":[],"status":"可信事件","reasons":[],
+               "verification":{"facts":[{"field":"platform","supporting_sources":["N001"],"conflicting_sources":[],"status":"supported"}]}}
+        with tempfile.TemporaryDirectory(prefix="matching-quality-") as tmp:
+            with self.assertRaisesRegex(RuntimeError,"输出质量约束失败"):
+                audit_quality([group],[{"id":"N001","kind":"news"}],[],Path(tmp))
 
     def test_abstention_better_than_incorrect_forced_pair(self):
         self.assertEqual(maximum_assignment([[-10,0]]),[1])
@@ -255,18 +263,21 @@ class MatchingTests(unittest.TestCase):
                            "reasons":["仅用于验证导出，不进行模型推理"],"verification":{"explanation":"测试缺源组","facts":[]},
                            "alignment":{"opinion_edges":[],"radar_edges":[]},"candidates":{"opinion":[],"radar":[]}})
         with tempfile.TemporaryDirectory(prefix="matching-export-") as tmp:
-            result=export_results(groups,texts,radar,rmanifest,Path(tmp),SimpleNamespace(input=day,model="test",embedding_model="test"),{},SimpleNamespace(calls=0,hits=0))
+            task_output=Path(tmp)/day.name
+            args=SimpleNamespace(input=day,output=Path(tmp),model="test",embedding_model="test")
+            result=export_results(groups,texts,radar,rmanifest,task_output,args,{},SimpleNamespace(calls=0,hits=0))
             self.assertTrue(result["integrity"]["passed"])
             self.assertEqual(result["integrity"]["exported_texts"],100)
             self.assertEqual(result["integrity"]["exported_radar_rows"],600)
             opinion=next(s for s in texts if s["kind"]=="opinion")
-            formerly_unmatched=Path(tmp)/"未匹配材料"/"文本"/(opinion["id"]+"_"+opinion["filename"])
+            formerly_unmatched=task_output/"未匹配材料"/"文本"/(opinion["id"]+"_"+opinion["filename"])
             self.assertTrue(formerly_unmatched.exists())
             groups[0]["opinion_id"]=opinion["id"]
-            result=export_results(groups,texts,radar,rmanifest,Path(tmp),SimpleNamespace(input=day,model="test",embedding_model="test"),{},SimpleNamespace(calls=0,hits=0))
+            result=export_results(groups,texts,radar,rmanifest,task_output,args,{},SimpleNamespace(calls=0,hits=0))
             self.assertTrue(result["integrity"]["passed"])
             self.assertFalse(formerly_unmatched.exists())
-            self.assertEqual(len(list((Path(tmp)/"未匹配材料"/"文本").iterdir())),49)
+            self.assertEqual(len(list((task_output/"未匹配材料"/"文本").iterdir())),49)
+            self.assertTrue((Path(tmp)/"README.md").exists())
 
     def test_broad_location_support_is_kept_without_claiming_precise_place(self):
         def source(sid,kind,place):

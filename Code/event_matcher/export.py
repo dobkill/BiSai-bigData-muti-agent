@@ -13,6 +13,7 @@ from .data import sha256
 from .geography import REGIONS
 from .ollama_client import VERSION, dump
 from .provenance import code_provenance
+from .quality import audit_quality
 
 
 def csv_write(path, rows, headers):
@@ -149,6 +150,7 @@ def audit(groups, texts, radars, radar_manifest, output):
 
 def export_results(groups, texts, radars, radar_manifest, output, args, vector_manifest, client):
     byid = {s["id"]:s for s in texts+radars}
+    quality=audit_quality(groups,texts,radars,output)
     existing = output / "manifest.json"
     old_groups = json.loads((output/"全部匹配结果.json").read_text(encoding="utf-8")) if existing.exists() and (output/"全部匹配结果.json").exists() else []
     # Preserve prior exports on reruns rather than deleting user review material.
@@ -245,6 +247,7 @@ def export_results(groups, texts, radars, radar_manifest, output, args, vector_m
               "matched_radar_rows":sum(g["radar_row_count"] for g in groups),"report_eligible":sum(g["report_eligible"] for g in groups),
               "http_calls_this_run":client.calls,"cache_hits_this_run":client.hits,"vector_index":vector_manifest,
               "integrity":integrity,"accuracy":"未进行人工真值评估，分类为模型初步结果",
+              "quality":quality,
               "spatial_limit":"飞机坐标方向仅辅助召回；缺乏官方边界时不作为精确地点的独立核验证据"}
     dump(output/"manifest.json",manifest)
     dump(output/"运行记录"/"地点归一化规则.json",{"source":"用户提供赛题PDF第2页","directions":REGIONS,
@@ -264,4 +267,21 @@ def export_results(groups, texts, radars, radar_manifest, output, args, vector_m
     rows="\n".join(f'<tr data-status="{html.escape(r["分类"])}"><td>{r["组ID"]}</td><td>{r["分类"]}</td><td><a href="{html.escape(r["目录"])}/说明.html">{html.escape(r["新闻"])}</a></td><td>{html.escape(r["舆论"])}</td><td>{r["雷达记录数"]}</td><td>{html.escape(r["原因"])}</td></tr>' for r in summary)
     browser='''<!doctype html><html lang="zh"><meta charset="utf-8"><title>三源匹配结果</title><style>body{font:16px system-ui;margin:30px;background:#f6f8fa;color:#182331}table{border-collapse:collapse;background:white;width:100%}td,th{border:1px solid #ccd4df;padding:10px;text-align:left}input,select{font:inherit;padding:8px;margin:8px}a{color:#155baa}</style><h1>三源匹配结果</h1><p>每篇新闻一个主组；点击新闻进入证据目录。模型初步结果，未经过人工真值评估。</p><select id="status"><option value="">全部分类</option><option>可信事件</option><option>不可信事件</option></select><input id="query" placeholder="搜索平台、地点或原因"><p><a href="匹配总表.xlsx">Excel总表</a> · <a href="README.md">阅读说明</a></p><table><thead><tr><th>ID</th><th>分类</th><th>新闻与分组入口</th><th>舆论</th><th>雷达行数</th><th>原因</th></tr></thead><tbody>'''+rows+'''</tbody></table><script>function filter(){const q=document.querySelector('#query').value.toLowerCase(),s=document.querySelector('#status').value;document.querySelectorAll('tbody tr').forEach(r=>r.hidden=!!((s&&r.dataset.status!==s)||!r.textContent.toLowerCase().includes(q)))}document.querySelector('#query').oninput=filter;document.querySelector('#status').onchange=filter;</script></html>'''
     (output/"浏览.html").write_text(browser,encoding="utf-8")
+    # Keep the entry page current on every iteration; no stale manually copied counts.
+    if getattr(args,"output",None) is not None and output.parent.resolve()==Path(args.output).resolve():
+        write_entry_index(output.parent)
     return manifest
+
+
+def write_entry_index(root):
+    root_rows=[]
+    for directory in sorted(root.iterdir()):
+        if directory.is_dir() and (directory/"manifest.json").exists():
+            item=json.loads((directory/"manifest.json").read_text(encoding="utf-8"))
+            name=directory.name
+            root_rows.append(f"| [{name}]({name}/浏览.html) | {item['groups']} | {item['trusted']} | {item['untrusted']} | {item['matched_radar_rows']} | [{name}总表]({name}/匹配总表.xlsx) |")
+    entry=["# 匹配数据入口","","| 日期 | 新闻主组 | 可信 | 不可信 | 入组雷达行数 | Excel |","|---|---:|---:|---:|---:|---|"]+root_rows
+    entry += ["","每组保留原始新闻、舆论、雷达记录、核验和候选竞争依据。异常空间分支随所属批号保存，不以排除异常获得可信。",
+              "","分类为本地模型与程序约束的初步结果。GPT逐组审查见各日期目录的 `审查记录/`；关联待复核和任务/时间/地点差异仍保留，不报告官方准确率。",
+              "","历史运行目录保留旧版总表；当前浏览页、总表和manifest为最新结果。","","[程序运行说明](../../Code/MATCHING_README.md)"]
+    (root/"README.md").write_text("\n".join(entry)+"\n",encoding="utf-8")
