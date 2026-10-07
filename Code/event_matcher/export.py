@@ -71,8 +71,11 @@ def group_markdown(group, news, opinion, radar):
     for activity in radar:
         lines += [f"- {activity['id']}，批号 `{activity['batch']}`，工作表 {activity['sheet']}，原始行：{', '.join(str(r['row']) for r in activity['records'])}"]
         lines += [f"  - {a}" for a in activity["anomalies"]]
+        lines += [f"  - 提示：{a}" for a in activity.get("warnings",[])]
         if activity["sibling_ids"]:
             lines += [f"  - 同批号其他候选：{', '.join(activity['sibling_ids'])}，见运行记录或未匹配材料，未删除。"]
+    for context in group.get("radar_context",[]):
+        lines += [f"- {context['selected']}的其他候选 {', '.join(context['other_candidates'])}：{context['reason']}"]
     lines += ["", "## 进一步检查", "", "[关联候选.csv](关联候选.csv) 保留被召回材料及模型判断；[结果.json](结果.json) 包含平台归属和完整核验。", ""]
     return "\n".join(lines)
 

@@ -25,8 +25,10 @@ ALIGN_PROMPT = """你是事件关联Agent。任务是判断材料是否描述同
 opinion_edges给出最相关的候选，最多3项；radar_edges为新闻每个平台给出最相关候选，最多每个平台3项。
 platform_indices指出该候选明确关联到新闻的哪些平台（索引从0开始）；不能把只提潜艇的舆论算作护卫舰平台证据。
 每个candidate_id必须来自对应候选列表，不得编造；没有合适材料可输出空列表。
-同批号的sibling_ids是共同归属疑点，拆分后的不同坐标簇不能因为有一个符合新闻就丢掉其余簇。
+批号不是唯一飞机/舰艇身份，sibling_ids仅是同批号其他候选。分别判断各分支与本事件的关系，不能仅因批号相同全部标same。其他分支保留为候选，不必属于本事件。
+同型号、同时间但在不同方向可属于不同平台的活动。比较各候选坐标及新闻/舆论地点；优先选择时空和身份线索共同相容的候选，并解释其他分支为何不纳入。不根据未验证坐标修正原文地点。
 坐标candidate_directions未验证，只用于辅助召回，不能当作官方海域结论。
+time_semantics区分报道区间、雷达观测覆盖与明示活动开始/结束。报道区间被另一观测时段包含可关联；雷达首末点不代表实际起止，不要求端点相等。
 不同任务但同时间平台地点可能是污染材料，也可能是不同活动，要解释选择依据。reason简短具体，保留歧义于ambiguity。"""
 
 VERIFY_PROMPT = """你是三源事实核验Agent。只根据当前已关联原文、雷达原始列及引用核验。
@@ -40,10 +42,12 @@ quantity未说明不能猜1，联合编队总数不能分配给单个平台。�
 地点：同义等价可支持具体区域；南海可兼容永暑礁附近但只支持南海精度；同方向两个具体区域不能自动当同一地点。
 飞机coordinate_hint标记未验证，不可作为独立地点印证/反证。缺乏官方坐标边界，地点主要比较文本显式区域；不擅自从坐标推断精确区域。
 start/end取活动时间不取入库/发文时间；只有日期的材料不反对具体时刻，但不能支持具体时刻。
+雷达时间是观测覆盖，文本区间是报道活动覆盖；仅明确开始/结束措辞才是完整活动边界。重叠/包含的区间可以支持共同覆盖部分，不能为此声称完整起止已印证。
 持续活动这种泛称不与具体任务冲突，也不能独立印证具体任务。mission若都未说明可insufficient。
+远海训练描述环境，两栖作战训练等描述科目，可仅共同印证“训练”活动；具体科目未获两类支持须待核实。战备警巡与对海突击训练不是同义，不得随意合并。
 如存在相同活动上的明确国籍/数量/地点/时间/任务/进出方向冲突，status必须conflict，列出反对来源，不能以两票支持忽略。
 对supported事实必须给出至少两类实际支持来源，缺失字段不能支持。claim严格保持证据精度。
-不要为变可信而修正原文、舍弃反证或把异常定义为另一事件。雷达同批号多空间簇未确定归属需记录unresolved_issues。
+不要为变可信而修正原文、舍弃已确认同事件的反证。同批号其他候选未关联本事件，不能因批号相同自动作为反证或阻断；缺乏唯一目标身份，不以不同目标间距离判轨迹异常。
 某一来源未提数量/具体时刻/任务，但另两类已印证，不是未消解问题；禁止把“新闻数量未说明”这种缺字段放进unresolved_issues。
 雷达不具有天然更高可信度，禁止以“雷达更精确”消解冲突。
 same_event表示能否确认事件关联；explanation简短中文说明结论，unresolved_issues只列关键冲突、缺少来源类型或归属疑点；没有问题则空数组。"""
@@ -176,7 +180,7 @@ def align_source(client, news, opinions, radars, candidate_info, review_instruct
     def view(s, brief):
         if not brief:
             return public_view(s)
-        result={k:s[k] for k in ["id","kind","title","start_time","end_time","movement","anomalies","batch","sibling_ids","coordinate_hint"] if k in s}
+        result={k:s[k] for k in ["id","kind","title","start_time","end_time","time_semantics","movement","anomalies","warnings","identity_scope","batch","sibling_ids","coordinate_hint"] if k in s}
         result["platforms"]=[{k:p.get(k) for k in ["name","country","quantity"]} for p in s["platforms"]]
         result["location"]={k:s["location"].get(k) for k in ["raw","region","direction","precision"]}
         result["mission"]=s["mission"].get("value")

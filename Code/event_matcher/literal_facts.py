@@ -69,7 +69,23 @@ def repair_source_assertions(source):
         source["extraction_repairs"].append("按原文明示进出动词校正行动关系，保持机动不能推断进入")
     if proposed:
         source["extraction_model_proposal"]=proposed
+    source["time_semantics"]=time_semantics(source)
     return source
+
+
+def time_semantics(source):
+    """An interval of reported activity does not assert its absolute beginning or end."""
+    if source.get("time_semantics"):
+        return source["time_semantics"]
+    if source["kind"]=="radar":
+        return {"interval":"observation_coverage","start_asserted":False,"end_asserted":False}
+    text=narrative(source)
+    clock=r"\d{1,2}\s*(?:时|[:：])\s*\d{1,2}\s*分?"
+    return {"interval":"reported_activity",
+            "start_asserted":bool(re.search(clock+r"\s*(?:开始|起(?:在|执行|组织|活动|，)|进入|驶入|飞入)",text)
+                                  or re.search(r"(?:开始|进入|驶入|飞入)[^。]{0,12}"+clock,text)),
+            "end_asserted":bool(re.search(clock+r"\s*(?:结束|离开|驶离|飞离|撤离)",text)
+                                or re.search(r"(?:结束|离开|驶离|飞离|撤离)[^。]{0,12}"+clock,text))}
 
 
 def source_types(ids,assigned):
@@ -91,7 +107,22 @@ def replace_fact(verification,field,claim,support,conflicts,status,reason,**extr
 def check_common_facts(verification,assigned):
     missions={s["id"]:sorted(literal_missions(s)) for s in assigned}
     mission_names={v for values in missions.values() for v in values}
-    if mission_names:
+    # 远海 describes the training environment; 两栖/对海 etc. describe a subject.
+    # They corroborate only the shared "训练" claim, never the unconfirmed specific subject.
+    training_context="远海训练" in mission_names and all(v.endswith("训练") for v in mission_names)
+    if training_context and len(mission_names)>1:
+        support=[sid for sid,values in missions.items() if values]
+        status="supported" if len(source_types(support,assigned))>=2 else "insufficient"
+        replace_fact(verification,"mission","训练",support,[],status,
+                     f"原文明示任务：{missions}；远海是训练环境，其他训练名称是科目；只印证共同训练活动，不补作具体科目",
+                     source_values=missions)
+        for name in sorted(mission_names):
+            ids=[sid for sid,values in missions.items() if name in values]
+            verification["facts"].append({"platform_index":-1,"field":"mission_detail","claim":name,
+                "supporting_sources":ids,"conflicting_sources":[],
+                "status":"supported" if len(source_types(ids,assigned))>=2 else "insufficient",
+                "reason":"环境/科目分别保留，仅按明确写出该细节的独立来源核验"})
+    elif mission_names:
         best=max(mission_names,key=lambda v:(len(source_types([sid for sid,values in missions.items() if v in values],assigned)),v))
         support=[sid for sid,values in missions.items() if values==[best]]
         conflicts=[sid for sid,values in missions.items() if values and values!=[best]]
@@ -101,41 +132,7 @@ def check_common_facts(verification,assigned):
     else:
         replace_fact(verification,"mission","未明确任务",[],[],"insufficient","未找到正文任务断言；平台名称和机动描述不补作任务",source_values=missions)
 
-    components={}
-    for key in ["start_time","end_time"]:
-        observed={s["id"]:minutes(s[key]) for s in assigned if s.get(key) and s["kind"]!="radar"}
-        batches={};batch_observations=[]
-        for source in assigned:
-            if source["kind"]=="radar" and source.get(key):
-                identity=(source.get("sheet"),source.get("batch") or source["id"])
-                batches.setdefault(identity,[]).append(source)
-        for (sheet,batch),sources in batches.items():
-            clock_values={s["id"]:minutes(s[key]) for s in sources}
-            bound=(min if key=="start_time" else max)(clock_values.values())
-            observed.update({sid:x for sid,x in clock_values.items() if x==bound})
-            if len(sources)>1:
-                batch_observations.append({"sheet":sheet,"batch":batch,"branch_values":clock_values,
-                    "boundary_sources":[sid for sid,x in clock_values.items() if x==bound],
-                    "reason":"位置观测分支按同批号合并覆盖区间；较晚出现的子分支首点不是另一次活动开始断言"})
-        if not observed:
-            components[key]={"value":None,"support":[],"conflicts":[],"status":"insufficient"}
-            continue
-        best=max(set(observed.values()),key=lambda v:(len(source_types([sid for sid,x in observed.items() if x==v],assigned)),-v))
-        support=[sid for sid,x in observed.items() if x==best]
-        conflicts=[sid for sid,x in observed.items() if x!=best]
-        status="conflict" if conflicts else "supported" if len(source_types(support,assigned))>=2 else "insufficient"
-        components[key]={"value":f"{best//60:02}:{best%60:02}","support":support,"conflicts":conflicts,
-                         "status":status,"source_values":{sid:f"{x//60:02}:{x%60:02}" for sid,x in observed.items()},
-                         "radar_batch_observations":batch_observations}
-    support=sorted({sid for c in components.values() for sid in c["support"]})
-    conflicts=sorted({sid for c in components.values() for sid in c["conflicts"]})
-    # A source can agree on one endpoint and contradict another. Keep per-endpoint evidence.
-    support=[sid for sid in support if sid not in conflicts]
-    status="conflict" if conflicts else "supported" if all(c["status"]=="supported" for c in components.values()) else "insufficient"
-    claim="起点 "+str(components["start_time"]["value"] or "未说明")+"，终点 "+str(components["end_time"]["value"] or "未说明")
-    reason="逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突"
-    reason+=f"；起点明示值：{components['start_time'].get('source_values',{})}；终点明示值：{components['end_time'].get('source_values',{})}"
-    replace_fact(verification,"time",claim,support,conflicts,status,reason,components=components)
+    check_time_fact(verification,assigned)
 
     movements={s["id"]:literal_movement(s) for s in assigned}
     enters=[sid for sid,v in movements.items() if v=="进入"]
@@ -149,6 +146,50 @@ def check_common_facts(verification,assigned):
         support=detailed or active
         status="supported" if len(source_types(support,assigned))>=2 else "insufficient"
         replace_fact(verification,"movement",claim,support,[],status,"活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",source_values=movements)
+
+
+def check_time_fact(verification,assigned):
+    values={s["id"]:{"start":minutes(s["start_time"]) if s.get("start_time") else None,
+                      "end":minutes(s["end_time"]) if s.get("end_time") else None,
+                      **time_semantics(s)} for s in assigned}
+    clock=lambda x:f"{x//60:02}:{x%60:02}"
+    ranges={sid:(v["start"],v["end"]) for sid,v in values.items() if v["start"] is not None and v["end"] is not None}
+    conflicts=set();boundaries={}
+    for key,flag in [("start","start_asserted"),("end","end_asserted")]:
+        exact={sid:v[key] for sid,v in values.items() if v[flag] and v[key] is not None}
+        boundaries[key]={sid:clock(v) for sid,v in exact.items()}
+        if len(set(exact.values()))>1:
+            conflicts.update(exact)
+        # Evidence before a positively asserted beginning or after an asserted end is a counter-value.
+        for sid,bound in exact.items():
+            for other,v in values.items():
+                observed=v[key]
+                if other!=sid and observed is not None and ((key=="start" and observed<bound) or (key=="end" and observed>bound)):
+                    conflicts.update([sid,other])
+    common=None
+    if ranges:
+        common=(max(x[0] for x in ranges.values()),min(x[1] for x in ranges.values()))
+        if common[0]>common[1] or any(start>end for start,end in ranges.values()):
+            conflicts.update(ranges)
+    support=[];claim="活动时段未充分印证"
+    if common and common[0]<=common[1]:
+        support=list(ranges)
+        claim=f"共同观测/报道时段 {clock(common[0])}—{clock(common[1])}（非完整活动起止断言）"
+        # A lone endpoint confirms a point, not the entire interval following or preceding it.
+        if len(source_types(support,assigned))<2:
+            points={x for v in values.values() for x in [v["start"],v["end"]] if x is not None}
+            confirmed=[(x,[sid for sid,v in values.items() if x in [v["start"],v["end"]]]) for x in sorted(points)]
+            confirmed=[(x,ids) for x,ids in confirmed if len(source_types(ids,assigned))>=2]
+            if confirmed:
+                claim="共同支持的活动时刻 "+"、".join(clock(x) for x,ids in confirmed)
+                support=sorted({sid for x,ids in confirmed for sid in ids})
+    support=[sid for sid in support if sid not in conflicts]
+    status="conflict" if conflicts else "supported" if len(source_types(support,assigned))>=2 else "insufficient"
+    source_values={sid:{**v,"start":clock(v["start"]) if v["start"] is not None else None,
+                        "end":clock(v["end"]) if v["end"] is not None else None} for sid,v in values.items()}
+    reason=f"分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{source_values}"
+    replace_fact(verification,"time",claim,support,sorted(conflicts),status,reason,
+                 source_values=source_values,asserted_boundaries=boundaries)
 
 
 def check_location_fact(verification,assigned):

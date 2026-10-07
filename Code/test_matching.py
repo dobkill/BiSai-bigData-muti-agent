@@ -65,17 +65,16 @@ class MatchingTests(unittest.TestCase):
         self.assertEqual(fact["status"],"insufficient")
         self.assertEqual(fact["supporting_sources"],["N001"])
 
-    def test_same_batch_branches_follow_unique_owner_without_duplication(self):
+    def test_batch_context_does_not_assign_unrelated_targets(self):
         radars=[{"id":"R001","sheet":"飞机","batch":"AIR-A"},{"id":"R002","sheet":"飞机","batch":"AIR-A"}]
         groups=[{"id":"N001","radar_ids":["R002"]}]
         bundle_radar_evidence(groups,radars)
-        self.assertEqual(set(groups[0]["radar_ids"]),{"R001","R002"})
-        self.assertEqual(len(groups[0]["radar_ids"]),2)
-        self.assertEqual(groups[0]["radar_bundle_expansions"][0]["added"],["R001"])
+        self.assertEqual(groups[0]["radar_ids"],["R002"])
+        self.assertEqual(groups[0]["radar_context"][0]["other_candidates"],["R001"])
         groups=[{"id":"N001","radar_ids":["R001"]},{"id":"N002","radar_ids":["R002"]}]
         bundle_radar_evidence(groups,radars)
         self.assertEqual([g["radar_ids"] for g in groups],[["R001"],["R002"]])
-        self.assertTrue(all(g["batch_conflicts"] for g in groups))
+        self.assertTrue(all(not g.get("batch_conflicts") for g in groups))
 
     def test_branch_first_sample_does_not_become_new_activity_start(self):
         assigned=[{"id":"N001","kind":"news","text":"正文：平台活动。","mission":{"value":None},"start_time":"17:35","end_time":"19:00"}]
@@ -86,7 +85,8 @@ class MatchingTests(unittest.TestCase):
         fact=next(f for f in verify["facts"] if f["field"]=="time")
         self.assertEqual(fact["status"],"supported")
         self.assertFalse(fact["conflicting_sources"])
-        self.assertTrue(fact["components"]["start_time"]["radar_batch_observations"])
+        self.assertIn("17:49—19:00",fact["claim"])
+        self.assertFalse(fact["source_values"]["R002"]["start_asserted"])
 
     def test_selected_good_branch_cannot_hide_sibling_quantity_countervalue(self):
         def source(sid,kind,qty):
@@ -190,16 +190,46 @@ class MatchingTests(unittest.TestCase):
         self.assertEqual(fact["conflicting_sources"],["O001"])
         self.assertNotIn("/",fact["claim"])
 
-    def test_single_endpoint_countervalue_is_not_ignored(self):
+    def test_reported_subinterval_does_not_contradict_earlier_start(self):
         assigned=[]
         for sid,kind,start,end in [("N001","news","21:31","22:12"),("O001","opinion","20:47",None),("R001","radar","20:47","22:12")]:
             assigned.append({"id":sid,"kind":kind,"text":"正文：平台组织预警指挥。","mission":{"value":"预警指挥"},"start_time":start,"end_time":end})
         verify={"facts":[]}
         check_common_facts(verify,assigned)
         fact=next(f for f in verify["facts"] if f["field"]=="time")
+        self.assertEqual(fact["status"],"supported")
+        self.assertFalse(fact["conflicting_sources"])
+        self.assertIn("21:31—22:12",fact["claim"])
+
+    def test_explicit_beginning_countervalue_is_retained(self):
+        assigned=[]
+        for sid,kind,start,end in [("N001","news","21:31","22:12"),("O001","opinion","20:47",None),("R001","radar","20:47","22:12")]:
+            assigned.append({"id":sid,"kind":kind,"text":f"正文：平台于{start}开始执行预警指挥。",
+                             "mission":{"value":"预警指挥"},"start_time":start,"end_time":end})
+        verify={"facts":[]}
+        check_common_facts(verify,assigned)
+        fact=next(f for f in verify["facts"] if f["field"]=="time")
         self.assertEqual(fact["status"],"conflict")
-        self.assertEqual(fact["components"]["start_time"]["conflicts"],["N001"])
-        self.assertEqual(fact["components"]["end_time"]["status"],"supported")
+        self.assertIn("N001",fact["conflicting_sources"])
+
+    def test_nonoverlapping_activity_windows_remain_conflict(self):
+        assigned=[{"id":sid,"kind":kind,"text":"正文：平台组织预警指挥。","mission":{"value":"预警指挥"},
+                   "start_time":start,"end_time":end}
+                  for sid,kind,start,end in [("N001","news","10:00","11:00"),("O001","opinion","15:00","16:00")]]
+        verify={"facts":[]}
+        check_common_facts(verify,assigned)
+        self.assertEqual(next(f for f in verify["facts"] if f["field"]=="time")["status"],"conflict")
+
+    def test_training_environment_cannot_confirm_specific_subject(self):
+        assigned=[{"id":sid,"kind":kind,"text":"正文：平台组织"+task+"。","mission":{"value":task},
+                   "start_time":None,"end_time":None}
+                  for sid,kind,task in [("N001","news","两栖作战训练"),("O001","opinion","远海训练"),("R001","radar","远海训练")]]
+        verify={"facts":[]}
+        check_common_facts(verify,assigned)
+        mission=next(f for f in verify["facts"] if f["field"]=="mission")
+        self.assertEqual((mission["claim"],mission["status"]),("训练","supported"))
+        detail=next(f for f in verify["facts"] if f["field"]=="mission_detail" and f["claim"]=="两栖作战训练")
+        self.assertEqual(detail["status"],"insufficient")
 
     def test_activity_does_not_corroborate_specific_entry(self):
         assigned=[{"id":"N001","kind":"news","text":"正文：平台进入东海。","mission":{"value":None}},
@@ -231,7 +261,7 @@ class MatchingTests(unittest.TestCase):
         self.assertEqual(len(radar),54)
         split=[a for a in radar if a["sibling_ids"]]
         self.assertEqual(len(split),4)
-        self.assertTrue(all(a["anomalies"] for a in split))
+        self.assertTrue(all(a["warnings"] and not a["anomalies"] for a in split))
 
     def test_majority_cannot_override_quantity_conflict(self):
         def source(sid,kind,qty):

@@ -115,28 +115,20 @@ def radar_batch_key(source):
 
 
 def bundle_radar_evidence(groups,radars):
-    """A selected batch brings all its observations; spatial strands are not separate votes."""
+    """Preserve batch context without turning unassociated targets into event evidence."""
     byid={s["id"]:s for s in radars}
-    batches={};owners={}
+    batches={}
     for radar in radars:
         batches.setdefault(radar_batch_key(radar),[]).append(radar["id"])
     for group in groups:
+        context=[]
         for rid in group["radar_ids"]:
-            owners.setdefault(radar_batch_key(byid[rid]),set()).add(group["id"])
-    group_byid={g["id"]:g for g in groups}
-    for key,rids in batches.items():
-        assigned=owners.get(key,set())
-        if len(assigned)==1:
-            group=group_byid[next(iter(assigned))]
-            added=[rid for rid in rids if rid not in group["radar_ids"]]
-            if added:
-                group["radar_ids"].extend(added)
-                group.setdefault("radar_bundle_expansions",[]).append({"sheet":key[0],"batch":key[1],"added":added,
-                    "reason":"同批号全部空间分支随组保存；归属/轨迹异常仍未消解，不增加独立来源类型"})
-        elif len(assigned)>1:
-            for nid in assigned:
-                group_byid[nid].setdefault("batch_conflicts",[]).append({"sheet":key[0],"batch":key[1],"owners":sorted(assigned),
-                    "reason":"同批号分支被分给不同新闻，无法确认其归属；不自动复制或合并不同事件"})
+            key=radar_batch_key(byid[rid])
+            others=[sid for sid in batches[key] if sid not in group["radar_ids"]]
+            if others:
+                context.append({"selected":rid,"sheet":key[0],"batch":key[1],"other_candidates":others,
+                    "reason":"仅核验已关联活动；同批号其他分支完整保留，未确认属于本事件，不自动构成反证"})
+        group["radar_context"]=context
     return groups
 
 
@@ -191,7 +183,9 @@ def linked_platforms(group, news, opinion, radars, platform_index):
     rid = group["radar_slots"].get(str(platform_index))
     if rid:
         radar = next(r for r in radars if r["id"]==rid)
-        result.extend((r["id"],r["platforms"][0]) for r in radars if radar_batch_key(r)==radar_batch_key(radar))
+        # Multiple explicitly assigned observations may be checked, but batch equality is not assignment.
+        indices={e["candidate_id"] for e in group["alignment"]["radar_edges"] if platform_index in e["platform_indices"]}
+        result.extend((r["id"],r["platforms"][0]) for r in radars if r["id"]==rid or r["id"] in indices)
     return result
 
 

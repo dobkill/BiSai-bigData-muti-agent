@@ -144,8 +144,9 @@ def load_radar(day: Path):
                 end = max(distinct(time_key)) if air else max(distinct("结束时间"))
                 locations = [] if air else [normalize_location(v) for v in distinct("活动区域")]
                 anomalies = []
+                warnings = []
                 if len(clusters) > 1:
-                    anomalies.append("同批号存在远距离起始位置簇，候选拆分不代表归属已经消解")
+                    warnings.append("同批号存在不同起始位置簇；未提供唯一目标身份，分支须分别关联，不能自动合并或当作本事件反证")
                 for key in ["国家地区", "任务", "目标数量" if air else "数量"] + ([] if air else ["活动区域"]):
                     if len(distinct(key)) > 1:
                         anomalies.append(f"批号内部{key}存在不同值")
@@ -167,11 +168,13 @@ def load_radar(day: Path):
                     "location": locations[0] if len(locations)==1 else normalize_location(None),
                     "location_values": locations, "coordinates": coordinates, "coordinate_hint": hint,
                     "start_time": start, "end_time": end, "movement": "未说明",
+                    "time_semantics": {"interval": "observation_coverage", "start_asserted": False, "end_asserted": False},
+                    "identity_scope": "batch_is_not_unique_target", "warnings": warnings,
                     "hull_values": [] if air else distinct("机弦号"), "anomalies": anomalies,
                     "records": sorted(records, key=lambda x:x["row"]), "row_count": len(records)})
     book.close()
     for a in activities:
-        a["sibling_ids"] = [b["id"] for b in activities if b["batch"]==a["batch"] and b["id"] != a["id"]]
+        a["sibling_ids"] = [b["id"] for b in activities if (b["sheet"], b["batch"])==(a["sheet"], a["batch"]) and b["id"] != a["id"]]
     return activities, {"path": str(path.resolve()), "sha256": sha256(path), "rows": raw_count,
                         "batches": len({(a["sheet"],a["batch"]) for a in activities}), "activities": len(activities)}
 
@@ -179,5 +182,6 @@ def load_radar(day: Path):
 def public_view(source):
     keys = ["id", "kind", "title", "text", "platforms", "location", "location_values", "mission", "mission_values",
             "start_time", "end_time", "movement", "coordinates", "coordinate_hint", "anomalies", "batch",
-            "sibling_ids", "hull_values", "country_values", "quantity_values", "row_count"]
+            "sibling_ids", "hull_values", "country_values", "quantity_values", "row_count",
+            "time_semantics", "identity_scope", "warnings"]
     return {k: source[k] for k in keys if k in source}
