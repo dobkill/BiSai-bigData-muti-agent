@@ -149,6 +149,12 @@ class MatchingTests(unittest.TestCase):
         self.assertIsNone(counterevidence_hint(news,opinion,[radar],[news,second_news],[opinion]))
         radar["start_time"],radar["end_time"]="15:01","17:26"
         self.assertIsNone(counterevidence_hint(news,opinion,[radar],[news],[opinion]))
+        news["location"]=normalize_location("夏威夷附近")
+        opinion["location"]=normalize_location("孟加拉湾")
+        radar["start_time"],radar["end_time"]="05:01","07:26"
+        hint=counterevidence_hint(news,opinion,[radar],[news],[opinion])
+        self.assertIsNotNone(hint)
+        self.assertEqual(hint["location_relation"],"different_named_regions")
 
     def test_geography_precision_and_transit(self):
         detailed=normalize_location("永暑礁附近")
@@ -230,6 +236,44 @@ class MatchingTests(unittest.TestCase):
         self.assertEqual((mission["claim"],mission["status"]),("训练","supported"))
         detail=next(f for f in verify["facts"] if f["field"]=="mission_detail" and f["claim"]=="两栖作战训练")
         self.assertEqual(detail["status"],"insufficient")
+
+    def test_training_environment_cannot_hide_two_conflicting_subjects(self):
+        assigned=[{"id":sid,"kind":kind,"text":"正文：平台组织"+task+"。","mission":{"value":task},
+                   "start_time":None,"end_time":None}
+                  for sid,kind,task in [("N001","news","两栖作战训练"),("O001","opinion","实弹射击训练"),("R001","radar","远海训练")]]
+        verify={"facts":[]}
+        check_common_facts(verify,assigned)
+        self.assertEqual(next(f for f in verify["facts"] if f["field"]=="mission")["status"],"conflict")
+
+    def test_schema_migration_revalidates_cache_and_rejects_invalid_indices(self):
+        import hashlib
+        import json
+        from event_matcher.models import Alignment
+        from event_matcher.ollama_client import OllamaClient, VERSION, dump
+        for old_index in [0,1]:
+            with self.subTest(old_index=old_index), tempfile.TemporaryDirectory(prefix="matching-schema-") as tmp:
+                client=OllamaClient(Path(tmp),"test-model","test-embedding","http://unused")
+                old_schema=Alignment.model_json_schema()
+                constrained=Alignment.model_json_schema()
+                constrained["$defs"]["Edge"]["properties"]["platform_indices"]["items"]={"type":"integer","enum":[0]}
+                def answer(index):
+                    return {"opinion_edges":[{"candidate_id":"O001","platform_indices":[index],"relation":"same",
+                                             "confidence":.9,"reason":"身份与活动相容"}],"radar_edges":[],"ambiguity":""}
+                key=hashlib.sha256(json.dumps([VERSION,client.model,"alignment","instructions",{},old_schema],
+                                              ensure_ascii=False,sort_keys=True).encode()).hexdigest()
+                dump(Path(tmp)/"alignment"/(key+".json"),{"result":answer(old_index)})
+                requests=[]
+                def request(endpoint,body):
+                    requests.append(body)
+                    return {"message":{"content":json.dumps(answer(0))}}
+                client.request=request
+                def validate(result):
+                    if any(i!=0 for edge in result.opinion_edges for i in edge.platform_indices):
+                        raise ValueError("新闻平台索引越界")
+                result=client.chat("alignment","instructions",{},Alignment,validate,
+                                   schema_override=constrained,compatible_schema=old_schema)
+                self.assertEqual(result.opinion_edges[0].platform_indices,[0])
+                self.assertEqual(len(requests),0 if old_index==0 else 1)
 
     def test_activity_does_not_corroborate_specific_entry(self):
         assigned=[{"id":"N001","kind":"news","text":"正文：平台进入东海。","mission":{"value":None}},

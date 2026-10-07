@@ -188,16 +188,20 @@ def align_source(client, news, opinions, radars, candidate_info, review_instruct
             result["coordinates"]=s["coordinates"]["median"]
         return result
     prompt=ALIGN_PROMPT if not review_instructions else ALIGN_PROMPT+"\n"+review_instructions
-    output_schema=None
+    previous_schema=Alignment.model_json_schema()
     if review_instructions:
-        output_schema=Alignment.model_json_schema()
-        output_schema["properties"]["opinion_edges"].update({"minItems":len(opinions),"maxItems":len(opinions)})
-        output_schema["properties"]["radar_edges"]["maxItems"]=len(radars)
-        output_schema["$defs"]["Edge"]["properties"]["candidate_id"]["enum"]=sorted(allowed_op|allowed_rad)
+        previous_schema["properties"]["opinion_edges"].update({"minItems":len(opinions),"maxItems":len(opinions)})
+        previous_schema["properties"]["radar_edges"]["maxItems"]=len(radars)
+        previous_schema["$defs"]["Edge"]["properties"]["candidate_id"]["enum"]=sorted(allowed_op|allowed_rad)
+    import copy
+    output_schema=copy.deepcopy(previous_schema)
+    output_schema["$defs"]["Edge"]["properties"]["candidate_id"]["enum"]=sorted(allowed_op|allowed_rad)
+    output_schema["$defs"]["Edge"]["properties"]["platform_indices"].update(
+        {"maxItems":count,"items":{"type":"integer","enum":list(range(count))}})
     answer = client.chat("alignment", prompt,
         {"news": public_view(news), "opinion_candidates": [view(s,len(opinions)>12) for s in opinions],
          "radar_candidates": [view(s,len(radars)>12) for s in radars], "recall": candidate_info}, Alignment, validate,
-         schema_override=output_schema).model_dump()
+         schema_override=output_schema, compatible_schema=previous_schema).model_dump()
     byid={s["id"]:s for s in opinions}
     for edge in answer["opinion_edges"]:
         if edge["relation"]=="different":

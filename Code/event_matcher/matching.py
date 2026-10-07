@@ -191,7 +191,8 @@ def linked_platforms(group, news, opinion, radars, platform_index):
 
 def counterevidence_hint(news, opinion, selected_radars, news_items, opinions):
     """A unique literal identity and radar clock can justify a provisional counter-pair, never trust."""
-    if len(news["platforms"])!=1 or location_relation(news["location"],opinion["location"])!="different_direction":
+    relation=location_relation(news["location"],opinion["location"])
+    if len(news["platforms"])!=1 or relation not in {"different_direction","different_named_regions"}:
         return None
     platform=news["platforms"][0]
     def mission_key(s):
@@ -218,7 +219,7 @@ def counterevidence_hint(news, opinion, selected_radars, news_items, opinions):
     if not clocks:
         return None
     return {"same_day_scope":True,"unique_platform_country_mission_in_both_text_pools":True,
-            "radar_clock_matches":clocks,"location_relation":"different_direction","certainty":"provisional_only"}
+            "radar_clock_matches":clocks,"location_relation":relation,"certainty":"provisional_only"}
 
 
 def review_unmatched_opinions(client, groups, news_items, opinions, radars, alignments, recalls):

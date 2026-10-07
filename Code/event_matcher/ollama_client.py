@@ -34,11 +34,28 @@ class OllamaClient:
                                 "eval_count": response.get("eval_count"), "done_reason": response.get("done_reason")}) + "\n")
         return response
 
-    def chat(self, role: str, instructions: str, payload: dict, schema: type[BaseModel], validate=None, schema_override=None):
+    def chat(self, role: str, instructions: str, payload: dict, schema: type[BaseModel], validate=None, schema_override=None, compatible_schema=None):
         output_schema=schema_override or schema.model_json_schema()
         key_data = [VERSION, self.model, role, instructions, payload, output_schema]
         key = hashlib.sha256(json.dumps(key_data, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
         path = self.cache / role / (key + ".json")
+        # Only an explicitly supplied older schema for identical semantics may be migrated.
+        # Inputs, instructions, model and version remain part of both hashes; validation is mandatory.
+        if not path.exists() and compatible_schema is not None:
+            prior_key=hashlib.sha256(json.dumps([VERSION,self.model,role,instructions,payload,compatible_schema],
+                                              ensure_ascii=False,sort_keys=True).encode()).hexdigest()
+            prior=self.cache/role/(prior_key+".json")
+            if prior.exists():
+                cached=json.loads(prior.read_text(encoding="utf-8"))
+                try:
+                    proposed=schema.model_validate(cached["result"])
+                    if validate:
+                        validate(proposed)
+                except (ValueError,KeyError):
+                    pass  # Invalid earlier output must reach the model under the constrained schema.
+                else:
+                    dump(path,{**cached,"result":proposed.model_dump(),"revalidated_from":str(prior),
+                               "schema_migration":"仅收窄输出约束；同输入同指令的旧响应通过当前完整校验后复用"})
         if path.exists():
             result = schema.model_validate(json.loads(path.read_text(encoding="utf-8"))["result"])
             if validate:

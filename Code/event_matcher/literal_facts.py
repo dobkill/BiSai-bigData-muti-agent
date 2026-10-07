@@ -109,7 +109,8 @@ def check_common_facts(verification,assigned):
     mission_names={v for values in missions.values() for v in values}
     # 远海 describes the training environment; 两栖/对海 etc. describe a subject.
     # They corroborate only the shared "训练" claim, never the unconfirmed specific subject.
-    training_context="远海训练" in mission_names and all(v.endswith("训练") for v in mission_names)
+    training_context=("远海训练" in mission_names and len(mission_names-{"远海训练"})<=1
+                      and all(v.endswith("训练") for v in mission_names))
     if training_context and len(mission_names)>1:
         support=[sid for sid,values in missions.items() if values]
         status="supported" if len(source_types(support,assigned))>=2 else "insufficient"
