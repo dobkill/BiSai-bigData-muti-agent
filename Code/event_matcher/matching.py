@@ -110,6 +110,36 @@ def close_rivals(edge,pool):
             and abs(e["confidence"]-edge["confidence"])<.08]
 
 
+def radar_batch_key(source):
+    return source.get("sheet","radar"),source.get("batch") or source["id"]
+
+
+def bundle_radar_evidence(groups,radars):
+    """A selected batch brings all its observations; spatial strands are not separate votes."""
+    byid={s["id"]:s for s in radars}
+    batches={};owners={}
+    for radar in radars:
+        batches.setdefault(radar_batch_key(radar),[]).append(radar["id"])
+    for group in groups:
+        for rid in group["radar_ids"]:
+            owners.setdefault(radar_batch_key(byid[rid]),set()).add(group["id"])
+    group_byid={g["id"]:g for g in groups}
+    for key,rids in batches.items():
+        assigned=owners.get(key,set())
+        if len(assigned)==1:
+            group=group_byid[next(iter(assigned))]
+            added=[rid for rid in rids if rid not in group["radar_ids"]]
+            if added:
+                group["radar_ids"].extend(added)
+                group.setdefault("radar_bundle_expansions",[]).append({"sheet":key[0],"batch":key[1],"added":added,
+                    "reason":"同批号全部空间分支随组保存；归属/轨迹异常仍未消解，不增加独立来源类型"})
+        elif len(assigned)>1:
+            for nid in assigned:
+                group_byid[nid].setdefault("batch_conflicts",[]).append({"sheet":key[0],"batch":key[1],"owners":sorted(assigned),
+                    "reason":"同批号分支被分给不同新闻，无法确认其归属；不自动复制或合并不同事件"})
+    return groups
+
+
 def allocate(news_items, opinions, radars, alignments, recalls):
     op_edges = {n["id"]: {e["candidate_id"]:e for e in alignments[n["id"]]["opinion_edges"]} for n in news_items}
     opweights = []
@@ -145,7 +175,7 @@ def allocate(news_items, opinions, radars, alignments, recalls):
             diagnostics=assignment_competitors(rw,ra,[s["id"] for s in radars],[s[0]["id"] for s in slots],j,
                                                [e["candidate_id"] for e in rivals if i in e["platform_indices"]])
             group["assignment_diagnostics"]["radar"].extend(dict(d,platform_index=i) for d in diagnostics)
-    return groups
+    return bundle_radar_evidence(groups,radars)
 
 
 def linked_platforms(group, news, opinion, radars, platform_index):
@@ -161,7 +191,7 @@ def linked_platforms(group, news, opinion, radars, platform_index):
     rid = group["radar_slots"].get(str(platform_index))
     if rid:
         radar = next(r for r in radars if r["id"]==rid)
-        result.append((rid,radar["platforms"][0]))
+        result.extend((r["id"],r["platforms"][0]) for r in radars if radar_batch_key(r)==radar_batch_key(radar))
     return result
 
 
@@ -256,6 +286,8 @@ def apply_guards(group, news, opinion, radars, verification):
         blockers.append("联合活动有平台缺少已关联雷达活动")
     if not verification["same_event"]:
         blockers.append("模型未确认三源同一事件关联")
+    for conflict in group.get("batch_conflicts",[]):
+        blockers.append(f"雷达批号{conflict['batch']}跨组归属未消解：{conflict['owners']}")
     # Matrix rechecks do not depend on the model noticing contradictory task/clock/movement values.
     check_common_facts(verification,assigned)
     check_location_fact(verification,assigned)
@@ -361,6 +393,9 @@ def apply_guards(group, news, opinion, radars, verification):
         diagnostics=group.get("assignment_diagnostics",{}).get(kind,[])
         unresolved=[]
         for rival in rivals:
+            if kind=="radar" and rival["candidate_id"] in group["radar_ids"]:
+                # A bundled branch is retained evidence of the same batch, not an alternative event.
+                continue
             proof=next((d for d in diagnostics if d["candidate_id"]==rival["candidate_id"] and d["current_owner"]
                         and d["current_owner"]!=group.get("id") and d["weight_margin"]>=8),None)
             if proof:

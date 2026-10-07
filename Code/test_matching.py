@@ -11,7 +11,7 @@ from event_matcher.data import country, load_radar, load_texts, platform_similar
 from event_matcher.export import export_results
 from event_matcher.geography import location_relation, normalize_location
 from event_matcher.literal_facts import check_common_facts, check_location_fact, repair_source_assertions
-from event_matcher.matching import allocate, apply_guards, assignment_competitors, counterevidence_hint, review_unmatched_opinions
+from event_matcher.matching import allocate, apply_guards, assignment_competitors, bundle_radar_evidence, counterevidence_hint, review_unmatched_opinions
 
 
 class MatchingTests(unittest.TestCase):
@@ -56,6 +56,46 @@ class MatchingTests(unittest.TestCase):
         fact=verify["facts"][0]
         self.assertEqual(fact["status"],"insufficient")
         self.assertEqual(fact["supporting_sources"],["N001"])
+
+    def test_same_batch_branches_follow_unique_owner_without_duplication(self):
+        radars=[{"id":"R001","sheet":"飞机","batch":"AIR-A"},{"id":"R002","sheet":"飞机","batch":"AIR-A"}]
+        groups=[{"id":"N001","radar_ids":["R002"]}]
+        bundle_radar_evidence(groups,radars)
+        self.assertEqual(set(groups[0]["radar_ids"]),{"R001","R002"})
+        self.assertEqual(len(groups[0]["radar_ids"]),2)
+        self.assertEqual(groups[0]["radar_bundle_expansions"][0]["added"],["R001"])
+        groups=[{"id":"N001","radar_ids":["R001"]},{"id":"N002","radar_ids":["R002"]}]
+        bundle_radar_evidence(groups,radars)
+        self.assertEqual([g["radar_ids"] for g in groups],[["R001"],["R002"]])
+        self.assertTrue(all(g["batch_conflicts"] for g in groups))
+
+    def test_branch_first_sample_does_not_become_new_activity_start(self):
+        assigned=[{"id":"N001","kind":"news","text":"正文：平台活动。","mission":{"value":None},"start_time":"17:35","end_time":"19:00"}]
+        for sid,start in [("R001","17:35"),("R002","17:49")]:
+            assigned.append({"id":sid,"kind":"radar","batch":"AIR-A","sheet":"飞机","mission":{"value":None},"start_time":start,"end_time":"19:00"})
+        verify={"facts":[]}
+        check_common_facts(verify,assigned)
+        fact=next(f for f in verify["facts"] if f["field"]=="time")
+        self.assertEqual(fact["status"],"supported")
+        self.assertFalse(fact["conflicting_sources"])
+        self.assertTrue(fact["components"]["start_time"]["radar_batch_observations"])
+
+    def test_selected_good_branch_cannot_hide_sibling_quantity_countervalue(self):
+        def source(sid,kind,qty):
+            return {"id":sid,"kind":kind,"platforms":[{"name":"903A型综合补给舰","country":"中国","quantity":qty}],
+                    "location":normalize_location("万安滩海域"),"mission":{"value":None},"start_time":None,"end_time":None,"movement":"活动"}
+        news,opinion=source("N001","news",2),source("O001","opinion",2)
+        radars=[source("R001","radar",2),source("R002","radar",3)]
+        for r in radars:r.update({"sheet":"舰船","batch":"SHIP-A","anomalies":[],"row_count":10})
+        edge=lambda sid:{"candidate_id":sid,"platform_indices":[0],"relation":"same","confidence":.95,"reason":"同批号"}
+        group={"id":"N001","opinion_id":"O001","radar_ids":["R001","R002"],"radar_slots":{"0":"R001"},
+               "alignment":{"opinion_edges":[edge("O001")],"radar_edges":[edge("R001"),edge("R002")]}}
+        facts=[{"platform_index":i,"field":field,"claim":claim,"supporting_sources":["N001","O001"],"conflicting_sources":[],"status":"supported","reason":"错误忽略第二分支"}
+               for i,field,claim in [(0,"platform","903A"),(0,"country","中国"),(0,"quantity","2艘"),(-1,"location","万安滩海域")]]
+        result=apply_guards(group,news,opinion,radars,{"same_event":True,"facts":facts,"unresolved_issues":[],"explanation":"模型只选好分支"})
+        self.assertEqual(result["status"],"不可信事件")
+        quantity=next(f for f in result["verification"]["facts"] if f["field"]=="quantity")
+        self.assertEqual(quantity["conflicting_sources"],["R002"])
 
     def test_unmatched_review_preserves_counterevidence_without_forcing_pair(self):
         import copy

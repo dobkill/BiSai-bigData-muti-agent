@@ -241,6 +241,7 @@ def export_results(groups, texts, radars, radar_manifest, output, args, vector_m
               "code_provenance":code_provenance(),"exported_at":datetime.now().astimezone().isoformat(),
               "embedding_model":args.embedding_model,"groups":len(groups),"trusted":counts["可信事件"],"untrusted":counts["不可信事件"],
               "matched_opinions":len(used_text)-len(groups),"matched_radar_activities":len(used_radar),
+              "matched_radar_batches":len({(byid[rid]['sheet'],byid[rid]['batch']) for rid in used_radar}),
               "matched_radar_rows":sum(g["radar_row_count"] for g in groups),"report_eligible":sum(g["report_eligible"] for g in groups),
               "http_calls_this_run":client.calls,"cache_hits_this_run":client.hits,"vector_index":vector_manifest,
               "integrity":integrity,"accuracy":"未进行人工真值评估，分类为模型初步结果",

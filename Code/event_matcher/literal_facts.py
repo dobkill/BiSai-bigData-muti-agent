@@ -103,7 +103,20 @@ def check_common_facts(verification,assigned):
 
     components={}
     for key in ["start_time","end_time"]:
-        observed={s["id"]:minutes(s[key]) for s in assigned if s.get(key)}
+        observed={s["id"]:minutes(s[key]) for s in assigned if s.get(key) and s["kind"]!="radar"}
+        batches={};batch_observations=[]
+        for source in assigned:
+            if source["kind"]=="radar" and source.get(key):
+                identity=(source.get("sheet"),source.get("batch") or source["id"])
+                batches.setdefault(identity,[]).append(source)
+        for (sheet,batch),sources in batches.items():
+            clock_values={s["id"]:minutes(s[key]) for s in sources}
+            bound=(min if key=="start_time" else max)(clock_values.values())
+            observed.update({sid:x for sid,x in clock_values.items() if x==bound})
+            if len(sources)>1:
+                batch_observations.append({"sheet":sheet,"batch":batch,"branch_values":clock_values,
+                    "boundary_sources":[sid for sid,x in clock_values.items() if x==bound],
+                    "reason":"位置观测分支按同批号合并覆盖区间；较晚出现的子分支首点不是另一次活动开始断言"})
         if not observed:
             components[key]={"value":None,"support":[],"conflicts":[],"status":"insufficient"}
             continue
@@ -112,7 +125,8 @@ def check_common_facts(verification,assigned):
         conflicts=[sid for sid,x in observed.items() if x!=best]
         status="conflict" if conflicts else "supported" if len(source_types(support,assigned))>=2 else "insufficient"
         components[key]={"value":f"{best//60:02}:{best%60:02}","support":support,"conflicts":conflicts,
-                         "status":status,"source_values":{sid:f"{x//60:02}:{x%60:02}" for sid,x in observed.items()}}
+                         "status":status,"source_values":{sid:f"{x//60:02}:{x%60:02}" for sid,x in observed.items()},
+                         "radar_batch_observations":batch_observations}
     support=sorted({sid for c in components.values() for sid in c["support"]})
     conflicts=sorted({sid for c in components.values() for sid in c["conflicts"]})
     # A source can agree on one endpoint and contradict another. Keep per-endpoint evidence.
@@ -120,6 +134,7 @@ def check_common_facts(verification,assigned):
     status="conflict" if conflicts else "supported" if all(c["status"]=="supported" for c in components.values()) else "insufficient"
     claim="起点 "+str(components["start_time"]["value"] or "未说明")+"，终点 "+str(components["end_time"]["value"] or "未说明")
     reason="逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突"
+    reason+=f"；起点明示值：{components['start_time'].get('source_values',{})}；终点明示值：{components['end_time'].get('source_values',{})}"
     replace_fact(verification,"time",claim,support,conflicts,status,reason,components=components)
 
     movements={s["id"]:literal_movement(s) for s in assigned}
