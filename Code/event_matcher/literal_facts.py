@@ -2,6 +2,7 @@
 import re
 
 from .data import compact, minutes
+from .geography import location_relation, normalize_location
 
 # Task names, not platform roles; suffixes such as 任务/任务行动 are grammatical wrappers.
 MISSION_NAMES = (
@@ -133,3 +134,48 @@ def check_common_facts(verification,assigned):
         support=detailed or active
         status="supported" if len(source_types(support,assigned))>=2 else "insufficient"
         replace_fact(verification,"movement",claim,support,[],status,"活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",source_values=movements)
+
+
+def check_location_fact(verification,assigned):
+    explicit={s["id"]:s["location"] for s in assigned if s["location"].get("region")}
+    original=next((dict(f) for f in verification["facts"] if f["field"]=="location" and f["platform_index"]==-1),{})
+    regions={loc["region"] for loc in explicit.values()}
+    # A concrete place with two exact assertions takes precedence over a merely broader statement.
+    confirmed=[r for r in regions if len(source_types([sid for sid,l in explicit.items() if l["region"]==r],assigned))>=2]
+    if confirmed:
+        claim=max(confirmed,key=lambda r:(normalize_location(r)["precision"]!="大范围",len(r),r))
+    elif regions:
+        directions={l["direction"] for l in explicit.values()}
+        specific={l["region"] for l in explicit.values() if l["precision"]!="大范围"}
+        if len(directions)==1 and next(iter(directions)) in {"东海","南海","黄海"} and len(specific)<=1:
+            claim=next(iter(directions))
+        else:
+            claim=next(iter(explicit.values()))["region"]
+    else:
+        replace_fact(verification,"location","未明确区域",[],[],"insufficient","没有明示区域；未验证坐标方向不补作地点断言")
+        return
+    target=normalize_location(claim)
+    support=[];conflicts=[]
+    for sid,loc in explicit.items():
+        relation=location_relation(target,loc)
+        if relation=="same" or relation=="contains" and target["precision"]=="大范围":
+            support.append(sid)
+        elif relation=="contains":
+            pass  # A broader statement is compatible but does not assert the detailed location.
+        else:
+            conflicts.append(sid)
+    # Widening cannot hide two differently named concrete regions, even within one core direction.
+    specifics={l["region"] for l in explicit.values() if l["precision"]!="大范围"}
+    if target["precision"]=="大范围" and len(specifics)>1:
+        conflicts=[sid for sid,l in explicit.items() if l["precision"]!="大范围"]
+        support=[sid for sid in support if sid not in conflicts]
+    status="conflict" if conflicts else "supported" if len(source_types(support,assigned))>=2 else "insufficient"
+    replace_fact(verification,"location",claim,support,conflicts,status,
+                 f"复核明示地点和PDF包含关系：{ {sid:l['region'] for sid,l in explicit.items()} }；同方向不等于同一具体区域，未验证坐标不作为反证",
+                 source_values=explicit)
+    if status=="supported" and target["precision"]=="大范围" and len(specifics)==1:
+        detail=next(iter(specifics));detail_sources=[sid for sid,l in explicit.items() if l["region"]==detail]
+        if len(source_types(detail_sources,assigned))<2:
+            verification["facts"].append({"platform_index":-1,"field":"location_detail","claim":detail,
+                "supporting_sources":detail_sources,"conflicting_sources":[],"status":"insufficient",
+                "reason":"具体区域仅一类来源明示；结论使用共同获支持的方向，细节保留待核实","model_proposal":original})

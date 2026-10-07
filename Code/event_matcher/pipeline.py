@@ -28,4 +28,7 @@ def run(args):
     from .export import export_results
     groups, vector_manifest = match(client, texts, radars, output)
     manifest = export_results(groups, texts, radars, radar_manifest, output, args, vector_manifest, client)
-    print(json.dumps(manifest, ensure_ascii=False, indent=2), flush=True)
+    concise=dict(manifest)
+    concise["vector_index"]={k:v for k,v in manifest["vector_index"].items() if k!="ids"}
+    concise["code_provenance"]={k:v for k,v in manifest["code_provenance"].items() if k!="files"}
+    print(json.dumps(concise, ensure_ascii=False, indent=2), flush=True)

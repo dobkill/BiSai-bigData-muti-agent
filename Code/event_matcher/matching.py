@@ -1,6 +1,5 @@
 import json
 import sqlite3
-from collections import defaultdict
 
 import numpy as np
 
@@ -9,7 +8,7 @@ from .assignment import maximum_assignment
 from .data import compact, country, minutes, platform_similarity, public_view, time_overlap
 from .geography import location_relation, normalize_location
 from .ollama_client import dump
-from .literal_facts import check_common_facts
+from .literal_facts import check_common_facts, check_location_fact
 
 
 def embedding_text(source):
@@ -84,6 +83,33 @@ def edge_weight(edge, heuristic):
     return edge["confidence"]*100*factor + min(heuristic, 6)
 
 
+def assignment_competitors(weights,chosen,ids,owners,row,rival_ids):
+    """Force a competing edge and recompute the entire optimum, not a local score gap."""
+    baseline=sum(weights[i][j] for i,j in enumerate(chosen))
+    result=[]
+    for rival in sorted(set(rival_ids)):
+        column=ids.index(rival)
+        if weights[row][column]<=0:
+            continue
+        forced=[list(values) for values in weights]
+        forced[row]=[-1000000.0]*len(forced[row])
+        forced[row][column]=weights[row][column]
+        alternative=maximum_assignment(forced)
+        if alternative[row]!=column:
+            raise RuntimeError("反事实分配没有满足指定候选约束")
+        total=sum(weights[i][j] for i,j in enumerate(alternative))
+        owner=next((owners[i] for i,j in enumerate(chosen) if j==column),None)
+        result.append({"candidate_id":rival,"current_owner":owner,"weight_margin":round(baseline-total,5),
+                       "assumption":"每篇舆论/每个雷达候选唯一归属；分数差不是校准概率"})
+    return result
+
+
+def close_rivals(edge,pool):
+    return [e for e in pool if e["candidate_id"]!=edge["candidate_id"] and e["relation"]=="same"
+            and set(e["platform_indices"]) & set(edge["platform_indices"])
+            and abs(e["confidence"]-edge["confidence"])<.08]
+
+
 def allocate(news_items, opinions, radars, alignments, recalls):
     op_edges = {n["id"]: {e["candidate_id"]:e for e in alignments[n["id"]]["opinion_edges"]} for n in news_items}
     opweights = []
@@ -99,14 +125,26 @@ def allocate(news_items, opinions, radars, alignments, recalls):
         rw.append([edge_weight(edges.get(r["id"]), heur.get(r["id"],0)) for r in radars] + [0]*len(slots))
     ra = maximum_assignment(rw)
     groups = [{"id": n["id"], "news_id": n["id"], "opinion_id": opinions[opa[j]]["id"] if opa[j] < len(opinions) and opweights[j][opa[j]]>0 else None,
-               "radar_ids": [], "radar_slots": {}, "alignment": alignments[n["id"]], "candidates": recalls[n["id"]]}
+               "radar_ids": [], "radar_slots": {}, "alignment": alignments[n["id"]], "candidates": recalls[n["id"]],
+               "assignment_diagnostics":{"opinion":[],"radar":[]}}
               for j,n in enumerate(news_items)]
     byid = {g["id"]:g for g in groups}
+    for j,group in enumerate(groups):
+        if group["opinion_id"]:
+            edge=op_edges[group["id"]][group["opinion_id"]]
+            rivals=close_rivals(edge,list(op_edges[group["id"]].values()))
+            group["assignment_diagnostics"]["opinion"]=assignment_competitors(opweights,opa,[s["id"] for s in opinions],
+                [n["id"] for n in news_items],j,[e["candidate_id"] for e in rivals])
     for j,(n,i) in enumerate(slots):
         group = byid[n["id"]]
         group["radar_slots"][str(i)] = radars[ra[j]]["id"] if ra[j]<len(radars) and rw[j][ra[j]]>0 else None
         if group["radar_slots"][str(i)]:
             group["radar_ids"].append(group["radar_slots"][str(i)])
+            edge=next(e for e in group["alignment"]["radar_edges"] if e["candidate_id"]==group["radar_slots"][str(i)])
+            rivals=close_rivals(edge,group["alignment"]["radar_edges"])
+            diagnostics=assignment_competitors(rw,ra,[s["id"] for s in radars],[s[0]["id"] for s in slots],j,
+                                               [e["candidate_id"] for e in rivals if i in e["platform_indices"]])
+            group["assignment_diagnostics"]["radar"].extend(dict(d,platform_index=i) for d in diagnostics)
     return groups
 
 
@@ -220,6 +258,7 @@ def apply_guards(group, news, opinion, radars, verification):
         blockers.append("模型未确认三源同一事件关联")
     # Matrix rechecks do not depend on the model noticing contradictory task/clock/movement values.
     check_common_facts(verification,assigned)
+    check_location_fact(verification,assigned)
     # Recheck explicit platform, nationality and counts from immutable source extraction.
     # Preserve the model proposal; source omissions never become votes or counter-evidence.
     for i,p in enumerate(news["platforms"]):
@@ -306,37 +345,6 @@ def apply_guards(group, news, opinion, radars, verification):
             field["reason"] += "；程序检查：不足两类独立来源支持"
         if field["conflicting_sources"] or field["status"]=="conflict":
             blockers.append(f"{field['field']}关键事实冲突：{field['reason']}")
-    location_fact=next(f for f in verification["facts"] if f["platform_index"]==-1 and f["field"]=="location")
-    if location_fact["status"]=="insufficient" and not location_fact["conflicting_sources"]:
-        explicit=[(s["id"],s["location"]) for s in assigned if s["location"].get("region")]
-        exact=defaultdict(list)
-        for sid,loc in explicit:
-            exact[loc["region"]].append(sid)
-        confirmed=[(region,sids) for region,sids in exact.items() if len({kinds[sid] for sid in sids})>=2]
-        claim,support=None,[]
-        if len(confirmed)==1:
-            claim,support=confirmed[0]
-        elif explicit:
-            directions={loc["direction"] for _,loc in explicit}
-            specific={loc["region"] for _,loc in explicit if loc["precision"]!="大范围"}
-            # Only coarsen a broad-vs-specific compatible pair; never hide two competing precise regions.
-            if len(directions)==1 and next(iter(directions)) in {"东海","南海","黄海"} and len(specific)<=1 and any(loc["precision"]=="大范围" for _,loc in explicit):
-                claim=next(iter(directions))
-                support=[sid for sid,_ in explicit]
-        if claim and len({kinds[sid] for sid in support})>=2:
-            original=dict(location_fact)
-            detail={**original,"field":"location_detail","reason":original["reason"]+"；具体地点未取得两类支持，保留为未核实线索"}
-            verification["facts"].append(detail)
-            location_fact.update({"claim":claim,"supporting_sources":support,"supporting_source_types":sorted({kinds[sid] for sid in support}),
-                                  "status":"supported","reason":"按地点归一化与包含关系确认共同可支持的区域；未核实的细节另行保留",
-                                  "model_proposal":original,"checked_by":"location_precision_guard"})
-    # Literal nationality/quantity disagreements cannot be waived by model majority voting.
-    for i,p in enumerate(news["platforms"]):
-        linked = linked_platforms(group,news,opinion,radars,i)
-        for key in ["country", "quantity"]:
-            values = {sid:(country(v.get(key)) if key=="country" else v.get(key)) for sid,v in linked if v.get(key) is not None}
-            if len(set(values.values()))>1:
-                blockers.append(f"平台{i} {p['name']} 的{key}明确冲突：{values}")
     for radar in radars:
         if radar["anomalies"]:
             blockers.extend(f"{radar['id']}：{a}" for a in radar["anomalies"])
@@ -348,16 +356,25 @@ def apply_guards(group, news, opinion, radars, verification):
     # Close competing associations are preserved as uncertainty, not silently discarded.
     for edge in selected_edges:
         pool = edges["opinion_edges"] if edge["candidate_id"].startswith("O") else edges["radar_edges"]
-        rivals = [e for e in pool if e["candidate_id"]!=edge["candidate_id"] and e["relation"]=="same"
-                  and set(e["platform_indices"]) & set(edge["platform_indices"])
-                  and abs(e["confidence"]-edge["confidence"])<.08]
-        if rivals:
-            blockers.append(f"{edge['candidate_id']}存在置信度接近的同活动候选：{[e['candidate_id'] for e in rivals]}")
+        rivals=close_rivals(edge,pool)
+        kind="opinion" if edge["candidate_id"].startswith("O") else "radar"
+        diagnostics=group.get("assignment_diagnostics",{}).get(kind,[])
+        unresolved=[]
+        for rival in rivals:
+            proof=next((d for d in diagnostics if d["candidate_id"]==rival["candidate_id"] and d["current_owner"]
+                        and d["current_owner"]!=group.get("id") and d["weight_margin"]>=8),None)
+            if proof:
+                group.setdefault("resolved_competition",[]).append({"selected":edge["candidate_id"],**proof})
+            else:
+                unresolved.append(rival["candidate_id"])
+        if unresolved:
+            blockers.append(f"{edge['candidate_id']}存在未被全局分配消解的同活动候选：{unresolved}")
     supported = {(f["platform_index"],f["field"]) for f in verification["facts"] if f["status"]=="supported"}
     for i,p in enumerate(news["platforms"]):
         if (i,"platform") not in supported:
             blockers.append(f"平台{i} {p['name']}身份未获得两类来源印证")
-        if p.get("country") and (i,"country") not in supported:
+        country_fact=next(f for f in verification["facts"] if f["platform_index"]==i and f["field"]=="country")
+        if p.get("country") and (i,"country") not in supported and country_fact["status"]!="conflict":
             blockers.append(f"平台{i} {p['name']}国籍未获得两类来源印证")
     if (-1,"location") not in supported:
         blockers.append("活动地点未获得两类来源在明确精度上的印证")
@@ -365,6 +382,9 @@ def apply_guards(group, news, opinion, radars, verification):
     group["verification"] = verification
     group["reasons"] = list(dict.fromkeys(blockers))
     group["status"] = "可信事件" if not blockers else "不可信事件"
+    verification["model_explanation"]=verification["explanation"]
+    verification["explanation"]=("三类来源已关联，纳入结论的事实获得至少两类独立来源支持，未发现未消解明示反证。"
+                                 if not blockers else "程序核验未通过："+"；".join(group["reasons"]))
     group["verified_facts"] = [f for f in verification["facts"] if f["status"]=="supported"]
     group["radar_row_count"] = sum(r["row_count"] for r in radars)
     group["direction"] = news["location"].get("direction")

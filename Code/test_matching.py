@@ -10,8 +10,8 @@ from event_matcher.assignment import maximum_assignment
 from event_matcher.data import country, load_radar, load_texts, platform_similarity, platform_tokens
 from event_matcher.export import export_results
 from event_matcher.geography import location_relation, normalize_location
-from event_matcher.literal_facts import check_common_facts, repair_source_assertions
-from event_matcher.matching import allocate, apply_guards, counterevidence_hint, review_unmatched_opinions
+from event_matcher.literal_facts import check_common_facts, check_location_fact, repair_source_assertions
+from event_matcher.matching import allocate, apply_guards, assignment_competitors, counterevidence_hint, review_unmatched_opinions
 
 
 class MatchingTests(unittest.TestCase):
@@ -28,6 +28,34 @@ class MatchingTests(unittest.TestCase):
 
     def test_abstention_better_than_incorrect_forced_pair(self):
         self.assertEqual(maximum_assignment([[-10,0]]),[1])
+
+    def test_global_competition_distinguishes_already_anchored_candidate(self):
+        weights=[[92,85,0,0],[85,95,0,0]]
+        proof=assignment_competitors(weights,maximum_assignment(weights),["O001","O002"],["N001","N002"],0,["O002"])[0]
+        self.assertEqual(proof["weight_margin"],17)
+        self.assertEqual(proof["current_owner"],"N002")
+        weights=[[92,91,0,0],[91,92,0,0]]
+        proof=assignment_competitors(weights,maximum_assignment(weights),["O001","O002"],["N001","N002"],0,["O002"])[0]
+        self.assertEqual(proof["weight_margin"],2)
+
+    def test_widening_location_cannot_hide_two_different_specific_areas(self):
+        assigned=[{"id":"N001","kind":"news","location":normalize_location("万安滩海域")},
+                  {"id":"O001","kind":"opinion","location":normalize_location("黄岩岛海域")},
+                  {"id":"R001","kind":"radar","location":normalize_location("南海")}]
+        verify={"facts":[{"field":"location","platform_index":-1,"claim":"南海","status":"supported"}]}
+        check_location_fact(verify,assigned)
+        fact=verify["facts"][0]
+        self.assertEqual(fact["status"],"conflict")
+        self.assertTrue(fact["conflicting_sources"])
+
+    def test_unverified_radar_box_cannot_supply_missing_location_vote(self):
+        assigned=[{"id":"N001","kind":"news","location":normalize_location("东海")},
+                  {"id":"R001","kind":"radar","location":normalize_location(None),"coordinate_hint":{"candidate_directions":["东海"],"verified":False}}]
+        verify={"facts":[]}
+        check_location_fact(verify,assigned)
+        fact=verify["facts"][0]
+        self.assertEqual(fact["status"],"insufficient")
+        self.assertEqual(fact["supporting_sources"],["N001"])
 
     def test_unmatched_review_preserves_counterevidence_without_forcing_pair(self):
         import copy

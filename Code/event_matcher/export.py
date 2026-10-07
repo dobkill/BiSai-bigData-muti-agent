@@ -12,6 +12,7 @@ import openpyxl
 from .data import sha256
 from .geography import REGIONS
 from .ollama_client import VERSION, dump
+from .provenance import code_provenance
 
 
 def csv_write(path, rows, headers):
@@ -152,7 +153,11 @@ def export_results(groups, texts, radars, radar_manifest, output, args, vector_m
     old_groups = json.loads((output/"全部匹配结果.json").read_text(encoding="utf-8")) if existing.exists() and (output/"全部匹配结果.json").exists() else []
     # Preserve prior exports on reruns rather than deleting user review material.
     if old_groups:
-        backup = output/"历史运行"/datetime.now().strftime("%Y%m%d_%H%M%S")
+        backup = output/"历史运行"/datetime.now().strftime("%Y%m%d_%H%M%S_%f")
+        backup.mkdir(parents=True,exist_ok=False)
+        for name in ["manifest.json","全部匹配结果.json","README.md","浏览.html","匹配总表.xlsx","匹配总表.csv"]:
+            if (output/name).exists():
+                shutil.copyfile(output/name,backup/name)
         for old in old_groups:
             source = (output/old["directory"]).resolve()
             if source.exists():
@@ -233,6 +238,7 @@ def export_results(groups, texts, radars, radar_manifest, output, args, vector_m
     integrity=audit(groups,texts,radars,radar_manifest,output)
     counts=Counter(g["status"] for g in groups)
     manifest={"version":VERSION,"input":str(args.input.resolve()),"output":str(output),"model":args.model,
+              "code_provenance":code_provenance(),"exported_at":datetime.now().astimezone().isoformat(),
               "embedding_model":args.embedding_model,"groups":len(groups),"trusted":counts["可信事件"],"untrusted":counts["不可信事件"],
               "matched_opinions":len(used_text)-len(groups),"matched_radar_activities":len(used_radar),
               "matched_radar_rows":sum(g["radar_row_count"] for g in groups),"report_eligible":sum(g["report_eligible"] for g in groups),
