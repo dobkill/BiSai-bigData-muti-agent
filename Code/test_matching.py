@@ -10,6 +10,7 @@ from event_matcher.assignment import maximum_assignment
 from event_matcher.data import country, load_radar, load_texts, platform_similarity, platform_tokens
 from event_matcher.export import export_results
 from event_matcher.geography import location_relation, normalize_location
+from event_matcher.literal_facts import check_common_facts, repair_source_assertions
 from event_matcher.matching import allocate, apply_guards, counterevidence_hint, review_unmatched_opinions
 
 
@@ -86,6 +87,53 @@ class MatchingTests(unittest.TestCase):
         self.assertEqual(normalize_location("夏威夷附近海空域")["region"],"夏威夷附近")
         self.assertEqual(country("意大利空军"),"意大利")
         self.assertEqual(normalize_location("阿拉伯海围绕任务海域")["region"],"阿拉伯海")
+        self.assertEqual(normalize_location("安达曼海任务海域")["region"],"安达曼海")
+
+    def test_platform_role_does_not_become_mission(self):
+        source={"id":"N001","kind":"news","text":"标题：中国运-8反潜巡逻机持续活动\n正文：中国两架运-8反潜巡逻机在南海北部持续活动，围绕任务区域保持机动。",
+                "mission":{"value":"反潜巡逻","quote":"运-8反潜巡逻机"},"movement":"活动","extraction_repairs":[]}
+        repair_source_assertions(source)
+        self.assertIsNone(source["mission"]["value"])
+        self.assertEqual(source["extraction_model_proposal"]["mission"]["value"],"反潜巡逻")
+
+    def test_movement_requires_actual_entry_verb(self):
+        source={"id":"O001","kind":"opinion","text":"标题：韩国直升机执行反潜巡逻\n正文：韩国AW-159在阿拉伯海组织反潜巡逻，按计划保持机动。",
+                "mission":{"value":"反潜巡逻","quote":"组织反潜巡逻"},"movement":"进入","movement_quote":"保持机动","extraction_repairs":[]}
+        repair_source_assertions(source)
+        self.assertEqual(source["movement"],"活动")
+        self.assertEqual(source["extraction_model_proposal"]["movement"]["value"],"进入")
+
+    def test_different_explicit_tasks_are_not_merged_by_model(self):
+        def source(sid,kind,task):
+            return {"id":sid,"kind":kind,"text":"正文：平台组织"+task+"。","mission":{"value":task},"start_time":None,"end_time":None}
+        assigned=[source("N001","news","对海突击训练"),source("O001","opinion","战备警巡"),source("R001","radar","对海突击训练")]
+        verify={"facts":[{"platform_index":-1,"field":"mission","claim":"对海突击训练/战备警巡","status":"supported"}]}
+        check_common_facts(verify,assigned)
+        fact=next(f for f in verify["facts"] if f["field"]=="mission")
+        self.assertEqual(fact["status"],"conflict")
+        self.assertEqual(fact["conflicting_sources"],["O001"])
+        self.assertNotIn("/",fact["claim"])
+
+    def test_single_endpoint_countervalue_is_not_ignored(self):
+        assigned=[]
+        for sid,kind,start,end in [("N001","news","21:31","22:12"),("O001","opinion","20:47",None),("R001","radar","20:47","22:12")]:
+            assigned.append({"id":sid,"kind":kind,"text":"正文：平台组织预警指挥。","mission":{"value":"预警指挥"},"start_time":start,"end_time":end})
+        verify={"facts":[]}
+        check_common_facts(verify,assigned)
+        fact=next(f for f in verify["facts"] if f["field"]=="time")
+        self.assertEqual(fact["status"],"conflict")
+        self.assertEqual(fact["components"]["start_time"]["conflicts"],["N001"])
+        self.assertEqual(fact["components"]["end_time"]["status"],"supported")
+
+    def test_activity_does_not_corroborate_specific_entry(self):
+        assigned=[{"id":"N001","kind":"news","text":"正文：平台进入东海。","mission":{"value":None}},
+                  {"id":"O001","kind":"opinion","text":"正文：平台在东海持续活动。","mission":{"value":None}},
+                  {"id":"R001","kind":"radar","mission":{"value":None}}]
+        verify={"facts":[]}
+        check_common_facts(verify,assigned)
+        fact=next(f for f in verify["facts"] if f["field"]=="movement")
+        self.assertEqual(fact["claim"],"活动")
+        self.assertEqual(fact["source_values"]["N001"],"进入")
 
     def test_platform_spacing_does_not_hide_type(self):
         self.assertEqual(platform_tokens("歼 -35 舰载隐身战斗机"),platform_tokens("歼-35舰载隐身战斗机"))

@@ -9,6 +9,7 @@ from .assignment import maximum_assignment
 from .data import compact, country, minutes, platform_similarity, public_view, time_overlap
 from .geography import location_relation, normalize_location
 from .ollama_client import dump
+from .literal_facts import check_common_facts
 
 
 def embedding_text(source):
@@ -217,6 +218,8 @@ def apply_guards(group, news, opinion, radars, verification):
         blockers.append("联合活动有平台缺少已关联雷达活动")
     if not verification["same_event"]:
         blockers.append("模型未确认三源同一事件关联")
+    # Matrix rechecks do not depend on the model noticing contradictory task/clock/movement values.
+    check_common_facts(verification,assigned)
     # Recheck explicit platform, nationality and counts from immutable source extraction.
     # Preserve the model proposal; source omissions never become votes or counter-evidence.
     for i,p in enumerate(news["platforms"]):
@@ -282,7 +285,7 @@ def apply_guards(group, news, opinion, radars, verification):
                 rejected.append(sid)
             elif name=="movement" and source.get("movement") in {None,"未说明"}:
                 rejected.append(sid)
-            elif name=="time":
+            elif name=="time" and field.get("checked_by")!="literal_assertion_matrix":
                 import re
                 precise = bool(re.search(r"\d{1,2}[:：时]\d{1,2}",field["claim"]))
                 if precise and not (source.get("start_time") and source.get("end_time")):

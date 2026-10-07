@@ -29,7 +29,7 @@ def normalize_location(raw: str | None) -> dict:
                 "precision": "大范围" if region in {"东海", "南海", "黄海"} else "具体区域",
                 "mapping": "PDF第2页活动区域表", "transit": region in TRANSIT}
     # Unlisted named regions are Other; missing is deliberately not Other.
-    region=re.sub(r"(?:相关海域|海空域|海域|方向)$","",text) or text
+    region=re.sub(r"(?:相关海域|任务海域|海空域|海域|方向)$","",text) or text
     return {"raw": raw, "region": region, "direction": "其他", "precision": "原文区域",
             "mapping": "PDF未列入三大核心海域的区域归其他", "transit": False}
 
