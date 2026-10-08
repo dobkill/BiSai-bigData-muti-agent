@@ -5,7 +5,7 @@ import unittest
 from pathlib import Path
 from types import SimpleNamespace
 
-from event_matcher.agents import exact_quote, extract_sources, quantity_numbers
+from event_matcher.agents import exact_quote, extract_sources, quantity_numbers, verify_group
 from event_matcher.assignment import maximum_assignment
 from event_matcher.data import country, load_radar, load_texts, platform_similarity, platform_tokens
 from event_matcher.export import export_results
@@ -16,6 +16,25 @@ from event_matcher.matching import allocate, apply_guards, assignment_competitor
 
 
 class MatchingTests(unittest.TestCase):
+    def test_news_only_group_cannot_borrow_rejected_candidates_as_counterevidence(self):
+        news={"id":"N001","kind":"news","text":"正文：意大利1艘柯林斯级常规潜艇在长江口外海持续活动。",
+              "platforms":[{"name":"柯林斯级常规潜艇","country":"意大利","quantity":1}],
+              "location":normalize_location("长江口外海"),"mission":{"value":None},
+              "start_time":None,"end_time":None,"movement":"活动"}
+        alignment={"opinion_edges":[],"radar_edges":[{"candidate_id":"R036","platform_indices":[0],
+                   "relation":"different","confidence":.95,"reason":"雷达识别为澳大利亚"}]}
+        class NoModelClient:
+            def chat(self,*args,**kwargs):
+                raise AssertionError("没有第二类来源时不应请求跨来源核验")
+        verification=verify_group(NoModelClient(),news,None,[],alignment,[])
+        group={"id":"N001","opinion_id":None,"radar_ids":[],"radar_slots":{"0":None},"alignment":alignment}
+        result=apply_guards(group,news,None,[],verification)
+        self.assertEqual(result["status"],"不可信事件")
+        self.assertEqual(result["verification"]["verification_mode"],"single_source_insufficient")
+        self.assertFalse(result["verified_facts"])
+        self.assertTrue(all(f["status"]=="insufficient" for f in result["verification"]["facts"]))
+        self.assertFalse(any(f["conflicting_sources"] for f in result["verification"]["facts"]))
+
     def test_named_sea_airspace_preserves_the_sea_name(self):
         for name in ["菲律宾海","安达曼海","巴伦支海","阿拉伯海"]:
             with self.subTest(name=name):

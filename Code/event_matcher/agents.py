@@ -233,6 +233,16 @@ def align_source(client, news, opinions, radars, candidate_info, review_instruct
 
 def verify_group(client, news, opinion, radars, alignment, sibling_radars):
     assigned = [news] + ([opinion] if opinion else []) + radars
+    if len(assigned)==1:
+        # There is no cross-source comparison to ask the model to perform. In
+        # particular, rejected candidates in association reasons are not evidence.
+        fields=[(i,field) for i in range(len(news["platforms"])) for field in ["platform","country","quantity"]]
+        fields += [(-1,field) for field in ["location","time","mission","movement"]]
+        return {"same_event":False,"facts":[{"platform_index":i,"field":field,"claim":"待核验",
+                    "supporting_sources":[],"conflicting_sources":[],"status":"insufficient",
+                    "reason":"当前仅有新闻来源，无法进行跨来源核验"} for i,field in fields],
+                "unresolved_issues":[],"explanation":"仅有新闻来源，事件关联与跨来源事实均未确认",
+                "verification_mode":"single_source_insufficient"}
     allowed = {s["id"] for s in assigned}
     count = len(news["platforms"])
     output_schema=Verification.model_json_schema()
