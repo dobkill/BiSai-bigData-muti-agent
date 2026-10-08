@@ -48,6 +48,8 @@ COUNTRY_ALIASES = {"中国海军": "中国", "中国空军": "中国", "俄军":
 def country(value):
     if value is None:
         return None
+    if compact(str(value)).casefold() in {"", "null", "none", "nan", "unknown", "未说明", "未明确", "未知", "不明", "不详", "未识别", "缺失"}:
+        return None
     mapped = COUNTRY_ALIASES.get(value,value)
     names = [c for c in ["中国","韩国","日本","美国","俄罗斯","意大利","英国","澳大利亚","新西兰","德国","法国","菲律宾","越南","马来西亚","新加坡","印度","加拿大","台湾"] if c in mapped]
     return names[0] if len(names)==1 else mapped

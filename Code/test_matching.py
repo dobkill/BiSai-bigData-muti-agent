@@ -17,6 +17,26 @@ from event_matcher.matching import allocate, apply_guards, assignment_competitor
 
 
 class MatchingTests(unittest.TestCase):
+    def test_country_missing_value_strings_cannot_become_counterevidence(self):
+        for value in [None,"null","NULL","None","unknown","未说明","不详",""]:
+            self.assertIsNone(country(value))
+        self.assertEqual(country("马来西亚"),"马来西亚")
+        def source(sid,kind,nation):
+            return {"id":sid,"kind":kind,"platforms":[{"name":"A400M运输机","country":country(nation),"quantity":None}],
+                    "location":normalize_location("温州外海"),"mission":{"value":"战备警巡"},
+                    "start_time":"02:49","end_time":"04:14","movement":"活动"}
+        news,opinion,radar=source("N001","news","null"),source("O001","opinion","马来西亚"),source("R001","radar","马来西亚")
+        # Platform country is checked by apply_guards; exercise the full classification.
+        radar.update({"sheet":"飞机","anomalies":[],"row_count":10})
+        edge=lambda sid:{"candidate_id":sid,"platform_indices":[0],"relation":"same","confidence":.95,"reason":"同活动"}
+        group={"opinion_id":"O001","radar_ids":["R001"],"radar_slots":{"0":"R001"},"alignment":{"opinion_edges":[edge("O001")],"radar_edges":[edge("R001")]}}
+        facts=[{"platform_index":i,"field":field,"claim":claim,"supporting_sources":["O001","R001"],"conflicting_sources":[],"status":"supported","reason":"两源一致"}
+               for i,field,claim in [(0,"platform","A400M"),(0,"country","马来西亚"),(-1,"location","温州外海")]]
+        facts.append({"platform_index":0,"field":"quantity","claim":"","supporting_sources":[],"conflicting_sources":[],"status":"insufficient","reason":"未明确数量"})
+        result=apply_guards(group,news,opinion,[radar],{"same_event":True,"facts":facts,"unresolved_issues":[],"explanation":"共同活动"})
+        self.assertFalse(any(f["field"]=="country" and f["status"]=="conflict" for f in result["verification"]["facts"]))
+        self.assertEqual(result["status"],"可信事件")
+
     def test_near_tied_opinions_follow_selected_radar_when_news_has_no_task_or_clock(self):
         def source(sid,kind,place,mission=None,start=None,end=None,extra=False):
             platforms=[{"name":"阿基坦级导弹护卫舰","country":"法国","quantity":1}]
