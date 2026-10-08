@@ -32,7 +32,10 @@ def normalize_location(raw: str | None) -> dict:
                 "precision": "大范围" if region in {"东海", "南海", "黄海"} else "具体区域",
                 "mapping": "PDF第2页活动区域表", "transit": region in TRANSIT}
     # Unlisted named regions are Other; missing is deliberately not Other.
-    if text.endswith("空域") and text[:-2] in NAMED_SEAS:
+    nearby_sea=re.fullmatch(r"(.+(?:海峡|水道|湾|海|洋))(?:附近|周边)(?:(?:相关|任务)?(?:海空域|海域|空域))?",text)
+    if nearby_sea:
+        region=nearby_sea.group(1)
+    elif text.endswith("空域") and text[:-2] in NAMED_SEAS:
         region=text[:-2]
     else:
         region=re.sub(r"(?:相关海域|任务海域|相关空域|任务空域|海空域|海域|空域|方向|上空|一带)$","",text) or text

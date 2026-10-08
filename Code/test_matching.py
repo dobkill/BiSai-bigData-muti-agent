@@ -149,6 +149,15 @@ class MatchingTests(unittest.TestCase):
         self.assertEqual(location_relation(normalize_location("北大西洋"),normalize_location("北大西洋上空")),"same")
         self.assertEqual(location_relation(normalize_location("北大西洋上空"),normalize_location("南大西洋上空")),"different_named_regions")
 
+    def test_nearby_named_region_modifiers_preserve_the_place_and_other_regions(self):
+        for spelling in ["金兰湾附近", "金兰湾附近海域", "金兰湾周边相关海域", "金兰湾周边任务海空域"]:
+            location=normalize_location(spelling)
+            self.assertEqual(location["raw"],spelling)
+            self.assertEqual(location["region"],"金兰湾")
+            self.assertEqual(location_relation(normalize_location("金兰湾"),location),"same")
+        self.assertEqual(normalize_location("菲律宾海附近空域")["region"],"菲律宾海")
+        self.assertEqual(location_relation(normalize_location("金兰湾附近"),normalize_location("孟加拉湾附近海域")),"different_named_regions")
+
     def test_clock_quotes_support_whole_hours_without_inventing_minutes(self):
         self.assertEqual({value for match,value in clock_spans("17时35分至19时")},{17*60+35,19*60})
         self.assertEqual({value for match,value in clock_spans("19 时 35 分")},{19*60+35})
