@@ -1,0 +1,386 @@
+{
+  "role": "verification",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N015",
+      "kind": "news",
+      "title": "中国海军039A型潜艇与056A型护卫舰在东海中部执行反潜巡逻",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：中国海军039A型潜艇与056A型护卫舰在东海中部执行反潜巡逻\n正文：2025年5月1日17时02分至19时27分，中国海军039A型常规潜艇和056A型轻型护卫舰在东海中部围绕任务海域组织反潜巡逻，期间按计划保持机动并结合既定航线持续收集相关信息。\n\n主题词：中国海军  039A型常规潜艇  056A型轻型护卫舰  反潜巡逻\n",
+      "platforms": [
+        {
+          "name": "039A型常规潜艇",
+          "country": "中国",
+          "quantity": null,
+          "quote": "039A型常规潜艇",
+          "quantity_quote": "",
+          "country_raw": "中国"
+        },
+        {
+          "name": "056A型轻型护卫舰",
+          "country": "中国",
+          "quantity": null,
+          "quote": "056A型轻型护卫舰",
+          "quantity_quote": "",
+          "country_raw": "中国"
+        }
+      ],
+      "location": {
+        "raw": "东海中部",
+        "region": "东海中部",
+        "direction": "东海",
+        "precision": "具体区域",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "在东海中部"
+      },
+      "mission": {
+        "value": "反潜巡逻",
+        "quote": "执行反潜巡逻"
+      },
+      "start_time": "17:02",
+      "end_time": "19:27",
+      "movement": "活动",
+      "time_semantics": {
+        "interval": "reported_activity",
+        "start_asserted": false,
+        "end_asserted": false
+      }
+    },
+    "opinion": {
+      "id": "O048",
+      "kind": "opinion",
+      "title": "东海反潜巡逻常态化 039A型潜艇持续监视受关注",
+      "text": "时间：2025.5.1\n\n标题：东海反潜巡逻常态化 039A型潜艇持续监视受关注\n\n正文：据地区军事观察机构报道，2025年5月1日，中国一艘039A型常规潜艇在东海围绕任务海域组织反潜巡逻。该平台按计划保持机动并持续执行反潜巡逻，结合既定航线持续收集公开可观察信息。这一动向被视为中国海军强化区域侦巡与持续监视能力的体现。相关行动围绕指定海域保持巡逻或监视，有助于提升水下态势感知的连续性。\n",
+      "platforms": [
+        {
+          "name": "039A型常规潜艇",
+          "country": "中国",
+          "quantity": 1,
+          "quote": "一艘039A型常规潜艇",
+          "quantity_quote": "一艘039A型常规潜艇",
+          "country_raw": "中国"
+        }
+      ],
+      "location": {
+        "raw": "东海围绕任务海域",
+        "region": "东海",
+        "direction": "东海",
+        "precision": "大范围",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "在东海围绕任务海域"
+      },
+      "mission": {
+        "value": "反潜巡逻",
+        "quote": "组织反潜巡逻"
+      },
+      "start_time": null,
+      "end_time": null,
+      "movement": "活动",
+      "time_semantics": {
+        "interval": "reported_activity",
+        "start_asserted": false,
+        "end_asserted": false
+      }
+    },
+    "radars": [
+      {
+        "id": "R039",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "039A型常规潜艇",
+            "country": "中国",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-99D68A95107CA3",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "东海中部",
+          "region": "东海中部",
+          "direction": "东海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "东海中部",
+            "region": "东海中部",
+            "direction": "东海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "反潜巡逻",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "反潜巡逻"
+        ],
+        "start_time": "2025.05.01 17:02:00",
+        "end_time": "2025.05.01 19:27:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-99D68A95107CA3",
+        "sibling_ids": [],
+        "hull_values": [
+          "TYPE-039A"
+        ],
+        "country_values": [
+          "中国"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 11,
+        "time_semantics": {
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "identity_scope": "batch_is_not_unique_target",
+        "warnings": []
+      },
+      {
+        "id": "R042",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "056A型轻型护卫舰",
+            "country": "中国",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-A285C8EADAC3BB",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "东海中部",
+          "region": "东海中部",
+          "direction": "东海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "东海中部",
+            "region": "东海中部",
+            "direction": "东海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "反潜巡逻",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "反潜巡逻"
+        ],
+        "start_time": "2025.05.01 17:02:00",
+        "end_time": "2025.05.01 19:27:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-A285C8EADAC3BB",
+        "sibling_ids": [],
+        "hull_values": [
+          "TYPE-056A"
+        ],
+        "country_values": [
+          "中国"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 11,
+        "time_semantics": {
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "identity_scope": "batch_is_not_unique_target",
+        "warnings": []
+      }
+    ],
+    "association": {
+      "opinion_edges": [
+        {
+          "candidate_id": "O048",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.95,
+          "reason": "时间（2025.5.1）、地点（东海）、任务（反潜巡逻）及平台类型（039A 潜艇）完全一致。新闻明确提及"
+        }
+      ],
+      "radar_edges": [
+        {
+          "candidate_id": "R042",
+          "platform_indices": [
+            1
+          ],
+          "relation": "same",
+          "confidence": 1.0,
+          "reason": "时间区间（17:02-19:27）、地点（东海中部）、任务（反潜巡逻）及平台型号（056A）与新闻完全匹配，雷达数据为直接观测记录。"
+        },
+        {
+          "candidate_id": "R039",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 1.0,
+          "reason": "时间区间（17:02-19:27）、地点（东海中部）、任务（反潜巡逻）及平台型号（039A）与新闻完全匹配，雷达数据为直接观测记录。"
+        }
+      ],
+      "ambiguity": "无。所有高置信度候选在时空、身份及任务上均与新闻形成强互证关系。其他候选因地点（孟加拉湾、白令海）、平台型号不符或时间不重叠被排除。"
+    },
+    "same_batch_other_candidates": []
+  },
+  "result": {
+    "same_event": true,
+    "platforms": [
+      {
+        "platform_index": 0,
+        "platform": {
+          "claim": "039A 型常规潜艇",
+          "supporting_sources": [
+            "N015",
+            "O048",
+            "R039"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论及雷达 R039 均明确提及该型号，国籍均为中国"
+        },
+        "country": {
+          "claim": "中国",
+          "supporting_sources": [
+            "N015",
+            "O048",
+            "R039"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源一致确认国籍为中国"
+        },
+        "quantity": {
+          "claim": "1 艘",
+          "supporting_sources": [
+            "O048",
+            "R039"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论明确提及“一艘”，雷达 R039 数量列为 1，新闻未提具体数量但不构成冲突"
+        }
+      },
+      {
+        "platform_index": 1,
+        "platform": {
+          "claim": "056A 型轻型护卫舰",
+          "supporting_sources": [
+            "N015",
+            "R042"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻与雷达 R042 均明确提及该型号，舆论未提及但不构成反对"
+        },
+        "country": {
+          "claim": "中国",
+          "supporting_sources": [
+            "N015",
+            "R042"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻与雷达一致确认国籍为中国"
+        },
+        "quantity": {
+          "claim": "1 艘",
+          "supporting_sources": [
+            "R042"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "雷达 R042 数量列为 1，舆论未提及但不构成反对"
+        }
+      }
+    ],
+    "location": {
+      "claim": "东海中部",
+      "supporting_sources": [
+        "N015",
+        "R039",
+        "R042"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与两架雷达均明确指向“东海中部”，舆论提及“东海”可兼容"
+    },
+    "time": {
+      "claim": "2025 年 5 月 1 日 17:02-19:27",
+      "supporting_sources": [
+        "N015",
+        "R039",
+        "R042"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与两架雷达的时间起止完全一致，舆论仅提及日期"
+    },
+    "mission": {
+      "claim": "反潜巡逻",
+      "supporting_sources": [
+        "N015",
+        "O048",
+        "R039",
+        "R042"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "四源均明确记载任务为“反潜巡逻”"
+    },
+    "movement": {
+      "claim": "活动",
+      "supporting_sources": [
+        "N015",
+        "O048"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与舆论均描述为组织巡逻/保持机动，雷达未说明但不冲突"
+    },
+    "unresolved_issues": [],
+    "explanation": "三源（新闻、舆论、两架雷达）在平台型号、国籍、地点、时间及任务上高度一致。数量方面，舆论和雷达支持 1 艘，新闻虽未明示但无冲突。所有关键事实均有至少两类来源支持，无未消解冲突。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-08T00:05:12.7423649Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"same_event\": true, \"platforms\": [{\"platform_index\": 0, \"platform\": {\"claim\": \"039A 型常规潜艇\", \"supporting_sources\": [\"N015\", \"O048\", \"R039\"], \"conflicting_sources\": [],\"status\": \"supported\",\"reason\": \"新闻、舆论及雷达 R039 均明确提及该型号，国籍均为中国\"}, \"country\": {\"claim\": \"中国\", \"supporting_sources\": [\"N015\", \"O048\", \"R039\"], \"conflicting_sources\": [],\"status\": \"supported\",\"reason\": \"三源一致确认国籍为中国\"}, \"quantity\": {\"claim\": \"1 艘\", \"supporting_sources\": [\"O048\", \"R039\"], \"conflicting_sources\": [],\"status\": \"supported\",\"reason\": \"舆论明确提及“一艘”，雷达 R039 数量列为 1，新闻未提具体数量但不构成冲突\"}}, {\"platform_index\": 1, \"platform\": {\"claim\": \"056A 型轻型护卫舰\", \"supporting_sources\": [\"N015\", \"R042\"], \"conflicting_sources\": [],\"status\": \"supported\",\"reason\": \"新闻与雷达 R042 均明确提及该型号，舆论未提及但不构成反对\"}, \"country\": {\"claim\": \"中国\", \"supporting_sources\": [\"N015\", \"R042\"], \"conflicting_sources\": [],\"status\": \"supported\",\"reason\": \"新闻与雷达一致确认国籍为中国\"},\"quantity\": {\"claim\": \"1 艘\", \"supporting_sources\": [\"R042\"], \"conflicting_sources\": [],\"status\": \"supported\",\"reason\": \"雷达 R042 数量列为 1，舆论未提及但不构成反对\"}}], \"location\": {\"claim\": \"东海中部\", \"supporting_sources\": [\"N015\", \"R039\", \"R042\"], \"conflicting_sources\": [],\"status\": \"supported\",\"reason\": \"新闻与两架雷达均明确指向“东海中部”，舆论提及“东海”可兼容\"}, \"time\": {\"claim\": \"2025 年 5 月 1 日 17:02-19:27\", \"supporting_sources\": [\"N015\", \"R039\", \"R042\"], \"conflicting_sources\": [],\"status\": \"supported\",\"reason\": \"新闻与两架雷达的时间起止完全一致，舆论仅提及日期\"}, \"mission\": {\"claim\": \"反潜巡逻\", \"supporting_sources\": [\"N015\", \"O048\", \"R039\", \"R042\"], \"conflicting_sources\": [],\"status\": \"supported\",\"reason\": \"四源均明确记载任务为“反潜巡逻”\"}, \"movement\": {\"claim\": \"活动\", \"supporting_sources\": [\"N015\", \"O048\"], \"conflicting_sources\": [],\"status\": \"supported\",\"reason\": \"新闻与舆论均描述为组织巡逻/保持机动，雷达未说明但不冲突\"}, \"unresolved_issues\": [],\"explanation\": \"三源（新闻、舆论、两架雷达）在平台型号、国籍、地点、时间及任务上高度一致。数量方面，舆论和雷达支持 1 艘，新闻虽未明示但无冲突。所有关键事实均有至少两类来源支持，无未消解冲突。\"}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 15135785200,
+    "load_duration": 9144900,
+    "prompt_eval_count": 2557,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 890574000,
+    "eval_count": 752,
+    "eval_duration": 14078198000
+  }
+}

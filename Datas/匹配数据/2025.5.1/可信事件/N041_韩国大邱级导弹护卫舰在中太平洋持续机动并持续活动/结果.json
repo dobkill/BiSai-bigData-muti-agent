@@ -17,7 +17,7 @@
         ],
         "relation": "same",
         "confidence": 0.98,
-        "reason": "平台（韩国大邱级）、时间（2025.5.1 05:12-07:37）、地点（中太平洋）及任务性质完全一致，雷达数据 R049 进一步证实了该批号目标的同一性。"
+        "reason": "平台（韩国大邱级）、时间（2025.5.1 05:12-07:37）、地点（中太平洋）及任务性质完全一致，舆论报道与新闻正文内容高度重合。"
       },
       {
         "candidate_id": "O024",
@@ -26,7 +26,7 @@
         ],
         "relation": "different",
         "confidence": 0.95,
-        "reason": "虽然平台型号相同且日期一致，但地点（巴伦支海 vs 中太平洋）和时间段（08:37-10:07 vs 05:12-07:37）完全不同，属于不同活动。"
+        "reason": "虽然平台型号相同且日期一致，但地点为巴伦支海，时间区间（08:37-10:07）与新闻事件无重叠，属于不同活动。"
       },
       {
         "candidate_id": "O008",
@@ -34,8 +34,8 @@
           0
         ],
         "relation": "different",
-        "confidence": 0.99,
-        "reason": "平台型号（村雨号）、国家（日本）及地点（东海）均与新闻描述不符，时间虽有部分重叠但主体不同。"
+        "confidence": 0.95,
+        "reason": "平台型号不同（村雨号 vs 大邱级），地点为东海，虽时间有重叠但主体和区域均不匹配。"
       }
     ],
     "radar_edges": [
@@ -46,7 +46,7 @@
         ],
         "relation": "same",
         "confidence": 1.0,
-        "reason": "雷达数据 R049 的批号、平台（韩国大邱级）、时间区间（05:12-07:37）和地点（中太平洋）与新闻完全匹配，确认为同一活动。"
+        "reason": "雷达数据与新闻在平台（韩国大邱级）、时间（2025.05.01 05:12-07:37）、地点（中太平洋）及任务（海上监视侦察）上完全吻合，批号虽非唯一标识但时空身份线索充分相容。"
       },
       {
         "candidate_id": "R036",
@@ -55,7 +55,7 @@
         ],
         "relation": "different",
         "confidence": 0.95,
-        "reason": "平台型号虽同为韩国大邱级，但地点（巴伦支海）和时间段（08:37-10:07）与新闻描述的中太平洋活动明显不同。"
+        "reason": "平台型号相同且国籍一致，但地点为巴伦支海，时间区间（08:37-10:07）与新闻事件无重叠，任务也不同。"
       },
       {
         "candidate_id": "R045",
@@ -63,11 +63,11 @@
           0
         ],
         "relation": "different",
-        "confidence": 0.99,
-        "reason": "平台型号（中国 903A 补给舰）、国家及地点（冲绳海槽）均与新闻描述的韩国大邱级护卫舰在中太平洋的活动不符。"
+        "confidence": 0.95,
+        "reason": "平台型号不同（补给舰 vs 护卫舰），地点为冲绳海槽，时间虽有部分重叠但主体和区域均不匹配。"
       }
     ],
-    "ambiguity": "无，关键要素（平台、时间、地点）高度一致且有多源数据交叉验证。"
+    "ambiguity": "无显著歧义，核心候选关联证据充分。"
   },
   "candidates": {
     "opinion": [
@@ -167,6 +167,7 @@
     "opinion": [],
     "radar": []
   },
+  "radar_context": [],
   "verification": {
     "same_event": true,
     "facts": [
@@ -185,7 +186,7 @@
         "model_proposal": {
           "platform_index": 0,
           "field": "platform",
-          "claim": "大邱级导弹护卫舰",
+          "claim": "韩国大邱级导弹护卫舰",
           "supporting_sources": [
             "N041",
             "O030",
@@ -193,7 +194,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻、舆论、雷达三源均确认为韩国大邱级导弹护卫舰，无冲突。"
+          "reason": "新闻、舆论、雷达三源均明确指向韩国大邱级导弹护卫舰，无冲突。"
         },
         "checked_by": "explicit_source_matrix",
         "supporting_source_types": [
@@ -225,7 +226,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻、舆论、雷达三源均明确标注国籍为韩国，无冲突。"
+          "reason": "三源一致确认国籍为韩国。"
         },
         "checked_by": "explicit_source_matrix",
         "supporting_source_types": [
@@ -286,7 +287,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "三源均指向中太平洋区域，舆论表述“中太平洋海域”与新闻、雷达一致。"
+          "reason": "三源均报告活动区域为中太平洋，舆论表述“中太平洋海域”与新闻、雷达的“中太平洋”等价。"
         },
         "checked_by": "literal_assertion_matrix",
         "source_values": {
@@ -326,7 +327,7 @@
       {
         "platform_index": -1,
         "field": "time",
-        "claim": "起点 05:12，终点 07:37",
+        "claim": "共同观测/报道时段 05:12—07:37（非完整活动起止断言）",
         "supporting_sources": [
           "N041",
           "O030",
@@ -334,7 +335,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突；起点明示值：{'N041': '05:12', 'O030': '05:12', 'R049': '05:12'}；终点明示值：{'N041': '07:37', 'O030': '07:37', 'R049': '07:37'}",
+        "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N041': {'start': '05:12', 'end': '07:37', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O030': {'start': '05:12', 'end': '07:37', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R049': {'start': '05:12', 'end': '07:37', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
         "model_proposal": {
           "platform_index": -1,
           "field": "time",
@@ -346,42 +347,35 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻、舆论、雷达三源时间起止点完全一致。"
+          "reason": "新闻、舆论、雷达三源的时间起止点完全一致。"
         },
         "checked_by": "literal_assertion_matrix",
-        "components": {
-          "start_time": {
-            "value": "05:12",
-            "support": [
-              "N041",
-              "O030",
-              "R049"
-            ],
-            "conflicts": [],
-            "status": "supported",
-            "source_values": {
-              "N041": "05:12",
-              "O030": "05:12",
-              "R049": "05:12"
-            },
-            "radar_batch_observations": []
+        "source_values": {
+          "N041": {
+            "start": "05:12",
+            "end": "07:37",
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
           },
-          "end_time": {
-            "value": "07:37",
-            "support": [
-              "N041",
-              "O030",
-              "R049"
-            ],
-            "conflicts": [],
-            "status": "supported",
-            "source_values": {
-              "N041": "07:37",
-              "O030": "07:37",
-              "R049": "07:37"
-            },
-            "radar_batch_observations": []
+          "O030": {
+            "start": "05:12",
+            "end": "07:37",
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
+          },
+          "R049": {
+            "start": "05:12",
+            "end": "07:37",
+            "interval": "observation_coverage",
+            "start_asserted": false,
+            "end_asserted": false
           }
+        },
+        "asserted_boundaries": {
+          "start": {},
+          "end": {}
         },
         "supporting_source_types": [
           "news",
@@ -410,7 +404,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "舆论明确任务为“海上监视侦察”，雷达任务列亦为“海上监视侦察”；新闻仅描述“持续机动并持续活动”未明示具体任务，但结合另两源可印证。"
+          "reason": "舆论和雷达明确任务为“海上监视侦察”；新闻虽未显式写出具体科目，但描述了“围绕任务区域保持机动”及“持续活动”，结合两源支持可印证该训练/活动性质。"
         },
         "checked_by": "literal_assertion_matrix",
         "source_values": {
@@ -448,7 +442,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻称“持续机动”，舆论称“保持机动”，雷达未说明但无冲突，两源支持。"
+          "reason": "新闻称“持续机动并持续活动”，舆论称“保持机动并持续执行...监视侦察”，两者共同支持活动状态。雷达未说明具体运动形态但不构成冲突。"
         },
         "checked_by": "literal_assertion_matrix",
         "source_values": {
@@ -464,7 +458,9 @@
     ],
     "unresolved_issues": [],
     "explanation": "三类来源已关联，纳入结论的事实获得至少两类独立来源支持，未发现未消解明示反证。",
-    "model_explanation": "新闻、舆论、雷达三源在平台型号、国籍、数量、地点、时间及任务性质上高度一致，形成完整证据链。新闻虽未明示具体任务，但舆论与雷达均确认为“海上监视侦察”，满足可信度要求。无未消解冲突。"
+    "model_unresolved_issues": [],
+    "reconciled_model_issues": [],
+    "model_explanation": "三源（新闻、舆论、雷达）在平台型号、国籍、数量、地点、时间及核心任务上高度一致，形成完整证据链。新闻虽未详述具体科目，但结合舆论和雷达的明确描述，足以支持“海上监视侦察”这一结论，无未消解冲突。"
   },
   "reasons": [],
   "status": "可信事件",
@@ -484,7 +480,7 @@
       "model_proposal": {
         "platform_index": 0,
         "field": "platform",
-        "claim": "大邱级导弹护卫舰",
+        "claim": "韩国大邱级导弹护卫舰",
         "supporting_sources": [
           "N041",
           "O030",
@@ -492,7 +488,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "新闻、舆论、雷达三源均确认为韩国大邱级导弹护卫舰，无冲突。"
+        "reason": "新闻、舆论、雷达三源均明确指向韩国大邱级导弹护卫舰，无冲突。"
       },
       "checked_by": "explicit_source_matrix",
       "supporting_source_types": [
@@ -524,7 +520,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "新闻、舆论、雷达三源均明确标注国籍为韩国，无冲突。"
+        "reason": "三源一致确认国籍为韩国。"
       },
       "checked_by": "explicit_source_matrix",
       "supporting_source_types": [
@@ -585,7 +581,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "三源均指向中太平洋区域，舆论表述“中太平洋海域”与新闻、雷达一致。"
+        "reason": "三源均报告活动区域为中太平洋，舆论表述“中太平洋海域”与新闻、雷达的“中太平洋”等价。"
       },
       "checked_by": "literal_assertion_matrix",
       "source_values": {
@@ -625,7 +621,7 @@
     {
       "platform_index": -1,
       "field": "time",
-      "claim": "起点 05:12，终点 07:37",
+      "claim": "共同观测/报道时段 05:12—07:37（非完整活动起止断言）",
       "supporting_sources": [
         "N041",
         "O030",
@@ -633,7 +629,7 @@
       ],
       "conflicting_sources": [],
       "status": "supported",
-      "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突；起点明示值：{'N041': '05:12', 'O030': '05:12', 'R049': '05:12'}；终点明示值：{'N041': '07:37', 'O030': '07:37', 'R049': '07:37'}",
+      "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N041': {'start': '05:12', 'end': '07:37', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O030': {'start': '05:12', 'end': '07:37', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R049': {'start': '05:12', 'end': '07:37', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
       "model_proposal": {
         "platform_index": -1,
         "field": "time",
@@ -645,42 +641,35 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "新闻、舆论、雷达三源时间起止点完全一致。"
+        "reason": "新闻、舆论、雷达三源的时间起止点完全一致。"
       },
       "checked_by": "literal_assertion_matrix",
-      "components": {
-        "start_time": {
-          "value": "05:12",
-          "support": [
-            "N041",
-            "O030",
-            "R049"
-          ],
-          "conflicts": [],
-          "status": "supported",
-          "source_values": {
-            "N041": "05:12",
-            "O030": "05:12",
-            "R049": "05:12"
-          },
-          "radar_batch_observations": []
+      "source_values": {
+        "N041": {
+          "start": "05:12",
+          "end": "07:37",
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
         },
-        "end_time": {
-          "value": "07:37",
-          "support": [
-            "N041",
-            "O030",
-            "R049"
-          ],
-          "conflicts": [],
-          "status": "supported",
-          "source_values": {
-            "N041": "07:37",
-            "O030": "07:37",
-            "R049": "07:37"
-          },
-          "radar_batch_observations": []
+        "O030": {
+          "start": "05:12",
+          "end": "07:37",
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "R049": {
+          "start": "05:12",
+          "end": "07:37",
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
         }
+      },
+      "asserted_boundaries": {
+        "start": {},
+        "end": {}
       },
       "supporting_source_types": [
         "news",
@@ -709,7 +698,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "舆论明确任务为“海上监视侦察”，雷达任务列亦为“海上监视侦察”；新闻仅描述“持续机动并持续活动”未明示具体任务，但结合另两源可印证。"
+        "reason": "舆论和雷达明确任务为“海上监视侦察”；新闻虽未显式写出具体科目，但描述了“围绕任务区域保持机动”及“持续活动”，结合两源支持可印证该训练/活动性质。"
       },
       "checked_by": "literal_assertion_matrix",
       "source_values": {
@@ -747,7 +736,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "新闻称“持续机动”，舆论称“保持机动”，雷达未说明但无冲突，两源支持。"
+        "reason": "新闻称“持续机动并持续活动”，舆论称“保持机动并持续执行...监视侦察”，两者共同支持活动状态。雷达未说明具体运动形态但不构成冲突。"
       },
       "checked_by": "literal_assertion_matrix",
       "source_values": {

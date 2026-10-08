@@ -12,12 +12,10 @@
     "opinion_edges": [
       {
         "candidate_id": "O013",
-        "platform_indices": [
-          0
-        ],
+        "platform_indices": [],
         "relation": "different",
         "confidence": 0.95,
-        "reason": "任务类型不同：新闻为'对海突击训练'，候选 O013 为'舰载机起降训练'；时间区间无重叠（20:09-22:34 vs 05:23-07:48）。"
+        "reason": "任务类型冲突：新闻为'对海突击训练'，候选 O013 明确为'舰载机起降训练'。虽同属意大利 F-35B 且在南海同日，但具体科目不同，且时间无重叠（05:23-07:48 vs 20:09-22:34），视为不同活动。"
       },
       {
         "candidate_id": "O017",
@@ -26,14 +24,14 @@
         ],
         "relation": "same",
         "confidence": 0.85,
-        "reason": "任务、平台、地点（永暑礁属于南海方向）、时间（同一天）完全一致。虽未提及具体礁盘，但'南海方向'涵盖永暑礁，且任务描述高度吻合，视为同一活动报道。"
+        "reason": "核心要素高度一致：新闻平台索引[0]为意大利 F-35B，候选 O017 描述完全匹配（意大利、F-35B、对海突击训练、南海方向）。时间上新闻有精确区间，候选仅提日期，无冲突。根据'缺失不是冲突'原则，判定为同一活动。"
       },
       {
         "candidate_id": "O002",
         "platform_indices": [],
         "relation": "different",
         "confidence": 0.98,
-        "reason": "平台完全不同（苏 -30SM vs F-35B），国籍不同（俄罗斯 vs 意大利），地点不同（黄岩岛 vs 永暑礁）。"
+        "reason": "平台国籍冲突：新闻为意大利空军，候选 O002 为俄罗斯空天军。虽时间地点有重叠且任务相似，但主体完全不同，属于不同活动。"
       }
     ],
     "radar_edges": [
@@ -44,7 +42,7 @@
         ],
         "relation": "same",
         "confidence": 0.98,
-        "reason": "时间、任务、平台、数量完全一致。坐标位于南海（永暑礁附近海域），虽地点字段缺失但辅助召回方向匹配，确认为同一活动。"
+        "reason": "时空与任务完全吻合：新闻平台索引[0]为意大利 F-35B，候选 R012 描述一致（意大利、F-35B、对海突击训练）。时间区间（20:09-22:34）及坐标（南海永暑礁区域）均精确匹配，确认为同一事件。"
       },
       {
         "candidate_id": "R027",
@@ -53,17 +51,17 @@
         ],
         "relation": "different",
         "confidence": 0.95,
-        "reason": "任务不同（舰载机起降 vs 对海突击），时间无重叠（凌晨 vs 晚间）。"
+        "reason": "任务与时间冲突：新闻平台索引[0]为意大利 F-35B，候选 R027 虽机型相同但任务为'舰载机起降训练'且时间为 05:23-07:48，与新闻时段无重叠。判定为同日同机型但在不同科目或海域的另一场活动。"
       },
       {
         "candidate_id": "R005",
         "platform_indices": [],
         "relation": "different",
         "confidence": 0.99,
-        "reason": "平台、国籍、任务均完全不同。"
+        "reason": "平台国籍与型号冲突：新闻为意大利 F-35B，候选 R005 为澳大利亚 E-7A 预警机。虽时间重叠且同在南海，但主体完全不同。"
       }
     ],
-    "ambiguity": "O017 仅提及'南海方向'未明确永暑礁，但结合时间任务和新闻内容可推断为同一活动；R012 坐标辅助召回方向与新闻一致，确认为同一次活动。"
+    "ambiguity": "无。R012 提供了精确的坐标和任务描述，足以锁定新闻中的具体活动；O017 因缺乏具体时间信息存在微小歧义，但基于任务一致性仍判定为 same。"
   },
   "candidates": {
     "opinion": [
@@ -171,6 +169,7 @@
     "opinion": [],
     "radar": []
   },
+  "radar_context": [],
   "verification": {
     "same_event": true,
     "facts": [
@@ -189,7 +188,7 @@
         "model_proposal": {
           "platform_index": 0,
           "field": "platform",
-          "claim": "F-35B短距起降战斗机",
+          "claim": "F-35B 短距起降战斗机",
           "supporting_sources": [
             "N047",
             "O017",
@@ -197,7 +196,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "三源（新闻、舆论、雷达）均明确提及为 F-35B 短距起降战斗机，无冲突。"
+          "reason": "三源（新闻、舆论、雷达）均明确指向 F-35B"
         },
         "checked_by": "explicit_source_matrix",
         "supporting_source_types": [
@@ -229,7 +228,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "三源（新闻、舆论、雷达）均明确标注国籍为意大利，无冲突。"
+          "reason": "三源（新闻、舆论、雷达）均明确指向意大利空军/国籍"
         },
         "checked_by": "explicit_source_matrix",
         "supporting_source_types": [
@@ -259,7 +258,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "舆论和雷达均明确记录数量为 2 架；新闻虽未显式说明数量，但提及“相关平台之间的行动衔接”且与两源一致，不视为冲突。"
+          "reason": "舆论与雷达均明确提及数量为 2，新闻未说明数量但不构成冲突"
         },
         "checked_by": "explicit_source_matrix",
         "supporting_source_types": [
@@ -283,11 +282,12 @@
           "field": "location",
           "claim": "永暑礁附近海域",
           "supporting_sources": [
-            "N047"
+            "N047",
+            "R012"
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻明确为“永暑礁附近海域”；舆论的“南海方向”涵盖该区域，构成支持；雷达坐标位于南海且辅助召回匹配，虽地点字段缺失但不构成冲突。"
+          "reason": "新闻与雷达坐标（南海区域）支持该具体地点，舆论的“南海方向”为兼容描述"
         },
         "checked_by": "literal_assertion_matrix",
         "source_values": {
@@ -318,56 +318,53 @@
       {
         "platform_index": -1,
         "field": "time",
-        "claim": "起点 20:09，终点 22:34",
+        "claim": "共同观测/报道时段 20:09—22:34（非完整活动起止断言）",
         "supporting_sources": [
           "N047",
           "R012"
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突；起点明示值：{'N047': '20:09', 'R012': '20:09'}；终点明示值：{'N047': '22:34', 'R012': '22:34'}",
+        "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N047': {'start': '20:09', 'end': '22:34', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O017': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R012': {'start': '20:09', 'end': '22:34', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
         "model_proposal": {
           "platform_index": -1,
           "field": "time",
-          "claim": "2025 年 5 月 1 日 20:09-22:34",
+          "claim": "2025-05-01 20:09 - 22:34",
           "supporting_sources": [
             "N047",
             "R012"
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻和雷达均精确记录起止时间为 20:09 至 22:34；舆论仅提及日期，未反对具体时刻。"
+          "reason": "新闻与雷达观测时间完全一致，舆论仅提及日期无冲突"
         },
         "checked_by": "literal_assertion_matrix",
-        "components": {
-          "start_time": {
-            "value": "20:09",
-            "support": [
-              "N047",
-              "R012"
-            ],
-            "conflicts": [],
-            "status": "supported",
-            "source_values": {
-              "N047": "20:09",
-              "R012": "20:09"
-            },
-            "radar_batch_observations": []
+        "source_values": {
+          "N047": {
+            "start": "20:09",
+            "end": "22:34",
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
           },
-          "end_time": {
-            "value": "22:34",
-            "support": [
-              "N047",
-              "R012"
-            ],
-            "conflicts": [],
-            "status": "supported",
-            "source_values": {
-              "N047": "22:34",
-              "R012": "22:34"
-            },
-            "radar_batch_observations": []
+          "O017": {
+            "start": null,
+            "end": null,
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
+          },
+          "R012": {
+            "start": "20:09",
+            "end": "22:34",
+            "interval": "observation_coverage",
+            "start_asserted": false,
+            "end_asserted": false
           }
+        },
+        "asserted_boundaries": {
+          "start": {},
+          "end": {}
         },
         "supporting_source_types": [
           "news",
@@ -397,7 +394,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "三源均明确记录任务为“对海突击训练”，描述高度一致。"
+          "reason": "三源均明确描述为对海突击训练"
         },
         "checked_by": "literal_assertion_matrix",
         "source_values": {
@@ -434,11 +431,12 @@
           "claim": "活动",
           "supporting_sources": [
             "N047",
-            "O017"
+            "O017",
+            "R012"
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻和舆论均描述为训练活动；雷达未说明 movement 字段，但不构成冲突。"
+          "reason": "三源均确认为活动状态"
         },
         "checked_by": "literal_assertion_matrix",
         "source_values": {
@@ -466,11 +464,12 @@
           "field": "location",
           "claim": "永暑礁附近海域",
           "supporting_sources": [
-            "N047"
+            "N047",
+            "R012"
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻明确为“永暑礁附近海域”；舆论的“南海方向”涵盖该区域，构成支持；雷达坐标位于南海且辅助召回匹配，虽地点字段缺失但不构成冲突。"
+          "reason": "新闻与雷达坐标（南海区域）支持该具体地点，舆论的“南海方向”为兼容描述"
         },
         "supporting_source_types": [
           "news"
@@ -479,7 +478,9 @@
     ],
     "unresolved_issues": [],
     "explanation": "三类来源已关联，纳入结论的事实获得至少两类独立来源支持，未发现未消解明示反证。",
-    "model_explanation": "三源在平台型号、国籍、任务类型及时间上完全一致。数量由舆论和雷达共同确认为 2 架，新闻虽未明示但无冲突。地点上新闻最精确（永暑礁附近），舆论范围覆盖（南海方向），雷达坐标辅助匹配，整体事实链完整且无未消解冲突。"
+    "model_unresolved_issues": [],
+    "reconciled_model_issues": [],
+    "model_explanation": "新闻、舆论、雷达三源在平台型号（F-35B）、国籍（意大利）、任务（对海突击训练）及时间上高度一致。数量由舆论和雷达共同支持为 2 架，地点由新闻具体描述和雷达坐标范围共同支持。无未消解冲突。"
   },
   "reasons": [],
   "status": "可信事件",
@@ -499,7 +500,7 @@
       "model_proposal": {
         "platform_index": 0,
         "field": "platform",
-        "claim": "F-35B短距起降战斗机",
+        "claim": "F-35B 短距起降战斗机",
         "supporting_sources": [
           "N047",
           "O017",
@@ -507,7 +508,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "三源（新闻、舆论、雷达）均明确提及为 F-35B 短距起降战斗机，无冲突。"
+        "reason": "三源（新闻、舆论、雷达）均明确指向 F-35B"
       },
       "checked_by": "explicit_source_matrix",
       "supporting_source_types": [
@@ -539,7 +540,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "三源（新闻、舆论、雷达）均明确标注国籍为意大利，无冲突。"
+        "reason": "三源（新闻、舆论、雷达）均明确指向意大利空军/国籍"
       },
       "checked_by": "explicit_source_matrix",
       "supporting_source_types": [
@@ -569,7 +570,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "舆论和雷达均明确记录数量为 2 架；新闻虽未显式说明数量，但提及“相关平台之间的行动衔接”且与两源一致，不视为冲突。"
+        "reason": "舆论与雷达均明确提及数量为 2，新闻未说明数量但不构成冲突"
       },
       "checked_by": "explicit_source_matrix",
       "supporting_source_types": [
@@ -593,11 +594,12 @@
         "field": "location",
         "claim": "永暑礁附近海域",
         "supporting_sources": [
-          "N047"
+          "N047",
+          "R012"
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "新闻明确为“永暑礁附近海域”；舆论的“南海方向”涵盖该区域，构成支持；雷达坐标位于南海且辅助召回匹配，虽地点字段缺失但不构成冲突。"
+        "reason": "新闻与雷达坐标（南海区域）支持该具体地点，舆论的“南海方向”为兼容描述"
       },
       "checked_by": "literal_assertion_matrix",
       "source_values": {
@@ -628,56 +630,53 @@
     {
       "platform_index": -1,
       "field": "time",
-      "claim": "起点 20:09，终点 22:34",
+      "claim": "共同观测/报道时段 20:09—22:34（非完整活动起止断言）",
       "supporting_sources": [
         "N047",
         "R012"
       ],
       "conflicting_sources": [],
       "status": "supported",
-      "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突；起点明示值：{'N047': '20:09', 'R012': '20:09'}；终点明示值：{'N047': '22:34', 'R012': '22:34'}",
+      "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N047': {'start': '20:09', 'end': '22:34', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O017': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R012': {'start': '20:09', 'end': '22:34', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
       "model_proposal": {
         "platform_index": -1,
         "field": "time",
-        "claim": "2025 年 5 月 1 日 20:09-22:34",
+        "claim": "2025-05-01 20:09 - 22:34",
         "supporting_sources": [
           "N047",
           "R012"
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "新闻和雷达均精确记录起止时间为 20:09 至 22:34；舆论仅提及日期，未反对具体时刻。"
+        "reason": "新闻与雷达观测时间完全一致，舆论仅提及日期无冲突"
       },
       "checked_by": "literal_assertion_matrix",
-      "components": {
-        "start_time": {
-          "value": "20:09",
-          "support": [
-            "N047",
-            "R012"
-          ],
-          "conflicts": [],
-          "status": "supported",
-          "source_values": {
-            "N047": "20:09",
-            "R012": "20:09"
-          },
-          "radar_batch_observations": []
+      "source_values": {
+        "N047": {
+          "start": "20:09",
+          "end": "22:34",
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
         },
-        "end_time": {
-          "value": "22:34",
-          "support": [
-            "N047",
-            "R012"
-          ],
-          "conflicts": [],
-          "status": "supported",
-          "source_values": {
-            "N047": "22:34",
-            "R012": "22:34"
-          },
-          "radar_batch_observations": []
+        "O017": {
+          "start": null,
+          "end": null,
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "R012": {
+          "start": "20:09",
+          "end": "22:34",
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
         }
+      },
+      "asserted_boundaries": {
+        "start": {},
+        "end": {}
       },
       "supporting_source_types": [
         "news",
@@ -707,7 +706,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "三源均明确记录任务为“对海突击训练”，描述高度一致。"
+        "reason": "三源均明确描述为对海突击训练"
       },
       "checked_by": "literal_assertion_matrix",
       "source_values": {
@@ -744,11 +743,12 @@
         "claim": "活动",
         "supporting_sources": [
           "N047",
-          "O017"
+          "O017",
+          "R012"
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "新闻和舆论均描述为训练活动；雷达未说明 movement 字段，但不构成冲突。"
+        "reason": "三源均确认为活动状态"
       },
       "checked_by": "literal_assertion_matrix",
       "source_values": {

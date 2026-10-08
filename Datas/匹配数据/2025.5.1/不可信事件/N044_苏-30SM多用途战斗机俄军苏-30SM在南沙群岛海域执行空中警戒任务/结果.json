@@ -17,7 +17,7 @@
         ],
         "relation": "same",
         "confidence": 0.95,
-        "reason": "时间区间（18:01-19:31）、地点（南沙群岛海域）、机型（苏 -30SM）及任务（空中警戒/持续活动）完全一致。数量差异（2 架 vs 3 架）在赛题数据允许误差范围内，且雷达数据 R019 佐证了该时段存在 2 架目标，故判定为同一活动报道。"
+        "reason": "时间区间（18:01-19:31）、地点（南沙群岛海域）、平台型号（苏 -30SM）及任务（空中警戒/持续活动）完全一致。数量差异（新闻 2 架 vs 舆论 3 架）属于数据误差，不影响事件同一性判断。"
       },
       {
         "candidate_id": "O036",
@@ -26,7 +26,7 @@
         ],
         "relation": "different",
         "confidence": 0.98,
-        "reason": "时间区间（02:27-04:52）与新闻（18:01-19:31）无重叠，属于同一天不同时段的活动。"
+        "reason": "时间区间完全不同（新闻 18:01-19:31 vs O036 02:27-04:52），且任务描述虽有相似但时段无重叠，属于不同次活动。"
       },
       {
         "candidate_id": "O002",
@@ -34,8 +34,8 @@
           0
         ],
         "relation": "different",
-        "confidence": 0.96,
-        "reason": "时间区间（20:31-22:56）与新闻不重叠，且地点具体为黄岩岛海域，虽同属南海但非同一具体任务区域。"
+        "confidence": 0.98,
+        "reason": "时间区间完全不同（新闻 18:01-19:31 vs O002 20:31-22:56），且地点具体到黄岩岛海域，与南沙群岛海域不符，属于不同次活动。"
       }
     ],
     "radar_edges": [
@@ -45,8 +45,8 @@
           0
         ],
         "relation": "same",
-        "confidence": 0.99,
-        "reason": "时间（2025.05.01 18:01-19:31）、地点坐标范围（南海/南沙方向）、机型、数量（2 架）及任务（空中警戒）与新闻完全匹配，确认为同一活动的数据源。"
+        "confidence": 0.98,
+        "reason": "时间区间（18:01-19:31）、平台型号（苏 -30SM）、数量（2 架）及任务（空中警戒）与新闻完全匹配。坐标辅助指向南海，虽未验证但与其他强线索相容。"
       },
       {
         "candidate_id": "R026",
@@ -54,8 +54,8 @@
           0
         ],
         "relation": "different",
-        "confidence": 0.97,
-        "reason": "时间区间（02:27-04:52）与新闻不重叠，属于同一天不同时段的活动。"
+        "confidence": 0.95,
+        "reason": "时间区间（02:27-04:52）与新闻无重叠，任务为战备警巡，属于不同时段的活动。"
       },
       {
         "candidate_id": "R024",
@@ -63,11 +63,11 @@
           0
         ],
         "relation": "different",
-        "confidence": 0.96,
-        "reason": "时间区间（20:31-22:56）与新闻不重叠，且任务为对海突击训练，地点坐标指向黄岩岛附近，属于不同活动。"
+        "confidence": 0.95,
+        "reason": "时间区间（20:31-22:56）与新闻无重叠，任务为对海突击训练，属于不同时段的活动。"
       }
     ],
-    "ambiguity": "无。关键要素（时间、地点、机型、任务）高度一致，数量微小差异可解释为统计口径或数据误差，非冲突。"
+    "ambiguity": "无。所有关键要素（时间、地点、平台、任务）在 O019 和 R019 中与新闻高度一致，数量微小差异可解释为统计误差，足以确认同一事件。其他候选因时间或地点明显冲突排除。"
   },
   "candidates": {
     "opinion": [
@@ -159,6 +159,7 @@
     "opinion": [],
     "radar": []
   },
+  "radar_context": [],
   "verification": {
     "same_event": true,
     "facts": [
@@ -251,7 +252,7 @@
             "O019"
           ],
           "status": "supported",
-          "reason": "新闻与雷达明确支持 2 架，舆论虽提及 3 架但被雷达数据（客观观测）及新闻原文否定，且任务细节高度吻合，判定为两源支持。"
+          "reason": "新闻与雷达明确支持 2 架，舆论称 3 架。依据核验规则，数量未说明不能猜 1，且存在明确冲突（2 vs 3），故 status 为 supported 但需记录冲突来源；结论采信多数或更精确源（此处新闻与雷达均为直接观测/报告，舆论为媒体观察，取 2 架）。"
         },
         "checked_by": "explicit_source_matrix",
         "supporting_source_types": [
@@ -276,12 +277,11 @@
           "claim": "南沙群岛海域",
           "supporting_sources": [
             "N044",
-            "O019",
-            "R019"
+            "O019"
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻与舆论均明确提及“南沙群岛海域”，雷达坐标范围（北纬 9.85-10.34，东经 113.91-114.14）地理上位于南沙群岛范围内，三源一致支持。"
+          "reason": "新闻与舆论均明确提及“南沙群岛海域”，雷达坐标辅助指向南海且未验证，三源在区域层级一致。"
         },
         "checked_by": "literal_assertion_matrix",
         "source_values": {
@@ -312,7 +312,7 @@
       {
         "platform_index": -1,
         "field": "time",
-        "claim": "起点 18:01，终点 19:31",
+        "claim": "共同观测/报道时段 18:01—19:31（非完整活动起止断言）",
         "supporting_sources": [
           "N044",
           "O019",
@@ -320,11 +320,11 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突；起点明示值：{'N044': '18:01', 'O019': '18:01', 'R019': '18:01'}；终点明示值：{'N044': '19:31', 'O019': '19:31', 'R019': '19:31'}",
+        "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N044': {'start': '18:01', 'end': '19:31', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O019': {'start': '18:01', 'end': '19:31', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R019': {'start': '18:01', 'end': '19:31', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
         "model_proposal": {
           "platform_index": -1,
           "field": "time",
-          "claim": "2025 年 5 月 1 日 18:01 - 19:31",
+          "claim": "2025-05-01 18:01 - 19:31",
           "supporting_sources": [
             "N044",
             "O019",
@@ -332,42 +332,35 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻、舆论及雷达数据在起止时间上完全一致。"
+          "reason": "三源时间区间完全一致。"
         },
         "checked_by": "literal_assertion_matrix",
-        "components": {
-          "start_time": {
-            "value": "18:01",
-            "support": [
-              "N044",
-              "O019",
-              "R019"
-            ],
-            "conflicts": [],
-            "status": "supported",
-            "source_values": {
-              "N044": "18:01",
-              "O019": "18:01",
-              "R019": "18:01"
-            },
-            "radar_batch_observations": []
+        "source_values": {
+          "N044": {
+            "start": "18:01",
+            "end": "19:31",
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
           },
-          "end_time": {
-            "value": "19:31",
-            "support": [
-              "N044",
-              "O019",
-              "R019"
-            ],
-            "conflicts": [],
-            "status": "supported",
-            "source_values": {
-              "N044": "19:31",
-              "O019": "19:31",
-              "R019": "19:31"
-            },
-            "radar_batch_observations": []
+          "O019": {
+            "start": "18:01",
+            "end": "19:31",
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
+          },
+          "R019": {
+            "start": "18:01",
+            "end": "19:31",
+            "interval": "observation_coverage",
+            "start_asserted": false,
+            "end_asserted": false
           }
+        },
+        "asserted_boundaries": {
+          "start": {},
+          "end": {}
         },
         "supporting_source_types": [
           "news",
@@ -396,7 +389,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻明确为“空中警戒”，雷达任务列亦标注“空中警戒”。舆论表述为“持续活动/机动”，属于泛称，不冲突且被具体任务涵盖。"
+          "reason": "新闻与雷达明确为“空中警戒”，舆论描述为“持续活动”（泛称），不冲突且可印证。"
         },
         "checked_by": "literal_assertion_matrix",
         "source_values": {
@@ -427,14 +420,14 @@
         "model_proposal": {
           "platform_index": -1,
           "field": "movement",
-          "claim": "活动（围绕任务海域组织空中警戒）",
+          "claim": "活动/机动",
           "supporting_sources": [
             "N044",
             "O019"
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻描述“围绕...组织...保持机动”，舆论描述“持续活动/连续机动”，三源均确认存在机动活动。"
+          "reason": "新闻称“活动”，舆论称“连续机动”，语义兼容。"
         },
         "checked_by": "literal_assertion_matrix",
         "source_values": {
@@ -450,7 +443,19 @@
     ],
     "unresolved_issues": [],
     "explanation": "程序核验未通过：quantity关键事实冲突：程序按已关联平台的明示字段复核：{'N044': 2, 'O019': 3, 'R019': 2}；缺失不支持也不反对",
-    "model_explanation": "新闻、舆论与雷达数据在时间、地点、机型、任务及运动状态上高度一致，确认为同一事件。数量差异（2 架 vs 3 架）以客观雷达数据和新闻原文为准，舆论的 3 架说法被证伪或视为统计误差，不构成未消解冲突。"
+    "model_unresolved_issues": [
+      "数量存在明确冲突：新闻与雷达支持 2 架，舆论支持 3 架。"
+    ],
+    "reconciled_model_issues": [
+      {
+        "model_issue": "数量存在明确冲突：新闻与雷达支持 2 架，舆论支持 3 架。",
+        "fields": [
+          "quantity"
+        ],
+        "decision": "字段反证由程序事实矩阵保留；不采用模型多数票消解或重复自由文本说明"
+      }
+    ],
+    "model_explanation": "事件同一性确认：时间、地点、平台型号、任务类型三源高度一致。主要未消解问题为飞机数量（2 架 vs 3 架），新闻与雷达数据一致且更具体，舆论可能存在统计误差或包含其他目标，暂采信 2 架。"
   },
   "reasons": [
     "quantity关键事实冲突：程序按已关联平台的明示字段复核：{'N044': 2, 'O019': 3, 'R019': 2}；缺失不支持也不反对"
@@ -538,12 +543,11 @@
         "claim": "南沙群岛海域",
         "supporting_sources": [
           "N044",
-          "O019",
-          "R019"
+          "O019"
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "新闻与舆论均明确提及“南沙群岛海域”，雷达坐标范围（北纬 9.85-10.34，东经 113.91-114.14）地理上位于南沙群岛范围内，三源一致支持。"
+        "reason": "新闻与舆论均明确提及“南沙群岛海域”，雷达坐标辅助指向南海且未验证，三源在区域层级一致。"
       },
       "checked_by": "literal_assertion_matrix",
       "source_values": {
@@ -574,7 +578,7 @@
     {
       "platform_index": -1,
       "field": "time",
-      "claim": "起点 18:01，终点 19:31",
+      "claim": "共同观测/报道时段 18:01—19:31（非完整活动起止断言）",
       "supporting_sources": [
         "N044",
         "O019",
@@ -582,11 +586,11 @@
       ],
       "conflicting_sources": [],
       "status": "supported",
-      "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突；起点明示值：{'N044': '18:01', 'O019': '18:01', 'R019': '18:01'}；终点明示值：{'N044': '19:31', 'O019': '19:31', 'R019': '19:31'}",
+      "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N044': {'start': '18:01', 'end': '19:31', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O019': {'start': '18:01', 'end': '19:31', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R019': {'start': '18:01', 'end': '19:31', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
       "model_proposal": {
         "platform_index": -1,
         "field": "time",
-        "claim": "2025 年 5 月 1 日 18:01 - 19:31",
+        "claim": "2025-05-01 18:01 - 19:31",
         "supporting_sources": [
           "N044",
           "O019",
@@ -594,42 +598,35 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "新闻、舆论及雷达数据在起止时间上完全一致。"
+        "reason": "三源时间区间完全一致。"
       },
       "checked_by": "literal_assertion_matrix",
-      "components": {
-        "start_time": {
-          "value": "18:01",
-          "support": [
-            "N044",
-            "O019",
-            "R019"
-          ],
-          "conflicts": [],
-          "status": "supported",
-          "source_values": {
-            "N044": "18:01",
-            "O019": "18:01",
-            "R019": "18:01"
-          },
-          "radar_batch_observations": []
+      "source_values": {
+        "N044": {
+          "start": "18:01",
+          "end": "19:31",
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
         },
-        "end_time": {
-          "value": "19:31",
-          "support": [
-            "N044",
-            "O019",
-            "R019"
-          ],
-          "conflicts": [],
-          "status": "supported",
-          "source_values": {
-            "N044": "19:31",
-            "O019": "19:31",
-            "R019": "19:31"
-          },
-          "radar_batch_observations": []
+        "O019": {
+          "start": "18:01",
+          "end": "19:31",
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "R019": {
+          "start": "18:01",
+          "end": "19:31",
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
         }
+      },
+      "asserted_boundaries": {
+        "start": {},
+        "end": {}
       },
       "supporting_source_types": [
         "news",
@@ -658,7 +655,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "新闻明确为“空中警戒”，雷达任务列亦标注“空中警戒”。舆论表述为“持续活动/机动”，属于泛称，不冲突且被具体任务涵盖。"
+        "reason": "新闻与雷达明确为“空中警戒”，舆论描述为“持续活动”（泛称），不冲突且可印证。"
       },
       "checked_by": "literal_assertion_matrix",
       "source_values": {
@@ -689,14 +686,14 @@
       "model_proposal": {
         "platform_index": -1,
         "field": "movement",
-        "claim": "活动（围绕任务海域组织空中警戒）",
+        "claim": "活动/机动",
         "supporting_sources": [
           "N044",
           "O019"
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "新闻描述“围绕...组织...保持机动”，舆论描述“持续活动/连续机动”，三源均确认存在机动活动。"
+        "reason": "新闻称“活动”，舆论称“连续机动”，语义兼容。"
       },
       "checked_by": "literal_assertion_matrix",
       "source_values": {

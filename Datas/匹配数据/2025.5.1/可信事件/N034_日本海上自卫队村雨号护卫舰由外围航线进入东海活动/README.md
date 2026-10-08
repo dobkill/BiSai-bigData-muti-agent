@@ -34,7 +34,7 @@
 | 0 | country | 日本 | supported | N034,O008,R047 |  | 程序按已关联平台的明示字段复核：{'N034': '日本', 'O008': '日本', 'R047': '日本'}；缺失不支持也不反对 |
 | 0 | quantity | 1艘 | insufficient | R047 |  | 程序按已关联平台的明示字段复核：{'R047': 1}；缺失不支持也不反对 |
 | -1 | location | 东海 | supported | N034,O008,R047 |  | 复核明示地点和PDF包含关系：{'N034': '东海', 'O008': '东海', 'R047': '东海'}；同方向不等于同一具体区域，未验证坐标不作为反证 |
-| -1 | time | 起点 05:07，终点 07:32 | supported | O008,R047 |  | 逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突；起点明示值：{'O008': '05:07', 'R047': '05:07'}；终点明示值：{'O008': '07:32', 'R047': '07:32'} |
+| -1 | time | 共同观测/报道时段 05:07—07:32（非完整活动起止断言） | supported | O008,R047 |  | 分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N034': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O008': {'start': '05:07', 'end': '07:32', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R047': {'start': '05:07', 'end': '07:32', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}} |
 | -1 | mission | 编队警戒部署 | supported | O008,R047 |  | 原文明示任务：{'N034': [], 'O008': ['编队警戒部署'], 'R047': ['编队警戒部署']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决 |
 | -1 | movement | 活动 | supported | N034,O008 |  | 活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values |
 

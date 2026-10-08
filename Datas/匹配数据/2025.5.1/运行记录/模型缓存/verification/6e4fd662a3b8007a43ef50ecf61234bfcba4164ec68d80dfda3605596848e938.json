@@ -1,0 +1,318 @@
+{
+  "role": "verification",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N025",
+      "kind": "news",
+      "title": "澳大利亚E-7A预警机在渚碧礁附近海域持续活动",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：澳大利亚E-7A预警机在渚碧礁附近海域持续活动\n正文：2025年5月1日21时31分至22时12分，澳大利亚空军E-7A“楔尾”预警与控制机在渚碧礁附近海域执行预警指挥任务，期间围绕任务海域保持机动并持续收集相关信息。\n\n主题词：澳大利亚  E-7A  预警指挥  渚碧礁\n",
+      "platforms": [
+        {
+          "name": "E-7A“楔尾”预警与控制机",
+          "country": "澳大利亚",
+          "quantity": null,
+          "quote": "澳大利亚空军E-7A“楔尾”预警与控制机",
+          "quantity_quote": "",
+          "country_raw": "澳大利亚"
+        }
+      ],
+      "location": {
+        "raw": "渚碧礁附近海域",
+        "region": "渚碧礁附近海域",
+        "direction": "南海",
+        "precision": "具体区域",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "在渚碧礁附近海域"
+      },
+      "mission": {
+        "value": "预警指挥任务",
+        "quote": "执行预警指挥任务"
+      },
+      "start_time": "21:31",
+      "end_time": "22:12",
+      "movement": "活动",
+      "time_semantics": {
+        "interval": "reported_activity",
+        "start_asserted": false,
+        "end_asserted": false
+      }
+    },
+    "opinion": {
+      "id": "O012",
+      "kind": "opinion",
+      "title": "澳军两架E-7A预警机南海执行预警指挥任务引关注",
+      "text": "时间：2025.5.1\n\n标题：澳军两架E-7A预警机南海执行预警指挥任务引关注\n\n正文：据地区军事观察机构报道，2025年5月1日，澳大利亚空军两架E-7A“楔尾”预警与控制机在南海方向执行预警指挥任务，于20时47分开始围绕任务海域组织行动。相关动态显示，该型平台具备较强的空中态势感知与持续监视能力，其活动有助于在既定航线收集公开可观察信息。有关讨论关注，此类区域侦巡行动正成为域外力量介入南海的常态化方式。\n",
+      "platforms": [
+        {
+          "name": "E-7A“楔尾”预警与控制机",
+          "country": "澳大利亚",
+          "quantity": 2,
+          "quote": "两架E-7A“楔尾”预警与控制机",
+          "quantity_quote": "两架",
+          "country_raw": "澳大利亚"
+        }
+      ],
+      "location": {
+        "raw": "南海方向",
+        "region": "南海",
+        "direction": "南海",
+        "precision": "大范围",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "在南海方向执行预警指挥任务"
+      },
+      "mission": {
+        "value": "预警指挥任务",
+        "quote": "执行预警指挥任务"
+      },
+      "start_time": "20:47",
+      "end_time": null,
+      "movement": "活动",
+      "time_semantics": {
+        "interval": "reported_activity",
+        "start_asserted": true,
+        "end_asserted": false
+      }
+    },
+    "radars": [
+      {
+        "id": "R005",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "E-7A“楔尾”预警与控制机",
+            "country": "澳大利亚",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-1E8932535F4C00",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "预警指挥",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "预警指挥"
+        ],
+        "start_time": "2025.05.01 20:47:00",
+        "end_time": "2025.05.01 22:12:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            114.0365,
+            114.309
+          ],
+          "latitude_range": [
+            10.8438,
+            11.0568
+          ],
+          "median": [
+            114.1968,
+            10.9882
+          ],
+          "origins": [
+            [
+              114.3492,
+              10.8698
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [
+            "南海"
+          ],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [],
+        "batch": "AIR-1E8932535F4C00",
+        "sibling_ids": [],
+        "hull_values": [],
+        "country_values": [
+          "澳大利亚"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 10,
+        "time_semantics": {
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "identity_scope": "batch_is_not_unique_target",
+        "warnings": []
+      }
+    ],
+    "association": {
+      "opinion_edges": [
+        {
+          "candidate_id": "O012",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.95,
+          "reason": "平台（澳大利亚 E-7A）、任务（预警指挥）、时间（20:47-22:12 包含新闻时段 21:31-22:12）及地点（南海/渚碧礁附近）高度一致。数量差异（2 架 vs 未明确提及具体数量但语境暗示多机或单架活动）在混合检索中常见，不足以否定关联。"
+        },
+        {
+          "candidate_id": "O011",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.98,
+          "reason": "平台类型完全不同（驱逐舰 vs 预警机），国籍不同（美国 vs 澳大利亚），任务不明确但地点重合，属于同一海域的不同活动。"
+        },
+        {
+          "candidate_id": "O027",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.98,
+          "reason": "平台类型不同（霍巴特级驱逐舰 vs E-7A），任务不同（搜救训练 vs 预警指挥），虽同属澳大利亚且时间地点大致重合，但具体活动性质和平台身份不匹配。"
+        }
+      ],
+      "radar_edges": [
+        {
+          "candidate_id": "R005",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.92,
+          "reason": "平台（澳大利亚 E-7A）、任务（预警指挥）完全一致。时间区间（20:47-22:12）完整覆盖新闻报道时段（21:31-22:12）。地点虽雷达数据缺失具体名称但方向为南海，与新闻“渚碧礁附近海域”相容。数量差异（雷达显示 2 架，新闻未明示数量）不影响事件同一性判断。"
+        },
+        {
+          "candidate_id": "R012",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.99,
+          "reason": "平台国籍不同（意大利 F-35B vs 澳大利亚 E-7A），任务不同（对海突击训练 vs 预警指挥），虽时间地点有重叠，但主体身份冲突。"
+        },
+        {
+          "candidate_id": "R024",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.99,
+          "reason": "平台国籍不同（俄罗斯苏 -30SM vs 澳大利亚 E-7A），任务不同，虽时间地点重合，但主体身份冲突。"
+        }
+      ],
+      "ambiguity": "雷达数据 R005 未提供具体海域名称，仅标注方向为南海，需依赖新闻文本确认具体为渚碧礁附近；新闻中未明确提及 E-7A 的具体数量（2 架），与雷达数据存在轻微信息不对称，但不影响事件关联结论。"
+    },
+    "same_batch_other_candidates": []
+  },
+  "result": {
+    "same_event": true,
+    "platforms": [
+      {
+        "platform_index": 0,
+        "platform": {
+          "claim": "澳大利亚 E-7A“楔尾”预警与控制机",
+          "supporting_sources": [
+            "N025",
+            "O012",
+            "R005"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均确认为澳大利亚 E-7A 预警机，无冲突。"
+        },
+        "country": {
+          "claim": "澳大利亚",
+          "supporting_sources": [
+            "N025",
+            "O012",
+            "R005"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源一致指向澳大利亚空军。"
+        },
+        "quantity": {
+          "claim": "2 架",
+          "supporting_sources": [
+            "O012",
+            "R005"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论明确提及“两架”，雷达批号 AIR-1E8932535F4C00 显示数量值为 2；新闻未明示具体数量但不构成反对，三源中两类支持成立。"
+        }
+      }
+    ],
+    "location": {
+      "claim": "渚碧礁附近海域",
+      "supporting_sources": [
+        "N025"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻明确为“渚碧礁附近海域”；舆论“南海方向”与雷达“南海”方向均兼容该具体区域，无冲突。"
+    },
+    "time": {
+      "claim": "2025 年 5 月 1 日 21:31-22:12",
+      "supporting_sources": [
+        "N025"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻明确起止时间；舆论开始时间 20:47 包含新闻时段，雷达观测覆盖 20:47-22:12 完整包含新闻时段，三源在报道活动区间上无冲突。"
+    },
+    "mission": {
+      "claim": "预警指挥任务",
+      "supporting_sources": [
+        "N025",
+        "O012",
+        "R005"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "三源均明确提及“预警指挥”或“预警指挥任务”，完全一致。"
+    },
+    "movement": {
+      "claim": "活动",
+      "supporting_sources": [
+        "N025",
+        "O012"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻称“保持机动并持续收集信息”，舆论称“组织行动”，雷达未说明但无冲突，三源均支持存在活动。"
+    },
+    "unresolved_issues": [],
+    "explanation": "事件关联成立：平台、国籍、任务、地点方向及时间区间在三源（新闻、舆论、雷达）中高度一致且无明确冲突。数量方面，舆论和雷达均确认为 2 架，新闻虽未明示但不构成反证，满足可信度要求。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-08T00:07:24.4463959Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"same_event\": true, \"platforms\": [{\"platform_index\": 0, \"platform\": {\"claim\": \"澳大利亚 E-7A“楔尾”预警与控制机\", \"supporting_sources\": [\"N025\", \"O012\", \"R005\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻、舆论、雷达三源均确认为澳大利亚 E-7A 预警机，无冲突。\"}, \"country\": {\"claim\": \"澳大利亚\", \"supporting_sources\": [\"N025\", \"O012\", \"R005\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源一致指向澳大利亚空军。\"}, \"quantity\": {\"claim\": \"2 架\", \"supporting_sources\": [\"O012\", \"R005\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"舆论明确提及“两架”，雷达批号 AIR-1E8932535F4C00 显示数量值为 2；新闻未明示具体数量但不构成反对，三源中两类支持成立。\"}}], \"location\": {\"claim\": \"渚碧礁附近海域\", \"supporting_sources\": [\"N025\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻明确为“渚碧礁附近海域”；舆论“南海方向”与雷达“南海”方向均兼容该具体区域，无冲突。\"}, \"time\": {\"claim\": \"2025 年 5 月 1 日 21:31-22:12\", \"supporting_sources\": [\"N025\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻明确起止时间；舆论开始时间 20:47 包含新闻时段，雷达观测覆盖 20:47-22:12 完整包含新闻时段，三源在报道活动区间上无冲突。\"}, \"mission\": {\"claim\": \"预警指挥任务\", \"supporting_sources\": [\"N025\", \"O012\", \"R005\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源均明确提及“预警指挥”或“预警指挥任务”，完全一致。\"}, \"movement\": {\"claim\": \"活动\", \"supporting_sources\": [\"N025\", \"O012\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻称“保持机动并持续收集信息”，舆论称“组织行动”，雷达未说明但无冲突，三源均支持存在活动。\"}, \"unresolved_issues\": [],\"explanation\": \"事件关联成立：平台、国籍、任务、地点方向及时间区间在三源（新闻、舆论、雷达）中高度一致且无明确冲突。数量方面，舆论和雷达均确认为 2 架，新闻虽未明示但不构成反证，满足可信度要求。\"}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 13229869900,
+    "load_duration": 11408400,
+    "prompt_eval_count": 2531,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 915659000,
+    "eval_count": 651,
+    "eval_duration": 12129866000
+  }
+}

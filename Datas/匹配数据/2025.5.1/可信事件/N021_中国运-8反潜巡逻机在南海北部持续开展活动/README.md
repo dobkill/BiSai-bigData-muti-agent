@@ -34,7 +34,7 @@
 | 0 | country | 中国 | supported | N021,O003,R009 |  | 程序按已关联平台的明示字段复核：{'N021': '中国', 'O003': '中国', 'R009': '中国'}；缺失不支持也不反对 |
 | 0 | quantity | 2架 | supported | N021,R009 |  | 程序按已关联平台的明示字段复核：{'N021': 2, 'R009': 2}；缺失不支持也不反对 |
 | -1 | location | 南海 | supported | N021,O003 |  | 复核明示地点和PDF包含关系：{'N021': '南海北部', 'O003': '南海'}；同方向不等于同一具体区域，未验证坐标不作为反证 |
-| -1 | time | 起点 11:59，终点 13:24 | supported | O003,R009 |  | 逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突；起点明示值：{'O003': '11:59', 'R009': '11:59'}；终点明示值：{'O003': '13:24', 'R009': '13:24'} |
+| -1 | time | 共同观测/报道时段 11:59—13:24（非完整活动起止断言） | supported | O003,R009 |  | 分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N021': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O003': {'start': '11:59', 'end': '13:24', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R009': {'start': '11:59', 'end': '13:24', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}} |
 | -1 | mission | 海上侦察巡逻 | supported | O003,R009 |  | 原文明示任务：{'N021': [], 'O003': ['海上侦察巡逻'], 'R009': ['海上侦察巡逻']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决 |
 | -1 | movement | 活动 | supported | N021,O003 |  | 活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values |
 | -1 | location_detail | 南海北部 | insufficient | N021 |  | 具体区域仅一类来源明示；结论使用共同获支持的方向，细节保留待核实 |

@@ -1,0 +1,298 @@
+{
+  "role": "verification",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N028",
+      "kind": "news",
+      "title": "马来西亚海军莱库号导弹护卫舰在温州外海执行海上护航",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：马来西亚海军莱库号导弹护卫舰在温州外海执行海上护航\n正文：2025年5月1日，马来西亚海军莱库号导弹护卫舰在温州外海活动，于14时54分至16时47分围绕任务海域组织海上护航，期间按计划保持机动并完成相关保障环节衔接。\n\n主题词：马来西亚  莱库号  温州外海  海上护航\n",
+      "platforms": [
+        {
+          "name": "莱库号导弹护卫舰",
+          "country": "马来西亚",
+          "quantity": null,
+          "quote": "马来西亚海军莱库号导弹护卫舰",
+          "quantity_quote": "",
+          "country_raw": "马来西亚"
+        }
+      ],
+      "location": {
+        "raw": "温州外海",
+        "region": "温州外海",
+        "direction": "东海",
+        "precision": "具体区域",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "在温州外海"
+      },
+      "mission": {
+        "value": "海上护航",
+        "quote": "执行海上护航"
+      },
+      "start_time": "14:54",
+      "end_time": "16:47",
+      "movement": "活动",
+      "time_semantics": {
+        "interval": "reported_activity",
+        "start_asserted": false,
+        "end_asserted": false
+      }
+    },
+    "opinion": {
+      "id": "O040",
+      "kind": "opinion",
+      "title": "马来西亚海军“莱库号”护卫舰赴东海执行海上护航",
+      "text": "时间：2025.5.1\n\n标题：马来西亚海军“莱库号”护卫舰赴东海执行海上护航\n\n正文：据今日头条报道，马来西亚海军“莱库号”导弹护卫舰于2025年5月1日14时22分起在东海方向执行海上护航任务。该舰围绕任务编组实施保障行动，按计划完成相关保障环节衔接。围绕此次部署的讨论，多聚焦于马来西亚海军在关键水道持续保障与行动续航能力的展现。\n",
+      "platforms": [
+        {
+          "name": "莱库号",
+          "country": "马来西亚",
+          "quantity": null,
+          "quote": "莱库号”导弹护卫舰",
+          "quantity_quote": "",
+          "country_raw": "马来西亚"
+        }
+      ],
+      "location": {
+        "raw": "东海方向",
+        "region": "东海",
+        "direction": "东海",
+        "precision": "大范围",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "在东海方向"
+      },
+      "mission": {
+        "value": "海上护航",
+        "quote": "执行海上护航任务"
+      },
+      "start_time": "14:22",
+      "end_time": null,
+      "movement": "活动",
+      "time_semantics": {
+        "interval": "reported_activity",
+        "start_asserted": true,
+        "end_asserted": false
+      }
+    },
+    "radars": [
+      {
+        "id": "R053",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "莱库号导弹护卫舰",
+            "country": "马来西亚",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-F96B2703727F38",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "温州外海",
+          "region": "温州外海",
+          "direction": "东海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "温州外海",
+            "region": "温州外海",
+            "direction": "东海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "海上护航",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "海上护航"
+        ],
+        "start_time": "2025.05.01 14:22:00",
+        "end_time": "2025.05.01 16:47:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-F96B2703727F38",
+        "sibling_ids": [],
+        "hull_values": [
+          "F30"
+        ],
+        "country_values": [
+          "马来西亚"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 10,
+        "time_semantics": {
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "identity_scope": "batch_is_not_unique_target",
+        "warnings": []
+      }
+    ],
+    "association": {
+      "opinion_edges": [
+        {
+          "candidate_id": "O040",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.95,
+          "reason": "平台身份完全一致（马来西亚莱库号），任务相同（海上护航），地点高度重合（温州外海属于东海方向），时间区间包含关系明确（新闻14:54-16:47在舆论14:22起之后）。"
+        },
+        {
+          "candidate_id": "O006",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.98,
+          "reason": "平台国籍不同（中国 vs 马来西亚），海域完全不同（白令海 vs 温州外海/东海），任务不同（反潜巡逻 vs 海上护航）。"
+        },
+        {
+          "candidate_id": "O029",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.98,
+          "reason": "平台国籍不同（美国 vs 马来西亚），虽然地点和时间有重叠，但主体完全不同。"
+        }
+      ],
+      "radar_edges": [
+        {
+          "candidate_id": "R053",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.98,
+          "reason": "雷达数据与新闻在平台（马来西亚莱库号）、地点（温州外海）、任务（海上护航）及时间区间上完全匹配，且坐标辅助信息一致。"
+        },
+        {
+          "candidate_id": "R046",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.95,
+          "reason": "平台国籍不同（日本 vs 马来西亚），任务不同（实弹射击训练 vs 海上护航），地点虽同属东海但具体区域描述不同。"
+        },
+        {
+          "candidate_id": "R031",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.95,
+          "reason": "平台国籍不同（美国 vs 马来西亚），时间区间不重叠，任务虽同为护航但主体不同。"
+        }
+      ],
+      "ambiguity": "无显著歧义，核心证据链完整。"
+    },
+    "same_batch_other_candidates": []
+  },
+  "result": {
+    "same_event": true,
+    "platforms": [
+      {
+        "platform_index": 0,
+        "platform": {
+          "claim": "马来西亚莱库号导弹护卫舰",
+          "supporting_sources": [
+            "N028",
+            "O040",
+            "R053"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均明确指向马来西亚莱库号，无冲突。"
+        },
+        "country": {
+          "claim": "马来西亚",
+          "supporting_sources": [
+            "N028",
+            "O040",
+            "R053"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源一致确认国籍为马来西亚。"
+        },
+        "quantity": {
+          "claim": "1 架/艘",
+          "supporting_sources": [
+            "R053"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "雷达明确记录数量为 1，新闻与舆论虽未显式说明数量但提及单舰行动且无多舰描述，结合雷达数据确认为 1。"
+        }
+      }
+    ],
+    "location": {
+      "claim": "温州外海",
+      "supporting_sources": [
+        "N028",
+        "R053"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与雷达均明确标注“温州外海”，舆论表述为“东海方向”（包含温州外海），两源支持具体区域。"
+    },
+    "time": {
+      "claim": "2025 年 5 月 1 日 14:22-16:47",
+      "supporting_sources": [
+        "O040",
+        "R053"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "舆论与雷达提供了完整的起止时间（14:22-16:47），新闻时间区间（14:54-16:47）包含于内，三源共同支持该活动时间段。"
+    },
+    "mission": {
+      "claim": "海上护航",
+      "supporting_sources": [
+        "N028",
+        "O040",
+        "R053"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻、舆论、雷达三源均明确记录任务为“海上护航”。"
+    },
+    "movement": {
+      "claim": "活动/机动",
+      "supporting_sources": [
+        "N028",
+        "O040"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻描述“保持机动”，舆论描述“实施保障行动”，两源支持舰船处于活动状态。"
+    },
+    "unresolved_issues": [],
+    "explanation": "三源（新闻、舆论、雷达）在平台身份、国籍、数量、地点、时间及任务上高度一致，形成完整证据链，无未消解冲突。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-08T00:08:01.3747169Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"same_event\": true, \"platforms\": [{\"platform_index\": 0, \"platform\": {\"claim\": \"马来西亚莱库号导弹护卫舰\", \"supporting_sources\": [\"N028\", \"O040\", \"R053\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻、舆论、雷达三源均明确指向马来西亚莱库号，无冲突。\"}, \"country\": {\"claim\": \"马来西亚\", \"supporting_sources\": [\"N028\", \"O040\", \"R053\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源一致确认国籍为马来西亚。\"}, \"quantity\": {\"claim\": \"1 架/艘\", \"supporting_sources\": [\"R053\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"雷达明确记录数量为 1，新闻与舆论虽未显式说明数量但提及单舰行动且无多舰描述，结合雷达数据确认为 1。\"}}], \"location\": {\"claim\": \"温州外海\", \"supporting_sources\": [\"N028\", \"R053\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻与雷达均明确标注“温州外海”，舆论表述为“东海方向”（包含温州外海），两源支持具体区域。\"}, \"time\": {\"claim\": \"2025 年 5 月 1 日 14:22-16:47\", \"supporting_sources\": [\"O040\", \"R053\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"舆论与雷达提供了完整的起止时间（14:22-16:47），新闻时间区间（14:54-16:47）包含于内，三源共同支持该活动时间段。\"}, \"mission\": {\"claim\": \"海上护航\", \"supporting_sources\": [\"N028\", \"O040\", \"R053\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻、舆论、雷达三源均明确记录任务为“海上护航”。\"}, \"movement\": {\"claim\": \"活动/机动\", \"supporting_sources\": [\"N028\", \"O040\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻描述“保持机动”，舆论描述“实施保障行动”，两源支持舰船处于活动状态。\"}, \"unresolved_issues\": [],\"explanation\":\"三源（新闻、舆论、雷达）在平台身份、国籍、数量、地点、时间及任务上高度一致，形成完整证据链，无未消解冲突。\"}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 12072139000,
+    "load_duration": 13377800,
+    "prompt_eval_count": 2196,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 861738000,
+    "eval_count": 596,
+    "eval_duration": 11009823000
+  }
+}

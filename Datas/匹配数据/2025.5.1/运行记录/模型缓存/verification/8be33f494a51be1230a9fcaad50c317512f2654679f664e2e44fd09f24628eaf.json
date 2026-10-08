@@ -1,0 +1,302 @@
+{
+  "role": "verification",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N005",
+      "kind": "news",
+      "title": "中国海军903A型补给舰在万安滩海域持续活动",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：中国海军903A型补给舰在万安滩海域持续活动\n正文：2025年5月1日，中国海军1艘903A型综合补给舰在万安滩海域持续活动，围绕任务区域保持机动，行动范围保持在指定任务海域。\n\n主题词：中国海军  903A型综合补给舰  万安滩海域\n",
+      "platforms": [
+        {
+          "name": "903A型综合补给舰",
+          "country": "中国",
+          "quantity": 1,
+          "quote": "1艘903A型综合补给舰",
+          "quantity_quote": "1艘903A型综合补给舰",
+          "country_raw": "中国"
+        }
+      ],
+      "location": {
+        "raw": "万安滩海域",
+        "region": "万安滩海域",
+        "direction": "南海",
+        "precision": "具体区域",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "在万安滩海域持续活动"
+      },
+      "mission": {
+        "value": null,
+        "quote": ""
+      },
+      "start_time": null,
+      "end_time": null,
+      "movement": "活动",
+      "time_semantics": {
+        "interval": "reported_activity",
+        "start_asserted": false,
+        "end_asserted": false
+      }
+    },
+    "opinion": {
+      "id": "O016",
+      "kind": "opinion",
+      "title": "中国903A型补给舰南海远海训练时段引发流程熟悉讨论",
+      "text": "时间：2025.5.1\n\n标题：中国903A型补给舰南海远海训练时段引发流程熟悉讨论\n\n正文：据央视新闻报道，2025年5月1日2时54分至4时19分，中国一艘903A型综合补给舰在南海方向按计划组织了远海训练。有关讨论关注到，该舰围绕既定科目完成相关平台之间的行动衔接，这一过程有助于检验任务组织和训练协同水平。\n",
+      "platforms": [
+        {
+          "name": "903A型综合补给舰",
+          "country": "中国",
+          "quantity": 1,
+          "quote": "中国一艘903A型综合补给舰",
+          "quantity_quote": "一艘903A型综合补给舰",
+          "country_raw": "中国"
+        }
+      ],
+      "location": {
+        "raw": "南海方向",
+        "region": "南海",
+        "direction": "南海",
+        "precision": "大范围",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "在南海方向"
+      },
+      "mission": {
+        "value": "远海训练",
+        "quote": "组织了远海训练"
+      },
+      "start_time": "02:54",
+      "end_time": "04:19",
+      "movement": "活动",
+      "time_semantics": {
+        "interval": "reported_activity",
+        "start_asserted": false,
+        "end_asserted": false
+      }
+    },
+    "radars": [
+      {
+        "id": "R044",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "903A型综合补给舰",
+            "country": "中国",
+            "quantity": 2,
+            "quote": "舰船工作表，批号SHIP-A9774AF7379E78",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "万安滩海域",
+          "region": "万安滩海域",
+          "direction": "南海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "万安滩海域",
+            "region": "万安滩海域",
+            "direction": "南海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "远海训练",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "远海训练"
+        ],
+        "start_time": "2025.05.01 02:54:00",
+        "end_time": "2025.05.01 04:19:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-A9774AF7379E78",
+        "sibling_ids": [],
+        "hull_values": [
+          "TYPE-903A"
+        ],
+        "country_values": [
+          "中国"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 10,
+        "time_semantics": {
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "identity_scope": "batch_is_not_unique_target",
+        "warnings": []
+      }
+    ],
+    "association": {
+      "opinion_edges": [
+        {
+          "candidate_id": "O016",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.95,
+          "reason": "平台（903A 型补给舰）、国家（中国）、日期（2025.5.1）及具体区域（万安滩海域）完全一致。舆论 O016 提到的时间区间（02:54-04:19）与雷达数据 R044 高度吻合，且任务性质（远海训练/持续活动）相容。尽管新闻未明确提及“训练”，但“围绕任务区域保持机动”与舆论描述的“组织远海训练”在语义上兼容，属于同一具体活动。"
+        },
+        {
+          "candidate_id": "O015",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.98,
+          "reason": "虽然平台型号、日期相同，但地点冲突：新闻明确为“万安滩海域”（南海），而 O015 描述为“东海海域”。同一艘舰艇在同一时间不可能同时出现在两个相距甚远的海域，故判定为不同活动。"
+        },
+        {
+          "candidate_id": "O003",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.99,
+          "reason": "平台类型完全不同：新闻主体为"
+        }
+      ],
+      "radar_edges": [
+        {
+          "candidate_id": "R044",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.98,
+          "reason": "雷达数据 R044 与新闻在平台（903A 型）、地点（万安滩海域）、日期（2025.5.1）及任务时间窗口（02:54-04:19）上完全匹配。R044 记录的“远海训练”任务与新闻描述的“持续活动”在逻辑上一致，确认为同一事件。"
+        },
+        {
+          "candidate_id": "R045",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.98,
+          "reason": "地点冲突：R045 位于“冲绳海槽”（东海），而新闻位于“万安滩海域”（南海）。同一时间同型号舰艇无法分身两地，判定为不同活动。"
+        },
+        {
+          "candidate_id": "R039",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.99,
+          "reason": "平台类型不符：R039 为"
+        }
+      ],
+      "ambiguity": "新闻未明确说明具体任务名称（如训练或演习），仅描述为“持续活动”，但结合雷达数据 R044 的精确时间戳和地点，可高度确信 O016 和 R044 指向同一事件。其他候选因地点或平台类型明显冲突被排除。"
+    },
+    "same_batch_other_candidates": []
+  },
+  "result": {
+    "same_event": true,
+    "platforms": [
+      {
+        "platform_index": 0,
+        "platform": {
+          "claim": "903A 型综合补给舰",
+          "supporting_sources": [
+            "N005",
+            "O016",
+            "R044"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均明确指向 903A 型中国海军补给舰，无冲突。"
+        },
+        "country": {
+          "claim": "中国",
+          "supporting_sources": [
+            "N005",
+            "O016",
+            "R044"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源均明确标注为中国海军/中国舰船，无冲突。"
+        },
+        "quantity": {
+          "claim": "2 架",
+          "supporting_sources": [
+            "R044"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "雷达 R044 原始列显示数量为 2；新闻 N005 和舆论 O016 虽仅提及"
+        }
+      }
+    ],
+    "location": {
+      "claim": "万安滩海域",
+      "supporting_sources": [
+        "N005",
+        "R044"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻 N005 与雷达 R044 均明确定位在万安滩海域；舆论 O016 提及南海方向，兼容该具体区域。"
+    },
+    "time": {
+      "claim": "2025-05-01 02:54-04:19",
+      "supporting_sources": [
+        "O016",
+        "R044"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "舆论 O016 与雷达 R044 提供了完全一致的具体起止时间；新闻 N005 仅确认日期，不冲突。"
+    },
+    "mission": {
+      "claim": "远海训练",
+      "supporting_sources": [
+        "O016",
+        "R044"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "舆论 O016 与雷达 R044 均明确任务为“远海训练”；新闻 N005 描述为“持续活动”，语义兼容但不提供具体科目，不影响两源对“训练”的认定。"
+    },
+    "movement": {
+      "claim": "活动",
+      "supporting_sources": [
+        "N005",
+        "O016",
+        "R044"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "三源均描述为活动状态（新闻：持续活动/机动；舆论：组织远海训练；雷达：未说明但处于观测覆盖中），无冲突。"
+    },
+    "unresolved_issues": [],
+    "explanation": "事件关联成立：新闻、舆论、雷达三源在平台型号、国籍、地点（万安滩海域）、时间（2025.5.1 02:54-04:19）及任务性质（远海训练/持续活动）上高度一致。数量结论基于雷达原始数据，新闻与舆论虽未明示具体数字但无冲突。所有关键事实均有至少两类来源支持，无未消解冲突。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-08T00:02:59.3505785Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"same_event\": true, \"platforms\": [{\"platform_index\": 0, \"platform\": {\"claim\": \"903A 型综合补给舰\", \"supporting_sources\": [\"N005\", \"O016\", \"R044\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源（新闻、舆论、雷达）均明确指向 903A 型中国海军补给舰，无冲突。\"}, \"country\": {\"claim\": \"中国\", \"supporting_sources\": [\"N005\", \"O016\", \"R044\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源均明确标注为中国海军/中国舰船，无冲突。\"}, \"quantity\": {\"claim\": \"2 架\", \"supporting_sources\": [\"R044\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"雷达 R044 原始列显示数量为 2；新闻 N005 和舆论 O016 虽仅提及\" }\n}\n\n    \t],\"location\":{\"claim\":\"万安滩海域\",\"supporting_sources\":[\"N005\",\"R044\"],\"conflicting_sources\":[],\"status\":\"supported\",\"reason\":\"新闻 N005 与雷达 R044 均明确定位在万安滩海域；舆论 O016 提及南海方向，兼容该具体区域。\"},\n    \"time\":{\"claim\":\"2025-05-01 02:54-04:19\",\"supporting_sources\":[\"O016\",\"R044\"],\"conflicting_sources\":[],\"status\":\"supported\",\"reason\":\"舆论 O016 与雷达 R044 提供了完全一致的具体起止时间；新闻 N005 仅确认日期，不冲突。\"},\n    \"mission\":{\"claim\":\"远海训练\",\"supporting_sources\":[\"O016\",\"R044\"],\"conflicting_sources\":[],\"status\":\"supported\",\"reason\":\"舆论 O016 与雷达 R044 均明确任务为“远海训练”；新闻 N005 描述为“持续活动”，语义兼容但不提供具体科目，不影响两源对“训练”的认定。\"},\n    \"movement\":{\"claim\":\"活动\",\"supporting_sources\":[\"N005\",\"O016\",\"R044\"],\"conflicting_sources\":[],\"status\":\"supported\",\"reason\":\"三源均描述为活动状态（新闻：持续活动/机动；舆论：组织远海训练；雷达：未说明但处于观测覆盖中），无冲突。\"},\n    \"unresolved_issues\":[],\"explanation\":\"事件关联成立：新闻、舆论、雷达三源在平台型号、国籍、地点（万安滩海域）、时间（2025.5.1 02:54-04:19）及任务性质（远海训练/持续活动）上高度一致。数量结论基于雷达原始数据，新闻与舆论虽未明示具体数字但无冲突。所有关键事实均有至少两类来源支持，无未消解冲突。\"}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 14589786900,
+    "load_duration": 16197200,
+    "prompt_eval_count": 2414,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 874948000,
+    "eval_count": 678,
+    "eval_duration": 13519011000
+  }
+}

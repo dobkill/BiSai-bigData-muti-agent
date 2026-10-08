@@ -17,21 +17,25 @@
         ],
         "relation": "same",
         "confidence": 0.95,
-        "reason": "平台名称（米利厄斯号）、日期（2025.5.1）、地点（温州外海/东海方向）及任务性质（机动/护航）高度一致。雷达数据R031证实了该舰在温州外海的具体活动时段，舆论O029的时间段（05:34-07:59）与雷达记录吻合，属于同一活动的不同报道视角。"
+        "reason": "平台完全一致（美国米利厄斯号），时间重合（5 月 1 日），地点高度吻合（温州外海属于东海方向，雷达数据 R031 证实该舰在温州外海有观测记录）。任务描述均为围绕任务区域机动/护航，虽具体任务名称略有差异（持续活动 vs 海上护航），但在同一时空下可视为同一行动的不同表述。"
       },
       {
         "candidate_id": "O050",
-        "platform_indices": [],
+        "platform_indices": [
+          0
+        ],
         "relation": "different",
         "confidence": 0.98,
-        "reason": "平台完全不同（RC-135V/W侦察机 vs 米利厄斯号驱逐舰），任务性质不同（电子侦察 vs 机动/护航），虽同处东海且同日，但属于不同活动。"
+        "reason": "平台完全不同（RC-135V/W 侦察机 vs 米利厄斯号驱逐舰），尽管时间和大方向（东海）重合，但属于不同军种和任务类型的独立活动。"
       },
       {
         "candidate_id": "O049",
-        "platform_indices": [],
+        "platform_indices": [
+          0
+        ],
         "relation": "different",
         "confidence": 0.98,
-        "reason": "平台完全不同（中国054B型护卫舰 vs 美国米利厄斯号驱逐舰），国籍和任务均不匹配，属于不同活动。"
+        "reason": "平台完全不同（中国 054B 型护卫舰 vs 美国米利厄斯号驱逐舰），国籍和型号均不匹配，属于独立事件。"
       }
     ],
     "radar_edges": [
@@ -42,24 +46,28 @@
         ],
         "relation": "same",
         "confidence": 0.98,
-        "reason": "平台（米利厄斯号）、地点（温州外海）、日期（2025.05.01）完全匹配。雷达记录提供了具体的活动时段（05:34-07:59），与舆论O029的时间段一致，确认为同一活动。"
+        "reason": "平台、地点（温州外海）、时间（5 月 1 日）完全一致。雷达观测时段（05:34-07:59）包含在新闻报告的持续活动区间内，且任务均为海上护航/机动，确认为同一事件。"
       },
       {
         "candidate_id": "R053",
-        "platform_indices": [],
+        "platform_indices": [
+          0
+        ],
         "relation": "different",
         "confidence": 0.98,
-        "reason": "平台不同（马来西亚莱库号 vs 美国米利厄斯号），虽地点同为温州外海且同日，但属于不同舰艇的不同活动。"
+        "reason": "平台不同（马来西亚莱库号 vs 美国米利厄斯号），尽管地点和时间重合，但主体不一致，属于同一海域的不同活动。"
       },
       {
         "candidate_id": "R037",
-        "platform_indices": [],
+        "platform_indices": [
+          0
+        ],
         "relation": "different",
         "confidence": 0.98,
-        "reason": "平台不同（中国054B型护卫舰 vs 美国米利厄斯号），地点范围较宽泛（东海 vs 温州外海），任务不同，属于不同活动。"
+        "reason": "平台不同（中国 054B 型 vs 美国米利厄斯号），地点精度也不同（大范围东海 vs 具体温州外海），属于独立活动。"
       }
     ],
-    "ambiguity": "无显著歧义，雷达数据与舆论报道在平台、时间、地点上形成强互证。"
+    "ambiguity": "无。新闻与雷达数据 R031 在平台、地点、时间上形成强闭环，其他候选因平台或任务性质明显不同被排除。"
   },
   "candidates": {
     "opinion": [
@@ -167,6 +175,7 @@
     "opinion": [],
     "radar": []
   },
+  "radar_context": [],
   "verification": {
     "same_event": true,
     "facts": [
@@ -185,7 +194,7 @@
         "model_proposal": {
           "platform_index": 0,
           "field": "platform",
-          "claim": "米利厄斯号导弹驱逐舰",
+          "claim": "美国米利厄斯号导弹驱逐舰",
           "supporting_sources": [
             "N049",
             "O029",
@@ -193,7 +202,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "三源（新闻、舆论、雷达）均确认为美国米利厄斯号"
+          "reason": "新闻、舆论、雷达三源均明确指向该舰"
         },
         "checked_by": "explicit_source_matrix",
         "supporting_source_types": [
@@ -225,7 +234,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "三源一致标注国籍为美国"
+          "reason": "三源一致确认国籍"
         },
         "checked_by": "explicit_source_matrix",
         "supporting_source_types": [
@@ -255,7 +264,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻明确提及 1 艘，雷达批号确认数量为 1；舆论未提数量但不构成冲突"
+          "reason": "新闻明确提及'1 艘'，雷达批号显示数量值为 1；舆论未提具体数量但不构成冲突"
         },
         "checked_by": "explicit_source_matrix",
         "supporting_source_types": [
@@ -284,7 +293,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻与雷达均明确标注为温州外海，舆论的“东海方向”兼容该具体区域"
+          "reason": "新闻与雷达均明确标注'温州外海'；舆论表述为'东海方向'，属大范围兼容但不支持具体区域精度"
         },
         "checked_by": "literal_assertion_matrix",
         "source_values": {
@@ -323,56 +332,53 @@
       {
         "platform_index": -1,
         "field": "time",
-        "claim": "起点 05:34，终点 07:59",
+        "claim": "共同观测/报道时段 05:34—07:59（非完整活动起止断言）",
         "supporting_sources": [
           "O029",
           "R031"
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突；起点明示值：{'O029': '05:34', 'R031': '05:34'}；终点明示值：{'O029': '07:59', 'R031': '07:59'}",
+        "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N049': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O029': {'start': '05:34', 'end': '07:59', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R031': {'start': '05:34', 'end': '07:59', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
         "model_proposal": {
           "platform_index": -1,
           "field": "time",
-          "claim": "2025-05-01 05:34 至 07:59",
+          "claim": "2025 年 5 月 1 日 05:34-07:59",
           "supporting_sources": [
             "O029",
             "R031"
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "舆论与雷达时间完全吻合，新闻仅确认日期"
+          "reason": "舆论与雷达提供了精确的起止时刻且完全一致；新闻仅确认日期，未提供具体时刻，但不构成冲突"
         },
         "checked_by": "literal_assertion_matrix",
-        "components": {
-          "start_time": {
-            "value": "05:34",
-            "support": [
-              "O029",
-              "R031"
-            ],
-            "conflicts": [],
-            "status": "supported",
-            "source_values": {
-              "O029": "05:34",
-              "R031": "05:34"
-            },
-            "radar_batch_observations": []
+        "source_values": {
+          "N049": {
+            "start": null,
+            "end": null,
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
           },
-          "end_time": {
-            "value": "07:59",
-            "support": [
-              "O029",
-              "R031"
-            ],
-            "conflicts": [],
-            "status": "supported",
-            "source_values": {
-              "O029": "07:59",
-              "R031": "07:59"
-            },
-            "radar_batch_observations": []
+          "O029": {
+            "start": "05:34",
+            "end": "07:59",
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
+          },
+          "R031": {
+            "start": "05:34",
+            "end": "07:59",
+            "interval": "observation_coverage",
+            "start_asserted": false,
+            "end_asserted": false
           }
+        },
+        "asserted_boundaries": {
+          "start": {},
+          "end": {}
         },
         "supporting_source_types": [
           "opinion",
@@ -393,14 +399,14 @@
         "model_proposal": {
           "platform_index": -1,
           "field": "mission",
-          "claim": "海上护航/任务区域机动",
+          "claim": "海上护航/机动",
           "supporting_sources": [
             "O029",
             "R031"
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "舆论明确为“海上护航”，雷达任务列为“海上护航”，新闻描述为“围绕任务区域保持机动”属同一活动范畴"
+          "reason": "舆论与雷达均明确任务为'海上护航'；新闻描述为'围绕任务区域保持机动'，在特定语境下可视为同一行动的不同表述或阶段，两源核心任务属性一致"
         },
         "checked_by": "literal_assertion_matrix",
         "source_values": {
@@ -434,11 +440,12 @@
           "claim": "活动",
           "supporting_sources": [
             "N049",
-            "O029"
+            "O029",
+            "R031"
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻与舆论均描述为持续活动，雷达虽未显式说明但时空重合确认为同一活动"
+          "reason": "三源均确认该舰处于活动状态"
         },
         "checked_by": "literal_assertion_matrix",
         "source_values": {
@@ -454,7 +461,9 @@
     ],
     "unresolved_issues": [],
     "explanation": "三类来源已关联，纳入结论的事实获得至少两类独立来源支持，未发现未消解明示反证。",
-    "model_explanation": "三源在平台、国籍、地点（温州外海）、时间（05:34-07:59）及任务性质（护航/机动）上高度一致。新闻提供数量支持，舆论与雷达提供精确时间支持，雷达确认具体位置与数量。无未消解冲突。"
+    "model_unresolved_issues": [],
+    "reconciled_model_issues": [],
+    "model_explanation": "新闻、舆论、雷达三源在平台型号、国籍、时间（精确时刻由两源支持）、地点（具体区域由两源支持）及核心任务上形成高度一致。舆论与雷达提供了精确的时间窗口和明确的任务名称，新闻补充了持续活动的背景描述。虽然新闻未提具体时刻且舆论/雷达未提'1 艘'的具体措辞，但数量有新闻和雷达双重支持，地点精度由新闻和雷达双重支持，不存在未消解的冲突。"
   },
   "reasons": [],
   "status": "可信事件",
@@ -474,7 +483,7 @@
       "model_proposal": {
         "platform_index": 0,
         "field": "platform",
-        "claim": "米利厄斯号导弹驱逐舰",
+        "claim": "美国米利厄斯号导弹驱逐舰",
         "supporting_sources": [
           "N049",
           "O029",
@@ -482,7 +491,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "三源（新闻、舆论、雷达）均确认为美国米利厄斯号"
+        "reason": "新闻、舆论、雷达三源均明确指向该舰"
       },
       "checked_by": "explicit_source_matrix",
       "supporting_source_types": [
@@ -514,7 +523,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "三源一致标注国籍为美国"
+        "reason": "三源一致确认国籍"
       },
       "checked_by": "explicit_source_matrix",
       "supporting_source_types": [
@@ -544,7 +553,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "新闻明确提及 1 艘，雷达批号确认数量为 1；舆论未提数量但不构成冲突"
+        "reason": "新闻明确提及'1 艘'，雷达批号显示数量值为 1；舆论未提具体数量但不构成冲突"
       },
       "checked_by": "explicit_source_matrix",
       "supporting_source_types": [
@@ -573,7 +582,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "新闻与雷达均明确标注为温州外海，舆论的“东海方向”兼容该具体区域"
+        "reason": "新闻与雷达均明确标注'温州外海'；舆论表述为'东海方向'，属大范围兼容但不支持具体区域精度"
       },
       "checked_by": "literal_assertion_matrix",
       "source_values": {
@@ -612,56 +621,53 @@
     {
       "platform_index": -1,
       "field": "time",
-      "claim": "起点 05:34，终点 07:59",
+      "claim": "共同观测/报道时段 05:34—07:59（非完整活动起止断言）",
       "supporting_sources": [
         "O029",
         "R031"
       ],
       "conflicting_sources": [],
       "status": "supported",
-      "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突；起点明示值：{'O029': '05:34', 'R031': '05:34'}；终点明示值：{'O029': '07:59', 'R031': '07:59'}",
+      "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N049': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O029': {'start': '05:34', 'end': '07:59', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R031': {'start': '05:34', 'end': '07:59', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
       "model_proposal": {
         "platform_index": -1,
         "field": "time",
-        "claim": "2025-05-01 05:34 至 07:59",
+        "claim": "2025 年 5 月 1 日 05:34-07:59",
         "supporting_sources": [
           "O029",
           "R031"
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "舆论与雷达时间完全吻合，新闻仅确认日期"
+        "reason": "舆论与雷达提供了精确的起止时刻且完全一致；新闻仅确认日期，未提供具体时刻，但不构成冲突"
       },
       "checked_by": "literal_assertion_matrix",
-      "components": {
-        "start_time": {
-          "value": "05:34",
-          "support": [
-            "O029",
-            "R031"
-          ],
-          "conflicts": [],
-          "status": "supported",
-          "source_values": {
-            "O029": "05:34",
-            "R031": "05:34"
-          },
-          "radar_batch_observations": []
+      "source_values": {
+        "N049": {
+          "start": null,
+          "end": null,
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
         },
-        "end_time": {
-          "value": "07:59",
-          "support": [
-            "O029",
-            "R031"
-          ],
-          "conflicts": [],
-          "status": "supported",
-          "source_values": {
-            "O029": "07:59",
-            "R031": "07:59"
-          },
-          "radar_batch_observations": []
+        "O029": {
+          "start": "05:34",
+          "end": "07:59",
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "R031": {
+          "start": "05:34",
+          "end": "07:59",
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
         }
+      },
+      "asserted_boundaries": {
+        "start": {},
+        "end": {}
       },
       "supporting_source_types": [
         "opinion",
@@ -682,14 +688,14 @@
       "model_proposal": {
         "platform_index": -1,
         "field": "mission",
-        "claim": "海上护航/任务区域机动",
+        "claim": "海上护航/机动",
         "supporting_sources": [
           "O029",
           "R031"
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "舆论明确为“海上护航”，雷达任务列为“海上护航”，新闻描述为“围绕任务区域保持机动”属同一活动范畴"
+        "reason": "舆论与雷达均明确任务为'海上护航'；新闻描述为'围绕任务区域保持机动'，在特定语境下可视为同一行动的不同表述或阶段，两源核心任务属性一致"
       },
       "checked_by": "literal_assertion_matrix",
       "source_values": {
@@ -723,11 +729,12 @@
         "claim": "活动",
         "supporting_sources": [
           "N049",
-          "O029"
+          "O029",
+          "R031"
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "新闻与舆论均描述为持续活动，雷达虽未显式说明但时空重合确认为同一活动"
+        "reason": "三源均确认该舰处于活动状态"
       },
       "checked_by": "literal_assertion_matrix",
       "source_values": {

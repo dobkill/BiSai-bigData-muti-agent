@@ -1,7 +1,7 @@
 {
   "passed": true,
   "groups_checked": 50,
-  "supported_facts_checked": 338,
+  "supported_facts_checked": 342,
   "errors": [],
   "scope": "检查来源独立性、引用范围、分类自洽；不判断军事事实真伪，不替代GPT逐组阅读与官方真值评估"
 }

@@ -1,0 +1,737 @@
+{
+  "id": "N001",
+  "news_id": "N001",
+  "opinion_id": "O038",
+  "radar_ids": [
+    "R015"
+  ],
+  "radar_slots": {
+    "0": "R015"
+  },
+  "alignment": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O038",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.95,
+        "reason": "平台（韩国 AW-159）、地点（阿拉伯海）、任务（反潜巡逻）及日期完全一致。新闻明确的时间区间（11:37-13:02）与舆论报道的“围绕任务海域组织反潜巡逻”在语义上相容，数量差异（新闻未提具体架数 vs 舆论称两架）不影响同一活动判定。"
+      },
+      {
+        "candidate_id": "O041",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "平台型号不同（F-15SG 战斗机 vs AW-159 直升机）、国籍不同（新加坡 vs 韩国）、地点不同（孟加拉湾 vs 阿拉伯海），属于完全不同的活动。"
+      },
+      {
+        "candidate_id": "O030",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "平台型号不同（护卫舰 vs 直升机）、地点不同（中太平洋 vs 阿拉伯海）、时间区间不重叠，属于不同活动。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R015",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.98,
+        "reason": "平台（韩国 AW-159）、任务（反潜巡逻）及时间区间（11:37-13:02）与新闻完全精确匹配。虽然雷达数据缺失具体海域名称，但坐标范围（北纬 15°附近）符合阿拉伯海地理特征，且批号非唯一身份标识，故判定为同一活动。"
+      },
+      {
+        "candidate_id": "R021",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台型号不同（歼 -15T vs AW-159）、国籍不同、任务不同（舰载机起降训练 vs 反潜巡逻），且坐标指向黄海，与阿拉伯海不符。"
+      },
+      {
+        "candidate_id": "R022",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台型号不同（轰 -6K vs AW-159）、国籍不同、任务不同（对海突击训练 vs 反潜巡逻），且坐标指向东海，与阿拉伯海不符。"
+      }
+    ],
+    "ambiguity": "无显著歧义，核心证据链（平台 + 时间 + 任务）高度一致。"
+  },
+  "candidates": {
+    "opinion": [
+      {
+        "id": "O038",
+        "score": 4.93721,
+        "cosine": 0.93721,
+        "platform_similarity": 1.0,
+        "time_overlap": null,
+        "location_relation": "same"
+      },
+      {
+        "id": "O041",
+        "score": 1.82134,
+        "cosine": 0.72017,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.9176470588235294,
+        "location_relation": "different_named_regions"
+      },
+      {
+        "id": "O003",
+        "score": 1.67665,
+        "cosine": 0.78724,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.7411764705882353,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O030",
+        "score": 0.94066,
+        "cosine": 0.74066,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_named_regions"
+      },
+      {
+        "id": "O050",
+        "score": 0.74394,
+        "cosine": 0.74394,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O033",
+        "score": 0.73854,
+        "cosine": 0.73854,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_named_regions"
+      }
+    ],
+    "radar": [
+      {
+        "id": "R015",
+        "score": 5.35835,
+        "cosine": 0.95835,
+        "platform_similarity": 1.0,
+        "time_overlap": 1.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R021",
+        "score": 1.94792,
+        "cosine": 0.74792,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R022",
+        "score": 1.93911,
+        "cosine": 0.73911,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R009",
+        "score": 1.66224,
+        "cosine": 0.77283,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.7411764705882353,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R020",
+        "score": 1.01241,
+        "cosine": 0.81241,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R025",
+        "score": 0.74398,
+        "cosine": 0.74398,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      }
+    ]
+  },
+  "assignment_diagnostics": {
+    "opinion": [],
+    "radar": []
+  },
+  "radar_context": [],
+  "verification": {
+    "same_event": true,
+    "facts": [
+      {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "AW-159反潜直升机",
+        "supporting_sources": [
+          "N001",
+          "O038",
+          "R015"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N001': 'AW-159反潜直升机', 'O038': 'AW-159', 'R015': 'AW-159反潜直升机'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "AW-159 反潜直升机",
+          "supporting_sources": [
+            "N001",
+            "O038",
+            "R015"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均确认为韩国 AW-159"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "韩国",
+        "supporting_sources": [
+          "N001",
+          "O038",
+          "R015"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N001': '韩国', 'O038': '韩国', 'R015': '韩国'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "韩国",
+          "supporting_sources": [
+            "N001",
+            "O038",
+            "R015"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均确认为韩国"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "2架",
+        "supporting_sources": [
+          "O038",
+          "R015"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'O038': 2, 'R015': 2}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "2 架",
+          "supporting_sources": [
+            "O038",
+            "R015"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论明确提及“两架”，雷达批号显示数量值为 2，新闻未提具体数量但不构成冲突"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "阿拉伯海",
+        "supporting_sources": [
+          "N001",
+          "O038"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "复核明示地点和PDF包含关系：{'N001': '阿拉伯海', 'O038': '阿拉伯海'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "阿拉伯海",
+          "supporting_sources": [
+            "N001",
+            "O038"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻与舆论均明确表述为“阿拉伯海”，雷达坐标范围（北纬 15°附近）地理特征兼容该区域"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N001": {
+            "raw": "阿拉伯海",
+            "region": "阿拉伯海",
+            "direction": "其他",
+            "precision": "原文区域",
+            "mapping": "PDF未列入三大核心海域的区域归其他",
+            "transit": false,
+            "quote": "在阿拉伯海展开行动"
+          },
+          "O038": {
+            "raw": "阿拉伯海围绕任务海域",
+            "region": "阿拉伯海",
+            "direction": "其他",
+            "precision": "原文区域",
+            "mapping": "PDF未列入三大核心海域的区域归其他",
+            "transit": false,
+            "quote": "在阿拉伯海围绕任务海域"
+          }
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "共同观测/报道时段 11:37—13:02（非完整活动起止断言）",
+        "supporting_sources": [
+          "N001",
+          "R015"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N001': {'start': '11:37', 'end': '13:02', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O038': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R015': {'start': '11:37', 'end': '13:02', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "2025-05-01 11:37 - 13:02",
+          "supporting_sources": [
+            "N001",
+            "R015"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻与雷达观测时间区间完全精确匹配，舆论仅提及日期"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N001": {
+            "start": "11:37",
+            "end": "13:02",
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
+          },
+          "O038": {
+            "start": null,
+            "end": null,
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
+          },
+          "R015": {
+            "start": "11:37",
+            "end": "13:02",
+            "interval": "observation_coverage",
+            "start_asserted": false,
+            "end_asserted": false
+          }
+        },
+        "asserted_boundaries": {
+          "start": {},
+          "end": {}
+        },
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "反潜巡逻",
+        "supporting_sources": [
+          "N001",
+          "O038",
+          "R015"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "原文明示任务：{'N001': ['反潜巡逻'], 'O038': ['反潜巡逻'], 'R015': ['反潜巡逻']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "反潜巡逻",
+          "supporting_sources": [
+            "N001",
+            "O038",
+            "R015"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源均明确表述为“反潜巡逻”或“执行反潜巡逻任务”}, "
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N001": [
+            "反潜巡逻"
+          ],
+          "O038": [
+            "反潜巡逻"
+          ],
+          "R015": [
+            "反潜巡逻"
+          ]
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N001",
+          "O038"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "supporting_sources": [
+            "N001",
+            "O038"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻与舆论均描述为围绕海域组织巡逻活动"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N001": "活动",
+          "O038": "活动",
+          "R015": "未说明"
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      }
+    ],
+    "unresolved_issues": [],
+    "explanation": "三类来源已关联，纳入结论的事实获得至少两类独立来源支持，未发现未消解明示反证。",
+    "model_explanation": "事件关联成立：平台型号、国籍、任务、地点及核心时间区间在三源中高度一致。数量结论由舆论和雷达共同支持（2 架），新闻缺失具体数量但不构成冲突。无未消解的明确冲突。"
+  },
+  "reasons": [],
+  "status": "可信事件",
+  "verified_facts": [
+    {
+      "platform_index": 0,
+      "field": "platform",
+      "claim": "AW-159反潜直升机",
+      "supporting_sources": [
+        "N001",
+        "O038",
+        "R015"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N001': 'AW-159反潜直升机', 'O038': 'AW-159', 'R015': 'AW-159反潜直升机'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "AW-159 反潜直升机",
+        "supporting_sources": [
+          "N001",
+          "O038",
+          "R015"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源（新闻、舆论、雷达）均确认为韩国 AW-159"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "country",
+      "claim": "韩国",
+      "supporting_sources": [
+        "N001",
+        "O038",
+        "R015"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N001': '韩国', 'O038': '韩国', 'R015': '韩国'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "韩国",
+        "supporting_sources": [
+          "N001",
+          "O038",
+          "R015"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源（新闻、舆论、雷达）均确认为韩国"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "quantity",
+      "claim": "2架",
+      "supporting_sources": [
+        "O038",
+        "R015"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'O038': 2, 'R015': 2}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "2 架",
+        "supporting_sources": [
+          "O038",
+          "R015"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "舆论明确提及“两架”，雷达批号显示数量值为 2，新闻未提具体数量但不构成冲突"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "location",
+      "claim": "阿拉伯海",
+      "supporting_sources": [
+        "N001",
+        "O038"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "复核明示地点和PDF包含关系：{'N001': '阿拉伯海', 'O038': '阿拉伯海'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "阿拉伯海",
+        "supporting_sources": [
+          "N001",
+          "O038"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与舆论均明确表述为“阿拉伯海”，雷达坐标范围（北纬 15°附近）地理特征兼容该区域"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N001": {
+          "raw": "阿拉伯海",
+          "region": "阿拉伯海",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false,
+          "quote": "在阿拉伯海展开行动"
+        },
+        "O038": {
+          "raw": "阿拉伯海围绕任务海域",
+          "region": "阿拉伯海",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false,
+          "quote": "在阿拉伯海围绕任务海域"
+        }
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "time",
+      "claim": "共同观测/报道时段 11:37—13:02（非完整活动起止断言）",
+      "supporting_sources": [
+        "N001",
+        "R015"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N001': {'start': '11:37', 'end': '13:02', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O038': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R015': {'start': '11:37', 'end': '13:02', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "2025-05-01 11:37 - 13:02",
+        "supporting_sources": [
+          "N001",
+          "R015"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与雷达观测时间区间完全精确匹配，舆论仅提及日期"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N001": {
+          "start": "11:37",
+          "end": "13:02",
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "O038": {
+          "start": null,
+          "end": null,
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "R015": {
+          "start": "11:37",
+          "end": "13:02",
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        }
+      },
+      "asserted_boundaries": {
+        "start": {},
+        "end": {}
+      },
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "mission",
+      "claim": "反潜巡逻",
+      "supporting_sources": [
+        "N001",
+        "O038",
+        "R015"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "原文明示任务：{'N001': ['反潜巡逻'], 'O038': ['反潜巡逻'], 'R015': ['反潜巡逻']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "反潜巡逻",
+        "supporting_sources": [
+          "N001",
+          "O038",
+          "R015"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源均明确表述为“反潜巡逻”或“执行反潜巡逻任务”}, "
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N001": [
+          "反潜巡逻"
+        ],
+        "O038": [
+          "反潜巡逻"
+        ],
+        "R015": [
+          "反潜巡逻"
+        ]
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "movement",
+      "claim": "活动",
+      "supporting_sources": [
+        "N001",
+        "O038"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N001",
+          "O038"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与舆论均描述为围绕海域组织巡逻活动"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N001": "活动",
+        "O038": "活动",
+        "R015": "未说明"
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    }
+  ],
+  "radar_row_count": 12,
+  "direction": "其他",
+  "report_eligible": false,
+  "directory": "可信事件/N001_韩国AW-159反潜直升机在阿拉伯海执行反潜巡逻任务"
+}

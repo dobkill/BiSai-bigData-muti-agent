@@ -1,0 +1,591 @@
+{
+  "reviewer": "当前对话GPT；逐组读取新闻、舆论全文与雷达候选字段，不是外部GPT API调用，也不是官方真值",
+  "code_baseline": "334b1b3",
+  "groups": [
+    {
+      "id": "N001",
+      "news_id": "N001",
+      "expected_opinion": "O038",
+      "expected_radar_slots": {
+        "0": "R015"
+      },
+      "baseline_status": "可信事件",
+      "baseline_reasons": [],
+      "review_note": "全文及雷达字段核对：配对合理；缺失不作冲突、联合活动按平台核验。"
+    },
+    {
+      "id": "N002",
+      "news_id": "N002",
+      "expected_opinion": "O037",
+      "expected_radar_slots": {
+        "0": "R022"
+      },
+      "baseline_status": "可信事件",
+      "baseline_reasons": [],
+      "review_note": "全文及雷达字段核对：配对合理；缺失不作冲突、联合活动按平台核验。"
+    },
+    {
+      "id": "N003",
+      "news_id": "N003",
+      "expected_opinion": "O015",
+      "expected_radar_slots": {
+        "0": "R045"
+      },
+      "baseline_status": "可信事件",
+      "baseline_reasons": [],
+      "review_note": "全文及雷达字段核对：配对合理；缺失不作冲突、联合活动按平台核验。"
+    },
+    {
+      "id": "N004",
+      "news_id": "N004",
+      "expected_opinion": "O021",
+      "expected_radar_slots": {
+        "0": "R002"
+      },
+      "baseline_status": "不可信事件",
+      "baseline_reasons": [
+        "R002：同批号存在远距离起始位置簇，候选拆分不代表归属已经消解",
+        "R001：同批号存在远距离起始位置簇，候选拆分不代表归属已经消解",
+        "雷达 R001/R002 坐标簇显示南海方向，与新闻/舆论的东海地点存在空间差异，但已标注为同批号远距离簇异常且未验证，暂不视为独立事件冲突"
+      ],
+      "review_note": "仅R002进入核验；R001未获本事件关联，完整保留。报道起点不要求等于首个雷达样本。"
+    },
+    {
+      "id": "N005",
+      "news_id": "N005",
+      "expected_opinion": "O016",
+      "expected_radar_slots": {
+        "0": "R044"
+      },
+      "baseline_status": "不可信事件",
+      "baseline_reasons": [
+        "quantity关键事实冲突：程序按已关联平台的明示字段复核：{'N005': 1, 'O016': 1, 'R044': 2}；缺失不支持也不反对"
+      ],
+      "review_note": "1艘与2艘明确数量差异未消解。"
+    },
+    {
+      "id": "N006",
+      "news_id": "N006",
+      "expected_opinion": "O049",
+      "expected_radar_slots": {
+        "0": "R037"
+      },
+      "baseline_status": "可信事件",
+      "baseline_reasons": [],
+      "review_note": "全文及雷达字段核对：配对合理；缺失不作冲突、联合活动按平台核验。"
+    },
+    {
+      "id": "N007",
+      "news_id": "N007",
+      "expected_opinion": "O005",
+      "expected_radar_slots": {
+        "0": "R016"
+      },
+      "baseline_status": "可信事件",
+      "baseline_reasons": [],
+      "review_note": "全文及雷达字段核对：配对合理；缺失不作冲突、联合活动按平台核验。"
+    },
+    {
+      "id": "N008",
+      "news_id": "N008",
+      "expected_opinion": "O023",
+      "expected_radar_slots": {
+        "0": "R003"
+      },
+      "baseline_status": "可信事件",
+      "baseline_reasons": [],
+      "review_note": "全文及雷达字段核对：配对合理；缺失不作冲突、联合活动按平台核验。"
+    },
+    {
+      "id": "N009",
+      "news_id": "N009",
+      "expected_opinion": "O026",
+      "expected_radar_slots": {
+        "0": "R013"
+      },
+      "baseline_status": "可信事件",
+      "baseline_reasons": [],
+      "review_note": "全文及雷达字段核对：配对合理；缺失不作冲突、联合活动按平台核验。"
+    },
+    {
+      "id": "N010",
+      "news_id": "N010",
+      "expected_opinion": "O045",
+      "expected_radar_slots": {
+        "0": "R046"
+      },
+      "baseline_status": "可信事件",
+      "baseline_reasons": [],
+      "review_note": "全文及雷达字段核对：配对合理；缺失不作冲突、联合活动按平台核验。"
+    },
+    {
+      "id": "N011",
+      "news_id": "N011",
+      "expected_opinion": "O027",
+      "expected_radar_slots": {
+        "0": "R033"
+      },
+      "baseline_status": "可信事件",
+      "baseline_reasons": [],
+      "review_note": "全文及雷达字段核对：配对合理；缺失不作冲突、联合活动按平台核验。"
+    },
+    {
+      "id": "N012",
+      "news_id": "N012",
+      "expected_opinion": "O046",
+      "expected_radar_slots": {
+        "0": "R032",
+        "1": "R035"
+      },
+      "baseline_status": "可信事件",
+      "baseline_reasons": [],
+      "review_note": "全文及雷达字段核对：配对合理；缺失不作冲突、联合活动按平台核验。"
+    },
+    {
+      "id": "N013",
+      "news_id": "N013",
+      "expected_opinion": "O035",
+      "expected_radar_slots": {
+        "0": "R010"
+      },
+      "baseline_status": "可信事件",
+      "baseline_reasons": [],
+      "review_note": "全文及雷达字段核对：配对合理；缺失不作冲突、联合活动按平台核验。"
+    },
+    {
+      "id": "N014",
+      "news_id": "N014",
+      "expected_opinion": "O018",
+      "expected_radar_slots": {
+        "0": "R007"
+      },
+      "baseline_status": "不可信事件",
+      "baseline_reasons": [
+        "R007：同批号存在远距离起始位置簇，候选拆分不代表归属已经消解",
+        "R008：同批号存在远距离起始位置簇，候选拆分不代表归属已经消解"
+      ],
+      "review_note": "仅R007进入核验；R008为黄海方向其他候选，不因同批号强制合并。"
+    },
+    {
+      "id": "N015",
+      "news_id": "N015",
+      "expected_opinion": "O048",
+      "expected_radar_slots": {
+        "0": "R039",
+        "1": "R042"
+      },
+      "baseline_status": "可信事件",
+      "baseline_reasons": [],
+      "review_note": "全文及雷达字段核对：配对合理；缺失不作冲突、联合活动按平台核验。"
+    },
+    {
+      "id": "N016",
+      "news_id": "N016",
+      "expected_opinion": "O009",
+      "expected_radar_slots": {
+        "0": "R028"
+      },
+      "baseline_status": "可信事件",
+      "baseline_reasons": [],
+      "review_note": "全文及雷达字段核对：配对合理；缺失不作冲突、联合活动按平台核验。"
+    },
+    {
+      "id": "N017",
+      "news_id": "N017",
+      "expected_opinion": "O020",
+      "expected_radar_slots": {
+        "0": "R048"
+      },
+      "baseline_status": "可信事件",
+      "baseline_reasons": [],
+      "review_note": "全文及雷达字段核对：配对合理；缺失不作冲突、联合活动按平台核验。"
+    },
+    {
+      "id": "N018",
+      "news_id": "N018",
+      "expected_opinion": "O032",
+      "expected_radar_slots": {
+        "0": "R034"
+      },
+      "baseline_status": "可信事件",
+      "baseline_reasons": [],
+      "review_note": "全文及雷达字段核对：配对合理；缺失不作冲突、联合活动按平台核验。"
+    },
+    {
+      "id": "N019",
+      "news_id": "N019",
+      "expected_opinion": "O014",
+      "expected_radar_slots": {
+        "0": "R014"
+      },
+      "baseline_status": "不可信事件",
+      "baseline_reasons": [
+        "模型未确认三源同一事件关联",
+        "location关键事实冲突：复核明示地点和PDF包含关系：{'N019': '仁爱礁附近海域', 'O014': '赤尾屿海域'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+        "O014活动归属仍有歧义：平台型号（E-2C）与任务（空中警戒）完全一致，时间（2025.5.1）重合，但地点存在明确冲突：新闻 N019 位于“仁爱礁附近海域”（南海），而候选 O014 位于“东海赤尾屿海域”。不同海域排除同一次活动。；程序保留待复核关联：同日双方唯一的型号/国籍/明确任务组合且新闻与雷达时段吻合；地点反证保留，不能据此判可信",
+        "活动地点未获得两类来源在明确精度上的印证",
+        "地点冲突：新闻 N019 位于南海仁爱礁，而舆论 O014 和雷达 R014 指向东海赤尾屿。尽管核心要素（机型、时间、任务）高度一致，但地点差异属于明确的地理方向冲突（南海 vs 东海），依据规则不能自动视为数据录入错误而忽略，故判定为不同事件。",
+        "数量缺失：新闻 N019 未说明具体架次，无法与舆论/雷达的"
+      ],
+      "review_note": "仁爱礁与赤尾屿地点差异未消解；新闻数量缺失不是冲突。"
+    },
+    {
+      "id": "N020",
+      "news_id": "N020",
+      "expected_opinion": "O044",
+      "expected_radar_slots": {
+        "0": "R041"
+      },
+      "baseline_status": "可信事件",
+      "baseline_reasons": [],
+      "review_note": "全文及雷达字段核对：配对合理；缺失不作冲突、联合活动按平台核验。"
+    },
+    {
+      "id": "N021",
+      "news_id": "N021",
+      "expected_opinion": "O003",
+      "expected_radar_slots": {
+        "0": "R009"
+      },
+      "baseline_status": "可信事件",
+      "baseline_reasons": [],
+      "review_note": "全文及雷达字段核对：配对合理；缺失不作冲突、联合活动按平台核验。"
+    },
+    {
+      "id": "N022",
+      "news_id": "N022",
+      "expected_opinion": "O034",
+      "expected_radar_slots": {
+        "0": "R052"
+      },
+      "baseline_status": "可信事件",
+      "baseline_reasons": [],
+      "review_note": "全文及雷达字段核对：配对合理；缺失不作冲突、联合活动按平台核验。"
+    },
+    {
+      "id": "N023",
+      "news_id": "N023",
+      "expected_opinion": "O006",
+      "expected_radar_slots": {
+        "0": "R029"
+      },
+      "baseline_status": "可信事件",
+      "baseline_reasons": [],
+      "review_note": "全文及雷达字段核对：配对合理；缺失不作冲突、联合活动按平台核验。"
+    },
+    {
+      "id": "N024",
+      "news_id": "N024",
+      "expected_opinion": "O050",
+      "expected_radar_slots": {
+        "0": "R025"
+      },
+      "baseline_status": "可信事件",
+      "baseline_reasons": [],
+      "review_note": "全文及雷达字段核对：配对合理；缺失不作冲突、联合活动按平台核验。"
+    },
+    {
+      "id": "N025",
+      "news_id": "N025",
+      "expected_opinion": "O012",
+      "expected_radar_slots": {
+        "0": "R005"
+      },
+      "baseline_status": "不可信事件",
+      "baseline_reasons": [
+        "time关键事实冲突：逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突；起点明示值：{'N025': '21:31', 'O012': '20:47', 'R005': '20:47'}；终点明示值：{'N025': '22:12', 'R005': '22:12'}"
+      ],
+      "review_note": "新闻报道子区间21:31—22:12与20:47开始、雷达覆盖相容；不确认完整起止。"
+    },
+    {
+      "id": "N026",
+      "news_id": "N026",
+      "expected_opinion": "O031",
+      "expected_radar_slots": {
+        "0": "R021"
+      },
+      "baseline_status": "不可信事件",
+      "baseline_reasons": [
+        "country关键事实冲突：程序按已关联平台的明示字段复核：{'N026': '意大利', 'O031': '中国', 'R021': '中国'}；缺失不支持也不反对"
+      ],
+      "review_note": "新闻意大利、舆论/雷达中国，国籍差异未消解。"
+    },
+    {
+      "id": "N027",
+      "news_id": "N027",
+      "expected_opinion": "O024",
+      "expected_radar_slots": {
+        "0": "R036"
+      },
+      "baseline_status": "不可信事件",
+      "baseline_reasons": [
+        "country关键事实冲突：程序按已关联平台的明示字段复核：{'N027': '韩国', 'O024': '法国', 'R036': '韩国'}；缺失不支持也不反对"
+      ],
+      "review_note": "舆论法国、新闻/雷达韩国，国籍差异未消解。"
+    },
+    {
+      "id": "N028",
+      "news_id": "N028",
+      "expected_opinion": "O040",
+      "expected_radar_slots": {
+        "0": "R053"
+      },
+      "baseline_status": "不可信事件",
+      "baseline_reasons": [
+        "time关键事实冲突：逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突；起点明示值：{'N028': '14:54', 'O040': '14:22', 'R053': '14:22'}；终点明示值：{'N028': '16:47', 'R053': '16:47'}"
+      ],
+      "review_note": "新闻报道子区间14:54—16:47与14:22起、雷达覆盖相容；不确认完整起止。"
+    },
+    {
+      "id": "N029",
+      "news_id": "N029",
+      "expected_opinion": "O013",
+      "expected_radar_slots": {
+        "0": "R027"
+      },
+      "baseline_status": "可信事件",
+      "baseline_reasons": [],
+      "review_note": "全文及雷达字段核对：配对合理；缺失不作冲突、联合活动按平台核验。"
+    },
+    {
+      "id": "N030",
+      "news_id": "N030",
+      "expected_opinion": "O043",
+      "expected_radar_slots": {
+        "0": "R020"
+      },
+      "baseline_status": "可信事件",
+      "baseline_reasons": [],
+      "review_note": "全文及雷达字段核对：配对合理；缺失不作冲突、联合活动按平台核验。"
+    },
+    {
+      "id": "N031",
+      "news_id": "N031",
+      "expected_opinion": "O033",
+      "expected_radar_slots": {
+        "0": "R051"
+      },
+      "baseline_status": "可信事件",
+      "baseline_reasons": [],
+      "review_note": "全文及雷达字段核对：配对合理；缺失不作冲突、联合活动按平台核验。"
+    },
+    {
+      "id": "N032",
+      "news_id": "N032",
+      "expected_opinion": "O007",
+      "expected_radar_slots": {
+        "0": "R030"
+      },
+      "baseline_status": "不可信事件",
+      "baseline_reasons": [
+        "location关键事实冲突：复核明示地点和PDF包含关系：{'N032': '夏威夷附近', 'O007': '孟加拉湾', 'R030': '夏威夷附近'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+        "活动地点未获得两类来源在明确精度上的印证"
+      ],
+      "review_note": "舆论孟加拉湾、新闻/雷达夏威夷，地点差异未消解。"
+    },
+    {
+      "id": "N033",
+      "news_id": "N033",
+      "expected_opinion": "O042",
+      "expected_radar_slots": {
+        "0": "R054"
+      },
+      "baseline_status": "可信事件",
+      "baseline_reasons": [],
+      "review_note": "全文及雷达字段核对：配对合理；缺失不作冲突、联合活动按平台核验。"
+    },
+    {
+      "id": "N034",
+      "news_id": "N034",
+      "expected_opinion": "O008",
+      "expected_radar_slots": {
+        "0": "R047"
+      },
+      "baseline_status": "可信事件",
+      "baseline_reasons": [],
+      "review_note": "全文及雷达字段核对：配对合理；缺失不作冲突、联合活动按平台核验。"
+    },
+    {
+      "id": "N035",
+      "news_id": "N035",
+      "expected_opinion": "O011",
+      "expected_radar_slots": {
+        "0": "R038"
+      },
+      "baseline_status": "可信事件",
+      "baseline_reasons": [],
+      "review_note": "全文及雷达字段核对：配对合理；缺失不作冲突、联合活动按平台核验。"
+    },
+    {
+      "id": "N036",
+      "news_id": "N036",
+      "expected_opinion": "O047",
+      "expected_radar_slots": {
+        "0": "R043"
+      },
+      "baseline_status": "可信事件",
+      "baseline_reasons": [],
+      "review_note": "全文及雷达字段核对：配对合理；缺失不作冲突、联合活动按平台核验。"
+    },
+    {
+      "id": "N037",
+      "news_id": "N037",
+      "expected_opinion": "O028",
+      "expected_radar_slots": {
+        "0": "R006"
+      },
+      "baseline_status": "可信事件",
+      "baseline_reasons": [],
+      "review_note": "全文及雷达字段核对：配对合理；缺失不作冲突、联合活动按平台核验。"
+    },
+    {
+      "id": "N038",
+      "news_id": "N038",
+      "expected_opinion": "O010",
+      "expected_radar_slots": {
+        "0": "R040"
+      },
+      "baseline_status": "可信事件",
+      "baseline_reasons": [],
+      "review_note": "全文及雷达字段核对：配对合理；缺失不作冲突、联合活动按平台核验。"
+    },
+    {
+      "id": "N039",
+      "news_id": "N039",
+      "expected_opinion": "O002",
+      "expected_radar_slots": {
+        "0": "R024"
+      },
+      "baseline_status": "可信事件",
+      "baseline_reasons": [],
+      "review_note": "全文及雷达字段核对：配对合理；缺失不作冲突、联合活动按平台核验。"
+    },
+    {
+      "id": "N040",
+      "news_id": "N040",
+      "expected_opinion": "O041",
+      "expected_radar_slots": {
+        "0": "R017"
+      },
+      "baseline_status": "不可信事件",
+      "baseline_reasons": [
+        "mission关键事实冲突：原文明示任务：{'N040': ['对海突击训练'], 'O041': ['战备警巡'], 'R017': ['对海突击训练']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决"
+      ],
+      "review_note": "舆论战备警巡、新闻/雷达对海突击训练，任务差异未消解。"
+    },
+    {
+      "id": "N041",
+      "news_id": "N041",
+      "expected_opinion": "O030",
+      "expected_radar_slots": {
+        "0": "R049"
+      },
+      "baseline_status": "可信事件",
+      "baseline_reasons": [],
+      "review_note": "全文及雷达字段核对：配对合理；缺失不作冲突、联合活动按平台核验。"
+    },
+    {
+      "id": "N042",
+      "news_id": "N042",
+      "expected_opinion": "O004",
+      "expected_radar_slots": {
+        "0": "R004"
+      },
+      "baseline_status": "可信事件",
+      "baseline_reasons": [],
+      "review_note": "全文及雷达字段核对：配对合理；缺失不作冲突、联合活动按平台核验。"
+    },
+    {
+      "id": "N043",
+      "news_id": "N043",
+      "expected_opinion": "O001",
+      "expected_radar_slots": {
+        "0": "R023"
+      },
+      "baseline_status": "可信事件",
+      "baseline_reasons": [],
+      "review_note": "全文及雷达字段核对：配对合理；缺失不作冲突、联合活动按平台核验。"
+    },
+    {
+      "id": "N044",
+      "news_id": "N044",
+      "expected_opinion": "O019",
+      "expected_radar_slots": {
+        "0": "R019"
+      },
+      "baseline_status": "不可信事件",
+      "baseline_reasons": [
+        "quantity关键事实冲突：程序按已关联平台的明示字段复核：{'N044': 2, 'O019': 3, 'R019': 2}；缺失不支持也不反对"
+      ],
+      "review_note": "舆论3架、新闻/雷达2架，数量差异未消解。"
+    },
+    {
+      "id": "N045",
+      "news_id": "N045",
+      "expected_opinion": "O039",
+      "expected_radar_slots": {
+        "0": "R050"
+      },
+      "baseline_status": "不可信事件",
+      "baseline_reasons": [
+        "mission关键事实冲突：原文明示任务：{'N045': ['两栖作战训练'], 'O039': ['远海训练'], 'R050': ['远海训练']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决"
+      ],
+      "review_note": "共同支持训练活动；远海环境与两栖科目分别记录，具体两栖科目仅一类支持。"
+    },
+    {
+      "id": "N046",
+      "news_id": "N046",
+      "expected_opinion": "O025",
+      "expected_radar_slots": {
+        "0": "R018"
+      },
+      "baseline_status": "可信事件",
+      "baseline_reasons": [],
+      "review_note": "全文及雷达字段核对：配对合理；缺失不作冲突、联合活动按平台核验。"
+    },
+    {
+      "id": "N047",
+      "news_id": "N047",
+      "expected_opinion": "O017",
+      "expected_radar_slots": {
+        "0": "R012"
+      },
+      "baseline_status": "可信事件",
+      "baseline_reasons": [],
+      "review_note": "全文及雷达字段核对：配对合理；缺失不作冲突、联合活动按平台核验。"
+    },
+    {
+      "id": "N048",
+      "news_id": "N048",
+      "expected_opinion": "O036",
+      "expected_radar_slots": {
+        "0": "R026"
+      },
+      "baseline_status": "可信事件",
+      "baseline_reasons": [],
+      "review_note": "全文及雷达字段核对：配对合理；缺失不作冲突、联合活动按平台核验。"
+    },
+    {
+      "id": "N049",
+      "news_id": "N049",
+      "expected_opinion": "O029",
+      "expected_radar_slots": {
+        "0": "R031"
+      },
+      "baseline_status": "可信事件",
+      "baseline_reasons": [],
+      "review_note": "全文及雷达字段核对：配对合理；缺失不作冲突、联合活动按平台核验。"
+    },
+    {
+      "id": "N050",
+      "news_id": "N050",
+      "expected_opinion": "O022",
+      "expected_radar_slots": {
+        "0": "R011"
+      },
+      "baseline_status": "可信事件",
+      "baseline_reasons": [],
+      "review_note": "全文及雷达字段核对：配对合理；缺失不作冲突、联合活动按平台核验。"
+    }
+  ]
+}

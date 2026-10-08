@@ -1,0 +1,764 @@
+{
+  "id": "N009",
+  "news_id": "N009",
+  "opinion_id": "O026",
+  "radar_ids": [
+    "R013"
+  ],
+  "radar_slots": {
+    "0": "R013"
+  },
+  "alignment": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O026",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.95,
+        "reason": "平台（苏 -35S）、国家（俄罗斯）、任务（战备警巡）及日期完全一致。新闻明确的时间区间（08:03-10:28）与舆论 O026 描述的“黄海方向”活动高度吻合，且舆论未提及具体起止时间，可视为对同一事件的概括性报道。"
+      },
+      {
+        "candidate_id": "O023",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "虽然平台和日期相同，但任务性质不同（新闻为“战备警巡”，舆论 O023 为“对海突击训练”），且时间区间无重叠（新闻 08:03-10:28 vs 舆论 02:49-04:14）。"
+      },
+      {
+        "candidate_id": "O024",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.99,
+        "reason": "平台完全不同（法国护卫舰 vs 俄罗斯战机），地点不同（巴伦支海 vs 南黄海），属于完全不同的活动。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R013",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.98,
+        "reason": "雷达数据 R013 的平台（苏 -35S）、国家（俄罗斯）、任务（战备警巡）与新闻完全一致。最关键的是时间戳精确匹配（2025.05.01 08:03:00 至 10:28:00），且坐标辅助提示为“黄海”，与新闻地点“南黄海”相容，确认为同一事件的数据源。"
+      },
+      {
+        "candidate_id": "R003",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "虽然平台和日期相同，但任务为“对海突击训练”，且时间区间（02:49-04:14）与新闻的“战备警巡”时段（08:03-10:28）无重叠，属于不同活动。"
+      },
+      {
+        "candidate_id": "R010",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.99,
+        "reason": "平台完全不同（中国空警 -500 vs 俄罗斯苏 -35S），任务不同，地点坐标提示为“东海”而非“南黄海”，属于无关事件。"
+      }
+    ],
+    "ambiguity": "无。新闻与雷达数据 R013 在时间、平台、任务上形成强锁定；舆论 O026 作为补充信息指向同一事件。其他候选因任务、时间或地点冲突被排除为不同活动。"
+  },
+  "candidates": {
+    "opinion": [
+      {
+        "id": "O026",
+        "score": 4.65536,
+        "cosine": 0.97536,
+        "platform_similarity": 1.0,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O023",
+        "score": 4.64873,
+        "cosine": 0.96873,
+        "platform_similarity": 1.0,
+        "time_overlap": 0.0,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O024",
+        "score": 1.887,
+        "cosine": 0.687,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O036",
+        "score": 1.09598,
+        "cosine": 0.89598,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O019",
+        "score": 1.07386,
+        "cosine": 0.87386,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O021",
+        "score": 0.85488,
+        "cosine": 0.85488,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      }
+    ],
+    "radar": [
+      {
+        "id": "R013",
+        "score": 5.33556,
+        "cosine": 0.93556,
+        "platform_similarity": 1.0,
+        "time_overlap": 1.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R003",
+        "score": 4.11694,
+        "cosine": 0.91694,
+        "platform_similarity": 1.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R010",
+        "score": 1.96467,
+        "cosine": 0.76467,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R026",
+        "score": 1.05194,
+        "cosine": 0.85194,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R019",
+        "score": 1.04199,
+        "cosine": 0.84199,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R024",
+        "score": 1.0328,
+        "cosine": 0.8328,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      }
+    ]
+  },
+  "assignment_diagnostics": {
+    "opinion": [],
+    "radar": []
+  },
+  "radar_context": [],
+  "verification": {
+    "same_event": true,
+    "facts": [
+      {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "苏-35S",
+        "supporting_sources": [
+          "N009",
+          "O026",
+          "R013"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N009': '苏-35S', 'O026': '苏-35S', 'R013': '苏-35S多用途战斗机'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "苏 -35S",
+          "supporting_sources": [
+            "N009",
+            "O026",
+            "R013"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均明确标识为苏 -35S"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "俄罗斯",
+        "supporting_sources": [
+          "N009",
+          "O026",
+          "R013"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N009': '俄罗斯', 'O026': '俄罗斯', 'R013': '俄罗斯'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "俄罗斯",
+          "supporting_sources": [
+            "N009",
+            "O026",
+            "R013"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均明确标识国籍为俄罗斯"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "2架",
+        "supporting_sources": [
+          "O026",
+          "R013"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'O026': 2, 'R013': 2}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "2 架",
+          "supporting_sources": [
+            "O026",
+            "R013"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论与雷达均明确报告数量为 2 架，新闻未提及数量但不构成冲突"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "黄海",
+        "supporting_sources": [
+          "N009",
+          "O026"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "复核明示地点和PDF包含关系：{'N009': '南黄海', 'O026': '黄海'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "南黄海",
+          "supporting_sources": [
+            "N009"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻明确为“南黄海”；舆论“黄海方向”与雷达坐标提示“黄海”均兼容该区域，无冲突"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N009": {
+            "raw": "南黄海",
+            "region": "南黄海",
+            "direction": "黄海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false,
+            "quote": "南黄海"
+          },
+          "O026": {
+            "raw": "黄海方向",
+            "region": "黄海",
+            "direction": "黄海",
+            "precision": "大范围",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false,
+            "quote": "在黄海方向执行战备警巡任务"
+          }
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "共同观测/报道时段 08:03—10:28（非完整活动起止断言）",
+        "supporting_sources": [
+          "N009",
+          "R013"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N009': {'start': '08:03', 'end': '10:28', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O026': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R013': {'start': '08:03', 'end': '10:28', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "2025-05-01 08:03 - 10:28",
+          "supporting_sources": [
+            "N009",
+            "R013"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻与雷达时间戳精确匹配（08:03-10:28），舆论仅提及日期"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N009": {
+            "start": "08:03",
+            "end": "10:28",
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
+          },
+          "O026": {
+            "start": null,
+            "end": null,
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
+          },
+          "R013": {
+            "start": "08:03",
+            "end": "10:28",
+            "interval": "observation_coverage",
+            "start_asserted": false,
+            "end_asserted": false
+          }
+        },
+        "asserted_boundaries": {
+          "start": {},
+          "end": {}
+        },
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "战备警巡",
+        "supporting_sources": [
+          "N009",
+          "O026",
+          "R013"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "原文明示任务：{'N009': ['战备警巡'], 'O026': ['战备警巡'], 'R013': ['战备警巡']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "战备警巡",
+          "supporting_sources": [
+            "N009",
+            "O026",
+            "R013"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源均明确任务为“战备警巡”"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N009": [
+            "战备警巡"
+          ],
+          "O026": [
+            "战备警巡"
+          ],
+          "R013": [
+            "战备警巡"
+          ]
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N009",
+          "O026"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动/机动",
+          "supporting_sources": [
+            "N009",
+            "O026"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻与舆论均描述沿既定方向保持机动或维持部署"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N009": "活动",
+          "O026": "活动",
+          "R013": "未说明"
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location_detail",
+        "claim": "南黄海",
+        "supporting_sources": [
+          "N009"
+        ],
+        "conflicting_sources": [],
+        "status": "insufficient",
+        "reason": "具体区域仅一类来源明示；结论使用共同获支持的方向，细节保留待核实",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "南黄海",
+          "supporting_sources": [
+            "N009"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻明确为“南黄海”；舆论“黄海方向”与雷达坐标提示“黄海”均兼容该区域，无冲突"
+        },
+        "supporting_source_types": [
+          "news"
+        ]
+      }
+    ],
+    "unresolved_issues": [],
+    "explanation": "三类来源已关联，纳入结论的事实获得至少两类独立来源支持，未发现未消解明示反证。",
+    "model_explanation": "三源在平台型号、国籍、任务类型及活动日期上完全一致。雷达与舆论共同支持数量为 2 架，新闻时间区间与雷达观测覆盖完全重合，地点描述兼容。无未消解冲突。"
+  },
+  "reasons": [],
+  "status": "可信事件",
+  "verified_facts": [
+    {
+      "platform_index": 0,
+      "field": "platform",
+      "claim": "苏-35S",
+      "supporting_sources": [
+        "N009",
+        "O026",
+        "R013"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N009': '苏-35S', 'O026': '苏-35S', 'R013': '苏-35S多用途战斗机'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "苏 -35S",
+        "supporting_sources": [
+          "N009",
+          "O026",
+          "R013"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源（新闻、舆论、雷达）均明确标识为苏 -35S"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "country",
+      "claim": "俄罗斯",
+      "supporting_sources": [
+        "N009",
+        "O026",
+        "R013"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N009': '俄罗斯', 'O026': '俄罗斯', 'R013': '俄罗斯'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "俄罗斯",
+        "supporting_sources": [
+          "N009",
+          "O026",
+          "R013"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源（新闻、舆论、雷达）均明确标识国籍为俄罗斯"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "quantity",
+      "claim": "2架",
+      "supporting_sources": [
+        "O026",
+        "R013"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'O026': 2, 'R013': 2}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "2 架",
+        "supporting_sources": [
+          "O026",
+          "R013"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "舆论与雷达均明确报告数量为 2 架，新闻未提及数量但不构成冲突"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "location",
+      "claim": "黄海",
+      "supporting_sources": [
+        "N009",
+        "O026"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "复核明示地点和PDF包含关系：{'N009': '南黄海', 'O026': '黄海'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "南黄海",
+        "supporting_sources": [
+          "N009"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻明确为“南黄海”；舆论“黄海方向”与雷达坐标提示“黄海”均兼容该区域，无冲突"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N009": {
+          "raw": "南黄海",
+          "region": "南黄海",
+          "direction": "黄海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "南黄海"
+        },
+        "O026": {
+          "raw": "黄海方向",
+          "region": "黄海",
+          "direction": "黄海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在黄海方向执行战备警巡任务"
+        }
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "time",
+      "claim": "共同观测/报道时段 08:03—10:28（非完整活动起止断言）",
+      "supporting_sources": [
+        "N009",
+        "R013"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N009': {'start': '08:03', 'end': '10:28', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O026': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R013': {'start': '08:03', 'end': '10:28', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "2025-05-01 08:03 - 10:28",
+        "supporting_sources": [
+          "N009",
+          "R013"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与雷达时间戳精确匹配（08:03-10:28），舆论仅提及日期"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N009": {
+          "start": "08:03",
+          "end": "10:28",
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "O026": {
+          "start": null,
+          "end": null,
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "R013": {
+          "start": "08:03",
+          "end": "10:28",
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        }
+      },
+      "asserted_boundaries": {
+        "start": {},
+        "end": {}
+      },
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "mission",
+      "claim": "战备警巡",
+      "supporting_sources": [
+        "N009",
+        "O026",
+        "R013"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "原文明示任务：{'N009': ['战备警巡'], 'O026': ['战备警巡'], 'R013': ['战备警巡']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "战备警巡",
+        "supporting_sources": [
+          "N009",
+          "O026",
+          "R013"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源均明确任务为“战备警巡”"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N009": [
+          "战备警巡"
+        ],
+        "O026": [
+          "战备警巡"
+        ],
+        "R013": [
+          "战备警巡"
+        ]
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "movement",
+      "claim": "活动",
+      "supporting_sources": [
+        "N009",
+        "O026"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动/机动",
+        "supporting_sources": [
+          "N009",
+          "O026"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与舆论均描述沿既定方向保持机动或维持部署"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N009": "活动",
+        "O026": "活动",
+        "R013": "未说明"
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    }
+  ],
+  "radar_row_count": 13,
+  "direction": "黄海",
+  "report_eligible": true,
+  "directory": "可信事件/N009_俄军苏-35S多用途战斗机在南黄海执行战备警巡行动"
+}

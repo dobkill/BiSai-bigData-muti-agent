@@ -1,0 +1,724 @@
+{
+  "id": "N027",
+  "news_id": "N027",
+  "opinion_id": "O024",
+  "radar_ids": [
+    "R036"
+  ],
+  "radar_slots": {
+    "0": "R036"
+  },
+  "alignment": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O024",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.95,
+        "reason": "平台型号（大邱级）、国籍（韩国）、地点（巴伦支海）及任务（自由航行）完全一致；时间区间（08:37-10:07）与新闻报道精确匹配。尽管舆论中误将国籍标注为法国，但结合雷达数据R036确认了韩国大邱级在该时段该海域的活动，可判定为同一事件。"
+      },
+      {
+        "candidate_id": "O030",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "地点冲突：新闻在巴伦支海，候选在中太平洋；时间不重叠（05:12-07:37 vs 08:37-10:07）；任务不同（监视侦察 vs 自由航行）。"
+      },
+      {
+        "candidate_id": "O033",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.99,
+        "reason": "平台类型完全不同：候选为山东号航母，新闻为大邱级护卫舰；地点不同（中太平洋 vs 巴伦支海）；任务不同。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R036",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 1.0,
+        "reason": "所有关键要素完全吻合：平台（韩国大邱级）、地点（巴伦支海）、任务（自由航行）、时间（2025.05.01 08:37-10:07）。该雷达数据直接证实了新闻描述的具体活动。"
+      },
+      {
+        "candidate_id": "R049",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.96,
+        "reason": "地点不同（中太平洋 vs 巴伦支海）；时间不重叠（05:12-07:37 vs 08:37-10:07）；任务不同。"
+      },
+      {
+        "candidate_id": "R041",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.99,
+        "reason": "平台类型不同（独岛级两栖攻击舰 vs 大邱级护卫舰）；地点不同（东海南部 vs 巴伦支海）；任务不同。"
+      }
+    ],
+    "ambiguity": "无。新闻与雷达数据R036在时空、平台身份及任务上高度一致，舆论O024虽有误标国籍但核心事实指向同一事件，其余候选均存在明显的地点或时间冲突。"
+  },
+  "candidates": {
+    "opinion": [
+      {
+        "id": "O024",
+        "score": 5.79208,
+        "cosine": 0.94208,
+        "platform_similarity": 0.95,
+        "time_overlap": 1.0,
+        "location_relation": "same"
+      },
+      {
+        "id": "O030",
+        "score": 3.99057,
+        "cosine": 0.94057,
+        "platform_similarity": 0.95,
+        "time_overlap": 0.0,
+        "location_relation": "different_named_regions"
+      },
+      {
+        "id": "O033",
+        "score": 1.92331,
+        "cosine": 0.72331,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "different_named_regions"
+      },
+      {
+        "id": "O009",
+        "score": 0.96698,
+        "cosine": 0.76698,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_named_regions"
+      },
+      {
+        "id": "O008",
+        "score": 0.77223,
+        "cosine": 0.77223,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O029",
+        "score": 0.77006,
+        "cosine": 0.77006,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      }
+    ],
+    "radar": [
+      {
+        "id": "R036",
+        "score": 6.02837,
+        "cosine": 0.97837,
+        "platform_similarity": 0.95,
+        "time_overlap": 1.0,
+        "location_relation": "same"
+      },
+      {
+        "id": "R049",
+        "score": 3.97705,
+        "cosine": 0.92705,
+        "platform_similarity": 0.95,
+        "time_overlap": 0.0,
+        "location_relation": "different_named_regions"
+      },
+      {
+        "id": "R041",
+        "score": 2.03344,
+        "cosine": 0.77461,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.8823529411764706,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "R053",
+        "score": 0.77385,
+        "cosine": 0.77385,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "R035",
+        "score": 0.76979,
+        "cosine": 0.76979,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      }
+    ]
+  },
+  "assignment_diagnostics": {
+    "opinion": [],
+    "radar": []
+  },
+  "radar_context": [],
+  "verification": {
+    "same_event": true,
+    "facts": [
+      {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "大邱级导弹护卫舰",
+        "supporting_sources": [
+          "N027",
+          "O024",
+          "R036"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N027': '大邱级导弹护卫舰', 'O024': '大邱级”导弹护卫舰', 'R036': '大邱级导弹护卫舰'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "韩国大邱级导弹护卫舰",
+          "supporting_sources": [
+            "N027",
+            "R036"
+          ],
+          "conflicting_sources": [
+            "O024"
+          ],
+          "status": "supported",
+          "reason": "新闻与雷达均确认为韩国大邱级，舆论误标为法国。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "韩国",
+        "supporting_sources": [
+          "N027",
+          "R036"
+        ],
+        "conflicting_sources": [
+          "O024"
+        ],
+        "status": "conflict",
+        "reason": "程序按已关联平台的明示字段复核：{'N027': '韩国', 'O024': '法国', 'R036': '韩国'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "韩国",
+          "supporting_sources": [
+            "N027",
+            "R036"
+          ],
+          "conflicting_sources": [
+            "O024"
+          ],
+          "status": "supported",
+          "reason": "新闻与雷达明确国籍为韩国，舆论错误标注为法国。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "1艘",
+        "supporting_sources": [
+          "O024",
+          "R036"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'O024': 1, 'R036': 1}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "1 艘",
+          "supporting_sources": [
+            "R036",
+            "O024"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "雷达明确数量为 1，舆论提及“一艘”，新闻未明示数量但无冲突。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "巴伦支海",
+        "supporting_sources": [
+          "N027",
+          "O024",
+          "R036"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "复核明示地点和PDF包含关系：{'N027': '巴伦支海', 'O024': '巴伦支海', 'R036': '巴伦支海'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "巴伦支海",
+          "supporting_sources": [
+            "N027",
+            "O024",
+            "R036"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源均明确地点为巴伦支海。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N027": {
+            "raw": "巴伦支海",
+            "region": "巴伦支海",
+            "direction": "其他",
+            "precision": "原文区域",
+            "mapping": "PDF未列入三大核心海域的区域归其他",
+            "transit": false,
+            "quote": "在巴伦支海"
+          },
+          "O024": {
+            "raw": "巴伦支海",
+            "region": "巴伦支海",
+            "direction": "其他",
+            "precision": "原文区域",
+            "mapping": "PDF未列入三大核心海域的区域归其他",
+            "transit": false,
+            "quote": "在巴伦支海围绕任务区域保持机动"
+          },
+          "R036": {
+            "raw": "巴伦支海",
+            "region": "巴伦支海",
+            "direction": "其他",
+            "precision": "原文区域",
+            "mapping": "PDF未列入三大核心海域的区域归其他",
+            "transit": false
+          }
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "共同观测/报道时段 08:37—10:07（非完整活动起止断言）",
+        "supporting_sources": [
+          "N027",
+          "O024",
+          "R036"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N027': {'start': '08:37', 'end': '10:07', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O024': {'start': '08:37', 'end': '10:07', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R036': {'start': '08:37', 'end': '10:07', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "2025 年 5 月 1 日 08:37-10:07",
+          "supporting_sources": [
+            "N027",
+            "O024",
+            "R036"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论与雷达的时间起止完全一致。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N027": {
+            "start": "08:37",
+            "end": "10:07",
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
+          },
+          "O024": {
+            "start": "08:37",
+            "end": "10:07",
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
+          },
+          "R036": {
+            "start": "08:37",
+            "end": "10:07",
+            "interval": "observation_coverage",
+            "start_asserted": false,
+            "end_asserted": false
+          }
+        },
+        "asserted_boundaries": {
+          "start": {},
+          "end": {}
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "自由航行",
+        "supporting_sources": [
+          "N027",
+          "R036"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "原文明示任务：{'N027': ['自由航行'], 'O024': [], 'R036': ['自由航行']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "自由航行",
+          "supporting_sources": [
+            "N027",
+            "R036"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻明确为“自由航行任务”，雷达任务列为“自由航行”，舆论虽未显式列出任务词但描述机动行为与上下文一致，且核心事实由两源强支持。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N027": [
+            "自由航行"
+          ],
+          "O024": [],
+          "R036": [
+            "自由航行"
+          ]
+        },
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N027",
+          "O024"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "supporting_sources": [
+            "N027",
+            "O024"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻与舆论均描述为保持机动/活动，雷达虽未明确但时空重合且无冲突。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N027": "活动",
+          "O024": "活动",
+          "R036": "未说明"
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      }
+    ],
+    "unresolved_issues": [],
+    "explanation": "程序核验未通过：country关键事实冲突：程序按已关联平台的明示字段复核：{'N027': '韩国', 'O024': '法国', 'R036': '韩国'}；缺失不支持也不反对",
+    "model_explanation": "三源在平台型号、国籍（排除舆论误标）、地点、时间及任务上高度一致。舆论 O024 将韩国舰艇误标为法国，经新闻 N027 和雷达 R036 确认为韩国大邱级后，该冲突已消解。数量由雷达和舆论共同支持。所有关键事实均有至少两类来源支持，无未消解冲突。"
+  },
+  "reasons": [
+    "country关键事实冲突：程序按已关联平台的明示字段复核：{'N027': '韩国', 'O024': '法国', 'R036': '韩国'}；缺失不支持也不反对"
+  ],
+  "status": "不可信事件",
+  "verified_facts": [
+    {
+      "platform_index": 0,
+      "field": "platform",
+      "claim": "大邱级导弹护卫舰",
+      "supporting_sources": [
+        "N027",
+        "O024",
+        "R036"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N027': '大邱级导弹护卫舰', 'O024': '大邱级”导弹护卫舰', 'R036': '大邱级导弹护卫舰'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "韩国大邱级导弹护卫舰",
+        "supporting_sources": [
+          "N027",
+          "R036"
+        ],
+        "conflicting_sources": [
+          "O024"
+        ],
+        "status": "supported",
+        "reason": "新闻与雷达均确认为韩国大邱级，舆论误标为法国。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "quantity",
+      "claim": "1艘",
+      "supporting_sources": [
+        "O024",
+        "R036"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'O024': 1, 'R036': 1}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "1 艘",
+        "supporting_sources": [
+          "R036",
+          "O024"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "雷达明确数量为 1，舆论提及“一艘”，新闻未明示数量但无冲突。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "location",
+      "claim": "巴伦支海",
+      "supporting_sources": [
+        "N027",
+        "O024",
+        "R036"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "复核明示地点和PDF包含关系：{'N027': '巴伦支海', 'O024': '巴伦支海', 'R036': '巴伦支海'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "巴伦支海",
+        "supporting_sources": [
+          "N027",
+          "O024",
+          "R036"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源均明确地点为巴伦支海。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N027": {
+          "raw": "巴伦支海",
+          "region": "巴伦支海",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false,
+          "quote": "在巴伦支海"
+        },
+        "O024": {
+          "raw": "巴伦支海",
+          "region": "巴伦支海",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false,
+          "quote": "在巴伦支海围绕任务区域保持机动"
+        },
+        "R036": {
+          "raw": "巴伦支海",
+          "region": "巴伦支海",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false
+        }
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "time",
+      "claim": "共同观测/报道时段 08:37—10:07（非完整活动起止断言）",
+      "supporting_sources": [
+        "N027",
+        "O024",
+        "R036"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N027': {'start': '08:37', 'end': '10:07', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O024': {'start': '08:37', 'end': '10:07', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R036': {'start': '08:37', 'end': '10:07', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "2025 年 5 月 1 日 08:37-10:07",
+        "supporting_sources": [
+          "N027",
+          "O024",
+          "R036"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻、舆论与雷达的时间起止完全一致。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N027": {
+          "start": "08:37",
+          "end": "10:07",
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "O024": {
+          "start": "08:37",
+          "end": "10:07",
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "R036": {
+          "start": "08:37",
+          "end": "10:07",
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        }
+      },
+      "asserted_boundaries": {
+        "start": {},
+        "end": {}
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "mission",
+      "claim": "自由航行",
+      "supporting_sources": [
+        "N027",
+        "R036"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "原文明示任务：{'N027': ['自由航行'], 'O024': [], 'R036': ['自由航行']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "自由航行",
+        "supporting_sources": [
+          "N027",
+          "R036"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻明确为“自由航行任务”，雷达任务列为“自由航行”，舆论虽未显式列出任务词但描述机动行为与上下文一致，且核心事实由两源强支持。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N027": [
+          "自由航行"
+        ],
+        "O024": [],
+        "R036": [
+          "自由航行"
+        ]
+      },
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "movement",
+      "claim": "活动",
+      "supporting_sources": [
+        "N027",
+        "O024"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N027",
+          "O024"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与舆论均描述为保持机动/活动，雷达虽未明确但时空重合且无冲突。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N027": "活动",
+        "O024": "活动",
+        "R036": "未说明"
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    }
+  ],
+  "radar_row_count": 10,
+  "direction": "其他",
+  "report_eligible": false,
+  "directory": "不可信事件/N027_韩国大邱级护卫舰在巴伦支海执行自由航行行动"
+}

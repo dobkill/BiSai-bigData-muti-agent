@@ -17,7 +17,21 @@
         ],
         "relation": "same",
         "confidence": 0.98,
-        "reason": "平台（歼 -16D）、地点（塔斯曼海）、任务（电子对抗训练）及时间（2025.5.1 凌晨时段）完全一致。新闻中提到的具体起止时间（02:05-04:30）与候选 O001 描述的宏观时间段吻合，且均提及‘平台间行动衔接’，属于同一事件的不同报道视角。"
+        "reason": "平台（歼 -16D）、地点（塔斯曼海）、任务（电子对抗训练）及时间区间（2025.5.1 凌晨）完全一致。O001 明确提及“两架”，与新闻中隐含的编队行动相符，属于同一事件的不同报道视角。"
+      },
+      {
+        "candidate_id": "O016",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台完全不同（903A 补给舰 vs 歼 -16D），地点不同（南海方向 vs 塔斯曼海），虽时间重叠但属于完全不同的活动。"
+      },
+      {
+        "candidate_id": "O023",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台（俄军苏 -35S）、国籍、地点（黄海）及任务均与新闻不符，属于不同国家的独立活动。"
       }
     ],
     "radar_edges": [
@@ -28,10 +42,24 @@
         ],
         "relation": "same",
         "confidence": 0.95,
-        "reason": "平台（歼 -16D）、任务（电子对抗训练）及精确时间（02:05-04:30）与新闻完全匹配。虽然雷达数据地点字段缺失，但其坐标范围（南纬 37-38 度，东经 160 度）地理上位于塔斯曼海，且批号唯一对应此次行动，可确认为同一活动。"
+        "reason": "平台（歼 -16D）、任务（电子对抗训练）及时间（02:05-04:30）与新闻完全匹配。尽管雷达数据缺少明确的地理标签（region/direction），但其坐标范围（南纬 37.8-38.0，东经 160.1-160.3）精确落在塔斯曼海海域，且批号唯一性警告提示需结合其他线索判断，此处时空与身份高度相容。"
+      },
+      {
+        "candidate_id": "R034",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台（福建号航母）、地点（钓鱼岛海域/东海）与新闻不符。"
+      },
+      {
+        "candidate_id": "R044",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台（903A 补给舰）、地点（万安滩海域/南海）与新闻不符。"
       }
     ],
-    "ambiguity": "无。其他候选因平台型号、海域或任务性质明显不同（如南海补给舰、黄海苏 -35S、东海歼 -35 等），排除关联可能。"
+    "ambiguity": "无。O001 和 R023 均提供了充分证据指向同一事件，其他候选在平台、地点或任务上存在明显冲突。"
   },
   "candidates": {
     "opinion": [
@@ -155,6 +183,7 @@
     "opinion": [],
     "radar": []
   },
+  "radar_context": [],
   "verification": {
     "same_event": true,
     "facts": [
@@ -173,7 +202,7 @@
         "model_proposal": {
           "platform_index": 0,
           "field": "platform",
-          "claim": "中国歼-16D电子战飞机",
+          "claim": "歼 -16D 电子战飞机",
           "supporting_sources": [
             "N043",
             "O001",
@@ -181,7 +210,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "三源均明确指向该机型及国籍"
+          "reason": "三源一致"
         },
         "checked_by": "explicit_source_matrix",
         "supporting_source_types": [
@@ -213,7 +242,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "三源一致确认国籍"
+          "reason": "三源一致"
         },
         "checked_by": "explicit_source_matrix",
         "supporting_source_types": [
@@ -243,7 +272,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "舆论明确提及'两架'，雷达批号数量列为'2'；新闻未说明具体数量但不构成冲突"
+          "reason": "舆论与雷达明确支持，新闻虽未明示数量但描述编队行动且无冲突"
         },
         "checked_by": "explicit_source_matrix",
         "supporting_source_types": [
@@ -272,7 +301,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻与舆论均显式提及'塔斯曼海'；雷达坐标范围（南纬 37-38 度，东经 160 度）地理上位于该海域"
+          "reason": "新闻与舆论文本均明确提及塔斯曼海，雷达坐标范围（南纬 37.8-38.0，东经 160.1-160.3）地理落点确认为塔斯曼海"
         },
         "checked_by": "literal_assertion_matrix",
         "source_values": {
@@ -303,56 +332,53 @@
       {
         "platform_index": -1,
         "field": "time",
-        "claim": "起点 02:05，终点 04:30",
+        "claim": "共同观测/报道时段 02:05—04:30（非完整活动起止断言）",
         "supporting_sources": [
           "N043",
           "R023"
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突；起点明示值：{'N043': '02:05', 'R023': '02:05'}；终点明示值：{'N043': '04:30', 'R023': '04:30'}",
+        "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N043': {'start': '02:05', 'end': '04:30', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O001': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R023': {'start': '02:05', 'end': '04:30', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
         "model_proposal": {
           "platform_index": -1,
           "field": "time",
-          "claim": "2025.5.1 02:05-04:30",
+          "claim": "2025 年 5 月 1 日 02:05 - 04:30",
           "supporting_sources": [
             "N043",
             "R023"
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻与雷达精确时间完全一致；舆论仅提及日期，不冲突"
+          "reason": "新闻与雷达时间完全一致，舆论仅提及日期"
         },
         "checked_by": "literal_assertion_matrix",
-        "components": {
-          "start_time": {
-            "value": "02:05",
-            "support": [
-              "N043",
-              "R023"
-            ],
-            "conflicts": [],
-            "status": "supported",
-            "source_values": {
-              "N043": "02:05",
-              "R023": "02:05"
-            },
-            "radar_batch_observations": []
+        "source_values": {
+          "N043": {
+            "start": "02:05",
+            "end": "04:30",
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
           },
-          "end_time": {
-            "value": "04:30",
-            "support": [
-              "N043",
-              "R023"
-            ],
-            "conflicts": [],
-            "status": "supported",
-            "source_values": {
-              "N043": "04:30",
-              "R023": "04:30"
-            },
-            "radar_batch_observations": []
+          "O001": {
+            "start": null,
+            "end": null,
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
+          },
+          "R023": {
+            "start": "02:05",
+            "end": "04:30",
+            "interval": "observation_coverage",
+            "start_asserted": false,
+            "end_asserted": false
           }
+        },
+        "asserted_boundaries": {
+          "start": {},
+          "end": {}
         },
         "supporting_source_types": [
           "news",
@@ -382,7 +408,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "三源均明确记载任务性质为'电子对抗训练'"
+          "reason": "三源均明确指向电子对抗训练"
         },
         "checked_by": "literal_assertion_matrix",
         "source_values": {
@@ -423,7 +449,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻与舆论描述为组织训练活动；雷达标记'未说明'但不构成冲突"
+          "reason": "新闻与舆论均描述为组织训练活动，雷达虽未显式说明但时空重合支持同一活动"
         },
         "checked_by": "literal_assertion_matrix",
         "source_values": {
@@ -439,7 +465,9 @@
     ],
     "unresolved_issues": [],
     "explanation": "三类来源已关联，纳入结论的事实获得至少两类独立来源支持，未发现未消解明示反证。",
-    "model_explanation": "三源在平台型号、国籍、任务、时间及地点上高度一致。数量方面，舆论和雷达明确支持"
+    "model_unresolved_issues": [],
+    "reconciled_model_issues": [],
+    "model_explanation": "三源（新闻、舆论、雷达）在平台型号、国籍、任务及核心时间地点上高度一致。数量方面，舆论和雷达明确支持"
   },
   "reasons": [],
   "status": "可信事件",
@@ -459,7 +487,7 @@
       "model_proposal": {
         "platform_index": 0,
         "field": "platform",
-        "claim": "中国歼-16D电子战飞机",
+        "claim": "歼 -16D 电子战飞机",
         "supporting_sources": [
           "N043",
           "O001",
@@ -467,7 +495,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "三源均明确指向该机型及国籍"
+        "reason": "三源一致"
       },
       "checked_by": "explicit_source_matrix",
       "supporting_source_types": [
@@ -499,7 +527,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "三源一致确认国籍"
+        "reason": "三源一致"
       },
       "checked_by": "explicit_source_matrix",
       "supporting_source_types": [
@@ -529,7 +557,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "舆论明确提及'两架'，雷达批号数量列为'2'；新闻未说明具体数量但不构成冲突"
+        "reason": "舆论与雷达明确支持，新闻虽未明示数量但描述编队行动且无冲突"
       },
       "checked_by": "explicit_source_matrix",
       "supporting_source_types": [
@@ -558,7 +586,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "新闻与舆论均显式提及'塔斯曼海'；雷达坐标范围（南纬 37-38 度，东经 160 度）地理上位于该海域"
+        "reason": "新闻与舆论文本均明确提及塔斯曼海，雷达坐标范围（南纬 37.8-38.0，东经 160.1-160.3）地理落点确认为塔斯曼海"
       },
       "checked_by": "literal_assertion_matrix",
       "source_values": {
@@ -589,56 +617,53 @@
     {
       "platform_index": -1,
       "field": "time",
-      "claim": "起点 02:05，终点 04:30",
+      "claim": "共同观测/报道时段 02:05—04:30（非完整活动起止断言）",
       "supporting_sources": [
         "N043",
         "R023"
       ],
       "conflicting_sources": [],
       "status": "supported",
-      "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突；起点明示值：{'N043': '02:05', 'R023': '02:05'}；终点明示值：{'N043': '04:30', 'R023': '04:30'}",
+      "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N043': {'start': '02:05', 'end': '04:30', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O001': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R023': {'start': '02:05', 'end': '04:30', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
       "model_proposal": {
         "platform_index": -1,
         "field": "time",
-        "claim": "2025.5.1 02:05-04:30",
+        "claim": "2025 年 5 月 1 日 02:05 - 04:30",
         "supporting_sources": [
           "N043",
           "R023"
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "新闻与雷达精确时间完全一致；舆论仅提及日期，不冲突"
+        "reason": "新闻与雷达时间完全一致，舆论仅提及日期"
       },
       "checked_by": "literal_assertion_matrix",
-      "components": {
-        "start_time": {
-          "value": "02:05",
-          "support": [
-            "N043",
-            "R023"
-          ],
-          "conflicts": [],
-          "status": "supported",
-          "source_values": {
-            "N043": "02:05",
-            "R023": "02:05"
-          },
-          "radar_batch_observations": []
+      "source_values": {
+        "N043": {
+          "start": "02:05",
+          "end": "04:30",
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
         },
-        "end_time": {
-          "value": "04:30",
-          "support": [
-            "N043",
-            "R023"
-          ],
-          "conflicts": [],
-          "status": "supported",
-          "source_values": {
-            "N043": "04:30",
-            "R023": "04:30"
-          },
-          "radar_batch_observations": []
+        "O001": {
+          "start": null,
+          "end": null,
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "R023": {
+          "start": "02:05",
+          "end": "04:30",
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
         }
+      },
+      "asserted_boundaries": {
+        "start": {},
+        "end": {}
       },
       "supporting_source_types": [
         "news",
@@ -668,7 +693,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "三源均明确记载任务性质为'电子对抗训练'"
+        "reason": "三源均明确指向电子对抗训练"
       },
       "checked_by": "literal_assertion_matrix",
       "source_values": {
@@ -709,7 +734,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "新闻与舆论描述为组织训练活动；雷达标记'未说明'但不构成冲突"
+        "reason": "新闻与舆论均描述为组织训练活动，雷达虽未显式说明但时空重合支持同一活动"
       },
       "checked_by": "literal_assertion_matrix",
       "source_values": {

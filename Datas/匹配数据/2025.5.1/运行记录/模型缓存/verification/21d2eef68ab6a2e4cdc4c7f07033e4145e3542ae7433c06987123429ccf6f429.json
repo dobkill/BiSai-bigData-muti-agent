@@ -1,0 +1,298 @@
+{
+  "role": "verification",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N033",
+      "kind": "news",
+      "title": "菲律宾海军米格尔·马尔瓦尔号护卫舰在上海外海活动",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：菲律宾海军米格尔·马尔瓦尔号护卫舰在上海外海活动\n正文：2025年5月1日，菲律宾海军1艘米格尔·马尔瓦尔号导弹护卫舰在上海外海持续活动，行动范围保持在指定任务海域并围绕任务区域保持机动。\n\n主题词：菲律宾  米格尔·马尔瓦尔号  上海外海\n",
+      "platforms": [
+        {
+          "name": "米格尔·马尔瓦尔号",
+          "country": "菲律宾",
+          "quantity": 1,
+          "quote": "菲律宾海军1艘米格尔·马尔瓦尔号导弹护卫舰",
+          "quantity_quote": "1艘米格尔·马尔瓦尔号",
+          "country_raw": "菲律宾"
+        }
+      ],
+      "location": {
+        "raw": "上海外海",
+        "region": "上海外海",
+        "direction": "东海",
+        "precision": "具体区域",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "上海外海"
+      },
+      "mission": {
+        "value": "持续活动",
+        "quote": "持续活动"
+      },
+      "start_time": null,
+      "end_time": null,
+      "movement": "活动",
+      "time_semantics": {
+        "interval": "reported_activity",
+        "start_asserted": false,
+        "end_asserted": false
+      }
+    },
+    "opinion": {
+      "id": "O042",
+      "kind": "opinion",
+      "title": "菲律宾海军护卫舰在东海开展远海训练引发媒体分析",
+      "text": "时间：2025.5.1\n\n标题：菲律宾海军护卫舰在东海开展远海训练引发媒体分析\n\n正文：据公开防务媒体报道，2025年5月1日，菲律宾海军“米格尔·马尔瓦尔号”导弹护卫舰在东海方向进行远海训练，训练时段为17时24分至19时49分。此次行动围绕既定科目组织训练，被视为菲律宾军方提升任务组织与流程熟悉程度的举措。分析认为，此类训练有助于强化平台间的行动衔接与训练协同。\n",
+      "platforms": [
+        {
+          "name": "米格尔·马尔瓦尔号",
+          "country": "菲律宾",
+          "quantity": null,
+          "quote": "米格尔·马尔瓦尔号”导弹护卫舰",
+          "quantity_quote": "",
+          "country_raw": "菲律宾"
+        }
+      ],
+      "location": {
+        "raw": "东海方向",
+        "region": "东海",
+        "direction": "东海",
+        "precision": "大范围",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "在东海方向"
+      },
+      "mission": {
+        "value": "远海训练",
+        "quote": "进行远海训练"
+      },
+      "start_time": "17:24",
+      "end_time": "19:49",
+      "movement": "活动",
+      "time_semantics": {
+        "interval": "reported_activity",
+        "start_asserted": false,
+        "end_asserted": false
+      }
+    },
+    "radars": [
+      {
+        "id": "R054",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "米格尔·马尔瓦尔号导弹护卫舰",
+            "country": "菲律宾",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-FCBD3AC1E6ACBE",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "上海外海",
+          "region": "上海外海",
+          "direction": "东海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "上海外海",
+            "region": "上海外海",
+            "direction": "东海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "远海训练",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "远海训练"
+        ],
+        "start_time": "2025.05.01 17:24:00",
+        "end_time": "2025.05.01 19:49:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-FCBD3AC1E6ACBE",
+        "sibling_ids": [],
+        "hull_values": [
+          "FFG-06"
+        ],
+        "country_values": [
+          "菲律宾"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 12,
+        "time_semantics": {
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "identity_scope": "batch_is_not_unique_target",
+        "warnings": []
+      }
+    ],
+    "association": {
+      "opinion_edges": [
+        {
+          "candidate_id": "O042",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.95,
+          "reason": "平台身份完全一致（菲律宾米格尔·马尔瓦尔号）、地点精确匹配（上海外海/东海方向）、时间高度重合（报道区间包含雷达观测时段）。任务描述“持续活动”与“远海训练”在语义上相容，属于同一具体行动的不同表述。"
+        },
+        {
+          "candidate_id": "O037",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 1.0,
+          "reason": "平台型号完全不同（轰 -6K 轰炸机 vs 护卫舰），属于不同军种和任务类型的活动，尽管时间和地点重合。"
+        },
+        {
+          "candidate_id": "O028",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 1.0,
+          "reason": "平台型号完全不同（空警 -500 预警机 vs 护卫舰），属于不同军种和任务类型的活动。"
+        }
+      ],
+      "radar_edges": [
+        {
+          "candidate_id": "R054",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.98,
+          "reason": "平台身份、地点（上海外海）、时间区间完全匹配。雷达数据中的“远海训练”任务与新闻中的“持续活动”描述一致，且批号虽非唯一标识但在此处与其他强线索共同确证了同一事件。"
+        },
+        {
+          "candidate_id": "R037",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 1.0,
+          "reason": "平台型号不同（中国 054B 型 vs 菲律宾米格尔·马尔瓦尔号），属于不同国家的独立活动。"
+        },
+        {
+          "candidate_id": "R047",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 1.0,
+          "reason": "平台型号不同（日本村雨号 vs 菲律宾米格尔·马尔瓦尔号），属于不同国家的独立活动。"
+        }
+      ],
+      "ambiguity": "无。新闻与雷达数据 O042/R054 在平台、地点、时间及任务性质上形成闭环证据链，其他候选因平台型号或国家明显不同而被排除。"
+    },
+    "same_batch_other_candidates": []
+  },
+  "result": {
+    "same_event": true,
+    "platforms": [
+      {
+        "platform_index": 0,
+        "platform": {
+          "claim": "米格尔·马尔瓦尔号",
+          "supporting_sources": [
+            "N033",
+            "O042",
+            "R054"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均明确指向该型号"
+        },
+        "country": {
+          "claim": "菲律宾",
+          "supporting_sources": [
+            "N033",
+            "O042",
+            "R054"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源一致确认国籍为菲律宾"
+        },
+        "quantity": {
+          "claim": "1 艘",
+          "supporting_sources": [
+            "N033",
+            "R054"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻明确提及"
+        }
+      }
+    ],
+    "location": {
+      "claim": "上海外海",
+      "supporting_sources": [
+        "N033",
+        "R054"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与雷达均精确指向上海外海，舆论的“东海方向”为兼容描述"
+    },
+    "time": {
+      "claim": "2025 年 5 月 1 日 17:24-19:49",
+      "supporting_sources": [
+        "O042",
+        "R054"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "舆论与雷达提供了精确的起止时间，新闻仅确认日期，三者在时间覆盖上无冲突"
+    },
+    "mission": {
+      "claim": "远海训练",
+      "supporting_sources": [
+        "O042",
+        "R054"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "舆论与雷达明确任务为“远海训练”，新闻的“持续活动”在语义上相容但不如前两者具体，两类核心来源支持"
+    },
+    "movement": {
+      "claim": "活动",
+      "supporting_sources": [
+        "N033",
+        "O042"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与舆论均描述为活动状态"
+    },
+    "unresolved_issues": [],
+    "explanation": "新闻、舆论、雷达三源在平台身份、国籍、数量（两源支持）、地点（两源精确支持）、时间（两源精确支持）及任务性质（两源明确支持）上高度一致，形成完整证据链。舆论与雷达提供了具体的起止时刻和精确任务科目，弥补了新闻信息的不足，无未消解冲突。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-08T00:09:12.9075099Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"same_event\": true, \"platforms\": [{\"platform_index\": 0, \"platform\": {\"claim\": \"米格尔·马尔瓦尔号\", \"supporting_sources\": [\"N033\", \"O042\", \"R054\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源（新闻、舆论、雷达）均明确指向该型号\"}, \"country\": {\"claim\": \"菲律宾\", \"supporting_sources\": [\"N033\", \"O042\", \"R054\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源一致确认国籍为菲律宾\"}, \"quantity\": {\"claim\": \"1 艘\", \"supporting_sources\": [\"N033\", \"R054\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻明确提及\" }}], \"location\": {\"claim\": \"上海外海\", \"supporting_sources\": [\"N033\", \"R054\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻与雷达均精确指向上海外海，舆论的“东海方向”为兼容描述\"}, \"time\": {\"claim\": \"2025 年 5 月 1 日 17:24-19:49\", \"supporting_sources\": [\"O042\", \"R054\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"舆论与雷达提供了精确的起止时间，新闻仅确认日期，三者在时间覆盖上无冲突\"}, \"mission\": {\"claim\": \"远海训练\", \"supporting_sources\": [\"O042\", \"R054\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"舆论与雷达明确任务为“远海训练”，新闻的“持续活动”在语义上相容但不如前两者具体，两类核心来源支持\"}, \"movement\": {\"claim\": \"活动\", \"supporting_sources\": [\"N033\", \"O042\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻与舆论均描述为活动状态\"}, \"unresolved_issues\": [],\"explanation\": \"新闻、舆论、雷达三源在平台身份、国籍、数量（两源支持）、地点（两源精确支持）、时间（两源精确支持）及任务性质（两源明确支持）上高度一致，形成完整证据链。舆论与雷达提供了具体的起止时刻和精确任务科目，弥补了新闻信息的不足，无未消解冲突。\"}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 11787716900,
+    "load_duration": 14391900,
+    "prompt_eval_count": 2253,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 832431000,
+    "eval_count": 560,
+    "eval_duration": 10768530000
+  }
+}

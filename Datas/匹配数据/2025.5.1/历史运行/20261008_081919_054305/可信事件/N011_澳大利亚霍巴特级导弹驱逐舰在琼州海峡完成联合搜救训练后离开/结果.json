@@ -1,0 +1,739 @@
+{
+  "id": "N011",
+  "news_id": "N011",
+  "opinion_id": "O027",
+  "radar_ids": [
+    "R033"
+  ],
+  "radar_slots": {
+    "0": "R033"
+  },
+  "alignment": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O027",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.95,
+        "reason": "平台（澳大利亚霍巴特级）、任务（联合搜救训练）、时间（2025.5.1）及地点（南海/琼州海峡）完全一致。尽管舆论称“南海海域”而新闻称“琼州海峡”，但琼州海峡属于南海，且雷达数据R033证实了该舰在琼州海峡的具体活动，故舆论描述为大范围涵盖具体事件，判定为同一活动。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R033",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 1.0,
+        "reason": "平台型号（霍巴特级）、国籍（澳大利亚）、任务（联合搜救训练）、时间区间（11:48-13:13）及地点（琼州海峡）与新闻完全精确匹配。雷达数据提供了具体的批号和舷号细节，确认为同一事件。"
+      }
+    ],
+    "ambiguity": "无。其他候选因平台型号、国籍、任务类型或海域方向（如东海、黄海、孟加拉湾）明显不同而被排除。"
+  },
+  "candidates": {
+    "opinion": [
+      {
+        "id": "O027",
+        "score": 4.42849,
+        "cosine": 0.89849,
+        "platform_similarity": 0.95,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O003",
+        "score": 2.23679,
+        "cosine": 0.71208,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.8705882352941177,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O041",
+        "score": 1.89469,
+        "cosine": 0.69469,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O040",
+        "score": 0.77337,
+        "cosine": 0.77337,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O044",
+        "score": 0.76541,
+        "cosine": 0.76541,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O032",
+        "score": 0.76143,
+        "cosine": 0.76143,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O046",
+        "score": 0.75657,
+        "cosine": 0.75657,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      }
+    ],
+    "radar": [
+      {
+        "id": "R033",
+        "score": 5.96921,
+        "cosine": 0.91921,
+        "platform_similarity": 0.95,
+        "time_overlap": 1.0,
+        "location_relation": "same"
+      },
+      {
+        "id": "R038",
+        "score": 2.07407,
+        "cosine": 0.71407,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "same_direction_only"
+      },
+      {
+        "id": "R021",
+        "score": 1.93189,
+        "cosine": 0.73189,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R034",
+        "score": 0.74771,
+        "cosine": 0.74771,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "R041",
+        "score": 0.74023,
+        "cosine": 0.74023,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "R035",
+        "score": 0.73712,
+        "cosine": 0.73712,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "R051",
+        "score": 0.73627,
+        "cosine": 0.73627,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      }
+    ]
+  },
+  "assignment_diagnostics": {
+    "opinion": [],
+    "radar": []
+  },
+  "radar_context": [],
+  "verification": {
+    "same_event": true,
+    "facts": [
+      {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "霍巴特级",
+        "supporting_sources": [
+          "N011",
+          "O027",
+          "R033"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N011': '霍巴特级', 'O027': '霍巴特级导弹驱逐舰', 'R033': '霍巴特级导弹驱逐舰'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "澳大利亚霍巴特级导弹驱逐舰",
+          "supporting_sources": [
+            "N011",
+            "O027",
+            "R033"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均确认为澳大利亚霍巴特级，无冲突。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "澳大利亚",
+        "supporting_sources": [
+          "N011",
+          "O027",
+          "R033"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N011': '澳大利亚', 'O027': '澳大利亚', 'R033': '澳大利亚'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "澳大利亚",
+          "supporting_sources": [
+            "N011",
+            "O027",
+            "R033"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均确认为澳大利亚，无冲突。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "1艘",
+        "supporting_sources": [
+          "O027",
+          "R033"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'O027': 1, 'R033': 1}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "1 架",
+          "supporting_sources": [
+            "O027",
+            "R033"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论明确提及“一艘”，雷达批号显示数量值为 1；新闻未说明具体数量但不构成反对，两源支持成立。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "琼州海峡",
+        "supporting_sources": [
+          "N011",
+          "R033"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "复核明示地点和PDF包含关系：{'N011': '琼州海峡', 'O027': '南海', 'R033': '琼州海峡'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "琼州海峡",
+          "supporting_sources": [
+            "N011",
+            "R033"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻与雷达均明确为“琼州海峡”；舆论称“南海海域”，因琼州海峡属于南海，大范围描述兼容具体区域，三源逻辑一致。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N011": {
+            "raw": "琼州海峡",
+            "region": "琼州海峡",
+            "direction": "南海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false,
+            "quote": "在琼州海峡"
+          },
+          "O027": {
+            "raw": "南海海域",
+            "region": "南海",
+            "direction": "南海",
+            "precision": "大范围",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false,
+            "quote": "在南海海域"
+          },
+          "R033": {
+            "raw": "琼州海峡",
+            "region": "琼州海峡",
+            "direction": "南海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        },
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "共同观测/报道时段 11:48—13:13（非完整活动起止断言）",
+        "supporting_sources": [
+          "N011",
+          "R033"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N011': {'start': '11:48', 'end': '13:13', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O027': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R033': {'start': '11:48', 'end': '13:13', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "2025 年 5 月 1 日 11:48 - 13:13",
+          "supporting_sources": [
+            "N011",
+            "R033"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻与雷达时间区间完全一致（11:48-13:13）；舆论仅提及日期未涉具体时刻，不冲突且被两源精确数据覆盖。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N011": {
+            "start": "11:48",
+            "end": "13:13",
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
+          },
+          "O027": {
+            "start": null,
+            "end": null,
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
+          },
+          "R033": {
+            "start": "11:48",
+            "end": "13:13",
+            "interval": "observation_coverage",
+            "start_asserted": false,
+            "end_asserted": false
+          }
+        },
+        "asserted_boundaries": {
+          "start": {},
+          "end": {}
+        },
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "联合搜救训练",
+        "supporting_sources": [
+          "N011",
+          "O027",
+          "R033"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "原文明示任务：{'N011': ['联合搜救训练'], 'O027': ['联合搜救训练'], 'R033': ['联合搜救训练']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "联合搜救训练",
+          "supporting_sources": [
+            "N011",
+            "O027",
+            "R033"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均明确为“联合搜救训练”，完全一致。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N011": [
+            "联合搜救训练"
+          ],
+          "O027": [
+            "联合搜救训练"
+          ],
+          "R033": [
+            "联合搜救训练"
+          ]
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N011",
+          "O027"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "离开该海域",
+          "supporting_sources": [
+            "N011"
+          ],
+          "conflicting_sources": [],
+          "status": "insufficient",
+          "reason": "仅新闻提及“离开”，雷达未说明运动状态，舆论称“活动”，缺乏两类来源支持具体离场动作。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N011": "离开",
+          "O027": "活动",
+          "R033": "未说明"
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      }
+    ],
+    "unresolved_issues": [],
+    "explanation": "三类来源已关联，纳入结论的事实获得至少两类独立来源支持，未发现未消解明示反证。",
+    "model_explanation": "三源（新闻、舆论、雷达）在平台型号、国籍、任务、时间及地点上高度一致，构成可信结论。数量由舆论和雷达共同支持；地点舆论的大范围描述兼容新闻和雷达的具体区域。唯一未完全消解的是具体“离开”动作仅有一源支持，但不影响核心事件事实的可信度。"
+  },
+  "reasons": [],
+  "status": "可信事件",
+  "verified_facts": [
+    {
+      "platform_index": 0,
+      "field": "platform",
+      "claim": "霍巴特级",
+      "supporting_sources": [
+        "N011",
+        "O027",
+        "R033"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N011': '霍巴特级', 'O027': '霍巴特级导弹驱逐舰', 'R033': '霍巴特级导弹驱逐舰'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "澳大利亚霍巴特级导弹驱逐舰",
+        "supporting_sources": [
+          "N011",
+          "O027",
+          "R033"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻、舆论、雷达三源均确认为澳大利亚霍巴特级，无冲突。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "country",
+      "claim": "澳大利亚",
+      "supporting_sources": [
+        "N011",
+        "O027",
+        "R033"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N011': '澳大利亚', 'O027': '澳大利亚', 'R033': '澳大利亚'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "澳大利亚",
+        "supporting_sources": [
+          "N011",
+          "O027",
+          "R033"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻、舆论、雷达三源均确认为澳大利亚，无冲突。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "quantity",
+      "claim": "1艘",
+      "supporting_sources": [
+        "O027",
+        "R033"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'O027': 1, 'R033': 1}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "1 架",
+        "supporting_sources": [
+          "O027",
+          "R033"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "舆论明确提及“一艘”，雷达批号显示数量值为 1；新闻未说明具体数量但不构成反对，两源支持成立。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "location",
+      "claim": "琼州海峡",
+      "supporting_sources": [
+        "N011",
+        "R033"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "复核明示地点和PDF包含关系：{'N011': '琼州海峡', 'O027': '南海', 'R033': '琼州海峡'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "琼州海峡",
+        "supporting_sources": [
+          "N011",
+          "R033"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与雷达均明确为“琼州海峡”；舆论称“南海海域”，因琼州海峡属于南海，大范围描述兼容具体区域，三源逻辑一致。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N011": {
+          "raw": "琼州海峡",
+          "region": "琼州海峡",
+          "direction": "南海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在琼州海峡"
+        },
+        "O027": {
+          "raw": "南海海域",
+          "region": "南海",
+          "direction": "南海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在南海海域"
+        },
+        "R033": {
+          "raw": "琼州海峡",
+          "region": "琼州海峡",
+          "direction": "南海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        }
+      },
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "time",
+      "claim": "共同观测/报道时段 11:48—13:13（非完整活动起止断言）",
+      "supporting_sources": [
+        "N011",
+        "R033"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N011': {'start': '11:48', 'end': '13:13', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O027': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R033': {'start': '11:48', 'end': '13:13', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "2025 年 5 月 1 日 11:48 - 13:13",
+        "supporting_sources": [
+          "N011",
+          "R033"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与雷达时间区间完全一致（11:48-13:13）；舆论仅提及日期未涉具体时刻，不冲突且被两源精确数据覆盖。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N011": {
+          "start": "11:48",
+          "end": "13:13",
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "O027": {
+          "start": null,
+          "end": null,
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "R033": {
+          "start": "11:48",
+          "end": "13:13",
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        }
+      },
+      "asserted_boundaries": {
+        "start": {},
+        "end": {}
+      },
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "mission",
+      "claim": "联合搜救训练",
+      "supporting_sources": [
+        "N011",
+        "O027",
+        "R033"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "原文明示任务：{'N011': ['联合搜救训练'], 'O027': ['联合搜救训练'], 'R033': ['联合搜救训练']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "联合搜救训练",
+        "supporting_sources": [
+          "N011",
+          "O027",
+          "R033"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻、舆论、雷达三源均明确为“联合搜救训练”，完全一致。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N011": [
+          "联合搜救训练"
+        ],
+        "O027": [
+          "联合搜救训练"
+        ],
+        "R033": [
+          "联合搜救训练"
+        ]
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "movement",
+      "claim": "活动",
+      "supporting_sources": [
+        "N011",
+        "O027"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "离开该海域",
+        "supporting_sources": [
+          "N011"
+        ],
+        "conflicting_sources": [],
+        "status": "insufficient",
+        "reason": "仅新闻提及“离开”，雷达未说明运动状态，舆论称“活动”，缺乏两类来源支持具体离场动作。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N011": "离开",
+        "O027": "活动",
+        "R033": "未说明"
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    }
+  ],
+  "radar_row_count": 11,
+  "direction": "南海",
+  "report_eligible": true,
+  "directory": "可信事件/N011_澳大利亚霍巴特级导弹驱逐舰在琼州海峡完成联合搜救训练后离开"
+}

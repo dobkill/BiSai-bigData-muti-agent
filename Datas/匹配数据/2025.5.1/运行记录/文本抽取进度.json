@@ -35,7 +35,12 @@
     "time_quote": "从 11 时 37 分至 13 时 02 分",
     "movement": "活动",
     "movement_quote": "展开行动",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "N002",
@@ -73,7 +78,12 @@
     "time_quote": "11 时 21 分至 13 时 46 分",
     "movement": "活动",
     "movement_quote": "组织对海突击训练",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "N003",
@@ -111,7 +121,12 @@
     "time_quote": "",
     "movement": "活动",
     "movement_quote": "持续活动",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "N004",
@@ -149,7 +164,12 @@
     "time_quote": "17 时 35 分至 19 时 00 分",
     "movement": "活动",
     "movement_quote": "活动",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "N005",
@@ -187,7 +207,12 @@
     "time_quote": "",
     "movement": "活动",
     "movement_quote": "在万安滩海域持续活动",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "N006",
@@ -225,7 +250,12 @@
     "time_quote": "于20时20分至22时45分",
     "movement": "活动",
     "movement_quote": "在东海活动",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "N007",
@@ -263,7 +293,12 @@
     "time_quote": "",
     "movement": "活动",
     "movement_quote": "在东海油气田海域持续活动",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "N008",
@@ -301,7 +336,12 @@
     "time_quote": "",
     "movement": "活动",
     "movement_quote": "在成山头外海持续活动",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "N009",
@@ -339,7 +379,12 @@
     "time_quote": "于8时03分至10时28分",
     "movement": "活动",
     "movement_quote": "在南黄海活动",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "N010",
@@ -377,7 +422,12 @@
     "time_quote": "14时28分至16时53分",
     "movement": "离开",
     "movement_quote": "随后沿既定航线离开该任务海域",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "N011",
@@ -415,7 +465,12 @@
     "time_quote": "自11时48分起按计划保持机动并持续执行任务，于13时13分沿既定航线离开该海域",
     "movement": "离开",
     "movement_quote": "于13时13分沿既定航线离开该海域",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "N012",
@@ -461,7 +516,12 @@
     "time_quote": "20时42分至22时07分",
     "movement": "活动",
     "movement_quote": "执行编队警戒部署任务",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "N013",
@@ -499,7 +559,12 @@
     "time_quote": "2025年5月1日8时41分至10时06分",
     "movement": "进入",
     "movement_quote": "由外围航线进入钓鱼岛海域",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "N014",
@@ -537,7 +602,12 @@
     "time_quote": "从14时55分至16时20分",
     "movement": "活动",
     "movement_quote": "在礼乐滩海域活动",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "N015",
@@ -583,7 +653,12 @@
     "time_quote": "2025年5月1日17时02分至19时27分",
     "movement": "活动",
     "movement_quote": "在东海中部围绕任务海域组织反潜巡逻",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "N016",
@@ -621,7 +696,12 @@
     "time_quote": "",
     "movement": "活动",
     "movement_quote": "在鄂霍次克海持续活动",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "N017",
@@ -659,7 +739,12 @@
     "time_quote": "",
     "movement": "活动",
     "movement_quote": "在礼乐滩海域持续活动",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "N018",
@@ -697,7 +782,12 @@
     "time_quote": "2时38分至4时03分",
     "movement": "活动",
     "movement_quote": "在钓鱼岛海域围绕任务海域组织联合巡航",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "N019",
@@ -735,7 +825,12 @@
     "time_quote": "于5时01分至7时26分",
     "movement": "活动",
     "movement_quote": "在仁爱礁附近海域活动",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "N020",
@@ -773,7 +868,12 @@
     "time_quote": "于8时52分至10时17分",
     "movement": "活动",
     "movement_quote": "在东海南部活动",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "N021",
@@ -819,6 +919,11 @@
         "value": "反潜巡逻",
         "quote": "中国运-8反潜巡逻机在南海北部持续开展活动"
       }
+    },
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
     }
   },
   {
@@ -857,7 +962,12 @@
     "time_quote": "从14时06分至16时31分",
     "movement": "活动",
     "movement_quote": "围绕任务海域组织反潜巡逻",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "N023",
@@ -895,7 +1005,12 @@
     "time_quote": "2025年5月1日14时44分至16时09分",
     "movement": "活动",
     "movement_quote": "按计划保持机动并结合既定航线持续收集相关信息",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "N024",
@@ -933,7 +1048,12 @@
     "time_quote": "2025年5月1日8时14分至10时39分",
     "movement": "进入",
     "movement_quote": "由外围航线进入东海",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "N025",
@@ -971,7 +1091,12 @@
     "time_quote": "2025年5月1日21时31分至22时12分",
     "movement": "活动",
     "movement_quote": "在渚碧礁附近海域持续活动",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "N026",
@@ -1009,7 +1134,12 @@
     "time_quote": "2025年5月1日11时15分至13时40分",
     "movement": "活动",
     "movement_quote": "在济州岛西部海域围绕任务海域组织舰载机起降训练",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "N027",
@@ -1049,7 +1179,12 @@
     "movement_quote": "在巴伦支海执行自由航行行动",
     "extraction_repairs": [
       "恢复原文唯一明确的活动起止区间，未使用发文时间"
-    ]
+    ],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "N028",
@@ -1087,7 +1222,12 @@
     "time_quote": "于14时54分至16时47分",
     "movement": "活动",
     "movement_quote": "在温州外海活动",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "N029",
@@ -1125,7 +1265,12 @@
     "time_quote": "",
     "movement": "活动",
     "movement_quote": "在南沙群岛海域持续活动",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "N030",
@@ -1163,7 +1308,12 @@
     "time_quote": "2025年5月1日17时51分至19时16分",
     "movement": "活动",
     "movement_quote": "在莫桑比克海峡围绕任务海域组织联合巡逻",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "N031",
@@ -1201,7 +1351,12 @@
     "time_quote": "",
     "movement": "活动",
     "movement_quote": "在中太平洋相关海域持续活动",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "N032",
@@ -1239,7 +1394,12 @@
     "time_quote": "2025年5月1日17时09分至18时39分",
     "movement": "活动",
     "movement_quote": "在夏威夷附近海空域围绕任务海域组织联合巡航",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "N033",
@@ -1277,7 +1437,12 @@
     "time_quote": "",
     "movement": "活动",
     "movement_quote": "在上海外海持续活动",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "N034",
@@ -1315,7 +1480,12 @@
     "time_quote": "",
     "movement": "进入",
     "movement_quote": "由外围航线进入东海任务海域",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "N035",
@@ -1353,7 +1523,12 @@
     "time_quote": "2025 年 5 月 1 日 11 时 10 分至 13 时 35 分",
     "movement": "活动",
     "movement_quote": "围绕任务海域组织战备巡逻",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "N036",
@@ -1391,7 +1566,12 @@
     "time_quote": "11时26分起按计划保持机动并持续执行联合巡航至13时51分",
     "movement": "活动",
     "movement_quote": "保持机动并持续执行联合巡航",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "N037",
@@ -1429,7 +1609,12 @@
     "time_quote": "14时17分起按计划保持机动并持续执行空中警戒至16时42分",
     "movement": "活动",
     "movement_quote": "保持机动并持续执行空中警戒",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "N038",
@@ -1467,7 +1652,12 @@
     "time_quote": "20 时 58 分至 22 时 23 分",
     "movement": "活动",
     "movement_quote": "保持机动并持续执行联合搜救训练",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "N039",
@@ -1505,7 +1695,12 @@
     "time_quote": "于 20 时 31 分至 22 时 56 分",
     "movement": "活动",
     "movement_quote": "展开行动",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "N040",
@@ -1543,7 +1738,12 @@
     "time_quote": "自 11 时 44 分至 13 时 14 分",
     "movement": "活动",
     "movement_quote": "保持机动并持续执行对海突击训练",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "N041",
@@ -1581,7 +1781,12 @@
     "time_quote": "2025 年 5 月 1 日 5 时 12 分至 7 时 37 分",
     "movement": "活动",
     "movement_quote": "在中太平洋活动",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "N042",
@@ -1619,7 +1824,12 @@
     "time_quote": "8时19分起围绕任务区域保持机动，行动范围保持在指定任务海域，至10时44分",
     "movement": "活动",
     "movement_quote": "在安达曼海持续活动",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": true
+    }
   },
   {
     "id": "N043",
@@ -1657,7 +1867,12 @@
     "time_quote": "2025 年 5 月 1 日 2 时 05 分至 4 时 30 分",
     "movement": "活动",
     "movement_quote": "围绕任务海域组织电子对抗训练",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "N044",
@@ -1695,7 +1910,12 @@
     "time_quote": "于 18 时 01 分至 19 时 31 分",
     "movement": "活动",
     "movement_quote": "在南沙群岛海域活动",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "N045",
@@ -1733,7 +1953,12 @@
     "time_quote": "自 8 时 08 分至 10 时 33 分",
     "movement": "活动",
     "movement_quote": "在东海南部活动",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "N046",
@@ -1771,7 +1996,12 @@
     "time_quote": "",
     "movement": "活动",
     "movement_quote": "在西沙群岛海域持续活动",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "N047",
@@ -1809,7 +2039,12 @@
     "time_quote": "20 时 09 分至 22 时 34 分",
     "movement": "活动",
     "movement_quote": "在永暑礁附近海域围绕任务海域组织对海突击训练",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "N048",
@@ -1847,7 +2082,12 @@
     "time_quote": "",
     "movement": "活动",
     "movement_quote": "在仁爱礁附近海域持续活动",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "N049",
@@ -1885,7 +2125,12 @@
     "time_quote": "",
     "movement": "活动",
     "movement_quote": "在温州外海持续活动",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "N050",
@@ -1923,7 +2168,12 @@
     "time_quote": "于 14 时 33 分至 16 时 58 分",
     "movement": "活动",
     "movement_quote": "在印度洋活动",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "O001",
@@ -1961,7 +2211,12 @@
     "time_quote": "",
     "movement": "活动",
     "movement_quote": "在塔斯曼海围绕既定科目组织电子对抗训练",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "O002",
@@ -1999,7 +2254,12 @@
     "time_quote": "于 2025 年 5 月 1 日 20 时 31 分至 22 时 56 分",
     "movement": "活动",
     "movement_quote": "在南海黄岩岛海域展开夜间活动",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "O003",
@@ -2037,7 +2297,12 @@
     "time_quote": "11时 59 分至 13 时 24 分",
     "movement": "活动",
     "movement_quote": "保持巡逻监视并结合既定航线持续收集信息",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "O004",
@@ -2075,7 +2340,12 @@
     "time_quote": "8 时 19 分至 10 时 44 分",
     "movement": "活动",
     "movement_quote": "沿既定方向保持机动并围绕任务区域维持警戒",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "O005",
@@ -2113,7 +2383,12 @@
     "time_quote": "5 时 45 分至 7 时 10 分",
     "movement": "活动",
     "movement_quote": "按计划完成相关平台之间的行动衔接",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "O006",
@@ -2151,7 +2426,12 @@
     "time_quote": "14 时 44 分至 16 时 09 分",
     "movement": "活动",
     "movement_quote": "按计划保持机动并持续执行反潜巡逻",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "O007",
@@ -2189,7 +2469,12 @@
     "time_quote": "2025 年 5 月 1 日 17 时 09 分至 18 时 39 分",
     "movement": "活动",
     "movement_quote": "按计划组织联合巡航",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "O008",
@@ -2227,7 +2512,12 @@
     "time_quote": "2025 年 5 月 1 日 5 时 07 分至 7 时 32 分",
     "movement": "活动",
     "movement_quote": "沿既定方向保持机动",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "O009",
@@ -2265,7 +2555,12 @@
     "time_quote": "2025 年 5 月 1 日 17 时 40 分至 19 时 05 分",
     "movement": "活动",
     "movement_quote": "沿既定方向保持机动",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "O010",
@@ -2303,7 +2598,12 @@
     "time_quote": "",
     "movement": "活动",
     "movement_quote": "按计划保持机动并持续执行联合搜救训练",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "O011",
@@ -2341,7 +2641,12 @@
     "time_quote": "",
     "movement": "活动",
     "movement_quote": "在南海渚碧礁附近海域活动",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "O012",
@@ -2379,7 +2684,12 @@
     "time_quote": "于 20 时 47 分开始围绕任务海域组织行动",
     "movement": "活动",
     "movement_quote": "围绕任务海域组织行动",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": true,
+      "end_asserted": false
+    }
   },
   {
     "id": "O013",
@@ -2417,7 +2727,12 @@
     "time_quote": "2025 年 5 月 1 日 5 时 23 分至 7 时 48 分",
     "movement": "活动",
     "movement_quote": "组织 F-35B 短距起降战斗机进行舰载机起降训练",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "O014",
@@ -2455,7 +2770,12 @@
     "time_quote": "",
     "movement": "活动",
     "movement_quote": "在东海赤尾屿海域执行空中警戒任务",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "O015",
@@ -2493,7 +2813,12 @@
     "time_quote": "5 时 56 分至 7 时 21 分",
     "movement": "活动",
     "movement_quote": "在东海海域执行例行部署任务",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "O016",
@@ -2531,7 +2856,12 @@
     "time_quote": "2 时 54 分至 4 时 19 分",
     "movement": "活动",
     "movement_quote": "在南海方向按计划组织了远海训练",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "O017",
@@ -2569,7 +2899,12 @@
     "time_quote": "",
     "movement": "活动",
     "movement_quote": "在南海方向执行了对海突击训练任务",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "O018",
@@ -2607,7 +2942,12 @@
     "time_quote": "",
     "movement": "活动",
     "movement_quote": "在南海围绕既定科目组织对海突击训练",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "O019",
@@ -2645,7 +2985,12 @@
     "time_quote": "于2025年5月1日18时01分至19时31分",
     "movement": "活动",
     "movement_quote": "在南海方向南沙群岛海域持续活动",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "O020",
@@ -2683,7 +3028,12 @@
     "time_quote": "于2025年5月1日2时16分至4时41分",
     "movement": "活动",
     "movement_quote": "在南海方向执行海上护航任务",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "O021",
@@ -2721,7 +3071,12 @@
     "time_quote": "",
     "movement": "活动",
     "movement_quote": "按计划保持机动并持续执行战备警巡任务",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "O022",
@@ -2759,7 +3114,12 @@
     "time_quote": "",
     "movement": "活动",
     "movement_quote": "在印度洋相关海域持续活动",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "O023",
@@ -2797,7 +3157,12 @@
     "time_quote": "训练自 2 时 49 分开始，至 4 时 14 分结束",
     "movement": "活动",
     "movement_quote": "在黄海方向执行对海突击训练任务",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": true,
+      "end_asserted": true
+    }
   },
   {
     "id": "O024",
@@ -2835,7 +3200,12 @@
     "time_quote": "2025 年 5 月 1 日 8 时 37 分至 10 时 07 分",
     "movement": "活动",
     "movement_quote": "在巴伦支海围绕任务区域保持机动",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "O025",
@@ -2873,7 +3243,12 @@
     "time_quote": "于 2025 年 5 月 1 日 17 时 13 分至 19 时 38 分在南海方向执行远程轰炸训练任务",
     "movement": "活动",
     "movement_quote": "在南海方向执行远程轰炸训练任务",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "O026",
@@ -2911,7 +3286,12 @@
     "time_quote": "",
     "movement": "活动",
     "movement_quote": "在黄海方向执行战备警巡任务",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "O027",
@@ -2949,7 +3329,12 @@
     "time_quote": "",
     "movement": "活动",
     "movement_quote": "按计划组织联合搜救训练",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "O028",
@@ -2987,7 +3372,12 @@
     "time_quote": "",
     "movement": "活动",
     "movement_quote": "围绕任务区域保持机动",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "O029",
@@ -3025,7 +3415,12 @@
     "time_quote": "行动时段为 5 时 34 分至 7 时 59 分",
     "movement": "活动",
     "movement_quote": "围绕任务编组实施保障行动",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "O030",
@@ -3063,7 +3458,12 @@
     "time_quote": "5 时 12 分至 7 时 37 分",
     "movement": "活动",
     "movement_quote": "按计划保持机动并持续执行海上监视侦察",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "O031",
@@ -3101,7 +3501,12 @@
     "time_quote": "",
     "movement": "活动",
     "movement_quote": "在黄海方向的济州岛西部海域持续活动。从公开信息看，相关兵力围绕任务区域保持机动，行动范围保持在指定任务海域。这一部署被认为展现了良好的行动组织能力，其区域机动样式也体现出对任务连续性的有效维持。",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "O032",
@@ -3139,7 +3544,12 @@
     "time_quote": "",
     "movement": "活动",
     "movement_quote": "该舰围绕共同任务保持协同行动，按计划完成了平台间的联络和行动衔接。分析认为，这一过程有助于熟悉流程和检验联络配合水平。",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "O033",
@@ -3177,7 +3587,12 @@
     "time_quote": "2025 年 5 月 1 日 8 时 30 分至 10 时 55 分，中国海军“山东号”航空母舰在中太平洋海域按计划保持机动并持续执行联合巡航任务。相关分析认为，此次行动可能体现了中国海军围绕共同任务保持协同行动的能力，有助于加强平台间的联络配合和流程熟悉。",
     "movement": "活动",
     "movement_quote": "在中太平洋海域按计划保持机动并持续执行联合巡航任务。相关分析认为，此次行动可能体现了中国海军围绕共同任务保持协同行动的能力，有助于加强平台间的联络配合和流程熟悉。",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "O034",
@@ -3215,7 +3630,12 @@
     "time_quote": "",
     "movement": "活动",
     "movement_quote": "该舰围绕任务区域保持机动，行动范围保持在指定任务海域。有分析认为，这一动向可能体现其任务连续性的组织特点。相关行动在敏感水域的持续存在，被视为区域机动能力的一种展现。",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "O035",
@@ -3261,6 +3681,11 @@
         "value": "进入",
         "quote": "在东海方向围绕任务海域组织情报监视侦察"
       }
+    },
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
     }
   },
   {
@@ -3307,6 +3732,11 @@
         "value": "进入",
         "quote": "在南海方向执行战备警巡任务"
       }
+    },
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
     }
   },
   {
@@ -3345,7 +3775,12 @@
     "time_quote": "",
     "movement": "进入",
     "movement_quote": "由外围航线进入东海上海外海任务海域",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "O038",
@@ -3391,6 +3826,11 @@
         "value": "进入",
         "quote": "在阿拉伯海围绕任务海域组织反潜巡逻"
       }
+    },
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
     }
   },
   {
@@ -3429,7 +3869,12 @@
     "time_quote": "",
     "movement": "活动",
     "movement_quote": "在东海围绕既定科目组织远海训练",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "O040",
@@ -3467,7 +3912,12 @@
     "time_quote": "于 2025 年 5 月 1 日 14 时 22 分起",
     "movement": "活动",
     "movement_quote": "在东海方向执行海上护航任务",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": true,
+      "end_asserted": false
+    }
   },
   {
     "id": "O041",
@@ -3505,7 +3955,12 @@
     "time_quote": "于 2025 年 5 月 1 日 11 时 44 分至 13 时 14 分",
     "movement": "活动",
     "movement_quote": "在孟加拉湾围绕任务海域组织战备警巡",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "O042",
@@ -3543,7 +3998,12 @@
     "time_quote": "训练时段为 17 时 24 分至 19 时 49 分",
     "movement": "活动",
     "movement_quote": "在东海方向进行远海训练",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "O043",
@@ -3581,7 +4041,12 @@
     "time_quote": "",
     "movement": "活动",
     "movement_quote": "持续活动",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "O044",
@@ -3619,7 +4084,12 @@
     "time_quote": "",
     "movement": "活动",
     "movement_quote": "在东海方向按计划组织两栖作战训练",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "O045",
@@ -3657,7 +4127,12 @@
     "time_quote": "",
     "movement": "活动",
     "movement_quote": "在东海方向进行实弹射击训练",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "O046",
@@ -3695,7 +4170,12 @@
     "time_quote": "",
     "movement": "活动",
     "movement_quote": "在黄海海域按计划保持机动并持续执行编队警戒部署",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "O047",
@@ -3733,7 +4213,12 @@
     "time_quote": "",
     "movement": "活动",
     "movement_quote": "在安达曼海相关海域持续活动",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "O048",
@@ -3771,7 +4256,12 @@
     "time_quote": "",
     "movement": "活动",
     "movement_quote": "在东海围绕任务海域组织反潜巡逻",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "O049",
@@ -3809,7 +4299,12 @@
     "time_quote": "",
     "movement": "活动",
     "movement_quote": "在东海按计划保持机动并持续执行远海训练",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   },
   {
     "id": "O050",
@@ -3847,6 +4342,11 @@
     "time_quote": "",
     "movement": "活动",
     "movement_quote": "在东海方向开展电子侦察",
-    "extraction_repairs": []
+    "extraction_repairs": [],
+    "time_semantics": {
+      "interval": "reported_activity",
+      "start_asserted": false,
+      "end_asserted": false
+    }
   }
 ]

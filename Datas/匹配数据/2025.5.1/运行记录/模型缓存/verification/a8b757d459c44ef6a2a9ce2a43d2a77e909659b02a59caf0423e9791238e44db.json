@@ -1,0 +1,318 @@
+{
+  "role": "verification",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N042",
+      "kind": "news",
+      "title": "新加坡F-15SG战斗机在安达曼海持续活动",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：新加坡F-15SG战斗机在安达曼海持续活动\n正文：2025年5月1日，新加坡2架F-15SG多用途战斗机在安达曼海持续活动，自8时19分起围绕任务区域保持机动，行动范围保持在指定任务海域，至10时44分结束。\n\n主题词：新加坡  F-15SG  安达曼海\n",
+      "platforms": [
+        {
+          "name": "F-15SG多用途战斗机",
+          "country": "新加坡",
+          "quantity": 2,
+          "quote": "新加坡2架F-15SG多用途战斗机",
+          "quantity_quote": "2架F-15SG多用途战斗机",
+          "country_raw": "新加坡"
+        }
+      ],
+      "location": {
+        "raw": "安达曼海",
+        "region": "安达曼海",
+        "direction": "其他",
+        "precision": "原文区域",
+        "mapping": "PDF未列入三大核心海域的区域归其他",
+        "transit": false,
+        "quote": "在安达曼海持续活动"
+      },
+      "mission": {
+        "value": null,
+        "quote": ""
+      },
+      "start_time": "08:19",
+      "end_time": "10:44",
+      "movement": "活动",
+      "time_semantics": {
+        "interval": "reported_activity",
+        "start_asserted": false,
+        "end_asserted": true
+      }
+    },
+    "opinion": {
+      "id": "O004",
+      "kind": "opinion",
+      "title": "新加坡F-15SG战斗机在安达曼海执行战备警巡",
+      "text": "时间：2025.5.1\n\n标题：新加坡F-15SG战斗机在安达曼海执行战备警巡\n\n正文：据联合早报报道，2025年5月1日8时19分至10时44分，新加坡空军F-15SG多用途战斗机在安达曼海任务海域执行战备警巡任务。该机沿既定方向保持机动并围绕任务区域维持警戒，这一动向被视为展现前沿存在和部署持续性的常规安排。\n",
+      "platforms": [
+        {
+          "name": "F-15SG多用途战斗机",
+          "country": "新加坡",
+          "quantity": null,
+          "quote": "新加坡空军F-15SG多用途战斗机",
+          "quantity_quote": "",
+          "country_raw": "新加坡"
+        }
+      ],
+      "location": {
+        "raw": "安达曼海任务海域",
+        "region": "安达曼海",
+        "direction": "其他",
+        "precision": "原文区域",
+        "mapping": "PDF未列入三大核心海域的区域归其他",
+        "transit": false,
+        "quote": "在安达曼海任务海域"
+      },
+      "mission": {
+        "value": "战备警巡任务",
+        "quote": "执行战备警巡任务"
+      },
+      "start_time": "08:19",
+      "end_time": "10:44",
+      "movement": "活动",
+      "time_semantics": {
+        "interval": "reported_activity",
+        "start_asserted": false,
+        "end_asserted": false
+      }
+    },
+    "radars": [
+      {
+        "id": "R004",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "F-15SG多用途战斗机",
+            "country": "新加坡",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-1566B18B077F26",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "战备警巡",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "战备警巡"
+        ],
+        "start_time": "2025.05.01 08:19:00",
+        "end_time": "2025.05.01 10:44:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            93.822,
+            93.9279
+          ],
+          "latitude_range": [
+            10.0333,
+            10.2206
+          ],
+          "median": [
+            93.8729,
+            10.1213
+          ],
+          "origins": [
+            [
+              93.8581,
+              10.19
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [],
+        "batch": "AIR-1566B18B077F26",
+        "sibling_ids": [],
+        "hull_values": [],
+        "country_values": [
+          "新加坡"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 12,
+        "time_semantics": {
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "identity_scope": "batch_is_not_unique_target",
+        "warnings": []
+      }
+    ],
+    "association": {
+      "opinion_edges": [
+        {
+          "candidate_id": "O004",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.98,
+          "reason": "平台（新加坡 F-15SG）、数量（2 架）、地点（安达曼海）、时间区间（08:19-10:44）及任务性质完全一致。O004 是对新闻 N042 内容的直接复述与定性，属于同一事件。"
+        },
+        {
+          "candidate_id": "O041",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.95,
+          "reason": "虽然平台型号、数量、日期相同，但地点为“孟加拉湾”而非“安达曼海”，且时间区间（11:44-13:14）与新闻 N042 无重叠。地理区域不同且时间分离，确认为不同活动。"
+        },
+        {
+          "candidate_id": "O024",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.99,
+          "reason": "平台类型完全不同（法国护卫舰 vs 新加坡战斗机），地点（巴伦支海）和时间虽部分重叠但主体不符，属于完全不同的事件。"
+        }
+      ],
+      "radar_edges": [
+        {
+          "candidate_id": "R004",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.92,
+          "reason": "雷达数据 R004 记录的批号、平台（新加坡 F-15SG）、数量（2 架）、任务（战备警巡）及精确时间戳（08:19-10:44）与新闻 N042 完全吻合。尽管坐标未验证，但时空和身份线索高度一致，确认为同一事件的数据源。"
+        },
+        {
+          "candidate_id": "R017",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.93,
+          "reason": "虽然平台型号、数量、日期相同，但时间区间（11:44-13:14）与新闻 N042 无重叠，且任务描述为“对海突击训练”而非“战备警巡”。时间不重合排除关联。"
+        },
+        {
+          "candidate_id": "R050",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.98,
+          "reason": "平台类型完全不同（坦克登陆舰 vs 战斗机），地点（东海南部）与新闻不符，确认为不同事件。"
+        }
+      ],
+      "ambiguity": "无。新闻 N042 与候选 O004、R004 在时间、地点、平台、数量及任务上均存在精确匹配，关联关系明确。其他候选因地点、时间或平台类型差异被排除。"
+    },
+    "same_batch_other_candidates": []
+  },
+  "result": {
+    "same_event": true,
+    "platforms": [
+      {
+        "platform_index": 0,
+        "platform": {
+          "claim": "F-15SG 多用途战斗机",
+          "supporting_sources": [
+            "N042",
+            "O004",
+            "R004"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均明确指向 F-15SG，无冲突。"
+        },
+        "country": {
+          "claim": "新加坡",
+          "supporting_sources": [
+            "N042",
+            "O004",
+            "R004"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均明确标注为新加坡，无冲突。"
+        },
+        "quantity": {
+          "claim": "2 架",
+          "supporting_sources": [
+            "N042",
+            "R004"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻 N042 和雷达 R004 均明确记录为 2 架；舆论 O004 未提及具体数量但不构成反对，三源中两源支持且无冲突。"
+        }
+      }
+    ],
+    "location": {
+      "claim": "安达曼海",
+      "supporting_sources": [
+        "N042",
+        "O004"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻 N042 和舆论 O004 均明确记载地点为安达曼海；雷达 R004 虽无文本区域描述但坐标范围（93.8-93.9, 10.0-10.2）地理上位于安达曼海，三源时空一致。"
+    },
+    "time": {
+      "claim": "2025-05-01 08:19 - 10:44",
+      "supporting_sources": [
+        "N042",
+        "O004",
+        "R004"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻、舆论、雷达三源的时间起止点完全一致，精确印证。"
+    },
+    "mission": {
+      "claim": "战备警巡",
+      "supporting_sources": [
+        "O004",
+        "R004"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "舆论 O004 和雷达 R004 均明确标注任务为“战备警巡”；新闻 N042 描述为“持续活动”，在缺乏更具体科目证据时，与两源明确的“战备警巡”不冲突且可兼容。"
+    },
+    "movement": {
+      "claim": "活动",
+      "supporting_sources": [
+        "N042",
+        "O004"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻和舆论均描述为机动/保持警戒活动，雷达未说明但不构成冲突。"
+    },
+    "unresolved_issues": [],
+    "explanation": "三源（新闻 N02、舆论 O004、雷达 R004）在平台型号、国籍、数量、时间、地点及任务性质上高度一致。数量由新闻和雷达共同支持；任务由舆论和雷达共同支持，新闻的泛称描述不冲突。无未消解冲突。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-08T00:11:15.8181494Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"same_event\": true, \"platforms\": [{\"platform_index\": 0, \"platform\": {\"claim\": \"F-15SG 多用途战斗机\", \"supporting_sources\": [\"N042\", \"O004\", \"R004\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源（新闻、舆论、雷达）均明确指向 F-15SG，无冲突。\"}, \"country\": {\"claim\": \"新加坡\", \"supporting_sources\": [\"N042\", \"O004\", \"R004\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源（新闻、舆论、雷达）均明确标注为新加坡，无冲突。\"}, \"quantity\": {\"claim\": \"2 架\", \"supporting_sources\": [\"N042\", \"R004\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻 N042 和雷达 R004 均明确记录为 2 架；舆论 O004 未提及具体数量但不构成反对，三源中两源支持且无冲突。\"}}], \"location\": {\"claim\": \"安达曼海\", \"supporting_sources\": [\"N042\", \"O004\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻 N042 和舆论 O004 均明确记载地点为安达曼海；雷达 R004 虽无文本区域描述但坐标范围（93.8-93.9, 10.0-10.2）地理上位于安达曼海，三源时空一致。\"}, \"time\": {\"claim\": \"2025-05-01 08:19 - 10:44\", \"supporting_sources\": [\"N042\", \"O004\", \"R004\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻、舆论、雷达三源的时间起止点完全一致，精确印证。\"}, \"mission\": {\"claim\": \"战备警巡\", \"supporting_sources\": [\"O004\", \"R004\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"舆论 O004 和雷达 R004 均明确标注任务为“战备警巡”；新闻 N042 描述为“持续活动”，在缺乏更具体科目证据时，与两源明确的“战备警巡”不冲突且可兼容。\"}, \"movement\": {\"claim\": \"活动\", \"supporting_sources\": [\"N042\", \"O004\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻和舆论均描述为机动/保持警戒活动，雷达未说明但不构成冲突。\"}, \"unresolved_issues\": [],\"explanation\": \"三源（新闻 N02、舆论 O004、雷达 R004）在平台型号、国籍、数量、时间、地点及任务性质上高度一致。数量由新闻和雷达共同支持；任务由舆论和雷达共同支持，新闻的泛称描述不冲突。无未消解冲突。\"}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 14107976600,
+    "load_duration": 16185000,
+    "prompt_eval_count": 2501,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 895225000,
+    "eval_count": 709,
+    "eval_duration": 13011310000
+  }
+}

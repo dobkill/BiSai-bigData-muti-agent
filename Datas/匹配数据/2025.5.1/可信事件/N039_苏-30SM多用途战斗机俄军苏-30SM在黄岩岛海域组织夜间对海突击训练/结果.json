@@ -16,8 +16,8 @@
           0
         ],
         "relation": "same",
-        "confidence": 0.95,
-        "reason": "时间（20:31-22:56）、地点（黄岩岛海域）、平台（苏 -30SM）、任务（对海突击训练）及国家完全一致，且新闻标题与正文描述高度重合。"
+        "confidence": 1.0,
+        "reason": "时间区间（20:31-22:56）、地点（黄岩岛海域）、平台型号（苏 -30SM）及任务性质（对海突击训练/夜间活动）完全一致，且明确提及同一日期。"
       },
       {
         "candidate_id": "O036",
@@ -25,8 +25,8 @@
           0
         ],
         "relation": "different",
-        "confidence": 0.9,
-        "reason": "虽然平台和日期相同，但时间区间（02:27-04:52）与新闻完全无重叠，且任务描述为“战备警巡”而非“对海突击训练”，地点仅为“南海方向”不够具体。"
+        "confidence": 1.0,
+        "reason": "时间区间（02:27-04:52）与新闻事件无重叠，且任务描述为“战备警巡”而非“对海突击训练”，属于不同时段的活动。"
       },
       {
         "candidate_id": "O019",
@@ -34,8 +34,8 @@
           0
         ],
         "relation": "different",
-        "confidence": 0.85,
-        "reason": "平台和日期相同，但时间区间（18:01-19:31）不重叠，地点为“南沙群岛海域”而非“黄岩岛”，任务描述模糊。"
+        "confidence": 1.0,
+        "reason": "时间区间（18:01-19:31）与新闻事件无重叠，且地点明确为“南沙群岛海域”而非“黄岩岛海域”，属于不同区域的活动。"
       }
     ],
     "radar_edges": [
@@ -45,8 +45,8 @@
           0
         ],
         "relation": "same",
-        "confidence": 0.98,
-        "reason": "时间（20:31-22:56）、平台（苏 -30SM）、任务（对海突击训练）及数量（2 架）与新闻完全匹配。坐标位于南海黄岩岛附近，虽地点字段缺失但辅助方向一致，数据特征高度吻合。"
+        "confidence": 1.0,
+        "reason": "时间区间（20:31-22:56）、平台型号（苏 -30SM）、任务（对海突击训练）及数量（2 架）与新闻完全吻合。虽然雷达坐标未验证，但时空特征高度一致，确认为同一观测数据源。"
       },
       {
         "candidate_id": "R019",
@@ -54,8 +54,8 @@
           0
         ],
         "relation": "different",
-        "confidence": 0.85,
-        "reason": "平台和日期相同，但时间（18:01-19:31）不重叠，任务为“空中警戒”而非“对海突击训练”。"
+        "confidence": 1.0,
+        "reason": "时间区间（18:01-19:31）与新闻事件无重叠，且任务为“空中警戒”，属于不同活动。"
       },
       {
         "candidate_id": "R026",
@@ -63,11 +63,11 @@
           0
         ],
         "relation": "different",
-        "confidence": 0.85,
-        "reason": "平台和日期相同，但时间（02:27-04:52）不重叠，任务为“战备警巡”。"
+        "confidence": 1.0,
+        "reason": "时间区间（02:27-04:52）与新闻事件无重叠，且任务为“战备警巡”，属于不同活动。"
       }
     ],
-    "ambiguity": "无。新闻与候选 O002 及雷达数据 R024 在时间、地点、平台型号、任务类型及数量上均存在精确匹配，关联证据充分，不存在歧义。其他候选因时间不重叠或任务/地点不符被排除为不同活动。"
+    "ambiguity": "无。所有候选均能通过时间、地点或任务类型的显著差异明确区分，或完全匹配。"
   },
   "candidates": {
     "opinion": [
@@ -159,6 +159,7 @@
     "opinion": [],
     "radar": []
   },
+  "radar_context": [],
   "verification": {
     "same_event": true,
     "facts": [
@@ -185,7 +186,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "三源（新闻、舆论、雷达）均确认为俄罗斯苏 -30SM 多用途战斗机，完全一致。"
+          "reason": "新闻、舆论、雷达三源均明确指向俄罗斯苏 -30SM 多用途战斗机，型号与国籍完全一致。"
         },
         "checked_by": "explicit_source_matrix",
         "supporting_source_types": [
@@ -217,7 +218,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "三源（新闻、舆论、雷达）均明确标注为俄罗斯，完全一致。"
+          "reason": "三源均明确标注为“俄罗斯”或“俄军/俄罗斯空天军”，无冲突。"
         },
         "checked_by": "explicit_source_matrix",
         "supporting_source_types": [
@@ -247,7 +248,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "舆论明确提及“两架”，雷达批号 AIR-E782041C6BA813 数量列为 2；新闻虽未明示具体数字，但三源中两类支持且无冲突，符合可信标准。"
+          "reason": "舆论明确提及“两架”，雷达批号数据列示数量为"
         },
         "checked_by": "explicit_source_matrix",
         "supporting_source_types": [
@@ -276,7 +277,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻与舆论均明确表述为“黄岩岛海域”，雷达坐标范围（15.17-15.44 纬度）覆盖该区域且辅助方向一致，三源在区域精度上无冲突。"
+          "reason": "新闻与舆论均明确表述为“黄岩岛海域”，雷达坐标范围（15.17-15.44 纬度）覆盖该区域，虽雷达未直接文本确认但时空高度吻合。"
         },
         "checked_by": "literal_assertion_matrix",
         "source_values": {
@@ -307,7 +308,7 @@
       {
         "platform_index": -1,
         "field": "time",
-        "claim": "起点 20:31，终点 22:56",
+        "claim": "共同观测/报道时段 20:31—22:56（非完整活动起止断言）",
         "supporting_sources": [
           "N039",
           "O002",
@@ -315,7 +316,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突；起点明示值：{'N039': '20:31', 'O002': '20:31', 'R024': '20:31'}；终点明示值：{'N039': '22:56', 'O002': '22:56', 'R024': '22:56'}",
+        "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N039': {'start': '20:31', 'end': '22:56', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O002': {'start': '20:31', 'end': '22:56', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R024': {'start': '20:31', 'end': '22:56', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
         "model_proposal": {
           "platform_index": -1,
           "field": "time",
@@ -327,42 +328,35 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻、舆论、雷达三源在日期及起止时刻（20:31-22:56）上完全精确匹配。"
+          "reason": "新闻、舆论、雷达三源的时间起止点完全一致。"
         },
         "checked_by": "literal_assertion_matrix",
-        "components": {
-          "start_time": {
-            "value": "20:31",
-            "support": [
-              "N039",
-              "O002",
-              "R024"
-            ],
-            "conflicts": [],
-            "status": "supported",
-            "source_values": {
-              "N039": "20:31",
-              "O002": "20:31",
-              "R024": "20:31"
-            },
-            "radar_batch_observations": []
+        "source_values": {
+          "N039": {
+            "start": "20:31",
+            "end": "22:56",
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
           },
-          "end_time": {
-            "value": "22:56",
-            "support": [
-              "N039",
-              "O002",
-              "R024"
-            ],
-            "conflicts": [],
-            "status": "supported",
-            "source_values": {
-              "N039": "22:56",
-              "O002": "22:56",
-              "R024": "22:56"
-            },
-            "radar_batch_observations": []
+          "O002": {
+            "start": "20:31",
+            "end": "22:56",
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
+          },
+          "R024": {
+            "start": "20:31",
+            "end": "22:56",
+            "interval": "observation_coverage",
+            "start_asserted": false,
+            "end_asserted": false
           }
+        },
+        "asserted_boundaries": {
+          "start": {},
+          "end": {}
         },
         "supporting_source_types": [
           "news",
@@ -391,7 +385,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻明确描述为“组织对海突击训练”，雷达任务列亦为“对海突击训练”；舆论虽未详述具体科目但确认了夜间活动，两类来源支持且无冲突。"
+          "reason": "新闻明确为“对海突击训练”，雷达任务列示亦为“对海突击训练”。舆论仅描述为“夜间活动”未具体化科目，但不构成冲突，两源支持已满足可信度要求。"
         },
         "checked_by": "literal_assertion_matrix",
         "source_values": {
@@ -422,14 +416,14 @@
         "model_proposal": {
           "platform_index": -1,
           "field": "movement",
-          "claim": "活动（机动）",
+          "claim": "活动",
           "supporting_sources": [
             "N039",
             "O002"
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻描述为“围绕既定科目组织...行动衔接”，舆论描述为“保持机动”，均指向非过境的具体活动状态，与雷达“未说明”无实质冲突。"
+          "reason": "新闻与舆论均描述为展开行动/活动，雷达未说明但不构成冲突。"
         },
         "checked_by": "literal_assertion_matrix",
         "source_values": {
@@ -445,7 +439,9 @@
     ],
     "unresolved_issues": [],
     "explanation": "三类来源已关联，纳入结论的事实获得至少两类独立来源支持，未发现未消解明示反证。",
-    "model_explanation": "新闻 N039、舆论 O002 及雷达 R024 在平台型号（苏 -30SM）、国籍（俄罗斯）、数量（2 架）、地点（黄岩岛海域）、时间（20:31-22:56）及任务（对海突击训练）上高度一致。舆论和雷达提供了关键的数量证据，新闻提供了详细的任务描述，三源相互印证，无未消解冲突，确认为同一事件。"
+    "model_unresolved_issues": [],
+    "reconciled_model_issues": [],
+    "model_explanation": "三源（新闻、舆论、雷达）在平台型号、国籍、数量、时间、地点及核心任务上高度一致。舆论虽未细化任务科目，但两源（新闻 + 雷达）已确证“对海突击训练”，满足可信度标准。"
   },
   "reasons": [],
   "status": "可信事件",
@@ -473,7 +469,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "三源（新闻、舆论、雷达）均确认为俄罗斯苏 -30SM 多用途战斗机，完全一致。"
+        "reason": "新闻、舆论、雷达三源均明确指向俄罗斯苏 -30SM 多用途战斗机，型号与国籍完全一致。"
       },
       "checked_by": "explicit_source_matrix",
       "supporting_source_types": [
@@ -505,7 +501,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "三源（新闻、舆论、雷达）均明确标注为俄罗斯，完全一致。"
+        "reason": "三源均明确标注为“俄罗斯”或“俄军/俄罗斯空天军”，无冲突。"
       },
       "checked_by": "explicit_source_matrix",
       "supporting_source_types": [
@@ -535,7 +531,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "舆论明确提及“两架”，雷达批号 AIR-E782041C6BA813 数量列为 2；新闻虽未明示具体数字，但三源中两类支持且无冲突，符合可信标准。"
+        "reason": "舆论明确提及“两架”，雷达批号数据列示数量为"
       },
       "checked_by": "explicit_source_matrix",
       "supporting_source_types": [
@@ -564,7 +560,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "新闻与舆论均明确表述为“黄岩岛海域”，雷达坐标范围（15.17-15.44 纬度）覆盖该区域且辅助方向一致，三源在区域精度上无冲突。"
+        "reason": "新闻与舆论均明确表述为“黄岩岛海域”，雷达坐标范围（15.17-15.44 纬度）覆盖该区域，虽雷达未直接文本确认但时空高度吻合。"
       },
       "checked_by": "literal_assertion_matrix",
       "source_values": {
@@ -595,7 +591,7 @@
     {
       "platform_index": -1,
       "field": "time",
-      "claim": "起点 20:31，终点 22:56",
+      "claim": "共同观测/报道时段 20:31—22:56（非完整活动起止断言）",
       "supporting_sources": [
         "N039",
         "O002",
@@ -603,7 +599,7 @@
       ],
       "conflicting_sources": [],
       "status": "supported",
-      "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突；起点明示值：{'N039': '20:31', 'O002': '20:31', 'R024': '20:31'}；终点明示值：{'N039': '22:56', 'O002': '22:56', 'R024': '22:56'}",
+      "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N039': {'start': '20:31', 'end': '22:56', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O002': {'start': '20:31', 'end': '22:56', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R024': {'start': '20:31', 'end': '22:56', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
       "model_proposal": {
         "platform_index": -1,
         "field": "time",
@@ -615,42 +611,35 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "新闻、舆论、雷达三源在日期及起止时刻（20:31-22:56）上完全精确匹配。"
+        "reason": "新闻、舆论、雷达三源的时间起止点完全一致。"
       },
       "checked_by": "literal_assertion_matrix",
-      "components": {
-        "start_time": {
-          "value": "20:31",
-          "support": [
-            "N039",
-            "O002",
-            "R024"
-          ],
-          "conflicts": [],
-          "status": "supported",
-          "source_values": {
-            "N039": "20:31",
-            "O002": "20:31",
-            "R024": "20:31"
-          },
-          "radar_batch_observations": []
+      "source_values": {
+        "N039": {
+          "start": "20:31",
+          "end": "22:56",
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
         },
-        "end_time": {
-          "value": "22:56",
-          "support": [
-            "N039",
-            "O002",
-            "R024"
-          ],
-          "conflicts": [],
-          "status": "supported",
-          "source_values": {
-            "N039": "22:56",
-            "O002": "22:56",
-            "R024": "22:56"
-          },
-          "radar_batch_observations": []
+        "O002": {
+          "start": "20:31",
+          "end": "22:56",
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "R024": {
+          "start": "20:31",
+          "end": "22:56",
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
         }
+      },
+      "asserted_boundaries": {
+        "start": {},
+        "end": {}
       },
       "supporting_source_types": [
         "news",
@@ -679,7 +668,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "新闻明确描述为“组织对海突击训练”，雷达任务列亦为“对海突击训练”；舆论虽未详述具体科目但确认了夜间活动，两类来源支持且无冲突。"
+        "reason": "新闻明确为“对海突击训练”，雷达任务列示亦为“对海突击训练”。舆论仅描述为“夜间活动”未具体化科目，但不构成冲突，两源支持已满足可信度要求。"
       },
       "checked_by": "literal_assertion_matrix",
       "source_values": {
@@ -710,14 +699,14 @@
       "model_proposal": {
         "platform_index": -1,
         "field": "movement",
-        "claim": "活动（机动）",
+        "claim": "活动",
         "supporting_sources": [
           "N039",
           "O002"
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "新闻描述为“围绕既定科目组织...行动衔接”，舆论描述为“保持机动”，均指向非过境的具体活动状态，与雷达“未说明”无实质冲突。"
+        "reason": "新闻与舆论均描述为展开行动/活动，雷达未说明但不构成冲突。"
       },
       "checked_by": "literal_assertion_matrix",
       "source_values": {

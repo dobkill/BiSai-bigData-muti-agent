@@ -34,7 +34,7 @@
 | 0 | country | 中国 | supported | N043,O001,R023 |  | 程序按已关联平台的明示字段复核：{'N043': '中国', 'O001': '中国', 'R023': '中国'}；缺失不支持也不反对 |
 | 0 | quantity | 2架 | supported | O001,R023 |  | 程序按已关联平台的明示字段复核：{'O001': 2, 'R023': 2}；缺失不支持也不反对 |
 | -1 | location | 塔斯曼海 | supported | N043,O001 |  | 复核明示地点和PDF包含关系：{'N043': '塔斯曼海', 'O001': '塔斯曼海'}；同方向不等于同一具体区域，未验证坐标不作为反证 |
-| -1 | time | 起点 02:05，终点 04:30 | supported | N043,R023 |  | 逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突；起点明示值：{'N043': '02:05', 'R023': '02:05'}；终点明示值：{'N043': '04:30', 'R023': '04:30'} |
+| -1 | time | 共同观测/报道时段 02:05—04:30（非完整活动起止断言） | supported | N043,R023 |  | 分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N043': {'start': '02:05', 'end': '04:30', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O001': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R023': {'start': '02:05', 'end': '04:30', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}} |
 | -1 | mission | 电子对抗训练 | supported | N043,O001,R023 |  | 原文明示任务：{'N043': ['电子对抗训练'], 'O001': ['电子对抗训练'], 'R023': ['电子对抗训练']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决 |
 | -1 | movement | 活动 | supported | N043,O001 |  | 活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values |
 

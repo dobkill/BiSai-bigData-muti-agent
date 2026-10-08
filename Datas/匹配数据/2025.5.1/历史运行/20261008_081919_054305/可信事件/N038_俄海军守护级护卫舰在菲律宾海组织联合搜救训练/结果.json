@@ -1,0 +1,767 @@
+{
+  "id": "N038",
+  "news_id": "N038",
+  "opinion_id": "O010",
+  "radar_ids": [
+    "R040"
+  ],
+  "radar_slots": {
+    "0": "R040"
+  },
+  "alignment": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O010",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.98,
+        "reason": "平台（俄守护级）、地点（菲律宾海）、任务（联合搜救训练）及时间区间完全一致。该舆论报道是对新闻内容的直接复述或同步观察，无冲突信息。"
+      },
+      {
+        "candidate_id": "O002",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台完全不同（苏 -30SM 战斗机 vs 护卫舰），地点不同（黄岩岛海域 vs 菲律宾海），任务性质不同。虽同属俄罗斯且时间重叠，但属于不同活动。"
+      },
+      {
+        "candidate_id": "O020",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台不同（瓦良格号巡洋舰 vs 守护级护卫舰），地点不同（南海方向 vs 菲律宾海），任务不同（护航 vs 搜救训练）。时间不重叠。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R040",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 1.0,
+        "reason": "雷达数据与新闻在平台型号（守护级）、地点（菲律宾海）、任务（联合搜救训练）及起止时间（20:58-22:23）上完全精确匹配。批号 SHIP-9CDE3E6146927C 进一步确认了目标身份的唯一性关联。"
+      },
+      {
+        "candidate_id": "R024",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台不同（苏 -30SM 战斗机），任务不同（对海突击训练 vs 搜救训练）。地点虽未明确但坐标指向南海黄岩岛区域，与菲律宾海不符。"
+      },
+      {
+        "candidate_id": "R048",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台不同（瓦良格号巡洋舰），地点不同（礼乐滩海域/南海 vs 菲律宾海），任务不同（护航 vs 搜救训练）。时间不重叠。"
+      }
+    ],
+    "ambiguity": "无。核心候选 O010 和 R040 与新闻 N038 在所有关键维度（平台、地点、时间、任务）上完全一致，不存在歧义。其他候选因平台型号、地理位置或任务性质的显著差异被排除。"
+  },
+  "candidates": {
+    "opinion": [
+      {
+        "id": "O010",
+        "score": 4.82548,
+        "cosine": 0.97548,
+        "platform_similarity": 0.95,
+        "time_overlap": null,
+        "location_relation": "same"
+      },
+      {
+        "id": "O002",
+        "score": 2.13708,
+        "cosine": 0.73708,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O020",
+        "score": 1.01598,
+        "cosine": 0.81598,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O030",
+        "score": 0.80512,
+        "cosine": 0.80512,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_named_regions"
+      },
+      {
+        "id": "O008",
+        "score": 0.7996,
+        "cosine": 0.7996,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O029",
+        "score": 0.79885,
+        "cosine": 0.79885,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      }
+    ],
+    "radar": [
+      {
+        "id": "R040",
+        "score": 6.02879,
+        "cosine": 0.97879,
+        "platform_similarity": 0.95,
+        "time_overlap": 1.0,
+        "location_relation": "same"
+      },
+      {
+        "id": "R024",
+        "score": 2.15272,
+        "cosine": 0.75272,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R037",
+        "score": 1.96388,
+        "cosine": 0.76388,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "R048",
+        "score": 0.99055,
+        "cosine": 0.79055,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "R054",
+        "score": 0.82665,
+        "cosine": 0.82665,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "R053",
+        "score": 0.7942,
+        "cosine": 0.7942,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "R049",
+        "score": 0.79109,
+        "cosine": 0.79109,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_named_regions"
+      }
+    ]
+  },
+  "assignment_diagnostics": {
+    "opinion": [],
+    "radar": []
+  },
+  "radar_context": [],
+  "verification": {
+    "same_event": true,
+    "facts": [
+      {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "守护级导弹护卫舰",
+        "supporting_sources": [
+          "N038",
+          "O010",
+          "R040"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N038': '守护级导弹护卫舰', 'O010': '守护级”导弹护卫舰', 'R040': '守护级导弹护卫舰'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "守护级导弹护卫舰",
+          "supporting_sources": [
+            "N038",
+            "O010",
+            "R040"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均明确指向“守护级导弹护卫舰”，且国籍均为俄罗斯，完全一致。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "俄罗斯",
+        "supporting_sources": [
+          "N038",
+          "O010",
+          "R040"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N038': '俄罗斯', 'O010': '俄罗斯', 'R040': '俄罗斯'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "俄罗斯",
+          "supporting_sources": [
+            "N038",
+            "O010",
+            "R040"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均明确标注国籍为“俄罗斯”，完全一致。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "1艘",
+        "supporting_sources": [
+          "O010",
+          "R040"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'O010': 1, 'R040': 1}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "1 架",
+          "supporting_sources": [
+            "O010",
+            "R040"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻未说明具体数量，舆论明确提及“一艘”，雷达批号数据明确显示数量为"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "菲律宾海",
+        "supporting_sources": [
+          "N038",
+          "O010",
+          "R040"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "复核明示地点和PDF包含关系：{'N038': '菲律宾海', 'O010': '菲律宾海', 'R040': '菲律宾海'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "菲律宾海",
+          "supporting_sources": [
+            "N038",
+            "O010",
+            "R040"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均明确活动区域为“菲律宾海”，完全一致。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N038": {
+            "raw": "菲律宾海",
+            "region": "菲律宾海",
+            "direction": "其他",
+            "precision": "原文区域",
+            "mapping": "PDF未列入三大核心海域的区域归其他",
+            "transit": false,
+            "quote": "菲律宾海"
+          },
+          "O010": {
+            "raw": "菲律宾海",
+            "region": "菲律宾海",
+            "direction": "其他",
+            "precision": "原文区域",
+            "mapping": "PDF未列入三大核心海域的区域归其他",
+            "transit": false,
+            "quote": "在菲律宾海"
+          },
+          "R040": {
+            "raw": "菲律宾海",
+            "region": "菲律宾海",
+            "direction": "其他",
+            "precision": "原文区域",
+            "mapping": "PDF未列入三大核心海域的区域归其他",
+            "transit": false
+          }
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "共同观测/报道时段 20:58—22:23（非完整活动起止断言）",
+        "supporting_sources": [
+          "N038",
+          "R040"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N038': {'start': '20:58', 'end': '22:23', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O010': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R040': {'start': '20:58', 'end': '22:23', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "2025 年 5 月 1 日 20:58-22:23",
+          "supporting_sources": [
+            "N038",
+            "R040"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻与雷达数据在日期、开始及结束时间上完全精确匹配；舆论仅提及日期未涉具体时刻，不构成冲突。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N038": {
+            "start": "20:58",
+            "end": "22:23",
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
+          },
+          "O010": {
+            "start": null,
+            "end": null,
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
+          },
+          "R040": {
+            "start": "20:58",
+            "end": "22:23",
+            "interval": "observation_coverage",
+            "start_asserted": false,
+            "end_asserted": false
+          }
+        },
+        "asserted_boundaries": {
+          "start": {},
+          "end": {}
+        },
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "联合搜救训练",
+        "supporting_sources": [
+          "N038",
+          "O010",
+          "R040"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "原文明示任务：{'N038': ['联合搜救训练'], 'O010': ['联合搜救训练'], 'R040': ['联合搜救训练']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "联合搜救训练",
+          "supporting_sources": [
+            "N038",
+            "O010",
+            "R040"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均明确任务性质为“联合搜救训练”，完全一致。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N038": [
+            "联合搜救训练"
+          ],
+          "O010": [
+            "联合搜救训练"
+          ],
+          "R040": [
+            "联合搜救训练"
+          ]
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N038",
+          "O010"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "supporting_sources": [
+            "N038",
+            "O010"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻与舆论均描述为“保持机动”、“组织训练”，雷达虽未显式说明但观测覆盖期间无异常，三源逻辑一致。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N038": "活动",
+          "O010": "活动",
+          "R040": "未说明"
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      }
+    ],
+    "unresolved_issues": [],
+    "explanation": "三类来源已关联，纳入结论的事实获得至少两类独立来源支持，未发现未消解明示反证。",
+    "model_explanation": "新闻、舆论、雷达三类来源在平台型号、国籍、数量（两源支持）、地点、时间（两源精确匹配）、任务及活动性质上高度一致，关键事实均有至少两类来源支撑，无未消解冲突，事件关联确认为同一事件。"
+  },
+  "reasons": [],
+  "status": "可信事件",
+  "verified_facts": [
+    {
+      "platform_index": 0,
+      "field": "platform",
+      "claim": "守护级导弹护卫舰",
+      "supporting_sources": [
+        "N038",
+        "O010",
+        "R040"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N038': '守护级导弹护卫舰', 'O010': '守护级”导弹护卫舰', 'R040': '守护级导弹护卫舰'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "守护级导弹护卫舰",
+        "supporting_sources": [
+          "N038",
+          "O010",
+          "R040"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻、舆论、雷达三源均明确指向“守护级导弹护卫舰”，且国籍均为俄罗斯，完全一致。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "country",
+      "claim": "俄罗斯",
+      "supporting_sources": [
+        "N038",
+        "O010",
+        "R040"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N038': '俄罗斯', 'O010': '俄罗斯', 'R040': '俄罗斯'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "俄罗斯",
+        "supporting_sources": [
+          "N038",
+          "O010",
+          "R040"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻、舆论、雷达三源均明确标注国籍为“俄罗斯”，完全一致。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "quantity",
+      "claim": "1艘",
+      "supporting_sources": [
+        "O010",
+        "R040"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'O010': 1, 'R040': 1}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "1 架",
+        "supporting_sources": [
+          "O010",
+          "R040"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻未说明具体数量，舆论明确提及“一艘”，雷达批号数据明确显示数量为"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "location",
+      "claim": "菲律宾海",
+      "supporting_sources": [
+        "N038",
+        "O010",
+        "R040"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "复核明示地点和PDF包含关系：{'N038': '菲律宾海', 'O010': '菲律宾海', 'R040': '菲律宾海'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "菲律宾海",
+        "supporting_sources": [
+          "N038",
+          "O010",
+          "R040"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻、舆论、雷达三源均明确活动区域为“菲律宾海”，完全一致。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N038": {
+          "raw": "菲律宾海",
+          "region": "菲律宾海",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false,
+          "quote": "菲律宾海"
+        },
+        "O010": {
+          "raw": "菲律宾海",
+          "region": "菲律宾海",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false,
+          "quote": "在菲律宾海"
+        },
+        "R040": {
+          "raw": "菲律宾海",
+          "region": "菲律宾海",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false
+        }
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "time",
+      "claim": "共同观测/报道时段 20:58—22:23（非完整活动起止断言）",
+      "supporting_sources": [
+        "N038",
+        "R040"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N038': {'start': '20:58', 'end': '22:23', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O010': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R040': {'start': '20:58', 'end': '22:23', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "2025 年 5 月 1 日 20:58-22:23",
+        "supporting_sources": [
+          "N038",
+          "R040"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与雷达数据在日期、开始及结束时间上完全精确匹配；舆论仅提及日期未涉具体时刻，不构成冲突。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N038": {
+          "start": "20:58",
+          "end": "22:23",
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "O010": {
+          "start": null,
+          "end": null,
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "R040": {
+          "start": "20:58",
+          "end": "22:23",
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        }
+      },
+      "asserted_boundaries": {
+        "start": {},
+        "end": {}
+      },
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "mission",
+      "claim": "联合搜救训练",
+      "supporting_sources": [
+        "N038",
+        "O010",
+        "R040"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "原文明示任务：{'N038': ['联合搜救训练'], 'O010': ['联合搜救训练'], 'R040': ['联合搜救训练']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "联合搜救训练",
+        "supporting_sources": [
+          "N038",
+          "O010",
+          "R040"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻、舆论、雷达三源均明确任务性质为“联合搜救训练”，完全一致。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N038": [
+          "联合搜救训练"
+        ],
+        "O010": [
+          "联合搜救训练"
+        ],
+        "R040": [
+          "联合搜救训练"
+        ]
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "movement",
+      "claim": "活动",
+      "supporting_sources": [
+        "N038",
+        "O010"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N038",
+          "O010"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与舆论均描述为“保持机动”、“组织训练”，雷达虽未显式说明但观测覆盖期间无异常，三源逻辑一致。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N038": "活动",
+        "O010": "活动",
+        "R040": "未说明"
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    }
+  ],
+  "radar_row_count": 11,
+  "direction": "其他",
+  "report_eligible": false,
+  "directory": "可信事件/N038_俄海军守护级护卫舰在菲律宾海组织联合搜救训练"
+}

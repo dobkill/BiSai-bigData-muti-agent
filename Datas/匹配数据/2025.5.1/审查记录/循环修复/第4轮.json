@@ -1,0 +1,5072 @@
+{
+  "iteration": 4,
+  "state": "completed_and_stop",
+  "reviewed_at": "2026-10-08T08:22:27.375962+08:00",
+  "reviewer": "当前对话GPT逐组审查；非新增外部GPT API调用",
+  "scope": "2025.5.1全部50个主组，可信、不可信及关联候选均纳入审查；原始100篇新闻/舆论全文及当天雷达候选字段已读取。",
+  "stopping_reason": "对当前数据的逐组配对、关键事实支持及可信/不可信理由均已复核；本轮没有发现需继续修复的配对或判定问题。尚有明确来源差异和关联疑点的7组合理保留不可信，不要求全部改为可信。",
+  "limitations": "这是对本地数据和规则的GPT审查，未提供官方真值准确率；新闻/舆论来源类别不等于已证明信息渠道彼此独立。不可信不等于事实已被证伪。",
+  "committed_iterations": [
+    {
+      "iteration": 1,
+      "commit": "e425c46",
+      "run": "扩大复查索引越界失败，继续修复"
+    },
+    {
+      "iteration": 2,
+      "commit": "b7ac880",
+      "run": "扩大复查上下文/材料类型混淆失败，继续修复"
+    },
+    {
+      "iteration": 3,
+      "commit": "00dba7a",
+      "run": "成功，逐组复核发现平台范围和说明问题，继续修复"
+    },
+    {
+      "iteration": 4,
+      "commit": "5b926e01720d70c2d284cfcf356eac1ffbe5db29",
+      "run": "成功，最终50组复核合理后停止"
+    }
+  ],
+  "final_run_manifest": {
+    "version": "matcher-v1.0",
+    "input": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\数据\\2025.5.1",
+    "output": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\匹配数据\\2025.5.1",
+    "model": "qwen3.5:9b-q8_0",
+    "code_provenance": {
+      "git_commit": "5b926e01720d70c2d284cfcf356eac1ffbe5db29",
+      "code_sha256": "8a2644dce57fc56760b994ff4d99958d9c06ed6ff7d5d715ab6007566a6962e5",
+      "files": {
+        "Code/event_matcher/__init__.py": "bc448f913c7381ef6a3c4283400fb5acd9222303a916c58d989cab87d7dd1de5",
+        "Code/event_matcher/agents.py": "7f44092e1ab0422c4550982a0618ebde595cf9667c88b868e0b01addcd71967a",
+        "Code/event_matcher/assignment.py": "13588f6b39e148d290f36bd822656da4bade01975c288a70fe333a39aac5e82e",
+        "Code/event_matcher/data.py": "254111635205def615313dfb78727e6f4a76349259a76ab63b7504dbca5fbd24",
+        "Code/event_matcher/export.py": "57ee7c9574ffdb8cdd23fe8a882aa061ebf24d73536d3d69da1fdf99eac902b8",
+        "Code/event_matcher/geography.py": "e68e1ffd34df6d3b5e126bb990e9eccf132a7ba6da48f3e322f8d1bd3997cb05",
+        "Code/event_matcher/literal_facts.py": "e37653e6346077575eb0a4506b58bcafd42d3d21911474e8d69459a54d8c198c",
+        "Code/event_matcher/matching.py": "8b013539944283082b71b56baa87212f4efbe44a9b1bbffc59691ebe290d543e",
+        "Code/event_matcher/models.py": "ce46fcd0a0d21ec3890460410b78a5c4c9e41b00632d37b770d7544fc3ebc300",
+        "Code/event_matcher/ollama_client.py": "59e5eb7d576b6c1f3378dd6146bb7c4228568a82439e274799411e62665b9690",
+        "Code/event_matcher/pipeline.py": "32ffcd97a4cb8fba3baee7f96ad15abbb19f78fd56c15f388aa6411c8fa95619",
+        "Code/event_matcher/provenance.py": "afe724c134162d8cdac37cda1b7da71b385cf10e06bb83e2eca7849d07d7d15f",
+        "Code/event_matcher/quality.py": "671641e67de380e72016064d384c043b160559e327f0e0d747adcb5c8a9a64ab",
+        "Code/match_day.py": "a0edb0db2a889f35fd78fcfa16fad4e827fd4403f49b9229eb90f2cd9d987dd2",
+        "Code/requirements.txt": "dee3e07d5a755182374d5d530e6d3097e3b80091b3d9b1d529150a6f44ccdfe1",
+        "Code/test_matching.py": "1462add7779b90a4f8497c6e35858981d64e577d88775c9ca19742099eea30f3"
+      },
+      "current_code_dirty": false,
+      "note": "仅检查当前实现文件；不将工作区已有的其他文件删除纳入本轮提交"
+    },
+    "exported_at": "2026-10-08T08:19:22.912951+08:00",
+    "embedding_model": "bge-m3",
+    "groups": 50,
+    "trusted": 43,
+    "untrusted": 7,
+    "matched_opinions": 50,
+    "matched_radar_activities": 52,
+    "matched_radar_batches": 52,
+    "matched_radar_rows": 587,
+    "report_eligible": 32,
+    "http_calls_this_run": 2,
+    "cache_hits_this_run": 128,
+    "vector_index": {
+      "model": "bge-m3",
+      "records": 154,
+      "dimension": 1024,
+      "metric": "normalized cosine; exact exhaustive search",
+      "ids": [
+        "N001",
+        "N002",
+        "N003",
+        "N004",
+        "N005",
+        "N006",
+        "N007",
+        "N008",
+        "N009",
+        "N010",
+        "N011",
+        "N012",
+        "N013",
+        "N014",
+        "N015",
+        "N016",
+        "N017",
+        "N018",
+        "N019",
+        "N020",
+        "N021",
+        "N022",
+        "N023",
+        "N024",
+        "N025",
+        "N026",
+        "N027",
+        "N028",
+        "N029",
+        "N030",
+        "N031",
+        "N032",
+        "N033",
+        "N034",
+        "N035",
+        "N036",
+        "N037",
+        "N038",
+        "N039",
+        "N040",
+        "N041",
+        "N042",
+        "N043",
+        "N044",
+        "N045",
+        "N046",
+        "N047",
+        "N048",
+        "N049",
+        "N050",
+        "O001",
+        "O002",
+        "O003",
+        "O004",
+        "O005",
+        "O006",
+        "O007",
+        "O008",
+        "O009",
+        "O010",
+        "O011",
+        "O012",
+        "O013",
+        "O014",
+        "O015",
+        "O016",
+        "O017",
+        "O018",
+        "O019",
+        "O020",
+        "O021",
+        "O022",
+        "O023",
+        "O024",
+        "O025",
+        "O026",
+        "O027",
+        "O028",
+        "O029",
+        "O030",
+        "O031",
+        "O032",
+        "O033",
+        "O034",
+        "O035",
+        "O036",
+        "O037",
+        "O038",
+        "O039",
+        "O040",
+        "O041",
+        "O042",
+        "O043",
+        "O044",
+        "O045",
+        "O046",
+        "O047",
+        "O048",
+        "O049",
+        "O050",
+        "R001",
+        "R002",
+        "R003",
+        "R004",
+        "R005",
+        "R006",
+        "R007",
+        "R008",
+        "R009",
+        "R010",
+        "R011",
+        "R012",
+        "R013",
+        "R014",
+        "R015",
+        "R016",
+        "R017",
+        "R018",
+        "R019",
+        "R020",
+        "R021",
+        "R022",
+        "R023",
+        "R024",
+        "R025",
+        "R026",
+        "R027",
+        "R028",
+        "R029",
+        "R030",
+        "R031",
+        "R032",
+        "R033",
+        "R034",
+        "R035",
+        "R036",
+        "R037",
+        "R038",
+        "R039",
+        "R040",
+        "R041",
+        "R042",
+        "R043",
+        "R044",
+        "R045",
+        "R046",
+        "R047",
+        "R048",
+        "R049",
+        "R050",
+        "R051",
+        "R052",
+        "R053",
+        "R054"
+      ],
+      "source": "Ollama /api/embed, cached",
+      "storage": "SQLite证据和向量BLOB + vectors.npy"
+    },
+    "integrity": {
+      "passed": true,
+      "errors": [],
+      "original_texts": 100,
+      "exported_texts": 100,
+      "original_radar_rows": 600,
+      "exported_radar_rows": 600,
+      "unique_radar_rows": 600,
+      "unmatched_texts": 0,
+      "unmatched_radar_activities": 2,
+      "original_hashes_unchanged": true
+    },
+    "accuracy": "未进行人工真值评估，分类为模型初步结果",
+    "quality": {
+      "passed": true,
+      "groups_checked": 50,
+      "supported_facts_checked": 342,
+      "errors": [],
+      "scope": "检查来源独立性、引用范围、分类自洽；不判断军事事实真伪，不替代GPT逐组阅读与官方真值评估"
+    },
+    "spatial_limit": "飞机坐标方向仅辅助召回；缺乏官方边界时不作为精确地点的独立核验证据"
+  },
+  "test_result": {
+    "command": "python -X utf8 -B Code/test_matching.py",
+    "tests": 32,
+    "passed": true
+  },
+  "checks": {
+    "50组主组及新闻唯一": true,
+    "全部配对与GPT原文复核选择一致": true,
+    "分类与逐组事实审查一致": true,
+    "N004与N014未强并同批其他目标": true,
+    "可信组没有未消解关键冲突或疑点": true,
+    "所有支持事实引用本组且至少两类来源": true,
+    "N019与N032关联仍待复核且恢复平台范围": true,
+    "N019与N032数量已获舆论和雷达两类支持": true,
+    "报道子区间得到准确范围支持": true,
+    "N045共同训练通过而具体两栖科目待核实": true,
+    "数量国籍地点任务反证未被多数票消解": true,
+    "原始100篇文本哈希未变化": true,
+    "原始雷达文件哈希未变化": true,
+    "100篇文本600行雷达完整且唯一保留": true,
+    "代码已提交且运行与当前代码一致": true,
+    "源数据相对Git未改动": true,
+    "程序结果质量检查通过": true
+  },
+  "results_sha256": "bcdf52b35d2601299503eeb0d3a2cf9744c93b9877b8644a0d7928dce4256871",
+  "untrusted_ids": [
+    "N005",
+    "N019",
+    "N026",
+    "N027",
+    "N032",
+    "N040",
+    "N044"
+  ],
+  "reclassified_trusted_ids": [
+    "N004",
+    "N014",
+    "N025",
+    "N028",
+    "N045"
+  ],
+  "groups": [
+    {
+      "id": "N001",
+      "news_title": "韩国AW-159反潜直升机在阿拉伯海执行反潜巡逻任务",
+      "opinion_id": "O038",
+      "radar_slots": {
+        "0": "R015"
+      },
+      "selected_radar_ids": [
+        "R015"
+      ],
+      "baseline_status": "可信事件",
+      "final_status": "可信事件",
+      "gpt_pairing_review": "合理",
+      "gpt_classification_review": "合理",
+      "review_rationale": "原始新闻、舆论及选中雷达在平台、国籍、地点的相容范围和已明示时段/任务上匹配；明确事实按至少两类来源核验，单源细节保留待核实。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "AW-159反潜直升机",
+          "sources": [
+            "N001",
+            "O038",
+            "R015"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "韩国",
+          "sources": [
+            "N001",
+            "O038",
+            "R015"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "2架",
+          "sources": [
+            "O038",
+            "R015"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "阿拉伯海",
+          "sources": [
+            "N001",
+            "O038"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 11:37—13:02（非完整活动起止断言）",
+          "sources": [
+            "N001",
+            "R015"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "反潜巡逻",
+          "sources": [
+            "N001",
+            "O038",
+            "R015"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N001",
+            "O038"
+          ]
+        }
+      ],
+      "unresolved_fields": [],
+      "classification_reasons": [],
+      "remaining_code_issue": null,
+      "group_result": "可信事件/N001_韩国AW-159反潜直升机在阿拉伯海执行反潜巡逻任务/结果.json"
+    },
+    {
+      "id": "N002",
+      "news_title": "中国轰-6K轰炸机在上海外海组织对海突击训练",
+      "opinion_id": "O037",
+      "radar_slots": {
+        "0": "R022"
+      },
+      "selected_radar_ids": [
+        "R022"
+      ],
+      "baseline_status": "可信事件",
+      "final_status": "可信事件",
+      "gpt_pairing_review": "合理",
+      "gpt_classification_review": "合理",
+      "review_rationale": "原始新闻、舆论及选中雷达在平台、国籍、地点的相容范围和已明示时段/任务上匹配；明确事实按至少两类来源核验，单源细节保留待核实。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "轰-6K轰炸机",
+          "sources": [
+            "N002",
+            "O037",
+            "R022"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "中国",
+          "sources": [
+            "N002",
+            "O037",
+            "R022"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "2架",
+          "sources": [
+            "O037",
+            "R022"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "上海外海",
+          "sources": [
+            "N002",
+            "O037"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 11:21—13:46（非完整活动起止断言）",
+          "sources": [
+            "N002",
+            "R022"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "对海突击训练",
+          "sources": [
+            "N002",
+            "R022"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N002",
+            "O037"
+          ]
+        }
+      ],
+      "unresolved_fields": [],
+      "classification_reasons": [],
+      "remaining_code_issue": null,
+      "group_result": "可信事件/N002_中国轰-6K轰炸机在上海外海组织对海突击训练/结果.json"
+    },
+    {
+      "id": "N003",
+      "news_title": "中国903A型综合补给舰在冲绳海槽持续活动",
+      "opinion_id": "O015",
+      "radar_slots": {
+        "0": "R045"
+      },
+      "selected_radar_ids": [
+        "R045"
+      ],
+      "baseline_status": "可信事件",
+      "final_status": "可信事件",
+      "gpt_pairing_review": "合理",
+      "gpt_classification_review": "合理",
+      "review_rationale": "原始新闻、舆论及选中雷达在平台、国籍、地点的相容范围和已明示时段/任务上匹配；明确事实按至少两类来源核验，单源细节保留待核实。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "903A型综合补给舰",
+          "sources": [
+            "N003",
+            "O015",
+            "R045"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "中国",
+          "sources": [
+            "N003",
+            "O015",
+            "R045"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "1艘",
+          "sources": [
+            "N003",
+            "R045"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "冲绳海槽",
+          "sources": [
+            "N003",
+            "R045"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 05:56—07:21（非完整活动起止断言）",
+          "sources": [
+            "O015",
+            "R045"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "例行部署",
+          "sources": [
+            "O015",
+            "R045"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N003",
+            "O015"
+          ]
+        }
+      ],
+      "unresolved_fields": [],
+      "classification_reasons": [],
+      "remaining_code_issue": null,
+      "group_result": "可信事件/N003_中国903A型综合补给舰在冲绳海槽持续活动/结果.json"
+    },
+    {
+      "id": "N004",
+      "news_title": "中国歼-35舰载隐身战斗机在温州外海执行战备警巡行动",
+      "opinion_id": "O021",
+      "radar_slots": {
+        "0": "R002"
+      },
+      "selected_radar_ids": [
+        "R002"
+      ],
+      "baseline_status": "不可信事件",
+      "final_status": "可信事件",
+      "gpt_pairing_review": "合理",
+      "gpt_classification_review": "合理",
+      "review_rationale": "新闻与O021在东海方向、国籍、型号及任务上相容；只关联空间相关的R002。未证明R001与R002属于同一飞机，同批号不强并。温州外海的精确地点仅新闻明示，保留待核实。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "歼-35舰载隐身战斗机",
+          "sources": [
+            "N004",
+            "O021",
+            "R002"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "中国",
+          "sources": [
+            "N004",
+            "O021",
+            "R002"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "2架",
+          "sources": [
+            "O021",
+            "R002"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "东海",
+          "sources": [
+            "N004",
+            "O021"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 17:49—19:00（非完整活动起止断言）",
+          "sources": [
+            "N004",
+            "R002"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "战备警巡",
+          "sources": [
+            "N004",
+            "O021",
+            "R002"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N004",
+            "O021"
+          ]
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "platform_index": -1,
+          "field": "location_detail",
+          "claim": "温州外海",
+          "status": "insufficient",
+          "supporting_sources": [
+            "N004"
+          ],
+          "conflicting_sources": []
+        }
+      ],
+      "classification_reasons": [],
+      "remaining_code_issue": null,
+      "group_result": "可信事件/N004_中国歼-35舰载隐身战斗机在温州外海执行战备警巡行动/结果.json"
+    },
+    {
+      "id": "N005",
+      "news_title": "中国海军903A型补给舰在万安滩海域持续活动",
+      "opinion_id": "O016",
+      "radar_slots": {
+        "0": "R044"
+      },
+      "selected_radar_ids": [
+        "R044"
+      ],
+      "baseline_status": "不可信事件",
+      "final_status": "不可信事件",
+      "gpt_pairing_review": "合理",
+      "gpt_classification_review": "合理",
+      "review_rationale": "新闻和O016明确1艘，R044目标数量2；数量含义尚无子集或编队范围证据解释，保留差异，不能用多数票证明对错。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "903A型综合补给舰",
+          "sources": [
+            "N005",
+            "O016",
+            "R044"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "中国",
+          "sources": [
+            "N005",
+            "O016",
+            "R044"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "万安滩海域",
+          "sources": [
+            "N005",
+            "R044"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 02:54—04:19（非完整活动起止断言）",
+          "sources": [
+            "O016",
+            "R044"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "远海训练",
+          "sources": [
+            "O016",
+            "R044"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N005",
+            "O016"
+          ]
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "1艘",
+          "status": "conflict",
+          "supporting_sources": [
+            "N005",
+            "O016"
+          ],
+          "conflicting_sources": [
+            "R044"
+          ]
+        }
+      ],
+      "classification_reasons": [
+        "quantity关键事实冲突：程序按已关联平台的明示字段复核：{'N005': 1, 'O016': 1, 'R044': 2}；缺失不支持也不反对"
+      ],
+      "remaining_code_issue": null,
+      "group_result": "不可信事件/N005_中国海军903A型补给舰在万安滩海域持续活动/结果.json"
+    },
+    {
+      "id": "N006",
+      "news_title": "中国054B型导弹护卫舰在东海开展远海训练",
+      "opinion_id": "O049",
+      "radar_slots": {
+        "0": "R037"
+      },
+      "selected_radar_ids": [
+        "R037"
+      ],
+      "baseline_status": "可信事件",
+      "final_status": "可信事件",
+      "gpt_pairing_review": "合理",
+      "gpt_classification_review": "合理",
+      "review_rationale": "原始新闻、舆论及选中雷达在平台、国籍、地点的相容范围和已明示时段/任务上匹配；明确事实按至少两类来源核验，单源细节保留待核实。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "054B型导弹护卫舰",
+          "sources": [
+            "N006",
+            "O049",
+            "R037"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "中国",
+          "sources": [
+            "N006",
+            "O049",
+            "R037"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "1艘",
+          "sources": [
+            "O049",
+            "R037"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "东海",
+          "sources": [
+            "N006",
+            "O049",
+            "R037"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 20:20—22:45（非完整活动起止断言）",
+          "sources": [
+            "N006",
+            "R037"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "远海训练",
+          "sources": [
+            "N006",
+            "O049",
+            "R037"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N006",
+            "O049"
+          ]
+        }
+      ],
+      "unresolved_fields": [],
+      "classification_reasons": [],
+      "remaining_code_issue": null,
+      "group_result": "可信事件/N006_中国054B型导弹护卫舰在东海开展远海训练/结果.json"
+    },
+    {
+      "id": "N007",
+      "news_title": "德国“台风”多用途战斗机在东海油气田海域活动",
+      "opinion_id": "O005",
+      "radar_slots": {
+        "0": "R016"
+      },
+      "selected_radar_ids": [
+        "R016"
+      ],
+      "baseline_status": "可信事件",
+      "final_status": "可信事件",
+      "gpt_pairing_review": "合理",
+      "gpt_classification_review": "合理",
+      "review_rationale": "原始新闻、舆论及选中雷达在平台、国籍、地点的相容范围和已明示时段/任务上匹配；明确事实按至少两类来源核验，单源细节保留待核实。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "台风”多用途战斗机",
+          "sources": [
+            "N007",
+            "O005",
+            "R016"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "德国",
+          "sources": [
+            "N007",
+            "O005",
+            "R016"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "2架",
+          "sources": [
+            "N007",
+            "R016"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "东海",
+          "sources": [
+            "N007",
+            "O005"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 05:45—07:10（非完整活动起止断言）",
+          "sources": [
+            "O005",
+            "R016"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "对海突击训练",
+          "sources": [
+            "O005",
+            "R016"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N007",
+            "O005"
+          ]
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "platform_index": -1,
+          "field": "location_detail",
+          "claim": "东海油气田海域",
+          "status": "insufficient",
+          "supporting_sources": [
+            "N007"
+          ],
+          "conflicting_sources": []
+        }
+      ],
+      "classification_reasons": [],
+      "remaining_code_issue": null,
+      "group_result": "可信事件/N007_德国“台风”多用途战斗机在东海油气田海域活动/结果.json"
+    },
+    {
+      "id": "N008",
+      "news_title": "苏-35S多用途战斗机俄军苏-35S在成山头外海持续活动",
+      "opinion_id": "O023",
+      "radar_slots": {
+        "0": "R003"
+      },
+      "selected_radar_ids": [
+        "R003"
+      ],
+      "baseline_status": "可信事件",
+      "final_status": "可信事件",
+      "gpt_pairing_review": "合理",
+      "gpt_classification_review": "合理",
+      "review_rationale": "原始新闻、舆论及选中雷达在平台、国籍、地点的相容范围和已明示时段/任务上匹配；明确事实按至少两类来源核验，单源细节保留待核实。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "苏-35S多用途战斗机",
+          "sources": [
+            "N008",
+            "O023",
+            "R003"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "俄罗斯",
+          "sources": [
+            "N008",
+            "O023",
+            "R003"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "2架",
+          "sources": [
+            "N008",
+            "R003"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "黄海",
+          "sources": [
+            "N008",
+            "O023"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 02:49—04:14（非完整活动起止断言）",
+          "sources": [
+            "O023",
+            "R003"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "对海突击训练",
+          "sources": [
+            "O023",
+            "R003"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N008",
+            "O023"
+          ]
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "platform_index": -1,
+          "field": "location_detail",
+          "claim": "成山头外海",
+          "status": "insufficient",
+          "supporting_sources": [
+            "N008"
+          ],
+          "conflicting_sources": []
+        }
+      ],
+      "classification_reasons": [],
+      "remaining_code_issue": null,
+      "group_result": "可信事件/N008_苏-35S多用途战斗机俄军苏-35S在成山头外海持续活动/结果.json"
+    },
+    {
+      "id": "N009",
+      "news_title": "俄军苏-35S多用途战斗机在南黄海执行战备警巡行动",
+      "opinion_id": "O026",
+      "radar_slots": {
+        "0": "R013"
+      },
+      "selected_radar_ids": [
+        "R013"
+      ],
+      "baseline_status": "可信事件",
+      "final_status": "可信事件",
+      "gpt_pairing_review": "合理",
+      "gpt_classification_review": "合理",
+      "review_rationale": "原始新闻、舆论及选中雷达在平台、国籍、地点的相容范围和已明示时段/任务上匹配；明确事实按至少两类来源核验，单源细节保留待核实。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "苏-35S",
+          "sources": [
+            "N009",
+            "O026",
+            "R013"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "俄罗斯",
+          "sources": [
+            "N009",
+            "O026",
+            "R013"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "2架",
+          "sources": [
+            "O026",
+            "R013"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "黄海",
+          "sources": [
+            "N009",
+            "O026"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 08:03—10:28（非完整活动起止断言）",
+          "sources": [
+            "N009",
+            "R013"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "战备警巡",
+          "sources": [
+            "N009",
+            "O026",
+            "R013"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N009",
+            "O026"
+          ]
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "platform_index": -1,
+          "field": "location_detail",
+          "claim": "南黄海",
+          "status": "insufficient",
+          "supporting_sources": [
+            "N009"
+          ],
+          "conflicting_sources": []
+        }
+      ],
+      "classification_reasons": [],
+      "remaining_code_issue": null,
+      "group_result": "可信事件/N009_俄军苏-35S多用途战斗机在南黄海执行战备警巡行动/结果.json"
+    },
+    {
+      "id": "N010",
+      "news_title": "日本秋月级护卫舰在东海南部完成实弹射击训练后离开",
+      "opinion_id": "O045",
+      "radar_slots": {
+        "0": "R046"
+      },
+      "selected_radar_ids": [
+        "R046"
+      ],
+      "baseline_status": "可信事件",
+      "final_status": "可信事件",
+      "gpt_pairing_review": "合理",
+      "gpt_classification_review": "合理",
+      "review_rationale": "原始新闻、舆论及选中雷达在平台、国籍、地点的相容范围和已明示时段/任务上匹配；明确事实按至少两类来源核验，单源细节保留待核实。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "秋月级",
+          "sources": [
+            "N010",
+            "O045",
+            "R046"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "日本",
+          "sources": [
+            "N010",
+            "O045",
+            "R046"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "1艘",
+          "sources": [
+            "O045",
+            "R046"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "东海南部",
+          "sources": [
+            "N010",
+            "R046"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 14:28—16:53（非完整活动起止断言）",
+          "sources": [
+            "N010",
+            "R046"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "实弹射击训练",
+          "sources": [
+            "N010",
+            "O045",
+            "R046"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N010",
+            "O045"
+          ]
+        }
+      ],
+      "unresolved_fields": [],
+      "classification_reasons": [],
+      "remaining_code_issue": null,
+      "group_result": "可信事件/N010_日本秋月级护卫舰在东海南部完成实弹射击训练后离开/结果.json"
+    },
+    {
+      "id": "N011",
+      "news_title": "澳大利亚霍巴特级导弹驱逐舰在琼州海峡完成联合搜救训练后离开",
+      "opinion_id": "O027",
+      "radar_slots": {
+        "0": "R033"
+      },
+      "selected_radar_ids": [
+        "R033"
+      ],
+      "baseline_status": "可信事件",
+      "final_status": "可信事件",
+      "gpt_pairing_review": "合理",
+      "gpt_classification_review": "合理",
+      "review_rationale": "原始新闻、舆论及选中雷达在平台、国籍、地点的相容范围和已明示时段/任务上匹配；明确事实按至少两类来源核验，单源细节保留待核实。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "霍巴特级",
+          "sources": [
+            "N011",
+            "O027",
+            "R033"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "澳大利亚",
+          "sources": [
+            "N011",
+            "O027",
+            "R033"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "1艘",
+          "sources": [
+            "O027",
+            "R033"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "琼州海峡",
+          "sources": [
+            "N011",
+            "R033"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 11:48—13:13（非完整活动起止断言）",
+          "sources": [
+            "N011",
+            "R033"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "联合搜救训练",
+          "sources": [
+            "N011",
+            "O027",
+            "R033"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N011",
+            "O027"
+          ]
+        }
+      ],
+      "unresolved_fields": [],
+      "classification_reasons": [],
+      "remaining_code_issue": null,
+      "group_result": "可信事件/N011_澳大利亚霍巴特级导弹驱逐舰在琼州海峡完成联合搜救训练后离开/结果.json"
+    },
+    {
+      "id": "N012",
+      "news_title": "美海军新奥尔良号及本福德号在北黄海执行编队警戒部署",
+      "opinion_id": "O046",
+      "radar_slots": {
+        "0": "R032",
+        "1": "R035"
+      },
+      "selected_radar_ids": [
+        "R032",
+        "R035"
+      ],
+      "baseline_status": "可信事件",
+      "final_status": "可信事件",
+      "gpt_pairing_review": "合理",
+      "gpt_classification_review": "合理",
+      "review_rationale": "新闻包含新奥尔良号和本福德号，分别有R032/R035支持。O046仅关联新奥尔良号；未提另一舰不构成否认。数量字段未充分支持的部分保留待核实。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "新奥尔良号",
+          "sources": [
+            "N012",
+            "O046",
+            "R032"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "美国",
+          "sources": [
+            "N012",
+            "O046",
+            "R032"
+          ]
+        },
+        {
+          "platform_index": 1,
+          "field": "platform",
+          "claim": "本福德号",
+          "sources": [
+            "N012",
+            "R035"
+          ]
+        },
+        {
+          "platform_index": 1,
+          "field": "country",
+          "claim": "美国",
+          "sources": [
+            "N012",
+            "R035"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "北黄海",
+          "sources": [
+            "N012",
+            "R032",
+            "R035"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 20:42—22:07（非完整活动起止断言）",
+          "sources": [
+            "N012",
+            "R032",
+            "R035"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "编队警戒部署",
+          "sources": [
+            "N012",
+            "O046",
+            "R032",
+            "R035"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N012",
+            "O046"
+          ]
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "1艘",
+          "status": "insufficient",
+          "supporting_sources": [
+            "R032"
+          ],
+          "conflicting_sources": []
+        },
+        {
+          "platform_index": 1,
+          "field": "quantity",
+          "claim": "1艘",
+          "status": "insufficient",
+          "supporting_sources": [
+            "R035"
+          ],
+          "conflicting_sources": []
+        }
+      ],
+      "classification_reasons": [],
+      "remaining_code_issue": null,
+      "group_result": "可信事件/N012_美海军新奥尔良号及本福德号在北黄海执行编队警戒部署/结果.json"
+    },
+    {
+      "id": "N013",
+      "news_title": "中国空警-500预警机进入钓鱼岛海域执行情报监视侦察",
+      "opinion_id": "O035",
+      "radar_slots": {
+        "0": "R010"
+      },
+      "selected_radar_ids": [
+        "R010"
+      ],
+      "baseline_status": "可信事件",
+      "final_status": "可信事件",
+      "gpt_pairing_review": "合理",
+      "gpt_classification_review": "合理",
+      "review_rationale": "原始新闻、舆论及选中雷达在平台、国籍、地点的相容范围和已明示时段/任务上匹配；明确事实按至少两类来源核验，单源细节保留待核实。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "空警-500预警机",
+          "sources": [
+            "N013",
+            "O035",
+            "R010"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "中国",
+          "sources": [
+            "N013",
+            "O035",
+            "R010"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "2架",
+          "sources": [
+            "O035",
+            "R010"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "东海",
+          "sources": [
+            "N013",
+            "O035"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 08:41—10:06（非完整活动起止断言）",
+          "sources": [
+            "N013",
+            "R010"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "情报监视侦察",
+          "sources": [
+            "N013",
+            "O035",
+            "R010"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N013",
+            "O035"
+          ]
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "platform_index": -1,
+          "field": "location_detail",
+          "claim": "钓鱼岛海域",
+          "status": "insufficient",
+          "supporting_sources": [
+            "N013"
+          ],
+          "conflicting_sources": []
+        }
+      ],
+      "classification_reasons": [],
+      "remaining_code_issue": null,
+      "group_result": "可信事件/N013_中国空警-500预警机进入钓鱼岛海域执行情报监视侦察/结果.json"
+    },
+    {
+      "id": "N014",
+      "news_title": "越南苏-30MK2多用途战斗机在礼乐滩海域进行对海突击训练",
+      "opinion_id": "O018",
+      "radar_slots": {
+        "0": "R007"
+      },
+      "selected_radar_ids": [
+        "R007"
+      ],
+      "baseline_status": "不可信事件",
+      "final_status": "可信事件",
+      "gpt_pairing_review": "合理",
+      "gpt_classification_review": "合理",
+      "review_rationale": "关联新闻、O018与南海分支R007；黄海分支R008不由同批号自动加入，也不作本事件反证。共同南海方向通过，礼乐滩具体地点待核实。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "苏-30MK2多用途战斗机",
+          "sources": [
+            "N014",
+            "O018",
+            "R007"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "越南",
+          "sources": [
+            "N014",
+            "O018",
+            "R007"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "2架",
+          "sources": [
+            "O018",
+            "R007"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "南海",
+          "sources": [
+            "N014",
+            "O018"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 14:55—16:20（非完整活动起止断言）",
+          "sources": [
+            "N014",
+            "R007"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "对海突击训练",
+          "sources": [
+            "N014",
+            "O018",
+            "R007"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N014",
+            "O018"
+          ]
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "platform_index": -1,
+          "field": "location_detail",
+          "claim": "礼乐滩海域",
+          "status": "insufficient",
+          "supporting_sources": [
+            "N014"
+          ],
+          "conflicting_sources": []
+        }
+      ],
+      "classification_reasons": [],
+      "remaining_code_issue": null,
+      "group_result": "可信事件/N014_越南苏-30MK2多用途战斗机在礼乐滩海域进行对海突击训练/结果.json"
+    },
+    {
+      "id": "N015",
+      "news_title": "中国海军039A型潜艇与056A型护卫舰在东海中部执行反潜巡逻",
+      "opinion_id": "O048",
+      "radar_slots": {
+        "0": "R039",
+        "1": "R042"
+      },
+      "selected_radar_ids": [
+        "R039",
+        "R042"
+      ],
+      "baseline_status": "可信事件",
+      "final_status": "可信事件",
+      "gpt_pairing_review": "合理",
+      "gpt_classification_review": "合理",
+      "review_rationale": "新闻联合039A与056A，分别对应R039/R042。O048只提039A，不把其数量覆盖056A，也不把漏提056A当成冲突。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "039A型常规潜艇",
+          "sources": [
+            "N015",
+            "O048",
+            "R039"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "中国",
+          "sources": [
+            "N015",
+            "O048",
+            "R039"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "1艘",
+          "sources": [
+            "O048",
+            "R039"
+          ]
+        },
+        {
+          "platform_index": 1,
+          "field": "platform",
+          "claim": "056A型轻型护卫舰",
+          "sources": [
+            "N015",
+            "R042"
+          ]
+        },
+        {
+          "platform_index": 1,
+          "field": "country",
+          "claim": "中国",
+          "sources": [
+            "N015",
+            "R042"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "东海中部",
+          "sources": [
+            "N015",
+            "R039",
+            "R042"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 17:02—19:27（非完整活动起止断言）",
+          "sources": [
+            "N015",
+            "R039",
+            "R042"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "反潜巡逻",
+          "sources": [
+            "N015",
+            "O048",
+            "R039",
+            "R042"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N015",
+            "O048"
+          ]
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "platform_index": 1,
+          "field": "quantity",
+          "claim": "1艘",
+          "status": "insufficient",
+          "supporting_sources": [
+            "R042"
+          ],
+          "conflicting_sources": []
+        }
+      ],
+      "classification_reasons": [],
+      "remaining_code_issue": null,
+      "group_result": "可信事件/N015_中国海军039A型潜艇与056A型护卫舰在东海中部执行反潜巡逻/结果.json"
+    },
+    {
+      "id": "N016",
+      "news_title": "韩国海军岛山安昌浩级潜艇在鄂霍次克海持续活动",
+      "opinion_id": "O009",
+      "radar_slots": {
+        "0": "R028"
+      },
+      "selected_radar_ids": [
+        "R028"
+      ],
+      "baseline_status": "可信事件",
+      "final_status": "可信事件",
+      "gpt_pairing_review": "合理",
+      "gpt_classification_review": "合理",
+      "review_rationale": "原始新闻、舆论及选中雷达在平台、国籍、地点的相容范围和已明示时段/任务上匹配；明确事实按至少两类来源核验，单源细节保留待核实。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "岛山安昌浩级常规潜艇",
+          "sources": [
+            "N016",
+            "O009",
+            "R028"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "韩国",
+          "sources": [
+            "N016",
+            "O009",
+            "R028"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "1艘",
+          "sources": [
+            "N016",
+            "R028"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "鄂霍次克海",
+          "sources": [
+            "N016",
+            "O009",
+            "R028"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 17:40—19:05（非完整活动起止断言）",
+          "sources": [
+            "O009",
+            "R028"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "海上巡逻",
+          "sources": [
+            "O009",
+            "R028"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N016",
+            "O009"
+          ]
+        }
+      ],
+      "unresolved_fields": [],
+      "classification_reasons": [],
+      "remaining_code_issue": null,
+      "group_result": "可信事件/N016_韩国海军岛山安昌浩级潜艇在鄂霍次克海持续活动/结果.json"
+    },
+    {
+      "id": "N017",
+      "news_title": "俄军瓦良格号巡洋舰在礼乐滩海域持续开展活动",
+      "opinion_id": "O020",
+      "radar_slots": {
+        "0": "R048"
+      },
+      "selected_radar_ids": [
+        "R048"
+      ],
+      "baseline_status": "可信事件",
+      "final_status": "可信事件",
+      "gpt_pairing_review": "合理",
+      "gpt_classification_review": "合理",
+      "review_rationale": "原始新闻、舆论及选中雷达在平台、国籍、地点的相容范围和已明示时段/任务上匹配；明确事实按至少两类来源核验，单源细节保留待核实。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "瓦良格号导弹巡洋舰",
+          "sources": [
+            "N017",
+            "O020",
+            "R048"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "俄罗斯",
+          "sources": [
+            "N017",
+            "O020",
+            "R048"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "礼乐滩海域",
+          "sources": [
+            "N017",
+            "R048"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 02:16—04:41（非完整活动起止断言）",
+          "sources": [
+            "O020",
+            "R048"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "海上护航",
+          "sources": [
+            "O020",
+            "R048"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N017",
+            "O020"
+          ]
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "1艘",
+          "status": "insufficient",
+          "supporting_sources": [
+            "R048"
+          ],
+          "conflicting_sources": []
+        }
+      ],
+      "classification_reasons": [],
+      "remaining_code_issue": null,
+      "group_result": "可信事件/N017_俄军瓦良格号巡洋舰在礼乐滩海域持续开展活动/结果.json"
+    },
+    {
+      "id": "N018",
+      "news_title": "中国海军福建号航母在钓鱼岛海域执行联合巡航任务行动",
+      "opinion_id": "O032",
+      "radar_slots": {
+        "0": "R034"
+      },
+      "selected_radar_ids": [
+        "R034"
+      ],
+      "baseline_status": "可信事件",
+      "final_status": "可信事件",
+      "gpt_pairing_review": "合理",
+      "gpt_classification_review": "合理",
+      "review_rationale": "原始新闻、舆论及选中雷达在平台、国籍、地点的相容范围和已明示时段/任务上匹配；明确事实按至少两类来源核验，单源细节保留待核实。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "福建号航空母舰",
+          "sources": [
+            "N018",
+            "O032",
+            "R034"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "中国",
+          "sources": [
+            "N018",
+            "O032",
+            "R034"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "钓鱼岛海域",
+          "sources": [
+            "N018",
+            "R034"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 02:38—04:03（非完整活动起止断言）",
+          "sources": [
+            "N018",
+            "R034"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "联合巡航",
+          "sources": [
+            "N018",
+            "O032",
+            "R034"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N018",
+            "O032"
+          ]
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "1艘",
+          "status": "insufficient",
+          "supporting_sources": [
+            "R034"
+          ],
+          "conflicting_sources": []
+        }
+      ],
+      "classification_reasons": [],
+      "remaining_code_issue": null,
+      "group_result": "可信事件/N018_中国海军福建号航母在钓鱼岛海域执行联合巡航任务行动/结果.json"
+    },
+    {
+      "id": "N019",
+      "news_title": "法国E-2C预警机在仁爱礁附近海域执行空中警戒",
+      "opinion_id": "O014",
+      "radar_slots": {
+        "0": "R014"
+      },
+      "selected_radar_ids": [
+        "R014"
+      ],
+      "baseline_status": "不可信事件",
+      "final_status": "不可信事件",
+      "gpt_pairing_review": "合理；N019/N032为明确标记的待复核关联",
+      "gpt_classification_review": "合理",
+      "review_rationale": "N019仁爱礁与O014赤尾屿明示地点不同。型号/国籍/任务组合及新闻雷达时段使该舆论值得保留复核，但没有唯一飞机身份，不能确认同一活动；列为待复核关联和不可信组，不证明新闻虚假。数量2架由舆论与雷达支持，新闻没写数量不算矛盾。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "E-2C预警机",
+          "sources": [
+            "N019",
+            "O014",
+            "R014"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "法国",
+          "sources": [
+            "N019",
+            "O014",
+            "R014"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "2架",
+          "sources": [
+            "O014",
+            "R014"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 05:01—07:26（非完整活动起止断言）",
+          "sources": [
+            "N019",
+            "R014"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "空中警戒",
+          "sources": [
+            "N019",
+            "O014",
+            "R014"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N019",
+            "O014"
+          ]
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "仁爱礁附近海域",
+          "status": "conflict",
+          "supporting_sources": [
+            "N019"
+          ],
+          "conflicting_sources": [
+            "O014"
+          ]
+        }
+      ],
+      "classification_reasons": [
+        "模型未确认三源同一事件关联",
+        "location关键事实冲突：复核明示地点和PDF包含关系：{'N019': '仁爱礁附近海域', 'O014': '赤尾屿海域'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+        "O014活动归属仍有歧义：平台型号与任务完全一致（法国 E-2C、空中警戒），时间重合（2025.5.1），但地点存在明确且不可调和的冲突：新闻 N019 明确位于“仁爱礁附近海域”（南海），而候选 O014 明确位于“东海赤尾屿海域”。不同海域方向排除了同一次活动的可能性。；程序保留待复核关联：同日双方唯一的型号/国籍/明确任务组合且新闻与雷达时段吻合；地点反证保留，不能据此判可信"
+      ],
+      "remaining_code_issue": null,
+      "group_result": "不可信事件/N019_法国E-2C预警机在仁爱礁附近海域执行空中警戒/结果.json"
+    },
+    {
+      "id": "N020",
+      "news_title": "韩国独岛级两栖攻击舰在东海南部开展两栖作战训练",
+      "opinion_id": "O044",
+      "radar_slots": {
+        "0": "R041"
+      },
+      "selected_radar_ids": [
+        "R041"
+      ],
+      "baseline_status": "可信事件",
+      "final_status": "可信事件",
+      "gpt_pairing_review": "合理",
+      "gpt_classification_review": "合理",
+      "review_rationale": "原始新闻、舆论及选中雷达在平台、国籍、地点的相容范围和已明示时段/任务上匹配；明确事实按至少两类来源核验，单源细节保留待核实。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "独岛级两栖攻击舰",
+          "sources": [
+            "N020",
+            "O044",
+            "R041"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "韩国",
+          "sources": [
+            "N020",
+            "O044",
+            "R041"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "1艘",
+          "sources": [
+            "O044",
+            "R041"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "东海南部",
+          "sources": [
+            "N020",
+            "R041"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 08:52—10:17（非完整活动起止断言）",
+          "sources": [
+            "N020",
+            "R041"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "两栖作战训练",
+          "sources": [
+            "N020",
+            "O044",
+            "R041"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N020",
+            "O044"
+          ]
+        }
+      ],
+      "unresolved_fields": [],
+      "classification_reasons": [],
+      "remaining_code_issue": null,
+      "group_result": "可信事件/N020_韩国独岛级两栖攻击舰在东海南部开展两栖作战训练/结果.json"
+    },
+    {
+      "id": "N021",
+      "news_title": "中国运-8反潜巡逻机在南海北部持续开展活动",
+      "opinion_id": "O003",
+      "radar_slots": {
+        "0": "R009"
+      },
+      "selected_radar_ids": [
+        "R009"
+      ],
+      "baseline_status": "可信事件",
+      "final_status": "可信事件",
+      "gpt_pairing_review": "合理",
+      "gpt_classification_review": "合理",
+      "review_rationale": "原始新闻、舆论及选中雷达在平台、国籍、地点的相容范围和已明示时段/任务上匹配；明确事实按至少两类来源核验，单源细节保留待核实。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "运-8反潜巡逻机",
+          "sources": [
+            "N021",
+            "O003",
+            "R009"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "中国",
+          "sources": [
+            "N021",
+            "O003",
+            "R009"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "2架",
+          "sources": [
+            "N021",
+            "R009"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "南海",
+          "sources": [
+            "N021",
+            "O003"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 11:59—13:24（非完整活动起止断言）",
+          "sources": [
+            "O003",
+            "R009"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "海上侦察巡逻",
+          "sources": [
+            "O003",
+            "R009"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N021",
+            "O003"
+          ]
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "platform_index": -1,
+          "field": "location_detail",
+          "claim": "南海北部",
+          "status": "insufficient",
+          "supporting_sources": [
+            "N021"
+          ],
+          "conflicting_sources": []
+        }
+      ],
+      "classification_reasons": [],
+      "remaining_code_issue": null,
+      "group_result": "可信事件/N021_中国运-8反潜巡逻机在南海北部持续开展活动/结果.json"
+    },
+    {
+      "id": "N022",
+      "news_title": "意大利莱蒙多·蒙特库科利号巡逻舰在礼乐滩海域反潜巡逻",
+      "opinion_id": "O034",
+      "radar_slots": {
+        "0": "R052"
+      },
+      "selected_radar_ids": [
+        "R052"
+      ],
+      "baseline_status": "可信事件",
+      "final_status": "可信事件",
+      "gpt_pairing_review": "合理",
+      "gpt_classification_review": "合理",
+      "review_rationale": "原始新闻、舆论及选中雷达在平台、国籍、地点的相容范围和已明示时段/任务上匹配；明确事实按至少两类来源核验，单源细节保留待核实。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "莱蒙多·蒙特库科利号多用途巡逻舰",
+          "sources": [
+            "N022",
+            "O034",
+            "R052"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "意大利",
+          "sources": [
+            "N022",
+            "O034",
+            "R052"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "礼乐滩海域",
+          "sources": [
+            "N022",
+            "O034",
+            "R052"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 14:06—16:31（非完整活动起止断言）",
+          "sources": [
+            "N022",
+            "R052"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "反潜巡逻",
+          "sources": [
+            "N022",
+            "R052"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N022",
+            "O034"
+          ]
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "1艘",
+          "status": "insufficient",
+          "supporting_sources": [
+            "R052"
+          ],
+          "conflicting_sources": []
+        }
+      ],
+      "classification_reasons": [],
+      "remaining_code_issue": null,
+      "group_result": "可信事件/N022_意大利莱蒙多·蒙特库科利号巡逻舰在礼乐滩海域反潜巡逻/结果.json"
+    },
+    {
+      "id": "N023",
+      "news_title": "中国海军054A型护卫舰在白令海执行反潜巡逻",
+      "opinion_id": "O006",
+      "radar_slots": {
+        "0": "R029"
+      },
+      "selected_radar_ids": [
+        "R029"
+      ],
+      "baseline_status": "可信事件",
+      "final_status": "可信事件",
+      "gpt_pairing_review": "合理",
+      "gpt_classification_review": "合理",
+      "review_rationale": "原始新闻、舆论及选中雷达在平台、国籍、地点的相容范围和已明示时段/任务上匹配；明确事实按至少两类来源核验，单源细节保留待核实。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "054A型导弹护卫舰",
+          "sources": [
+            "N023",
+            "O006",
+            "R029"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "中国",
+          "sources": [
+            "N023",
+            "O006",
+            "R029"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "1艘",
+          "sources": [
+            "O006",
+            "R029"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "白令海",
+          "sources": [
+            "N023",
+            "O006",
+            "R029"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 14:44—16:09（非完整活动起止断言）",
+          "sources": [
+            "N023",
+            "O006",
+            "R029"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "反潜巡逻",
+          "sources": [
+            "N023",
+            "O006",
+            "R029"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N023",
+            "O006"
+          ]
+        }
+      ],
+      "unresolved_fields": [],
+      "classification_reasons": [],
+      "remaining_code_issue": null,
+      "group_result": "可信事件/N023_中国海军054A型护卫舰在白令海执行反潜巡逻/结果.json"
+    },
+    {
+      "id": "N024",
+      "news_title": "美军RC-135V/W电子侦察机由外围航线进入东海执行侦察",
+      "opinion_id": "O050",
+      "radar_slots": {
+        "0": "R025"
+      },
+      "selected_radar_ids": [
+        "R025"
+      ],
+      "baseline_status": "可信事件",
+      "final_status": "可信事件",
+      "gpt_pairing_review": "合理",
+      "gpt_classification_review": "合理",
+      "review_rationale": "原始新闻、舆论及选中雷达在平台、国籍、地点的相容范围和已明示时段/任务上匹配；明确事实按至少两类来源核验，单源细节保留待核实。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "RC-135V/W电子侦察机",
+          "sources": [
+            "N024",
+            "O050",
+            "R025"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "美国",
+          "sources": [
+            "N024",
+            "O050",
+            "R025"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "1架",
+          "sources": [
+            "O050",
+            "R025"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "东海",
+          "sources": [
+            "N024",
+            "O050"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 08:14—10:39（非完整活动起止断言）",
+          "sources": [
+            "N024",
+            "R025"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "电子侦察",
+          "sources": [
+            "N024",
+            "O050",
+            "R025"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N024",
+            "O050"
+          ]
+        }
+      ],
+      "unresolved_fields": [],
+      "classification_reasons": [],
+      "remaining_code_issue": null,
+      "group_result": "可信事件/N024_美军RC-135V_W电子侦察机由外围航线进入东海执行侦察/结果.json"
+    },
+    {
+      "id": "N025",
+      "news_title": "澳大利亚E-7A预警机在渚碧礁附近海域持续活动",
+      "opinion_id": "O012",
+      "radar_slots": {
+        "0": "R005"
+      },
+      "selected_radar_ids": [
+        "R005"
+      ],
+      "baseline_status": "不可信事件",
+      "final_status": "可信事件",
+      "gpt_pairing_review": "合理",
+      "gpt_classification_review": "合理",
+      "review_rationale": "新闻21:31—22:12处于雷达20:47—22:12观测覆盖中，O012于20:47开始；新闻未明确排他性的开始时间，共同21:31—22:12可支持，完整活动起止不冒充已确认。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "E-7A“楔尾”预警与控制机",
+          "sources": [
+            "N025",
+            "O012",
+            "R005"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "澳大利亚",
+          "sources": [
+            "N025",
+            "O012",
+            "R005"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "2架",
+          "sources": [
+            "O012",
+            "R005"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "南海",
+          "sources": [
+            "N025",
+            "O012"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 21:31—22:12（非完整活动起止断言）",
+          "sources": [
+            "N025",
+            "R005"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "预警指挥",
+          "sources": [
+            "N025",
+            "O012",
+            "R005"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N025",
+            "O012"
+          ]
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "platform_index": -1,
+          "field": "location_detail",
+          "claim": "渚碧礁附近海域",
+          "status": "insufficient",
+          "supporting_sources": [
+            "N025"
+          ],
+          "conflicting_sources": []
+        }
+      ],
+      "classification_reasons": [],
+      "remaining_code_issue": null,
+      "group_result": "可信事件/N025_澳大利亚E-7A预警机在渚碧礁附近海域持续活动/结果.json"
+    },
+    {
+      "id": "N026",
+      "news_title": "意大利歼-15T舰载战斗机在济州岛西部海域开展起降训练",
+      "opinion_id": "O031",
+      "radar_slots": {
+        "0": "R021"
+      },
+      "selected_radar_ids": [
+        "R021"
+      ],
+      "baseline_status": "不可信事件",
+      "final_status": "不可信事件",
+      "gpt_pairing_review": "合理",
+      "gpt_classification_review": "合理",
+      "review_rationale": "新闻国籍意大利，O031/R021国籍中国；同型号、地点和时段构成关联线索，明确国籍差异未消解，保持不可信。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "歼-15T舰载战斗机",
+          "sources": [
+            "N026",
+            "O031",
+            "R021"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "2架",
+          "sources": [
+            "O031",
+            "R021"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "济州岛西部海域",
+          "sources": [
+            "N026",
+            "O031"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 11:15—13:40（非完整活动起止断言）",
+          "sources": [
+            "N026",
+            "R021"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "舰载机起降训练",
+          "sources": [
+            "N026",
+            "R021"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N026",
+            "O031"
+          ]
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "中国",
+          "status": "conflict",
+          "supporting_sources": [
+            "O031",
+            "R021"
+          ],
+          "conflicting_sources": [
+            "N026"
+          ]
+        }
+      ],
+      "classification_reasons": [
+        "country关键事实冲突：程序按已关联平台的明示字段复核：{'N026': '意大利', 'O031': '中国', 'R021': '中国'}；缺失不支持也不反对"
+      ],
+      "remaining_code_issue": null,
+      "group_result": "不可信事件/N026_意大利歼-15T舰载战斗机在济州岛西部海域开展起降训练/结果.json"
+    },
+    {
+      "id": "N027",
+      "news_title": "韩国大邱级护卫舰在巴伦支海执行自由航行行动",
+      "opinion_id": "O024",
+      "radar_slots": {
+        "0": "R036"
+      },
+      "selected_radar_ids": [
+        "R036"
+      ],
+      "baseline_status": "不可信事件",
+      "final_status": "不可信事件",
+      "gpt_pairing_review": "合理",
+      "gpt_classification_review": "合理",
+      "review_rationale": "新闻/R036国籍韩国，O024国籍法国；同型号、地点和完全相同时段下国籍说法有差异，保持不可信。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "大邱级导弹护卫舰",
+          "sources": [
+            "N027",
+            "O024",
+            "R036"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "1艘",
+          "sources": [
+            "O024",
+            "R036"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "巴伦支海",
+          "sources": [
+            "N027",
+            "O024",
+            "R036"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 08:37—10:07（非完整活动起止断言）",
+          "sources": [
+            "N027",
+            "O024",
+            "R036"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "自由航行",
+          "sources": [
+            "N027",
+            "R036"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N027",
+            "O024"
+          ]
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "韩国",
+          "status": "conflict",
+          "supporting_sources": [
+            "N027",
+            "R036"
+          ],
+          "conflicting_sources": [
+            "O024"
+          ]
+        }
+      ],
+      "classification_reasons": [
+        "country关键事实冲突：程序按已关联平台的明示字段复核：{'N027': '韩国', 'O024': '法国', 'R036': '韩国'}；缺失不支持也不反对"
+      ],
+      "remaining_code_issue": null,
+      "group_result": "不可信事件/N027_韩国大邱级护卫舰在巴伦支海执行自由航行行动/结果.json"
+    },
+    {
+      "id": "N028",
+      "news_title": "马来西亚海军莱库号导弹护卫舰在温州外海执行海上护航",
+      "opinion_id": "O040",
+      "radar_slots": {
+        "0": "R053"
+      },
+      "selected_radar_ids": [
+        "R053"
+      ],
+      "baseline_status": "不可信事件",
+      "final_status": "可信事件",
+      "gpt_pairing_review": "合理",
+      "gpt_classification_review": "合理",
+      "review_rationale": "新闻14:54—16:47包含于雷达14:22—16:47，O040于14:22起；没有两个互斥的开始断言，保留共同报道时段。名称莱库号不自动当作数量1，只有雷达的数量字段仍待核实。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "莱库号导弹护卫舰",
+          "sources": [
+            "N028",
+            "O040",
+            "R053"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "马来西亚",
+          "sources": [
+            "N028",
+            "O040",
+            "R053"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "温州外海",
+          "sources": [
+            "N028",
+            "R053"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 14:54—16:47（非完整活动起止断言）",
+          "sources": [
+            "N028",
+            "R053"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "海上护航",
+          "sources": [
+            "N028",
+            "O040",
+            "R053"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N028",
+            "O040"
+          ]
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "1艘",
+          "status": "insufficient",
+          "supporting_sources": [
+            "R053"
+          ],
+          "conflicting_sources": []
+        }
+      ],
+      "classification_reasons": [],
+      "remaining_code_issue": null,
+      "group_result": "可信事件/N028_马来西亚海军莱库号导弹护卫舰在温州外海执行海上护航/结果.json"
+    },
+    {
+      "id": "N029",
+      "news_title": "意大利F-35B在南沙群岛海域持续开展活动",
+      "opinion_id": "O013",
+      "radar_slots": {
+        "0": "R027"
+      },
+      "selected_radar_ids": [
+        "R027"
+      ],
+      "baseline_status": "可信事件",
+      "final_status": "可信事件",
+      "gpt_pairing_review": "合理",
+      "gpt_classification_review": "合理",
+      "review_rationale": "原始新闻、舆论及选中雷达在平台、国籍、地点的相容范围和已明示时段/任务上匹配；明确事实按至少两类来源核验，单源细节保留待核实。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "F-35B",
+          "sources": [
+            "N029",
+            "O013",
+            "R027"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "意大利",
+          "sources": [
+            "N029",
+            "O013",
+            "R027"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "2架",
+          "sources": [
+            "N029",
+            "R027"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "南海",
+          "sources": [
+            "N029",
+            "O013"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 05:23—07:48（非完整活动起止断言）",
+          "sources": [
+            "O013",
+            "R027"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "舰载机起降训练",
+          "sources": [
+            "O013",
+            "R027"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N029",
+            "O013"
+          ]
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "platform_index": -1,
+          "field": "location_detail",
+          "claim": "南沙群岛海域",
+          "status": "insufficient",
+          "supporting_sources": [
+            "N029"
+          ],
+          "conflicting_sources": []
+        }
+      ],
+      "classification_reasons": [],
+      "remaining_code_issue": null,
+      "group_result": "可信事件/N029_意大利F-35B在南沙群岛海域持续开展活动/结果.json"
+    },
+    {
+      "id": "N030",
+      "news_title": "韩国P-3CK反潜巡逻机在莫桑比克海峡执行联合巡逻",
+      "opinion_id": "O043",
+      "radar_slots": {
+        "0": "R020"
+      },
+      "selected_radar_ids": [
+        "R020"
+      ],
+      "baseline_status": "可信事件",
+      "final_status": "可信事件",
+      "gpt_pairing_review": "合理",
+      "gpt_classification_review": "合理",
+      "review_rationale": "原始新闻、舆论及选中雷达在平台、国籍、地点的相容范围和已明示时段/任务上匹配；明确事实按至少两类来源核验，单源细节保留待核实。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "P-3CK反潜巡逻机",
+          "sources": [
+            "N030",
+            "O043",
+            "R020"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "韩国",
+          "sources": [
+            "N030",
+            "O043",
+            "R020"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "2架",
+          "sources": [
+            "O043",
+            "R020"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "莫桑比克海峡",
+          "sources": [
+            "N030",
+            "O043"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 17:51—19:16（非完整活动起止断言）",
+          "sources": [
+            "N030",
+            "R020"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "联合巡逻",
+          "sources": [
+            "N030",
+            "R020"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N030",
+            "O043"
+          ]
+        }
+      ],
+      "unresolved_fields": [],
+      "classification_reasons": [],
+      "remaining_code_issue": null,
+      "group_result": "可信事件/N030_韩国P-3CK反潜巡逻机在莫桑比克海峡执行联合巡逻/结果.json"
+    },
+    {
+      "id": "N031",
+      "news_title": "中国山东号航空母舰在中太平洋海域持续活动",
+      "opinion_id": "O033",
+      "radar_slots": {
+        "0": "R051"
+      },
+      "selected_radar_ids": [
+        "R051"
+      ],
+      "baseline_status": "可信事件",
+      "final_status": "可信事件",
+      "gpt_pairing_review": "合理",
+      "gpt_classification_review": "合理",
+      "review_rationale": "原始新闻、舆论及选中雷达在平台、国籍、地点的相容范围和已明示时段/任务上匹配；明确事实按至少两类来源核验，单源细节保留待核实。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "山东号航空母舰",
+          "sources": [
+            "N031",
+            "O033",
+            "R051"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "中国",
+          "sources": [
+            "N031",
+            "O033",
+            "R051"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "1艘",
+          "sources": [
+            "N031",
+            "R051"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "中太平洋",
+          "sources": [
+            "N031",
+            "O033",
+            "R051"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 08:30—10:55（非完整活动起止断言）",
+          "sources": [
+            "O033",
+            "R051"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "联合巡航",
+          "sources": [
+            "O033",
+            "R051"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N031",
+            "O033"
+          ]
+        }
+      ],
+      "unresolved_fields": [],
+      "classification_reasons": [],
+      "remaining_code_issue": null,
+      "group_result": "可信事件/N031_中国山东号航空母舰在中太平洋海域持续活动/结果.json"
+    },
+    {
+      "id": "N032",
+      "news_title": "中国054A型导弹护卫舰在夏威夷附近海空域执行联合巡航行动",
+      "opinion_id": "O007",
+      "radar_slots": {
+        "0": "R030"
+      },
+      "selected_radar_ids": [
+        "R030"
+      ],
+      "baseline_status": "不可信事件",
+      "final_status": "不可信事件",
+      "gpt_pairing_review": "合理；N019/N032为明确标记的待复核关联",
+      "gpt_classification_review": "合理",
+      "review_rationale": "新闻/R030夏威夷附近与O007孟加拉湾地点不同，不能以都属其他方向视为同地。没有唯一舰艇身份，O007仅保留待复核关联；不据此断言同一艘舰同时在两地或新闻已被证伪。数量1由舆论和雷达支持，地点差异仍阻断。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "054A型导弹护卫舰",
+          "sources": [
+            "N032",
+            "O007",
+            "R030"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "中国",
+          "sources": [
+            "N032",
+            "O007",
+            "R030"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "1艘",
+          "sources": [
+            "O007",
+            "R030"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 17:09—18:39（非完整活动起止断言）",
+          "sources": [
+            "N032",
+            "O007",
+            "R030"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "联合巡航",
+          "sources": [
+            "N032",
+            "O007",
+            "R030"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N032",
+            "O007"
+          ]
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "夏威夷附近",
+          "status": "conflict",
+          "supporting_sources": [
+            "N032",
+            "R030"
+          ],
+          "conflicting_sources": [
+            "O007"
+          ]
+        }
+      ],
+      "classification_reasons": [
+        "location关键事实冲突：复核明示地点和PDF包含关系：{'N032': '夏威夷附近', 'O007': '孟加拉湾', 'R030': '夏威夷附近'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+        "O007活动归属仍有歧义：地点冲突：新闻明确为“夏威夷附近”，候选 O007 为“孟加拉湾”。两者地理区域完全不同，且任务时间完全重叠（均为 17:09-18:39），同一艘舰艇不可能同时出现在两地。；程序保留待复核关联：同日双方唯一的型号/国籍/明确任务组合且新闻与雷达时段吻合；地点反证保留，不能据此判可信"
+      ],
+      "remaining_code_issue": null,
+      "group_result": "不可信事件/N032_中国054A型导弹护卫舰在夏威夷附近海空域执行联合巡航行动/结果.json"
+    },
+    {
+      "id": "N033",
+      "news_title": "菲律宾海军米格尔·马尔瓦尔号护卫舰在上海外海活动",
+      "opinion_id": "O042",
+      "radar_slots": {
+        "0": "R054"
+      },
+      "selected_radar_ids": [
+        "R054"
+      ],
+      "baseline_status": "可信事件",
+      "final_status": "可信事件",
+      "gpt_pairing_review": "合理",
+      "gpt_classification_review": "合理",
+      "review_rationale": "原始新闻、舆论及选中雷达在平台、国籍、地点的相容范围和已明示时段/任务上匹配；明确事实按至少两类来源核验，单源细节保留待核实。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "米格尔·马尔瓦尔号",
+          "sources": [
+            "N033",
+            "O042",
+            "R054"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "菲律宾",
+          "sources": [
+            "N033",
+            "O042",
+            "R054"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "1艘",
+          "sources": [
+            "N033",
+            "R054"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "上海外海",
+          "sources": [
+            "N033",
+            "R054"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 17:24—19:49（非完整活动起止断言）",
+          "sources": [
+            "O042",
+            "R054"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "远海训练",
+          "sources": [
+            "O042",
+            "R054"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N033",
+            "O042"
+          ]
+        }
+      ],
+      "unresolved_fields": [],
+      "classification_reasons": [],
+      "remaining_code_issue": null,
+      "group_result": "可信事件/N033_菲律宾海军米格尔·马尔瓦尔号护卫舰在上海外海活动/结果.json"
+    },
+    {
+      "id": "N034",
+      "news_title": "日本海上自卫队村雨号护卫舰由外围航线进入东海活动",
+      "opinion_id": "O008",
+      "radar_slots": {
+        "0": "R047"
+      },
+      "selected_radar_ids": [
+        "R047"
+      ],
+      "baseline_status": "可信事件",
+      "final_status": "可信事件",
+      "gpt_pairing_review": "合理",
+      "gpt_classification_review": "合理",
+      "review_rationale": "原始新闻、舆论及选中雷达在平台、国籍、地点的相容范围和已明示时段/任务上匹配；明确事实按至少两类来源核验，单源细节保留待核实。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "村雨号",
+          "sources": [
+            "N034",
+            "O008",
+            "R047"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "日本",
+          "sources": [
+            "N034",
+            "O008",
+            "R047"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "东海",
+          "sources": [
+            "N034",
+            "O008",
+            "R047"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 05:07—07:32（非完整活动起止断言）",
+          "sources": [
+            "O008",
+            "R047"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "编队警戒部署",
+          "sources": [
+            "O008",
+            "R047"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N034",
+            "O008"
+          ]
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "1艘",
+          "status": "insufficient",
+          "supporting_sources": [
+            "R047"
+          ],
+          "conflicting_sources": []
+        }
+      ],
+      "classification_reasons": [],
+      "remaining_code_issue": null,
+      "group_result": "可信事件/N034_日本海上自卫队村雨号护卫舰由外围航线进入东海活动/结果.json"
+    },
+    {
+      "id": "N035",
+      "news_title": "美国海军阿利·伯克级驱逐舰在渚碧礁附近海域执行战备巡逻",
+      "opinion_id": "O011",
+      "radar_slots": {
+        "0": "R038"
+      },
+      "selected_radar_ids": [
+        "R038"
+      ],
+      "baseline_status": "可信事件",
+      "final_status": "可信事件",
+      "gpt_pairing_review": "合理",
+      "gpt_classification_review": "合理",
+      "review_rationale": "原始新闻、舆论及选中雷达在平台、国籍、地点的相容范围和已明示时段/任务上匹配；明确事实按至少两类来源核验，单源细节保留待核实。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "阿利·伯克级",
+          "sources": [
+            "N035",
+            "O011",
+            "R038"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "美国",
+          "sources": [
+            "N035",
+            "O011",
+            "R038"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "1艘",
+          "sources": [
+            "O011",
+            "R038"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "渚碧礁附近海域",
+          "sources": [
+            "N035",
+            "O011",
+            "R038"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 11:10—13:35（非完整活动起止断言）",
+          "sources": [
+            "N035",
+            "R038"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "战备巡逻",
+          "sources": [
+            "N035",
+            "R038"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N035",
+            "O011"
+          ]
+        }
+      ],
+      "unresolved_fields": [],
+      "classification_reasons": [],
+      "remaining_code_issue": null,
+      "group_result": "可信事件/N035_美国海军阿利·伯克级驱逐舰在渚碧礁附近海域执行战备巡逻/结果.json"
+    },
+    {
+      "id": "N036",
+      "news_title": "中国071型船坞登陆舰在安达曼海执行联合巡航任务行动",
+      "opinion_id": "O047",
+      "radar_slots": {
+        "0": "R043"
+      },
+      "selected_radar_ids": [
+        "R043"
+      ],
+      "baseline_status": "可信事件",
+      "final_status": "可信事件",
+      "gpt_pairing_review": "合理",
+      "gpt_classification_review": "合理",
+      "review_rationale": "原始新闻、舆论及选中雷达在平台、国籍、地点的相容范围和已明示时段/任务上匹配；明确事实按至少两类来源核验，单源细节保留待核实。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "071型",
+          "sources": [
+            "N036",
+            "O047",
+            "R043"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "中国",
+          "sources": [
+            "N036",
+            "O047",
+            "R043"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "1艘",
+          "sources": [
+            "O047",
+            "R043"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "安达曼海",
+          "sources": [
+            "N036",
+            "O047",
+            "R043"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 11:26—13:51（非完整活动起止断言）",
+          "sources": [
+            "N036",
+            "R043"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "联合巡航",
+          "sources": [
+            "N036",
+            "R043"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N036",
+            "O047"
+          ]
+        }
+      ],
+      "unresolved_fields": [],
+      "classification_reasons": [],
+      "remaining_code_issue": null,
+      "group_result": "可信事件/N036_中国071型船坞登陆舰在安达曼海执行联合巡航任务行动/结果.json"
+    },
+    {
+      "id": "N037",
+      "news_title": "中国空警-500预警机在上海外海执行空中警戒任务",
+      "opinion_id": "O028",
+      "radar_slots": {
+        "0": "R006"
+      },
+      "selected_radar_ids": [
+        "R006"
+      ],
+      "baseline_status": "可信事件",
+      "final_status": "可信事件",
+      "gpt_pairing_review": "合理",
+      "gpt_classification_review": "合理",
+      "review_rationale": "原始新闻、舆论及选中雷达在平台、国籍、地点的相容范围和已明示时段/任务上匹配；明确事实按至少两类来源核验，单源细节保留待核实。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "空警-500",
+          "sources": [
+            "N037",
+            "O028",
+            "R006"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "中国",
+          "sources": [
+            "N037",
+            "O028",
+            "R006"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "2架",
+          "sources": [
+            "O028",
+            "R006"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "上海外海",
+          "sources": [
+            "N037",
+            "O028"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 14:17—16:42（非完整活动起止断言）",
+          "sources": [
+            "N037",
+            "R006"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "空中警戒",
+          "sources": [
+            "N037",
+            "R006"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N037",
+            "O028"
+          ]
+        }
+      ],
+      "unresolved_fields": [],
+      "classification_reasons": [],
+      "remaining_code_issue": null,
+      "group_result": "可信事件/N037_中国空警-500预警机在上海外海执行空中警戒任务/结果.json"
+    },
+    {
+      "id": "N038",
+      "news_title": "俄海军守护级护卫舰在菲律宾海组织联合搜救训练",
+      "opinion_id": "O010",
+      "radar_slots": {
+        "0": "R040"
+      },
+      "selected_radar_ids": [
+        "R040"
+      ],
+      "baseline_status": "可信事件",
+      "final_status": "可信事件",
+      "gpt_pairing_review": "合理",
+      "gpt_classification_review": "合理",
+      "review_rationale": "原始新闻、舆论及选中雷达在平台、国籍、地点的相容范围和已明示时段/任务上匹配；明确事实按至少两类来源核验，单源细节保留待核实。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "守护级导弹护卫舰",
+          "sources": [
+            "N038",
+            "O010",
+            "R040"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "俄罗斯",
+          "sources": [
+            "N038",
+            "O010",
+            "R040"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "1艘",
+          "sources": [
+            "O010",
+            "R040"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "菲律宾海",
+          "sources": [
+            "N038",
+            "O010",
+            "R040"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 20:58—22:23（非完整活动起止断言）",
+          "sources": [
+            "N038",
+            "R040"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "联合搜救训练",
+          "sources": [
+            "N038",
+            "O010",
+            "R040"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N038",
+            "O010"
+          ]
+        }
+      ],
+      "unresolved_fields": [],
+      "classification_reasons": [],
+      "remaining_code_issue": null,
+      "group_result": "可信事件/N038_俄海军守护级护卫舰在菲律宾海组织联合搜救训练/结果.json"
+    },
+    {
+      "id": "N039",
+      "news_title": "苏-30SM多用途战斗机俄军苏-30SM在黄岩岛海域组织夜间对海突击训练",
+      "opinion_id": "O002",
+      "radar_slots": {
+        "0": "R024"
+      },
+      "selected_radar_ids": [
+        "R024"
+      ],
+      "baseline_status": "可信事件",
+      "final_status": "可信事件",
+      "gpt_pairing_review": "合理",
+      "gpt_classification_review": "合理",
+      "review_rationale": "原始新闻、舆论及选中雷达在平台、国籍、地点的相容范围和已明示时段/任务上匹配；明确事实按至少两类来源核验，单源细节保留待核实。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "苏-30SM",
+          "sources": [
+            "N039",
+            "O002",
+            "R024"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "俄罗斯",
+          "sources": [
+            "N039",
+            "O002",
+            "R024"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "2架",
+          "sources": [
+            "O002",
+            "R024"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "黄岩岛海域",
+          "sources": [
+            "N039",
+            "O002"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 20:31—22:56（非完整活动起止断言）",
+          "sources": [
+            "N039",
+            "O002",
+            "R024"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "对海突击训练",
+          "sources": [
+            "N039",
+            "R024"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N039",
+            "O002"
+          ]
+        }
+      ],
+      "unresolved_fields": [],
+      "classification_reasons": [],
+      "remaining_code_issue": null,
+      "group_result": "可信事件/N039_苏-30SM多用途战斗机俄军苏-30SM在黄岩岛海域组织夜间对海突击训练/结果.json"
+    },
+    {
+      "id": "N040",
+      "news_title": "新加坡F-15SG多用途战斗机在孟加拉湾开展对海突击训练",
+      "opinion_id": "O041",
+      "radar_slots": {
+        "0": "R017"
+      },
+      "selected_radar_ids": [
+        "R017"
+      ],
+      "baseline_status": "不可信事件",
+      "final_status": "不可信事件",
+      "gpt_pairing_review": "合理",
+      "gpt_classification_review": "合理",
+      "review_rationale": "新闻/R017对海突击训练与O041战备警巡不是同义任务，也无并行执行或包含证据；保留任务差异，不能泛化为活动后消解。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "F-15SG",
+          "sources": [
+            "N040",
+            "O041",
+            "R017"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "新加坡",
+          "sources": [
+            "N040",
+            "O041",
+            "R017"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "2架",
+          "sources": [
+            "O041",
+            "R017"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "孟加拉湾",
+          "sources": [
+            "N040",
+            "O041"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 11:44—13:14（非完整活动起止断言）",
+          "sources": [
+            "N040",
+            "O041",
+            "R017"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N040",
+            "O041"
+          ]
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "对海突击训练",
+          "status": "conflict",
+          "supporting_sources": [
+            "N040",
+            "R017"
+          ],
+          "conflicting_sources": [
+            "O041"
+          ]
+        }
+      ],
+      "classification_reasons": [
+        "mission关键事实冲突：原文明示任务：{'N040': ['对海突击训练'], 'O041': ['战备警巡'], 'R017': ['对海突击训练']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决"
+      ],
+      "remaining_code_issue": null,
+      "group_result": "不可信事件/N040_新加坡F-15SG多用途战斗机在孟加拉湾开展对海突击训练/结果.json"
+    },
+    {
+      "id": "N041",
+      "news_title": "韩国大邱级导弹护卫舰在中太平洋持续机动并持续活动",
+      "opinion_id": "O030",
+      "radar_slots": {
+        "0": "R049"
+      },
+      "selected_radar_ids": [
+        "R049"
+      ],
+      "baseline_status": "可信事件",
+      "final_status": "可信事件",
+      "gpt_pairing_review": "合理",
+      "gpt_classification_review": "合理",
+      "review_rationale": "原始新闻、舆论及选中雷达在平台、国籍、地点的相容范围和已明示时段/任务上匹配；明确事实按至少两类来源核验，单源细节保留待核实。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "大邱级导弹护卫舰",
+          "sources": [
+            "N041",
+            "O030",
+            "R049"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "韩国",
+          "sources": [
+            "N041",
+            "O030",
+            "R049"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "1艘",
+          "sources": [
+            "N041",
+            "R049"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "中太平洋",
+          "sources": [
+            "N041",
+            "O030",
+            "R049"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 05:12—07:37（非完整活动起止断言）",
+          "sources": [
+            "N041",
+            "O030",
+            "R049"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "海上监视侦察",
+          "sources": [
+            "O030",
+            "R049"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N041",
+            "O030"
+          ]
+        }
+      ],
+      "unresolved_fields": [],
+      "classification_reasons": [],
+      "remaining_code_issue": null,
+      "group_result": "可信事件/N041_韩国大邱级导弹护卫舰在中太平洋持续机动并持续活动/结果.json"
+    },
+    {
+      "id": "N042",
+      "news_title": "新加坡F-15SG战斗机在安达曼海持续活动",
+      "opinion_id": "O004",
+      "radar_slots": {
+        "0": "R004"
+      },
+      "selected_radar_ids": [
+        "R004"
+      ],
+      "baseline_status": "可信事件",
+      "final_status": "可信事件",
+      "gpt_pairing_review": "合理",
+      "gpt_classification_review": "合理",
+      "review_rationale": "原始新闻、舆论及选中雷达在平台、国籍、地点的相容范围和已明示时段/任务上匹配；明确事实按至少两类来源核验，单源细节保留待核实。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "F-15SG多用途战斗机",
+          "sources": [
+            "N042",
+            "O004",
+            "R004"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "新加坡",
+          "sources": [
+            "N042",
+            "O004",
+            "R004"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "2架",
+          "sources": [
+            "N042",
+            "R004"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "安达曼海",
+          "sources": [
+            "N042",
+            "O004"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 08:19—10:44（非完整活动起止断言）",
+          "sources": [
+            "N042",
+            "O004",
+            "R004"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "战备警巡",
+          "sources": [
+            "O004",
+            "R004"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N042",
+            "O004"
+          ]
+        }
+      ],
+      "unresolved_fields": [],
+      "classification_reasons": [],
+      "remaining_code_issue": null,
+      "group_result": "可信事件/N042_新加坡F-15SG战斗机在安达曼海持续活动/结果.json"
+    },
+    {
+      "id": "N043",
+      "news_title": "中国歼-16D电子战飞机在塔斯曼海开展电子对抗训练",
+      "opinion_id": "O001",
+      "radar_slots": {
+        "0": "R023"
+      },
+      "selected_radar_ids": [
+        "R023"
+      ],
+      "baseline_status": "可信事件",
+      "final_status": "可信事件",
+      "gpt_pairing_review": "合理",
+      "gpt_classification_review": "合理",
+      "review_rationale": "原始新闻、舆论及选中雷达在平台、国籍、地点的相容范围和已明示时段/任务上匹配；明确事实按至少两类来源核验，单源细节保留待核实。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "歼-16D电子战飞机",
+          "sources": [
+            "N043",
+            "O001",
+            "R023"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "中国",
+          "sources": [
+            "N043",
+            "O001",
+            "R023"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "2架",
+          "sources": [
+            "O001",
+            "R023"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "塔斯曼海",
+          "sources": [
+            "N043",
+            "O001"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 02:05—04:30（非完整活动起止断言）",
+          "sources": [
+            "N043",
+            "R023"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "电子对抗训练",
+          "sources": [
+            "N043",
+            "O001",
+            "R023"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N043",
+            "O001"
+          ]
+        }
+      ],
+      "unresolved_fields": [],
+      "classification_reasons": [],
+      "remaining_code_issue": null,
+      "group_result": "可信事件/N043_中国歼-16D电子战飞机在塔斯曼海开展电子对抗训练/结果.json"
+    },
+    {
+      "id": "N044",
+      "news_title": "苏-30SM多用途战斗机俄军苏-30SM在南沙群岛海域执行空中警戒任务",
+      "opinion_id": "O019",
+      "radar_slots": {
+        "0": "R019"
+      },
+      "selected_radar_ids": [
+        "R019"
+      ],
+      "baseline_status": "不可信事件",
+      "final_status": "不可信事件",
+      "gpt_pairing_review": "合理",
+      "gpt_classification_review": "合理",
+      "review_rationale": "新闻/R019明确2架，O019明确3架；同区域和同时段的数量差异未获得编队或子集关系解释，保持不可信，不能以多数来源强行消解。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "苏-30SM多用途战斗机",
+          "sources": [
+            "N044",
+            "O019",
+            "R019"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "俄罗斯",
+          "sources": [
+            "N044",
+            "O019",
+            "R019"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "南沙群岛海域",
+          "sources": [
+            "N044",
+            "O019"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 18:01—19:31（非完整活动起止断言）",
+          "sources": [
+            "N044",
+            "O019",
+            "R019"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "空中警戒",
+          "sources": [
+            "N044",
+            "R019"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N044",
+            "O019"
+          ]
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "2架",
+          "status": "conflict",
+          "supporting_sources": [
+            "N044",
+            "R019"
+          ],
+          "conflicting_sources": [
+            "O019"
+          ]
+        }
+      ],
+      "classification_reasons": [
+        "quantity关键事实冲突：程序按已关联平台的明示字段复核：{'N044': 2, 'O019': 3, 'R019': 2}；缺失不支持也不反对"
+      ],
+      "remaining_code_issue": null,
+      "group_result": "不可信事件/N044_苏-30SM多用途战斗机俄军苏-30SM在南沙群岛海域执行空中警戒任务/结果.json"
+    },
+    {
+      "id": "N045",
+      "news_title": "新加坡坚韧级坦克登陆舰在东海南部实施两栖作战训练",
+      "opinion_id": "O039",
+      "radar_slots": {
+        "0": "R050"
+      },
+      "selected_radar_ids": [
+        "R050"
+      ],
+      "baseline_status": "不可信事件",
+      "final_status": "可信事件",
+      "gpt_pairing_review": "合理",
+      "gpt_classification_review": "合理",
+      "review_rationale": "远海训练描述训练环境，两栖作战训练描述训练科目，可共同支持训练活动。具体两栖科目只新闻支持，仍待核实；没有把具体科目宣称为三源已印证。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "坚韧级坦克登陆舰",
+          "sources": [
+            "N045",
+            "O039",
+            "R050"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "新加坡",
+          "sources": [
+            "N045",
+            "O039",
+            "R050"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "1艘",
+          "sources": [
+            "O039",
+            "R050"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "东海南部",
+          "sources": [
+            "N045",
+            "R050"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 08:08—10:33（非完整活动起止断言）",
+          "sources": [
+            "N045",
+            "R050"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "训练",
+          "sources": [
+            "N045",
+            "O039",
+            "R050"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N045",
+            "O039"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission_detail",
+          "claim": "远海训练",
+          "sources": [
+            "O039",
+            "R050"
+          ]
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "platform_index": -1,
+          "field": "mission_detail",
+          "claim": "两栖作战训练",
+          "status": "insufficient",
+          "supporting_sources": [
+            "N045"
+          ],
+          "conflicting_sources": []
+        }
+      ],
+      "classification_reasons": [],
+      "remaining_code_issue": null,
+      "group_result": "可信事件/N045_新加坡坚韧级坦克登陆舰在东海南部实施两栖作战训练/结果.json"
+    },
+    {
+      "id": "N046",
+      "news_title": "俄军图-95MS战略轰炸机在西沙群岛海域持续活动",
+      "opinion_id": "O025",
+      "radar_slots": {
+        "0": "R018"
+      },
+      "selected_radar_ids": [
+        "R018"
+      ],
+      "baseline_status": "可信事件",
+      "final_status": "可信事件",
+      "gpt_pairing_review": "合理",
+      "gpt_classification_review": "合理",
+      "review_rationale": "原始新闻、舆论及选中雷达在平台、国籍、地点的相容范围和已明示时段/任务上匹配；明确事实按至少两类来源核验，单源细节保留待核实。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "图-95MS战略轰炸机",
+          "sources": [
+            "N046",
+            "O025",
+            "R018"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "俄罗斯",
+          "sources": [
+            "N046",
+            "O025",
+            "R018"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "2架",
+          "sources": [
+            "N046",
+            "R018"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "南海",
+          "sources": [
+            "N046",
+            "O025"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 17:13—19:38（非完整活动起止断言）",
+          "sources": [
+            "O025",
+            "R018"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "远程轰炸训练",
+          "sources": [
+            "O025",
+            "R018"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N046",
+            "O025"
+          ]
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "platform_index": -1,
+          "field": "location_detail",
+          "claim": "西沙群岛海域",
+          "status": "insufficient",
+          "supporting_sources": [
+            "N046"
+          ],
+          "conflicting_sources": []
+        }
+      ],
+      "classification_reasons": [],
+      "remaining_code_issue": null,
+      "group_result": "可信事件/N046_俄军图-95MS战略轰炸机在西沙群岛海域持续活动/结果.json"
+    },
+    {
+      "id": "N047",
+      "news_title": "意大利空军F-35B战机在永暑礁附近海域进行对海突击训练",
+      "opinion_id": "O017",
+      "radar_slots": {
+        "0": "R012"
+      },
+      "selected_radar_ids": [
+        "R012"
+      ],
+      "baseline_status": "可信事件",
+      "final_status": "可信事件",
+      "gpt_pairing_review": "合理",
+      "gpt_classification_review": "合理",
+      "review_rationale": "原始新闻、舆论及选中雷达在平台、国籍、地点的相容范围和已明示时段/任务上匹配；明确事实按至少两类来源核验，单源细节保留待核实。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "F-35B短距起降战斗机",
+          "sources": [
+            "N047",
+            "O017",
+            "R012"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "意大利",
+          "sources": [
+            "N047",
+            "O017",
+            "R012"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "2架",
+          "sources": [
+            "O017",
+            "R012"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "南海",
+          "sources": [
+            "N047",
+            "O017"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 20:09—22:34（非完整活动起止断言）",
+          "sources": [
+            "N047",
+            "R012"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "对海突击训练",
+          "sources": [
+            "N047",
+            "O017",
+            "R012"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N047",
+            "O017"
+          ]
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "platform_index": -1,
+          "field": "location_detail",
+          "claim": "永暑礁附近海域",
+          "status": "insufficient",
+          "supporting_sources": [
+            "N047"
+          ],
+          "conflicting_sources": []
+        }
+      ],
+      "classification_reasons": [],
+      "remaining_code_issue": null,
+      "group_result": "可信事件/N047_意大利空军F-35B战机在永暑礁附近海域进行对海突击训练/结果.json"
+    },
+    {
+      "id": "N048",
+      "news_title": "俄罗斯苏-30SM多用途战斗机在仁爱礁附近海域活动",
+      "opinion_id": "O036",
+      "radar_slots": {
+        "0": "R026"
+      },
+      "selected_radar_ids": [
+        "R026"
+      ],
+      "baseline_status": "可信事件",
+      "final_status": "可信事件",
+      "gpt_pairing_review": "合理",
+      "gpt_classification_review": "合理",
+      "review_rationale": "原始新闻、舆论及选中雷达在平台、国籍、地点的相容范围和已明示时段/任务上匹配；明确事实按至少两类来源核验，单源细节保留待核实。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "苏-30SM多用途战斗机",
+          "sources": [
+            "N048",
+            "O036",
+            "R026"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "俄罗斯",
+          "sources": [
+            "N048",
+            "O036",
+            "R026"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "2架",
+          "sources": [
+            "N048",
+            "R026"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "南海",
+          "sources": [
+            "N048",
+            "O036"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 02:27—04:52（非完整活动起止断言）",
+          "sources": [
+            "O036",
+            "R026"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "战备警巡",
+          "sources": [
+            "O036",
+            "R026"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N048",
+            "O036"
+          ]
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "platform_index": -1,
+          "field": "location_detail",
+          "claim": "仁爱礁附近海域",
+          "status": "insufficient",
+          "supporting_sources": [
+            "N048"
+          ],
+          "conflicting_sources": []
+        }
+      ],
+      "classification_reasons": [],
+      "remaining_code_issue": null,
+      "group_result": "可信事件/N048_俄罗斯苏-30SM多用途战斗机在仁爱礁附近海域活动/结果.json"
+    },
+    {
+      "id": "N049",
+      "news_title": "美国米利厄斯号导弹驱逐舰在温州外海持续开展活动",
+      "opinion_id": "O029",
+      "radar_slots": {
+        "0": "R031"
+      },
+      "selected_radar_ids": [
+        "R031"
+      ],
+      "baseline_status": "可信事件",
+      "final_status": "可信事件",
+      "gpt_pairing_review": "合理",
+      "gpt_classification_review": "合理",
+      "review_rationale": "原始新闻、舆论及选中雷达在平台、国籍、地点的相容范围和已明示时段/任务上匹配；明确事实按至少两类来源核验，单源细节保留待核实。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "米利厄斯号导弹驱逐舰",
+          "sources": [
+            "N049",
+            "O029",
+            "R031"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "美国",
+          "sources": [
+            "N049",
+            "O029",
+            "R031"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "1艘",
+          "sources": [
+            "N049",
+            "R031"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "温州外海",
+          "sources": [
+            "N049",
+            "R031"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 05:34—07:59（非完整活动起止断言）",
+          "sources": [
+            "O029",
+            "R031"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "海上护航",
+          "sources": [
+            "O029",
+            "R031"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N049",
+            "O029"
+          ]
+        }
+      ],
+      "unresolved_fields": [],
+      "classification_reasons": [],
+      "remaining_code_issue": null,
+      "group_result": "可信事件/N049_美国米利厄斯号导弹驱逐舰在温州外海持续开展活动/结果.json"
+    },
+    {
+      "id": "N050",
+      "news_title": "德军台风多用途战斗机在印度洋执行战备警巡行动",
+      "opinion_id": "O022",
+      "radar_slots": {
+        "0": "R011"
+      },
+      "selected_radar_ids": [
+        "R011"
+      ],
+      "baseline_status": "可信事件",
+      "final_status": "可信事件",
+      "gpt_pairing_review": "合理",
+      "gpt_classification_review": "合理",
+      "review_rationale": "原始新闻、舆论及选中雷达在平台、国籍、地点的相容范围和已明示时段/任务上匹配；明确事实按至少两类来源核验，单源细节保留待核实。",
+      "original_texts_read": true,
+      "radar_candidate_fields_reviewed": true,
+      "supported_facts": [
+        {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "台风多用途战斗机",
+          "sources": [
+            "N050",
+            "O022",
+            "R011"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "德国",
+          "sources": [
+            "N050",
+            "O022",
+            "R011"
+          ]
+        },
+        {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "2架",
+          "sources": [
+            "O022",
+            "R011"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "印度洋",
+          "sources": [
+            "N050",
+            "O022"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "共同观测/报道时段 14:33—16:58（非完整活动起止断言）",
+          "sources": [
+            "N050",
+            "R011"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "战备警巡",
+          "sources": [
+            "N050",
+            "R011"
+          ]
+        },
+        {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "sources": [
+            "N050",
+            "O022"
+          ]
+        }
+      ],
+      "unresolved_fields": [],
+      "classification_reasons": [],
+      "remaining_code_issue": null,
+      "group_result": "可信事件/N050_德军台风多用途战斗机在印度洋执行战备警巡行动/结果.json"
+    }
+  ]
+}

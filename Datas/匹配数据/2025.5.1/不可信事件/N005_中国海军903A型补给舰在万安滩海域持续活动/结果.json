@@ -17,7 +17,7 @@
         ],
         "relation": "same",
         "confidence": 0.95,
-        "reason": "平台型号（903A）、国家（中国）、日期（2025.5.1）及任务性质（远海训练/持续活动）完全一致。新闻明确定位在“万安滩海域”，而候选O016描述为“南海方向”并给出具体时间段，符合大范围包含具体区域的关系。尽管新闻未提供精确起止时间，但行动模式（围绕任务区域机动）高度吻合。"
+        "reason": "平台（903A 型补给舰）、国家（中国）、日期（2025.5.1）及具体区域（万安滩海域）完全一致。舆论 O016 提到的时间区间（02:54-04:19）与雷达数据 R044 高度吻合，且任务性质（远海训练/持续活动）相容。尽管新闻未明确提及“训练”，但“围绕任务区域保持机动”与舆论描述的“组织远海训练”在语义上兼容，属于同一具体活动。"
       },
       {
         "candidate_id": "O015",
@@ -26,7 +26,7 @@
         ],
         "relation": "different",
         "confidence": 0.98,
-        "reason": "平台型号和国家一致，日期相同，但地点冲突：新闻明确为“万安滩海域”（南海），而候选O015描述为“东海海域”。同一艘舰艇在同一时间不可能同时出现在两个互斥的海域。"
+        "reason": "虽然平台型号、日期相同，但地点冲突：新闻明确为“万安滩海域”（南海），而 O015 描述为“东海海域”。同一艘舰艇在同一时间不可能同时出现在两个相距甚远的海域，故判定为不同活动。"
       },
       {
         "candidate_id": "O003",
@@ -34,27 +34,6 @@
         "relation": "different",
         "confidence": 0.99,
         "reason": "平台类型完全不同：新闻主体为"
-      },
-      {
-        "candidate_id": "O048",
-        "platform_indices": [],
-        "relation": "different",
-        "confidence": 0.99,
-        "reason": "平台类型不同（潜艇 vs 补给舰）且地点不同（东海 vs 南海），属于完全不同的活动。"
-      },
-      {
-        "candidate_id": "O032",
-        "platform_indices": [],
-        "relation": "different",
-        "confidence": 0.99,
-        "reason": "平台类型不同（航母 vs 补给舰）且地点不同（东海 vs 南海），属于完全不同的活动。"
-      },
-      {
-        "candidate_id": "O047",
-        "platform_indices": [],
-        "relation": "different",
-        "confidence": 0.99,
-        "reason": "平台类型不同（登陆舰 vs 补给舰）且地点不同（安达曼海 vs 南海），属于完全不同的活动。"
       }
     ],
     "radar_edges": [
@@ -65,7 +44,7 @@
         ],
         "relation": "same",
         "confidence": 0.98,
-        "reason": "平台型号（903A）、国家、日期完全一致。地点精确匹配“万安滩海域”。任务均为远海训练/持续活动。雷达数据提供了具体的时间段（02:54-04:19），与新闻描述的“持续活动”在逻辑上兼容，属于同一事件的具体记录。"
+        "reason": "雷达数据 R044 与新闻在平台（903A 型）、地点（万安滩海域）、日期（2025.5.1）及任务时间窗口（02:54-04:19）上完全匹配。R044 记录的“远海训练”任务与新闻描述的“持续活动”在逻辑上一致，确认为同一事件。"
       },
       {
         "candidate_id": "R045",
@@ -74,17 +53,17 @@
         ],
         "relation": "different",
         "confidence": 0.98,
-        "reason": "平台型号和国家一致，日期相同，但地点冲突：新闻为“万安滩海域”（南海），而雷达数据R045位于“冲绳海槽”（东海）。同一时间不可能同时出现在两地。"
+        "reason": "地点冲突：R045 位于“冲绳海槽”（东海），而新闻位于“万安滩海域”（南海）。同一时间同型号舰艇无法分身两地，判定为不同活动。"
       },
       {
         "candidate_id": "R039",
         "platform_indices": [],
         "relation": "different",
         "confidence": 0.99,
-        "reason": "平台类型不同（潜艇 vs 补给舰），地点也不同（东海中部 vs 南海），属于不同活动。"
+        "reason": "平台类型不符：R039 为"
       }
     ],
-    "ambiguity": "新闻未提供具体的起止时间，仅描述为“持续活动”，因此无法在时间维度上与任何候选进行精确重叠验证，但基于地点和平台的强一致性，可推断O016和R044为同一事件的不同来源记录。"
+    "ambiguity": "新闻未明确说明具体任务名称（如训练或演习），仅描述为“持续活动”，但结合雷达数据 R044 的精确时间戳和地点，可高度确信 O016 和 R044 指向同一事件。其他候选因地点或平台类型明显冲突被排除。"
   },
   "candidates": {
     "opinion": [
@@ -184,6 +163,7 @@
     "opinion": [],
     "radar": []
   },
+  "radar_context": [],
   "verification": {
     "same_event": true,
     "facts": [
@@ -210,7 +190,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻、舆论、雷达三源均明确识别为 903A 型，无冲突。"
+          "reason": "三源（新闻、舆论、雷达）均明确指向 903A 型中国海军补给舰，无冲突。"
         },
         "checked_by": "explicit_source_matrix",
         "supporting_source_types": [
@@ -242,7 +222,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻、舆论、雷达三源均明确标注国籍为中国，无冲突。"
+          "reason": "三源均明确标注为中国海军/中国舰船，无冲突。"
         },
         "checked_by": "explicit_source_matrix",
         "supporting_source_types": [
@@ -273,7 +253,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "雷达 R044 明确显示数量为 2；新闻 N005 提及"
+          "reason": "雷达 R044 原始列显示数量为 2；新闻 N005 和舆论 O016 虽仅提及"
         },
         "checked_by": "explicit_source_matrix",
         "supporting_source_types": [
@@ -302,7 +282,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻 N005 和雷达 R044 均明确定位在万安滩海域；舆论 O016 描述为南海方向，属于大范围兼容，不构成冲突。"
+          "reason": "新闻 N005 与雷达 R044 均明确定位在万安滩海域；舆论 O016 提及南海方向，兼容该具体区域。"
         },
         "checked_by": "literal_assertion_matrix",
         "source_values": {
@@ -341,56 +321,53 @@
       {
         "platform_index": -1,
         "field": "time",
-        "claim": "起点 02:54，终点 04:19",
+        "claim": "共同观测/报道时段 02:54—04:19（非完整活动起止断言）",
         "supporting_sources": [
           "O016",
           "R044"
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突；起点明示值：{'O016': '02:54', 'R044': '02:54'}；终点明示值：{'O016': '04:19', 'R044': '04:19'}",
+        "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N005': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O016': {'start': '02:54', 'end': '04:19', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R044': {'start': '02:54', 'end': '04:19', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
         "model_proposal": {
           "platform_index": -1,
           "field": "time",
-          "claim": "2025.05.01 02:54-04:19",
+          "claim": "2025-05-01 02:54-04:19",
           "supporting_sources": [
             "O016",
             "R044"
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "舆论 O016 和雷达 R044 均提供了具体的起止时间（02:54-04:19），新闻 N005 仅描述为持续活动，未提供具体时间但不构成冲突。"
+          "reason": "舆论 O016 与雷达 R044 提供了完全一致的具体起止时间；新闻 N005 仅确认日期，不冲突。"
         },
         "checked_by": "literal_assertion_matrix",
-        "components": {
-          "start_time": {
-            "value": "02:54",
-            "support": [
-              "O016",
-              "R044"
-            ],
-            "conflicts": [],
-            "status": "supported",
-            "source_values": {
-              "O016": "02:54",
-              "R044": "02:54"
-            },
-            "radar_batch_observations": []
+        "source_values": {
+          "N005": {
+            "start": null,
+            "end": null,
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
           },
-          "end_time": {
-            "value": "04:19",
-            "support": [
-              "O016",
-              "R044"
-            ],
-            "conflicts": [],
-            "status": "supported",
-            "source_values": {
-              "O016": "04:19",
-              "R044": "04:19"
-            },
-            "radar_batch_observations": []
+          "O016": {
+            "start": "02:54",
+            "end": "04:19",
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
+          },
+          "R044": {
+            "start": "02:54",
+            "end": "04:19",
+            "interval": "observation_coverage",
+            "start_asserted": false,
+            "end_asserted": false
           }
+        },
+        "asserted_boundaries": {
+          "start": {},
+          "end": {}
         },
         "supporting_source_types": [
           "opinion",
@@ -418,7 +395,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "舆论 O016 和雷达 R044 均明确任务为远海训练；新闻 N005 描述为持续活动，属于泛称，与具体任务不冲突。"
+          "reason": "舆论 O016 与雷达 R044 均明确任务为“远海训练”；新闻 N005 描述为“持续活动”，语义兼容但不提供具体科目，不影响两源对“训练”的认定。"
         },
         "checked_by": "literal_assertion_matrix",
         "source_values": {
@@ -457,7 +434,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "三源均表明舰艇处于活动状态（新闻：持续活动/机动；舆论：组织训练；雷达：未说明但位置固定）。"
+          "reason": "三源均描述为活动状态（新闻：持续活动/机动；舆论：组织远海训练；雷达：未说明但处于观测覆盖中），无冲突。"
         },
         "checked_by": "literal_assertion_matrix",
         "source_values": {
@@ -473,7 +450,9 @@
     ],
     "unresolved_issues": [],
     "explanation": "程序核验未通过：quantity关键事实冲突：程序按已关联平台的明示字段复核：{'N005': 1, 'O016': 1, 'R044': 2}；缺失不支持也不反对",
-    "model_explanation": "三源（新闻、舆论、雷达）在平台型号、国籍、地点（万安滩海域）、时间（2025.5.1 02:54-04:19）、任务（远海训练）及活动状态上高度一致。雷达提供了具体的数量（2）和时间细节，舆论补充了精确时刻，新闻确认了具体区域和持续性质。所有关键事实均有至少两类来源支持，无未消解冲突。"
+    "model_unresolved_issues": [],
+    "reconciled_model_issues": [],
+    "model_explanation": "事件关联成立：新闻、舆论、雷达三源在平台型号、国籍、地点（万安滩海域）、时间（2025.5.1 02:54-04:19）及任务性质（远海训练/持续活动）上高度一致。数量结论基于雷达原始数据，新闻与舆论虽未明示具体数字但无冲突。所有关键事实均有至少两类来源支持，无未消解冲突。"
   },
   "reasons": [
     "quantity关键事实冲突：程序按已关联平台的明示字段复核：{'N005': 1, 'O016': 1, 'R044': 2}；缺失不支持也不反对"
@@ -503,7 +482,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "新闻、舆论、雷达三源均明确识别为 903A 型，无冲突。"
+        "reason": "三源（新闻、舆论、雷达）均明确指向 903A 型中国海军补给舰，无冲突。"
       },
       "checked_by": "explicit_source_matrix",
       "supporting_source_types": [
@@ -535,7 +514,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "新闻、舆论、雷达三源均明确标注国籍为中国，无冲突。"
+        "reason": "三源均明确标注为中国海军/中国舰船，无冲突。"
       },
       "checked_by": "explicit_source_matrix",
       "supporting_source_types": [
@@ -565,7 +544,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "新闻 N005 和雷达 R044 均明确定位在万安滩海域；舆论 O016 描述为南海方向，属于大范围兼容，不构成冲突。"
+        "reason": "新闻 N005 与雷达 R044 均明确定位在万安滩海域；舆论 O016 提及南海方向，兼容该具体区域。"
       },
       "checked_by": "literal_assertion_matrix",
       "source_values": {
@@ -604,56 +583,53 @@
     {
       "platform_index": -1,
       "field": "time",
-      "claim": "起点 02:54，终点 04:19",
+      "claim": "共同观测/报道时段 02:54—04:19（非完整活动起止断言）",
       "supporting_sources": [
         "O016",
         "R044"
       ],
       "conflicting_sources": [],
       "status": "supported",
-      "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突；起点明示值：{'O016': '02:54', 'R044': '02:54'}；终点明示值：{'O016': '04:19', 'R044': '04:19'}",
+      "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N005': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O016': {'start': '02:54', 'end': '04:19', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R044': {'start': '02:54', 'end': '04:19', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
       "model_proposal": {
         "platform_index": -1,
         "field": "time",
-        "claim": "2025.05.01 02:54-04:19",
+        "claim": "2025-05-01 02:54-04:19",
         "supporting_sources": [
           "O016",
           "R044"
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "舆论 O016 和雷达 R044 均提供了具体的起止时间（02:54-04:19），新闻 N005 仅描述为持续活动，未提供具体时间但不构成冲突。"
+        "reason": "舆论 O016 与雷达 R044 提供了完全一致的具体起止时间；新闻 N005 仅确认日期，不冲突。"
       },
       "checked_by": "literal_assertion_matrix",
-      "components": {
-        "start_time": {
-          "value": "02:54",
-          "support": [
-            "O016",
-            "R044"
-          ],
-          "conflicts": [],
-          "status": "supported",
-          "source_values": {
-            "O016": "02:54",
-            "R044": "02:54"
-          },
-          "radar_batch_observations": []
+      "source_values": {
+        "N005": {
+          "start": null,
+          "end": null,
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
         },
-        "end_time": {
-          "value": "04:19",
-          "support": [
-            "O016",
-            "R044"
-          ],
-          "conflicts": [],
-          "status": "supported",
-          "source_values": {
-            "O016": "04:19",
-            "R044": "04:19"
-          },
-          "radar_batch_observations": []
+        "O016": {
+          "start": "02:54",
+          "end": "04:19",
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "R044": {
+          "start": "02:54",
+          "end": "04:19",
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
         }
+      },
+      "asserted_boundaries": {
+        "start": {},
+        "end": {}
       },
       "supporting_source_types": [
         "opinion",
@@ -681,7 +657,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "舆论 O016 和雷达 R044 均明确任务为远海训练；新闻 N005 描述为持续活动，属于泛称，与具体任务不冲突。"
+        "reason": "舆论 O016 与雷达 R044 均明确任务为“远海训练”；新闻 N005 描述为“持续活动”，语义兼容但不提供具体科目，不影响两源对“训练”的认定。"
       },
       "checked_by": "literal_assertion_matrix",
       "source_values": {
@@ -720,7 +696,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "三源均表明舰艇处于活动状态（新闻：持续活动/机动；舆论：组织训练；雷达：未说明但位置固定）。"
+        "reason": "三源均描述为活动状态（新闻：持续活动/机动；舆论：组织远海训练；雷达：未说明但处于观测覆盖中），无冲突。"
       },
       "checked_by": "literal_assertion_matrix",
       "source_values": {

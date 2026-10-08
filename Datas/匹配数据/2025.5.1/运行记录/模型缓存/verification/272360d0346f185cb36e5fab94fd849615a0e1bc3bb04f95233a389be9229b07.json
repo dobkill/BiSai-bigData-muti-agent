@@ -1,0 +1,310 @@
+{
+  "role": "verification",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N030",
+      "kind": "news",
+      "title": "韩国P-3CK反潜巡逻机在莫桑比克海峡执行联合巡逻",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：韩国P-3CK反潜巡逻机在莫桑比克海峡执行联合巡逻\n正文：2025年5月1日17时51分至19时16分，韩国P-3CK反潜巡逻机在莫桑比克海峡围绕任务海域组织联合巡逻，按计划保持机动并持续执行联合巡逻。\n\n主题词：韩国  P-3CK反潜巡逻机  莫桑比克海峡  联合巡逻\n",
+      "platforms": [
+        {
+          "name": "P-3CK反潜巡逻机",
+          "country": "韩国",
+          "quantity": null,
+          "quote": "韩国P-3CK反潜巡逻机",
+          "quantity_quote": "",
+          "country_raw": "韩国"
+        }
+      ],
+      "location": {
+        "raw": "莫桑比克海峡",
+        "region": "莫桑比克海峡",
+        "direction": "其他",
+        "precision": "原文区域",
+        "mapping": "PDF未列入三大核心海域的区域归其他",
+        "transit": false,
+        "quote": "在莫桑比克海峡围绕任务海域组织联合巡逻"
+      },
+      "mission": {
+        "value": "联合巡逻",
+        "quote": "执行联合巡逻"
+      },
+      "start_time": "17:51",
+      "end_time": "19:16",
+      "movement": "活动",
+      "time_semantics": {
+        "interval": "reported_activity",
+        "start_asserted": false,
+        "end_asserted": false
+      }
+    },
+    "opinion": {
+      "id": "O043",
+      "kind": "opinion",
+      "title": "韩国空军两架P-3CK反潜巡逻机在莫桑比克海峡活动",
+      "text": "时间：2025.5.1\n\n标题：韩国空军两架P-3CK反潜巡逻机在莫桑比克海峡活动\n\n正文：据社交媒体军事观察账号报道，2025年5月1日，韩国空军两架P-3CK反潜巡逻机在莫桑比克海峡相关海域持续活动。观察人士认为，这两架飞机围绕任务区域保持机动，其行动范围保持在指定任务海域。这一动向被视为韩国提升在远海区域机动和任务连续性的一种体现。\n",
+      "platforms": [
+        {
+          "name": "P-3CK",
+          "country": "韩国",
+          "quantity": 2,
+          "quote": "两架P-3CK反潜巡逻机",
+          "quantity_quote": "两架",
+          "country_raw": "韩国"
+        }
+      ],
+      "location": {
+        "raw": "莫桑比克海峡相关海域",
+        "region": "莫桑比克海峡",
+        "direction": "其他",
+        "precision": "原文区域",
+        "mapping": "PDF未列入三大核心海域的区域归其他",
+        "transit": false,
+        "quote": "在莫桑比克海峡相关海域"
+      },
+      "mission": {
+        "value": null,
+        "quote": ""
+      },
+      "start_time": null,
+      "end_time": null,
+      "movement": "活动",
+      "time_semantics": {
+        "interval": "reported_activity",
+        "start_asserted": false,
+        "end_asserted": false
+      }
+    },
+    "radars": [
+      {
+        "id": "R020",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "P-3CK反潜巡逻机",
+            "country": "韩国",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-BC9206D3B8A3D2",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "联合巡逻",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "联合巡逻"
+        ],
+        "start_time": "2025.05.01 17:51:00",
+        "end_time": "2025.05.01 19:16:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            40.8732,
+            41.2316
+          ],
+          "latitude_range": [
+            -18.0238,
+            -17.8574
+          ],
+          "median": [
+            41.1006,
+            -17.9526
+          ],
+          "origins": [
+            [
+              40.9202,
+              -18.0162
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [],
+        "batch": "AIR-BC9206D3B8A3D2",
+        "sibling_ids": [],
+        "hull_values": [],
+        "country_values": [
+          "韩国"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 12,
+        "time_semantics": {
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "identity_scope": "batch_is_not_unique_target",
+        "warnings": []
+      }
+    ],
+    "association": {
+      "opinion_edges": [
+        {
+          "candidate_id": "O043",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.95,
+          "reason": "平台完全一致（韩国 P-3CK）、地点一致（莫桑比克海峡）、任务一致（联合巡逻）。时间区间高度重叠（新闻 17:51-19:16，舆论仅提及同日活动），符合同一次活动特征。"
+        },
+        {
+          "candidate_id": "O009",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.98,
+          "reason": "平台不同（潜艇 vs 飞机）、地点不同（鄂霍次克海 vs 莫桑比克海峡），属于完全不同的活动。"
+        },
+        {
+          "candidate_id": "O042",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.98,
+          "reason": "平台不同（菲律宾护卫舰 vs 韩国飞机）、地点不同（东海 vs 莫桑比克海峡）、国籍不同，属于完全不同的活动。"
+        }
+      ],
+      "radar_edges": [
+        {
+          "candidate_id": "R020",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.98,
+          "reason": "平台完全一致（韩国 P-3CK）、任务一致（联合巡逻）。时间区间与新闻报道完全吻合（17:51-19:16）。虽然地点字段缺失，但坐标范围（南纬 -18°左右）与莫桑比克海峡地理位置相符，且无其他冲突线索，确认为同一事件。"
+        },
+        {
+          "candidate_id": "R028",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.98,
+          "reason": "平台不同（潜艇 vs 飞机）、地点不同（鄂霍次克海 vs 莫桑比克海峡），属于完全不同的活动。"
+        },
+        {
+          "candidate_id": "R039",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.98,
+          "reason": "平台不同（中国潜艇 vs 韩国飞机）、地点不同（东海 vs 莫桑比克海峡）、国籍不同，属于完全不同的活动。"
+        }
+      ],
+      "ambiguity": "无。舆论 O043 未提供精确时间但方向一致；雷达 R020 虽缺地点文本但有坐标佐证且时间任务完全匹配，足以排除污染数据。其他候选在平台、地点或国籍上存在明显冲突。"
+    },
+    "same_batch_other_candidates": []
+  },
+  "result": {
+    "same_event": true,
+    "platforms": [
+      {
+        "platform_index": 0,
+        "platform": {
+          "claim": "韩国 P-3CK 反潜巡逻机",
+          "supporting_sources": [
+            "N030",
+            "O043",
+            "R020"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均明确指向韩国 P-3CK，无冲突。"
+        },
+        "country": {
+          "claim": "韩国",
+          "supporting_sources": [
+            "N030",
+            "O043",
+            "R020"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均明确标注国籍为韩国，无冲突。"
+        },
+        "quantity": {
+          "claim": "2 架",
+          "supporting_sources": [
+            "O043",
+            "R020"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论明确提及“两架”，雷达工作表显示目标数量为"
+        }
+      }
+    ],
+    "location": {
+      "claim": "莫桑比克海峡",
+      "supporting_sources": [
+        "N030",
+        "O043"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与舆论均明确提及“莫桑比克海峡”，雷达坐标范围（南纬 -18°左右）与该海域地理位置相符，构成三类来源支持。"
+    },
+    "time": {
+      "claim": "2025 年 5 月 1 日 17:51-19:16",
+      "supporting_sources": [
+        "N030",
+        "R020"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与雷达均精确记录起止时间为 17:51 至 19:16，舆论仅确认同日活动但未提供具体时刻，不构成冲突。"
+    },
+    "mission": {
+      "claim": "联合巡逻",
+      "supporting_sources": [
+        "N030",
+        "R020"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与雷达均明确任务为“联合巡逻”，舆论虽未明示具体科目但描述“围绕任务区域保持机动”与联合巡逻特征一致，无明确冲突。"
+    },
+    "movement": {
+      "claim": "活动",
+      "supporting_sources": [
+        "N030",
+        "O043",
+        "R020"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "三源均确认飞机处于活动状态，雷达虽未详述但时间区间与新闻完全吻合。"
+    },
+    "unresolved_issues": [],
+    "explanation": "新闻 N030、舆论 O043 与雷达 R020 在平台型号（韩国 P-3CK）、国籍（韩国）、地点（莫桑比克海峡）、时间（2025.5.1 17:51-19:16）及任务（联合巡逻）上高度一致。数量方面，舆论与雷达均支持"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-08T00:08:29.8812269Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"same_event\": true, \"platforms\": [{\"platform_index\": 0, \"platform\": {\"claim\": \"韩国 P-3CK 反潜巡逻机\", \"supporting_sources\": [\"N030\", \"O043\", \"R020\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻、舆论、雷达三源均明确指向韩国 P-3CK，无冲突。\"}, \"country\": {\"claim\": \"韩国\", \"supporting_sources\": [\"N030\", \"O043\", \"R020\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻、舆论、雷达三源均明确标注国籍为韩国，无冲突。\"}, \"quantity\": {\"claim\": \"2 架\", \"supporting_sources\": [\"O043\", \"R020\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"舆论明确提及“两架”，雷达工作表显示目标数量为\"\n\n}\n}\n],\"location\": {\"claim\": \"莫桑比克海峡\", \"supporting_sources\": [\"N030\", \"O043\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻与舆论均明确提及“莫桑比克海峡”，雷达坐标范围（南纬 -18°左右）与该海域地理位置相符，构成三类来源支持。\"}, \"time\": {\"claim\": \"2025 年 5 月 1 日 17:51-19:16\", \"supporting_sources\": [\"N030\", \"R020\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻与雷达均精确记录起止时间为 17:51 至 19:16，舆论仅确认同日活动但未提供具体时刻，不构成冲突。\"}, \"mission\": {\"claim\": \"联合巡逻\", \"supporting_sources\": [\"N030\", \"R020\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻与雷达均明确任务为“联合巡逻”，舆论虽未明示具体科目但描述“围绕任务区域保持机动”与联合巡逻特征一致，无明确冲突。\"}, \"movement\": {\"claim\": \"活动\", \"supporting_sources\": [\"N030\", \"O043\", \"R020\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源均确认飞机处于活动状态，雷达虽未详述但时间区间与新闻完全吻合。\"}, \"unresolved_issues\": [],\"explanation\": \"新闻 N030、舆论 O043 与雷达 R020 在平台型号（韩国 P-3CK）、国籍（韩国）、地点（莫桑比克海峡）、时间（2025.5.1 17:51-19:16）及任务（联合巡逻）上高度一致。数量方面，舆论与雷达均支持\"\n\n}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 13788776400,
+    "load_duration": 12095100,
+    "prompt_eval_count": 2386,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 864018000,
+    "eval_count": 658,
+    "eval_duration": 12696142000
+  }
+}

@@ -1,0 +1,755 @@
+{
+  "id": "N007",
+  "news_id": "N007",
+  "opinion_id": "O005",
+  "radar_ids": [
+    "R016"
+  ],
+  "radar_slots": {
+    "0": "R016"
+  },
+  "alignment": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O005",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.92,
+        "reason": "平台（德国台风）、数量（2 架）、日期（2025.5.1）及地点（东海油气田/空域）高度一致。新闻描述为“持续活动”，舆论明确给出具体时间段（05:45-07:10），属于同一活动的不同信息源补充。"
+      },
+      {
+        "candidate_id": "O022",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "地点冲突：新闻明确为“东海油气田海域”，而该候选为“印度洋相关海域”。同型号同数量同日期但方向完全不同，判定为不同活动。"
+      },
+      {
+        "candidate_id": "O021",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.99,
+        "reason": "平台国籍冲突：新闻主体为德国战机，该候选为中国歼 -35。虽同处东海且日期相同，但主体完全不同，属于污染材料或平行事件。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R016",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.88,
+        "reason": "平台（德国台风）、数量（2 架）、日期（2025.5.1）及任务（对海突击训练）完全匹配。雷达坐标经度范围（125-126°E）与纬度范围（28-29°N）覆盖东海油气田海域，时间区间（05:45-07:10）与舆论 O005 一致，确认为同一活动的雷达观测数据。"
+      },
+      {
+        "candidate_id": "R011",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "地点冲突：雷达坐标位于印度洋（经度 80°E，纬度 -5°S），而新闻明确在东海。虽平台、数量、日期相同，但地理位置截然不同，判定为不同活动。"
+      },
+      {
+        "candidate_id": "R047",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.99,
+        "reason": "平台冲突：该候选主体为日本村雨号护卫舰，新闻主体为德国台风战斗机。虽同在东海且时间重叠，但平台类型和国籍完全不同，属于不同活动。"
+      }
+    ],
+    "ambiguity": "无。核心关联线索（平台型号、数量、日期、地点、任务）在 O005 和 R016 中形成闭环，其他候选因地点或平台属性冲突被排除。"
+  },
+  "candidates": {
+    "opinion": [
+      {
+        "id": "O005",
+        "score": 4.48322,
+        "cosine": 0.95322,
+        "platform_similarity": 0.95,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O022",
+        "score": 3.92076,
+        "cosine": 0.87076,
+        "platform_similarity": 0.95,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O021",
+        "score": 1.23454,
+        "cosine": 0.75454,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O037",
+        "score": 0.93124,
+        "cosine": 0.77124,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "same_direction_only"
+      },
+      {
+        "id": "O002",
+        "score": 0.75507,
+        "cosine": 0.75507,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      }
+    ],
+    "radar": [
+      {
+        "id": "R016",
+        "score": 3.98796,
+        "cosine": 0.93796,
+        "platform_similarity": 0.95,
+        "time_overlap": null,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R011",
+        "score": 3.96192,
+        "cosine": 0.91192,
+        "platform_similarity": 0.95,
+        "time_overlap": null,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R047",
+        "score": 1.14349,
+        "cosine": 0.66349,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "R003",
+        "score": 0.75053,
+        "cosine": 0.75053,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R008",
+        "score": 0.74579,
+        "cosine": 0.74579,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R013",
+        "score": 0.73924,
+        "cosine": 0.73924,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "missing"
+      }
+    ]
+  },
+  "assignment_diagnostics": {
+    "opinion": [],
+    "radar": []
+  },
+  "radar_context": [],
+  "verification": {
+    "same_event": true,
+    "facts": [
+      {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "台风”多用途战斗机",
+        "supporting_sources": [
+          "N007",
+          "O005",
+          "R016"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N007': '台风”多用途战斗机', 'O005': '台风”多用途战斗机', 'R016': '“台风”多用途战斗机'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "德国“台风”多用途战斗机",
+          "supporting_sources": [
+            "N007",
+            "O005",
+            "R016"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均明确指向德国台风战机"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "德国",
+        "supporting_sources": [
+          "N007",
+          "O005",
+          "R016"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N007': '德国', 'O005': '德国', 'R016': '德国'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "德国",
+          "supporting_sources": [
+            "N007",
+            "O005",
+            "R016"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源一致确认国籍为德国"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "2架",
+        "supporting_sources": [
+          "N007",
+          "R016"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N007': 2, 'R016': 2}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "2 架",
+          "supporting_sources": [
+            "N007",
+            "R016"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻明确提及"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "东海",
+        "supporting_sources": [
+          "N007",
+          "O005"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "复核明示地点和PDF包含关系：{'N007': '东海油气田海域', 'O005': '东海'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "东海油气田海域",
+          "supporting_sources": [
+            "N007",
+            "R016"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻明确为“东海油气田海域”，雷达坐标范围（125-126°E, 28-29°N）覆盖该区域，舆论“东海空域”为兼容描述"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N007": {
+            "raw": "东海油气田海域",
+            "region": "东海油气田海域",
+            "direction": "东海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false,
+            "quote": "在东海油气田海域持续活动"
+          },
+          "O005": {
+            "raw": "东海空域",
+            "region": "东海",
+            "direction": "东海",
+            "precision": "大范围",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false,
+            "quote": "在东海空域"
+          }
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "共同观测/报道时段 05:45—07:10（非完整活动起止断言）",
+        "supporting_sources": [
+          "O005",
+          "R016"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N007': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O005': {'start': '05:45', 'end': '07:10', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R016': {'start': '05:45', 'end': '07:10', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "2025 年 5 月 1 日 05:45-07:10",
+          "supporting_sources": [
+            "O005",
+            "R016"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论与雷达时间区间完全一致，新闻仅确认日期"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N007": {
+            "start": null,
+            "end": null,
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
+          },
+          "O005": {
+            "start": "05:45",
+            "end": "07:10",
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
+          },
+          "R016": {
+            "start": "05:45",
+            "end": "07:10",
+            "interval": "observation_coverage",
+            "start_asserted": false,
+            "end_asserted": false
+          }
+        },
+        "asserted_boundaries": {
+          "start": {},
+          "end": {}
+        },
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "对海突击训练",
+        "supporting_sources": [
+          "O005",
+          "R016"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "原文明示任务：{'N007': [], 'O005': ['对海突击训练'], 'R016': ['对海突击训练']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "对海突击训练",
+          "supporting_sources": [
+            "O005",
+            "R016"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论明确任务为“对海突击训练”，雷达任务列亦显示“对海突击训练”，新闻仅泛称“持续活动”"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N007": [],
+          "O005": [
+            "对海突击训练"
+          ],
+          "R016": [
+            "对海突击训练"
+          ]
+        },
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N007",
+          "O005"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "supporting_sources": [
+            "N007",
+            "O005",
+            "R016"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源均描述为活动状态"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N007": "活动",
+          "O005": "活动",
+          "R016": "未说明"
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location_detail",
+        "claim": "东海油气田海域",
+        "supporting_sources": [
+          "N007"
+        ],
+        "conflicting_sources": [],
+        "status": "insufficient",
+        "reason": "具体区域仅一类来源明示；结论使用共同获支持的方向，细节保留待核实",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "东海油气田海域",
+          "supporting_sources": [
+            "N007",
+            "R016"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻明确为“东海油气田海域”，雷达坐标范围（125-126°E, 28-29°N）覆盖该区域，舆论“东海空域”为兼容描述"
+        },
+        "supporting_source_types": [
+          "news"
+        ]
+      }
+    ],
+    "unresolved_issues": [],
+    "explanation": "三类来源已关联，纳入结论的事实获得至少两类独立来源支持，未发现未消解明示反证。",
+    "model_explanation": "新闻、舆论、雷达三源在平台型号、国籍、数量（2 架）、地点（东海油气田海域/坐标覆盖）、时间（05:45-07:10）及任务（对海突击训练）上高度一致，形成完整证据链。新闻未提具体时刻和任务细节，舆论与雷达补充了这些关键信息，无未消解冲突。"
+  },
+  "reasons": [],
+  "status": "可信事件",
+  "verified_facts": [
+    {
+      "platform_index": 0,
+      "field": "platform",
+      "claim": "台风”多用途战斗机",
+      "supporting_sources": [
+        "N007",
+        "O005",
+        "R016"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N007': '台风”多用途战斗机', 'O005': '台风”多用途战斗机', 'R016': '“台风”多用途战斗机'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "德国“台风”多用途战斗机",
+        "supporting_sources": [
+          "N007",
+          "O005",
+          "R016"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源（新闻、舆论、雷达）均明确指向德国台风战机"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "country",
+      "claim": "德国",
+      "supporting_sources": [
+        "N007",
+        "O005",
+        "R016"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N007': '德国', 'O005': '德国', 'R016': '德国'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "德国",
+        "supporting_sources": [
+          "N007",
+          "O005",
+          "R016"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源一致确认国籍为德国"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "quantity",
+      "claim": "2架",
+      "supporting_sources": [
+        "N007",
+        "R016"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N007': 2, 'R016': 2}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "2 架",
+        "supporting_sources": [
+          "N007",
+          "R016"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻明确提及"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "location",
+      "claim": "东海",
+      "supporting_sources": [
+        "N007",
+        "O005"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "复核明示地点和PDF包含关系：{'N007': '东海油气田海域', 'O005': '东海'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "东海油气田海域",
+        "supporting_sources": [
+          "N007",
+          "R016"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻明确为“东海油气田海域”，雷达坐标范围（125-126°E, 28-29°N）覆盖该区域，舆论“东海空域”为兼容描述"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N007": {
+          "raw": "东海油气田海域",
+          "region": "东海油气田海域",
+          "direction": "东海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在东海油气田海域持续活动"
+        },
+        "O005": {
+          "raw": "东海空域",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在东海空域"
+        }
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "time",
+      "claim": "共同观测/报道时段 05:45—07:10（非完整活动起止断言）",
+      "supporting_sources": [
+        "O005",
+        "R016"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N007': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O005': {'start': '05:45', 'end': '07:10', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R016': {'start': '05:45', 'end': '07:10', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "2025 年 5 月 1 日 05:45-07:10",
+        "supporting_sources": [
+          "O005",
+          "R016"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "舆论与雷达时间区间完全一致，新闻仅确认日期"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N007": {
+          "start": null,
+          "end": null,
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "O005": {
+          "start": "05:45",
+          "end": "07:10",
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "R016": {
+          "start": "05:45",
+          "end": "07:10",
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        }
+      },
+      "asserted_boundaries": {
+        "start": {},
+        "end": {}
+      },
+      "supporting_source_types": [
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "mission",
+      "claim": "对海突击训练",
+      "supporting_sources": [
+        "O005",
+        "R016"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "原文明示任务：{'N007': [], 'O005': ['对海突击训练'], 'R016': ['对海突击训练']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "对海突击训练",
+        "supporting_sources": [
+          "O005",
+          "R016"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "舆论明确任务为“对海突击训练”，雷达任务列亦显示“对海突击训练”，新闻仅泛称“持续活动”"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N007": [],
+        "O005": [
+          "对海突击训练"
+        ],
+        "R016": [
+          "对海突击训练"
+        ]
+      },
+      "supporting_source_types": [
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "movement",
+      "claim": "活动",
+      "supporting_sources": [
+        "N007",
+        "O005"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N007",
+          "O005",
+          "R016"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源均描述为活动状态"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N007": "活动",
+        "O005": "活动",
+        "R016": "未说明"
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    }
+  ],
+  "radar_row_count": 13,
+  "direction": "东海",
+  "report_eligible": true,
+  "directory": "可信事件/N007_德国“台风”多用途战斗机在东海油气田海域活动"
+}

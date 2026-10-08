@@ -1,0 +1,931 @@
+{
+  "role": "alignment",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N018",
+      "kind": "news",
+      "title": "中国海军福建号航母在钓鱼岛海域执行联合巡航任务行动",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：中国海军福建号航母在钓鱼岛海域执行联合巡航任务行动\n正文：2025年5月1日2时38分至4时03分，中国海军福建号航空母舰在钓鱼岛海域围绕任务海域组织联合巡航，按计划完成平台间的联络和行动衔接。按计划保持机动并持续执行联合巡航。\n\n主题词：中国海军  福建号航空母舰  联合巡航  钓鱼岛海域\n",
+      "platforms": [
+        {
+          "name": "福建号航空母舰",
+          "country": "中国",
+          "quantity": null,
+          "quote": "福建号航空母舰",
+          "quantity_quote": "",
+          "country_raw": "中国"
+        }
+      ],
+      "location": {
+        "raw": "钓鱼岛海域",
+        "region": "钓鱼岛海域",
+        "direction": "东海",
+        "precision": "具体区域",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "在钓鱼岛海域"
+      },
+      "mission": {
+        "value": "联合巡航任务行动",
+        "quote": "执行联合巡航任务行动"
+      },
+      "start_time": "02:38",
+      "end_time": "04:03",
+      "movement": "活动",
+      "time_semantics": {
+        "interval": "reported_activity",
+        "start_asserted": false,
+        "end_asserted": false
+      }
+    },
+    "opinion_candidates": [
+      {
+        "id": "O032",
+        "kind": "opinion",
+        "title": "中国福建号航母东海联合巡航展现协同组织能力",
+        "text": "时间：2025.5.1\n\n标题：中国福建号航母东海联合巡航展现协同组织能力\n\n正文：据俄罗斯卫星通讯社报道，2025年5月1日，中国福建号航空母舰在东海方向执行了联合巡航任务。报道称，该舰围绕共同任务保持协同行动，按计划完成了平台间的联络和行动衔接。分析认为，这一过程有助于熟悉流程和检验联络配合水平。\n",
+        "platforms": [
+          {
+            "name": "福建号航空母舰",
+            "country": "中国",
+            "quantity": null,
+            "quote": "中国福建号航空母舰",
+            "quantity_quote": "",
+            "country_raw": "中国"
+          }
+        ],
+        "location": {
+          "raw": "东海方向",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在东海方向执行了联合巡航任务"
+        },
+        "mission": {
+          "value": "联合巡航任务",
+          "quote": "在东海方向执行了联合巡航任务"
+        },
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动",
+        "time_semantics": {
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        }
+      },
+      {
+        "id": "O020",
+        "kind": "opinion",
+        "title": "俄海军“瓦良格”号巡洋舰南海执行护航任务",
+        "text": "时间：2025.5.1\n\n标题：俄海军“瓦良格”号巡洋舰南海执行护航任务\n\n正文：据联合早报报道，俄罗斯海军“瓦良格”号导弹巡洋舰于2025年5月1日2时16分至4时41分在南海方向执行海上护航任务。该舰围绕任务编组实施保障行动，被认为按计划完成了相关保障环节衔接。相关观察关注其持续保障能力，认为此类行动续航有助于体现保障协同水平。\n",
+        "platforms": [
+          {
+            "name": "瓦良格”号导弹巡洋舰",
+            "country": "俄罗斯",
+            "quantity": null,
+            "quote": "瓦良格”号导弹巡洋舰",
+            "quantity_quote": "",
+            "country_raw": "俄罗斯"
+          }
+        ],
+        "location": {
+          "raw": "南海方向",
+          "region": "南海",
+          "direction": "南海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在南海方向"
+        },
+        "mission": {
+          "value": "海上护航任务",
+          "quote": "执行海上护航任务"
+        },
+        "start_time": "02:16",
+        "end_time": "04:41",
+        "movement": "活动",
+        "time_semantics": {
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        }
+      },
+      {
+        "id": "O016",
+        "kind": "opinion",
+        "title": "中国903A型补给舰南海远海训练时段引发流程熟悉讨论",
+        "text": "时间：2025.5.1\n\n标题：中国903A型补给舰南海远海训练时段引发流程熟悉讨论\n\n正文：据央视新闻报道，2025年5月1日2时54分至4时19分，中国一艘903A型综合补给舰在南海方向按计划组织了远海训练。有关讨论关注到，该舰围绕既定科目完成相关平台之间的行动衔接，这一过程有助于检验任务组织和训练协同水平。\n",
+        "platforms": [
+          {
+            "name": "903A型综合补给舰",
+            "country": "中国",
+            "quantity": 1,
+            "quote": "中国一艘903A型综合补给舰",
+            "quantity_quote": "一艘903A型综合补给舰",
+            "country_raw": "中国"
+          }
+        ],
+        "location": {
+          "raw": "南海方向",
+          "region": "南海",
+          "direction": "南海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在南海方向"
+        },
+        "mission": {
+          "value": "远海训练",
+          "quote": "组织了远海训练"
+        },
+        "start_time": "02:54",
+        "end_time": "04:19",
+        "movement": "活动",
+        "time_semantics": {
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        }
+      },
+      {
+        "id": "O015",
+        "kind": "opinion",
+        "title": "中国903A型综合补给舰在东海执行例行部署",
+        "text": "时间：2025.5.1\n\n标题：中国903A型综合补给舰在东海执行例行部署\n\n正文：据联合早报报道，2025年5月1日5时56分至7时21分，中国海军903A型综合补给舰在东海海域执行例行部署任务。媒体关注到，该舰沿既定方向保持机动并围绕任务区域维持部署，体现了部署持续性和区域机动能力。\n",
+        "platforms": [
+          {
+            "name": "903A型综合补给舰",
+            "country": "中国",
+            "quantity": null,
+            "quote": "中国海军903A型综合补给舰",
+            "quantity_quote": "",
+            "country_raw": "中国"
+          }
+        ],
+        "location": {
+          "raw": "东海海域",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在东海海域"
+        },
+        "mission": {
+          "value": "例行部署任务",
+          "quote": "执行例行部署任务"
+        },
+        "start_time": "05:56",
+        "end_time": "07:21",
+        "movement": "活动",
+        "time_semantics": {
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        }
+      },
+      {
+        "id": "O021",
+        "kind": "opinion",
+        "title": "中国两架歼-35隐身战斗机在东海执行战备警巡",
+        "text": "时间：2025.5.1\n\n标题：中国两架歼-35隐身战斗机在东海执行战备警巡\n\n正文：据央视新闻报道，2025年5月1日，中国两架歼-35舰载隐身战斗机在东海方向按计划保持机动并持续执行战备警巡任务。围绕此次平台运用的讨论认为，该行动有助于维持前沿存在和部署持续性，展现了在特定方向的区域机动能力。\n",
+        "platforms": [
+          {
+            "name": "歼-35",
+            "country": "中国",
+            "quantity": 2,
+            "quote": "两架歼-35舰载隐身战斗机",
+            "quantity_quote": "两架歼-35舰载隐身战斗机",
+            "country_raw": "中国"
+          }
+        ],
+        "location": {
+          "raw": "东海方向",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在东海方向"
+        },
+        "mission": {
+          "value": "战备警巡任务",
+          "quote": "执行战备警巡任务"
+        },
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动",
+        "time_semantics": {
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        }
+      },
+      {
+        "id": "O033",
+        "kind": "opinion",
+        "title": "中国海军“山东号”航母在中太平洋进行联合巡航",
+        "text": "时间：2025.5.1\n\n标题：中国海军“山东号”航母在中太平洋进行联合巡航\n\n正文：据联合早报报道，2025年5月1日8时30分至10时55分，中国海军“山东号”航空母舰在中太平洋海域按计划保持机动并持续执行联合巡航任务。相关分析认为，此次行动可能体现了中国海军围绕共同任务保持协同行动的能力，有助于加强平台间的联络配合和流程熟悉。\n",
+        "platforms": [
+          {
+            "name": "山东号”航空母舰",
+            "country": "中国",
+            "quantity": null,
+            "quote": "中国海军“山东号”航空母舰",
+            "quantity_quote": "",
+            "country_raw": "中国"
+          }
+        ],
+        "location": {
+          "raw": "中太平洋海域",
+          "region": "中太平洋",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false,
+          "quote": "在中太平洋海域按计划保持机动并持续执行联合巡航任务"
+        },
+        "mission": {
+          "value": "联合巡航任务",
+          "quote": "在中太平洋海域按计划保持机动并持续执行联合巡航任务"
+        },
+        "start_time": "08:30",
+        "end_time": "10:55",
+        "movement": "活动",
+        "time_semantics": {
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        }
+      }
+    ],
+    "radar_candidates": [
+      {
+        "id": "R034",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "福建号航空母舰",
+            "country": "中国",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-6A461B63B28D56",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "钓鱼岛海域",
+          "region": "钓鱼岛海域",
+          "direction": "东海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "钓鱼岛海域",
+            "region": "钓鱼岛海域",
+            "direction": "东海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "联合巡航",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "联合巡航"
+        ],
+        "start_time": "2025.05.01 02:38:00",
+        "end_time": "2025.05.01 04:03:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-6A461B63B28D56",
+        "sibling_ids": [],
+        "hull_values": [
+          "18"
+        ],
+        "country_values": [
+          "中国"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 12,
+        "time_semantics": {
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "identity_scope": "batch_is_not_unique_target",
+        "warnings": []
+      },
+      {
+        "id": "R023",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "歼-16D电子战飞机",
+            "country": "中国",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-E0C394489245A4",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "电子对抗训练",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "电子对抗训练"
+        ],
+        "start_time": "2025.05.01 02:05:00",
+        "end_time": "2025.05.01 04:30:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            160.1665,
+            160.3599
+          ],
+          "latitude_range": [
+            -38.0066,
+            -37.848
+          ],
+          "median": [
+            160.2562,
+            -37.9369
+          ],
+          "origins": [
+            [
+              160.1838,
+              -37.8926
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [],
+        "batch": "AIR-E0C394489245A4",
+        "sibling_ids": [],
+        "hull_values": [],
+        "country_values": [
+          "中国"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 12,
+        "time_semantics": {
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "identity_scope": "batch_is_not_unique_target",
+        "warnings": []
+      },
+      {
+        "id": "R044",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "903A型综合补给舰",
+            "country": "中国",
+            "quantity": 2,
+            "quote": "舰船工作表，批号SHIP-A9774AF7379E78",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "万安滩海域",
+          "region": "万安滩海域",
+          "direction": "南海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "万安滩海域",
+            "region": "万安滩海域",
+            "direction": "南海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "远海训练",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "远海训练"
+        ],
+        "start_time": "2025.05.01 02:54:00",
+        "end_time": "2025.05.01 04:19:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-A9774AF7379E78",
+        "sibling_ids": [],
+        "hull_values": [
+          "TYPE-903A"
+        ],
+        "country_values": [
+          "中国"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 10,
+        "time_semantics": {
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "identity_scope": "batch_is_not_unique_target",
+        "warnings": []
+      },
+      {
+        "id": "R051",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "山东号航空母舰",
+            "country": "中国",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-D66A2E15996BA5",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "中太平洋",
+          "region": "中太平洋",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "中太平洋",
+            "region": "中太平洋",
+            "direction": "其他",
+            "precision": "原文区域",
+            "mapping": "PDF未列入三大核心海域的区域归其他",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "联合巡航",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "联合巡航"
+        ],
+        "start_time": "2025.05.01 08:30:00",
+        "end_time": "2025.05.01 10:55:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-D66A2E15996BA5",
+        "sibling_ids": [],
+        "hull_values": [
+          "17"
+        ],
+        "country_values": [
+          "中国"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 11,
+        "time_semantics": {
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "identity_scope": "batch_is_not_unique_target",
+        "warnings": []
+      },
+      {
+        "id": "R002",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "歼-35舰载隐身战斗机",
+            "country": "中国",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-0435F7FE86050A",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "战备警巡",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "战备警巡"
+        ],
+        "start_time": "2025.05.01 17:49:10",
+        "end_time": "2025.05.01 19:00:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            122.1749,
+            122.4161
+          ],
+          "latitude_range": [
+            27.6146,
+            27.8573
+          ],
+          "median": [
+            122.2806,
+            27.772
+          ],
+          "origins": [
+            [
+              122.4117,
+              27.8816
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [
+            "东海"
+          ],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [],
+        "batch": "AIR-0435F7FE86050A",
+        "sibling_ids": [
+          "R001"
+        ],
+        "hull_values": [],
+        "country_values": [
+          "中国"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 6,
+        "time_semantics": {
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "identity_scope": "batch_is_not_unique_target",
+        "warnings": [
+          "同批号存在不同起始位置簇；未提供唯一目标身份，分支须分别关联，不能自动合并或当作本事件反证"
+        ]
+      },
+      {
+        "id": "R043",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "071型船坞登陆舰",
+            "country": "中国",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-A9545834B741E4",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "安达曼海",
+          "region": "安达曼海",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "安达曼海",
+            "region": "安达曼海",
+            "direction": "其他",
+            "precision": "原文区域",
+            "mapping": "PDF未列入三大核心海域的区域归其他",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "联合巡航",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "联合巡航"
+        ],
+        "start_time": "2025.05.01 11:26:00",
+        "end_time": "2025.05.01 13:51:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-A9545834B741E4",
+        "sibling_ids": [],
+        "hull_values": [
+          "TYPE-071"
+        ],
+        "country_values": [
+          "中国"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 11,
+        "time_semantics": {
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "identity_scope": "batch_is_not_unique_target",
+        "warnings": []
+      },
+      {
+        "id": "R021",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "歼-15T舰载战斗机",
+            "country": "中国",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-BD03273DD4DAFA",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "舰载机起降训练",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "舰载机起降训练"
+        ],
+        "start_time": "2025.05.01 11:15:00",
+        "end_time": "2025.05.01 13:40:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            125.6488,
+            125.803
+          ],
+          "latitude_range": [
+            33.4253,
+            33.7729
+          ],
+          "median": [
+            125.7383,
+            33.6055
+          ],
+          "origins": [
+            [
+              125.7821,
+              33.7251
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [
+            "黄海"
+          ],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [],
+        "batch": "AIR-BD03273DD4DAFA",
+        "sibling_ids": [],
+        "hull_values": [],
+        "country_values": [
+          "中国"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 10,
+        "time_semantics": {
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "identity_scope": "batch_is_not_unique_target",
+        "warnings": []
+      }
+    ],
+    "recall": {
+      "opinion": [
+        {
+          "id": "O032",
+          "score": 4.49416,
+          "cosine": 0.96416,
+          "platform_similarity": 0.95,
+          "time_overlap": null,
+          "location_relation": "contains"
+        },
+        {
+          "id": "O020",
+          "score": 1.97351,
+          "cosine": 0.77351,
+          "platform_similarity": 0.0,
+          "time_overlap": 1.0,
+          "location_relation": "different_direction"
+        },
+        {
+          "id": "O016",
+          "score": 1.96669,
+          "cosine": 0.79257,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.8117647058823529,
+          "location_relation": "different_direction"
+        },
+        {
+          "id": "O015",
+          "score": 1.48472,
+          "cosine": 0.80472,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "contains"
+        },
+        {
+          "id": "O021",
+          "score": 1.47611,
+          "cosine": 0.79611,
+          "platform_similarity": 0.0,
+          "time_overlap": null,
+          "location_relation": "contains"
+        },
+        {
+          "id": "O033",
+          "score": 1.0752,
+          "cosine": 0.8752,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "different_direction"
+        }
+      ],
+      "radar": [
+        {
+          "id": "R034",
+          "score": 6.02743,
+          "cosine": 0.97743,
+          "platform_similarity": 0.95,
+          "time_overlap": 1.0,
+          "location_relation": "same"
+        },
+        {
+          "id": "R023",
+          "score": 2.12771,
+          "cosine": 0.72771,
+          "platform_similarity": 0.0,
+          "time_overlap": 1.0,
+          "location_relation": "missing"
+        },
+        {
+          "id": "R044",
+          "score": 1.94248,
+          "cosine": 0.76837,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.8117647058823529,
+          "location_relation": "different_direction"
+        },
+        {
+          "id": "R051",
+          "score": 1.06602,
+          "cosine": 0.86602,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "different_direction"
+        },
+        {
+          "id": "R002",
+          "score": 0.99334,
+          "cosine": 0.79334,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "missing"
+        },
+        {
+          "id": "R043",
+          "score": 0.993,
+          "cosine": 0.793,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "different_direction"
+        },
+        {
+          "id": "R021",
+          "score": 0.99106,
+          "cosine": 0.79106,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "missing"
+        }
+      ]
+    }
+  },
+  "result": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O032",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.95,
+        "reason": "平台（福建号航母）、任务（联合巡航）、地点（东海/钓鱼岛海域）及时间区间高度一致。舆论报道的“东海方向”包含新闻中的“钓鱼岛海域”，且时间完全覆盖，属于同一活动在不同粒度下的描述。"
+      },
+      {
+        "candidate_id": "O020",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "平台不同（俄海军瓦良格号巡洋舰 vs 中国福建号航母），地点不同（南海方向 vs 钓鱼岛海域/东海），任务虽同为巡航但主体和区域完全分离，属于不同活动。"
+      },
+      {
+        "candidate_id": "O016",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "平台不同（903A 型补给舰 vs 福建号航母），地点不同（南海方向 vs 钓鱼岛海域/东海），任务不同（远海训练 vs 联合巡航），属于不同活动。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R034",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 1.0,
+        "reason": "雷达数据与新闻在平台（福建号航母）、地点（钓鱼岛海域）、任务（联合巡航）及起止时间（02:38-04:03）上完全精确匹配，确认为同一活动。"
+      },
+      {
+        "candidate_id": "R023",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台不同（歼 -16D 电子战飞机 vs 福建号航母），任务不同（电子对抗训练 vs 联合巡航），地点缺失但时间重叠，结合平台差异判定为不同活动。"
+      },
+      {
+        "candidate_id": "R044",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "平台不同（903A 型补给舰 vs 福建号航母），地点不同（万安滩海域/南海 vs 钓鱼岛海域/东海），任务不同，属于不同活动。"
+      }
+    ],
+    "ambiguity": "无显著歧义，核心候选关联证据充分。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T23:41:59.9850108Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"opinion_edges\": [{\"candidate_id\": \"O032\", \"platform_indices\": [0], \"relation\": \"same\", \"confidence\": 0.95, \"reason\": \"平台（福建号航母）、任务（联合巡航）、地点（东海/钓鱼岛海域）及时间区间高度一致。舆论报道的“东海方向”包含新闻中的“钓鱼岛海域”，且时间完全覆盖，属于同一活动在不同粒度下的描述。\"}, {\"candidate_id\": \"O020\", \"platform_indices\": [], \"relation\": \"different\", \"confidence\": 0.98, \"reason\": \"平台不同（俄海军瓦良格号巡洋舰 vs 中国福建号航母），地点不同（南海方向 vs 钓鱼岛海域/东海），任务虽同为巡航但主体和区域完全分离，属于不同活动。\"}, {\"candidate_id\": \"O016\", \"platform_indices\": [], \"relation\": \"different\", \"confidence\": 0.98, \"reason\": \"平台不同（903A 型补给舰 vs 福建号航母），地点不同（南海方向 vs 钓鱼岛海域/东海），任务不同（远海训练 vs 联合巡航），属于不同活动。\"}], \"radar_edges\": [{\"candidate_id\": \"R034\", \"platform_indices\": [0], \"relation\": \"same\", \"confidence\": 1.0, \"reason\": \"雷达数据与新闻在平台（福建号航母）、地点（钓鱼岛海域）、任务（联合巡航）及起止时间（02:38-04:03）上完全精确匹配，确认为同一活动。\"}, {\"candidate_id\": \"R023\", \"platform_indices\": [], \"relation\": \"different\", \"confidence\": 0.95, \"reason\": \"平台不同（歼 -16D 电子战飞机 vs 福建号航母），任务不同（电子对抗训练 vs 联合巡航），地点缺失但时间重叠，结合平台差异判定为不同活动。\"}, {\"candidate_id\": \"R044\", \"platform_indices\": [], \"relation\": \"different\", \"confidence\": 0.98, \"reason\": \"平台不同（903A 型补给舰 vs 福建号航母），地点不同（万安滩海域/南海 vs 钓鱼岛海域/东海），任务不同，属于不同活动。\"}],\"ambiguity\": \"无显著歧义，核心候选关联证据充分。\"}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 12653273900,
+    "load_duration": 11903500,
+    "prompt_eval_count": 6509,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 2106440999,
+    "eval_count": 521,
+    "eval_duration": 10175539000
+  }
+}

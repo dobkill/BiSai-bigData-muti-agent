@@ -17,21 +17,7 @@
         ],
         "relation": "same",
         "confidence": 0.95,
-        "reason": "平台（澳大利亚霍巴特级）、任务（联合搜救训练）、时间（2025.5.1）完全一致；地点“南海海域”包含新闻中的“琼州海峡”，符合大范围包含关系。"
-      },
-      {
-        "candidate_id": "O003",
-        "platform_indices": [],
-        "relation": "different",
-        "confidence": 0.98,
-        "reason": "平台完全不同（中国运 -8 vs 澳大利亚霍巴特级），任务不同（侦察巡逻 vs 搜救训练），虽时间和地点重叠，但主体和目的均不一致。"
-      },
-      {
-        "candidate_id": "O041",
-        "platform_indices": [],
-        "relation": "different",
-        "confidence": 0.99,
-        "reason": "平台、国家、地点（孟加拉湾 vs 琼州海峡）完全不同，时间重叠仅为巧合或数据污染。"
+        "reason": "平台（澳大利亚霍巴特级）、任务（联合搜救训练）、时间（2025.5.1）及地点（南海/琼州海峡）完全一致。尽管舆论称“南海海域”而新闻称“琼州海峡”，但琼州海峡属于南海，且雷达数据R033证实了该舰在琼州海峡的具体活动，故舆论描述为大范围涵盖具体事件，判定为同一活动。"
       }
     ],
     "radar_edges": [
@@ -42,24 +28,10 @@
         ],
         "relation": "same",
         "confidence": 1.0,
-        "reason": "雷达数据与新闻在平台型号（霍巴特级）、国家（澳大利亚）、地点（琼州海峡）、任务（联合搜救训练）及起止时间（11:48-13:13）上完全精确匹配，确认为同一活动。"
-      },
-      {
-        "candidate_id": "R038",
-        "platform_indices": [],
-        "relation": "different",
-        "confidence": 0.95,
-        "reason": "平台不同（美国阿利·伯克级），任务不同（战备巡逻 vs 搜救训练），地点虽同在南海但具体区域不同（渚碧礁附近 vs 琼州海峡）。"
-      },
-      {
-        "candidate_id": "R021",
-        "platform_indices": [],
-        "relation": "different",
-        "confidence": 0.95,
-        "reason": "平台不同（中国歼 -15T），任务不同，且地点缺失/坐标指向黄海方向，与新闻的琼州海峡不符。"
+        "reason": "平台型号（霍巴特级）、国籍（澳大利亚）、任务（联合搜救训练）、时间区间（11:48-13:13）及地点（琼州海峡）与新闻完全精确匹配。雷达数据提供了具体的批号和舷号细节，确认为同一事件。"
       }
     ],
-    "ambiguity": "无显著歧义，核心候选O027和R033均提供充分证据支持same结论。其他候选因平台、任务或地点明显冲突判定为different。"
+    "ambiguity": "无。其他候选因平台型号、国籍、任务类型或海域方向（如东海、黄海、孟加拉湾）明显不同而被排除。"
   },
   "candidates": {
     "opinion": [
@@ -183,6 +155,7 @@
     "opinion": [],
     "radar": []
   },
+  "radar_context": [],
   "verification": {
     "same_event": true,
     "facts": [
@@ -201,7 +174,7 @@
         "model_proposal": {
           "platform_index": 0,
           "field": "platform",
-          "claim": "霍巴特级导弹驱逐舰",
+          "claim": "澳大利亚霍巴特级导弹驱逐舰",
           "supporting_sources": [
             "N011",
             "O027",
@@ -209,7 +182,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "三源（新闻、舆论、雷达）均确认为澳大利亚霍巴特级导弹驱逐舰，完全一致。"
+          "reason": "新闻、舆论、雷达三源均确认为澳大利亚霍巴特级，无冲突。"
         },
         "checked_by": "explicit_source_matrix",
         "supporting_source_types": [
@@ -241,7 +214,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "三源（新闻、舆论、雷达）均明确标注国籍为澳大利亚，完全一致。"
+          "reason": "新闻、舆论、雷达三源均确认为澳大利亚，无冲突。"
         },
         "checked_by": "explicit_source_matrix",
         "supporting_source_types": [
@@ -264,14 +237,14 @@
         "model_proposal": {
           "platform_index": 0,
           "field": "quantity",
-          "claim": "1 架/艘",
+          "claim": "1 架",
           "supporting_sources": [
             "O027",
             "R033"
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "舆论明确提及“一艘”，雷达批号显示数量值为"
+          "reason": "舆论明确提及“一艘”，雷达批号显示数量值为 1；新闻未说明具体数量但不构成反对，两源支持成立。"
         },
         "checked_by": "explicit_source_matrix",
         "supporting_source_types": [
@@ -300,7 +273,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻与雷达均精确指向“琼州海峡”；舆论提及的“南海海域”为大范围描述，兼容具体区域，无冲突。"
+          "reason": "新闻与雷达均明确为“琼州海峡”；舆论称“南海海域”，因琼州海峡属于南海，大范围描述兼容具体区域，三源逻辑一致。"
         },
         "checked_by": "literal_assertion_matrix",
         "source_values": {
@@ -339,56 +312,53 @@
       {
         "platform_index": -1,
         "field": "time",
-        "claim": "起点 11:48，终点 13:13",
+        "claim": "共同观测/报道时段 11:48—13:13（非完整活动起止断言）",
         "supporting_sources": [
           "N011",
           "R033"
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突；起点明示值：{'N011': '11:48', 'R033': '11:48'}；终点明示值：{'N011': '13:13', 'R033': '13:13'}",
+        "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N011': {'start': '11:48', 'end': '13:13', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O027': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R033': {'start': '11:48', 'end': '13:13', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
         "model_proposal": {
           "platform_index": -1,
           "field": "time",
-          "claim": "2025 年 5 月 1 日 11:48-13:13",
+          "claim": "2025 年 5 月 1 日 11:48 - 13:13",
           "supporting_sources": [
             "N011",
             "R033"
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻与雷达起止时间完全精确匹配；舆论仅确认日期，未提供具体时刻，不构成冲突。"
+          "reason": "新闻与雷达时间区间完全一致（11:48-13:13）；舆论仅提及日期未涉具体时刻，不冲突且被两源精确数据覆盖。"
         },
         "checked_by": "literal_assertion_matrix",
-        "components": {
-          "start_time": {
-            "value": "11:48",
-            "support": [
-              "N011",
-              "R033"
-            ],
-            "conflicts": [],
-            "status": "supported",
-            "source_values": {
-              "N011": "11:48",
-              "R033": "11:48"
-            },
-            "radar_batch_observations": []
+        "source_values": {
+          "N011": {
+            "start": "11:48",
+            "end": "13:13",
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
           },
-          "end_time": {
-            "value": "13:13",
-            "support": [
-              "N011",
-              "R033"
-            ],
-            "conflicts": [],
-            "status": "supported",
-            "source_values": {
-              "N011": "13:13",
-              "R033": "13:13"
-            },
-            "radar_batch_observations": []
+          "O027": {
+            "start": null,
+            "end": null,
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
+          },
+          "R033": {
+            "start": "11:48",
+            "end": "13:13",
+            "interval": "observation_coverage",
+            "start_asserted": false,
+            "end_asserted": false
           }
+        },
+        "asserted_boundaries": {
+          "start": {},
+          "end": {}
         },
         "supporting_source_types": [
           "news",
@@ -418,7 +388,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "三源（新闻、舆论、雷达）均明确任务为“联合搜救训练”，完全一致。"
+          "reason": "新闻、舆论、雷达三源均明确为“联合搜救训练”，完全一致。"
         },
         "checked_by": "literal_assertion_matrix",
         "source_values": {
@@ -458,7 +428,7 @@
           ],
           "conflicting_sources": [],
           "status": "insufficient",
-          "reason": "仅新闻提及“离开”，雷达未说明运动状态，舆论仅称“活动”。因缺乏多源印证且无明确冲突，结论为 insufficient（非 conflict）。"
+          "reason": "仅新闻提及“离开”，雷达未说明运动状态，舆论称“活动”，缺乏两类来源支持具体离场动作。"
         },
         "checked_by": "literal_assertion_matrix",
         "source_values": {
@@ -474,7 +444,9 @@
     ],
     "unresolved_issues": [],
     "explanation": "三类来源已关联，纳入结论的事实获得至少两类独立来源支持，未发现未消解明示反证。",
-    "model_explanation": "核心事实（平台、国籍、地点、时间、任务）均有至少两类来源支持且三源一致或兼容。数量由舆论和雷达共同确认为 1。运动状态仅新闻提及，其余未说明，无冲突证据，故不判定为 conflict。"
+    "model_unresolved_issues": [],
+    "reconciled_model_issues": [],
+    "model_explanation": "三源（新闻、舆论、雷达）在平台型号、国籍、任务、时间及地点上高度一致，构成可信结论。数量由舆论和雷达共同支持；地点舆论的大范围描述兼容新闻和雷达的具体区域。唯一未完全消解的是具体“离开”动作仅有一源支持，但不影响核心事件事实的可信度。"
   },
   "reasons": [],
   "status": "可信事件",
@@ -494,7 +466,7 @@
       "model_proposal": {
         "platform_index": 0,
         "field": "platform",
-        "claim": "霍巴特级导弹驱逐舰",
+        "claim": "澳大利亚霍巴特级导弹驱逐舰",
         "supporting_sources": [
           "N011",
           "O027",
@@ -502,7 +474,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "三源（新闻、舆论、雷达）均确认为澳大利亚霍巴特级导弹驱逐舰，完全一致。"
+        "reason": "新闻、舆论、雷达三源均确认为澳大利亚霍巴特级，无冲突。"
       },
       "checked_by": "explicit_source_matrix",
       "supporting_source_types": [
@@ -534,7 +506,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "三源（新闻、舆论、雷达）均明确标注国籍为澳大利亚，完全一致。"
+        "reason": "新闻、舆论、雷达三源均确认为澳大利亚，无冲突。"
       },
       "checked_by": "explicit_source_matrix",
       "supporting_source_types": [
@@ -557,14 +529,14 @@
       "model_proposal": {
         "platform_index": 0,
         "field": "quantity",
-        "claim": "1 架/艘",
+        "claim": "1 架",
         "supporting_sources": [
           "O027",
           "R033"
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "舆论明确提及“一艘”，雷达批号显示数量值为"
+        "reason": "舆论明确提及“一艘”，雷达批号显示数量值为 1；新闻未说明具体数量但不构成反对，两源支持成立。"
       },
       "checked_by": "explicit_source_matrix",
       "supporting_source_types": [
@@ -593,7 +565,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "新闻与雷达均精确指向“琼州海峡”；舆论提及的“南海海域”为大范围描述，兼容具体区域，无冲突。"
+        "reason": "新闻与雷达均明确为“琼州海峡”；舆论称“南海海域”，因琼州海峡属于南海，大范围描述兼容具体区域，三源逻辑一致。"
       },
       "checked_by": "literal_assertion_matrix",
       "source_values": {
@@ -632,56 +604,53 @@
     {
       "platform_index": -1,
       "field": "time",
-      "claim": "起点 11:48，终点 13:13",
+      "claim": "共同观测/报道时段 11:48—13:13（非完整活动起止断言）",
       "supporting_sources": [
         "N011",
         "R033"
       ],
       "conflicting_sources": [],
       "status": "supported",
-      "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突；起点明示值：{'N011': '11:48', 'R033': '11:48'}；终点明示值：{'N011': '13:13', 'R033': '13:13'}",
+      "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N011': {'start': '11:48', 'end': '13:13', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O027': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R033': {'start': '11:48', 'end': '13:13', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
       "model_proposal": {
         "platform_index": -1,
         "field": "time",
-        "claim": "2025 年 5 月 1 日 11:48-13:13",
+        "claim": "2025 年 5 月 1 日 11:48 - 13:13",
         "supporting_sources": [
           "N011",
           "R033"
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "新闻与雷达起止时间完全精确匹配；舆论仅确认日期，未提供具体时刻，不构成冲突。"
+        "reason": "新闻与雷达时间区间完全一致（11:48-13:13）；舆论仅提及日期未涉具体时刻，不冲突且被两源精确数据覆盖。"
       },
       "checked_by": "literal_assertion_matrix",
-      "components": {
-        "start_time": {
-          "value": "11:48",
-          "support": [
-            "N011",
-            "R033"
-          ],
-          "conflicts": [],
-          "status": "supported",
-          "source_values": {
-            "N011": "11:48",
-            "R033": "11:48"
-          },
-          "radar_batch_observations": []
+      "source_values": {
+        "N011": {
+          "start": "11:48",
+          "end": "13:13",
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
         },
-        "end_time": {
-          "value": "13:13",
-          "support": [
-            "N011",
-            "R033"
-          ],
-          "conflicts": [],
-          "status": "supported",
-          "source_values": {
-            "N011": "13:13",
-            "R033": "13:13"
-          },
-          "radar_batch_observations": []
+        "O027": {
+          "start": null,
+          "end": null,
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "R033": {
+          "start": "11:48",
+          "end": "13:13",
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
         }
+      },
+      "asserted_boundaries": {
+        "start": {},
+        "end": {}
       },
       "supporting_source_types": [
         "news",
@@ -711,7 +680,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "三源（新闻、舆论、雷达）均明确任务为“联合搜救训练”，完全一致。"
+        "reason": "新闻、舆论、雷达三源均明确为“联合搜救训练”，完全一致。"
       },
       "checked_by": "literal_assertion_matrix",
       "source_values": {
@@ -751,7 +720,7 @@
         ],
         "conflicting_sources": [],
         "status": "insufficient",
-        "reason": "仅新闻提及“离开”，雷达未说明运动状态，舆论仅称“活动”。因缺乏多源印证且无明确冲突，结论为 insufficient（非 conflict）。"
+        "reason": "仅新闻提及“离开”，雷达未说明运动状态，舆论称“活动”，缺乏两类来源支持具体离场动作。"
       },
       "checked_by": "literal_assertion_matrix",
       "source_values": {

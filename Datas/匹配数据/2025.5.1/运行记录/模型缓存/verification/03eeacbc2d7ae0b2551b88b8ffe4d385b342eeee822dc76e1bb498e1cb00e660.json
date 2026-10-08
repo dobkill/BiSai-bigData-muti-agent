@@ -1,0 +1,310 @@
+{
+  "role": "verification",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N043",
+      "kind": "news",
+      "title": "中国歼-16D电子战飞机在塔斯曼海开展电子对抗训练",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：中国歼-16D电子战飞机在塔斯曼海开展电子对抗训练\n正文：2025年5月1日2时05分至4时30分，中国歼-16D电子战飞机在塔斯曼海围绕任务海域组织电子对抗训练，按计划保持机动并持续执行电子对抗训练，围绕既定科目组织训练并完成相关平台之间的行动衔接。\n\n主题词：中国  歼-16D电子战飞机  电子对抗训练  塔斯曼海\n",
+      "platforms": [
+        {
+          "name": "歼-16D电子战飞机",
+          "country": "中国",
+          "quantity": null,
+          "quote": "中国歼-16D电子战飞机",
+          "quantity_quote": "",
+          "country_raw": "中国"
+        }
+      ],
+      "location": {
+        "raw": "塔斯曼海",
+        "region": "塔斯曼海",
+        "direction": "其他",
+        "precision": "原文区域",
+        "mapping": "PDF未列入三大核心海域的区域归其他",
+        "transit": false,
+        "quote": "在塔斯曼海"
+      },
+      "mission": {
+        "value": "电子对抗训练",
+        "quote": "开展电子对抗训练"
+      },
+      "start_time": "02:05",
+      "end_time": "04:30",
+      "movement": "活动",
+      "time_semantics": {
+        "interval": "reported_activity",
+        "start_asserted": false,
+        "end_asserted": false
+      }
+    },
+    "opinion": {
+      "id": "O001",
+      "kind": "opinion",
+      "title": "中国两架歼-16D电子战机在塔斯曼海组织训练",
+      "text": "时间：2025.5.1\n\n标题：中国两架歼-16D电子战机在塔斯曼海组织训练\n\n正文：据公开防务媒体报道，2025年5月1日，中国两架歼-16D电子战飞机在塔斯曼海围绕既定科目组织电子对抗训练，并按计划完成相关平台之间的行动衔接。相关动态被视为检验远海训练协同能力的重要窗口。有助于评估在复杂电磁环境下任务组织的熟悉程度。\n",
+      "platforms": [
+        {
+          "name": "歼-16D电子战机",
+          "country": "中国",
+          "quantity": 2,
+          "quote": "中国两架歼-16D电子战飞机",
+          "quantity_quote": "两架歼-16D电子战机",
+          "country_raw": "中国"
+        }
+      ],
+      "location": {
+        "raw": "塔斯曼海",
+        "region": "塔斯曼海",
+        "direction": "其他",
+        "precision": "原文区域",
+        "mapping": "PDF未列入三大核心海域的区域归其他",
+        "transit": false,
+        "quote": "在塔斯曼海围绕既定科目组织电子对抗训练"
+      },
+      "mission": {
+        "value": "电子对抗训练",
+        "quote": "组织电子对抗训练"
+      },
+      "start_time": null,
+      "end_time": null,
+      "movement": "活动",
+      "time_semantics": {
+        "interval": "reported_activity",
+        "start_asserted": false,
+        "end_asserted": false
+      }
+    },
+    "radars": [
+      {
+        "id": "R023",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "歼-16D电子战飞机",
+            "country": "中国",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-E0C394489245A4",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "电子对抗训练",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "电子对抗训练"
+        ],
+        "start_time": "2025.05.01 02:05:00",
+        "end_time": "2025.05.01 04:30:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            160.1665,
+            160.3599
+          ],
+          "latitude_range": [
+            -38.0066,
+            -37.848
+          ],
+          "median": [
+            160.2562,
+            -37.9369
+          ],
+          "origins": [
+            [
+              160.1838,
+              -37.8926
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [],
+        "batch": "AIR-E0C394489245A4",
+        "sibling_ids": [],
+        "hull_values": [],
+        "country_values": [
+          "中国"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 12,
+        "time_semantics": {
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "identity_scope": "batch_is_not_unique_target",
+        "warnings": []
+      }
+    ],
+    "association": {
+      "opinion_edges": [
+        {
+          "candidate_id": "O001",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.98,
+          "reason": "平台（歼 -16D）、地点（塔斯曼海）、任务（电子对抗训练）及时间区间（2025.5.1 凌晨）完全一致。O001 明确提及“两架”，与新闻中隐含的编队行动相符，属于同一事件的不同报道视角。"
+        },
+        {
+          "candidate_id": "O016",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.95,
+          "reason": "平台完全不同（903A 补给舰 vs 歼 -16D），地点不同（南海方向 vs 塔斯曼海），虽时间重叠但属于完全不同的活动。"
+        },
+        {
+          "candidate_id": "O023",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.95,
+          "reason": "平台（俄军苏 -35S）、国籍、地点（黄海）及任务均与新闻不符，属于不同国家的独立活动。"
+        }
+      ],
+      "radar_edges": [
+        {
+          "candidate_id": "R023",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.95,
+          "reason": "平台（歼 -16D）、任务（电子对抗训练）及时间（02:05-04:30）与新闻完全匹配。尽管雷达数据缺少明确的地理标签（region/direction），但其坐标范围（南纬 37.8-38.0，东经 160.1-160.3）精确落在塔斯曼海海域，且批号唯一性警告提示需结合其他线索判断，此处时空与身份高度相容。"
+        },
+        {
+          "candidate_id": "R034",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.95,
+          "reason": "平台（福建号航母）、地点（钓鱼岛海域/东海）与新闻不符。"
+        },
+        {
+          "candidate_id": "R044",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.95,
+          "reason": "平台（903A 补给舰）、地点（万安滩海域/南海）与新闻不符。"
+        }
+      ],
+      "ambiguity": "无。O001 和 R023 均提供了充分证据指向同一事件，其他候选在平台、地点或任务上存在明显冲突。"
+    },
+    "same_batch_other_candidates": []
+  },
+  "result": {
+    "same_event": true,
+    "platforms": [
+      {
+        "platform_index": 0,
+        "platform": {
+          "claim": "歼 -16D 电子战飞机",
+          "supporting_sources": [
+            "N043",
+            "O001",
+            "R023"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源一致"
+        },
+        "country": {
+          "claim": "中国",
+          "supporting_sources": [
+            "N043",
+            "O001",
+            "R023"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源一致"
+        },
+        "quantity": {
+          "claim": "2 架",
+          "supporting_sources": [
+            "O001",
+            "R023"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论与雷达明确支持，新闻虽未明示数量但描述编队行动且无冲突"
+        }
+      }
+    ],
+    "location": {
+      "claim": "塔斯曼海",
+      "supporting_sources": [
+        "N043",
+        "O001"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与舆论文本均明确提及塔斯曼海，雷达坐标范围（南纬 37.8-38.0，东经 160.1-160.3）地理落点确认为塔斯曼海"
+    },
+    "time": {
+      "claim": "2025 年 5 月 1 日 02:05 - 04:30",
+      "supporting_sources": [
+        "N043",
+        "R023"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与雷达时间完全一致，舆论仅提及日期"
+    },
+    "mission": {
+      "claim": "电子对抗训练",
+      "supporting_sources": [
+        "N043",
+        "O001",
+        "R023"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "三源均明确指向电子对抗训练"
+    },
+    "movement": {
+      "claim": "活动",
+      "supporting_sources": [
+        "N043",
+        "O001"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与舆论均描述为组织训练活动，雷达虽未显式说明但时空重合支持同一活动"
+    },
+    "unresolved_issues": [],
+    "explanation": "三源（新闻、舆论、雷达）在平台型号、国籍、任务及核心时间地点上高度一致。数量方面，舆论和雷达明确支持"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-08T00:11:27.1445054Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"same_event\": true, \"platforms\": [{\"platform_index\": 0, \"platform\": {\"claim\": \"歼 -16D 电子战飞机\", \"supporting_sources\": [\"N043\", \"O001\", \"R023\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源一致\"}, \"country\": {\"claim\": \"中国\", \"supporting_sources\": [\"N043\", \"O001\", \"R023\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源一致\"}, \"quantity\": {\"claim\": \"2 架\", \"supporting_sources\": [\"O001\", \"R023\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"舆论与雷达明确支持，新闻虽未明示数量但描述编队行动且无冲突\"}}], \"location\": {\"claim\": \"塔斯曼海\", \"supporting_sources\": [\"N043\", \"O001\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻与舆论文本均明确提及塔斯曼海，雷达坐标范围（南纬 37.8-38.0，东经 160.1-160.3）地理落点确认为塔斯曼海\"}, \"time\": {\"claim\": \"2025 年 5 月 1 日 02:05 - 04:30\", \"supporting_sources\": [\"N043\", \"R023\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻与雷达时间完全一致，舆论仅提及日期\"}, \"mission\": {\"claim\": \"电子对抗训练\", \"supporting_sources\": [\"N043\", \"O001\", \"R023\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源均明确指向电子对抗训练\"}, \"movement\": {\"claim\": \"活动\", \"supporting_sources\": [\"N043\", \"O001\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻与舆论均描述为组织训练活动，雷达虽未显式说明但时空重合支持同一活动\"}, \"unresolved_issues\": [],\"explanation\":\"三源（新闻、舆论、雷达）在平台型号、国籍、任务及核心时间地点上高度一致。数量方面，舆论和雷达明确支持\" }"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 11298298200,
+    "load_duration": 15649600,
+    "prompt_eval_count": 2424,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 853695000,
+    "eval_count": 543,
+    "eval_duration": 10204879000
+  }
+}

@@ -34,7 +34,7 @@
 | 0 | country | 俄罗斯 | supported | N038,O010,R040 |  | 程序按已关联平台的明示字段复核：{'N038': '俄罗斯', 'O010': '俄罗斯', 'R040': '俄罗斯'}；缺失不支持也不反对 |
 | 0 | quantity | 1艘 | supported | O010,R040 |  | 程序按已关联平台的明示字段复核：{'O010': 1, 'R040': 1}；缺失不支持也不反对 |
 | -1 | location | 菲律宾海 | supported | N038,O010,R040 |  | 复核明示地点和PDF包含关系：{'N038': '菲律宾海', 'O010': '菲律宾海', 'R040': '菲律宾海'}；同方向不等于同一具体区域，未验证坐标不作为反证 |
-| -1 | time | 起点 20:58，终点 22:23 | supported | N038,R040 |  | 逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突；起点明示值：{'N038': '20:58', 'R040': '20:58'}；终点明示值：{'N038': '22:23', 'R040': '22:23'} |
+| -1 | time | 共同观测/报道时段 20:58—22:23（非完整活动起止断言） | supported | N038,R040 |  | 分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N038': {'start': '20:58', 'end': '22:23', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O010': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R040': {'start': '20:58', 'end': '22:23', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}} |
 | -1 | mission | 联合搜救训练 | supported | N038,O010,R040 |  | 原文明示任务：{'N038': ['联合搜救训练'], 'O010': ['联合搜救训练'], 'R040': ['联合搜救训练']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决 |
 | -1 | movement | 活动 | supported | N038,O010 |  | 活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values |
 

@@ -16,8 +16,8 @@
           0
         ],
         "relation": "same",
-        "confidence": 0.92,
-        "reason": "平台（意大利 2 架 F-35B）、时间（2025.5.1）、地点（南海/南沙）完全一致。新闻描述为‘持续活动’，候选 O017 描述为‘对海突击训练’，属于同一行动的不同表述或任务细化，非冲突。"
+        "confidence": 0.95,
+        "reason": "平台（意大利 2 架 F-35B）、时间（2025.5.1）、地点（南海/南沙）完全一致。任务描述“对海突击训练”与新闻中的“持续开展活动”在语义上相容，属于同一活动的不同报道角度。"
       },
       {
         "candidate_id": "O013",
@@ -25,8 +25,8 @@
           0
         ],
         "relation": "same",
-        "confidence": 0.88,
-        "reason": "平台、时间、地点一致。新闻未指定具体任务类型，候选 O013 明确为‘舰载机起降训练’且给出了具体时间窗口（05:23-07:48），与新闻中‘持续活动’的描述兼容，视为同一活动的具体执行阶段。"
+        "confidence": 0.92,
+        "reason": "平台、时间、地点一致。任务“舰载机起降训练”是新闻中“围绕任务区域保持机动”的具体化解释，且雷达数据 R027 的时间段（05:23-07:48）与该舆论报道高度吻合，确认为同一活动。"
       },
       {
         "candidate_id": "O019",
@@ -34,8 +34,8 @@
           0
         ],
         "relation": "different",
-        "confidence": 0.95,
-        "reason": "平台型号不同（苏 -30SM vs F-35B），国籍不同（俄罗斯 vs 意大利），虽时间和地点重合，但属于完全不同的军事单位活动。"
+        "confidence": 0.98,
+        "reason": "平台完全不同（俄罗斯苏 -30SM vs 意大利 F-35B），虽同在南沙海域同日活动，但属于不同国家的独立行动。"
       }
     ],
     "radar_edges": [
@@ -46,7 +46,7 @@
         ],
         "relation": "same",
         "confidence": 0.85,
-        "reason": "平台（意大利 2 架 F-35B）、时间（2025.5.1 晚间）与新闻一致。雷达数据坐标位于南海，任务为‘对海突击训练’，与新闻描述的活动性质相符，视为同一活动的雷达记录。"
+        "reason": "平台（意大利 2 架 F-35B）、时间（20:09-22:34）与新闻报道的“持续活动”时段重叠。地点坐标位于南海，虽未验证具体为南沙，但符合新闻的大范围描述，且任务“对海突击训练”与舆论 O017 一致，视为同一活动的雷达观测分支。"
       },
       {
         "candidate_id": "R027",
@@ -54,20 +54,20 @@
           0
         ],
         "relation": "same",
-        "confidence": 0.85,
-        "reason": "平台（意大利 2 架 F-35B）、时间（2025.5.1 早晨）与新闻一致。雷达数据坐标位于南海，任务为‘舰载机起降训练’，与候选 O013 及新闻描述高度吻合，视为同一活动的具体时段记录。"
+        "confidence": 0.95,
+        "reason": "平台、数量完全匹配。时间（05:23-07:48）与舆论 O013 及新闻中的“持续活动”起始时段高度重合，地点坐标位于南海，确认为同一活动的具体观测记录。"
       },
       {
         "candidate_id": "R052",
         "platform_indices": [
           0
         ],
-        "relation": "uncertain",
-        "confidence": 0.6,
-        "reason": "平台为意大利舰艇（莱蒙多·蒙特库科利号），非新闻提及的 F-35B，但同属意大利海军在南沙海域的活动。可能是伴随行动或同一编队内的不同单元活动，因缺乏直接关联证据暂定为 uncertain。"
+        "relation": "different",
+        "confidence": 0.99,
+        "reason": "平台完全不同（意大利巡逻舰 vs F-35B），任务为反潜巡逻，虽同在南海同日，但属于不同平台的独立行动。"
       }
     ],
-    "ambiguity": "新闻未明确具体任务类型（训练还是巡逻），仅描述为‘持续活动’，导致 O017/O013/R012/R027 均可能属于同一活动的不同侧面或连续阶段；R052 虽同国同海域但平台类型不同，存在伴随行动的可能性。"
+    "ambiguity": "新闻未明确具体起止时间，仅称“持续活动”，导致无法精确区分 O017、O013 及 R012、R027 是否为完全连续的单一时间段，但基于平台、地点和任务性质的高度一致性，判定为同一系列活动。"
   },
   "candidates": {
     "opinion": [
@@ -176,35 +176,20 @@
       {
         "candidate_id": "O017",
         "current_owner": "N047",
-        "weight_margin": 85.60744,
+        "weight_margin": 86.60744,
         "assumption": "每篇舆论/每个雷达候选唯一归属；分数差不是校准概率"
       }
     ],
-    "radar": [
-      {
-        "candidate_id": "R012",
-        "current_owner": "N047",
-        "weight_margin": 103.33657,
-        "assumption": "每篇舆论/每个雷达候选唯一归属；分数差不是校准概率",
-        "platform_index": 0
-      }
-    ]
+    "radar": []
   },
+  "radar_context": [],
   "resolved_competition": [
     {
       "selected": "O013",
       "candidate_id": "O017",
       "current_owner": "N047",
-      "weight_margin": 85.60744,
+      "weight_margin": 86.60744,
       "assumption": "每篇舆论/每个雷达候选唯一归属；分数差不是校准概率"
-    },
-    {
-      "selected": "R027",
-      "candidate_id": "R012",
-      "current_owner": "N047",
-      "weight_margin": 103.33657,
-      "assumption": "每篇舆论/每个雷达候选唯一归属；分数差不是校准概率",
-      "platform_index": 0
     }
   ],
   "verification": {
@@ -233,7 +218,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻、舆论、雷达三源均确认为意大利 F-35B"
+          "reason": "三源均明确标识为 F-35B"
         },
         "checked_by": "explicit_source_matrix",
         "supporting_source_types": [
@@ -265,7 +250,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻、舆论、雷达三源均确认为意大利"
+          "reason": "三源均明确标识国籍为意大利"
         },
         "checked_by": "explicit_source_matrix",
         "supporting_source_types": [
@@ -295,7 +280,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻明确提及 2 架，雷达批号 AIR-FE3B02517D3201 确认数量为 2；舆论未提数量但不构成冲突"
+          "reason": "新闻 N029 和雷达 R027 均明确提及数量为 2 架；舆论 O013 未提数量但不构成冲突"
         },
         "checked_by": "explicit_source_matrix",
         "supporting_source_types": [
@@ -323,7 +308,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻明确位于南沙群岛海域；舆论提及南海方向（兼容）；雷达坐标位于南海且未提供精确地点文本，不冲突"
+          "reason": "新闻 N029 明确表述为“南沙群岛海域”；舆论 O013 的“南海方向”及雷达 R027 的坐标（北纬 9.9-10.1，东经 113.8-114.0）均兼容该具体区域描述"
         },
         "checked_by": "literal_assertion_matrix",
         "source_values": {
@@ -354,14 +339,14 @@
       {
         "platform_index": -1,
         "field": "time",
-        "claim": "起点 05:23，终点 07:48",
+        "claim": "共同观测/报道时段 05:23—07:48（非完整活动起止断言）",
         "supporting_sources": [
           "O013",
           "R027"
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突；起点明示值：{'O013': '05:23', 'R027': '05:23'}；终点明示值：{'O013': '07:48', 'R027': '07:48'}",
+        "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N029': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O013': {'start': '05:23', 'end': '07:48', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R027': {'start': '05:23', 'end': '07:48', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
         "model_proposal": {
           "platform_index": -1,
           "field": "time",
@@ -373,38 +358,35 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻、舆论、雷达三源时间一致"
+          "reason": "三源均确认活动日期为 2025 年 5 月 1 日；舆论和雷达提供了具体时刻（05:23-07:48），新闻仅表述为当日持续活动，时间区间兼容"
         },
         "checked_by": "literal_assertion_matrix",
-        "components": {
-          "start_time": {
-            "value": "05:23",
-            "support": [
-              "O013",
-              "R027"
-            ],
-            "conflicts": [],
-            "status": "supported",
-            "source_values": {
-              "O013": "05:23",
-              "R027": "05:23"
-            },
-            "radar_batch_observations": []
+        "source_values": {
+          "N029": {
+            "start": null,
+            "end": null,
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
           },
-          "end_time": {
-            "value": "07:48",
-            "support": [
-              "O013",
-              "R027"
-            ],
-            "conflicts": [],
-            "status": "supported",
-            "source_values": {
-              "O013": "07:48",
-              "R027": "07:48"
-            },
-            "radar_batch_observations": []
+          "O013": {
+            "start": "05:23",
+            "end": "07:48",
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
+          },
+          "R027": {
+            "start": "05:23",
+            "end": "07:48",
+            "interval": "observation_coverage",
+            "start_asserted": false,
+            "end_asserted": false
           }
+        },
+        "asserted_boundaries": {
+          "start": {},
+          "end": {}
         },
         "supporting_source_types": [
           "opinion",
@@ -432,7 +414,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "舆论明确为舰载机起降训练，雷达任务列示为舰载机起降训练；新闻描述为持续活动，兼容具体训练任务"
+          "reason": "舆论 O013 和雷达 R027 均明确任务为“舰载机起降训练”；新闻 N029 描述为“持续开展活动”，在缺乏更具体官方定义时，可视为对同一训练活动的概括性报道，不构成实质冲突"
         },
         "checked_by": "literal_assertion_matrix",
         "source_values": {
@@ -466,11 +448,12 @@
           "claim": "活动",
           "supporting_sources": [
             "N029",
-            "O013"
+            "O013",
+            "R027"
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻、舆论均描述为活动/机动"
+          "reason": "三源均描述为活动状态（新闻“持续活动”，舆论“组织...训练”，雷达“未说明”但时间地点重合）"
         },
         "checked_by": "literal_assertion_matrix",
         "source_values": {
@@ -502,7 +485,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻明确位于南沙群岛海域；舆论提及南海方向（兼容）；雷达坐标位于南海且未提供精确地点文本，不冲突"
+          "reason": "新闻 N029 明确表述为“南沙群岛海域”；舆论 O013 的“南海方向”及雷达 R027 的坐标（北纬 9.9-10.1，东经 113.8-114.0）均兼容该具体区域描述"
         },
         "supporting_source_types": [
           "news"
@@ -511,7 +494,9 @@
     ],
     "unresolved_issues": [],
     "explanation": "三类来源已关联，纳入结论的事实获得至少两类独立来源支持，未发现未消解明示反证。",
-    "model_explanation": "三源在平台型号、国籍、时间、地点（精度不同但兼容）、任务性质上高度一致。数量由新闻和雷达共同支持，舆论缺失但不冲突。舆论提供了具体时刻，雷达提供了精确坐标范围，新闻提供了宏观区域描述，无未消解冲突。"
+    "model_unresolved_issues": [],
+    "reconciled_model_issues": [],
+    "model_explanation": "新闻 N029、舆论 O013 及雷达 R027 在平台型号（F-35B）、国籍（意大利）、数量（2 架）、地点（南沙群岛海域/南海坐标兼容）、时间（2025.5.1）及任务性质（训练/活动）上高度一致。舆论和雷达提供了具体的起止时刻，新闻提供了宏观的时间范围描述，三者互为补充，无未消解冲突。"
   },
   "reasons": [],
   "status": "可信事件",
@@ -539,7 +524,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "新闻、舆论、雷达三源均确认为意大利 F-35B"
+        "reason": "三源均明确标识为 F-35B"
       },
       "checked_by": "explicit_source_matrix",
       "supporting_source_types": [
@@ -571,7 +556,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "新闻、舆论、雷达三源均确认为意大利"
+        "reason": "三源均明确标识国籍为意大利"
       },
       "checked_by": "explicit_source_matrix",
       "supporting_source_types": [
@@ -601,7 +586,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "新闻明确提及 2 架，雷达批号 AIR-FE3B02517D3201 确认数量为 2；舆论未提数量但不构成冲突"
+        "reason": "新闻 N029 和雷达 R027 均明确提及数量为 2 架；舆论 O013 未提数量但不构成冲突"
       },
       "checked_by": "explicit_source_matrix",
       "supporting_source_types": [
@@ -629,7 +614,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "新闻明确位于南沙群岛海域；舆论提及南海方向（兼容）；雷达坐标位于南海且未提供精确地点文本，不冲突"
+        "reason": "新闻 N029 明确表述为“南沙群岛海域”；舆论 O013 的“南海方向”及雷达 R027 的坐标（北纬 9.9-10.1，东经 113.8-114.0）均兼容该具体区域描述"
       },
       "checked_by": "literal_assertion_matrix",
       "source_values": {
@@ -660,14 +645,14 @@
     {
       "platform_index": -1,
       "field": "time",
-      "claim": "起点 05:23，终点 07:48",
+      "claim": "共同观测/报道时段 05:23—07:48（非完整活动起止断言）",
       "supporting_sources": [
         "O013",
         "R027"
       ],
       "conflicting_sources": [],
       "status": "supported",
-      "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突；起点明示值：{'O013': '05:23', 'R027': '05:23'}；终点明示值：{'O013': '07:48', 'R027': '07:48'}",
+      "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N029': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O013': {'start': '05:23', 'end': '07:48', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R027': {'start': '05:23', 'end': '07:48', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
       "model_proposal": {
         "platform_index": -1,
         "field": "time",
@@ -679,38 +664,35 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "新闻、舆论、雷达三源时间一致"
+        "reason": "三源均确认活动日期为 2025 年 5 月 1 日；舆论和雷达提供了具体时刻（05:23-07:48），新闻仅表述为当日持续活动，时间区间兼容"
       },
       "checked_by": "literal_assertion_matrix",
-      "components": {
-        "start_time": {
-          "value": "05:23",
-          "support": [
-            "O013",
-            "R027"
-          ],
-          "conflicts": [],
-          "status": "supported",
-          "source_values": {
-            "O013": "05:23",
-            "R027": "05:23"
-          },
-          "radar_batch_observations": []
+      "source_values": {
+        "N029": {
+          "start": null,
+          "end": null,
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
         },
-        "end_time": {
-          "value": "07:48",
-          "support": [
-            "O013",
-            "R027"
-          ],
-          "conflicts": [],
-          "status": "supported",
-          "source_values": {
-            "O013": "07:48",
-            "R027": "07:48"
-          },
-          "radar_batch_observations": []
+        "O013": {
+          "start": "05:23",
+          "end": "07:48",
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "R027": {
+          "start": "05:23",
+          "end": "07:48",
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
         }
+      },
+      "asserted_boundaries": {
+        "start": {},
+        "end": {}
       },
       "supporting_source_types": [
         "opinion",
@@ -738,7 +720,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "舆论明确为舰载机起降训练，雷达任务列示为舰载机起降训练；新闻描述为持续活动，兼容具体训练任务"
+        "reason": "舆论 O013 和雷达 R027 均明确任务为“舰载机起降训练”；新闻 N029 描述为“持续开展活动”，在缺乏更具体官方定义时，可视为对同一训练活动的概括性报道，不构成实质冲突"
       },
       "checked_by": "literal_assertion_matrix",
       "source_values": {
@@ -772,11 +754,12 @@
         "claim": "活动",
         "supporting_sources": [
           "N029",
-          "O013"
+          "O013",
+          "R027"
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "新闻、舆论均描述为活动/机动"
+        "reason": "三源均描述为活动状态（新闻“持续活动”，舆论“组织...训练”，雷达“未说明”但时间地点重合）"
       },
       "checked_by": "literal_assertion_matrix",
       "source_values": {

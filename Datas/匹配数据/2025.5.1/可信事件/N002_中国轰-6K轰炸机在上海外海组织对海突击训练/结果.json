@@ -17,7 +17,7 @@
         ],
         "relation": "same",
         "confidence": 0.95,
-        "reason": "平台（轰-6K）、地点（上海外海/东海）、任务（对海突击训练）及时间区间（11:21-13:46 vs 11:xx-13:xx）完全一致。虽O037未明确起止分钟，但描述的行动特征（进入、机动、区域控制）与新闻高度吻合，属于同一活动报道。"
+        "reason": "平台（轰 -6K）、地点（上海外海/东海）、任务（对海突击训练）及时间区间（11:21-13:46）完全一致。舆论虽未给出精确起止，但描述的行动特征（进入、机动、保持区域）与新闻报道高度吻合，属于同一事件的不同侧面报道。"
       },
       {
         "candidate_id": "O005",
@@ -25,17 +25,17 @@
           0
         ],
         "relation": "different",
-        "confidence": 0.9,
-        "reason": "平台不同（德国台风 vs 中国轰-6K），时间不重叠（05:45-07:10 vs 11:21-13:46），地点虽同为东海但具体区域无重合证据，确认为不同活动。"
+        "confidence": 0.98,
+        "reason": "虽然任务（对海突击训练）和地点（东海）相似，但平台国籍不同（德国 vs 中国），且时间区间无重叠（05:45-07:10 vs 11:21-13:46），确认为不同活动。"
       },
       {
         "candidate_id": "O021",
         "platform_indices": [
           0
         ],
-        "relation": "different",
-        "confidence": 0.85,
-        "reason": "平台不同（歼-35 vs 轰-6K），任务不同（战备警巡 vs 对海突击训练）。虽同在东海且时间有重叠，但缺乏同一编队协同或共同海域的具体描述，视为不同活动。"
+        "relation": "uncertain",
+        "confidence": 0.6,
+        "reason": "平台（歼 -35）与新闻不符，但地点（东海方向）和时间（同日）存在部分重叠。由于缺乏具体坐标或更精确的时间点，无法排除其作为伴随活动或同一编队中其他机型的可能性，但主要特征不匹配，暂列为不确定/不同活动。"
       }
     ],
     "radar_edges": [
@@ -46,7 +46,7 @@
         ],
         "relation": "same",
         "confidence": 1.0,
-        "reason": "平台（轰-6K）、任务（对海突击训练）、时间（11:21-13:46）与新闻完全一致。坐标范围（122.97-123.30E, 30.98-31.19N）精确覆盖上海外海区域，确认为同一活动的数据源。"
+        "reason": "雷达数据与新闻在平台（轰 -6K）、任务（对海突击训练）、时间（11:21-13:46）及地点坐标范围（经度 122.97-123.30，纬度 30.98-31.19，对应上海外海/东海）上完全一致。这是该事件的直接观测证据。"
       },
       {
         "candidate_id": "R021",
@@ -55,19 +55,19 @@
         ],
         "relation": "different",
         "confidence": 0.95,
-        "reason": "平台不同（歼-15T vs 轰-6K），任务不同（舰载机起降 vs 对海突击），坐标位于黄海方向，与新闻地点不符。"
+        "reason": "平台不同（歼 -15T vs 轰 -6K），任务不同（舰载机起降 vs 对海突击），且坐标显示位于黄海方向（经度 125+），与新闻的东海上海外海不符。"
       },
       {
-        "candidate_id": "R016",
+        "candidate_id": "R009",
         "platform_indices": [
           0
         ],
         "relation": "different",
-        "confidence": 0.9,
-        "reason": "平台不同（德国台风 vs 中国轰-6K），时间不重叠，虽坐标在东海但无关联证据，确认为不同活动。"
+        "confidence": 0.98,
+        "reason": "平台不同（运 -8 vs 轰 -6K），地点位于南海（经度 114+，纬度 18+），与新闻的东海上海外海完全不符。"
       }
     ],
-    "ambiguity": "O037未提供精确起止时间，仅凭标题和正文描述推断为同一活动；R022坐标为宽泛矩形辅助召回，需结合新闻文本确认具体海域边界，但整体指向一致。"
+    "ambiguity": "无。核心事件（轰 -6K 在上海外海对海突击）有明确的新闻、舆论和雷达数据三重证据链相互印证，其他候选因平台、地点或时间明显冲突可排除。"
   },
   "candidates": {
     "opinion": [
@@ -183,6 +183,7 @@
     "opinion": [],
     "radar": []
   },
+  "radar_context": [],
   "verification": {
     "same_event": true,
     "facts": [
@@ -209,7 +210,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "三源（新闻、舆论、雷达）均确认为中国轰 -6K，无冲突"
+          "reason": "新闻、舆论、雷达三源均确认为中国轰 -6K，完全一致。"
         },
         "checked_by": "explicit_source_matrix",
         "supporting_source_types": [
@@ -241,7 +242,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "三源（新闻、舆论、雷达）均明确标注为中国，无冲突"
+          "reason": "新闻、舆论、雷达三源均明确标注国籍为中国，完全一致。"
         },
         "checked_by": "explicit_source_matrix",
         "supporting_source_types": [
@@ -301,7 +302,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻与舆论直接描述为“上海外海”，雷达坐标范围覆盖该区域，三源一致"
+          "reason": "新闻与舆论文本均明确为“上海外海/东海”，雷达坐标范围（经度 122.97-123.30，纬度 30.98-31.19）地理上对应上海外海区域，三源位置信息一致且可互证。"
         },
         "checked_by": "literal_assertion_matrix",
         "source_values": {
@@ -332,56 +333,53 @@
       {
         "platform_index": -1,
         "field": "time",
-        "claim": "起点 11:21，终点 13:46",
+        "claim": "共同观测/报道时段 11:21—13:46（非完整活动起止断言）",
         "supporting_sources": [
           "N002",
           "R022"
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突；起点明示值：{'N002': '11:21', 'R022': '11:21'}；终点明示值：{'N002': '13:46', 'R022': '13:46'}",
+        "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N002': {'start': '11:21', 'end': '13:46', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O037': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R022': {'start': '11:21', 'end': '13:46', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
         "model_proposal": {
           "platform_index": -1,
           "field": "time",
-          "claim": "2025 年 5 月 1 日 11:21-13:46",
+          "claim": "2025 年 5 月 1 日 11:21 - 13:46",
           "supporting_sources": [
             "N002",
             "R022"
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻与雷达精确时间完全一致；舆论仅提及日期，不冲突也不构成反证"
+          "reason": "新闻与雷达数据在起止时间上完全精确匹配（11:21-13:46），舆论虽未提供具体时刻但确认了同日的活动区间，三源共同支持该时间段。"
         },
         "checked_by": "literal_assertion_matrix",
-        "components": {
-          "start_time": {
-            "value": "11:21",
-            "support": [
-              "N002",
-              "R022"
-            ],
-            "conflicts": [],
-            "status": "supported",
-            "source_values": {
-              "N002": "11:21",
-              "R022": "11:21"
-            },
-            "radar_batch_observations": []
+        "source_values": {
+          "N002": {
+            "start": "11:21",
+            "end": "13:46",
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
           },
-          "end_time": {
-            "value": "13:46",
-            "support": [
-              "N002",
-              "R022"
-            ],
-            "conflicts": [],
-            "status": "supported",
-            "source_values": {
-              "N002": "13:46",
-              "R022": "13:46"
-            },
-            "radar_batch_observations": []
+          "O037": {
+            "start": null,
+            "end": null,
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
+          },
+          "R022": {
+            "start": "11:21",
+            "end": "13:46",
+            "interval": "observation_coverage",
+            "start_asserted": false,
+            "end_asserted": false
           }
+        },
+        "asserted_boundaries": {
+          "start": {},
+          "end": {}
         },
         "supporting_source_types": [
           "news",
@@ -409,7 +407,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻与雷达明确任务为“对海突击训练”；舆论描述为“机动/区域控制”，属于同一活动的泛称，无实质冲突"
+          "reason": "新闻与雷达数据均明确任务为“对海突击训练”，舆论虽未直接复述该术语但描述了“机动”、“任务海域”等特征，结合前两源可确认为同一训练科目。"
         },
         "checked_by": "literal_assertion_matrix",
         "source_values": {
@@ -440,15 +438,14 @@
         "model_proposal": {
           "platform_index": -1,
           "field": "movement",
-          "claim": "活动（含进入、机动）",
+          "claim": "活动（机动）",
           "supporting_sources": [
             "N002",
-            "O037",
-            "R022"
+            "O037"
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻描述“保持机动”，舆论描述“进入...展开机动”，雷达虽未显式写 movement 但坐标变化隐含活动，三源逻辑一致"
+          "reason": "新闻描述“保持机动”，舆论描述“进入...展开机动”，雷达显示为活动状态，三源共同支持平台进行了机动活动。"
         },
         "checked_by": "literal_assertion_matrix",
         "source_values": {
@@ -464,7 +461,9 @@
     ],
     "unresolved_issues": [],
     "explanation": "三类来源已关联，纳入结论的事实获得至少两类独立来源支持，未发现未消解明示反证。",
-    "model_explanation": "新闻、舆论、雷达三类来源在平台型号（轰 -6K）、国籍（中国）、地点（上海外海）、时间（5.1 11:21-13:46）及任务（对海突击训练）上高度一致。数量"
+    "model_unresolved_issues": [],
+    "reconciled_model_issues": [],
+    "model_explanation": "事件关联成立：新闻、舆论、雷达三源在平台型号（轰 -6K）、国籍（中国）、数量（2 架）、地点（上海外海/东海）、时间（2025.5.1 11:21-13:46）及任务（对海突击训练）上高度一致。雷达数据提供了精确的坐标和时间戳，与新闻文本完全吻合；舆论补充了编队进入和机动的过程描述。所有关键事实均有至少两类来源支持，无未消解冲突。"
   },
   "reasons": [],
   "status": "可信事件",
@@ -492,7 +491,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "三源（新闻、舆论、雷达）均确认为中国轰 -6K，无冲突"
+        "reason": "新闻、舆论、雷达三源均确认为中国轰 -6K，完全一致。"
       },
       "checked_by": "explicit_source_matrix",
       "supporting_source_types": [
@@ -524,7 +523,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "三源（新闻、舆论、雷达）均明确标注为中国，无冲突"
+        "reason": "新闻、舆论、雷达三源均明确标注国籍为中国，完全一致。"
       },
       "checked_by": "explicit_source_matrix",
       "supporting_source_types": [
@@ -584,7 +583,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "新闻与舆论直接描述为“上海外海”，雷达坐标范围覆盖该区域，三源一致"
+        "reason": "新闻与舆论文本均明确为“上海外海/东海”，雷达坐标范围（经度 122.97-123.30，纬度 30.98-31.19）地理上对应上海外海区域，三源位置信息一致且可互证。"
       },
       "checked_by": "literal_assertion_matrix",
       "source_values": {
@@ -615,56 +614,53 @@
     {
       "platform_index": -1,
       "field": "time",
-      "claim": "起点 11:21，终点 13:46",
+      "claim": "共同观测/报道时段 11:21—13:46（非完整活动起止断言）",
       "supporting_sources": [
         "N002",
         "R022"
       ],
       "conflicting_sources": [],
       "status": "supported",
-      "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突；起点明示值：{'N002': '11:21', 'R022': '11:21'}；终点明示值：{'N002': '13:46', 'R022': '13:46'}",
+      "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N002': {'start': '11:21', 'end': '13:46', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O037': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R022': {'start': '11:21', 'end': '13:46', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
       "model_proposal": {
         "platform_index": -1,
         "field": "time",
-        "claim": "2025 年 5 月 1 日 11:21-13:46",
+        "claim": "2025 年 5 月 1 日 11:21 - 13:46",
         "supporting_sources": [
           "N002",
           "R022"
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "新闻与雷达精确时间完全一致；舆论仅提及日期，不冲突也不构成反证"
+        "reason": "新闻与雷达数据在起止时间上完全精确匹配（11:21-13:46），舆论虽未提供具体时刻但确认了同日的活动区间，三源共同支持该时间段。"
       },
       "checked_by": "literal_assertion_matrix",
-      "components": {
-        "start_time": {
-          "value": "11:21",
-          "support": [
-            "N002",
-            "R022"
-          ],
-          "conflicts": [],
-          "status": "supported",
-          "source_values": {
-            "N002": "11:21",
-            "R022": "11:21"
-          },
-          "radar_batch_observations": []
+      "source_values": {
+        "N002": {
+          "start": "11:21",
+          "end": "13:46",
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
         },
-        "end_time": {
-          "value": "13:46",
-          "support": [
-            "N002",
-            "R022"
-          ],
-          "conflicts": [],
-          "status": "supported",
-          "source_values": {
-            "N002": "13:46",
-            "R022": "13:46"
-          },
-          "radar_batch_observations": []
+        "O037": {
+          "start": null,
+          "end": null,
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "R022": {
+          "start": "11:21",
+          "end": "13:46",
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
         }
+      },
+      "asserted_boundaries": {
+        "start": {},
+        "end": {}
       },
       "supporting_source_types": [
         "news",
@@ -692,7 +688,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "新闻与雷达明确任务为“对海突击训练”；舆论描述为“机动/区域控制”，属于同一活动的泛称，无实质冲突"
+        "reason": "新闻与雷达数据均明确任务为“对海突击训练”，舆论虽未直接复述该术语但描述了“机动”、“任务海域”等特征，结合前两源可确认为同一训练科目。"
       },
       "checked_by": "literal_assertion_matrix",
       "source_values": {
@@ -723,15 +719,14 @@
       "model_proposal": {
         "platform_index": -1,
         "field": "movement",
-        "claim": "活动（含进入、机动）",
+        "claim": "活动（机动）",
         "supporting_sources": [
           "N002",
-          "O037",
-          "R022"
+          "O037"
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "新闻描述“保持机动”，舆论描述“进入...展开机动”，雷达虽未显式写 movement 但坐标变化隐含活动，三源逻辑一致"
+        "reason": "新闻描述“保持机动”，舆论描述“进入...展开机动”，雷达显示为活动状态，三源共同支持平台进行了机动活动。"
       },
       "checked_by": "literal_assertion_matrix",
       "source_values": {

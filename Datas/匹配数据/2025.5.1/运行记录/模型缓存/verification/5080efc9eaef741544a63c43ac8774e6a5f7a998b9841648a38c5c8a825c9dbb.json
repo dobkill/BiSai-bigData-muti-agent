@@ -1,0 +1,307 @@
+{
+  "role": "verification",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N016",
+      "kind": "news",
+      "title": "韩国海军岛山安昌浩级潜艇在鄂霍次克海持续活动",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：韩国海军岛山安昌浩级潜艇在鄂霍次克海持续活动\n正文：2025年5月1日，韩国海军1艘岛山安昌浩级常规潜艇在鄂霍次克海持续活动，围绕任务区域保持机动，行动范围保持在指定任务海域。\n\n主题词：韩国海军  岛山安昌浩级常规潜艇  鄂霍次克海\n",
+      "platforms": [
+        {
+          "name": "岛山安昌浩级常规潜艇",
+          "country": "韩国",
+          "quantity": 1,
+          "quote": "岛山安昌浩级常规潜艇",
+          "quantity_quote": "1艘岛山安昌浩级常规潜艇",
+          "country_raw": "韩国"
+        }
+      ],
+      "location": {
+        "raw": "鄂霍次克海",
+        "region": "鄂霍次克海",
+        "direction": "其他",
+        "precision": "原文区域",
+        "mapping": "PDF未列入三大核心海域的区域归其他",
+        "transit": false,
+        "quote": "在鄂霍次克海持续活动"
+      },
+      "mission": {
+        "value": null,
+        "quote": ""
+      },
+      "start_time": null,
+      "end_time": null,
+      "movement": "活动",
+      "time_semantics": {
+        "interval": "reported_activity",
+        "start_asserted": false,
+        "end_asserted": false
+      }
+    },
+    "opinion": {
+      "id": "O009",
+      "kind": "opinion",
+      "title": "韩国岛山安昌浩级潜艇在鄂霍次克海完成海上巡逻",
+      "text": "时间：2025.5.1\n\n标题：韩国岛山安昌浩级潜艇在鄂霍次克海完成海上巡逻\n\n正文：据俄罗斯卫星通讯社报道，2025年5月1日17时40分至19时05分，韩国岛山安昌浩级常规潜艇在鄂霍次克海执行了海上巡逻任务。媒体关注到，该平台沿既定方向保持机动，围绕任务区域维持部署与警戒。这一行动被认为展现了韩国海军在该方向的前沿存在和部署持续性。\n",
+      "platforms": [
+        {
+          "name": "岛山安昌浩级常规潜艇",
+          "country": "韩国",
+          "quantity": null,
+          "quote": "韩国岛山安昌浩级常规潜艇",
+          "quantity_quote": "",
+          "country_raw": "韩国"
+        }
+      ],
+      "location": {
+        "raw": "鄂霍次克海",
+        "region": "鄂霍次克海",
+        "direction": "其他",
+        "precision": "原文区域",
+        "mapping": "PDF未列入三大核心海域的区域归其他",
+        "transit": false,
+        "quote": "在鄂霍次克海"
+      },
+      "mission": {
+        "value": "海上巡逻",
+        "quote": "执行了海上巡逻任务"
+      },
+      "start_time": "17:40",
+      "end_time": "19:05",
+      "movement": "活动",
+      "time_semantics": {
+        "interval": "reported_activity",
+        "start_asserted": false,
+        "end_asserted": false
+      }
+    },
+    "radars": [
+      {
+        "id": "R028",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "岛山安昌浩级常规潜艇",
+            "country": "韩国",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-10B1685DD16775",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "鄂霍次克海",
+          "region": "鄂霍次克海",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "鄂霍次克海",
+            "region": "鄂霍次克海",
+            "direction": "其他",
+            "precision": "原文区域",
+            "mapping": "PDF未列入三大核心海域的区域归其他",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "海上巡逻",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "海上巡逻"
+        ],
+        "start_time": "2025.05.01 17:40:00",
+        "end_time": "2025.05.01 19:05:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-10B1685DD16775",
+        "sibling_ids": [],
+        "hull_values": [
+          "KSS-III"
+        ],
+        "country_values": [
+          "韩国"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 11,
+        "time_semantics": {
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "identity_scope": "batch_is_not_unique_target",
+        "warnings": []
+      }
+    ],
+    "association": {
+      "opinion_edges": [
+        {
+          "candidate_id": "O009",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.95,
+          "reason": "平台（韩国岛山安昌浩级潜艇）、地点（鄂霍次克海）、时间（2025.5.1）及任务性质（巡逻/活动）完全一致。雷达数据 R028 提供了精确的起止时间（17:40-19:05），与新闻 O009 报道的具体时段吻合，确认为同一事件。"
+        },
+        {
+          "candidate_id": "O044",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.98,
+          "reason": "平台型号不同（独岛级两栖攻击舰 vs 岛山安昌浩级潜艇），且活动海域不同（东海 vs 鄂霍次克海），属于韩国海军同日不同编队的独立行动。"
+        },
+        {
+          "candidate_id": "O038",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.99,
+          "reason": "平台类型完全不同（直升机 vs 潜艇），且海域差异巨大（阿拉伯海 vs 鄂霍次克海），无关联。"
+        }
+      ],
+      "radar_edges": [
+        {
+          "candidate_id": "R028",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.98,
+          "reason": "平台型号、国籍、海域（鄂霍次克海）及任务（海上巡逻）与新闻 N016 完全匹配。雷达观测时间（17:40-19:05）落在新闻所述的“持续活动”区间内，且批号 SHIP-10B1685DD16775 提供了具体身份佐证，确认为同一事件的高精度记录。"
+        },
+        {
+          "candidate_id": "R041",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.99,
+          "reason": "平台型号不同（独岛级两栖攻击舰），海域不同（东海南部 vs 鄂霍次克海），属于韩国海军同日其他单位的独立活动。"
+        },
+        {
+          "candidate_id": "R036",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.99,
+          "reason": "平台型号不同（大邱级护卫舰），海域不同（巴伦支海 vs 鄂霍次克海），无关联。"
+        }
+      ],
+      "ambiguity": "无。新闻与雷达数据在平台、地点、时间及任务上高度一致，排除了其他候选项的干扰。"
+    },
+    "same_batch_other_candidates": []
+  },
+  "result": {
+    "same_event": true,
+    "platforms": [
+      {
+        "platform_index": 0,
+        "platform": {
+          "claim": "韩国海军岛山安昌浩级常规潜艇",
+          "supporting_sources": [
+            "N016",
+            "O009",
+            "R028"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均明确指向同一平台型号及国籍，无冲突。"
+        },
+        "country": {
+          "claim": "韩国",
+          "supporting_sources": [
+            "N016",
+            "O009",
+            "R028"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源一致确认国籍为韩国。"
+        },
+        "quantity": {
+          "claim": "1 艘",
+          "supporting_sources": [
+            "N016",
+            "R028"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻明确提及"
+        }
+      }
+    ],
+    "location": {
+      "claim": "鄂霍次克海",
+      "supporting_sources": [
+        "N016",
+        "O009",
+        "R028"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "三源一致确认活动海域为鄂霍次克海。"
+    },
+    "time": {
+      "claim": "2025 年 5 月 1 日 17:40-19:05",
+      "supporting_sources": [
+        "O009",
+        "R028"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "舆论与雷达提供了精确的起止时间，新闻虽未列具体时刻但涵盖该区间，三源在时间覆盖上无冲突。"
+    },
+    "mission": {
+      "claim": "海上巡逻/持续活动",
+      "supporting_sources": [
+        "O009",
+        "R028"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "舆论与雷达明确任务为“海上巡逻”，新闻描述为“持续活动”并围绕任务区域机动，两者在任务性质上相互印证。"
+    },
+    "movement": {
+      "claim": "活动/机动",
+      "supporting_sources": [
+        "N016",
+        "O009"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与舆论均描述平台保持机动或维持部署，雷达虽未显式标注 movement 但观测数据支持活动状态。"
+    },
+    "unresolved_issues": [],
+    "explanation": "新闻、舆论及雷达三源在平台型号、国籍、地点、时间及任务性质上高度一致。舆论和雷达提供了精确的时间窗口（17:40-19:05）和具体任务（海上巡逻），新闻作为背景报道确认了同一事件的存在，无未消解冲突。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-08T00:05:25.2100694Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"same_event\": true, \"platforms\": [{\"platform_index\": 0, \"platform\": {\"claim\": \"韩国海军岛山安昌浩级常规潜艇\", \"supporting_sources\": [\"N016\", \"O009\", \"R028\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源（新闻、舆论、雷达）均明确指向同一平台型号及国籍，无冲突。\"}, \"country\": {\"claim\": \"韩国\", \"supporting_sources\": [\"N016\", \"O009\", \"R028\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源一致确认国籍为韩国。\"}, \"quantity\": {\"claim\": \"1 艘\", \"supporting_sources\": [\"N016\", \"R028\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻明确提及\" }}\n],\"location\": {\"claim\": \"鄂霍次克海\", \"supporting_sources\": [\"N016\", \"O009\", \"R028\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源一致确认活动海域为鄂霍次克海。\"}, \"time\": {\"claim\": \"2025 年 5 月 1 日 17:40-19:05\", \"supporting_sources\": [\"O009\", \"R028\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"舆论与雷达提供了精确的起止时间，新闻虽未列具体时刻但涵盖该区间，三源在时间覆盖上无冲突。\"}, \"mission\": {\"claim\": \"海上巡逻/持续活动\", \"supporting_sources\": [\"O009\", \"R028\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"舆论与雷达明确任务为“海上巡逻”，新闻描述为“持续活动”并围绕任务区域机动，两者在任务性质上相互印证。\"}, \"movement\": {\"claim\": \"活动/机动\", \"supporting_sources\": [\"N016\", \"O009\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻与舆论均描述平台保持机动或维持部署，雷达虽未显式标注 movement 但观测数据支持活动状态。\"}, \"unresolved_issues\": [],\"explanation\": \"新闻、舆论及雷达三源在平台型号、国籍、地点、时间及任务性质上高度一致。舆论和雷达提供了精确的时间窗口（17:40-19:05）和具体任务（海上巡逻），新闻作为背景报道确认了同一事件的存在，无未消解冲突。\"}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 12449568300,
+    "load_duration": 15487400,
+    "prompt_eval_count": 2387,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 873526000,
+    "eval_count": 596,
+    "eval_duration": 11394489000
+  }
+}

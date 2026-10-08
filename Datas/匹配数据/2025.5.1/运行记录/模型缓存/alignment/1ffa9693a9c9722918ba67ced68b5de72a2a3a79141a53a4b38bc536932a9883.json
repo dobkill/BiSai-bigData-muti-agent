@@ -1,0 +1,885 @@
+{
+  "role": "alignment",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N045",
+      "kind": "news",
+      "title": "新加坡坚韧级坦克登陆舰在东海南部实施两栖作战训练",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：新加坡坚韧级坦克登陆舰在东海南部实施两栖作战训练\n正文：2025年5月1日，新加坡坚韧级坦克登陆舰在东海南部活动，自8时08分至10时33分围绕任务海域组织两栖作战训练，按计划保持机动并持续执行两栖作战训练。\n\n主题词：新加坡  坚韧级  坦克登陆舰  东海南部\n",
+      "platforms": [
+        {
+          "name": "坚韧级坦克登陆舰",
+          "country": "新加坡",
+          "quantity": null,
+          "quote": "新加坡坚韧级坦克登陆舰",
+          "quantity_quote": "",
+          "country_raw": "新加坡"
+        }
+      ],
+      "location": {
+        "raw": "东海南部",
+        "region": "东海南部",
+        "direction": "东海",
+        "precision": "具体区域",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "东海南部"
+      },
+      "mission": {
+        "value": "两栖作战训练",
+        "quote": "组织两栖作战训练"
+      },
+      "start_time": "08:08",
+      "end_time": "10:33",
+      "movement": "活动",
+      "time_semantics": {
+        "interval": "reported_activity",
+        "start_asserted": false,
+        "end_asserted": false
+      }
+    },
+    "opinion_candidates": [
+      {
+        "id": "O039",
+        "kind": "opinion",
+        "title": "新加坡一艘坚韧级坦克登陆舰在东海开展远海训练",
+        "text": "时间：2025.5.1\n\n标题：新加坡一艘坚韧级坦克登陆舰在东海开展远海训练\n\n正文：据地区军事观察机构报道，新加坡海军一艘坚韧级坦克登陆舰于2025年5月1日在东海围绕既定科目组织远海训练。该舰按计划保持机动并完成相关平台之间的行动衔接。围绕训练协同维度的讨论认为，此类部署有助于维持区域内的任务组织能力。\n",
+        "platforms": [
+          {
+            "name": "坚韧级坦克登陆舰",
+            "country": "新加坡",
+            "quantity": 1,
+            "quote": "一艘坚韧级坦克登陆舰",
+            "quantity_quote": "一艘坚韧级坦克登陆舰",
+            "country_raw": "新加坡"
+          }
+        ],
+        "location": {
+          "raw": "东海",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在东海"
+        },
+        "mission": {
+          "value": "远海训练",
+          "quote": "开展远海训练"
+        },
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动",
+        "time_semantics": {
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        }
+      },
+      {
+        "id": "O004",
+        "kind": "opinion",
+        "title": "新加坡F-15SG战斗机在安达曼海执行战备警巡",
+        "text": "时间：2025.5.1\n\n标题：新加坡F-15SG战斗机在安达曼海执行战备警巡\n\n正文：据联合早报报道，2025年5月1日8时19分至10时44分，新加坡空军F-15SG多用途战斗机在安达曼海任务海域执行战备警巡任务。该机沿既定方向保持机动并围绕任务区域维持警戒，这一动向被视为展现前沿存在和部署持续性的常规安排。\n",
+        "platforms": [
+          {
+            "name": "F-15SG多用途战斗机",
+            "country": "新加坡",
+            "quantity": null,
+            "quote": "新加坡空军F-15SG多用途战斗机",
+            "quantity_quote": "",
+            "country_raw": "新加坡"
+          }
+        ],
+        "location": {
+          "raw": "安达曼海任务海域",
+          "region": "安达曼海",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false,
+          "quote": "在安达曼海任务海域"
+        },
+        "mission": {
+          "value": "战备警巡任务",
+          "quote": "执行战备警巡任务"
+        },
+        "start_time": "08:19",
+        "end_time": "10:44",
+        "movement": "活动",
+        "time_semantics": {
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        }
+      },
+      {
+        "id": "O024",
+        "kind": "opinion",
+        "title": "法国导弹护卫舰在巴伦支海持续机动引发媒体关注",
+        "text": "时间：2025.5.1\n\n标题：法国导弹护卫舰在巴伦支海持续机动引发媒体关注\n\n正文：据今日头条报道，2025年5月1日8时37分至10时07分，法国一艘“大邱级”导弹护卫舰在巴伦支海围绕任务区域保持机动，行动范围保持在指定任务海域。有关讨论关注该型护卫舰在复杂海况下的区域机动与任务连续性表现，认为其平台运用特点可能有助于维持长时间的海上存在。\n",
+        "platforms": [
+          {
+            "name": "大邱级”导弹护卫舰",
+            "country": "法国",
+            "quantity": 1,
+            "quote": "法国一艘“大邱级”导弹护卫舰",
+            "quantity_quote": "一艘“大邱级”导弹护卫舰",
+            "country_raw": "法国"
+          }
+        ],
+        "location": {
+          "raw": "巴伦支海",
+          "region": "巴伦支海",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false,
+          "quote": "在巴伦支海围绕任务区域保持机动"
+        },
+        "mission": {
+          "value": null,
+          "quote": ""
+        },
+        "start_time": "08:37",
+        "end_time": "10:07",
+        "movement": "活动",
+        "time_semantics": {
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        }
+      },
+      {
+        "id": "O042",
+        "kind": "opinion",
+        "title": "菲律宾海军护卫舰在东海开展远海训练引发媒体分析",
+        "text": "时间：2025.5.1\n\n标题：菲律宾海军护卫舰在东海开展远海训练引发媒体分析\n\n正文：据公开防务媒体报道，2025年5月1日，菲律宾海军“米格尔·马尔瓦尔号”导弹护卫舰在东海方向进行远海训练，训练时段为17时24分至19时49分。此次行动围绕既定科目组织训练，被视为菲律宾军方提升任务组织与流程熟悉程度的举措。分析认为，此类训练有助于强化平台间的行动衔接与训练协同。\n",
+        "platforms": [
+          {
+            "name": "米格尔·马尔瓦尔号",
+            "country": "菲律宾",
+            "quantity": null,
+            "quote": "米格尔·马尔瓦尔号”导弹护卫舰",
+            "quantity_quote": "",
+            "country_raw": "菲律宾"
+          }
+        ],
+        "location": {
+          "raw": "东海方向",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在东海方向"
+        },
+        "mission": {
+          "value": "远海训练",
+          "quote": "进行远海训练"
+        },
+        "start_time": "17:24",
+        "end_time": "19:49",
+        "movement": "活动",
+        "time_semantics": {
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        }
+      },
+      {
+        "id": "O044",
+        "kind": "opinion",
+        "title": "韩国海军独岛级两栖攻击舰在东海开展训练引发关注",
+        "text": "时间：2025.5.1\n\n标题：韩国海军独岛级两栖攻击舰在东海开展训练引发关注\n\n正文：据公开防务媒体报道，韩国海军一艘“独岛”级两栖攻击舰于2025年5月1日在东海方向按计划组织两栖作战训练。该舰围绕任务方向展开兵力投送环节，并完成平台间的协同配合。相关媒体观察认为，此次训练体现了韩方在东海方向维持两栖投送流程的意图。围绕兵力投送与平台协同的讨论，有分析指出此类公开演训有助于外界评估其两栖战备的衔接水平。\n",
+        "platforms": [
+          {
+            "name": "独岛级",
+            "country": "韩国",
+            "quantity": 1,
+            "quote": "一艘“独岛”级两栖攻击舰",
+            "quantity_quote": "一艘",
+            "country_raw": "韩国"
+          }
+        ],
+        "location": {
+          "raw": "东海方向",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在东海方向"
+        },
+        "mission": {
+          "value": "两栖作战训练",
+          "quote": "两栖作战训练"
+        },
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动",
+        "time_semantics": {
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        }
+      },
+      {
+        "id": "O040",
+        "kind": "opinion",
+        "title": "马来西亚海军“莱库号”护卫舰赴东海执行海上护航",
+        "text": "时间：2025.5.1\n\n标题：马来西亚海军“莱库号”护卫舰赴东海执行海上护航\n\n正文：据今日头条报道，马来西亚海军“莱库号”导弹护卫舰于2025年5月1日14时22分起在东海方向执行海上护航任务。该舰围绕任务编组实施保障行动，按计划完成相关保障环节衔接。围绕此次部署的讨论，多聚焦于马来西亚海军在关键水道持续保障与行动续航能力的展现。\n",
+        "platforms": [
+          {
+            "name": "莱库号",
+            "country": "马来西亚",
+            "quantity": null,
+            "quote": "莱库号”导弹护卫舰",
+            "quantity_quote": "",
+            "country_raw": "马来西亚"
+          }
+        ],
+        "location": {
+          "raw": "东海方向",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在东海方向"
+        },
+        "mission": {
+          "value": "海上护航",
+          "quote": "执行海上护航任务"
+        },
+        "start_time": "14:22",
+        "end_time": null,
+        "movement": "活动",
+        "time_semantics": {
+          "interval": "reported_activity",
+          "start_asserted": true,
+          "end_asserted": false
+        }
+      },
+      {
+        "id": "O020",
+        "kind": "opinion",
+        "title": "俄海军“瓦良格”号巡洋舰南海执行护航任务",
+        "text": "时间：2025.5.1\n\n标题：俄海军“瓦良格”号巡洋舰南海执行护航任务\n\n正文：据联合早报报道，俄罗斯海军“瓦良格”号导弹巡洋舰于2025年5月1日2时16分至4时41分在南海方向执行海上护航任务。该舰围绕任务编组实施保障行动，被认为按计划完成了相关保障环节衔接。相关观察关注其持续保障能力，认为此类行动续航有助于体现保障协同水平。\n",
+        "platforms": [
+          {
+            "name": "瓦良格”号导弹巡洋舰",
+            "country": "俄罗斯",
+            "quantity": null,
+            "quote": "瓦良格”号导弹巡洋舰",
+            "quantity_quote": "",
+            "country_raw": "俄罗斯"
+          }
+        ],
+        "location": {
+          "raw": "南海方向",
+          "region": "南海",
+          "direction": "南海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在南海方向"
+        },
+        "mission": {
+          "value": "海上护航任务",
+          "quote": "执行海上护航任务"
+        },
+        "start_time": "02:16",
+        "end_time": "04:41",
+        "movement": "活动",
+        "time_semantics": {
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        }
+      }
+    ],
+    "radar_candidates": [
+      {
+        "id": "R050",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "坚韧级坦克登陆舰",
+            "country": "新加坡",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-C79D9798414EC0",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "东海南部",
+          "region": "东海南部",
+          "direction": "东海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "东海南部",
+            "region": "东海南部",
+            "direction": "东海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "远海训练",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "远海训练"
+        ],
+        "start_time": "2025.05.01 08:08:00",
+        "end_time": "2025.05.01 10:33:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-C79D9798414EC0",
+        "sibling_ids": [],
+        "hull_values": [
+          "ENDURANCE"
+        ],
+        "country_values": [
+          "新加坡"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 10,
+        "time_semantics": {
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "identity_scope": "batch_is_not_unique_target",
+        "warnings": []
+      },
+      {
+        "id": "R041",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "独岛级两栖攻击舰",
+            "country": "韩国",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-9E0C83A3EAACAD",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "东海南部",
+          "region": "东海南部",
+          "direction": "东海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "东海南部",
+            "region": "东海南部",
+            "direction": "东海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "两栖作战训练",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "两栖作战训练"
+        ],
+        "start_time": "2025.05.01 08:52:00",
+        "end_time": "2025.05.01 10:17:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-9E0C83A3EAACAD",
+        "sibling_ids": [],
+        "hull_values": [
+          "LPH-6111"
+        ],
+        "country_values": [
+          "韩国"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 11,
+        "time_semantics": {
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "identity_scope": "batch_is_not_unique_target",
+        "warnings": []
+      },
+      {
+        "id": "R004",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "F-15SG多用途战斗机",
+            "country": "新加坡",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-1566B18B077F26",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "战备警巡",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "战备警巡"
+        ],
+        "start_time": "2025.05.01 08:19:00",
+        "end_time": "2025.05.01 10:44:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            93.822,
+            93.9279
+          ],
+          "latitude_range": [
+            10.0333,
+            10.2206
+          ],
+          "median": [
+            93.8729,
+            10.1213
+          ],
+          "origins": [
+            [
+              93.8581,
+              10.19
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [],
+        "batch": "AIR-1566B18B077F26",
+        "sibling_ids": [],
+        "hull_values": [],
+        "country_values": [
+          "新加坡"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 12,
+        "time_semantics": {
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "identity_scope": "batch_is_not_unique_target",
+        "warnings": []
+      },
+      {
+        "id": "R046",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "秋月级导弹护卫舰",
+            "country": "日本",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-B836E068CD1418",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "东海南部",
+          "region": "东海南部",
+          "direction": "东海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "东海南部",
+            "region": "东海南部",
+            "direction": "东海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "实弹射击训练",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "实弹射击训练"
+        ],
+        "start_time": "2025.05.01 14:28:00",
+        "end_time": "2025.05.01 16:53:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-B836E068CD1418",
+        "sibling_ids": [],
+        "hull_values": [
+          "DD-115"
+        ],
+        "country_values": [
+          "日本"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 12,
+        "time_semantics": {
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "identity_scope": "batch_is_not_unique_target",
+        "warnings": []
+      },
+      {
+        "id": "R043",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "071型船坞登陆舰",
+            "country": "中国",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-A9545834B741E4",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "安达曼海",
+          "region": "安达曼海",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "安达曼海",
+            "region": "安达曼海",
+            "direction": "其他",
+            "precision": "原文区域",
+            "mapping": "PDF未列入三大核心海域的区域归其他",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "联合巡航",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "联合巡航"
+        ],
+        "start_time": "2025.05.01 11:26:00",
+        "end_time": "2025.05.01 13:51:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-A9545834B741E4",
+        "sibling_ids": [],
+        "hull_values": [
+          "TYPE-071"
+        ],
+        "country_values": [
+          "中国"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 11,
+        "time_semantics": {
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "identity_scope": "batch_is_not_unique_target",
+        "warnings": []
+      },
+      {
+        "id": "R053",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "莱库号导弹护卫舰",
+            "country": "马来西亚",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-F96B2703727F38",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "温州外海",
+          "region": "温州外海",
+          "direction": "东海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "温州外海",
+            "region": "温州外海",
+            "direction": "东海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "海上护航",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "海上护航"
+        ],
+        "start_time": "2025.05.01 14:22:00",
+        "end_time": "2025.05.01 16:47:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-F96B2703727F38",
+        "sibling_ids": [],
+        "hull_values": [
+          "F30"
+        ],
+        "country_values": [
+          "马来西亚"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 10,
+        "time_semantics": {
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "identity_scope": "batch_is_not_unique_target",
+        "warnings": []
+      }
+    ],
+    "recall": {
+      "opinion": [
+        {
+          "id": "O039",
+          "score": 4.49808,
+          "cosine": 0.96808,
+          "platform_similarity": 0.95,
+          "time_overlap": null,
+          "location_relation": "contains"
+        },
+        {
+          "id": "O004",
+          "score": 1.99914,
+          "cosine": 0.69017,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.9241379310344827,
+          "location_relation": "different_direction"
+        },
+        {
+          "id": "O024",
+          "score": 1.85452,
+          "cosine": 0.65452,
+          "platform_similarity": 0.0,
+          "time_overlap": 1.0,
+          "location_relation": "different_direction"
+        },
+        {
+          "id": "O042",
+          "score": 1.23268,
+          "cosine": 0.75268,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "contains"
+        },
+        {
+          "id": "O044",
+          "score": 1.2259,
+          "cosine": 0.7459,
+          "platform_similarity": 0.0,
+          "time_overlap": null,
+          "location_relation": "contains"
+        },
+        {
+          "id": "O040",
+          "score": 1.21892,
+          "cosine": 0.73892,
+          "platform_similarity": 0.0,
+          "time_overlap": null,
+          "location_relation": "contains"
+        },
+        {
+          "id": "O020",
+          "score": 0.73635,
+          "cosine": 0.73635,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "different_direction"
+        }
+      ],
+      "radar": [
+        {
+          "id": "R050",
+          "score": 6.01764,
+          "cosine": 0.96764,
+          "platform_similarity": 0.95,
+          "time_overlap": 1.0,
+          "location_relation": "same"
+        },
+        {
+          "id": "R041",
+          "score": 2.78509,
+          "cosine": 0.78509,
+          "platform_similarity": 0.0,
+          "time_overlap": 1.0,
+          "location_relation": "same"
+        },
+        {
+          "id": "R004",
+          "score": 1.99443,
+          "cosine": 0.68547,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.9241379310344827,
+          "location_relation": "missing"
+        },
+        {
+          "id": "R046",
+          "score": 1.51137,
+          "cosine": 0.71137,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "same"
+        },
+        {
+          "id": "R043",
+          "score": 1.26606,
+          "cosine": 0.7206,
+          "platform_similarity": 0.18182,
+          "time_overlap": 0.0,
+          "location_relation": "different_direction"
+        },
+        {
+          "id": "R053",
+          "score": 0.87409,
+          "cosine": 0.71409,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "same_direction_only"
+        }
+      ]
+    }
+  },
+  "result": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O039",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.95,
+        "reason": "平台（新加坡坚韧级坦克登陆舰）、日期（2025.5.1）、地点（东海/东海南部）及任务性质（训练）高度一致。时间区间完全覆盖（新闻 08:08-10:33，舆论未指定具体时刻但描述同一日同区域活动）。"
+      },
+      {
+        "candidate_id": "O044",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.9,
+        "reason": "平台型号不同（韩国独岛级两栖攻击舰 vs 新加坡坚韧级坦克登陆舰），虽同属两栖训练且时间地点重叠，但主体身份冲突，判定为不同活动。"
+      },
+      {
+        "candidate_id": "O042",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.9,
+        "reason": "平台国籍及型号不符（菲律宾护卫舰 vs 新加坡坦克登陆舰），任务虽同为训练但主体不同，排除关联。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R050",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 1.0,
+        "reason": "雷达数据与新闻在平台（新加坡坚韧级）、时间（08:08-10:33 完全一致）、地点（东海南部）及任务描述上完全吻合，确认为同一事件。"
+      },
+      {
+        "candidate_id": "R041",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台型号不同（韩国独岛级 vs 新加坡坚韧级），尽管时间地点重叠且任务相似，但主体身份明确区分，属于不同活动。"
+      },
+      {
+        "candidate_id": "R046",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.9,
+        "reason": "平台国籍及型号不符（日本秋月级 vs 新加坡坚韧级），任务也不同（实弹射击 vs 两栖训练），排除关联。"
+      }
+    ],
+    "ambiguity": "无显著歧义，核心证据链完整。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T23:48:34.4962434Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"opinion_edges\": [{\"candidate_id\": \"O039\", \"platform_indices\": [0], \"relation\": \"same\", \"confidence\": 0.95, \"reason\": \"平台（新加坡坚韧级坦克登陆舰）、日期（2025.5.1）、地点（东海/东海南部）及任务性质（训练）高度一致。时间区间完全覆盖（新闻 08:08-10:33，舆论未指定具体时刻但描述同一日同区域活动）。\"}, {\"candidate_id\": \"O044\", \"platform_indices\": [0], \"relation\": \"different\", \"confidence\": 0.9, \"reason\": \"平台型号不同（韩国独岛级两栖攻击舰 vs 新加坡坚韧级坦克登陆舰），虽同属两栖训练且时间地点重叠，但主体身份冲突，判定为不同活动。\"}, {\"candidate_id\": \"O042\", \"platform_indices\": [0], \"relation\": \"different\", \"confidence\": 0.9, \"reason\": \"平台国籍及型号不符（菲律宾护卫舰 vs 新加坡坦克登陆舰），任务虽同为训练但主体不同，排除关联。\"}], \"radar_edges\": [{\"candidate_id\": \"R050\", \"platform_indices\": [0], \"relation\": \"same\", \"confidence\": 1.0, \"reason\": \"雷达数据与新闻在平台（新加坡坚韧级）、时间（08:08-10:33 完全一致）、地点（东海南部）及任务描述上完全吻合，确认为同一事件。\"}, {\"candidate_id\": \"R041\", \"platform_indices\": [0], \"relation\": \"different\", \"confidence\": 0.95, \"reason\": \"平台型号不同（韩国独岛级 vs 新加坡坚韧级），尽管时间地点重叠且任务相似，但主体身份明确区分，属于不同活动。\"}, {\"candidate_id\": \"R046\", \"platform_indices\": [0], \"relation\": \"different\", \"confidence\": 0.9, \"reason\": \"平台国籍及型号不符（日本秋月级 vs 新加坡坚韧级），任务也不同（实弹射击 vs 两栖训练），排除关联。\"}],\"ambiguity\": \"无显著歧义，核心证据链完整。\"}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 12557019200,
+    "load_duration": 17464000,
+    "prompt_eval_count": 6400,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 2098811000,
+    "eval_count": 506,
+    "eval_duration": 10082174000
+  },
+  "revalidated_from": "F:\\Datas\\Code\\比赛\\muti-agent\\Datas\\匹配数据\\2025.5.1\\运行记录\\模型缓存\\alignment\\e83f2661ebc399299182da69a5cc855a2079f5cbd58748c8ea6f90a8c3e977b0.json",
+  "schema_migration": "仅收窄输出约束；同输入同指令的旧响应通过当前完整校验后复用"
+}

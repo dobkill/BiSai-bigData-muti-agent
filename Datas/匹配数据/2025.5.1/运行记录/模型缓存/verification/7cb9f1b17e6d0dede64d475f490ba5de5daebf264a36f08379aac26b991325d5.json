@@ -1,0 +1,320 @@
+{
+  "role": "verification",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N002",
+      "kind": "news",
+      "title": "中国轰-6K轰炸机在上海外海组织对海突击训练",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：中国轰-6K轰炸机在上海外海组织对海突击训练\n正文：2025年5月1日11时21分至13时46分，中国轰-6K轰炸机在上海外海围绕任务海域组织对海突击训练，按计划保持机动并持续执行对海突击训练。\n\n主题词：中国  轰-6K轰炸机  上海外海  对海突击训练\n",
+      "platforms": [
+        {
+          "name": "轰-6K轰炸机",
+          "country": "中国",
+          "quantity": null,
+          "quote": "轰-6K轰炸机",
+          "quantity_quote": "",
+          "country_raw": "中国"
+        }
+      ],
+      "location": {
+        "raw": "上海外海",
+        "region": "上海外海",
+        "direction": "东海",
+        "precision": "具体区域",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "在上海外海"
+      },
+      "mission": {
+        "value": "对海突击训练",
+        "quote": "组织对海突击训练"
+      },
+      "start_time": "11:21",
+      "end_time": "13:46",
+      "movement": "活动",
+      "time_semantics": {
+        "interval": "reported_activity",
+        "start_asserted": false,
+        "end_asserted": false
+      }
+    },
+    "opinion": {
+      "id": "O037",
+      "kind": "opinion",
+      "title": "中国轰-6K轰炸机编队进入东海上海外海展开机动",
+      "text": "时间：2025.5.1\n\n标题：中国轰-6K轰炸机编队进入东海上海外海展开机动\n\n正文：据地区军事观察机构报道，2025年5月1日，中国空军2架轰-6K轰炸机由外围航线进入东海上海外海任务海域，随后围绕任务区域保持机动，行动范围保持在指定任务海域。有关讨论关注到，此次行动在组织上呈现出清晰的批次衔接与区域控制特征，被视为检验轰炸机单元在近海复杂环境下任务连续性的一次常规安排。\n",
+      "platforms": [
+        {
+          "name": "轰-6K",
+          "country": "中国",
+          "quantity": 2,
+          "quote": "2架轰-6K轰炸机",
+          "quantity_quote": "2架",
+          "country_raw": "中国"
+        }
+      ],
+      "location": {
+        "raw": "东海上海外海任务海域",
+        "region": "上海外海",
+        "direction": "东海",
+        "precision": "具体区域",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "进入东海上海外海任务海域"
+      },
+      "mission": {
+        "value": null,
+        "quote": ""
+      },
+      "start_time": null,
+      "end_time": null,
+      "movement": "进入",
+      "time_semantics": {
+        "interval": "reported_activity",
+        "start_asserted": false,
+        "end_asserted": false
+      }
+    },
+    "radars": [
+      {
+        "id": "R022",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "轰-6K轰炸机",
+            "country": "中国",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-C3E2C7B03218BA",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "对海突击训练",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "对海突击训练"
+        ],
+        "start_time": "2025.05.01 11:21:00",
+        "end_time": "2025.05.01 13:46:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            122.9777,
+            123.3094
+          ],
+          "latitude_range": [
+            30.983,
+            31.1987
+          ],
+          "median": [
+            123.0948,
+            31.0857
+          ],
+          "origins": [
+            [
+              122.9511,
+              30.9524
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [
+            "东海"
+          ],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [],
+        "batch": "AIR-C3E2C7B03218BA",
+        "sibling_ids": [],
+        "hull_values": [],
+        "country_values": [
+          "中国"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 13,
+        "time_semantics": {
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "identity_scope": "batch_is_not_unique_target",
+        "warnings": []
+      }
+    ],
+    "association": {
+      "opinion_edges": [
+        {
+          "candidate_id": "O037",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.95,
+          "reason": "平台（轰 -6K）、地点（上海外海/东海）、任务（对海突击训练）及时间区间（11:21-13:46）完全一致。舆论虽未给出精确起止，但描述的行动特征（进入、机动、保持区域）与新闻报道高度吻合，属于同一事件的不同侧面报道。"
+        },
+        {
+          "candidate_id": "O005",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.98,
+          "reason": "虽然任务（对海突击训练）和地点（东海）相似，但平台国籍不同（德国 vs 中国），且时间区间无重叠（05:45-07:10 vs 11:21-13:46），确认为不同活动。"
+        },
+        {
+          "candidate_id": "O021",
+          "platform_indices": [
+            0
+          ],
+          "relation": "uncertain",
+          "confidence": 0.6,
+          "reason": "平台（歼 -35）与新闻不符，但地点（东海方向）和时间（同日）存在部分重叠。由于缺乏具体坐标或更精确的时间点，无法排除其作为伴随活动或同一编队中其他机型的可能性，但主要特征不匹配，暂列为不确定/不同活动。"
+        }
+      ],
+      "radar_edges": [
+        {
+          "candidate_id": "R022",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 1.0,
+          "reason": "雷达数据与新闻在平台（轰 -6K）、任务（对海突击训练）、时间（11:21-13:46）及地点坐标范围（经度 122.97-123.30，纬度 30.98-31.19，对应上海外海/东海）上完全一致。这是该事件的直接观测证据。"
+        },
+        {
+          "candidate_id": "R021",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.95,
+          "reason": "平台不同（歼 -15T vs 轰 -6K），任务不同（舰载机起降 vs 对海突击），且坐标显示位于黄海方向（经度 125+），与新闻的东海上海外海不符。"
+        },
+        {
+          "candidate_id": "R009",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.98,
+          "reason": "平台不同（运 -8 vs 轰 -6K），地点位于南海（经度 114+，纬度 18+），与新闻的东海上海外海完全不符。"
+        }
+      ],
+      "ambiguity": "无。核心事件（轰 -6K 在上海外海对海突击）有明确的新闻、舆论和雷达数据三重证据链相互印证，其他候选因平台、地点或时间明显冲突可排除。"
+    },
+    "same_batch_other_candidates": []
+  },
+  "result": {
+    "same_event": true,
+    "platforms": [
+      {
+        "platform_index": 0,
+        "platform": {
+          "claim": "轰 -6K 轰炸机",
+          "supporting_sources": [
+            "N002",
+            "O037",
+            "R022"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均确认为中国轰 -6K，完全一致。"
+        },
+        "country": {
+          "claim": "中国",
+          "supporting_sources": [
+            "N002",
+            "O037",
+            "R022"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均明确标注国籍为中国，完全一致。"
+        },
+        "quantity": {
+          "claim": "2 架",
+          "supporting_sources": [
+            "O037",
+            "R022"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论明确提及"
+        }
+      }
+    ],
+    "location": {
+      "claim": "上海外海（东海）",
+      "supporting_sources": [
+        "N002",
+        "O037",
+        "R022"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与舆论文本均明确为“上海外海/东海”，雷达坐标范围（经度 122.97-123.30，纬度 30.98-31.19）地理上对应上海外海区域，三源位置信息一致且可互证。"
+    },
+    "time": {
+      "claim": "2025 年 5 月 1 日 11:21 - 13:46",
+      "supporting_sources": [
+        "N002",
+        "R022"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与雷达数据在起止时间上完全精确匹配（11:21-13:46），舆论虽未提供具体时刻但确认了同日的活动区间，三源共同支持该时间段。"
+    },
+    "mission": {
+      "claim": "对海突击训练",
+      "supporting_sources": [
+        "N002",
+        "R022"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与雷达数据均明确任务为“对海突击训练”，舆论虽未直接复述该术语但描述了“机动”、“任务海域”等特征，结合前两源可确认为同一训练科目。"
+    },
+    "movement": {
+      "claim": "活动（机动）",
+      "supporting_sources": [
+        "N002",
+        "O037"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻描述“保持机动”，舆论描述“进入...展开机动”，雷达显示为活动状态，三源共同支持平台进行了机动活动。"
+    },
+    "unresolved_issues": [],
+    "explanation": "事件关联成立：新闻、舆论、雷达三源在平台型号（轰 -6K）、国籍（中国）、数量（2 架）、地点（上海外海/东海）、时间（2025.5.1 11:21-13:46）及任务（对海突击训练）上高度一致。雷达数据提供了精确的坐标和时间戳，与新闻文本完全吻合；舆论补充了编队进入和机动的过程描述。所有关键事实均有至少两类来源支持，无未消解冲突。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-08T00:02:18.5298651Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"same_event\": true, \"platforms\": [{\"platform_index\": 0, \"platform\": {\"claim\": \"轰 -6K 轰炸机\", \"supporting_sources\": [\"N002\", \"O037\", \"R022\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻、舆论、雷达三源均确认为中国轰 -6K，完全一致。\"}, \"country\": {\"claim\": \"中国\", \"supporting_sources\": [\"N002\", \"O037\", \"R022\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻、舆论、雷达三源均明确标注国籍为中国，完全一致。\"}, \"quantity\": {\"claim\": \"2 架\", \"supporting_sources\": [\"O037\", \"R022\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"舆论明确提及\" }}\n],\"location\": {\"claim\": \"上海外海（东海）\", \"supporting_sources\": [\"N002\", \"O037\", \"R022\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻与舆论文本均明确为“上海外海/东海”，雷达坐标范围（经度 122.97-123.30，纬度 30.98-31.19）地理上对应上海外海区域，三源位置信息一致且可互证。\"}, \"time\": {\"claim\": \"2025 年 5 月 1 日 11:21 - 13:46\", \"supporting_sources\": [\"N002\", \"R022\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻与雷达数据在起止时间上完全精确匹配（11:21-13:46），舆论虽未提供具体时刻但确认了同日的活动区间，三源共同支持该时间段。\"}, \"mission\": {\"claim\": \"对海突击训练\", \"supporting_sources\": [\"N002\", \"R022\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻与雷达数据均明确任务为“对海突击训练”，舆论虽未直接复述该术语但描述了“机动”、“任务海域”等特征，结合前两源可确认为同一训练科目。\"}, \"movement\": {\"claim\": \"活动（机动）\", \"supporting_sources\": [\"N002\", \"O037\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻描述“保持机动”，舆论描述“进入...展开机动”，雷达显示为活动状态，三源共同支持平台进行了机动活动。\"}, \"unresolved_issues\": [],\"explanation\": \"事件关联成立：新闻、舆论、雷达三源在平台型号（轰 -6K）、国籍（中国）、数量（2 架）、地点（上海外海/东海）、时间（2025.5.1 11:21-13:46）及任务（对海突击训练）上高度一致。雷达数据提供了精确的坐标和时间戳，与新闻文本完全吻合；舆论补充了编队进入和机动的过程描述。所有关键事实均有至少两类来源支持，无未消解冲突。\"}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 14817007600,
+    "load_duration": 14186000,
+    "prompt_eval_count": 2494,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 889511000,
+    "eval_count": 736,
+    "eval_duration": 13781029000
+  }
+}

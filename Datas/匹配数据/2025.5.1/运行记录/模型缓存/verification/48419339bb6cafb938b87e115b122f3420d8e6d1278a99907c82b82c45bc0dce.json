@@ -1,0 +1,307 @@
+{
+  "role": "verification",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N035",
+      "kind": "news",
+      "title": "美国海军阿利·伯克级驱逐舰在渚碧礁附近海域执行战备巡逻",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：美国海军阿利·伯克级驱逐舰在渚碧礁附近海域执行战备巡逻\n正文：2025年5月1日11时10分至13时35分，美国海军阿利·伯克级导弹驱逐舰在渚碧礁附近海域围绕任务海域组织战备巡逻，沿既定方向保持机动并维持警戒。\n\n主题词：美国海军  阿利·伯克级导弹驱逐舰  战备巡逻  渚碧礁附近海域\n",
+      "platforms": [
+        {
+          "name": "阿利·伯克级",
+          "country": "美国",
+          "quantity": null,
+          "quote": "美国海军阿利·伯克级导弹驱逐舰",
+          "quantity_quote": "",
+          "country_raw": "美国"
+        }
+      ],
+      "location": {
+        "raw": "渚碧礁附近海域",
+        "region": "渚碧礁附近海域",
+        "direction": "南海",
+        "precision": "具体区域",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "渚碧礁附近海域"
+      },
+      "mission": {
+        "value": "战备巡逻",
+        "quote": "执行战备巡逻"
+      },
+      "start_time": "11:10",
+      "end_time": "13:35",
+      "movement": "活动",
+      "time_semantics": {
+        "interval": "reported_activity",
+        "start_asserted": false,
+        "end_asserted": false
+      }
+    },
+    "opinion": {
+      "id": "O011",
+      "kind": "opinion",
+      "title": "美国阿利·伯克级驱逐舰在渚碧礁附近海域持续活动",
+      "text": "时间：2025.5.1\n\n标题：美国阿利·伯克级驱逐舰在渚碧礁附近海域持续活动\n\n正文：据联合早报报道，2025年5月1日，美国一艘阿利·伯克级导弹驱逐舰在南海渚碧礁附近海域活动。报道分析，该舰行动范围保持在指定任务海域，围绕任务区域保持机动，这种部署方式可能体现了其任务连续性和区域机动能力。\n",
+      "platforms": [
+        {
+          "name": "阿利·伯克级导弹驱逐舰",
+          "country": "美国",
+          "quantity": 1,
+          "quote": "一艘阿利·伯克级导弹驱逐舰",
+          "quantity_quote": "一艘阿利·伯克级导弹驱逐舰",
+          "country_raw": "美国"
+        }
+      ],
+      "location": {
+        "raw": "南海渚碧礁附近海域",
+        "region": "渚碧礁附近海域",
+        "direction": "南海",
+        "precision": "具体区域",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "在南海渚碧礁附近海域活动"
+      },
+      "mission": {
+        "value": null,
+        "quote": ""
+      },
+      "start_time": null,
+      "end_time": null,
+      "movement": "活动",
+      "time_semantics": {
+        "interval": "reported_activity",
+        "start_asserted": false,
+        "end_asserted": false
+      }
+    },
+    "radars": [
+      {
+        "id": "R038",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "阿利·伯克级导弹驱逐舰",
+            "country": "美国",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-95BD7FF01070D4",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "渚碧礁附近海域",
+          "region": "渚碧礁附近海域",
+          "direction": "南海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "渚碧礁附近海域",
+            "region": "渚碧礁附近海域",
+            "direction": "南海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "战备巡逻",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "战备巡逻"
+        ],
+        "start_time": "2025.05.01 11:10:00",
+        "end_time": "2025.05.01 13:35:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-95BD7FF01070D4",
+        "sibling_ids": [],
+        "hull_values": [
+          "DDG-51"
+        ],
+        "country_values": [
+          "美国"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 12,
+        "time_semantics": {
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "identity_scope": "batch_is_not_unique_target",
+        "warnings": []
+      }
+    ],
+    "association": {
+      "opinion_edges": [
+        {
+          "candidate_id": "O011",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.95,
+          "reason": "平台（美国阿利·伯克级）、地点（渚碧礁附近海域）、任务（战备巡逻）及时间区间（2025.5.1 11:10-13:35）完全一致。该舆论报道是对新闻事件的直接转述或分析，属于同一活动。"
+        },
+        {
+          "candidate_id": "O003",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.9,
+          "reason": "平台完全不同（中国运 -8 反潜巡逻机 vs 美国阿利·伯克级驱逐舰），虽时间地点有重叠，但属于不同军种、不同国家的独立活动。"
+        },
+        {
+          "candidate_id": "O041",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.95,
+          "reason": "地点完全不同（孟加拉湾 vs 南海渚碧礁），平台类型也不同（战斗机 vs 驱逐舰），属于不同海域的独立活动。"
+        }
+      ],
+      "radar_edges": [
+        {
+          "candidate_id": "R038",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 1.0,
+          "reason": "雷达数据与新闻在平台型号（阿利·伯克级）、地点（渚碧礁附近海域）、任务（战备巡逻）及精确时间起止（11:10-13:35）上完全吻合，确认为同一观测到的活动。"
+        },
+        {
+          "candidate_id": "R033",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.9,
+          "reason": "平台不同（澳大利亚霍巴特级 vs 美国阿利·伯克级），地点不同（琼州海峡 vs 渚碧礁附近），虽同属南海且时间重叠，但为不同舰艇的独立行动。"
+        },
+        {
+          "candidate_id": "R009",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.85,
+          "reason": "平台不同（中国运 -8 飞机 vs 美国驱逐舰），虽任务相似且时间地点大致重叠，但主体完全不同，属于独立活动。"
+        }
+      ],
+      "ambiguity": "无显著歧义，核心候选 O011 与 R038 均与新闻 N035 高度一致，其他候选因平台、地点或任务明显不同而被排除。"
+    },
+    "same_batch_other_candidates": []
+  },
+  "result": {
+    "same_event": true,
+    "platforms": [
+      {
+        "platform_index": 0,
+        "platform": {
+          "claim": "美国阿利·伯克级导弹驱逐舰",
+          "supporting_sources": [
+            "N035",
+            "O011",
+            "R038"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均明确指向该型号及国籍，完全一致。"
+        },
+        "country": {
+          "claim": "美国",
+          "supporting_sources": [
+            "N035",
+            "O011",
+            "R038"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均明确标注为美国，完全一致。"
+        },
+        "quantity": {
+          "claim": "1 艘",
+          "supporting_sources": [
+            "O011",
+            "R038"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论明确提及“一艘”，雷达批号显示数量值为 1；新闻未提具体数量但不构成冲突，两源支持成立。"
+        }
+      }
+    ],
+    "location": {
+      "claim": "渚碧礁附近海域",
+      "supporting_sources": [
+        "N035",
+        "O011",
+        "R038"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "三源均明确表述为“渚碧礁附近海域”，地点精度与范围完全一致。"
+    },
+    "time": {
+      "claim": "2025 年 5 月 1 日 11:10-13:35",
+      "supporting_sources": [
+        "N035",
+        "R038"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与雷达在起止时间上精确吻合（11:10-13:35）；舆论仅提及日期，未提供具体时刻，不构成冲突也不作为支持该精确时刻的独立来源，但两源（新闻 + 雷达）已充分印证。"
+    },
+    "mission": {
+      "claim": "战备巡逻",
+      "supporting_sources": [
+        "N035",
+        "R038"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与雷达均明确标注任务为“战备巡逻”；舆论未提及具体任务名称，但不构成冲突，两源支持成立。"
+    },
+    "movement": {
+      "claim": "活动/机动",
+      "supporting_sources": [
+        "N035",
+        "O011"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻描述“围绕任务海域组织战备巡逻...保持机动”，舆论描述“在...海域活动...保持机动”，两源共同印证存在海上活动及机动行为。雷达虽未明确 movement 字段，但观测数据本身即证明活动发生，不视为冲突。"
+    },
+    "unresolved_issues": [],
+    "explanation": "三源（新闻 N035、舆论 O011、雷达 R038）在平台型号、国籍、地点、任务及精确时间起止上高度一致。数量由舆论和雷达共同支持（2 票），其他关键事实均由至少两类来源支持，无未消解冲突，确认为同一事件。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-08T00:09:40.7245991Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"same_event\": true, \"platforms\": [{\"platform_index\": 0, \"platform\": {\"claim\": \"美国阿利·伯克级导弹驱逐舰\", \"supporting_sources\": [\"N035\", \"O011\", \"R038\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻、舆论、雷达三源均明确指向该型号及国籍，完全一致。\"}, \"country\": {\"claim\": \"美国\", \"supporting_sources\": [\"N035\", \"O011\", \"R038\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻、舆论、雷达三源均明确标注为美国，完全一致。\"}, \"quantity\": {\"claim\": \"1 艘\", \"supporting_sources\": [\"O011\", \"R038\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"舆论明确提及“一艘”，雷达批号显示数量值为 1；新闻未提具体数量但不构成冲突，两源支持成立。\"}}], \"location\": {\"claim\": \"渚碧礁附近海域\", \"supporting_sources\": [\"N035\", \"O011\", \"R038\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源均明确表述为“渚碧礁附近海域”，地点精度与范围完全一致。\"}, \"time\": {\"claim\": \"2025 年 5 月 1 日 11:10-13:35\", \"supporting_sources\": [\"N035\", \"R038\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻与雷达在起止时间上精确吻合（11:10-13:35）；舆论仅提及日期，未提供具体时刻，不构成冲突也不作为支持该精确时刻的独立来源，但两源（新闻 + 雷达）已充分印证。\"}, \"mission\": {\"claim\": \"战备巡逻\", \"supporting_sources\": [\"N035\", \"R038\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻与雷达均明确标注任务为“战备巡逻”；舆论未提及具体任务名称，但不构成冲突，两源支持成立。\"}, \"movement\": {\"claim\": \"活动/机动\", \"supporting_sources\": [\"N035\", \"O011\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻描述“围绕任务海域组织战备巡逻...保持机动”，舆论描述“在...海域活动...保持机动”，两源共同印证存在海上活动及机动行为。雷达虽未明确 movement 字段，但观测数据本身即证明活动发生，不视为冲突。\"}, \"unresolved_issues\": [],\"explanation\":\"三源（新闻 N035、舆论 O011、雷达 R038）在平台型号、国籍、地点、任务及精确时间起止上高度一致。数量由舆论和雷达共同支持（2 票），其他关键事实均由至少两类来源支持，无未消解冲突，确认为同一事件。\"}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 13981843200,
+    "load_duration": 16366500,
+    "prompt_eval_count": 2378,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 873267000,
+    "eval_count": 692,
+    "eval_duration": 12889450000
+  }
+}

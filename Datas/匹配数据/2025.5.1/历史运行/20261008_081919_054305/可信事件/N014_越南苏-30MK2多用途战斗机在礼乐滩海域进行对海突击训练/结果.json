@@ -1,0 +1,788 @@
+{
+  "id": "N014",
+  "news_id": "N014",
+  "opinion_id": "O018",
+  "radar_ids": [
+    "R007"
+  ],
+  "radar_slots": {
+    "0": "R007"
+  },
+  "alignment": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O018",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.95,
+        "reason": "平台（越南苏 -30MK2）、任务（对海突击训练）、日期（2025.5.1）完全一致。新闻明确地点为“礼乐滩海域”，舆论描述为“南海”（包含礼乐滩），时间区间虽未精确到分钟但覆盖报道时段，属于同一活动在不同粒度下的描述。"
+      },
+      {
+        "candidate_id": "O034",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "平台国籍不同（意大利 vs 越南），任务类型不同（区域机动/巡逻 vs 对海突击训练），虽地点同为礼乐滩且时间重叠，但主体和具体行动性质完全不同，属于同一海域的不同活动。"
+      },
+      {
+        "candidate_id": "O036",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台型号不同（苏 -30SM vs 苏 -30MK2），国籍不同（俄罗斯 vs 越南），任务不同（战备警巡 vs 对海突击训练）。虽然同一天在南海方向，但无证据表明是同一编队或关联行动。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R007",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.92,
+        "reason": "平台（越南苏 -30MK2）、任务（对海突击训练）、时间（14:55-16:20）与新闻完全精确匹配。尽管雷达坐标原始数据缺失具体海域名称，但辅助召回提示方向为“南海”，且批号警告指出需分别判断分支，结合新闻明确的“礼乐滩”地点，该雷达记录极大概率对应本次事件。"
+      },
+      {
+        "candidate_id": "R008",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "虽然平台、任务、时间均匹配，但雷达坐标辅助召回提示方向为“黄海”（经纬度显示北纬35度左右），与新闻明确的“南海礼乐滩”地理方位严重冲突。根据规则，不同方向不等于同活动，且未验证坐标不能修正原文地点，故判定为不同活动或数据污染。"
+      },
+      {
+        "candidate_id": "R052",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "平台国籍不同（意大利 vs 越南），任务不同（反潜巡逻 vs 对海突击训练）。虽地点和时间高度重合，但主体完全不同，属于同一海域的独立活动。"
+      }
+    ],
+    "ambiguity": "雷达记录 R007 与新闻在时空和任务上高度吻合，但存在同批号其他分支（如 R008）指向不同海域的情况，需确认 R007 的具体坐标是否确为南海礼乐滩区域；舆论 O018 将地点概括为“南海”，虽不如新闻精确但不构成冲突。"
+  },
+  "candidates": {
+    "opinion": [
+      {
+        "id": "O018",
+        "score": 4.62866,
+        "cosine": 0.94866,
+        "platform_similarity": 1.0,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O006",
+        "score": 1.70077,
+        "cosine": 0.65607,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.8705882352941177,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O034",
+        "score": 1.51627,
+        "cosine": 0.71627,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "same"
+      },
+      {
+        "id": "O036",
+        "score": 1.30286,
+        "cosine": 0.82286,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O002",
+        "score": 1.02637,
+        "cosine": 0.86637,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "same_direction_only"
+      },
+      {
+        "id": "O019",
+        "score": 0.97794,
+        "cosine": 0.81794,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "same_direction_only"
+      },
+      {
+        "id": "O004",
+        "score": 0.77589,
+        "cosine": 0.77589,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      }
+    ],
+    "radar": [
+      {
+        "id": "R007",
+        "score": 5.34186,
+        "cosine": 0.94186,
+        "platform_similarity": 1.0,
+        "time_overlap": 1.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R008",
+        "score": 5.33722,
+        "cosine": 0.93722,
+        "platform_similarity": 1.0,
+        "time_overlap": 1.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R052",
+        "score": 2.72119,
+        "cosine": 0.72119,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "same"
+      },
+      {
+        "id": "R024",
+        "score": 0.87243,
+        "cosine": 0.87243,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R019",
+        "score": 0.85645,
+        "cosine": 0.85645,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R026",
+        "score": 0.85212,
+        "cosine": 0.85212,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      }
+    ]
+  },
+  "assignment_diagnostics": {
+    "opinion": [],
+    "radar": []
+  },
+  "radar_context": [
+    {
+      "selected": "R007",
+      "sheet": "飞机",
+      "batch": "AIR-511B24203B9156",
+      "other_candidates": [
+        "R008"
+      ],
+      "reason": "仅核验已关联活动；同批号其他分支完整保留，未确认属于本事件，不自动构成反证"
+    }
+  ],
+  "verification": {
+    "same_event": true,
+    "facts": [
+      {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "苏-30MK2多用途战斗机",
+        "supporting_sources": [
+          "N014",
+          "O018",
+          "R007"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N014': '苏-30MK2多用途战斗机', 'O018': '苏-30MK2多用途战斗机', 'R007': '苏-30MK2多用途战斗机'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "苏-30MK2 多用途战斗机",
+          "supporting_sources": [
+            "N014",
+            "O018",
+            "R007"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均明确为越南苏 -30MK2"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "越南",
+        "supporting_sources": [
+          "N014",
+          "O018",
+          "R007"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N014': '越南', 'O018': '越南', 'R007': '越南'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "越南",
+          "supporting_sources": [
+            "N014",
+            "O018",
+            "R007"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均明确为越南"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "2架",
+        "supporting_sources": [
+          "O018",
+          "R007"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'O018': 2, 'R007': 2}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "2 架",
+          "supporting_sources": [
+            "O018",
+            "R007"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论明确提及“两架”，雷达批号 R007 数量列为 2，新闻未提具体数量但不构成冲突"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "南海",
+        "supporting_sources": [
+          "N014",
+          "O018"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "复核明示地点和PDF包含关系：{'N014': '礼乐滩海域', 'O018': '南海'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "礼乐滩海域（南海）",
+          "supporting_sources": [
+            "N014"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻明确为“礼乐滩海域”；舆论“南海”包含该区域，雷达坐标辅助召回提示“南海”，虽无精确地名但方向一致，无冲突"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N014": {
+            "raw": "礼乐滩海域",
+            "region": "礼乐滩海域",
+            "direction": "南海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false,
+            "quote": "在礼乐滩海域活动"
+          },
+          "O018": {
+            "raw": "南海",
+            "region": "南海",
+            "direction": "南海",
+            "precision": "大范围",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false,
+            "quote": "在南海"
+          }
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "共同观测/报道时段 14:55—16:20（非完整活动起止断言）",
+        "supporting_sources": [
+          "N014",
+          "R007"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N014': {'start': '14:55', 'end': '16:20', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O018': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R007': {'start': '14:55', 'end': '16:20', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "2025 年 5 月 1 日 14:55-16:20",
+          "supporting_sources": [
+            "N014",
+            "R007"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻与雷达 R007 起止时间精确匹配（14:55-16:20），舆论仅确认日期"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N014": {
+            "start": "14:55",
+            "end": "16:20",
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
+          },
+          "O018": {
+            "start": null,
+            "end": null,
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
+          },
+          "R007": {
+            "start": "14:55",
+            "end": "16:20",
+            "interval": "observation_coverage",
+            "start_asserted": false,
+            "end_asserted": false
+          }
+        },
+        "asserted_boundaries": {
+          "start": {},
+          "end": {}
+        },
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "对海突击训练",
+        "supporting_sources": [
+          "N014",
+          "O018",
+          "R007"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "原文明示任务：{'N014': ['对海突击训练'], 'O018': ['对海突击训练'], 'R007': ['对海突击训练']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "对海突击训练",
+          "supporting_sources": [
+            "N014",
+            "O018",
+            "R007"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均明确为“对海突击训练”"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N014": [
+            "对海突击训练"
+          ],
+          "O018": [
+            "对海突击训练"
+          ],
+          "R007": [
+            "对海突击训练"
+          ]
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N014",
+          "O018"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "supporting_sources": [
+            "N014",
+            "O018",
+            "R007"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源均描述为活动状态，雷达虽未显式写“活动”但任务执行即隐含"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N014": "活动",
+          "O018": "活动",
+          "R007": "未说明"
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location_detail",
+        "claim": "礼乐滩海域",
+        "supporting_sources": [
+          "N014"
+        ],
+        "conflicting_sources": [],
+        "status": "insufficient",
+        "reason": "具体区域仅一类来源明示；结论使用共同获支持的方向，细节保留待核实",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "礼乐滩海域（南海）",
+          "supporting_sources": [
+            "N014"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻明确为“礼乐滩海域”；舆论“南海”包含该区域，雷达坐标辅助召回提示“南海”，虽无精确地名但方向一致，无冲突"
+        },
+        "supporting_source_types": [
+          "news"
+        ]
+      }
+    ],
+    "unresolved_issues": [],
+    "explanation": "三类来源已关联，纳入结论的事实获得至少两类独立来源支持，未发现未消解明示反证。",
+    "model_explanation": "新闻 N014 与雷达 R007 在时间、地点（礼乐滩/南海）、任务、机型及数量上高度一致；舆论 O018 补充了数量为 2 架且地点为南海，三源共同支撑事件成立。雷达同批号 R008 指向黄海，但警告明确提示不能因同批号自动合并或作为反证，且 R007 坐标辅助召回已提示南海方向，故不影响本事件结论。"
+  },
+  "reasons": [],
+  "status": "可信事件",
+  "verified_facts": [
+    {
+      "platform_index": 0,
+      "field": "platform",
+      "claim": "苏-30MK2多用途战斗机",
+      "supporting_sources": [
+        "N014",
+        "O018",
+        "R007"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N014': '苏-30MK2多用途战斗机', 'O018': '苏-30MK2多用途战斗机', 'R007': '苏-30MK2多用途战斗机'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "苏-30MK2 多用途战斗机",
+        "supporting_sources": [
+          "N014",
+          "O018",
+          "R007"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻、舆论、雷达三源均明确为越南苏 -30MK2"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "country",
+      "claim": "越南",
+      "supporting_sources": [
+        "N014",
+        "O018",
+        "R007"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N014': '越南', 'O018': '越南', 'R007': '越南'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "越南",
+        "supporting_sources": [
+          "N014",
+          "O018",
+          "R007"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻、舆论、雷达三源均明确为越南"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "quantity",
+      "claim": "2架",
+      "supporting_sources": [
+        "O018",
+        "R007"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'O018': 2, 'R007': 2}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "2 架",
+        "supporting_sources": [
+          "O018",
+          "R007"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "舆论明确提及“两架”，雷达批号 R007 数量列为 2，新闻未提具体数量但不构成冲突"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "location",
+      "claim": "南海",
+      "supporting_sources": [
+        "N014",
+        "O018"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "复核明示地点和PDF包含关系：{'N014': '礼乐滩海域', 'O018': '南海'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "礼乐滩海域（南海）",
+        "supporting_sources": [
+          "N014"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻明确为“礼乐滩海域”；舆论“南海”包含该区域，雷达坐标辅助召回提示“南海”，虽无精确地名但方向一致，无冲突"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N014": {
+          "raw": "礼乐滩海域",
+          "region": "礼乐滩海域",
+          "direction": "南海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在礼乐滩海域活动"
+        },
+        "O018": {
+          "raw": "南海",
+          "region": "南海",
+          "direction": "南海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在南海"
+        }
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "time",
+      "claim": "共同观测/报道时段 14:55—16:20（非完整活动起止断言）",
+      "supporting_sources": [
+        "N014",
+        "R007"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N014': {'start': '14:55', 'end': '16:20', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O018': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R007': {'start': '14:55', 'end': '16:20', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "2025 年 5 月 1 日 14:55-16:20",
+        "supporting_sources": [
+          "N014",
+          "R007"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与雷达 R007 起止时间精确匹配（14:55-16:20），舆论仅确认日期"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N014": {
+          "start": "14:55",
+          "end": "16:20",
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "O018": {
+          "start": null,
+          "end": null,
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "R007": {
+          "start": "14:55",
+          "end": "16:20",
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        }
+      },
+      "asserted_boundaries": {
+        "start": {},
+        "end": {}
+      },
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "mission",
+      "claim": "对海突击训练",
+      "supporting_sources": [
+        "N014",
+        "O018",
+        "R007"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "原文明示任务：{'N014': ['对海突击训练'], 'O018': ['对海突击训练'], 'R007': ['对海突击训练']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "对海突击训练",
+        "supporting_sources": [
+          "N014",
+          "O018",
+          "R007"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻、舆论、雷达三源均明确为“对海突击训练”"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N014": [
+          "对海突击训练"
+        ],
+        "O018": [
+          "对海突击训练"
+        ],
+        "R007": [
+          "对海突击训练"
+        ]
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "movement",
+      "claim": "活动",
+      "supporting_sources": [
+        "N014",
+        "O018"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N014",
+          "O018",
+          "R007"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源均描述为活动状态，雷达虽未显式写“活动”但任务执行即隐含"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N014": "活动",
+        "O018": "活动",
+        "R007": "未说明"
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    }
+  ],
+  "radar_row_count": 6,
+  "direction": "南海",
+  "report_eligible": true,
+  "directory": "可信事件/N014_越南苏-30MK2多用途战斗机在礼乐滩海域进行对海突击训练"
+}

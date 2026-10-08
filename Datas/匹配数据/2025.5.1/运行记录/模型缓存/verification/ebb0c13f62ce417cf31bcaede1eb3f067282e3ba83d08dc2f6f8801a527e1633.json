@@ -1,0 +1,320 @@
+{
+  "role": "verification",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N007",
+      "kind": "news",
+      "title": "德国“台风”多用途战斗机在东海油气田海域活动",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：德国“台风”多用途战斗机在东海油气田海域活动\n正文：2025年5月1日，德国2架“台风”多用途战斗机在东海油气田海域持续活动，围绕任务区域保持机动，行动范围保持在指定任务海域。\n\n主题词：德国  “台风”多用途战斗机  东海油气田海域\n",
+      "platforms": [
+        {
+          "name": "台风”多用途战斗机",
+          "country": "德国",
+          "quantity": 2,
+          "quote": "2架“台风”多用途战斗机",
+          "quantity_quote": "2架“台风”多用途战斗机",
+          "country_raw": "德国"
+        }
+      ],
+      "location": {
+        "raw": "东海油气田海域",
+        "region": "东海油气田海域",
+        "direction": "东海",
+        "precision": "具体区域",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "在东海油气田海域持续活动"
+      },
+      "mission": {
+        "value": null,
+        "quote": ""
+      },
+      "start_time": null,
+      "end_time": null,
+      "movement": "活动",
+      "time_semantics": {
+        "interval": "reported_activity",
+        "start_asserted": false,
+        "end_asserted": false
+      }
+    },
+    "opinion": {
+      "id": "O005",
+      "kind": "opinion",
+      "title": "德国空军“台风”战机在东海进行对海突击训练",
+      "text": "时间：2025.5.1\n\n标题：德国空军“台风”战机在东海进行对海突击训练\n\n正文：据央视新闻报道，2025年5月1日5时45分至7时10分，德国空军“台风”多用途战斗机在东海空域组织了对海突击训练。此次训练围绕既定科目组织训练，按计划完成相关平台之间的行动衔接。有分析认为，这一动向体现了德国空军在印太方向任务组织方式的调整，相关行动被视为有助于提升训练协同与流程熟悉程度。\n",
+      "platforms": [
+        {
+          "name": "台风”多用途战斗机",
+          "country": "德国",
+          "quantity": null,
+          "quote": "德国空军“台风”多用途战斗机",
+          "quantity_quote": "",
+          "country_raw": "德国"
+        }
+      ],
+      "location": {
+        "raw": "东海空域",
+        "region": "东海",
+        "direction": "东海",
+        "precision": "大范围",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "在东海空域"
+      },
+      "mission": {
+        "value": "对海突击训练",
+        "quote": "组织了对海突击训练"
+      },
+      "start_time": "05:45",
+      "end_time": "07:10",
+      "movement": "活动",
+      "time_semantics": {
+        "interval": "reported_activity",
+        "start_asserted": false,
+        "end_asserted": false
+      }
+    },
+    "radars": [
+      {
+        "id": "R016",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "“台风”多用途战斗机",
+            "country": "德国",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-8638D8B9232003",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "对海突击训练",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "对海突击训练"
+        ],
+        "start_time": "2025.05.01 05:45:00",
+        "end_time": "2025.05.01 07:10:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            125.1685,
+            125.7821
+          ],
+          "latitude_range": [
+            28.1741,
+            28.7536
+          ],
+          "median": [
+            125.4888,
+            28.5021
+          ],
+          "origins": [
+            [
+              125.1984,
+              28.7048
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [
+            "东海"
+          ],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [],
+        "batch": "AIR-8638D8B9232003",
+        "sibling_ids": [],
+        "hull_values": [],
+        "country_values": [
+          "德国"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 13,
+        "time_semantics": {
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "identity_scope": "batch_is_not_unique_target",
+        "warnings": []
+      }
+    ],
+    "association": {
+      "opinion_edges": [
+        {
+          "candidate_id": "O005",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.92,
+          "reason": "平台（德国台风）、数量（2 架）、日期（2025.5.1）及地点（东海油气田/空域）高度一致。新闻描述为“持续活动”，舆论明确给出具体时间段（05:45-07:10），属于同一活动的不同信息源补充。"
+        },
+        {
+          "candidate_id": "O022",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.98,
+          "reason": "地点冲突：新闻明确为“东海油气田海域”，而该候选为“印度洋相关海域”。同型号同数量同日期但方向完全不同，判定为不同活动。"
+        },
+        {
+          "candidate_id": "O021",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.99,
+          "reason": "平台国籍冲突：新闻主体为德国战机，该候选为中国歼 -35。虽同处东海且日期相同，但主体完全不同，属于污染材料或平行事件。"
+        }
+      ],
+      "radar_edges": [
+        {
+          "candidate_id": "R016",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.88,
+          "reason": "平台（德国台风）、数量（2 架）、日期（2025.5.1）及任务（对海突击训练）完全匹配。雷达坐标经度范围（125-126°E）与纬度范围（28-29°N）覆盖东海油气田海域，时间区间（05:45-07:10）与舆论 O005 一致，确认为同一活动的雷达观测数据。"
+        },
+        {
+          "candidate_id": "R011",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.95,
+          "reason": "地点冲突：雷达坐标位于印度洋（经度 80°E，纬度 -5°S），而新闻明确在东海。虽平台、数量、日期相同，但地理位置截然不同，判定为不同活动。"
+        },
+        {
+          "candidate_id": "R047",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.99,
+          "reason": "平台冲突：该候选主体为日本村雨号护卫舰，新闻主体为德国台风战斗机。虽同在东海且时间重叠，但平台类型和国籍完全不同，属于不同活动。"
+        }
+      ],
+      "ambiguity": "无。核心关联线索（平台型号、数量、日期、地点、任务）在 O005 和 R016 中形成闭环，其他候选因地点或平台属性冲突被排除。"
+    },
+    "same_batch_other_candidates": []
+  },
+  "result": {
+    "same_event": true,
+    "platforms": [
+      {
+        "platform_index": 0,
+        "platform": {
+          "claim": "德国“台风”多用途战斗机",
+          "supporting_sources": [
+            "N007",
+            "O005",
+            "R016"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均明确指向德国台风战机"
+        },
+        "country": {
+          "claim": "德国",
+          "supporting_sources": [
+            "N007",
+            "O005",
+            "R016"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源一致确认国籍为德国"
+        },
+        "quantity": {
+          "claim": "2 架",
+          "supporting_sources": [
+            "N007",
+            "R016"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻明确提及"
+        }
+      }
+    ],
+    "location": {
+      "claim": "东海油气田海域",
+      "supporting_sources": [
+        "N007",
+        "R016"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻明确为“东海油气田海域”，雷达坐标范围（125-126°E, 28-29°N）覆盖该区域，舆论“东海空域”为兼容描述"
+    },
+    "time": {
+      "claim": "2025 年 5 月 1 日 05:45-07:10",
+      "supporting_sources": [
+        "O005",
+        "R016"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "舆论与雷达时间区间完全一致，新闻仅确认日期"
+    },
+    "mission": {
+      "claim": "对海突击训练",
+      "supporting_sources": [
+        "O005",
+        "R016"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "舆论明确任务为“对海突击训练”，雷达任务列亦显示“对海突击训练”，新闻仅泛称“持续活动”"
+    },
+    "movement": {
+      "claim": "活动",
+      "supporting_sources": [
+        "N007",
+        "O005",
+        "R016"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "三源均描述为活动状态"
+    },
+    "unresolved_issues": [],
+    "explanation": "新闻、舆论、雷达三源在平台型号、国籍、数量（2 架）、地点（东海油气田海域/坐标覆盖）、时间（05:45-07:10）及任务（对海突击训练）上高度一致，形成完整证据链。新闻未提具体时刻和任务细节，舆论与雷达补充了这些关键信息，无未消解冲突。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-08T00:03:24.1639874Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"same_event\": true, \"platforms\": [{\"platform_index\": 0, \"platform\": {\"claim\": \"德国“台风”多用途战斗机\", \"supporting_sources\": [\"N007\", \"O005\", \"R016\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源（新闻、舆论、雷达）均明确指向德国台风战机\"}, \"country\": {\"claim\": \"德国\", \"supporting_sources\": [\"N007\", \"O005\", \"R016\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源一致确认国籍为德国\"}, \"quantity\": {\"claim\": \"2 架\", \"supporting_sources\": [\"N007\", \"R016\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻明确提及\"\n    \t}\n    }], \"location\": {\"claim\": \"东海油气田海域\", \"supporting_sources\": [\"N007\", \"R016\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻明确为“东海油气田海域”，雷达坐标范围（125-126°E, 28-29°N）覆盖该区域，舆论“东海空域”为兼容描述\"}, \"time\": {\"claim\": \"2025 年 5 月 1 日 05:45-07:10\", \"supporting_sources\": [\"O005\", \"R016\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"舆论与雷达时间区间完全一致，新闻仅确认日期\"}, \"mission\": {\"claim\": \"对海突击训练\", \"supporting_sources\": [\"O005\", \"R016\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"舆论明确任务为“对海突击训练”，雷达任务列亦显示“对海突击训练”，新闻仅泛称“持续活动”\"}, \"movement\": {\"claim\": \"活动\", \"supporting_sources\": [\"N007\", \"O005\", \"R016\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源均描述为活动状态\"}, \"unresolved_issues\": [],\"explanation\": \"新闻、舆论、雷达三源在平台型号、国籍、数量（2 架）、地点（东海油气田海域/坐标覆盖）、时间（05:45-07:10）及任务（对海突击训练）上高度一致，形成完整证据链。新闻未提具体时刻和任务细节，舆论与雷达补充了这些关键信息，无未消解冲突。\"}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 12786190800,
+    "load_duration": 8211100,
+    "prompt_eval_count": 2428,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 847280000,
+    "eval_count": 599,
+    "eval_duration": 11731534000
+  }
+}

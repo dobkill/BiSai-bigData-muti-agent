@@ -1,0 +1,745 @@
+{
+  "id": "N042",
+  "news_id": "N042",
+  "opinion_id": "O004",
+  "radar_ids": [
+    "R004"
+  ],
+  "radar_slots": {
+    "0": "R004"
+  },
+  "alignment": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O004",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.98,
+        "reason": "平台（新加坡 F-15SG）、数量（2 架）、地点（安达曼海）、时间区间（08:19-10:44）及任务性质完全一致。O004 是对新闻 N042 内容的直接复述与定性，属于同一事件。"
+      },
+      {
+        "candidate_id": "O041",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "虽然平台型号、数量、日期相同，但地点为“孟加拉湾”而非“安达曼海”，且时间区间（11:44-13:14）与新闻 N042 无重叠。地理区域不同且时间分离，确认为不同活动。"
+      },
+      {
+        "candidate_id": "O024",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.99,
+        "reason": "平台类型完全不同（法国护卫舰 vs 新加坡战斗机），地点（巴伦支海）和时间虽部分重叠但主体不符，属于完全不同的事件。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R004",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.92,
+        "reason": "雷达数据 R004 记录的批号、平台（新加坡 F-15SG）、数量（2 架）、任务（战备警巡）及精确时间戳（08:19-10:44）与新闻 N042 完全吻合。尽管坐标未验证，但时空和身份线索高度一致，确认为同一事件的数据源。"
+      },
+      {
+        "candidate_id": "R017",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.93,
+        "reason": "虽然平台型号、数量、日期相同，但时间区间（11:44-13:14）与新闻 N042 无重叠，且任务描述为“对海突击训练”而非“战备警巡”。时间不重合排除关联。"
+      },
+      {
+        "candidate_id": "R050",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "平台类型完全不同（坦克登陆舰 vs 战斗机），地点（东海南部）与新闻不符，确认为不同事件。"
+      }
+    ],
+    "ambiguity": "无。新闻 N042 与候选 O004、R004 在时间、地点、平台、数量及任务上均存在精确匹配，关联关系明确。其他候选因地点、时间或平台类型差异被排除。"
+  },
+  "candidates": {
+    "opinion": [
+      {
+        "id": "O004",
+        "score": 6.18309,
+        "cosine": 0.98309,
+        "platform_similarity": 1.0,
+        "time_overlap": 1.0,
+        "location_relation": "same"
+      },
+      {
+        "id": "O041",
+        "score": 4.13791,
+        "cosine": 0.93791,
+        "platform_similarity": 1.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_named_regions"
+      },
+      {
+        "id": "O024",
+        "score": 1.85006,
+        "cosine": 0.65006,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "different_named_regions"
+      },
+      {
+        "id": "O002",
+        "score": 0.80732,
+        "cosine": 0.80732,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O031",
+        "score": 0.78388,
+        "cosine": 0.78388,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O018",
+        "score": 0.77819,
+        "cosine": 0.77819,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      }
+    ],
+    "radar": [
+      {
+        "id": "R004",
+        "score": 5.32637,
+        "cosine": 0.92637,
+        "platform_similarity": 1.0,
+        "time_overlap": 1.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R017",
+        "score": 4.1377,
+        "cosine": 0.9377,
+        "platform_similarity": 1.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R050",
+        "score": 1.98674,
+        "cosine": 0.67777,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.9241379310344827,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "R019",
+        "score": 0.79436,
+        "cosine": 0.79436,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R021",
+        "score": 0.79422,
+        "cosine": 0.79422,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R026",
+        "score": 0.7916,
+        "cosine": 0.7916,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      }
+    ]
+  },
+  "assignment_diagnostics": {
+    "opinion": [],
+    "radar": []
+  },
+  "radar_context": [],
+  "verification": {
+    "same_event": true,
+    "facts": [
+      {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "F-15SG多用途战斗机",
+        "supporting_sources": [
+          "N042",
+          "O004",
+          "R004"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N042': 'F-15SG多用途战斗机', 'O004': 'F-15SG多用途战斗机', 'R004': 'F-15SG多用途战斗机'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "F-15SG 多用途战斗机",
+          "supporting_sources": [
+            "N042",
+            "O004",
+            "R004"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均明确指向 F-15SG，无冲突。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "新加坡",
+        "supporting_sources": [
+          "N042",
+          "O004",
+          "R004"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N042': '新加坡', 'O004': '新加坡', 'R004': '新加坡'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "新加坡",
+          "supporting_sources": [
+            "N042",
+            "O004",
+            "R004"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均明确标注为新加坡，无冲突。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "2架",
+        "supporting_sources": [
+          "N042",
+          "R004"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N042': 2, 'R004': 2}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "2 架",
+          "supporting_sources": [
+            "N042",
+            "R004"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻 N042 和雷达 R004 均明确记录为 2 架；舆论 O004 未提及具体数量但不构成反对，三源中两源支持且无冲突。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "安达曼海",
+        "supporting_sources": [
+          "N042",
+          "O004"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "复核明示地点和PDF包含关系：{'N042': '安达曼海', 'O004': '安达曼海'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "安达曼海",
+          "supporting_sources": [
+            "N042",
+            "O004"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻 N042 和舆论 O004 均明确记载地点为安达曼海；雷达 R004 虽无文本区域描述但坐标范围（93.8-93.9, 10.0-10.2）地理上位于安达曼海，三源时空一致。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N042": {
+            "raw": "安达曼海",
+            "region": "安达曼海",
+            "direction": "其他",
+            "precision": "原文区域",
+            "mapping": "PDF未列入三大核心海域的区域归其他",
+            "transit": false,
+            "quote": "在安达曼海持续活动"
+          },
+          "O004": {
+            "raw": "安达曼海任务海域",
+            "region": "安达曼海",
+            "direction": "其他",
+            "precision": "原文区域",
+            "mapping": "PDF未列入三大核心海域的区域归其他",
+            "transit": false,
+            "quote": "在安达曼海任务海域"
+          }
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "共同观测/报道时段 08:19—10:44（非完整活动起止断言）",
+        "supporting_sources": [
+          "N042",
+          "O004",
+          "R004"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N042': {'start': '08:19', 'end': '10:44', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': True}, 'O004': {'start': '08:19', 'end': '10:44', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R004': {'start': '08:19', 'end': '10:44', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "2025-05-01 08:19 - 10:44",
+          "supporting_sources": [
+            "N042",
+            "O004",
+            "R004"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源的时间起止点完全一致，精确印证。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N042": {
+            "start": "08:19",
+            "end": "10:44",
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": true
+          },
+          "O004": {
+            "start": "08:19",
+            "end": "10:44",
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
+          },
+          "R004": {
+            "start": "08:19",
+            "end": "10:44",
+            "interval": "observation_coverage",
+            "start_asserted": false,
+            "end_asserted": false
+          }
+        },
+        "asserted_boundaries": {
+          "start": {},
+          "end": {
+            "N042": "10:44"
+          }
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "战备警巡",
+        "supporting_sources": [
+          "O004",
+          "R004"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "原文明示任务：{'N042': [], 'O004': ['战备警巡'], 'R004': ['战备警巡']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "战备警巡",
+          "supporting_sources": [
+            "O004",
+            "R004"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论 O004 和雷达 R004 均明确标注任务为“战备警巡”；新闻 N042 描述为“持续活动”，在缺乏更具体科目证据时，与两源明确的“战备警巡”不冲突且可兼容。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N042": [],
+          "O004": [
+            "战备警巡"
+          ],
+          "R004": [
+            "战备警巡"
+          ]
+        },
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N042",
+          "O004"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "supporting_sources": [
+            "N042",
+            "O004"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻和舆论均描述为机动/保持警戒活动，雷达未说明但不构成冲突。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N042": "活动",
+          "O004": "活动",
+          "R004": "未说明"
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      }
+    ],
+    "unresolved_issues": [],
+    "explanation": "三类来源已关联，纳入结论的事实获得至少两类独立来源支持，未发现未消解明示反证。",
+    "model_explanation": "三源（新闻 N02、舆论 O004、雷达 R004）在平台型号、国籍、数量、时间、地点及任务性质上高度一致。数量由新闻和雷达共同支持；任务由舆论和雷达共同支持，新闻的泛称描述不冲突。无未消解冲突。"
+  },
+  "reasons": [],
+  "status": "可信事件",
+  "verified_facts": [
+    {
+      "platform_index": 0,
+      "field": "platform",
+      "claim": "F-15SG多用途战斗机",
+      "supporting_sources": [
+        "N042",
+        "O004",
+        "R004"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N042': 'F-15SG多用途战斗机', 'O004': 'F-15SG多用途战斗机', 'R004': 'F-15SG多用途战斗机'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "F-15SG 多用途战斗机",
+        "supporting_sources": [
+          "N042",
+          "O004",
+          "R004"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源（新闻、舆论、雷达）均明确指向 F-15SG，无冲突。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "country",
+      "claim": "新加坡",
+      "supporting_sources": [
+        "N042",
+        "O004",
+        "R004"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N042': '新加坡', 'O004': '新加坡', 'R004': '新加坡'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "新加坡",
+        "supporting_sources": [
+          "N042",
+          "O004",
+          "R004"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源（新闻、舆论、雷达）均明确标注为新加坡，无冲突。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "quantity",
+      "claim": "2架",
+      "supporting_sources": [
+        "N042",
+        "R004"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N042': 2, 'R004': 2}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "2 架",
+        "supporting_sources": [
+          "N042",
+          "R004"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻 N042 和雷达 R004 均明确记录为 2 架；舆论 O004 未提及具体数量但不构成反对，三源中两源支持且无冲突。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "location",
+      "claim": "安达曼海",
+      "supporting_sources": [
+        "N042",
+        "O004"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "复核明示地点和PDF包含关系：{'N042': '安达曼海', 'O004': '安达曼海'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "安达曼海",
+        "supporting_sources": [
+          "N042",
+          "O004"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻 N042 和舆论 O004 均明确记载地点为安达曼海；雷达 R004 虽无文本区域描述但坐标范围（93.8-93.9, 10.0-10.2）地理上位于安达曼海，三源时空一致。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N042": {
+          "raw": "安达曼海",
+          "region": "安达曼海",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false,
+          "quote": "在安达曼海持续活动"
+        },
+        "O004": {
+          "raw": "安达曼海任务海域",
+          "region": "安达曼海",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false,
+          "quote": "在安达曼海任务海域"
+        }
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "time",
+      "claim": "共同观测/报道时段 08:19—10:44（非完整活动起止断言）",
+      "supporting_sources": [
+        "N042",
+        "O004",
+        "R004"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N042': {'start': '08:19', 'end': '10:44', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': True}, 'O004': {'start': '08:19', 'end': '10:44', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R004': {'start': '08:19', 'end': '10:44', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "2025-05-01 08:19 - 10:44",
+        "supporting_sources": [
+          "N042",
+          "O004",
+          "R004"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻、舆论、雷达三源的时间起止点完全一致，精确印证。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N042": {
+          "start": "08:19",
+          "end": "10:44",
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": true
+        },
+        "O004": {
+          "start": "08:19",
+          "end": "10:44",
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "R004": {
+          "start": "08:19",
+          "end": "10:44",
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        }
+      },
+      "asserted_boundaries": {
+        "start": {},
+        "end": {
+          "N042": "10:44"
+        }
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "mission",
+      "claim": "战备警巡",
+      "supporting_sources": [
+        "O004",
+        "R004"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "原文明示任务：{'N042': [], 'O004': ['战备警巡'], 'R004': ['战备警巡']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "战备警巡",
+        "supporting_sources": [
+          "O004",
+          "R004"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "舆论 O004 和雷达 R004 均明确标注任务为“战备警巡”；新闻 N042 描述为“持续活动”，在缺乏更具体科目证据时，与两源明确的“战备警巡”不冲突且可兼容。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N042": [],
+        "O004": [
+          "战备警巡"
+        ],
+        "R004": [
+          "战备警巡"
+        ]
+      },
+      "supporting_source_types": [
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "movement",
+      "claim": "活动",
+      "supporting_sources": [
+        "N042",
+        "O004"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N042",
+          "O004"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻和舆论均描述为机动/保持警戒活动，雷达未说明但不构成冲突。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N042": "活动",
+        "O004": "活动",
+        "R004": "未说明"
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    }
+  ],
+  "radar_row_count": 12,
+  "direction": "其他",
+  "report_eligible": false,
+  "directory": "可信事件/N042_新加坡F-15SG战斗机在安达曼海持续活动"
+}

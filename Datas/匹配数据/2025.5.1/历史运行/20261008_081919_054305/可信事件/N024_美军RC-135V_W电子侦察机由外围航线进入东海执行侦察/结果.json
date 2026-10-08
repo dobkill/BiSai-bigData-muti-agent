@@ -1,0 +1,751 @@
+{
+  "id": "N024",
+  "news_id": "N024",
+  "opinion_id": "O050",
+  "radar_ids": [
+    "R025"
+  ],
+  "radar_slots": {
+    "0": "R025"
+  },
+  "alignment": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O050",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.98,
+        "reason": "平台（美军 RC-135V/W）、日期（2025.5.1）、地点（东海）及任务（电子侦察）完全一致。新闻提供了精确的时间区间（08:14-10:39），舆论虽无具体时间但描述的活动性质与新闻高度吻合，属于同一事件的常规报道。"
+      },
+      {
+        "candidate_id": "O024",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 1.0,
+        "reason": "平台完全不同（法国护卫舰 vs 美国侦察机），地点不同（巴伦支海 vs 东海），属于完全不同的活动。"
+      },
+      {
+        "candidate_id": "O004",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 1.0,
+        "reason": "平台不同（新加坡战斗机 vs 美国侦察机），地点不同（安达曼海 vs 东海），属于完全不同的活动。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R025",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 1.0,
+        "reason": "雷达数据与新闻在平台型号（RC-135V/W）、国籍（美国）、任务（电子侦察）及时间区间（08:14-10:39）上完全精确匹配。虽然地点字段缺失，但坐标辅助提示为“东海”，且时间重叠度为 1.0，确认为同一事件。"
+      },
+      {
+        "candidate_id": "R041",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 1.0,
+        "reason": "平台不同（韩国两栖攻击舰 vs 美国侦察机），地点不同（东海南部 vs 新闻仅提东海大范围，且任务为两栖训练），属于不同活动。"
+      },
+      {
+        "candidate_id": "R050",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 1.0,
+        "reason": "平台不同（新加坡坦克登陆舰 vs 美国侦察机），地点不同（东海南部 vs 新闻仅提东海大范围，且任务为远海训练），属于不同活动。"
+      }
+    ],
+    "ambiguity": "无。核心候选 O050 和 R025 与新闻 N024 在关键要素上完全一致，其他候选因平台、地点或任务明显不符被排除为不同事件。"
+  },
+  "candidates": {
+    "opinion": [
+      {
+        "id": "O050",
+        "score": 4.97626,
+        "cosine": 0.97626,
+        "platform_similarity": 1.0,
+        "time_overlap": null,
+        "location_relation": "same"
+      },
+      {
+        "id": "O024",
+        "score": 1.86173,
+        "cosine": 0.66173,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O004",
+        "score": 1.84739,
+        "cosine": 0.68877,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.9655172413793104,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O035",
+        "score": 1.60697,
+        "cosine": 0.80697,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "same"
+      },
+      {
+        "id": "O021",
+        "score": 1.592,
+        "cosine": 0.792,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "same"
+      },
+      {
+        "id": "O037",
+        "score": 1.25709,
+        "cosine": 0.77709,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O023",
+        "score": 0.7807,
+        "cosine": 0.7807,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      }
+    ],
+    "radar": [
+      {
+        "id": "R025",
+        "score": 5.36678,
+        "cosine": 0.96678,
+        "platform_similarity": 1.0,
+        "time_overlap": 1.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R041",
+        "score": 2.40431,
+        "cosine": 0.72431,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "contains"
+      },
+      {
+        "id": "R050",
+        "score": 2.29335,
+        "cosine": 0.663,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.9586206896551724,
+        "location_relation": "contains"
+      },
+      {
+        "id": "R010",
+        "score": 1.97856,
+        "cosine": 0.77856,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R002",
+        "score": 0.77572,
+        "cosine": 0.77572,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R006",
+        "score": 0.77556,
+        "cosine": 0.77556,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R014",
+        "score": 0.76975,
+        "cosine": 0.76975,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      }
+    ]
+  },
+  "assignment_diagnostics": {
+    "opinion": [],
+    "radar": []
+  },
+  "radar_context": [],
+  "verification": {
+    "same_event": true,
+    "facts": [
+      {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "RC-135V/W电子侦察机",
+        "supporting_sources": [
+          "N024",
+          "O050",
+          "R025"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N024': 'RC-135V/W电子侦察机', 'O050': 'RC-135V/W电子侦察机', 'R025': 'RC-135V/W电子侦察机'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "RC-135V/W",
+          "supporting_sources": [
+            "N024",
+            "O050",
+            "R025"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均明确标识为 RC-135V/W"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "美国",
+        "supporting_sources": [
+          "N024",
+          "O050",
+          "R025"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N024': '美国', 'O050': '美国', 'R025': '美国'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "美国",
+          "supporting_sources": [
+            "N024",
+            "O050",
+            "R025"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均明确标识国籍为美国"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "1架",
+        "supporting_sources": [
+          "O050",
+          "R025"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'O050': 1, 'R025': 1}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "1 架",
+          "supporting_sources": [
+            "O050",
+            "R025"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论和雷达均明确提及数量为 1，新闻虽未显式数字但语境为单架执行任务"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "东海",
+        "supporting_sources": [
+          "N024",
+          "O050"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "复核明示地点和PDF包含关系：{'N024': '东海', 'O050': '东海'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "东海",
+          "supporting_sources": [
+            "N024",
+            "O050"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻和舆论均明确提及活动区域为东海，雷达坐标辅助提示亦指向东海"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N024": {
+            "raw": "东海",
+            "region": "东海",
+            "direction": "东海",
+            "precision": "大范围",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false,
+            "quote": "由外围航线进入东海执行电子侦察任务"
+          },
+          "O050": {
+            "raw": "东海方向",
+            "region": "东海",
+            "direction": "东海",
+            "precision": "大范围",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false,
+            "quote": "在东海方向"
+          }
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "共同观测/报道时段 08:14—10:39（非完整活动起止断言）",
+        "supporting_sources": [
+          "N024",
+          "R025"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N024': {'start': '08:14', 'end': '10:39', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O050': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R025': {'start': '08:14', 'end': '10:39', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "2025-05-01 08:14 至 10:39",
+          "supporting_sources": [
+            "N024",
+            "R025"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻和雷达均精确记录了该时间区间，舆论仅确认日期"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N024": {
+            "start": "08:14",
+            "end": "10:39",
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
+          },
+          "O050": {
+            "start": null,
+            "end": null,
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
+          },
+          "R025": {
+            "start": "08:14",
+            "end": "10:39",
+            "interval": "observation_coverage",
+            "start_asserted": false,
+            "end_asserted": false
+          }
+        },
+        "asserted_boundaries": {
+          "start": {},
+          "end": {}
+        },
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "电子侦察",
+        "supporting_sources": [
+          "N024",
+          "O050",
+          "R025"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "原文明示任务：{'N024': ['电子侦察'], 'O050': ['电子侦察'], 'R025': ['电子侦察']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "电子侦察",
+          "supporting_sources": [
+            "N024",
+            "O050",
+            "R025"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均明确任务为电子侦察"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N024": [
+            "电子侦察"
+          ],
+          "O050": [
+            "电子侦察"
+          ],
+          "R025": [
+            "电子侦察"
+          ]
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N024",
+          "O050"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "进入/活动",
+          "supporting_sources": [
+            "N024"
+          ],
+          "conflicting_sources": [],
+          "status": "insufficient",
+          "reason": "仅新闻明确描述“由外围航线进入”，舆论和雷达未提供具体进出动作细节"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N024": "进入",
+          "O050": "活动",
+          "R025": "未说明"
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      }
+    ],
+    "unresolved_issues": [],
+    "explanation": "三类来源已关联，纳入结论的事实获得至少两类独立来源支持，未发现未消解明示反证。",
+    "model_explanation": "三源在平台型号、国籍、任务、地点及核心时间区间上高度一致，构成完整证据链。数量由两源（舆论、雷达）支持。运动状态仅新闻有明确描述，其余为不足但非冲突。"
+  },
+  "reasons": [],
+  "status": "可信事件",
+  "verified_facts": [
+    {
+      "platform_index": 0,
+      "field": "platform",
+      "claim": "RC-135V/W电子侦察机",
+      "supporting_sources": [
+        "N024",
+        "O050",
+        "R025"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N024': 'RC-135V/W电子侦察机', 'O050': 'RC-135V/W电子侦察机', 'R025': 'RC-135V/W电子侦察机'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "RC-135V/W",
+        "supporting_sources": [
+          "N024",
+          "O050",
+          "R025"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源（新闻、舆论、雷达）均明确标识为 RC-135V/W"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "country",
+      "claim": "美国",
+      "supporting_sources": [
+        "N024",
+        "O050",
+        "R025"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N024': '美国', 'O050': '美国', 'R025': '美国'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "美国",
+        "supporting_sources": [
+          "N024",
+          "O050",
+          "R025"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源（新闻、舆论、雷达）均明确标识国籍为美国"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "quantity",
+      "claim": "1架",
+      "supporting_sources": [
+        "O050",
+        "R025"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'O050': 1, 'R025': 1}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "1 架",
+        "supporting_sources": [
+          "O050",
+          "R025"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "舆论和雷达均明确提及数量为 1，新闻虽未显式数字但语境为单架执行任务"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "location",
+      "claim": "东海",
+      "supporting_sources": [
+        "N024",
+        "O050"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "复核明示地点和PDF包含关系：{'N024': '东海', 'O050': '东海'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "东海",
+        "supporting_sources": [
+          "N024",
+          "O050"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻和舆论均明确提及活动区域为东海，雷达坐标辅助提示亦指向东海"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N024": {
+          "raw": "东海",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "由外围航线进入东海执行电子侦察任务"
+        },
+        "O050": {
+          "raw": "东海方向",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在东海方向"
+        }
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "time",
+      "claim": "共同观测/报道时段 08:14—10:39（非完整活动起止断言）",
+      "supporting_sources": [
+        "N024",
+        "R025"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N024': {'start': '08:14', 'end': '10:39', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O050': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R025': {'start': '08:14', 'end': '10:39', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "2025-05-01 08:14 至 10:39",
+        "supporting_sources": [
+          "N024",
+          "R025"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻和雷达均精确记录了该时间区间，舆论仅确认日期"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N024": {
+          "start": "08:14",
+          "end": "10:39",
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "O050": {
+          "start": null,
+          "end": null,
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "R025": {
+          "start": "08:14",
+          "end": "10:39",
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        }
+      },
+      "asserted_boundaries": {
+        "start": {},
+        "end": {}
+      },
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "mission",
+      "claim": "电子侦察",
+      "supporting_sources": [
+        "N024",
+        "O050",
+        "R025"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "原文明示任务：{'N024': ['电子侦察'], 'O050': ['电子侦察'], 'R025': ['电子侦察']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "电子侦察",
+        "supporting_sources": [
+          "N024",
+          "O050",
+          "R025"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源（新闻、舆论、雷达）均明确任务为电子侦察"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N024": [
+          "电子侦察"
+        ],
+        "O050": [
+          "电子侦察"
+        ],
+        "R025": [
+          "电子侦察"
+        ]
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "movement",
+      "claim": "活动",
+      "supporting_sources": [
+        "N024",
+        "O050"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "进入/活动",
+        "supporting_sources": [
+          "N024"
+        ],
+        "conflicting_sources": [],
+        "status": "insufficient",
+        "reason": "仅新闻明确描述“由外围航线进入”，舆论和雷达未提供具体进出动作细节"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N024": "进入",
+        "O050": "活动",
+        "R025": "未说明"
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    }
+  ],
+  "radar_row_count": 13,
+  "direction": "东海",
+  "report_eligible": true,
+  "directory": "可信事件/N024_美军RC-135V_W电子侦察机由外围航线进入东海执行侦察"
+}

@@ -1,0 +1,314 @@
+{
+  "role": "verification",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N013",
+      "kind": "news",
+      "title": "中国空警-500预警机进入钓鱼岛海域执行情报监视侦察",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：中国空警-500预警机进入钓鱼岛海域执行情报监视侦察\n正文：2025年5月1日8时41分至10时06分，中国空警-500预警机由外围航线进入钓鱼岛海域，围绕任务海域组织情报监视侦察，按计划保持机动并持续执行情报监视侦察。\n\n主题词：中国  空警-500预警机  钓鱼岛海域  情报监视侦察\n",
+      "platforms": [
+        {
+          "name": "空警-500预警机",
+          "country": "中国",
+          "quantity": null,
+          "quote": "中国空警-500预警机",
+          "quantity_quote": "",
+          "country_raw": "中国"
+        }
+      ],
+      "location": {
+        "raw": "钓鱼岛海域",
+        "region": "钓鱼岛海域",
+        "direction": "东海",
+        "precision": "具体区域",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "进入钓鱼岛海域"
+      },
+      "mission": {
+        "value": "情报监视侦察",
+        "quote": "执行情报监视侦察"
+      },
+      "start_time": "08:41",
+      "end_time": "10:06",
+      "movement": "进入",
+      "time_semantics": {
+        "interval": "reported_activity",
+        "start_asserted": false,
+        "end_asserted": false
+      }
+    },
+    "opinion": {
+      "id": "O035",
+      "kind": "opinion",
+      "title": "中国两架空警-500预警机在东海执行情报监视侦察",
+      "text": "时间：2025.5.1\n\n标题：中国两架空警-500预警机在东海执行情报监视侦察\n\n正文：据央视新闻报道，2025年5月1日，中国两架空警-500预警机在东海方向围绕任务海域组织情报监视侦察。分析人士指出，该平台结合既定航线持续收集公开可观察信息，可能体现了其在区域侦巡中的态势感知和持续监视能力。\n",
+      "platforms": [
+        {
+          "name": "空警-500",
+          "country": "中国",
+          "quantity": 2,
+          "quote": "两架空警-500预警机",
+          "quantity_quote": "两架",
+          "country_raw": "中国"
+        }
+      ],
+      "location": {
+        "raw": "东海方向围绕任务海域",
+        "region": "东海",
+        "direction": "东海",
+        "precision": "大范围",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "在东海方向围绕任务海域"
+      },
+      "mission": {
+        "value": "情报监视侦察",
+        "quote": "组织情报监视侦察"
+      },
+      "start_time": null,
+      "end_time": null,
+      "movement": "活动",
+      "time_semantics": {
+        "interval": "reported_activity",
+        "start_asserted": false,
+        "end_asserted": false
+      }
+    },
+    "radars": [
+      {
+        "id": "R010",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "空警-500预警机",
+            "country": "中国",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-5DD82818758598",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "情报监视侦察",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "情报监视侦察"
+        ],
+        "start_time": "2025.05.01 08:41:00",
+        "end_time": "2025.05.01 10:06:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            123.1201,
+            123.2132
+          ],
+          "latitude_range": [
+            25.7002,
+            25.8402
+          ],
+          "median": [
+            123.1524,
+            25.7778
+          ],
+          "origins": [
+            [
+              123.1736,
+              25.6984
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [
+            "东海"
+          ],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [],
+        "batch": "AIR-5DD82818758598",
+        "sibling_ids": [],
+        "hull_values": [],
+        "country_values": [
+          "中国"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 12,
+        "time_semantics": {
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "identity_scope": "batch_is_not_unique_target",
+        "warnings": []
+      }
+    ],
+    "association": {
+      "opinion_edges": [
+        {
+          "candidate_id": "O035",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.95,
+          "reason": "平台（空警 -500）、任务（情报监视侦察）、日期（2025.5.1）完全一致。新闻明确时间为 08:41-10:06，舆论虽无具体时刻但描述为“在东海方向”，与新闻地点“钓鱼岛海域”（属东海）相容。数量差异（新闻未提具体架数 vs 舆论称两架）不影响同一活动判定，可能为部分公开或不同来源统计口径。"
+        },
+        {
+          "candidate_id": "O028",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.85,
+          "reason": "平台、任务类型（虽新闻明确为 ISR，舆论未明示但提及“区域机动”和“任务海域”）、日期一致。地点描述“东海上海外海”与“钓鱼岛海域”在地理上重叠或相邻，属于同一活动的大范围描述。时间区间模糊但包含新闻时段的可能性大。"
+        },
+        {
+          "candidate_id": "O033",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 1.0,
+          "reason": "平台完全不同（航母 vs 预警机），地点完全不同（中太平洋 vs 东海/钓鱼岛海域）。尽管时间重叠，但属于完全不同的军事行动。"
+        }
+      ],
+      "radar_edges": [
+        {
+          "candidate_id": "R010",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.98,
+          "reason": "平台（空警 -500）、任务（情报监视侦察）、时间区间（08:41-10:06）与新闻完全精确匹配。坐标范围（经度 123.x，纬度 25.x）对应钓鱼岛海域地理特征。虽然批号不同且雷达未验证具体坐标边界，但时空和任务的高度一致性足以确认关联。"
+        },
+        {
+          "candidate_id": "R006",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 1.0,
+          "reason": "平台相同，但时间区间（14:17-16:42）与新闻（08:41-10:06）无重叠。任务描述为“空中警戒”而非明确的“情报监视侦察”，且坐标位于更南的东海南部海域，极大概率为另一场独立活动。"
+        },
+        {
+          "candidate_id": "R051",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 1.0,
+          "reason": "平台（山东号航母）与新闻不符，地点（中太平洋）与新闻（东海/钓鱼岛）完全冲突。时间虽重叠但主体和位置均不同。"
+        }
+      ],
+      "ambiguity": "舆论 O035 和 O028 未提供精确起止时间，仅能推断包含新闻时段；雷达 R010 的坐标为宽泛矩形辅助召回，非官方精确边界，但结合任务和时间可强关联。"
+    },
+    "same_batch_other_candidates": []
+  },
+  "result": {
+    "same_event": true,
+    "platforms": [
+      {
+        "platform_index": 0,
+        "platform": {
+          "claim": "空警 -500",
+          "supporting_sources": [
+            "N013",
+            "O035",
+            "R010"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源均明确指向空警 -500 预警机"
+        },
+        "country": {
+          "claim": "中国",
+          "supporting_sources": [
+            "N013",
+            "O035",
+            "R010"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源均明确标注为中国"
+        },
+        "quantity": {
+          "claim": "2 架",
+          "supporting_sources": [
+            "O035",
+            "R010"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论 O035 明确提及“两架”，雷达 R010 批号统计数量为 2；新闻 N013 未提具体数量但不构成冲突，属信息缺失而非反对"
+        }
+      }
+    ],
+    "location": {
+      "claim": "钓鱼岛海域",
+      "supporting_sources": [
+        "N013"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻 N013 明确为“钓鱼岛海域”；舆论 O035 的“东海方向”及雷达 R010 坐标（经度 123.x，纬度 25.x）均兼容该区域，无冲突"
+    },
+    "time": {
+      "claim": "2025-05-01 08:41 至 10:06",
+      "supporting_sources": [
+        "N013",
+        "R010"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻 N013 与雷达 R010 起止时间精确匹配；舆论 O035 仅提及日期，不冲突"
+    },
+    "mission": {
+      "claim": "情报监视侦察",
+      "supporting_sources": [
+        "N013",
+        "O035",
+        "R010"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "三源均明确描述任务为“情报监视侦察”或同义表述"
+    },
+    "movement": {
+      "claim": "进入",
+      "supporting_sources": [
+        "N013"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻 N013 明确描述“由外围航线进入”，舆论与雷达未提供相反的运动方向信息"
+    },
+    "unresolved_issues": [],
+    "explanation": "三源（新闻、舆论、雷达）在平台型号、国籍、任务类型及时间区间上高度一致。数量方面，舆论和雷达支持"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-08T00:04:44.0648152Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"same_event\": true, \"platforms\": [{\"platform_index\": 0, \"platform\": {\"claim\": \"空警 -500\", \"supporting_sources\": [\"N013\", \"O035\", \"R010\"], \"conflicting_sources\": [],\"status\": \"supported\",\"reason\": \"三源均明确指向空警 -500 预警机\"}, \"country\": {\"claim\": \"中国\", \"supporting_sources\": [\"N013\", \"O035\", \"R010\"], \"conflicting_sources\": [],\"status\": \"supported\",\"reason\": \"三源均明确标注为中国\"}, \"quantity\": {\"claim\": \"2 架\", \"supporting_sources\": [\"O035\", \"R010\"], \"conflicting_sources\": [],\"status\": \"supported\",\"reason\": \"舆论 O035 明确提及“两架”，雷达 R010 批号统计数量为 2；新闻 N013 未提具体数量但不构成冲突，属信息缺失而非反对\"}}], \"location\": {\"claim\": \"钓鱼岛海域\", \"supporting_sources\": [\"N013\"], \"conflicting_sources\": [],\"status\": \"supported\",\"reason\": \"新闻 N013 明确为“钓鱼岛海域”；舆论 O035 的“东海方向”及雷达 R010 坐标（经度 123.x，纬度 25.x）均兼容该区域，无冲突\"}, \"time\": {\"claim\": \"2025-05-01 08:41 至 10:06\", \"supporting_sources\": [\"N013\", \"R010\"], \"conflicting_sources\": [],\"status\": \"supported\",\"reason\": \"新闻 N013 与雷达 R010 起止时间精确匹配；舆论 O035 仅提及日期，不冲突\"}, \"mission\": {\"claim\": \"情报监视侦察\", \"supporting_sources\": [\"N013\", \"O035\", \"R010\"], \"conflicting_sources\": [],\"status\": \"supported\",\"reason\": \"三源均明确描述任务为“情报监视侦察”或同义表述\"}, \"movement\": {\"claim\": \"进入\", \"supporting_sources\": [\"N013\"], \"conflicting_sources\": [],\"status\": \"supported\",\"reason\": \"新闻 N013 明确描述“由外围航线进入”，舆论与雷达未提供相反的运动方向信息\"}, \"unresolved_issues\": [],\"explanation\": \"三源（新闻、舆论、雷达）在平台型号、国籍、任务类型及时间区间上高度一致。数量方面，舆论和雷达支持\"\n}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 12248496300,
+    "load_duration": 13735000,
+    "prompt_eval_count": 2509,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 905759000,
+    "eval_count": 586,
+    "eval_duration": 11096555000
+  }
+}

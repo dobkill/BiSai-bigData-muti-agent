@@ -17,21 +17,25 @@
         ],
         "relation": "same",
         "confidence": 0.95,
-        "reason": "平台（韩国岛山安昌浩级潜艇）、地点（鄂霍次克海）、时间（2025.5.1）及任务性质（巡逻/活动）完全一致。雷达数据 R028 提供了精确的时间窗口（17:40-19:05），与新闻描述的“持续活动”逻辑吻合，虽新闻未列具体起止时间，但属于同一事件的不同信息源补充。"
+        "reason": "平台（韩国岛山安昌浩级潜艇）、地点（鄂霍次克海）、时间（2025.5.1）及任务性质（巡逻/活动）完全一致。雷达数据 R028 提供了精确的起止时间（17:40-19:05），与新闻 O009 报道的具体时段吻合，确认为同一事件。"
       },
       {
         "candidate_id": "O044",
-        "platform_indices": [],
+        "platform_indices": [
+          0
+        ],
         "relation": "different",
         "confidence": 0.98,
-        "reason": "平台型号不同（独岛级两栖攻击舰 vs 岛山安昌浩级潜艇），地点不同（东海 vs 鄂霍次克海），任务不同（两栖训练 vs 潜艇活动），确认为不同活动。"
+        "reason": "平台型号不同（独岛级两栖攻击舰 vs 岛山安昌浩级潜艇），且活动海域不同（东海 vs 鄂霍次克海），属于韩国海军同日不同编队的独立行动。"
       },
       {
         "candidate_id": "O038",
-        "platform_indices": [],
+        "platform_indices": [
+          0
+        ],
         "relation": "different",
-        "confidence": 0.98,
-        "reason": "平台类型完全不同（直升机 vs 潜艇），地点不同（阿拉伯海 vs 鄂霍次克海），确认为不同活动。"
+        "confidence": 0.99,
+        "reason": "平台类型完全不同（直升机 vs 潜艇），且海域差异巨大（阿拉伯海 vs 鄂霍次克海），无关联。"
       }
     ],
     "radar_edges": [
@@ -41,25 +45,29 @@
           0
         ],
         "relation": "same",
-        "confidence": 1.0,
-        "reason": "平台、地点、时间完全匹配。新闻描述为宏观的“持续活动”，雷达数据提供了具体的批次号（SHIP-10B1685DD16775）和精确时间段，两者互为印证，确认为同一事件。"
+        "confidence": 0.98,
+        "reason": "平台型号、国籍、海域（鄂霍次克海）及任务（海上巡逻）与新闻 N016 完全匹配。雷达观测时间（17:40-19:05）落在新闻所述的“持续活动”区间内，且批号 SHIP-10B1685DD16775 提供了具体身份佐证，确认为同一事件的高精度记录。"
       },
       {
         "candidate_id": "R041",
-        "platform_indices": [],
+        "platform_indices": [
+          0
+        ],
         "relation": "different",
-        "confidence": 0.98,
-        "reason": "平台型号不同（独岛级 vs 岛山安昌浩级），地点不同（东海南部 vs 鄂霍次克海），确认为不同活动。"
+        "confidence": 0.99,
+        "reason": "平台型号不同（独岛级两栖攻击舰），海域不同（东海南部 vs 鄂霍次克海），属于韩国海军同日其他单位的独立活动。"
       },
       {
         "candidate_id": "R036",
-        "platform_indices": [],
+        "platform_indices": [
+          0
+        ],
         "relation": "different",
-        "confidence": 0.98,
-        "reason": "平台型号不同（大邱级护卫舰 vs 潜艇），地点不同（巴伦支海 vs 鄂霍次克海），确认为不同活动。"
+        "confidence": 0.99,
+        "reason": "平台型号不同（大邱级护卫舰），海域不同（巴伦支海 vs 鄂霍次克海），无关联。"
       }
     ],
-    "ambiguity": "无。新闻与雷达数据 R028 在平台、时间、地点上高度一致，新闻的模糊描述被雷达数据的精确记录所补充，不存在歧义。其他候选因平台或地点明显冲突排除。"
+    "ambiguity": "无。新闻与雷达数据在平台、地点、时间及任务上高度一致，排除了其他候选项的干扰。"
   },
   "candidates": {
     "opinion": [
@@ -151,6 +159,7 @@
     "opinion": [],
     "radar": []
   },
+  "radar_context": [],
   "verification": {
     "same_event": true,
     "facts": [
@@ -177,7 +186,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻、舆论、雷达三源均明确指向该型号及国籍，无冲突。"
+          "reason": "三源（新闻、舆论、雷达）均明确指向同一平台型号及国籍，无冲突。"
         },
         "checked_by": "explicit_source_matrix",
         "supporting_source_types": [
@@ -270,7 +279,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "三源均明确记载活动区域为鄂霍次克海。"
+          "reason": "三源一致确认活动海域为鄂霍次克海。"
         },
         "checked_by": "literal_assertion_matrix",
         "source_values": {
@@ -310,14 +319,14 @@
       {
         "platform_index": -1,
         "field": "time",
-        "claim": "起点 17:40，终点 19:05",
+        "claim": "共同观测/报道时段 17:40—19:05（非完整活动起止断言）",
         "supporting_sources": [
           "O009",
           "R028"
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突；起点明示值：{'O009': '17:40', 'R028': '17:40'}；终点明示值：{'O009': '19:05', 'R028': '19:05'}",
+        "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N016': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O009': {'start': '17:40', 'end': '19:05', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R028': {'start': '17:40', 'end': '19:05', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
         "model_proposal": {
           "platform_index": -1,
           "field": "time",
@@ -328,38 +337,35 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "舆论与雷达提供精确起止时间，新闻仅确认日期，三者在时间维度上兼容（具体时刻包含于日期内）。"
+          "reason": "舆论与雷达提供了精确的起止时间，新闻虽未列具体时刻但涵盖该区间，三源在时间覆盖上无冲突。"
         },
         "checked_by": "literal_assertion_matrix",
-        "components": {
-          "start_time": {
-            "value": "17:40",
-            "support": [
-              "O009",
-              "R028"
-            ],
-            "conflicts": [],
-            "status": "supported",
-            "source_values": {
-              "O009": "17:40",
-              "R028": "17:40"
-            },
-            "radar_batch_observations": []
+        "source_values": {
+          "N016": {
+            "start": null,
+            "end": null,
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
           },
-          "end_time": {
-            "value": "19:05",
-            "support": [
-              "O009",
-              "R028"
-            ],
-            "conflicts": [],
-            "status": "supported",
-            "source_values": {
-              "O009": "19:05",
-              "R028": "19:05"
-            },
-            "radar_batch_observations": []
+          "O009": {
+            "start": "17:40",
+            "end": "19:05",
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
+          },
+          "R028": {
+            "start": "17:40",
+            "end": "19:05",
+            "interval": "observation_coverage",
+            "start_asserted": false,
+            "end_asserted": false
           }
+        },
+        "asserted_boundaries": {
+          "start": {},
+          "end": {}
         },
         "supporting_source_types": [
           "opinion",
@@ -387,7 +393,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "舆论与雷达明确任务为“海上巡逻”，新闻描述为“持续活动”及“围绕任务区域保持机动”，语义一致且互补。"
+          "reason": "舆论与雷达明确任务为“海上巡逻”，新闻描述为“持续活动”并围绕任务区域机动，两者在任务性质上相互印证。"
         },
         "checked_by": "literal_assertion_matrix",
         "source_values": {
@@ -425,7 +431,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻提及“保持机动”，舆论提及“沿既定方向保持机动”，雷达虽未显式描述但状态为活动，三源逻辑一致。"
+          "reason": "新闻与舆论均描述平台保持机动或维持部署，雷达虽未显式标注 movement 但观测数据支持活动状态。"
         },
         "checked_by": "literal_assertion_matrix",
         "source_values": {
@@ -441,7 +447,9 @@
     ],
     "unresolved_issues": [],
     "explanation": "三类来源已关联，纳入结论的事实获得至少两类独立来源支持，未发现未消解明示反证。",
-    "model_explanation": "新闻、舆论、雷达三类来源在平台型号、国籍、数量、地点、时间及任务性质上高度一致。舆论和雷达提供了精确的时间窗口（17:40-19:05）和具体任务描述（海上巡逻），补充了新闻中模糊的“持续活动”细节；新闻确认了宏观的活动事实。三源无明确冲突，关键事实均有至少两类来源支持，结论可信。"
+    "model_unresolved_issues": [],
+    "reconciled_model_issues": [],
+    "model_explanation": "新闻、舆论及雷达三源在平台型号、国籍、地点、时间及任务性质上高度一致。舆论和雷达提供了精确的时间窗口（17:40-19:05）和具体任务（海上巡逻），新闻作为背景报道确认了同一事件的存在，无未消解冲突。"
   },
   "reasons": [],
   "status": "可信事件",
@@ -469,7 +477,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "新闻、舆论、雷达三源均明确指向该型号及国籍，无冲突。"
+        "reason": "三源（新闻、舆论、雷达）均明确指向同一平台型号及国籍，无冲突。"
       },
       "checked_by": "explicit_source_matrix",
       "supporting_source_types": [
@@ -562,7 +570,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "三源均明确记载活动区域为鄂霍次克海。"
+        "reason": "三源一致确认活动海域为鄂霍次克海。"
       },
       "checked_by": "literal_assertion_matrix",
       "source_values": {
@@ -602,14 +610,14 @@
     {
       "platform_index": -1,
       "field": "time",
-      "claim": "起点 17:40，终点 19:05",
+      "claim": "共同观测/报道时段 17:40—19:05（非完整活动起止断言）",
       "supporting_sources": [
         "O009",
         "R028"
       ],
       "conflicting_sources": [],
       "status": "supported",
-      "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突；起点明示值：{'O009': '17:40', 'R028': '17:40'}；终点明示值：{'O009': '19:05', 'R028': '19:05'}",
+      "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N016': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O009': {'start': '17:40', 'end': '19:05', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R028': {'start': '17:40', 'end': '19:05', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
       "model_proposal": {
         "platform_index": -1,
         "field": "time",
@@ -620,38 +628,35 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "舆论与雷达提供精确起止时间，新闻仅确认日期，三者在时间维度上兼容（具体时刻包含于日期内）。"
+        "reason": "舆论与雷达提供了精确的起止时间，新闻虽未列具体时刻但涵盖该区间，三源在时间覆盖上无冲突。"
       },
       "checked_by": "literal_assertion_matrix",
-      "components": {
-        "start_time": {
-          "value": "17:40",
-          "support": [
-            "O009",
-            "R028"
-          ],
-          "conflicts": [],
-          "status": "supported",
-          "source_values": {
-            "O009": "17:40",
-            "R028": "17:40"
-          },
-          "radar_batch_observations": []
+      "source_values": {
+        "N016": {
+          "start": null,
+          "end": null,
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
         },
-        "end_time": {
-          "value": "19:05",
-          "support": [
-            "O009",
-            "R028"
-          ],
-          "conflicts": [],
-          "status": "supported",
-          "source_values": {
-            "O009": "19:05",
-            "R028": "19:05"
-          },
-          "radar_batch_observations": []
+        "O009": {
+          "start": "17:40",
+          "end": "19:05",
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "R028": {
+          "start": "17:40",
+          "end": "19:05",
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
         }
+      },
+      "asserted_boundaries": {
+        "start": {},
+        "end": {}
       },
       "supporting_source_types": [
         "opinion",
@@ -679,7 +684,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "舆论与雷达明确任务为“海上巡逻”，新闻描述为“持续活动”及“围绕任务区域保持机动”，语义一致且互补。"
+        "reason": "舆论与雷达明确任务为“海上巡逻”，新闻描述为“持续活动”并围绕任务区域机动，两者在任务性质上相互印证。"
       },
       "checked_by": "literal_assertion_matrix",
       "source_values": {
@@ -717,7 +722,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "新闻提及“保持机动”，舆论提及“沿既定方向保持机动”，雷达虽未显式描述但状态为活动，三源逻辑一致。"
+        "reason": "新闻与舆论均描述平台保持机动或维持部署，雷达虽未显式标注 movement 但观测数据支持活动状态。"
       },
       "checked_by": "literal_assertion_matrix",
       "source_values": {

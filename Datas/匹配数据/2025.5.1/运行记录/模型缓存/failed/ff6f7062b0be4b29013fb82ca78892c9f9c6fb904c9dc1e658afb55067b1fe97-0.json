@@ -1,0 +1,21 @@
+{
+  "role": "alignment",
+  "error": "模型输出被截断",
+  "response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T23:50:24.6374336Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"opinion_edges\": [{\"candidate_id\": \"O014\", \"platform_indices\": [0], \"relation\": \"different\", \"confidence\": 0.95, \"reason"
+    },
+    "done": true,
+    "done_reason": "length",
+    "total_duration": 5402144200,
+    "load_duration": 19926900,
+    "prompt_eval_count": 12249,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 4075149000,
+    "eval_count": 39,
+    "eval_duration": 967605000
+  }
+}

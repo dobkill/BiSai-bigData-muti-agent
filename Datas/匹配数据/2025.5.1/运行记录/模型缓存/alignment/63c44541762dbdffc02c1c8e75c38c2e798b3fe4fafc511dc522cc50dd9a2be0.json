@@ -1,0 +1,903 @@
+{
+  "role": "alignment",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N038",
+      "kind": "news",
+      "title": "俄海军守护级护卫舰在菲律宾海组织联合搜救训练",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：俄海军守护级护卫舰在菲律宾海组织联合搜救训练\n正文：2025年5月1日20时58分至22时23分，俄罗斯守护级导弹护卫舰在菲律宾海围绕任务海域组织联合搜救训练，期间按计划保持机动并持续执行联合搜救训练，围绕共同任务保持协同行动并完成平台间的联络和行动衔接。\n\n主题词：俄罗斯  守护级导弹护卫舰  菲律宾海  联合搜救训练\n",
+      "platforms": [
+        {
+          "name": "守护级导弹护卫舰",
+          "country": "俄罗斯",
+          "quantity": null,
+          "quote": "俄罗斯守护级导弹护卫舰",
+          "quantity_quote": "",
+          "country_raw": "俄罗斯"
+        }
+      ],
+      "location": {
+        "raw": "菲律宾海",
+        "region": "菲律宾海",
+        "direction": "其他",
+        "precision": "原文区域",
+        "mapping": "PDF未列入三大核心海域的区域归其他",
+        "transit": false,
+        "quote": "菲律宾海"
+      },
+      "mission": {
+        "value": "联合搜救训练",
+        "quote": "组织联合搜救训练"
+      },
+      "start_time": "20:58",
+      "end_time": "22:23",
+      "movement": "活动",
+      "time_semantics": {
+        "interval": "reported_activity",
+        "start_asserted": false,
+        "end_asserted": false
+      }
+    },
+    "opinion_candidates": [
+      {
+        "id": "O010",
+        "kind": "opinion",
+        "title": "俄军护卫舰在菲律宾海开展联合搜救训练引关注",
+        "text": "时间：2025.5.1\n\n标题：俄军护卫舰在菲律宾海开展联合搜救训练引关注\n\n正文：据公开防务媒体报道，俄罗斯海军一艘“守护级”导弹护卫舰于2025年5月1日在菲律宾海围绕任务海域组织联合搜救训练。该舰按计划保持机动并持续执行联合搜救训练，围绕共同任务保持协同行动，完成平台间的联络和行动衔接。媒体观察认为，此类训练有助于提升参演兵力在远海非战争军事行动中的协同组织水平。相关流程的反复演练，也被视为强化联络配合与流程熟悉度的常规安排。\n",
+        "platforms": [
+          {
+            "name": "守护级”导弹护卫舰",
+            "country": "俄罗斯",
+            "quantity": 1,
+            "quote": "一艘“守护级”导弹护卫舰",
+            "quantity_quote": "一艘“守护级”导弹护卫舰",
+            "country_raw": "俄罗斯"
+          }
+        ],
+        "location": {
+          "raw": "菲律宾海",
+          "region": "菲律宾海",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false,
+          "quote": "在菲律宾海"
+        },
+        "mission": {
+          "value": "联合搜救训练",
+          "quote": "组织联合搜救训练"
+        },
+        "start_time": null,
+        "end_time": null,
+        "movement": "活动",
+        "time_semantics": {
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        }
+      },
+      {
+        "id": "O002",
+        "kind": "opinion",
+        "title": "俄军苏-30SM夜间在黄岩岛海域持续活动近两个半小时",
+        "text": "时间：2025.5.1\n\n标题：俄军苏-30SM夜间在黄岩岛海域持续活动近两个半小时\n\n正文：据联合早报报道，俄罗斯空天军两架苏-30SM多用途战斗机于2025年5月1日20时31分至22时56分在南海黄岩岛海域展开夜间活动。从公开信息看，这两架战机在近两个半小时内围绕任务区域保持机动，行动范围保持在指定任务海域，展现出良好的任务连续性。这一动向被视为俄方在南海保持常态化存在的一部分，其区域机动能力受到外界关注。\n",
+        "platforms": [
+          {
+            "name": "苏-30SM多用途战斗机",
+            "country": "俄罗斯",
+            "quantity": 2,
+            "quote": "俄罗斯空天军两架苏-30SM多用途战斗机",
+            "quantity_quote": "两架苏-30SM多用途战斗机",
+            "country_raw": "俄罗斯"
+          }
+        ],
+        "location": {
+          "raw": "南海黄岩岛海域",
+          "region": "黄岩岛海域",
+          "direction": "南海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在南海黄岩岛海域展开夜间活动"
+        },
+        "mission": {
+          "value": null,
+          "quote": ""
+        },
+        "start_time": "20:31",
+        "end_time": "22:56",
+        "movement": "活动",
+        "time_semantics": {
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        }
+      },
+      {
+        "id": "O020",
+        "kind": "opinion",
+        "title": "俄海军“瓦良格”号巡洋舰南海执行护航任务",
+        "text": "时间：2025.5.1\n\n标题：俄海军“瓦良格”号巡洋舰南海执行护航任务\n\n正文：据联合早报报道，俄罗斯海军“瓦良格”号导弹巡洋舰于2025年5月1日2时16分至4时41分在南海方向执行海上护航任务。该舰围绕任务编组实施保障行动，被认为按计划完成了相关保障环节衔接。相关观察关注其持续保障能力，认为此类行动续航有助于体现保障协同水平。\n",
+        "platforms": [
+          {
+            "name": "瓦良格”号导弹巡洋舰",
+            "country": "俄罗斯",
+            "quantity": null,
+            "quote": "瓦良格”号导弹巡洋舰",
+            "quantity_quote": "",
+            "country_raw": "俄罗斯"
+          }
+        ],
+        "location": {
+          "raw": "南海方向",
+          "region": "南海",
+          "direction": "南海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在南海方向"
+        },
+        "mission": {
+          "value": "海上护航任务",
+          "quote": "执行海上护航任务"
+        },
+        "start_time": "02:16",
+        "end_time": "04:41",
+        "movement": "活动",
+        "time_semantics": {
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        }
+      },
+      {
+        "id": "O030",
+        "kind": "opinion",
+        "title": "韩海军“大邱级”护卫舰在中太平洋执行监视侦察",
+        "text": "时间：2025.5.1\n\n标题：韩海军“大邱级”护卫舰在中太平洋执行监视侦察\n\n正文：据俄罗斯卫星通讯社报道，2025年5月1日5时12分至7时37分，韩国海军“大邱级”导弹护卫舰在中太平洋海域围绕任务海域组织海上监视侦察。分析认为，该平台按计划保持机动并持续执行海上监视侦察，有助于提升对广阔海域的态势感知能力。相关行动被视为韩国海军在远海区域侦巡活动的一部分，展现了其持续监视的意图。\n",
+        "platforms": [
+          {
+            "name": "大邱级”导弹护卫舰",
+            "country": "韩国",
+            "quantity": null,
+            "quote": "大邱级”导弹护卫舰",
+            "quantity_quote": "",
+            "country_raw": "韩国"
+          }
+        ],
+        "location": {
+          "raw": "中太平洋海域",
+          "region": "中太平洋",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false,
+          "quote": "在中太平洋海域"
+        },
+        "mission": {
+          "value": "海上监视侦察",
+          "quote": "组织海上监视侦察"
+        },
+        "start_time": "05:12",
+        "end_time": "07:37",
+        "movement": "活动",
+        "time_semantics": {
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        }
+      },
+      {
+        "id": "O008",
+        "kind": "opinion",
+        "title": "日本“村雨号”护卫舰在东海完成编队警戒部署",
+        "text": "时间：2025.5.1\n\n标题：日本“村雨号”护卫舰在东海完成编队警戒部署\n\n正文：据公开防务媒体报道，日本海上自卫队“村雨号”导弹护卫舰于2025年5月1日5时07分至7时32分在东海方向执行编队警戒部署任务。该舰沿既定方向保持机动，围绕任务区域维持部署与警戒。相关动向被认为展现了日本海上力量在前沿存在方面的持续投入。此次持续约两小时二十五分钟的部署行动，也体现出其区域机动与部署持续性的能力。\n",
+        "platforms": [
+          {
+            "name": "村雨号”导弹护卫舰",
+            "country": "日本",
+            "quantity": null,
+            "quote": "村雨号”导弹护卫舰",
+            "quantity_quote": "",
+            "country_raw": "日本"
+          }
+        ],
+        "location": {
+          "raw": "东海方向",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在东海方向"
+        },
+        "mission": {
+          "value": "编队警戒部署",
+          "quote": "执行编队警戒部署任务"
+        },
+        "start_time": "05:07",
+        "end_time": "07:32",
+        "movement": "活动",
+        "time_semantics": {
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        }
+      },
+      {
+        "id": "O029",
+        "kind": "opinion",
+        "title": "美国海军米利厄斯号驱逐舰在东海执行海上护航",
+        "text": "时间：2025.5.1\n\n标题：美国海军米利厄斯号驱逐舰在东海执行海上护航\n\n正文：据公开防务媒体报道，2025年5月1日，美国海军“米利厄斯号”导弹驱逐舰在东海方向执行海上护航任务，行动时段为5时34分至7时59分。该舰围绕任务编组实施保障行动，并按计划完成相关保障环节衔接。观察人士认为，此次部署体现了持续保障能力，其行动续航和保障协同水平受到关注。\n",
+        "platforms": [
+          {
+            "name": "米利厄斯号”导弹驱逐舰",
+            "country": "美国",
+            "quantity": null,
+            "quote": "米利厄斯号”导弹驱逐舰",
+            "quantity_quote": "",
+            "country_raw": "美国"
+          }
+        ],
+        "location": {
+          "raw": "东海方向",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在东海方向"
+        },
+        "mission": {
+          "value": "海上护航",
+          "quote": "执行海上护航任务"
+        },
+        "start_time": "05:34",
+        "end_time": "07:59",
+        "movement": "活动",
+        "time_semantics": {
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        }
+      }
+    ],
+    "radar_candidates": [
+      {
+        "id": "R040",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "守护级导弹护卫舰",
+            "country": "俄罗斯",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-9CDE3E6146927C",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "菲律宾海",
+          "region": "菲律宾海",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "菲律宾海",
+            "region": "菲律宾海",
+            "direction": "其他",
+            "precision": "原文区域",
+            "mapping": "PDF未列入三大核心海域的区域归其他",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "联合搜救训练",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "联合搜救训练"
+        ],
+        "start_time": "2025.05.01 20:58:00",
+        "end_time": "2025.05.01 22:23:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-9CDE3E6146927C",
+        "sibling_ids": [],
+        "hull_values": [
+          "PROJECT-20380"
+        ],
+        "country_values": [
+          "俄罗斯"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 11,
+        "time_semantics": {
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "identity_scope": "batch_is_not_unique_target",
+        "warnings": []
+      },
+      {
+        "id": "R024",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "苏-30SM多用途战斗机",
+            "country": "俄罗斯",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-E782041C6BA813",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "对海突击训练",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "对海突击训练"
+        ],
+        "start_time": "2025.05.01 20:31:00",
+        "end_time": "2025.05.01 22:56:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            117.7421,
+            118.0858
+          ],
+          "latitude_range": [
+            15.1728,
+            15.4443
+          ],
+          "median": [
+            117.9379,
+            15.2699
+          ],
+          "origins": [
+            [
+              118.0904,
+              15.4308
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [
+            "南海"
+          ],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [],
+        "batch": "AIR-E782041C6BA813",
+        "sibling_ids": [],
+        "hull_values": [],
+        "country_values": [
+          "俄罗斯"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 13,
+        "time_semantics": {
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "identity_scope": "batch_is_not_unique_target",
+        "warnings": []
+      },
+      {
+        "id": "R037",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "054B型导弹护卫舰",
+            "country": "中国",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-8ACA1251205294",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "东海",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "东海",
+            "region": "东海",
+            "direction": "东海",
+            "precision": "大范围",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "远海训练",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "远海训练"
+        ],
+        "start_time": "2025.05.01 20:20:00",
+        "end_time": "2025.05.01 22:45:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-8ACA1251205294",
+        "sibling_ids": [],
+        "hull_values": [
+          "TYPE-054B"
+        ],
+        "country_values": [
+          "中国"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 11,
+        "time_semantics": {
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "identity_scope": "batch_is_not_unique_target",
+        "warnings": []
+      },
+      {
+        "id": "R048",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "瓦良格号导弹巡洋舰",
+            "country": "俄罗斯",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-C59F5476F5026F",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "礼乐滩海域",
+          "region": "礼乐滩海域",
+          "direction": "南海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "礼乐滩海域",
+            "region": "礼乐滩海域",
+            "direction": "南海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "海上护航",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "海上护航"
+        ],
+        "start_time": "2025.05.01 02:16:00",
+        "end_time": "2025.05.01 04:41:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-C59F5476F5026F",
+        "sibling_ids": [],
+        "hull_values": [
+          "011"
+        ],
+        "country_values": [
+          "俄罗斯"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 11,
+        "time_semantics": {
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "identity_scope": "batch_is_not_unique_target",
+        "warnings": []
+      },
+      {
+        "id": "R054",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "米格尔·马尔瓦尔号导弹护卫舰",
+            "country": "菲律宾",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-FCBD3AC1E6ACBE",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "上海外海",
+          "region": "上海外海",
+          "direction": "东海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "上海外海",
+            "region": "上海外海",
+            "direction": "东海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "远海训练",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "远海训练"
+        ],
+        "start_time": "2025.05.01 17:24:00",
+        "end_time": "2025.05.01 19:49:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-FCBD3AC1E6ACBE",
+        "sibling_ids": [],
+        "hull_values": [
+          "FFG-06"
+        ],
+        "country_values": [
+          "菲律宾"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 12,
+        "time_semantics": {
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "identity_scope": "batch_is_not_unique_target",
+        "warnings": []
+      },
+      {
+        "id": "R053",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "莱库号导弹护卫舰",
+            "country": "马来西亚",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-F96B2703727F38",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "温州外海",
+          "region": "温州外海",
+          "direction": "东海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "温州外海",
+            "region": "温州外海",
+            "direction": "东海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "海上护航",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "海上护航"
+        ],
+        "start_time": "2025.05.01 14:22:00",
+        "end_time": "2025.05.01 16:47:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-F96B2703727F38",
+        "sibling_ids": [],
+        "hull_values": [
+          "F30"
+        ],
+        "country_values": [
+          "马来西亚"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 10,
+        "time_semantics": {
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "identity_scope": "batch_is_not_unique_target",
+        "warnings": []
+      },
+      {
+        "id": "R049",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "大邱级导弹护卫舰",
+            "country": "韩国",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-C6E8F82CBFE3BF",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "中太平洋",
+          "region": "中太平洋",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "中太平洋",
+            "region": "中太平洋",
+            "direction": "其他",
+            "precision": "原文区域",
+            "mapping": "PDF未列入三大核心海域的区域归其他",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "海上监视侦察",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "海上监视侦察"
+        ],
+        "start_time": "2025.05.01 05:12:00",
+        "end_time": "2025.05.01 07:37:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-C6E8F82CBFE3BF",
+        "sibling_ids": [],
+        "hull_values": [
+          "FFG-II"
+        ],
+        "country_values": [
+          "韩国"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 11,
+        "time_semantics": {
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "identity_scope": "batch_is_not_unique_target",
+        "warnings": []
+      }
+    ],
+    "recall": {
+      "opinion": [
+        {
+          "id": "O010",
+          "score": 4.82548,
+          "cosine": 0.97548,
+          "platform_similarity": 0.95,
+          "time_overlap": null,
+          "location_relation": "same"
+        },
+        {
+          "id": "O002",
+          "score": 2.13708,
+          "cosine": 0.73708,
+          "platform_similarity": 0.0,
+          "time_overlap": 1.0,
+          "location_relation": "different_direction"
+        },
+        {
+          "id": "O020",
+          "score": 1.01598,
+          "cosine": 0.81598,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "different_direction"
+        },
+        {
+          "id": "O030",
+          "score": 0.80512,
+          "cosine": 0.80512,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "different_named_regions"
+        },
+        {
+          "id": "O008",
+          "score": 0.7996,
+          "cosine": 0.7996,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "different_direction"
+        },
+        {
+          "id": "O029",
+          "score": 0.79885,
+          "cosine": 0.79885,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "different_direction"
+        }
+      ],
+      "radar": [
+        {
+          "id": "R040",
+          "score": 6.02879,
+          "cosine": 0.97879,
+          "platform_similarity": 0.95,
+          "time_overlap": 1.0,
+          "location_relation": "same"
+        },
+        {
+          "id": "R024",
+          "score": 2.15272,
+          "cosine": 0.75272,
+          "platform_similarity": 0.0,
+          "time_overlap": 1.0,
+          "location_relation": "missing"
+        },
+        {
+          "id": "R037",
+          "score": 1.96388,
+          "cosine": 0.76388,
+          "platform_similarity": 0.0,
+          "time_overlap": 1.0,
+          "location_relation": "different_direction"
+        },
+        {
+          "id": "R048",
+          "score": 0.99055,
+          "cosine": 0.79055,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "different_direction"
+        },
+        {
+          "id": "R054",
+          "score": 0.82665,
+          "cosine": 0.82665,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "different_direction"
+        },
+        {
+          "id": "R053",
+          "score": 0.7942,
+          "cosine": 0.7942,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "different_direction"
+        },
+        {
+          "id": "R049",
+          "score": 0.79109,
+          "cosine": 0.79109,
+          "platform_similarity": 0.0,
+          "time_overlap": 0.0,
+          "location_relation": "different_named_regions"
+        }
+      ]
+    }
+  },
+  "result": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O010",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.98,
+        "reason": "平台（俄守护级）、地点（菲律宾海）、任务（联合搜救训练）及时间区间完全一致。该舆论报道是对新闻内容的直接复述或同步观察，无冲突信息。"
+      },
+      {
+        "candidate_id": "O002",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台完全不同（苏 -30SM 战斗机 vs 护卫舰），地点不同（黄岩岛海域 vs 菲律宾海），任务性质不同。虽同属俄罗斯且时间重叠，但属于不同活动。"
+      },
+      {
+        "candidate_id": "O020",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台不同（瓦良格号巡洋舰 vs 守护级护卫舰），地点不同（南海方向 vs 菲律宾海），任务不同（护航 vs 搜救训练）。时间不重叠。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R040",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 1.0,
+        "reason": "雷达数据与新闻在平台型号（守护级）、地点（菲律宾海）、任务（联合搜救训练）及起止时间（20:58-22:23）上完全精确匹配。批号 SHIP-9CDE3E6146927C 进一步确认了目标身份的唯一性关联。"
+      },
+      {
+        "candidate_id": "R024",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台不同（苏 -30SM 战斗机），任务不同（对海突击训练 vs 搜救训练）。地点虽未明确但坐标指向南海黄岩岛区域，与菲律宾海不符。"
+      },
+      {
+        "candidate_id": "R048",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台不同（瓦良格号巡洋舰），地点不同（礼乐滩海域/南海 vs 菲律宾海），任务不同（护航 vs 搜救训练）。时间不重叠。"
+      }
+    ],
+    "ambiguity": "无。核心候选 O010 和 R040 与新闻 N038 在所有关键维度（平台、地点、时间、任务）上完全一致，不存在歧义。其他候选因平台型号、地理位置或任务性质的显著差异被排除。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-07T23:46:52.3348461Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\n  \"opinion_edges\": [\n    {\n      \"candidate_id\": \"O010\",\n      \"platform_indices\": [0],\n      \"relation\": \"same\",\n      \"confidence\": 0.98,\n      \"reason\": \"平台（俄守护级）、地点（菲律宾海）、任务（联合搜救训练）及时间区间完全一致。该舆论报道是对新闻内容的直接复述或同步观察，无冲突信息。\"\n    },\n    {\n      \"candidate_id\": \"O002\",\n      \"platform_indices\": [],\n      \"relation\": \"different\",\n      \"confidence\": 0.95,\n      \"reason\": \"平台完全不同（苏 -30SM 战斗机 vs 护卫舰），地点不同（黄岩岛海域 vs 菲律宾海），任务性质不同。虽同属俄罗斯且时间重叠，但属于不同活动。\"\n    },\n    {\n      \"candidate_id\": \"O020\",\n      \"platform_indices\": [],\n      \"relation\": \"different\",\n      \"confidence\": 0.95,\n      \"reason\": \"平台不同（瓦良格号巡洋舰 vs 守护级护卫舰），地点不同（南海方向 vs 菲律宾海），任务不同（护航 vs 搜救训练）。时间不重叠。\"\n    }\n  ],\n  \"radar_edges\": [\n    {\n      \"candidate_id\": \"R040\",\n      \"platform_indices\": [0],\n      \"relation\": \"same\",\n      \"confidence\": 1.0,\n      \"reason\": \"雷达数据与新闻在平台型号（守护级）、地点（菲律宾海）、任务（联合搜救训练）及起止时间（20:58-22:23）上完全精确匹配。批号 SHIP-9CDE3E6146927C 进一步确认了目标身份的唯一性关联。\"\n    },\n    {\n      \"candidate_id\": \"R024\",\n      \"platform_indices\": [],\n      \"relation\": \"different\",\n      \"confidence\": 0.95,\n      \"reason\": \"平台不同（苏 -30SM 战斗机），任务不同（对海突击训练 vs 搜救训练）。地点虽未明确但坐标指向南海黄岩岛区域，与菲律宾海不符。\"\n    },\n    {\n      \"candidate_id\": \"R048\",\n      \"platform_indices\": [],\n      \"relation\": \"different\",\n      \"confidence\": 0.95,\n      \"reason\": \"平台不同（瓦良格号巡洋舰），地点不同（礼乐滩海域/南海 vs 菲律宾海），任务不同（护航 vs 搜救训练）。时间不重叠。\"\n    }\n  ],\n  \"ambiguity\": \"无。核心候选 O010 和 R040 与新闻 N038 在所有关键维度（平台、地点、时间、任务）上完全一致，不存在歧义。其他候选因平台型号、地理位置或任务性质的显著差异被排除。\"\n}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 15221532300,
+    "load_duration": 17530900,
+    "prompt_eval_count": 6475,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 2124460000,
+    "eval_count": 676,
+    "eval_duration": 12714208000
+  }
+}

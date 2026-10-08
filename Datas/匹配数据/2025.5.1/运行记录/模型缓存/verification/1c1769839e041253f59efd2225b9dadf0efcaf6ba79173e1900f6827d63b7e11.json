@@ -1,0 +1,299 @@
+{
+  "role": "verification",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N036",
+      "kind": "news",
+      "title": "中国071型船坞登陆舰在安达曼海执行联合巡航任务行动",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：中国071型船坞登陆舰在安达曼海执行联合巡航任务行动\n正文：2025年5月1日，中国071型船坞登陆舰在安达曼海围绕任务海域组织联合巡航，自11时26分起按计划保持机动并持续执行联合巡航至13时51分。\n\n主题词：中国  071型船坞登陆舰  安达曼海  联合巡航\n",
+      "platforms": [
+        {
+          "name": "071型",
+          "country": "中国",
+          "quantity": null,
+          "quote": "中国071型船坞登陆舰",
+          "quantity_quote": "",
+          "country_raw": "中国"
+        }
+      ],
+      "location": {
+        "raw": "安达曼海",
+        "region": "安达曼海",
+        "direction": "其他",
+        "precision": "原文区域",
+        "mapping": "PDF未列入三大核心海域的区域归其他",
+        "transit": false,
+        "quote": "在安达曼海"
+      },
+      "mission": {
+        "value": "联合巡航",
+        "quote": "执行联合巡航任务行动"
+      },
+      "start_time": "11:26",
+      "end_time": "13:51",
+      "movement": "活动",
+      "time_semantics": {
+        "interval": "reported_activity",
+        "start_asserted": false,
+        "end_asserted": false
+      }
+    },
+    "opinion": {
+      "id": "O047",
+      "kind": "opinion",
+      "title": "中国071型船坞登陆舰现身安达曼海持续活动",
+      "text": "时间：2025.5.1\n\n标题：中国071型船坞登陆舰现身安达曼海持续活动\n\n正文：据社交媒体军事观察账号报道，2025年5月1日，中国海军一艘071型船坞登陆舰在安达曼海相关海域持续活动。该舰围绕任务区域保持机动的行动模式，被认为展现了稳定的区域机动能力。相关观察指出，此类部署有助于维持任务连续性。\n",
+      "platforms": [
+        {
+          "name": "071型船坞登陆舰",
+          "country": "中国",
+          "quantity": 1,
+          "quote": "一艘071型船坞登陆舰",
+          "quantity_quote": "一艘071型船坞登陆舰",
+          "country_raw": "中国"
+        }
+      ],
+      "location": {
+        "raw": "安达曼海相关海域",
+        "region": "安达曼海",
+        "direction": "其他",
+        "precision": "原文区域",
+        "mapping": "PDF未列入三大核心海域的区域归其他",
+        "transit": false,
+        "quote": "在安达曼海相关海域"
+      },
+      "mission": {
+        "value": "持续活动",
+        "quote": "持续活动"
+      },
+      "start_time": null,
+      "end_time": null,
+      "movement": "活动",
+      "time_semantics": {
+        "interval": "reported_activity",
+        "start_asserted": false,
+        "end_asserted": false
+      }
+    },
+    "radars": [
+      {
+        "id": "R043",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "071型船坞登陆舰",
+            "country": "中国",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-A9545834B741E4",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "安达曼海",
+          "region": "安达曼海",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "安达曼海",
+            "region": "安达曼海",
+            "direction": "其他",
+            "precision": "原文区域",
+            "mapping": "PDF未列入三大核心海域的区域归其他",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "联合巡航",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "联合巡航"
+        ],
+        "start_time": "2025.05.01 11:26:00",
+        "end_time": "2025.05.01 13:51:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-A9545834B741E4",
+        "sibling_ids": [],
+        "hull_values": [
+          "TYPE-071"
+        ],
+        "country_values": [
+          "中国"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 11,
+        "time_semantics": {
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "identity_scope": "batch_is_not_unique_target",
+        "warnings": []
+      }
+    ],
+    "association": {
+      "opinion_edges": [
+        {
+          "candidate_id": "O047",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.95,
+          "reason": "平台（中国 071 型）、地点（安达曼海）、任务（联合巡航/持续活动）及时间区间（2025.5.1 11:26-13:51）完全一致。舆论描述为‘持续活动’与新闻中的机动巡航行为相容，属于同一事件的不同报道视角。"
+        },
+        {
+          "candidate_id": "O003",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.98,
+          "reason": "平台不同（运 -8 反潜巡逻机 vs 071 型船坞登陆舰），地点不同（南海 vs 安达曼海），虽时间重叠但属于完全不同的活动。"
+        },
+        {
+          "candidate_id": "O041",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.99,
+          "reason": "平台不同（新加坡 F-15SG），地点不同（孟加拉湾 vs 安达曼海），国籍不同，明显为不同活动。"
+        }
+      ],
+      "radar_edges": [
+        {
+          "candidate_id": "R043",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 1.0,
+          "reason": "雷达数据与新闻在平台型号（071 型）、地点（安达曼海）、任务（联合巡航）及精确时间起止（11:26-13:51）上完全匹配，确认为同一事件。"
+        },
+        {
+          "candidate_id": "R009",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.98,
+          "reason": "平台不同（运 -8），地点缺失但坐标提示为南海，与安达曼海不符，属于不同活动。"
+        },
+        {
+          "candidate_id": "R022",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.99,
+          "reason": "平台不同（轰 -6K），任务不同（对海突击训练），地点坐标提示为东海，与安达曼海不符。"
+        }
+      ],
+      "ambiguity": "无。舆论 O047 与雷达 R043 均强指向新闻 N036，其他候选在平台、地点或任务上存在明显冲突，可明确排除。"
+    },
+    "same_batch_other_candidates": []
+  },
+  "result": {
+    "same_event": true,
+    "platforms": [
+      {
+        "platform_index": 0,
+        "platform": {
+          "claim": "中国 071 型船坞登陆舰",
+          "supporting_sources": [
+            "N036",
+            "O047",
+            "R043"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均明确指向该型号及国籍，完全一致。"
+        },
+        "country": {
+          "claim": "中国",
+          "supporting_sources": [
+            "N036",
+            "O047",
+            "R043"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源均明确标注为中国籍。"
+        },
+        "quantity": {
+          "claim": "1 艘",
+          "supporting_sources": [
+            "O047",
+            "R043"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论明确提及“一艘”，雷达批号列示数量为"
+        }
+      }
+    ],
+    "location": {
+      "claim": "安达曼海",
+      "supporting_sources": [
+        "N036",
+        "O047",
+        "R043"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "三源均明确提及安达曼海，舆论的“相关海域”与新闻/雷达的精确区域兼容。"
+    },
+    "time": {
+      "claim": "2025 年 5 月 1 日 11:26-13:51",
+      "supporting_sources": [
+        "N036",
+        "R043"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与雷达在起止时间上完全精确匹配；舆论仅确认日期，未提供具体时刻，不构成冲突。"
+    },
+    "mission": {
+      "claim": "联合巡航",
+      "supporting_sources": [
+        "N036",
+        "R043"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与雷达均明确为“联合巡航”；舆论描述为“持续活动”，属于对机动行为的泛称，不否定具体任务性质，且时间地点完全重合，视为同一事件下的相容描述。"
+    },
+    "movement": {
+      "claim": "活动/机动",
+      "supporting_sources": [
+        "N036",
+        "O047"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与舆论均描述为保持机动的活动状态，雷达未说明但数据覆盖该时段，无冲突。"
+    },
+    "unresolved_issues": [],
+    "explanation": "三源（新闻、舆论、雷达）在平台型号、国籍、地点、时间及核心任务上高度一致。数量由舆论和雷达共同支持（2 票）。舆论的“持续活动”与新闻/雷达的“联合巡航”在时间地点完全重合的情况下，视为相容描述而非冲突。所有关键事实均有至少两类来源支持，无未消解冲突。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-08T00:09:53.8548057Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"same_event\": true, \"platforms\": [{\"platform_index\": 0, \"platform\": {\"claim\": \"中国 071 型船坞登陆舰\", \"supporting_sources\": [\"N036\", \"O047\", \"R043\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻、舆论、雷达三源均明确指向该型号及国籍，完全一致。\"}, \"country\": {\"claim\": \"中国\", \"supporting_sources\": [\"N036\", \"O047\", \"R043\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源均明确标注为中国籍。\"}, \"quantity\": {\"claim\": \"1 艘\", \"supporting_sources\": [\"O047\", \"R043\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"舆论明确提及“一艘”，雷达批号列示数量为\" }\n}\n], \"location\": {\"claim\": \"安达曼海\", \"supporting_sources\": [\"N036\", \"O047\", \"R043\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源均明确提及安达曼海，舆论的“相关海域”与新闻/雷达的精确区域兼容。\"}, \"time\": {\"claim\": \"2025 年 5 月 1 日 11:26-13:51\", \"supporting_sources\": [\"N036\", \"R043\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻与雷达在起止时间上完全精确匹配；舆论仅确认日期，未提供具体时刻，不构成冲突。\"}, \"mission\": {\"claim\": \"联合巡航\", \"supporting_sources\": [\"N036\", \"R043\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻与雷达均明确为“联合巡航”；舆论描述为“持续活动”，属于对机动行为的泛称，不否定具体任务性质，且时间地点完全重合，视为同一事件下的相容描述。\"}, \"movement\": {\"claim\": \"活动/机动\", \"supporting_sources\": [\"N036\", \"O047\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻与舆论均描述为保持机动的活动状态，雷达未说明但数据覆盖该时段，无冲突。\"}, \"unresolved_issues\": [],\"explanation\": \"三源（新闻、舆论、雷达）在平台型号、国籍、地点、时间及核心任务上高度一致。数量由舆论和雷达共同支持（2 票）。舆论的“持续活动”与新闻/雷达的“联合巡航”在时间地点完全重合的情况下，视为相容描述而非冲突。所有关键事实均有至少两类来源支持，无未消解冲突。\"}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 13108138400,
+    "load_duration": 16566600,
+    "prompt_eval_count": 2311,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 864542000,
+    "eval_count": 630,
+    "eval_duration": 12065581000
+  }
+}

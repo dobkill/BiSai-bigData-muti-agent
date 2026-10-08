@@ -34,7 +34,7 @@
 | 0 | country | 俄罗斯 | supported | N046,O025,R018 |  | 程序按已关联平台的明示字段复核：{'N046': '俄罗斯', 'O025': '俄罗斯', 'R018': '俄罗斯'}；缺失不支持也不反对 |
 | 0 | quantity | 2架 | supported | N046,R018 |  | 程序按已关联平台的明示字段复核：{'N046': 2, 'R018': 2}；缺失不支持也不反对 |
 | -1 | location | 南海 | supported | N046,O025 |  | 复核明示地点和PDF包含关系：{'N046': '西沙群岛海域', 'O025': '南海'}；同方向不等于同一具体区域，未验证坐标不作为反证 |
-| -1 | time | 起点 17:13，终点 19:38 | supported | O025,R018 |  | 逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突；起点明示值：{'O025': '17:13', 'R018': '17:13'}；终点明示值：{'O025': '19:38', 'R018': '19:38'} |
+| -1 | time | 共同观测/报道时段 17:13—19:38（非完整活动起止断言） | supported | O025,R018 |  | 分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N046': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O025': {'start': '17:13', 'end': '19:38', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R018': {'start': '17:13', 'end': '19:38', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}} |
 | -1 | mission | 远程轰炸训练 | supported | O025,R018 |  | 原文明示任务：{'N046': [], 'O025': ['远程轰炸训练'], 'R018': ['远程轰炸训练']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决 |
 | -1 | movement | 活动 | supported | N046,O025 |  | 活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values |
 | -1 | location_detail | 西沙群岛海域 | insufficient | N046 |  | 具体区域仅一类来源明示；结论使用共同获支持的方向，细节保留待核实 |

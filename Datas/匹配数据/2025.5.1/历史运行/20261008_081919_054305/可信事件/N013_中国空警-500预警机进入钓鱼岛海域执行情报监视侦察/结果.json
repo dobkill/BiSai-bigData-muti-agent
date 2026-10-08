@@ -1,0 +1,762 @@
+{
+  "id": "N013",
+  "news_id": "N013",
+  "opinion_id": "O035",
+  "radar_ids": [
+    "R010"
+  ],
+  "radar_slots": {
+    "0": "R010"
+  },
+  "alignment": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O035",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.95,
+        "reason": "平台（空警 -500）、任务（情报监视侦察）、日期（2025.5.1）完全一致。新闻明确时间为 08:41-10:06，舆论虽无具体时刻但描述为“在东海方向”，与新闻地点“钓鱼岛海域”（属东海）相容。数量差异（新闻未提具体架数 vs 舆论称两架）不影响同一活动判定，可能为部分公开或不同来源统计口径。"
+      },
+      {
+        "candidate_id": "O028",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.85,
+        "reason": "平台、任务类型（虽新闻明确为 ISR，舆论未明示但提及“区域机动”和“任务海域”）、日期一致。地点描述“东海上海外海”与“钓鱼岛海域”在地理上重叠或相邻，属于同一活动的大范围描述。时间区间模糊但包含新闻时段的可能性大。"
+      },
+      {
+        "candidate_id": "O033",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 1.0,
+        "reason": "平台完全不同（航母 vs 预警机），地点完全不同（中太平洋 vs 东海/钓鱼岛海域）。尽管时间重叠，但属于完全不同的军事行动。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R010",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.98,
+        "reason": "平台（空警 -500）、任务（情报监视侦察）、时间区间（08:41-10:06）与新闻完全精确匹配。坐标范围（经度 123.x，纬度 25.x）对应钓鱼岛海域地理特征。虽然批号不同且雷达未验证具体坐标边界，但时空和任务的高度一致性足以确认关联。"
+      },
+      {
+        "candidate_id": "R006",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 1.0,
+        "reason": "平台相同，但时间区间（14:17-16:42）与新闻（08:41-10:06）无重叠。任务描述为“空中警戒”而非明确的“情报监视侦察”，且坐标位于更南的东海南部海域，极大概率为另一场独立活动。"
+      },
+      {
+        "candidate_id": "R051",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 1.0,
+        "reason": "平台（山东号航母）与新闻不符，地点（中太平洋）与新闻（东海/钓鱼岛）完全冲突。时间虽重叠但主体和位置均不同。"
+      }
+    ],
+    "ambiguity": "舆论 O035 和 O028 未提供精确起止时间，仅能推断包含新闻时段；雷达 R010 的坐标为宽泛矩形辅助召回，非官方精确边界，但结合任务和时间可强关联。"
+  },
+  "candidates": {
+    "opinion": [
+      {
+        "id": "O035",
+        "score": 4.59394,
+        "cosine": 0.91394,
+        "platform_similarity": 1.0,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O028",
+        "score": 4.28945,
+        "cosine": 0.92945,
+        "platform_similarity": 1.0,
+        "time_overlap": null,
+        "location_relation": "same_direction_only"
+      },
+      {
+        "id": "O033",
+        "score": 2.17292,
+        "cosine": 0.77292,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O021",
+        "score": 1.49858,
+        "cosine": 0.81858,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O003",
+        "score": 1.007,
+        "cosine": 0.807,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O014",
+        "score": 0.94284,
+        "cosine": 0.78284,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "same_direction_only"
+      }
+    ],
+    "radar": [
+      {
+        "id": "R010",
+        "score": 5.34715,
+        "cosine": 0.94715,
+        "platform_similarity": 1.0,
+        "time_overlap": 1.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R006",
+        "score": 4.13791,
+        "cosine": 0.93791,
+        "platform_similarity": 1.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R051",
+        "score": 2.16779,
+        "cosine": 0.76779,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "R002",
+        "score": 1.0171,
+        "cosine": 0.8171,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R001",
+        "score": 1.01176,
+        "cosine": 0.81176,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R009",
+        "score": 1.00388,
+        "cosine": 0.80388,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      }
+    ]
+  },
+  "assignment_diagnostics": {
+    "opinion": [],
+    "radar": []
+  },
+  "radar_context": [],
+  "verification": {
+    "same_event": true,
+    "facts": [
+      {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "空警-500预警机",
+        "supporting_sources": [
+          "N013",
+          "O035",
+          "R010"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N013': '空警-500预警机', 'O035': '空警-500', 'R010': '空警-500预警机'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "空警 -500",
+          "supporting_sources": [
+            "N013",
+            "O035",
+            "R010"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源均明确指向空警 -500 预警机"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "中国",
+        "supporting_sources": [
+          "N013",
+          "O035",
+          "R010"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N013': '中国', 'O035': '中国', 'R010': '中国'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "中国",
+          "supporting_sources": [
+            "N013",
+            "O035",
+            "R010"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源均明确标注为中国"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "2架",
+        "supporting_sources": [
+          "O035",
+          "R010"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'O035': 2, 'R010': 2}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "2 架",
+          "supporting_sources": [
+            "O035",
+            "R010"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论 O035 明确提及“两架”，雷达 R010 批号统计数量为 2；新闻 N013 未提具体数量但不构成冲突，属信息缺失而非反对"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "东海",
+        "supporting_sources": [
+          "N013",
+          "O035"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "复核明示地点和PDF包含关系：{'N013': '钓鱼岛海域', 'O035': '东海'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "钓鱼岛海域",
+          "supporting_sources": [
+            "N013"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻 N013 明确为“钓鱼岛海域”；舆论 O035 的“东海方向”及雷达 R010 坐标（经度 123.x，纬度 25.x）均兼容该区域，无冲突"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N013": {
+            "raw": "钓鱼岛海域",
+            "region": "钓鱼岛海域",
+            "direction": "东海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false,
+            "quote": "进入钓鱼岛海域"
+          },
+          "O035": {
+            "raw": "东海方向围绕任务海域",
+            "region": "东海",
+            "direction": "东海",
+            "precision": "大范围",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false,
+            "quote": "在东海方向围绕任务海域"
+          }
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "共同观测/报道时段 08:41—10:06（非完整活动起止断言）",
+        "supporting_sources": [
+          "N013",
+          "R010"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N013': {'start': '08:41', 'end': '10:06', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O035': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R010': {'start': '08:41', 'end': '10:06', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "2025-05-01 08:41 至 10:06",
+          "supporting_sources": [
+            "N013",
+            "R010"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻 N013 与雷达 R010 起止时间精确匹配；舆论 O035 仅提及日期，不冲突"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N013": {
+            "start": "08:41",
+            "end": "10:06",
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
+          },
+          "O035": {
+            "start": null,
+            "end": null,
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
+          },
+          "R010": {
+            "start": "08:41",
+            "end": "10:06",
+            "interval": "observation_coverage",
+            "start_asserted": false,
+            "end_asserted": false
+          }
+        },
+        "asserted_boundaries": {
+          "start": {},
+          "end": {}
+        },
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "情报监视侦察",
+        "supporting_sources": [
+          "N013",
+          "O035",
+          "R010"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "原文明示任务：{'N013': ['情报监视侦察'], 'O035': ['情报监视侦察'], 'R010': ['情报监视侦察']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "情报监视侦察",
+          "supporting_sources": [
+            "N013",
+            "O035",
+            "R010"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源均明确描述任务为“情报监视侦察”或同义表述"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N013": [
+            "情报监视侦察"
+          ],
+          "O035": [
+            "情报监视侦察"
+          ],
+          "R010": [
+            "情报监视侦察"
+          ]
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N013",
+          "O035"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "进入",
+          "supporting_sources": [
+            "N013"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻 N013 明确描述“由外围航线进入”，舆论与雷达未提供相反的运动方向信息"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N013": "进入",
+          "O035": "活动",
+          "R010": "未说明"
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location_detail",
+        "claim": "钓鱼岛海域",
+        "supporting_sources": [
+          "N013"
+        ],
+        "conflicting_sources": [],
+        "status": "insufficient",
+        "reason": "具体区域仅一类来源明示；结论使用共同获支持的方向，细节保留待核实",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "钓鱼岛海域",
+          "supporting_sources": [
+            "N013"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻 N013 明确为“钓鱼岛海域”；舆论 O035 的“东海方向”及雷达 R010 坐标（经度 123.x，纬度 25.x）均兼容该区域，无冲突"
+        },
+        "supporting_source_types": [
+          "news"
+        ]
+      }
+    ],
+    "unresolved_issues": [],
+    "explanation": "三类来源已关联，纳入结论的事实获得至少两类独立来源支持，未发现未消解明示反证。",
+    "model_explanation": "三源（新闻、舆论、雷达）在平台型号、国籍、任务类型及时间区间上高度一致。数量方面，舆论和雷达支持"
+  },
+  "reasons": [],
+  "status": "可信事件",
+  "verified_facts": [
+    {
+      "platform_index": 0,
+      "field": "platform",
+      "claim": "空警-500预警机",
+      "supporting_sources": [
+        "N013",
+        "O035",
+        "R010"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N013': '空警-500预警机', 'O035': '空警-500', 'R010': '空警-500预警机'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "空警 -500",
+        "supporting_sources": [
+          "N013",
+          "O035",
+          "R010"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源均明确指向空警 -500 预警机"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "country",
+      "claim": "中国",
+      "supporting_sources": [
+        "N013",
+        "O035",
+        "R010"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N013': '中国', 'O035': '中国', 'R010': '中国'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "中国",
+        "supporting_sources": [
+          "N013",
+          "O035",
+          "R010"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源均明确标注为中国"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "quantity",
+      "claim": "2架",
+      "supporting_sources": [
+        "O035",
+        "R010"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'O035': 2, 'R010': 2}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "2 架",
+        "supporting_sources": [
+          "O035",
+          "R010"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "舆论 O035 明确提及“两架”，雷达 R010 批号统计数量为 2；新闻 N013 未提具体数量但不构成冲突，属信息缺失而非反对"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "location",
+      "claim": "东海",
+      "supporting_sources": [
+        "N013",
+        "O035"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "复核明示地点和PDF包含关系：{'N013': '钓鱼岛海域', 'O035': '东海'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "钓鱼岛海域",
+        "supporting_sources": [
+          "N013"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻 N013 明确为“钓鱼岛海域”；舆论 O035 的“东海方向”及雷达 R010 坐标（经度 123.x，纬度 25.x）均兼容该区域，无冲突"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N013": {
+          "raw": "钓鱼岛海域",
+          "region": "钓鱼岛海域",
+          "direction": "东海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "进入钓鱼岛海域"
+        },
+        "O035": {
+          "raw": "东海方向围绕任务海域",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在东海方向围绕任务海域"
+        }
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "time",
+      "claim": "共同观测/报道时段 08:41—10:06（非完整活动起止断言）",
+      "supporting_sources": [
+        "N013",
+        "R010"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N013': {'start': '08:41', 'end': '10:06', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O035': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R010': {'start': '08:41', 'end': '10:06', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "2025-05-01 08:41 至 10:06",
+        "supporting_sources": [
+          "N013",
+          "R010"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻 N013 与雷达 R010 起止时间精确匹配；舆论 O035 仅提及日期，不冲突"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N013": {
+          "start": "08:41",
+          "end": "10:06",
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "O035": {
+          "start": null,
+          "end": null,
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "R010": {
+          "start": "08:41",
+          "end": "10:06",
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        }
+      },
+      "asserted_boundaries": {
+        "start": {},
+        "end": {}
+      },
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "mission",
+      "claim": "情报监视侦察",
+      "supporting_sources": [
+        "N013",
+        "O035",
+        "R010"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "原文明示任务：{'N013': ['情报监视侦察'], 'O035': ['情报监视侦察'], 'R010': ['情报监视侦察']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "情报监视侦察",
+        "supporting_sources": [
+          "N013",
+          "O035",
+          "R010"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源均明确描述任务为“情报监视侦察”或同义表述"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N013": [
+          "情报监视侦察"
+        ],
+        "O035": [
+          "情报监视侦察"
+        ],
+        "R010": [
+          "情报监视侦察"
+        ]
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "movement",
+      "claim": "活动",
+      "supporting_sources": [
+        "N013",
+        "O035"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "进入",
+        "supporting_sources": [
+          "N013"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻 N013 明确描述“由外围航线进入”，舆论与雷达未提供相反的运动方向信息"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N013": "进入",
+        "O035": "活动",
+        "R010": "未说明"
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    }
+  ],
+  "radar_row_count": 12,
+  "direction": "东海",
+  "report_eligible": true,
+  "directory": "可信事件/N013_中国空警-500预警机进入钓鱼岛海域执行情报监视侦察"
+}

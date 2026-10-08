@@ -1,0 +1,725 @@
+{
+  "id": "N003",
+  "news_id": "N003",
+  "opinion_id": "O015",
+  "radar_ids": [
+    "R045"
+  ],
+  "radar_slots": {
+    "0": "R045"
+  },
+  "alignment": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O015",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.95,
+        "reason": "平台（903A 型综合补给舰）、地点（冲绳海槽包含于东海海域）、时间（2025.5.1）及任务性质（持续活动/例行部署）高度一致。舆论报道的具体时间段（05:56-07:21）与新闻描述的“持续活动”在逻辑上相容，属于同一事件的不同描述视角。"
+      },
+      {
+        "candidate_id": "O016",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "地点冲突：新闻明确为“冲绳海槽”，而该候选为“南海方向”。虽然同型号、同日期，但不同海域且任务描述（远海训练 vs 持续活动）指向不同行动单元。"
+      },
+      {
+        "candidate_id": "O048",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.99,
+        "reason": "平台类型冲突：新闻为“综合补给舰”，该候选为"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R045",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.98,
+        "reason": "时空与身份完全匹配。雷达数据明确记录 2025.05.01 在“冲绳海槽”的"
+      }
+    ],
+    "ambiguity": "无显著歧义，核心线索（平台型号、具体海域、日期）高度收敛于单一事件。"
+  },
+  "candidates": {
+    "opinion": [
+      {
+        "id": "O015",
+        "score": 4.60607,
+        "cosine": 0.92607,
+        "platform_similarity": 1.0,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O016",
+        "score": 4.12837,
+        "cosine": 0.92837,
+        "platform_similarity": 1.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O048",
+        "score": 1.47758,
+        "cosine": 0.79758,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O032",
+        "score": 1.47269,
+        "cosine": 0.79269,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O047",
+        "score": 0.97168,
+        "cosine": 0.77168,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      }
+    ],
+    "radar": [
+      {
+        "id": "R045",
+        "score": 4.96829,
+        "cosine": 0.96829,
+        "platform_similarity": 1.0,
+        "time_overlap": null,
+        "location_relation": "same"
+      },
+      {
+        "id": "R044",
+        "score": 4.09842,
+        "cosine": 0.89842,
+        "platform_similarity": 1.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "R037",
+        "score": 1.41773,
+        "cosine": 0.73773,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "R039",
+        "score": 1.13441,
+        "cosine": 0.77441,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "same_direction_only"
+      },
+      {
+        "id": "R042",
+        "score": 1.12051,
+        "cosine": 0.76051,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "same_direction_only"
+      },
+      {
+        "id": "R051",
+        "score": 0.9719,
+        "cosine": 0.7719,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      }
+    ]
+  },
+  "assignment_diagnostics": {
+    "opinion": [],
+    "radar": []
+  },
+  "radar_context": [],
+  "verification": {
+    "same_event": true,
+    "facts": [
+      {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "903A型综合补给舰",
+        "supporting_sources": [
+          "N003",
+          "O015",
+          "R045"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N003': '903A型综合补给舰', 'O015': '903A型综合补给舰', 'R045': '903A型综合补给舰'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "903A 型综合补给舰",
+          "supporting_sources": [
+            "N003",
+            "O015",
+            "R045"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均明确识别为 903A 型综合补给舰，无冲突。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "中国",
+        "supporting_sources": [
+          "N003",
+          "O015",
+          "R045"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N003': '中国', 'O015': '中国', 'R045': '中国'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "中国",
+          "supporting_sources": [
+            "N003",
+            "O015",
+            "R045"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均明确标注国籍为中国，无冲突。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "1艘",
+        "supporting_sources": [
+          "N003",
+          "R045"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N003': 1, 'R045': 1}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "1 艘",
+          "supporting_sources": [
+            "N003",
+            "R045"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻明确提及"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "冲绳海槽",
+        "supporting_sources": [
+          "N003",
+          "R045"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "复核明示地点和PDF包含关系：{'N003': '冲绳海槽', 'O015': '东海', 'R045': '冲绳海槽'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "冲绳海槽",
+          "supporting_sources": [
+            "N003",
+            "R045"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻与雷达均精确指向“冲绳海槽”；舆论提及的“东海海域”为兼容的大范围描述，支持该具体区域结论。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N003": {
+            "raw": "冲绳海槽",
+            "region": "冲绳海槽",
+            "direction": "东海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false,
+            "quote": "在冲绳海槽持续活动"
+          },
+          "O015": {
+            "raw": "东海海域",
+            "region": "东海",
+            "direction": "东海",
+            "precision": "大范围",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false,
+            "quote": "在东海海域"
+          },
+          "R045": {
+            "raw": "冲绳海槽",
+            "region": "冲绳海槽",
+            "direction": "东海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        },
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "共同观测/报道时段 05:56—07:21（非完整活动起止断言）",
+        "supporting_sources": [
+          "O015",
+          "R045"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N003': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O015': {'start': '05:56', 'end': '07:21', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R045': {'start': '05:56', 'end': '07:21', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "2025 年 5 月 1 日 05:56-07:21",
+          "supporting_sources": [
+            "O015",
+            "R045"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论与雷达提供了精确的起止时间（05:56-07:21），新闻仅确认日期，三者在时间覆盖上相容。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N003": {
+            "start": null,
+            "end": null,
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
+          },
+          "O015": {
+            "start": "05:56",
+            "end": "07:21",
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
+          },
+          "R045": {
+            "start": "05:56",
+            "end": "07:21",
+            "interval": "observation_coverage",
+            "start_asserted": false,
+            "end_asserted": false
+          }
+        },
+        "asserted_boundaries": {
+          "start": {},
+          "end": {}
+        },
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "例行部署",
+        "supporting_sources": [
+          "O015",
+          "R045"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "原文明示任务：{'N003': [], 'O015': ['例行部署'], 'R045': ['例行部署']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "例行部署/持续活动",
+          "supporting_sources": [
+            "O015",
+            "R045"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论与雷达均明确任务为“例行部署”，新闻描述为“持续活动”，两者在语义上高度一致，共同印证了该任务性质。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N003": [],
+          "O015": [
+            "例行部署"
+          ],
+          "R045": [
+            "例行部署"
+          ]
+        },
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N003",
+          "O015"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "机动/活动",
+          "supporting_sources": [
+            "N003",
+            "O015"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻与舆论均描述舰艇保持机动或围绕区域维持部署，雷达虽未显式说明运动状态但时空匹配，三源共同支持活动状态。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N003": "活动",
+          "O015": "活动",
+          "R045": "未说明"
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      }
+    ],
+    "unresolved_issues": [],
+    "explanation": "三类来源已关联，纳入结论的事实获得至少两类独立来源支持，未发现未消解明示反证。",
+    "model_explanation": "三源（新闻、舆论、雷达）在平台型号、国籍、数量、地点、时间及任务性质上高度一致，无未消解冲突，满足可信度要求。"
+  },
+  "reasons": [],
+  "status": "可信事件",
+  "verified_facts": [
+    {
+      "platform_index": 0,
+      "field": "platform",
+      "claim": "903A型综合补给舰",
+      "supporting_sources": [
+        "N003",
+        "O015",
+        "R045"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N003': '903A型综合补给舰', 'O015': '903A型综合补给舰', 'R045': '903A型综合补给舰'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "903A 型综合补给舰",
+        "supporting_sources": [
+          "N003",
+          "O015",
+          "R045"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻、舆论、雷达三源均明确识别为 903A 型综合补给舰，无冲突。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "country",
+      "claim": "中国",
+      "supporting_sources": [
+        "N003",
+        "O015",
+        "R045"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N003': '中国', 'O015': '中国', 'R045': '中国'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "中国",
+        "supporting_sources": [
+          "N003",
+          "O015",
+          "R045"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻、舆论、雷达三源均明确标注国籍为中国，无冲突。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "quantity",
+      "claim": "1艘",
+      "supporting_sources": [
+        "N003",
+        "R045"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N003': 1, 'R045': 1}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "1 艘",
+        "supporting_sources": [
+          "N003",
+          "R045"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻明确提及"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "location",
+      "claim": "冲绳海槽",
+      "supporting_sources": [
+        "N003",
+        "R045"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "复核明示地点和PDF包含关系：{'N003': '冲绳海槽', 'O015': '东海', 'R045': '冲绳海槽'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "冲绳海槽",
+        "supporting_sources": [
+          "N003",
+          "R045"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与雷达均精确指向“冲绳海槽”；舆论提及的“东海海域”为兼容的大范围描述，支持该具体区域结论。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N003": {
+          "raw": "冲绳海槽",
+          "region": "冲绳海槽",
+          "direction": "东海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在冲绳海槽持续活动"
+        },
+        "O015": {
+          "raw": "东海海域",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在东海海域"
+        },
+        "R045": {
+          "raw": "冲绳海槽",
+          "region": "冲绳海槽",
+          "direction": "东海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        }
+      },
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "time",
+      "claim": "共同观测/报道时段 05:56—07:21（非完整活动起止断言）",
+      "supporting_sources": [
+        "O015",
+        "R045"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N003': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O015': {'start': '05:56', 'end': '07:21', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R045': {'start': '05:56', 'end': '07:21', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "2025 年 5 月 1 日 05:56-07:21",
+        "supporting_sources": [
+          "O015",
+          "R045"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "舆论与雷达提供了精确的起止时间（05:56-07:21），新闻仅确认日期，三者在时间覆盖上相容。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N003": {
+          "start": null,
+          "end": null,
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "O015": {
+          "start": "05:56",
+          "end": "07:21",
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "R045": {
+          "start": "05:56",
+          "end": "07:21",
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        }
+      },
+      "asserted_boundaries": {
+        "start": {},
+        "end": {}
+      },
+      "supporting_source_types": [
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "mission",
+      "claim": "例行部署",
+      "supporting_sources": [
+        "O015",
+        "R045"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "原文明示任务：{'N003': [], 'O015': ['例行部署'], 'R045': ['例行部署']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "例行部署/持续活动",
+        "supporting_sources": [
+          "O015",
+          "R045"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "舆论与雷达均明确任务为“例行部署”，新闻描述为“持续活动”，两者在语义上高度一致，共同印证了该任务性质。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N003": [],
+        "O015": [
+          "例行部署"
+        ],
+        "R045": [
+          "例行部署"
+        ]
+      },
+      "supporting_source_types": [
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "movement",
+      "claim": "活动",
+      "supporting_sources": [
+        "N003",
+        "O015"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "机动/活动",
+        "supporting_sources": [
+          "N003",
+          "O015"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与舆论均描述舰艇保持机动或围绕区域维持部署，雷达虽未显式说明运动状态但时空匹配，三源共同支持活动状态。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N003": "活动",
+        "O015": "活动",
+        "R045": "未说明"
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    }
+  ],
+  "radar_row_count": 12,
+  "direction": "东海",
+  "report_eligible": true,
+  "directory": "可信事件/N003_中国903A型综合补给舰在冲绳海槽持续活动"
+}

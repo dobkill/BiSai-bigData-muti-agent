@@ -17,25 +17,21 @@
         ],
         "relation": "same",
         "confidence": 0.95,
-        "reason": "平台（福建号航母）、任务（联合巡航）、地点（东海/钓鱼岛海域）及时间（2025.5.1）完全一致。候选未提供具体起止分钟，但描述的行动细节（联络、衔接）与新闻正文高度吻合。"
-      },
-      {
-        "candidate_id": "O033",
-        "platform_indices": [
-          0
-        ],
-        "relation": "different",
-        "confidence": 0.98,
-        "reason": "平台不同（山东号 vs 福建号），地点不同（中太平洋 vs 钓鱼岛海域），时间区间无重叠，确认为不同活动。"
+        "reason": "平台（福建号航母）、任务（联合巡航）、地点（东海/钓鱼岛海域）及时间区间高度一致。舆论报道的“东海方向”包含新闻中的“钓鱼岛海域”，且时间完全覆盖，属于同一活动在不同粒度下的描述。"
       },
       {
         "candidate_id": "O020",
-        "platform_indices": [
-          0
-        ],
+        "platform_indices": [],
         "relation": "different",
-        "confidence": 0.99,
-        "reason": "平台国籍不同（俄罗斯 vs 中国），地点不同（南海 vs 钓鱼岛海域），任务类型不同（护航 vs 联合巡航）。"
+        "confidence": 0.98,
+        "reason": "平台不同（俄海军瓦良格号巡洋舰 vs 中国福建号航母），地点不同（南海方向 vs 钓鱼岛海域/东海），任务虽同为巡航但主体和区域完全分离，属于不同活动。"
+      },
+      {
+        "candidate_id": "O016",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "平台不同（903A 型补给舰 vs 福建号航母），地点不同（南海方向 vs 钓鱼岛海域/东海），任务不同（远海训练 vs 联合巡航），属于不同活动。"
       }
     ],
     "radar_edges": [
@@ -46,28 +42,24 @@
         ],
         "relation": "same",
         "confidence": 1.0,
-        "reason": "平台（福建号航母）、地点（钓鱼岛海域）、任务（联合巡航）及精确时间区间（02:38-04:03）与新闻完全一致，确认为同一活动。"
+        "reason": "雷达数据与新闻在平台（福建号航母）、地点（钓鱼岛海域）、任务（联合巡航）及起止时间（02:38-04:03）上完全精确匹配，确认为同一活动。"
       },
       {
-        "candidate_id": "R051",
-        "platform_indices": [
-          0
-        ],
+        "candidate_id": "R023",
+        "platform_indices": [],
         "relation": "different",
-        "confidence": 0.98,
-        "reason": "平台不同（山东号 vs 福建号），地点不同（中太平洋 vs 钓鱼岛海域），时间无重叠。"
+        "confidence": 0.95,
+        "reason": "平台不同（歼 -16D 电子战飞机 vs 福建号航母），任务不同（电子对抗训练 vs 联合巡航），地点缺失但时间重叠，结合平台差异判定为不同活动。"
       },
       {
         "candidate_id": "R044",
-        "platform_indices": [
-          0
-        ],
+        "platform_indices": [],
         "relation": "different",
         "confidence": 0.98,
-        "reason": "平台不同（补给舰 vs 航母），地点不同（南海万安滩 vs 钓鱼岛海域），任务不同（远海训练 vs 联合巡航）。"
+        "reason": "平台不同（903A 型补给舰 vs 福建号航母），地点不同（万安滩海域/南海 vs 钓鱼岛海域/东海），任务不同，属于不同活动。"
       }
     ],
-    "ambiguity": "无。雷达数据 R034 提供了精确的时间戳和具体海域，与新闻文本形成强互证，消除了其他候选的歧义。"
+    "ambiguity": "无显著歧义，核心候选关联证据充分。"
   },
   "candidates": {
     "opinion": [
@@ -183,6 +175,7 @@
     "opinion": [],
     "radar": []
   },
+  "radar_context": [],
   "verification": {
     "same_event": true,
     "facts": [
@@ -209,7 +202,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻、舆论、雷达三源均明确指向福建号航母，无冲突。"
+          "reason": "新闻、舆论、雷达三源均明确指向福建号航空母舰，无冲突。"
         },
         "checked_by": "explicit_source_matrix",
         "supporting_source_types": [
@@ -241,7 +234,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻、舆论、雷达三源均明确标注为中国籍，无冲突。"
+          "reason": "新闻、舆论、雷达三源均明确标注国籍为中国，无冲突。"
         },
         "checked_by": "explicit_source_matrix",
         "supporting_source_types": [
@@ -263,13 +256,13 @@
         "model_proposal": {
           "platform_index": 0,
           "field": "quantity",
-          "claim": "1 架（艘）",
+          "claim": "1 架/艘",
           "supporting_sources": [
             "R034"
           ],
           "conflicting_sources": [],
           "status": "insufficient",
-          "reason": "仅雷达 R034 提供数量"
+          "reason": "仅雷达数据明确数量为 1，新闻与舆论未提及具体数量，无法构成三类来源支持或两源强支持（缺第三类佐证），且无明确反对证据，故标记为 insufficient 而非 supported。"
         },
         "checked_by": "explicit_source_matrix",
         "supporting_source_types": [
@@ -297,7 +290,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻与雷达均明确为钓鱼岛海域，舆论提及东海方向（兼容），无冲突。"
+          "reason": "新闻与雷达均精确指向“钓鱼岛海域”；舆论表述为“东海方向”，该大范围描述兼容具体区域，不构成冲突。"
         },
         "checked_by": "literal_assertion_matrix",
         "source_values": {
@@ -336,14 +329,14 @@
       {
         "platform_index": -1,
         "field": "time",
-        "claim": "起点 02:38，终点 04:03",
+        "claim": "共同观测/报道时段 02:38—04:03（非完整活动起止断言）",
         "supporting_sources": [
           "N018",
           "R034"
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突；起点明示值：{'N018': '02:38', 'R034': '02:38'}；终点明示值：{'N018': '04:03', 'R034': '04:03'}",
+        "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N018': {'start': '02:38', 'end': '04:03', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O032': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R034': {'start': '02:38', 'end': '04:03', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
         "model_proposal": {
           "platform_index": -1,
           "field": "time",
@@ -354,38 +347,35 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻与雷达时间完全一致，舆论仅提及日期无冲突。"
+          "reason": "新闻与雷达起止时间完全一致；舆论仅提及日期，未提供具体时刻，不构成冲突。"
         },
         "checked_by": "literal_assertion_matrix",
-        "components": {
-          "start_time": {
-            "value": "02:38",
-            "support": [
-              "N018",
-              "R034"
-            ],
-            "conflicts": [],
-            "status": "supported",
-            "source_values": {
-              "N018": "02:38",
-              "R034": "02:38"
-            },
-            "radar_batch_observations": []
+        "source_values": {
+          "N018": {
+            "start": "02:38",
+            "end": "04:03",
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
           },
-          "end_time": {
-            "value": "04:03",
-            "support": [
-              "N018",
-              "R034"
-            ],
-            "conflicts": [],
-            "status": "supported",
-            "source_values": {
-              "N018": "04:03",
-              "R034": "04:03"
-            },
-            "radar_batch_observations": []
+          "O032": {
+            "start": null,
+            "end": null,
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
+          },
+          "R034": {
+            "start": "02:38",
+            "end": "04:03",
+            "interval": "observation_coverage",
+            "start_asserted": false,
+            "end_asserted": false
           }
+        },
+        "asserted_boundaries": {
+          "start": {},
+          "end": {}
         },
         "supporting_source_types": [
           "news",
@@ -407,7 +397,7 @@
         "model_proposal": {
           "platform_index": -1,
           "field": "mission",
-          "claim": "联合巡航任务",
+          "claim": "联合巡航",
           "supporting_sources": [
             "N018",
             "O032",
@@ -415,7 +405,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "三源均明确为联合巡航，无冲突。"
+          "reason": "新闻、舆论、雷达三源均明确任务为“联合巡航”（或“联合巡航任务行动”），语义一致。"
         },
         "checked_by": "literal_assertion_matrix",
         "source_values": {
@@ -456,7 +446,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻与舆论均描述为活动/巡航，雷达未说明但不构成冲突。"
+          "reason": "新闻与舆论均描述为“活动”/“执行任务”，雷达未说明但不构成冲突，两源支持已足够。"
         },
         "checked_by": "literal_assertion_matrix",
         "source_values": {
@@ -472,7 +462,9 @@
     ],
     "unresolved_issues": [],
     "explanation": "三类来源已关联，纳入结论的事实获得至少两类独立来源支持，未发现未消解明示反证。",
-    "model_explanation": "三源（新闻 N018、舆论 O032、雷达 R034）在平台、国籍、任务、时间及地点上高度一致，形成强互证。数量仅雷达支持，但非关键事实缺失；舆论的“东海方向”与具体“钓鱼岛海域”兼容，不构成冲突。"
+    "model_unresolved_issues": [],
+    "reconciled_model_issues": [],
+    "model_explanation": "三源（新闻、舆论、雷达）在平台、国籍、任务、地点及时间区间上高度一致，确认为同一事件。数量字段仅雷达有明确数据，新闻与舆论缺失，按规则标记为 insufficient 而非强行支持；地点和时间的不同粒度描述（如东海方向 vs 钓鱼岛海域）视为兼容而非冲突。"
   },
   "reasons": [],
   "status": "可信事件",
@@ -500,7 +492,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "新闻、舆论、雷达三源均明确指向福建号航母，无冲突。"
+        "reason": "新闻、舆论、雷达三源均明确指向福建号航空母舰，无冲突。"
       },
       "checked_by": "explicit_source_matrix",
       "supporting_source_types": [
@@ -532,7 +524,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "新闻、舆论、雷达三源均明确标注为中国籍，无冲突。"
+        "reason": "新闻、舆论、雷达三源均明确标注国籍为中国，无冲突。"
       },
       "checked_by": "explicit_source_matrix",
       "supporting_source_types": [
@@ -562,7 +554,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "新闻与雷达均明确为钓鱼岛海域，舆论提及东海方向（兼容），无冲突。"
+        "reason": "新闻与雷达均精确指向“钓鱼岛海域”；舆论表述为“东海方向”，该大范围描述兼容具体区域，不构成冲突。"
       },
       "checked_by": "literal_assertion_matrix",
       "source_values": {
@@ -601,14 +593,14 @@
     {
       "platform_index": -1,
       "field": "time",
-      "claim": "起点 02:38，终点 04:03",
+      "claim": "共同观测/报道时段 02:38—04:03（非完整活动起止断言）",
       "supporting_sources": [
         "N018",
         "R034"
       ],
       "conflicting_sources": [],
       "status": "supported",
-      "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突；起点明示值：{'N018': '02:38', 'R034': '02:38'}；终点明示值：{'N018': '04:03', 'R034': '04:03'}",
+      "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N018': {'start': '02:38', 'end': '04:03', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O032': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R034': {'start': '02:38', 'end': '04:03', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
       "model_proposal": {
         "platform_index": -1,
         "field": "time",
@@ -619,38 +611,35 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "新闻与雷达时间完全一致，舆论仅提及日期无冲突。"
+        "reason": "新闻与雷达起止时间完全一致；舆论仅提及日期，未提供具体时刻，不构成冲突。"
       },
       "checked_by": "literal_assertion_matrix",
-      "components": {
-        "start_time": {
-          "value": "02:38",
-          "support": [
-            "N018",
-            "R034"
-          ],
-          "conflicts": [],
-          "status": "supported",
-          "source_values": {
-            "N018": "02:38",
-            "R034": "02:38"
-          },
-          "radar_batch_observations": []
+      "source_values": {
+        "N018": {
+          "start": "02:38",
+          "end": "04:03",
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
         },
-        "end_time": {
-          "value": "04:03",
-          "support": [
-            "N018",
-            "R034"
-          ],
-          "conflicts": [],
-          "status": "supported",
-          "source_values": {
-            "N018": "04:03",
-            "R034": "04:03"
-          },
-          "radar_batch_observations": []
+        "O032": {
+          "start": null,
+          "end": null,
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "R034": {
+          "start": "02:38",
+          "end": "04:03",
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
         }
+      },
+      "asserted_boundaries": {
+        "start": {},
+        "end": {}
       },
       "supporting_source_types": [
         "news",
@@ -672,7 +661,7 @@
       "model_proposal": {
         "platform_index": -1,
         "field": "mission",
-        "claim": "联合巡航任务",
+        "claim": "联合巡航",
         "supporting_sources": [
           "N018",
           "O032",
@@ -680,7 +669,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "三源均明确为联合巡航，无冲突。"
+        "reason": "新闻、舆论、雷达三源均明确任务为“联合巡航”（或“联合巡航任务行动”），语义一致。"
       },
       "checked_by": "literal_assertion_matrix",
       "source_values": {
@@ -721,7 +710,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "新闻与舆论均描述为活动/巡航，雷达未说明但不构成冲突。"
+        "reason": "新闻与舆论均描述为“活动”/“执行任务”，雷达未说明但不构成冲突，两源支持已足够。"
       },
       "checked_by": "literal_assertion_matrix",
       "source_values": {

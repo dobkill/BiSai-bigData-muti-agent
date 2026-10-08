@@ -1,0 +1,306 @@
+{
+  "role": "verification",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N010",
+      "kind": "news",
+      "title": "日本秋月级护卫舰在东海南部完成实弹射击训练后离开",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：日本秋月级护卫舰在东海南部完成实弹射击训练后离开\n正文：2025年5月1日14时28分至16时53分，日本海上自卫队秋月级导弹护卫舰在东海南部执行实弹射击训练，随后沿既定航线离开该任务海域。按计划保持机动并持续执行实弹射击训练。\n\n主题词：日本  秋月级  实弹射击训练  东海南部\n",
+      "platforms": [
+        {
+          "name": "秋月级",
+          "country": "日本",
+          "quantity": null,
+          "quote": "日本海上自卫队秋月级导弹护卫舰",
+          "quantity_quote": "",
+          "country_raw": "日本"
+        }
+      ],
+      "location": {
+        "raw": "东海南部",
+        "region": "东海南部",
+        "direction": "东海",
+        "precision": "具体区域",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "东海南部"
+      },
+      "mission": {
+        "value": "实弹射击训练",
+        "quote": "执行实弹射击训练"
+      },
+      "start_time": "14:28",
+      "end_time": "16:53",
+      "movement": "离开",
+      "time_semantics": {
+        "interval": "reported_activity",
+        "start_asserted": false,
+        "end_asserted": false
+      }
+    },
+    "opinion": {
+      "id": "O045",
+      "kind": "opinion",
+      "title": "日本海上自卫队一艘秋月级护卫舰在东海实弹射击",
+      "text": "时间：2025.5.1\n\n标题：日本海上自卫队一艘秋月级护卫舰在东海实弹射击\n\n正文：据央视新闻报道，2025年5月1日，日本海上自卫队一艘秋月级导弹护卫舰在东海方向进行实弹射击训练。媒体关注到，该舰围绕既定科目组织训练并完成平台间行动衔接，这一动向被视为日本海上力量强化任务组织与流程熟悉的体现。相关分析指出，此类训练有助于检验其训练协同水平。\n",
+      "platforms": [
+        {
+          "name": "秋月级",
+          "country": "日本",
+          "quantity": 1,
+          "quote": "一艘秋月级导弹护卫舰",
+          "quantity_quote": "一艘",
+          "country_raw": "日本"
+        }
+      ],
+      "location": {
+        "raw": "东海方向",
+        "region": "东海",
+        "direction": "东海",
+        "precision": "大范围",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "在东海方向"
+      },
+      "mission": {
+        "value": "实弹射击训练",
+        "quote": "进行实弹射击训练"
+      },
+      "start_time": null,
+      "end_time": null,
+      "movement": "活动",
+      "time_semantics": {
+        "interval": "reported_activity",
+        "start_asserted": false,
+        "end_asserted": false
+      }
+    },
+    "radars": [
+      {
+        "id": "R046",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "秋月级导弹护卫舰",
+            "country": "日本",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-B836E068CD1418",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "东海南部",
+          "region": "东海南部",
+          "direction": "东海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "东海南部",
+            "region": "东海南部",
+            "direction": "东海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "实弹射击训练",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "实弹射击训练"
+        ],
+        "start_time": "2025.05.01 14:28:00",
+        "end_time": "2025.05.01 16:53:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-B836E068CD1418",
+        "sibling_ids": [],
+        "hull_values": [
+          "DD-115"
+        ],
+        "country_values": [
+          "日本"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 12,
+        "time_semantics": {
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "identity_scope": "batch_is_not_unique_target",
+        "warnings": []
+      }
+    ],
+    "association": {
+      "opinion_edges": [
+        {
+          "candidate_id": "O045",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.98,
+          "reason": "平台（日本秋月级）、地点（东海南部/东海方向）、任务（实弹射击训练）及日期（2025.5.1）完全一致。虽然舆论未提供精确起止时间，但报道区间与新闻高度重合，且无冲突信息。"
+        },
+        {
+          "candidate_id": "O008",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.95,
+          "reason": "平台型号不同（村雨号 vs 秋月级），任务不同（编队警戒部署 vs 实弹射击训练），且时间区间无重叠（05:07-07:32 vs 14:28-16:53）。"
+        },
+        {
+          "candidate_id": "O044",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.95,
+          "reason": "平台国籍与型号不同（韩国独岛级 vs 日本秋月级），任务性质不同（两栖作战训练 vs 实弹射击训练）。"
+        }
+      ],
+      "radar_edges": [
+        {
+          "candidate_id": "R046",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 1.0,
+          "reason": "雷达数据与新闻在平台（日本秋月级）、地点（东海南部）、任务（实弹射击训练）、日期及精确起止时间（14:28-16:53）上完全匹配，确认为同一活动。"
+        },
+        {
+          "candidate_id": "R053",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.95,
+          "reason": "平台国籍与型号不同（马来西亚莱库号 vs 日本秋月级），任务不同（海上护航 vs 实弹射击训练）。"
+        },
+        {
+          "candidate_id": "R047",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.95,
+          "reason": "平台型号不同（村雨号 vs 秋月级），任务不同（编队警戒部署 vs 实弹射击训练），且时间区间无重叠。"
+        }
+      ],
+      "ambiguity": "无。核心候选 O045 与 R046 在时空、平台身份及任务上均高度一致，足以排除其他同区域同日期的干扰项（如不同型号或不同任务的舰艇）。"
+    },
+    "same_batch_other_candidates": []
+  },
+  "result": {
+    "same_event": true,
+    "platforms": [
+      {
+        "platform_index": 0,
+        "platform": {
+          "claim": "秋月级",
+          "supporting_sources": [
+            "N010",
+            "O045",
+            "R046"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均明确指向日本秋月级护卫舰，无冲突。"
+        },
+        "country": {
+          "claim": "日本",
+          "supporting_sources": [
+            "N010",
+            "O045",
+            "R046"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均明确标注国籍为日本，无冲突。"
+        },
+        "quantity": {
+          "claim": "1 架/艘",
+          "supporting_sources": [
+            "O045",
+            "R046"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论明确提及“一艘”，雷达数据 quantity_values 为 [1]，两源支持；新闻虽未显式数字但描述单舰行动且与两源一致，不视为冲突。"
+        }
+      }
+    ],
+    "location": {
+      "claim": "东海南部",
+      "supporting_sources": [
+        "N010",
+        "R046"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与雷达均精确指向“东海南部”，舆论提及“东海方向”可兼容该具体区域，三源无冲突。"
+    },
+    "time": {
+      "claim": "2025-05-01 14:28-16:53",
+      "supporting_sources": [
+        "N010",
+        "R046"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与雷达起止时间完全一致（14:28-16:53），舆论仅提及日期，不构成冲突。"
+    },
+    "mission": {
+      "claim": "实弹射击训练",
+      "supporting_sources": [
+        "N010",
+        "O045",
+        "R046"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "三源均明确描述为“实弹射击训练”，无冲突。"
+    },
+    "movement": {
+      "claim": "离开任务海域",
+      "supporting_sources": [
+        "N010"
+      ],
+      "conflicting_sources": [],
+      "status": "insufficient",
+      "reason": "仅新闻提及“离开该任务海域”，舆论称“活动”，雷达未说明，缺乏多源印证具体移动状态。"
+    },
+    "unresolved_issues": [],
+    "explanation": "三源在平台型号、国籍、数量（2 源支持）、地点、时间及任务上高度一致，构成可信事实；仅‘离开’这一具体移动动作缺乏多源支持，但不影响核心事件关联的成立。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-08T00:04:01.7523495Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"same_event\": true, \"platforms\": [{\"platform_index\": 0, \"platform\": {\"claim\": \"秋月级\", \"supporting_sources\": [\"N010\", \"O045\", \"R046\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源（新闻、舆论、雷达）均明确指向日本秋月级护卫舰，无冲突。\"}, \"country\": {\"claim\": \"日本\", \"supporting_sources\": [\"N010\", \"O045\", \"R046\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源（新闻、舆论、雷达）均明确标注国籍为日本，无冲突。\"}, \"quantity\": {\"claim\": \"1 架/艘\", \"supporting_sources\": [\"O045\", \"R046\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"舆论明确提及“一艘”，雷达数据 quantity_values 为 [1]，两源支持；新闻虽未显式数字但描述单舰行动且与两源一致，不视为冲突。\"}}], \"location\": {\"claim\": \"东海南部\", \"supporting_sources\": [\"N010\", \"R046\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻与雷达均精确指向“东海南部”，舆论提及“东海方向”可兼容该具体区域，三源无冲突。\"}, \"time\": {\"claim\": \"2025-05-01 14:28-16:53\", \"supporting_sources\": [\"N010\", \"R046\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻与雷达起止时间完全一致（14:28-16:53），舆论仅提及日期，不构成冲突。\"}, \"mission\": {\"claim\": \"实弹射击训练\", \"supporting_sources\": [\"N010\", \"O045\", \"R046\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源均明确描述为“实弹射击训练”，无冲突。\"}, \"movement\": {\"claim\": \"离开任务海域\", \"supporting_sources\": [\"N010\"], \"conflicting_sources\": [], \"status\": \"insufficient\", \"reason\": \"仅新闻提及“离开该任务海域”，舆论称“活动”，雷达未说明，缺乏多源印证具体移动状态。\"}, \"unresolved_issues\": [],\"explanation\":\"三源在平台型号、国籍、数量（2 源支持）、地点、时间及任务上高度一致，构成可信事实；仅‘离开’这一具体移动动作缺乏多源支持，但不影响核心事件关联的成立。\"}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 12527237400,
+    "load_duration": 12020700,
+    "prompt_eval_count": 2306,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 857971000,
+    "eval_count": 603,
+    "eval_duration": 11445188000
+  }
+}

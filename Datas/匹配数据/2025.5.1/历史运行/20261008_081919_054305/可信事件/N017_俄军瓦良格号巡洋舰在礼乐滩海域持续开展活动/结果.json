@@ -1,0 +1,713 @@
+{
+  "id": "N017",
+  "news_id": "N017",
+  "opinion_id": "O020",
+  "radar_ids": [
+    "R048"
+  ],
+  "radar_slots": {
+    "0": "R048"
+  },
+  "alignment": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O020",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.95,
+        "reason": "平台完全一致（俄瓦良格号）、地点精确匹配（礼乐滩海域）、时间高度重叠（新闻为全天持续活动，雷达/舆论观测时段 02:16-04:41 包含在内）。任务描述“持续开展活动”与“执行护航任务”在广义上相容，且舆论明确提及该舰按计划完成保障环节，符合新闻中“围绕任务区域保持机动”的描述。"
+      },
+      {
+        "candidate_id": "O034",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "平台身份冲突：候选为意大利巡逻舰（莱蒙多·蒙特库科利号），新闻明确为俄罗斯瓦良格号。尽管地点和时间相同，但主体不同，属于同一海域的不同活动。"
+      },
+      {
+        "candidate_id": "O025",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "平台类型与任务冲突：候选为图 -95MS 轰炸机（航空兵），新闻为瓦良格号巡洋舰（水面舰艇）。地点均为南海方向，但平台属性完全不同，属于不同活动。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R048",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.96,
+        "reason": "平台、地点、时间完全匹配。雷达记录显示瓦良格号于 02:16-04:41 在礼乐滩海域活动，与新闻描述的“持续开展活动”及舆论观测时段一致。任务原始列为‘海上护航’，与新闻中的‘活动’描述相容（护航是具体活动形式）。"
+      },
+      {
+        "candidate_id": "R052",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "平台身份冲突：雷达记录为意大利巡逻舰（莱蒙多·蒙特库科利号），新闻主体为俄罗斯瓦良格号。地点虽同为礼乐滩，但目标不同。"
+      },
+      {
+        "candidate_id": "R040",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "平台身份冲突：雷达记录为俄罗斯守护级护卫舰，新闻主体为瓦良格号巡洋舰。地点（菲律宾海）与任务（联合搜救训练）均不匹配。"
+      }
+    ],
+    "ambiguity": "无。核心关联证据（R048 和 O020）在平台、时间、地点上高度一致，足以确认同一次活动。其他候选因平台国籍或型号不同被排除为不同活动。"
+  },
+  "candidates": {
+    "opinion": [
+      {
+        "id": "O020",
+        "score": 4.47746,
+        "cosine": 0.94746,
+        "platform_similarity": 0.95,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O034",
+        "score": 1.60318,
+        "cosine": 0.80318,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "same"
+      },
+      {
+        "id": "O025",
+        "score": 1.45267,
+        "cosine": 0.77267,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O010",
+        "score": 0.97385,
+        "cosine": 0.77385,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O029",
+        "score": 0.79536,
+        "cosine": 0.79536,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      }
+    ],
+    "radar": [
+      {
+        "id": "R048",
+        "score": 4.81346,
+        "cosine": 0.96346,
+        "platform_similarity": 0.95,
+        "time_overlap": null,
+        "location_relation": "same"
+      },
+      {
+        "id": "R052",
+        "score": 1.76493,
+        "cosine": 0.77743,
+        "platform_similarity": 0.0625,
+        "time_overlap": null,
+        "location_relation": "same"
+      },
+      {
+        "id": "R040",
+        "score": 0.95378,
+        "cosine": 0.75378,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "R031",
+        "score": 0.78994,
+        "cosine": 0.78994,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "R054",
+        "score": 0.77135,
+        "cosine": 0.77135,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "R035",
+        "score": 0.7604,
+        "cosine": 0.7604,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      }
+    ]
+  },
+  "assignment_diagnostics": {
+    "opinion": [],
+    "radar": []
+  },
+  "radar_context": [],
+  "verification": {
+    "same_event": true,
+    "facts": [
+      {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "瓦良格号导弹巡洋舰",
+        "supporting_sources": [
+          "N017",
+          "O020",
+          "R048"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N017': '瓦良格号导弹巡洋舰', 'O020': '瓦良格”号导弹巡洋舰', 'R048': '瓦良格号导弹巡洋舰'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "瓦良格号导弹巡洋舰",
+          "supporting_sources": [
+            "N017",
+            "O020",
+            "R048"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均明确标识为俄罗斯瓦良格号导弹巡洋舰，无冲突。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "俄罗斯",
+        "supporting_sources": [
+          "N017",
+          "O020",
+          "R048"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N017': '俄罗斯', 'O020': '俄罗斯', 'R048': '俄罗斯'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "俄罗斯",
+          "supporting_sources": [
+            "N017",
+            "O020",
+            "R048"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源一致认定为俄罗斯海军舰艇。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "1艘",
+        "supporting_sources": [
+          "R048"
+        ],
+        "conflicting_sources": [],
+        "status": "insufficient",
+        "reason": "程序按已关联平台的明示字段复核：{'R048': 1}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "1 架/艘",
+          "supporting_sources": [
+            "R048"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "雷达明确记录数量为 1，新闻与舆论未提具体数量但不构成反对，单源支持且无冲突。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "礼乐滩海域",
+        "supporting_sources": [
+          "N017",
+          "R048"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "复核明示地点和PDF包含关系：{'N017': '礼乐滩海域', 'O020': '南海', 'R048': '礼乐滩海域'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "礼乐滩海域",
+          "supporting_sources": [
+            "N017",
+            "R048"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻与雷达均明确指向“礼乐滩海域”，舆论提及“南海方向”可兼容该具体区域，两源支持。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N017": {
+            "raw": "礼乐滩海域",
+            "region": "礼乐滩海域",
+            "direction": "南海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false,
+            "quote": "在礼乐滩海域"
+          },
+          "O020": {
+            "raw": "南海方向",
+            "region": "南海",
+            "direction": "南海",
+            "precision": "大范围",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false,
+            "quote": "在南海方向"
+          },
+          "R048": {
+            "raw": "礼乐滩海域",
+            "region": "礼乐滩海域",
+            "direction": "南海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        },
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "共同观测/报道时段 02:16—04:41（非完整活动起止断言）",
+        "supporting_sources": [
+          "O020",
+          "R048"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N017': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O020': {'start': '02:16', 'end': '04:41', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R048': {'start': '02:16', 'end': '04:41', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "2025-05-01 02:16 - 04:41",
+          "supporting_sources": [
+            "O020",
+            "R048"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论与雷达时间完全一致。新闻仅说明“5 月 1 日持续活动”，未提供具体时刻，不反对也不支持精确时刻，两源支持精确区间。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N017": {
+            "start": null,
+            "end": null,
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
+          },
+          "O020": {
+            "start": "02:16",
+            "end": "04:41",
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
+          },
+          "R048": {
+            "start": "02:16",
+            "end": "04:41",
+            "interval": "observation_coverage",
+            "start_asserted": false,
+            "end_asserted": false
+          }
+        },
+        "asserted_boundaries": {
+          "start": {},
+          "end": {}
+        },
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "海上护航",
+        "supporting_sources": [
+          "O020",
+          "R048"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "原文明示任务：{'N017': [], 'O020': ['海上护航'], 'R048': ['海上护航']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "海上护航任务",
+          "supporting_sources": [
+            "O020",
+            "R048"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论与雷达均明确为“海上护航”。新闻描述为“持续开展活动”，属于泛称，不与具体任务冲突，两源支持具体任务。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N017": [],
+          "O020": [
+            "海上护航"
+          ],
+          "R048": [
+            "海上护航"
+          ]
+        },
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N017",
+          "O020"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动/机动",
+          "supporting_sources": [
+            "N017",
+            "O020",
+            "R048"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源均描述为活动或机动，无冲突。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N017": "活动",
+          "O020": "活动",
+          "R048": "未说明"
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      }
+    ],
+    "unresolved_issues": [],
+    "explanation": "三类来源已关联，纳入结论的事实获得至少两类独立来源支持，未发现未消解明示反证。",
+    "model_explanation": "新闻、舆论、雷达三源在平台身份（俄瓦良格号）、地点（礼乐滩海域）、时间（5 月 1 日 02:16-04:41）、任务（海上护航）上高度一致。舆论与雷达提供了精确的时间和任务细节，新闻提供了活动背景及全天持续性的佐证。数量由雷达明确支持。无未消解冲突。"
+  },
+  "reasons": [],
+  "status": "可信事件",
+  "verified_facts": [
+    {
+      "platform_index": 0,
+      "field": "platform",
+      "claim": "瓦良格号导弹巡洋舰",
+      "supporting_sources": [
+        "N017",
+        "O020",
+        "R048"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N017': '瓦良格号导弹巡洋舰', 'O020': '瓦良格”号导弹巡洋舰', 'R048': '瓦良格号导弹巡洋舰'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "瓦良格号导弹巡洋舰",
+        "supporting_sources": [
+          "N017",
+          "O020",
+          "R048"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻、舆论、雷达三源均明确标识为俄罗斯瓦良格号导弹巡洋舰，无冲突。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "country",
+      "claim": "俄罗斯",
+      "supporting_sources": [
+        "N017",
+        "O020",
+        "R048"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N017': '俄罗斯', 'O020': '俄罗斯', 'R048': '俄罗斯'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "俄罗斯",
+        "supporting_sources": [
+          "N017",
+          "O020",
+          "R048"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源一致认定为俄罗斯海军舰艇。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "location",
+      "claim": "礼乐滩海域",
+      "supporting_sources": [
+        "N017",
+        "R048"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "复核明示地点和PDF包含关系：{'N017': '礼乐滩海域', 'O020': '南海', 'R048': '礼乐滩海域'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "礼乐滩海域",
+        "supporting_sources": [
+          "N017",
+          "R048"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与雷达均明确指向“礼乐滩海域”，舆论提及“南海方向”可兼容该具体区域，两源支持。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N017": {
+          "raw": "礼乐滩海域",
+          "region": "礼乐滩海域",
+          "direction": "南海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在礼乐滩海域"
+        },
+        "O020": {
+          "raw": "南海方向",
+          "region": "南海",
+          "direction": "南海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在南海方向"
+        },
+        "R048": {
+          "raw": "礼乐滩海域",
+          "region": "礼乐滩海域",
+          "direction": "南海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        }
+      },
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "time",
+      "claim": "共同观测/报道时段 02:16—04:41（非完整活动起止断言）",
+      "supporting_sources": [
+        "O020",
+        "R048"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N017': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O020': {'start': '02:16', 'end': '04:41', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R048': {'start': '02:16', 'end': '04:41', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "2025-05-01 02:16 - 04:41",
+        "supporting_sources": [
+          "O020",
+          "R048"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "舆论与雷达时间完全一致。新闻仅说明“5 月 1 日持续活动”，未提供具体时刻，不反对也不支持精确时刻，两源支持精确区间。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N017": {
+          "start": null,
+          "end": null,
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "O020": {
+          "start": "02:16",
+          "end": "04:41",
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "R048": {
+          "start": "02:16",
+          "end": "04:41",
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        }
+      },
+      "asserted_boundaries": {
+        "start": {},
+        "end": {}
+      },
+      "supporting_source_types": [
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "mission",
+      "claim": "海上护航",
+      "supporting_sources": [
+        "O020",
+        "R048"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "原文明示任务：{'N017': [], 'O020': ['海上护航'], 'R048': ['海上护航']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "海上护航任务",
+        "supporting_sources": [
+          "O020",
+          "R048"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "舆论与雷达均明确为“海上护航”。新闻描述为“持续开展活动”，属于泛称，不与具体任务冲突，两源支持具体任务。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N017": [],
+        "O020": [
+          "海上护航"
+        ],
+        "R048": [
+          "海上护航"
+        ]
+      },
+      "supporting_source_types": [
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "movement",
+      "claim": "活动",
+      "supporting_sources": [
+        "N017",
+        "O020"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动/机动",
+        "supporting_sources": [
+          "N017",
+          "O020",
+          "R048"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源均描述为活动或机动，无冲突。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N017": "活动",
+        "O020": "活动",
+        "R048": "未说明"
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    }
+  ],
+  "radar_row_count": 11,
+  "direction": "南海",
+  "report_eligible": true,
+  "directory": "可信事件/N017_俄军瓦良格号巡洋舰在礼乐滩海域持续开展活动"
+}

@@ -34,7 +34,7 @@
 | 0 | country | 新加坡 | supported | N042,O004,R004 |  | 程序按已关联平台的明示字段复核：{'N042': '新加坡', 'O004': '新加坡', 'R004': '新加坡'}；缺失不支持也不反对 |
 | 0 | quantity | 2架 | supported | N042,R004 |  | 程序按已关联平台的明示字段复核：{'N042': 2, 'R004': 2}；缺失不支持也不反对 |
 | -1 | location | 安达曼海 | supported | N042,O004 |  | 复核明示地点和PDF包含关系：{'N042': '安达曼海', 'O004': '安达曼海'}；同方向不等于同一具体区域，未验证坐标不作为反证 |
-| -1 | time | 起点 08:19，终点 10:44 | supported | N042,O004,R004 |  | 逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突；起点明示值：{'N042': '08:19', 'O004': '08:19', 'R004': '08:19'}；终点明示值：{'N042': '10:44', 'O004': '10:44', 'R004': '10:44'} |
+| -1 | time | 共同观测/报道时段 08:19—10:44（非完整活动起止断言） | supported | N042,O004,R004 |  | 分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N042': {'start': '08:19', 'end': '10:44', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': True}, 'O004': {'start': '08:19', 'end': '10:44', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R004': {'start': '08:19', 'end': '10:44', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}} |
 | -1 | mission | 战备警巡 | supported | O004,R004 |  | 原文明示任务：{'N042': [], 'O004': ['战备警巡'], 'R004': ['战备警巡']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决 |
 | -1 | movement | 活动 | supported | N042,O004 |  | 活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values |
 

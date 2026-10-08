@@ -1,0 +1,16 @@
+{
+  "code_commit": "b7ac880",
+  "completed_associations": 50,
+  "completed_export": false,
+  "failure": "扩大复查中出现舆论ID写入雷达关联，重试未能修复",
+  "review_findings": [
+    "合法平台索引已约束",
+    "模型长回答截断，重试输出脱离原始新闻内容",
+    "关联schema共用ID枚举，未隔离舆论与雷达候选"
+  ],
+  "next_changes": [
+    "全日期索引检索后按身份及排名限制单次复查候选，较大候选集发送简要字段",
+    "舆论与雷达分别约束合法ID和输出数量",
+    "重试保留原始输入，不追加失败长回答"
+  ]
+}

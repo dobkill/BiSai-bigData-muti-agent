@@ -34,7 +34,7 @@
 | 0 | country | 德国 | supported | N007,O005,R016 |  | 程序按已关联平台的明示字段复核：{'N007': '德国', 'O005': '德国', 'R016': '德国'}；缺失不支持也不反对 |
 | 0 | quantity | 2架 | supported | N007,R016 |  | 程序按已关联平台的明示字段复核：{'N007': 2, 'R016': 2}；缺失不支持也不反对 |
 | -1 | location | 东海 | supported | N007,O005 |  | 复核明示地点和PDF包含关系：{'N007': '东海油气田海域', 'O005': '东海'}；同方向不等于同一具体区域，未验证坐标不作为反证 |
-| -1 | time | 起点 05:45，终点 07:10 | supported | O005,R016 |  | 逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突；起点明示值：{'O005': '05:45', 'R016': '05:45'}；终点明示值：{'O005': '07:10', 'R016': '07:10'} |
+| -1 | time | 共同观测/报道时段 05:45—07:10（非完整活动起止断言） | supported | O005,R016 |  | 分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N007': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O005': {'start': '05:45', 'end': '07:10', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R016': {'start': '05:45', 'end': '07:10', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}} |
 | -1 | mission | 对海突击训练 | supported | O005,R016 |  | 原文明示任务：{'N007': [], 'O005': ['对海突击训练'], 'R016': ['对海突击训练']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决 |
 | -1 | movement | 活动 | supported | N007,O005 |  | 活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values |
 | -1 | location_detail | 东海油气田海域 | insufficient | N007 |  | 具体区域仅一类来源明示；结论使用共同获支持的方向，细节保留待核实 |

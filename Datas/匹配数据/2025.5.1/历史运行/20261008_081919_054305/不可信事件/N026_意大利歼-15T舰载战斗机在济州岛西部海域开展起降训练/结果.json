@@ -1,0 +1,726 @@
+{
+  "id": "N026",
+  "news_id": "N026",
+  "opinion_id": "O031",
+  "radar_ids": [
+    "R021"
+  ],
+  "radar_slots": {
+    "0": "R021"
+  },
+  "alignment": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O031",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.95,
+        "reason": "平台型号（歼 -15T）、国家（新闻误标为意大利，舆论为中国，但结合雷达数据 R021 显示中国籍且坐标吻合济州岛西部海域，判定新闻国籍字段有误）、地点（济州岛西部海域/黄海方向）及任务（舰载机起降训练）完全一致。时间区间高度重叠（11:15-13:40 vs 全天持续活动），属于同一事件的不同报道视角。"
+      },
+      {
+        "candidate_id": "O013",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.9,
+        "reason": "虽然同为意大利 F-35B 进行舰载机起降训练，但地点在南海方向，与新闻中的济州岛西部海域（黄海）冲突。时间区间（05:23-07:48）也与新闻时段（11:15-13:40）无重叠，确认为不同活动。"
+      },
+      {
+        "candidate_id": "O041",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.9,
+        "reason": "平台型号（F-15SG）、国家（新加坡）及地点（孟加拉湾）均与新闻严重不符，时间虽有重叠但属于完全不同的活动。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R021",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.98,
+        "reason": "雷达数据 R021 显示歼 -15T（中国籍，与新闻中意大利标签冲突但坐标指向黄海济州岛西部吻合）、任务为舰载机起降训练。时间戳（11:15-13:40）与新闻完全一致，坐标范围覆盖济州岛西部海域。判定新闻中的“意大利”为国家字段错误，实际为中国平台活动。"
+      },
+      {
+        "candidate_id": "R027",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.9,
+        "reason": "虽然任务同为舰载机起降训练且涉及意大利 F-35B，但坐标位于南海（113.8E, 9.9N），与新闻中的济州岛西部海域（黄海）冲突。时间区间（05:23-07:48）也与新闻时段不重叠。"
+      },
+      {
+        "candidate_id": "R017",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.9,
+        "reason": "平台型号（F-15SG）、国家（新加坡）及任务（对海突击训练）与新闻不符，坐标位于孟加拉湾，确认为不同活动。"
+      }
+    ],
+    "ambiguity": "新闻中明确标注国籍为“意大利”，但雷达数据 R021 及舆论 O031 均指向中国歼 -15T 在相同时空进行相同任务。基于坐标（济州岛西部/黄海）和精确时间匹配，判定新闻国籍字段存在事实错误，实际关联对象为中国平台。"
+  },
+  "candidates": {
+    "opinion": [
+      {
+        "id": "O031",
+        "score": 4.70549,
+        "cosine": 0.90549,
+        "platform_similarity": 1.0,
+        "time_overlap": null,
+        "location_relation": "same"
+      },
+      {
+        "id": "O041",
+        "score": 1.96863,
+        "cosine": 0.76863,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O003",
+        "score": 1.94078,
+        "cosine": 0.74078,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O023",
+        "score": 1.27554,
+        "cosine": 0.79554,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O013",
+        "score": 1.04437,
+        "cosine": 0.84437,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O017",
+        "score": 1.00912,
+        "cosine": 0.80912,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O021",
+        "score": 0.80304,
+        "cosine": 0.80304,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      }
+    ],
+    "radar": [
+      {
+        "id": "R021",
+        "score": 5.10865,
+        "cosine": 0.90865,
+        "platform_similarity": 1.0,
+        "time_overlap": 1.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R017",
+        "score": 1.99836,
+        "cosine": 0.79836,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R015",
+        "score": 1.93238,
+        "cosine": 0.73238,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R027",
+        "score": 1.03352,
+        "cosine": 0.83352,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R012",
+        "score": 1.01176,
+        "cosine": 0.81176,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R002",
+        "score": 0.81392,
+        "cosine": 0.81392,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R001",
+        "score": 0.8035,
+        "cosine": 0.8035,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      }
+    ]
+  },
+  "assignment_diagnostics": {
+    "opinion": [],
+    "radar": []
+  },
+  "radar_context": [],
+  "verification": {
+    "same_event": true,
+    "facts": [
+      {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "歼-15T舰载战斗机",
+        "supporting_sources": [
+          "N026",
+          "O031",
+          "R021"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N026': '歼-15T舰载战斗机', 'O031': '歼-15T', 'R021': '歼-15T舰载战斗机'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "歼 -15T 舰载战斗机",
+          "supporting_sources": [
+            "N026",
+            "O031",
+            "R021"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源均确认为歼 -15T"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "中国",
+        "supporting_sources": [
+          "O031",
+          "R021"
+        ],
+        "conflicting_sources": [
+          "N026"
+        ],
+        "status": "conflict",
+        "reason": "程序按已关联平台的明示字段复核：{'N026': '意大利', 'O031': '中国', 'R021': '中国'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "中国",
+          "supporting_sources": [
+            "O031",
+            "R021"
+          ],
+          "conflicting_sources": [
+            "N026"
+          ],
+          "status": "supported",
+          "reason": "舆论与雷达明确为中国，新闻标注意大利但结合坐标、时间及任务一致性判定为误标"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "2架",
+        "supporting_sources": [
+          "O031",
+          "R021"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'O031': 2, 'R021': 2}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "2 架",
+          "supporting_sources": [
+            "O031",
+            "R021"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论与雷达均明确数量为 2，新闻未说明数量但不构成冲突"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "济州岛西部海域",
+        "supporting_sources": [
+          "N026",
+          "O031"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "复核明示地点和PDF包含关系：{'N026': '济州岛西部海域', 'O031': '济州岛西部海域'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "济州岛西部海域",
+          "supporting_sources": [
+            "N026",
+            "O031",
+            "R021"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源均指向济州岛西部海域，雷达坐标范围覆盖该区域"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N026": {
+            "raw": "济州岛西部海域",
+            "region": "济州岛西部海域",
+            "direction": "黄海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false,
+            "quote": "在济州岛西部海域"
+          },
+          "O031": {
+            "raw": "黄海方向的济州岛西部海域",
+            "region": "济州岛西部海域",
+            "direction": "黄海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false,
+            "quote": "在黄海方向的济州岛西部海域持续活动"
+          }
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "共同观测/报道时段 11:15—13:40（非完整活动起止断言）",
+        "supporting_sources": [
+          "N026",
+          "R021"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N026': {'start': '11:15', 'end': '13:40', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O031': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R021': {'start': '11:15', 'end': '13:40', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "2025-05-01 11:15 至 13:40",
+          "supporting_sources": [
+            "N026",
+            "R021"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻与雷达时间完全一致，舆论仅提及日期"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N026": {
+            "start": "11:15",
+            "end": "13:40",
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
+          },
+          "O031": {
+            "start": null,
+            "end": null,
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
+          },
+          "R021": {
+            "start": "11:15",
+            "end": "13:40",
+            "interval": "observation_coverage",
+            "start_asserted": false,
+            "end_asserted": false
+          }
+        },
+        "asserted_boundaries": {
+          "start": {},
+          "end": {}
+        },
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "舰载机起降训练",
+        "supporting_sources": [
+          "N026",
+          "R021"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "原文明示任务：{'N026': ['舰载机起降训练'], 'O031': [], 'R021': ['舰载机起降训练']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "舰载机起降训练",
+          "supporting_sources": [
+            "N026",
+            "R021"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻与雷达明确任务为舰载机起降训练，舆论描述为持续活动（兼容）"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N026": [
+            "舰载机起降训练"
+          ],
+          "O031": [],
+          "R021": [
+            "舰载机起降训练"
+          ]
+        },
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N026",
+          "O031"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "supporting_sources": [
+            "N026",
+            "O031",
+            "R021"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源均确认平台处于活动状态"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N026": "活动",
+          "O031": "活动",
+          "R021": "未说明"
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      }
+    ],
+    "unresolved_issues": [],
+    "explanation": "程序核验未通过：country关键事实冲突：程序按已关联平台的明示字段复核：{'N026': '意大利', 'O031': '中国', 'R021': '中国'}；缺失不支持也不反对",
+    "model_explanation": "新闻、舆论与雷达数据在平台型号（歼 -15T）、地点（济州岛西部海域）、时间（11:15-13:40）及任务（舰载机起降训练）上高度一致。主要差异在于新闻将国籍误标为“意大利”，而舆论和雷达明确为中国，结合坐标位置（黄海/济州岛）与精确时间匹配，判定新闻国籍字段错误，实际事件为中国平台活动。数量由舆论和雷达共同确认为 2 架。"
+  },
+  "reasons": [
+    "country关键事实冲突：程序按已关联平台的明示字段复核：{'N026': '意大利', 'O031': '中国', 'R021': '中国'}；缺失不支持也不反对"
+  ],
+  "status": "不可信事件",
+  "verified_facts": [
+    {
+      "platform_index": 0,
+      "field": "platform",
+      "claim": "歼-15T舰载战斗机",
+      "supporting_sources": [
+        "N026",
+        "O031",
+        "R021"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N026': '歼-15T舰载战斗机', 'O031': '歼-15T', 'R021': '歼-15T舰载战斗机'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "歼 -15T 舰载战斗机",
+        "supporting_sources": [
+          "N026",
+          "O031",
+          "R021"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源均确认为歼 -15T"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "quantity",
+      "claim": "2架",
+      "supporting_sources": [
+        "O031",
+        "R021"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'O031': 2, 'R021': 2}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "2 架",
+        "supporting_sources": [
+          "O031",
+          "R021"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "舆论与雷达均明确数量为 2，新闻未说明数量但不构成冲突"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "location",
+      "claim": "济州岛西部海域",
+      "supporting_sources": [
+        "N026",
+        "O031"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "复核明示地点和PDF包含关系：{'N026': '济州岛西部海域', 'O031': '济州岛西部海域'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "济州岛西部海域",
+        "supporting_sources": [
+          "N026",
+          "O031",
+          "R021"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源均指向济州岛西部海域，雷达坐标范围覆盖该区域"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N026": {
+          "raw": "济州岛西部海域",
+          "region": "济州岛西部海域",
+          "direction": "黄海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在济州岛西部海域"
+        },
+        "O031": {
+          "raw": "黄海方向的济州岛西部海域",
+          "region": "济州岛西部海域",
+          "direction": "黄海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在黄海方向的济州岛西部海域持续活动"
+        }
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "time",
+      "claim": "共同观测/报道时段 11:15—13:40（非完整活动起止断言）",
+      "supporting_sources": [
+        "N026",
+        "R021"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N026': {'start': '11:15', 'end': '13:40', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O031': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R021': {'start': '11:15', 'end': '13:40', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "2025-05-01 11:15 至 13:40",
+        "supporting_sources": [
+          "N026",
+          "R021"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与雷达时间完全一致，舆论仅提及日期"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N026": {
+          "start": "11:15",
+          "end": "13:40",
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "O031": {
+          "start": null,
+          "end": null,
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "R021": {
+          "start": "11:15",
+          "end": "13:40",
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        }
+      },
+      "asserted_boundaries": {
+        "start": {},
+        "end": {}
+      },
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "mission",
+      "claim": "舰载机起降训练",
+      "supporting_sources": [
+        "N026",
+        "R021"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "原文明示任务：{'N026': ['舰载机起降训练'], 'O031': [], 'R021': ['舰载机起降训练']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "舰载机起降训练",
+        "supporting_sources": [
+          "N026",
+          "R021"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与雷达明确任务为舰载机起降训练，舆论描述为持续活动（兼容）"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N026": [
+          "舰载机起降训练"
+        ],
+        "O031": [],
+        "R021": [
+          "舰载机起降训练"
+        ]
+      },
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "movement",
+      "claim": "活动",
+      "supporting_sources": [
+        "N026",
+        "O031"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N026",
+          "O031",
+          "R021"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源均确认平台处于活动状态"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N026": "活动",
+        "O031": "活动",
+        "R021": "未说明"
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    }
+  ],
+  "radar_row_count": 10,
+  "direction": "黄海",
+  "report_eligible": false,
+  "directory": "不可信事件/N026_意大利歼-15T舰载战斗机在济州岛西部海域开展起降训练"
+}

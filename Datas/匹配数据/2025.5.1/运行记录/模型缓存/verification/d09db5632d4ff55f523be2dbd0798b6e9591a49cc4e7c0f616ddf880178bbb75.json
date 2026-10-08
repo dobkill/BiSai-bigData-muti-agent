@@ -1,0 +1,316 @@
+{
+  "role": "verification",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N008",
+      "kind": "news",
+      "title": "苏-35S多用途战斗机俄军苏-35S在成山头外海持续活动",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：苏-35S多用途战斗机俄军苏-35S在成山头外海持续活动\n正文：2025年5月1日，俄罗斯2架苏-35S多用途战斗机在成山头外海持续活动，围绕任务区域保持机动，行动范围保持在指定任务海域。\n\n主题词：俄罗斯  苏-35S  成山头外海  活动\n",
+      "platforms": [
+        {
+          "name": "苏-35S多用途战斗机",
+          "country": "俄罗斯",
+          "quantity": 2,
+          "quote": "2架苏-35S多用途战斗机",
+          "quantity_quote": "2架苏-35S多用途战斗机",
+          "country_raw": "俄罗斯"
+        }
+      ],
+      "location": {
+        "raw": "成山头外海",
+        "region": "成山头外海",
+        "direction": "黄海",
+        "precision": "具体区域",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "在成山头外海持续活动"
+      },
+      "mission": {
+        "value": null,
+        "quote": ""
+      },
+      "start_time": null,
+      "end_time": null,
+      "movement": "活动",
+      "time_semantics": {
+        "interval": "reported_activity",
+        "start_asserted": false,
+        "end_asserted": false
+      }
+    },
+    "opinion": {
+      "id": "O023",
+      "kind": "opinion",
+      "title": "俄军苏-35S在黄海开展对海突击训练引发关注",
+      "text": "时间：2025.5.1\n\n标题：俄军苏-35S在黄海开展对海突击训练引发关注\n\n正文：据联合早报报道，俄罗斯空天军苏-35S多用途战斗机于2025年5月1日凌晨在黄海方向执行对海突击训练任务，训练自2时49分开始，至4时14分结束。相关动态引发外界对俄军在该方向任务组织模式的讨论。有分析认为，此类训练有助于部队进一步熟悉复杂海空环境下的流程衔接，围绕训练协同与流程熟悉的观察也随之增多。\n",
+      "platforms": [
+        {
+          "name": "苏-35S",
+          "country": "俄罗斯",
+          "quantity": null,
+          "quote": "俄罗斯空天军苏-35S多用途战斗机",
+          "quantity_quote": "2025年5月1日凌晨在黄海方向执行对海突击训练任务，训练自2时49分开始，至4时14分结束。相关动态引发外界对俄军在该方向任务组织模式的讨论。有分析认为，此类训练有助于部队进一步熟悉复杂海空环境下的流程衔接，围绕训练协同与流程熟悉的观察也随之增多",
+          "country_raw": "俄罗斯"
+        }
+      ],
+      "location": {
+        "raw": "黄海方向",
+        "region": "黄海",
+        "direction": "黄海",
+        "precision": "大范围",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "在黄海方向执行对海突击训练任务"
+      },
+      "mission": {
+        "value": "对海突击训练",
+        "quote": "执行对海突击训练任务"
+      },
+      "start_time": "02:49",
+      "end_time": "04:14",
+      "movement": "活动",
+      "time_semantics": {
+        "interval": "reported_activity",
+        "start_asserted": true,
+        "end_asserted": true
+      }
+    },
+    "radars": [
+      {
+        "id": "R003",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "苏-35S多用途战斗机",
+            "country": "俄罗斯",
+            "quantity": 2,
+            "quote": "飞机工作表，批号AIR-059D33759B03E0",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "对海突击训练",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "对海突击训练"
+        ],
+        "start_time": "2025.05.01 02:49:00",
+        "end_time": "2025.05.01 04:14:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            123.3186,
+            123.8023
+          ],
+          "latitude_range": [
+            36.8715,
+            37.1399
+          ],
+          "median": [
+            123.5398,
+            37.0232
+          ],
+          "origins": [
+            [
+              123.3549,
+              36.8994
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [
+            "黄海"
+          ],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [],
+        "batch": "AIR-059D33759B03E0",
+        "sibling_ids": [],
+        "hull_values": [],
+        "country_values": [
+          "俄罗斯"
+        ],
+        "quantity_values": [
+          2
+        ],
+        "row_count": 13,
+        "time_semantics": {
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "identity_scope": "batch_is_not_unique_target",
+        "warnings": []
+      }
+    ],
+    "association": {
+      "opinion_edges": [
+        {
+          "candidate_id": "O026",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.95,
+          "reason": "平台（俄军苏 -35S）、数量（2 架）、时间（2025.5.1）及地点（黄海/成山头外海属于黄海方向）完全一致。任务描述“持续活动”与新闻中的“围绕任务区域保持机动”语义相容，均为同一事件的常规报道视角差异。"
+        },
+        {
+          "candidate_id": "O023",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.85,
+          "reason": "平台、数量、时间及大方向（黄海）一致。任务描述“对海突击训练”与新闻的“持续活动”存在包含关系，且雷达数据 R003 显示该时段有苏 -35S 在黄海坐标活动，支持两者为同一事件的不同侧面描述。尽管具体起止时间未完全匹配，但考虑到报道区间性质及任务连续性，判定为同一次活动。"
+        },
+        {
+          "candidate_id": "O046",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.99,
+          "reason": "平台完全不同（美国“新奥尔良”号船坞运输舰 vs 俄罗斯苏 -35S 战斗机），属于不同国家的独立活动，直接排除。"
+        }
+      ],
+      "radar_edges": [
+        {
+          "candidate_id": "R003",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.9,
+          "reason": "平台（苏 -35S）、数量（2 架）、时间（02:49-04:14）与候选 O023 高度吻合，且坐标位于黄海（经度 123.x），与新闻地点“成山头外海”地理空间一致。任务均为“对海突击训练”，确认为同一事件的雷达观测数据。"
+        },
+        {
+          "candidate_id": "R013",
+          "platform_indices": [
+            0
+          ],
+          "relation": "uncertain",
+          "confidence": 0.6,
+          "reason": "平台、数量及时间（08:03-10:28）一致，地点坐标也在黄海。但任务为“战备警巡”，与新闻中强调的“持续活动/机动”略有差异，且时间段较晚。虽不能排除是同一批飞机后续行动，但因缺乏明确的任务连续性描述，暂定为不确定关联（可能是同批次飞机的不同阶段或另一组飞机）。"
+        },
+        {
+          "candidate_id": "R024",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 0.95,
+          "reason": "平台型号不同（苏 -30SM vs 苏 -35S），且坐标位于南海（经度 117.x），与新闻的黄海地点冲突，确认为不同活动。"
+        }
+      ],
+      "ambiguity": "主要存在于 R013 是否属于同一连续任务链的判断上，因任务类型描述差异及时间间隔未明确排除其他可能性。O023 与新闻的具体起止时间不完全重合，但基于“持续活动”的宽泛定义及雷达数据支撑，仍判定为同事件。"
+    },
+    "same_batch_other_candidates": []
+  },
+  "result": {
+    "same_event": true,
+    "platforms": [
+      {
+        "platform_index": 0,
+        "platform": {
+          "claim": "苏 -35S 多用途战斗机",
+          "supporting_sources": [
+            "N008",
+            "O023",
+            "R003"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源均明确指向苏 -35S"
+        },
+        "country": {
+          "claim": "俄罗斯",
+          "supporting_sources": [
+            "N008",
+            "O023",
+            "R003"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源均明确为俄罗斯"
+        },
+        "quantity": {
+          "claim": "2 架",
+          "supporting_sources": [
+            "N008",
+            "R003"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻 N008 和雷达 R003 均明确提及 2 架，舆论 O023 未提数量但不构成冲突"
+        }
+      }
+    ],
+    "location": {
+      "claim": "成山头外海/黄海方向",
+      "supporting_sources": [
+        "N008",
+        "O023"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻明确“成山头外海”，舆论为“黄海方向”，雷达坐标位于黄海（123.x），三者地理空间兼容，均指向同一海域"
+    },
+    "time": {
+      "claim": "2025 年 5 月 1 日 02:49-04:14",
+      "supporting_sources": [
+        "O023",
+        "R003"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "舆论和雷达均精确记录该时段活动，新闻仅确认日期，不冲突"
+    },
+    "mission": {
+      "claim": "对海突击训练",
+      "supporting_sources": [
+        "O023",
+        "R003"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "舆论和雷达明确任务为“对海突击训练”，新闻描述为“持续活动/围绕任务区域保持机动”，后者是对前者过程的客观描述，语义相容"
+    },
+    "movement": {
+      "claim": "活动",
+      "supporting_sources": [
+        "N008",
+        "O023",
+        "R003"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "三源均确认飞机处于活动状态"
+    },
+    "unresolved_issues": [],
+    "explanation": "新闻 N008、舆论 O023 与雷达 R003 在平台型号（苏 -35S）、国籍（俄罗斯）、数量（2 架，由两源支持）、地点（成山头外海/黄海方向）、时间（5 月 1 日 02:49-04:14）及任务（对海突击训练）上高度一致。新闻中的“持续活动”是对雷达观测到的具体训练任务的概括性描述，不存在事实冲突。所有关键要素均有至少两类来源支持，无未消解冲突。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-08T00:03:37.6530911Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"same_event\": true, \"platforms\": [{\"platform_index\": 0, \"platform\": {\"claim\": \"苏 -35S 多用途战斗机\", \"supporting_sources\": [\"N008\", \"O023\", \"R003\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源均明确指向苏 -35S\"}, \"country\": {\"claim\": \"俄罗斯\", \"supporting_sources\": [\"N008\", \"O023\", \"R003\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源均明确为俄罗斯\"}, \"quantity\": {\"claim\": \"2 架\", \"supporting_sources\": [\"N008\", \"R003\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻 N008 和雷达 R003 均明确提及 2 架，舆论 O023 未提数量但不构成冲突\"}}], \"location\": {\"claim\": \"成山头外海/黄海方向\", \"supporting_sources\": [\"N008\", \"O023\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻明确“成山头外海”，舆论为“黄海方向”，雷达坐标位于黄海（123.x），三者地理空间兼容，均指向同一海域\"}, \"time\": {\"claim\": \"2025 年 5 月 1 日 02:49-04:14\", \"supporting_sources\": [\"O023\", \"R003\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"舆论和雷达均精确记录该时段活动，新闻仅确认日期，不冲突\"}, \"mission\": {\"claim\": \"对海突击训练\", \"supporting_sources\": [\"O023\", \"R003\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"舆论和雷达明确任务为“对海突击训练”，新闻描述为“持续活动/围绕任务区域保持机动”，后者是对前者过程的客观描述，语义相容\"}, \"movement\": {\"claim\": \"活动\", \"supporting_sources\": [\"N008\", \"O023\", \"R003\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源均确认飞机处于活动状态\"}, \"unresolved_issues\": [],\"explanation\": \"新闻 N008、舆论 O023 与雷达 R003 在平台型号（苏 -35S）、国籍（俄罗斯）、数量（2 架，由两源支持）、地点（成山头外海/黄海方向）、时间（5 月 1 日 02:49-04:14）及任务（对海突击训练）上高度一致。新闻中的“持续活动”是对雷达观测到的具体训练任务的概括性描述，不存在事实冲突。所有关键要素均有至少两类来源支持，无未消解冲突。\"}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 13478894400,
+    "load_duration": 7623200,
+    "prompt_eval_count": 2647,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 934448000,
+    "eval_count": 659,
+    "eval_duration": 12371057000
+  }
+}

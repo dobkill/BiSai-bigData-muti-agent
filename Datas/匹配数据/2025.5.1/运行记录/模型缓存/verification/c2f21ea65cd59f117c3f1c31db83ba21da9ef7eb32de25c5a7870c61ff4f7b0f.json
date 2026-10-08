@@ -1,0 +1,311 @@
+{
+  "role": "verification",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N024",
+      "kind": "news",
+      "title": "美军RC-135V/W电子侦察机由外围航线进入东海执行侦察",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：美军RC-135V/W电子侦察机由外围航线进入东海执行侦察\n正文：2025年5月1日8时14分至10时39分，美国空军RC-135V/W电子侦察机由外围航线进入东海执行电子侦察任务，期间围绕指定海域保持监视并结合既定航线持续收集相关信息。\n\n主题词：美国  RC-135V/W  电子侦察  东海\n",
+      "platforms": [
+        {
+          "name": "RC-135V/W电子侦察机",
+          "country": "美国",
+          "quantity": null,
+          "quote": "美国空军RC-135V/W电子侦察机",
+          "quantity_quote": "",
+          "country_raw": "美国"
+        }
+      ],
+      "location": {
+        "raw": "东海",
+        "region": "东海",
+        "direction": "东海",
+        "precision": "大范围",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "由外围航线进入东海执行电子侦察任务"
+      },
+      "mission": {
+        "value": "电子侦察",
+        "quote": "由外围航线进入东海执行电子侦察任务"
+      },
+      "start_time": "08:14",
+      "end_time": "10:39",
+      "movement": "进入",
+      "time_semantics": {
+        "interval": "reported_activity",
+        "start_asserted": false,
+        "end_asserted": false
+      }
+    },
+    "opinion": {
+      "id": "O050",
+      "kind": "opinion",
+      "title": "美军RC-135V/W侦察机五一当天在东海执行电子侦察任务",
+      "text": "时间：2025.5.1\n\n标题：美军RC-135V/W侦察机五一当天在东海执行电子侦察任务\n\n正文：据公开防务媒体报道，美国一架RC-135V/W电子侦察机于2025年5月1日在东海方向开展电子侦察。该机围绕任务海域组织电子侦察，按计划保持机动并持续执行电子侦察。相关行动被视为美方在东海方向维持态势感知和持续监视能力的常规体现。这一动向可能有助于其掌握区域电磁环境特征。\n",
+      "platforms": [
+        {
+          "name": "RC-135V/W电子侦察机",
+          "country": "美国",
+          "quantity": 1,
+          "quote": "一架RC-135V/W电子侦察机",
+          "quantity_quote": "一架RC-135V/W电子侦察机",
+          "country_raw": "美国"
+        }
+      ],
+      "location": {
+        "raw": "东海方向",
+        "region": "东海",
+        "direction": "东海",
+        "precision": "大范围",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "在东海方向"
+      },
+      "mission": {
+        "value": "电子侦察",
+        "quote": "开展电子侦察"
+      },
+      "start_time": null,
+      "end_time": null,
+      "movement": "活动",
+      "time_semantics": {
+        "interval": "reported_activity",
+        "start_asserted": false,
+        "end_asserted": false
+      }
+    },
+    "radars": [
+      {
+        "id": "R025",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "RC-135V/W电子侦察机",
+            "country": "美国",
+            "quantity": 1,
+            "quote": "飞机工作表，批号AIR-EB9F718D91A49B",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": null,
+          "region": null,
+          "direction": null,
+          "precision": "缺失",
+          "mapping": "missing"
+        },
+        "location_values": [],
+        "mission": {
+          "value": "电子侦察",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "电子侦察"
+        ],
+        "start_time": "2025.05.01 08:14:00",
+        "end_time": "2025.05.01 10:39:00",
+        "movement": "未说明",
+        "coordinates": {
+          "longitude_range": [
+            124.1005,
+            124.1935
+          ],
+          "latitude_range": [
+            28.7686,
+            29.063
+          ],
+          "median": [
+            124.1526,
+            28.8672
+          ],
+          "origins": [
+            [
+              124.1572,
+              28.7701
+            ]
+          ]
+        },
+        "coordinate_hint": {
+          "candidate_directions": [
+            "东海"
+          ],
+          "verified": false,
+          "method": "宽泛矩形，仅辅助召回；PDF没有坐标边界，不能作为独立地点印证或反证"
+        },
+        "anomalies": [],
+        "batch": "AIR-EB9F718D91A49B",
+        "sibling_ids": [],
+        "hull_values": [],
+        "country_values": [
+          "美国"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 13,
+        "time_semantics": {
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "identity_scope": "batch_is_not_unique_target",
+        "warnings": []
+      }
+    ],
+    "association": {
+      "opinion_edges": [
+        {
+          "candidate_id": "O050",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.98,
+          "reason": "平台（美军 RC-135V/W）、日期（2025.5.1）、地点（东海）及任务（电子侦察）完全一致。新闻提供了精确的时间区间（08:14-10:39），舆论虽无具体时间但描述的活动性质与新闻高度吻合，属于同一事件的常规报道。"
+        },
+        {
+          "candidate_id": "O024",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 1.0,
+          "reason": "平台完全不同（法国护卫舰 vs 美国侦察机），地点不同（巴伦支海 vs 东海），属于完全不同的活动。"
+        },
+        {
+          "candidate_id": "O004",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 1.0,
+          "reason": "平台不同（新加坡战斗机 vs 美国侦察机），地点不同（安达曼海 vs 东海），属于完全不同的活动。"
+        }
+      ],
+      "radar_edges": [
+        {
+          "candidate_id": "R025",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 1.0,
+          "reason": "雷达数据与新闻在平台型号（RC-135V/W）、国籍（美国）、任务（电子侦察）及时间区间（08:14-10:39）上完全精确匹配。虽然地点字段缺失，但坐标辅助提示为“东海”，且时间重叠度为 1.0，确认为同一事件。"
+        },
+        {
+          "candidate_id": "R041",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 1.0,
+          "reason": "平台不同（韩国两栖攻击舰 vs 美国侦察机），地点不同（东海南部 vs 新闻仅提东海大范围，且任务为两栖训练），属于不同活动。"
+        },
+        {
+          "candidate_id": "R050",
+          "platform_indices": [],
+          "relation": "different",
+          "confidence": 1.0,
+          "reason": "平台不同（新加坡坦克登陆舰 vs 美国侦察机），地点不同（东海南部 vs 新闻仅提东海大范围，且任务为远海训练），属于不同活动。"
+        }
+      ],
+      "ambiguity": "无。核心候选 O050 和 R025 与新闻 N024 在关键要素上完全一致，其他候选因平台、地点或任务明显不符被排除为不同事件。"
+    },
+    "same_batch_other_candidates": []
+  },
+  "result": {
+    "same_event": true,
+    "platforms": [
+      {
+        "platform_index": 0,
+        "platform": {
+          "claim": "RC-135V/W",
+          "supporting_sources": [
+            "N024",
+            "O050",
+            "R025"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均明确标识为 RC-135V/W"
+        },
+        "country": {
+          "claim": "美国",
+          "supporting_sources": [
+            "N024",
+            "O050",
+            "R025"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均明确标识国籍为美国"
+        },
+        "quantity": {
+          "claim": "1 架",
+          "supporting_sources": [
+            "O050",
+            "R025"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论和雷达均明确提及数量为 1，新闻虽未显式数字但语境为单架执行任务"
+        }
+      }
+    ],
+    "location": {
+      "claim": "东海",
+      "supporting_sources": [
+        "N024",
+        "O050"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻和舆论均明确提及活动区域为东海，雷达坐标辅助提示亦指向东海"
+    },
+    "time": {
+      "claim": "2025-05-01 08:14 至 10:39",
+      "supporting_sources": [
+        "N024",
+        "R025"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻和雷达均精确记录了该时间区间，舆论仅确认日期"
+    },
+    "mission": {
+      "claim": "电子侦察",
+      "supporting_sources": [
+        "N024",
+        "O050",
+        "R025"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "三源（新闻、舆论、雷达）均明确任务为电子侦察"
+    },
+    "movement": {
+      "claim": "进入/活动",
+      "supporting_sources": [
+        "N024"
+      ],
+      "conflicting_sources": [],
+      "status": "insufficient",
+      "reason": "仅新闻明确描述“由外围航线进入”，舆论和雷达未提供具体进出动作细节"
+    },
+    "unresolved_issues": [],
+    "explanation": "三源在平台型号、国籍、任务、地点及核心时间区间上高度一致，构成完整证据链。数量由两源（舆论、雷达）支持。运动状态仅新闻有明确描述，其余为不足但非冲突。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-08T00:07:11.198148Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"same_event\": true, \"platforms\": [{\"platform_index\": 0, \"platform\": {\"claim\": \"RC-135V/W\", \"supporting_sources\": [\"N024\", \"O050\", \"R025\"], \"conflicting_sources\": [],\"status\": \"supported\",\"reason\": \"三源（新闻、舆论、雷达）均明确标识为 RC-135V/W\"}, \"country\": {\"claim\": \"美国\", \"supporting_sources\": [\"N024\", \"O050\", \"R025\"], \"conflicting_sources\": [],\"status\": \"supported\",\"reason\": \"三源（新闻、舆论、雷达）均明确标识国籍为美国\"}, \"quantity\": {\"claim\": \"1 架\", \"supporting_sources\": [\"O050\", \"R025\"], \"conflicting_sources\": [],\"status\": \"supported\",\"reason\": \"舆论和雷达均明确提及数量为 1，新闻虽未显式数字但语境为单架执行任务\"}}], \"location\": {\"claim\": \"东海\", \"supporting_sources\": [\"N024\", \"O050\"], \"conflicting_sources\": [],\"status\": \"supported\",\"reason\": \"新闻和舆论均明确提及活动区域为东海，雷达坐标辅助提示亦指向东海\"}, \"time\": {\"claim\": \"2025-05-01 08:14 至 10:39\", \"supporting_sources\": [\"N024\", \"R025\"], \"conflicting_sources\": [],\"status\": \"supported\",\"reason\": \"新闻和雷达均精确记录了该时间区间，舆论仅确认日期\"}, \"mission\": {\"claim\": \"电子侦察\", \"supporting_sources\": [\"N024\", \"O050\", \"R025\"], \"conflicting_sources\": [],\"status\": \"supported\",\"reason\": \"三源（新闻、舆论、雷达）均明确任务为电子侦察\"}, \"movement\": {\"claim\": \"进入/活动\", \"supporting_sources\": [\"N024\"], \"conflicting_sources\": [],\"status\": \"insufficient\",\"reason\": \"仅新闻明确描述“由外围航线进入”，舆论和雷达未提供具体进出动作细节\"}, \"unresolved_issues\": [],\"explanation\": \"三源在平台型号、国籍、任务、地点及核心时间区间上高度一致，构成完整证据链。数量由两源（舆论、雷达）支持。运动状态仅新闻有明确描述，其余为不足但非冲突。\"}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 11348126700,
+    "load_duration": 8211800,
+    "prompt_eval_count": 2416,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 884360000,
+    "eval_count": 546,
+    "eval_duration": 10227010000
+  }
+}

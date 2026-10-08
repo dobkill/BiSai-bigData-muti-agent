@@ -34,7 +34,7 @@
 | 0 | country | 澳大利亚 | supported | N011,O027,R033 |  | 程序按已关联平台的明示字段复核：{'N011': '澳大利亚', 'O027': '澳大利亚', 'R033': '澳大利亚'}；缺失不支持也不反对 |
 | 0 | quantity | 1艘 | supported | O027,R033 |  | 程序按已关联平台的明示字段复核：{'O027': 1, 'R033': 1}；缺失不支持也不反对 |
 | -1 | location | 琼州海峡 | supported | N011,R033 |  | 复核明示地点和PDF包含关系：{'N011': '琼州海峡', 'O027': '南海', 'R033': '琼州海峡'}；同方向不等于同一具体区域，未验证坐标不作为反证 |
-| -1 | time | 起点 11:48，终点 13:13 | supported | N011,R033 |  | 逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突；起点明示值：{'N011': '11:48', 'R033': '11:48'}；终点明示值：{'N011': '13:13', 'R033': '13:13'} |
+| -1 | time | 共同观测/报道时段 11:48—13:13（非完整活动起止断言） | supported | N011,R033 |  | 分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N011': {'start': '11:48', 'end': '13:13', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O027': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R033': {'start': '11:48', 'end': '13:13', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}} |
 | -1 | mission | 联合搜救训练 | supported | N011,O027,R033 |  | 原文明示任务：{'N011': ['联合搜救训练'], 'O027': ['联合搜救训练'], 'R033': ['联合搜救训练']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决 |
 | -1 | movement | 活动 | supported | N011,O027 |  | 活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values |
 

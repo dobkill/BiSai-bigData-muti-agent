@@ -1,0 +1,765 @@
+{
+  "id": "N023",
+  "news_id": "N023",
+  "opinion_id": "O006",
+  "radar_ids": [
+    "R029"
+  ],
+  "radar_slots": {
+    "0": "R029"
+  },
+  "alignment": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O006",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.95,
+        "reason": "平台（054A）、地点（白令海）、任务（反潜巡逻）及精确时间区间（14:44-16:09）完全一致，属于同一事件的报道。"
+      },
+      {
+        "candidate_id": "O007",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "地点为孟加拉湾，与新闻中的白令海冲突；任务为联合巡航，与反潜巡逻不同；时间区间（17:09-18:39）不重叠。"
+      },
+      {
+        "candidate_id": "O049",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "舰艇型号为054B，与新闻中的054A不符；地点为东海，任务为远海训练，均不匹配。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R029",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.98,
+        "reason": "平台（054A）、地点（白令海）、任务（反潜巡逻）及起止时间（14:44-16:09）与新闻完全吻合，确认为同一活动。"
+      },
+      {
+        "candidate_id": "R030",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "地点为夏威夷附近，任务为联合巡航，时间区间（17:09-18:39）与新闻不重叠。"
+      },
+      {
+        "candidate_id": "R006",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.92,
+        "reason": "平台为空警 -500预警机，非舰艇；地点缺失（坐标指向东海），任务为空中警戒，与新闻描述不符。"
+      }
+    ],
+    "ambiguity": "无。所有高置信度候选均通过时空和身份特征明确区分或确认关联。"
+  },
+  "candidates": {
+    "opinion": [
+      {
+        "id": "O006",
+        "score": 6.19277,
+        "cosine": 0.99277,
+        "platform_similarity": 1.0,
+        "time_overlap": 1.0,
+        "location_relation": "same"
+      },
+      {
+        "id": "O007",
+        "score": 4.11524,
+        "cosine": 0.91524,
+        "platform_similarity": 1.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_named_regions"
+      },
+      {
+        "id": "O049",
+        "score": 1.0902,
+        "cosine": 0.8902,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O020",
+        "score": 0.78844,
+        "cosine": 0.78844,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O029",
+        "score": 0.77758,
+        "cosine": 0.77758,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      }
+    ],
+    "radar": [
+      {
+        "id": "R029",
+        "score": 6.18236,
+        "cosine": 0.98236,
+        "platform_similarity": 1.0,
+        "time_overlap": 1.0,
+        "location_relation": "same"
+      },
+      {
+        "id": "R030",
+        "score": 4.10997,
+        "cosine": 0.90997,
+        "platform_similarity": 1.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_named_regions"
+      },
+      {
+        "id": "R006",
+        "score": 2.14688,
+        "cosine": 0.74688,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R053",
+        "score": 1.98721,
+        "cosine": 0.78721,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "R037",
+        "score": 1.08935,
+        "cosine": 0.88935,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "R042",
+        "score": 1.07034,
+        "cosine": 0.87034,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      }
+    ]
+  },
+  "assignment_diagnostics": {
+    "opinion": [],
+    "radar": []
+  },
+  "radar_context": [],
+  "verification": {
+    "same_event": true,
+    "facts": [
+      {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "054A型导弹护卫舰",
+        "supporting_sources": [
+          "N023",
+          "O006",
+          "R029"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N023': '054A型导弹护卫舰', 'O006': '054A型导弹护卫舰', 'R029': '054A型导弹护卫舰'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "054A 型导弹护卫舰",
+          "supporting_sources": [
+            "N023",
+            "O006",
+            "R029"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均明确指向 054A 型，且雷达批号与新闻/舆论描述一致。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "中国",
+        "supporting_sources": [
+          "N023",
+          "O006",
+          "R029"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N023': '中国', 'O006': '中国', 'R029': '中国'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "中国",
+          "supporting_sources": [
+            "N023",
+            "O006",
+            "R029"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源均明确标注为中国海军或中国籍舰船。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "1艘",
+        "supporting_sources": [
+          "O006",
+          "R029"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'O006': 1, 'R029': 1}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "1 艘",
+          "supporting_sources": [
+            "O006",
+            "R029"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论明确提及“一艘”，雷达批号显示数量值为 1；新闻虽未显式数字但语境为单舰执行任务，三源逻辑一致。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "白令海",
+        "supporting_sources": [
+          "N023",
+          "O006",
+          "R029"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "复核明示地点和PDF包含关系：{'N023': '白令海', 'O006': '白令海', 'R029': '白令海'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "白令海",
+          "supporting_sources": [
+            "N023",
+            "O006",
+            "R029"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论（白令海相关海域）、雷达均指向白令海区域，三源一致。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N023": {
+            "raw": "白令海",
+            "region": "白令海",
+            "direction": "其他",
+            "precision": "原文区域",
+            "mapping": "PDF未列入三大核心海域的区域归其他",
+            "transit": false,
+            "quote": "在白令海执行反潜巡逻任务"
+          },
+          "O006": {
+            "raw": "白令海相关海域",
+            "region": "白令海",
+            "direction": "其他",
+            "precision": "原文区域",
+            "mapping": "PDF未列入三大核心海域的区域归其他",
+            "transit": false,
+            "quote": "在白令海相关海域"
+          },
+          "R029": {
+            "raw": "白令海",
+            "region": "白令海",
+            "direction": "其他",
+            "precision": "原文区域",
+            "mapping": "PDF未列入三大核心海域的区域归其他",
+            "transit": false
+          }
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "共同观测/报道时段 14:44—16:09（非完整活动起止断言）",
+        "supporting_sources": [
+          "N023",
+          "O006",
+          "R029"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N023': {'start': '14:44', 'end': '16:09', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O006': {'start': '14:44', 'end': '16:09', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R029': {'start': '14:44', 'end': '16:09', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "2025 年 5 月 1 日 14:44-16:09",
+          "supporting_sources": [
+            "N023",
+            "O006",
+            "R029"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达的起止时间完全吻合，三源共同印证该精确时间区间。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N023": {
+            "start": "14:44",
+            "end": "16:09",
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
+          },
+          "O006": {
+            "start": "14:44",
+            "end": "16:09",
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
+          },
+          "R029": {
+            "start": "14:44",
+            "end": "16:09",
+            "interval": "observation_coverage",
+            "start_asserted": false,
+            "end_asserted": false
+          }
+        },
+        "asserted_boundaries": {
+          "start": {},
+          "end": {}
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "反潜巡逻",
+        "supporting_sources": [
+          "N023",
+          "O006",
+          "R029"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "原文明示任务：{'N023': ['反潜巡逻'], 'O006': ['反潜巡逻'], 'R029': ['反潜巡逻']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "反潜巡逻",
+          "supporting_sources": [
+            "N023",
+            "O006",
+            "R029"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达均明确描述为“反潜巡逻”任务，三源一致。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N023": [
+            "反潜巡逻"
+          ],
+          "O006": [
+            "反潜巡逻"
+          ],
+          "R029": [
+            "反潜巡逻"
+          ]
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N023",
+          "O006"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "supporting_sources": [
+            "N023",
+            "O006"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻与舆论均描述为按计划保持机动执行任务，雷达虽未显式说明但观测覆盖期间无异常，三源逻辑兼容。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N023": "活动",
+          "O006": "活动",
+          "R029": "未说明"
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      }
+    ],
+    "unresolved_issues": [],
+    "explanation": "三类来源已关联，纳入结论的事实获得至少两类独立来源支持，未发现未消解明示反证。",
+    "model_explanation": "新闻、舆论、雷达三类来源在平台型号（054A）、国籍（中国）、数量（1 艘）、地点（白令海）、时间（2025.5.1 14:44-16:09）及任务（反潜巡逻）上完全一致，无未消解冲突，满足可信标准。"
+  },
+  "reasons": [],
+  "status": "可信事件",
+  "verified_facts": [
+    {
+      "platform_index": 0,
+      "field": "platform",
+      "claim": "054A型导弹护卫舰",
+      "supporting_sources": [
+        "N023",
+        "O006",
+        "R029"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N023': '054A型导弹护卫舰', 'O006': '054A型导弹护卫舰', 'R029': '054A型导弹护卫舰'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "054A 型导弹护卫舰",
+        "supporting_sources": [
+          "N023",
+          "O006",
+          "R029"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻、舆论、雷达三源均明确指向 054A 型，且雷达批号与新闻/舆论描述一致。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "country",
+      "claim": "中国",
+      "supporting_sources": [
+        "N023",
+        "O006",
+        "R029"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N023': '中国', 'O006': '中国', 'R029': '中国'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "中国",
+        "supporting_sources": [
+          "N023",
+          "O006",
+          "R029"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源均明确标注为中国海军或中国籍舰船。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "quantity",
+      "claim": "1艘",
+      "supporting_sources": [
+        "O006",
+        "R029"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'O006': 1, 'R029': 1}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "1 艘",
+        "supporting_sources": [
+          "O006",
+          "R029"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "舆论明确提及“一艘”，雷达批号显示数量值为 1；新闻虽未显式数字但语境为单舰执行任务，三源逻辑一致。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "location",
+      "claim": "白令海",
+      "supporting_sources": [
+        "N023",
+        "O006",
+        "R029"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "复核明示地点和PDF包含关系：{'N023': '白令海', 'O006': '白令海', 'R029': '白令海'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "白令海",
+        "supporting_sources": [
+          "N023",
+          "O006",
+          "R029"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻、舆论（白令海相关海域）、雷达均指向白令海区域，三源一致。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N023": {
+          "raw": "白令海",
+          "region": "白令海",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false,
+          "quote": "在白令海执行反潜巡逻任务"
+        },
+        "O006": {
+          "raw": "白令海相关海域",
+          "region": "白令海",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false,
+          "quote": "在白令海相关海域"
+        },
+        "R029": {
+          "raw": "白令海",
+          "region": "白令海",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false
+        }
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "time",
+      "claim": "共同观测/报道时段 14:44—16:09（非完整活动起止断言）",
+      "supporting_sources": [
+        "N023",
+        "O006",
+        "R029"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N023': {'start': '14:44', 'end': '16:09', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O006': {'start': '14:44', 'end': '16:09', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R029': {'start': '14:44', 'end': '16:09', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "2025 年 5 月 1 日 14:44-16:09",
+        "supporting_sources": [
+          "N023",
+          "O006",
+          "R029"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻、舆论、雷达的起止时间完全吻合，三源共同印证该精确时间区间。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N023": {
+          "start": "14:44",
+          "end": "16:09",
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "O006": {
+          "start": "14:44",
+          "end": "16:09",
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "R029": {
+          "start": "14:44",
+          "end": "16:09",
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        }
+      },
+      "asserted_boundaries": {
+        "start": {},
+        "end": {}
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "mission",
+      "claim": "反潜巡逻",
+      "supporting_sources": [
+        "N023",
+        "O006",
+        "R029"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "原文明示任务：{'N023': ['反潜巡逻'], 'O006': ['反潜巡逻'], 'R029': ['反潜巡逻']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "反潜巡逻",
+        "supporting_sources": [
+          "N023",
+          "O006",
+          "R029"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻、舆论、雷达均明确描述为“反潜巡逻”任务，三源一致。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N023": [
+          "反潜巡逻"
+        ],
+        "O006": [
+          "反潜巡逻"
+        ],
+        "R029": [
+          "反潜巡逻"
+        ]
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "movement",
+      "claim": "活动",
+      "supporting_sources": [
+        "N023",
+        "O006"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N023",
+          "O006"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与舆论均描述为按计划保持机动执行任务，雷达虽未显式说明但观测覆盖期间无异常，三源逻辑兼容。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N023": "活动",
+        "O006": "活动",
+        "R029": "未说明"
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    }
+  ],
+  "radar_row_count": 11,
+  "direction": "其他",
+  "report_eligible": false,
+  "directory": "可信事件/N023_中国海军054A型护卫舰在白令海执行反潜巡逻"
+}

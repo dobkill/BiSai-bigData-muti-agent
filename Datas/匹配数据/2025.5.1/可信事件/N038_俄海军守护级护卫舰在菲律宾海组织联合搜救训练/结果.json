@@ -16,22 +16,22 @@
           0
         ],
         "relation": "same",
-        "confidence": 0.95,
-        "reason": "平台（守护级）、地点（菲律宾海）、任务（联合搜救训练）及时间区间完全一致，属于同一活动的舆论报道。"
+        "confidence": 0.98,
+        "reason": "平台（俄守护级）、地点（菲律宾海）、任务（联合搜救训练）及时间区间完全一致。该舆论报道是对新闻内容的直接复述或同步观察，无冲突信息。"
       },
       {
         "candidate_id": "O002",
         "platform_indices": [],
         "relation": "different",
-        "confidence": 0.98,
-        "reason": "平台类型不同（战斗机 vs 护卫舰），地点不同（黄岩岛海域 vs 菲律宾海），任务性质不同，属于不同活动。"
+        "confidence": 0.95,
+        "reason": "平台完全不同（苏 -30SM 战斗机 vs 护卫舰），地点不同（黄岩岛海域 vs 菲律宾海），任务性质不同。虽同属俄罗斯且时间重叠，但属于不同活动。"
       },
       {
         "candidate_id": "O020",
         "platform_indices": [],
         "relation": "different",
-        "confidence": 0.98,
-        "reason": "平台型号不同（瓦良格号巡洋舰 vs 守护级护卫舰），地点不同（南海方向 vs 菲律宾海），任务不同，属于不同活动。"
+        "confidence": 0.95,
+        "reason": "平台不同（瓦良格号巡洋舰 vs 守护级护卫舰），地点不同（南海方向 vs 菲律宾海），任务不同（护航 vs 搜救训练）。时间不重叠。"
       }
     ],
     "radar_edges": [
@@ -42,24 +42,24 @@
         ],
         "relation": "same",
         "confidence": 1.0,
-        "reason": "雷达数据与新闻在平台型号、地点、任务、起止时间上完全匹配，确认为同一活动。"
+        "reason": "雷达数据与新闻在平台型号（守护级）、地点（菲律宾海）、任务（联合搜救训练）及起止时间（20:58-22:23）上完全精确匹配。批号 SHIP-9CDE3E6146927C 进一步确认了目标身份的唯一性关联。"
       },
       {
         "candidate_id": "R024",
         "platform_indices": [],
         "relation": "different",
         "confidence": 0.95,
-        "reason": "平台类型不同（战斗机 vs 护卫舰），任务不同（对海突击 vs 搜救训练），地点缺失但时间重叠，属于不同活动。"
+        "reason": "平台不同（苏 -30SM 战斗机），任务不同（对海突击训练 vs 搜救训练）。地点虽未明确但坐标指向南海黄岩岛区域，与菲律宾海不符。"
       },
       {
         "candidate_id": "R048",
         "platform_indices": [],
         "relation": "different",
         "confidence": 0.95,
-        "reason": "平台型号不同（瓦良格号巡洋舰 vs 守护级护卫舰），地点不同（礼乐滩海域 vs 菲律宾海），任务不同，属于不同活动。"
+        "reason": "平台不同（瓦良格号巡洋舰），地点不同（礼乐滩海域/南海 vs 菲律宾海），任务不同（护航 vs 搜救训练）。时间不重叠。"
       }
     ],
-    "ambiguity": "无显著歧义，核心候选关联充分。"
+    "ambiguity": "无。核心候选 O010 和 R040 与新闻 N038 在所有关键维度（平台、地点、时间、任务）上完全一致，不存在歧义。其他候选因平台型号、地理位置或任务性质的显著差异被排除。"
   },
   "candidates": {
     "opinion": [
@@ -175,6 +175,7 @@
     "opinion": [],
     "radar": []
   },
+  "radar_context": [],
   "verification": {
     "same_event": true,
     "facts": [
@@ -201,7 +202,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻、舆论、雷达三源均确认为俄罗斯守护级导弹护卫舰，无冲突。"
+          "reason": "新闻、舆论、雷达三源均明确指向“守护级导弹护卫舰”，且国籍均为俄罗斯，完全一致。"
         },
         "checked_by": "explicit_source_matrix",
         "supporting_source_types": [
@@ -233,7 +234,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻、舆论、雷达三源均明确标注国籍为俄罗斯，无冲突。"
+          "reason": "新闻、舆论、雷达三源均明确标注国籍为“俄罗斯”，完全一致。"
         },
         "checked_by": "explicit_source_matrix",
         "supporting_source_types": [
@@ -256,14 +257,14 @@
         "model_proposal": {
           "platform_index": 0,
           "field": "quantity",
-          "claim": "1 架/艘",
+          "claim": "1 架",
           "supporting_sources": [
             "O010",
             "R040"
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "舆论明确提及“一艘”，雷达批号显示数量"
+          "reason": "新闻未说明具体数量，舆论明确提及“一艘”，雷达批号数据明确显示数量为"
         },
         "checked_by": "explicit_source_matrix",
         "supporting_source_types": [
@@ -294,7 +295,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "三源均明确标注地点为菲律宾海，无冲突。"
+          "reason": "新闻、舆论、雷达三源均明确活动区域为“菲律宾海”，完全一致。"
         },
         "checked_by": "literal_assertion_matrix",
         "source_values": {
@@ -334,14 +335,14 @@
       {
         "platform_index": -1,
         "field": "time",
-        "claim": "起点 20:58，终点 22:23",
+        "claim": "共同观测/报道时段 20:58—22:23（非完整活动起止断言）",
         "supporting_sources": [
           "N038",
           "R040"
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突；起点明示值：{'N038': '20:58', 'R040': '20:58'}；终点明示值：{'N038': '22:23', 'R040': '22:23'}",
+        "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N038': {'start': '20:58', 'end': '22:23', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O010': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R040': {'start': '20:58', 'end': '22:23', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
         "model_proposal": {
           "platform_index": -1,
           "field": "time",
@@ -352,38 +353,35 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻与雷达起止时间完全一致；舆论仅提及日期，未提供具体时刻但不构成冲突。"
+          "reason": "新闻与雷达数据在日期、开始及结束时间上完全精确匹配；舆论仅提及日期未涉具体时刻，不构成冲突。"
         },
         "checked_by": "literal_assertion_matrix",
-        "components": {
-          "start_time": {
-            "value": "20:58",
-            "support": [
-              "N038",
-              "R040"
-            ],
-            "conflicts": [],
-            "status": "supported",
-            "source_values": {
-              "N038": "20:58",
-              "R040": "20:58"
-            },
-            "radar_batch_observations": []
+        "source_values": {
+          "N038": {
+            "start": "20:58",
+            "end": "22:23",
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
           },
-          "end_time": {
-            "value": "22:23",
-            "support": [
-              "N038",
-              "R040"
-            ],
-            "conflicts": [],
-            "status": "supported",
-            "source_values": {
-              "N038": "22:23",
-              "R040": "22:23"
-            },
-            "radar_batch_observations": []
+          "O010": {
+            "start": null,
+            "end": null,
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
+          },
+          "R040": {
+            "start": "20:58",
+            "end": "22:23",
+            "interval": "observation_coverage",
+            "start_asserted": false,
+            "end_asserted": false
           }
+        },
+        "asserted_boundaries": {
+          "start": {},
+          "end": {}
         },
         "supporting_source_types": [
           "news",
@@ -413,7 +411,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "三源均明确任务为联合搜救训练，无冲突。"
+          "reason": "新闻、舆论、雷达三源均明确任务性质为“联合搜救训练”，完全一致。"
         },
         "checked_by": "literal_assertion_matrix",
         "source_values": {
@@ -454,7 +452,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻与舆论均描述为保持机动/持续执行训练的活动状态；雷达未说明具体运动形态但不构成冲突。"
+          "reason": "新闻与舆论均描述为“保持机动”、“组织训练”，雷达虽未显式说明但观测覆盖期间无异常，三源逻辑一致。"
         },
         "checked_by": "literal_assertion_matrix",
         "source_values": {
@@ -470,7 +468,9 @@
     ],
     "unresolved_issues": [],
     "explanation": "三类来源已关联，纳入结论的事实获得至少两类独立来源支持，未发现未消解明示反证。",
-    "model_explanation": "三源（新闻、舆论、雷达）在平台型号、国籍、数量、地点、任务及时间区间上高度一致，核心事实均有至少两类来源支持且无未消解冲突，确认为同一事件。"
+    "model_unresolved_issues": [],
+    "reconciled_model_issues": [],
+    "model_explanation": "新闻、舆论、雷达三类来源在平台型号、国籍、数量（两源支持）、地点、时间（两源精确匹配）、任务及活动性质上高度一致，关键事实均有至少两类来源支撑，无未消解冲突，事件关联确认为同一事件。"
   },
   "reasons": [],
   "status": "可信事件",
@@ -498,7 +498,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "新闻、舆论、雷达三源均确认为俄罗斯守护级导弹护卫舰，无冲突。"
+        "reason": "新闻、舆论、雷达三源均明确指向“守护级导弹护卫舰”，且国籍均为俄罗斯，完全一致。"
       },
       "checked_by": "explicit_source_matrix",
       "supporting_source_types": [
@@ -530,7 +530,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "新闻、舆论、雷达三源均明确标注国籍为俄罗斯，无冲突。"
+        "reason": "新闻、舆论、雷达三源均明确标注国籍为“俄罗斯”，完全一致。"
       },
       "checked_by": "explicit_source_matrix",
       "supporting_source_types": [
@@ -553,14 +553,14 @@
       "model_proposal": {
         "platform_index": 0,
         "field": "quantity",
-        "claim": "1 架/艘",
+        "claim": "1 架",
         "supporting_sources": [
           "O010",
           "R040"
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "舆论明确提及“一艘”，雷达批号显示数量"
+        "reason": "新闻未说明具体数量，舆论明确提及“一艘”，雷达批号数据明确显示数量为"
       },
       "checked_by": "explicit_source_matrix",
       "supporting_source_types": [
@@ -591,7 +591,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "三源均明确标注地点为菲律宾海，无冲突。"
+        "reason": "新闻、舆论、雷达三源均明确活动区域为“菲律宾海”，完全一致。"
       },
       "checked_by": "literal_assertion_matrix",
       "source_values": {
@@ -631,14 +631,14 @@
     {
       "platform_index": -1,
       "field": "time",
-      "claim": "起点 20:58，终点 22:23",
+      "claim": "共同观测/报道时段 20:58—22:23（非完整活动起止断言）",
       "supporting_sources": [
         "N038",
         "R040"
       ],
       "conflicting_sources": [],
       "status": "supported",
-      "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突；起点明示值：{'N038': '20:58', 'R040': '20:58'}；终点明示值：{'N038': '22:23', 'R040': '22:23'}",
+      "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N038': {'start': '20:58', 'end': '22:23', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O010': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R040': {'start': '20:58', 'end': '22:23', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
       "model_proposal": {
         "platform_index": -1,
         "field": "time",
@@ -649,38 +649,35 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "新闻与雷达起止时间完全一致；舆论仅提及日期，未提供具体时刻但不构成冲突。"
+        "reason": "新闻与雷达数据在日期、开始及结束时间上完全精确匹配；舆论仅提及日期未涉具体时刻，不构成冲突。"
       },
       "checked_by": "literal_assertion_matrix",
-      "components": {
-        "start_time": {
-          "value": "20:58",
-          "support": [
-            "N038",
-            "R040"
-          ],
-          "conflicts": [],
-          "status": "supported",
-          "source_values": {
-            "N038": "20:58",
-            "R040": "20:58"
-          },
-          "radar_batch_observations": []
+      "source_values": {
+        "N038": {
+          "start": "20:58",
+          "end": "22:23",
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
         },
-        "end_time": {
-          "value": "22:23",
-          "support": [
-            "N038",
-            "R040"
-          ],
-          "conflicts": [],
-          "status": "supported",
-          "source_values": {
-            "N038": "22:23",
-            "R040": "22:23"
-          },
-          "radar_batch_observations": []
+        "O010": {
+          "start": null,
+          "end": null,
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "R040": {
+          "start": "20:58",
+          "end": "22:23",
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
         }
+      },
+      "asserted_boundaries": {
+        "start": {},
+        "end": {}
       },
       "supporting_source_types": [
         "news",
@@ -710,7 +707,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "三源均明确任务为联合搜救训练，无冲突。"
+        "reason": "新闻、舆论、雷达三源均明确任务性质为“联合搜救训练”，完全一致。"
       },
       "checked_by": "literal_assertion_matrix",
       "source_values": {
@@ -751,7 +748,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "新闻与舆论均描述为保持机动/持续执行训练的活动状态；雷达未说明具体运动形态但不构成冲突。"
+        "reason": "新闻与舆论均描述为“保持机动”、“组织训练”，雷达虽未显式说明但观测覆盖期间无异常，三源逻辑一致。"
       },
       "checked_by": "literal_assertion_matrix",
       "source_values": {

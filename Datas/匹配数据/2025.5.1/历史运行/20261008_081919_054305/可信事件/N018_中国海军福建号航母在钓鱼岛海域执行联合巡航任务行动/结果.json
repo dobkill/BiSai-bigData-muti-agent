@@ -1,0 +1,729 @@
+{
+  "id": "N018",
+  "news_id": "N018",
+  "opinion_id": "O032",
+  "radar_ids": [
+    "R034"
+  ],
+  "radar_slots": {
+    "0": "R034"
+  },
+  "alignment": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O032",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.95,
+        "reason": "平台（福建号航母）、任务（联合巡航）、地点（东海/钓鱼岛海域）及时间区间高度一致。舆论报道的“东海方向”包含新闻中的“钓鱼岛海域”，且时间完全覆盖，属于同一活动在不同粒度下的描述。"
+      },
+      {
+        "candidate_id": "O020",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "平台不同（俄海军瓦良格号巡洋舰 vs 中国福建号航母），地点不同（南海方向 vs 钓鱼岛海域/东海），任务虽同为巡航但主体和区域完全分离，属于不同活动。"
+      },
+      {
+        "candidate_id": "O016",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "平台不同（903A 型补给舰 vs 福建号航母），地点不同（南海方向 vs 钓鱼岛海域/东海），任务不同（远海训练 vs 联合巡航），属于不同活动。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R034",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 1.0,
+        "reason": "雷达数据与新闻在平台（福建号航母）、地点（钓鱼岛海域）、任务（联合巡航）及起止时间（02:38-04:03）上完全精确匹配，确认为同一活动。"
+      },
+      {
+        "candidate_id": "R023",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台不同（歼 -16D 电子战飞机 vs 福建号航母），任务不同（电子对抗训练 vs 联合巡航），地点缺失但时间重叠，结合平台差异判定为不同活动。"
+      },
+      {
+        "candidate_id": "R044",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "平台不同（903A 型补给舰 vs 福建号航母），地点不同（万安滩海域/南海 vs 钓鱼岛海域/东海），任务不同，属于不同活动。"
+      }
+    ],
+    "ambiguity": "无显著歧义，核心候选关联证据充分。"
+  },
+  "candidates": {
+    "opinion": [
+      {
+        "id": "O032",
+        "score": 4.49416,
+        "cosine": 0.96416,
+        "platform_similarity": 0.95,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O020",
+        "score": 1.97351,
+        "cosine": 0.77351,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O016",
+        "score": 1.96669,
+        "cosine": 0.79257,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.8117647058823529,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O015",
+        "score": 1.48472,
+        "cosine": 0.80472,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O021",
+        "score": 1.47611,
+        "cosine": 0.79611,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O033",
+        "score": 1.0752,
+        "cosine": 0.8752,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      }
+    ],
+    "radar": [
+      {
+        "id": "R034",
+        "score": 6.02743,
+        "cosine": 0.97743,
+        "platform_similarity": 0.95,
+        "time_overlap": 1.0,
+        "location_relation": "same"
+      },
+      {
+        "id": "R023",
+        "score": 2.12771,
+        "cosine": 0.72771,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R044",
+        "score": 1.94248,
+        "cosine": 0.76837,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.8117647058823529,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "R051",
+        "score": 1.06602,
+        "cosine": 0.86602,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "R002",
+        "score": 0.99334,
+        "cosine": 0.79334,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R043",
+        "score": 0.993,
+        "cosine": 0.793,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "R021",
+        "score": 0.99106,
+        "cosine": 0.79106,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "missing"
+      }
+    ]
+  },
+  "assignment_diagnostics": {
+    "opinion": [],
+    "radar": []
+  },
+  "radar_context": [],
+  "verification": {
+    "same_event": true,
+    "facts": [
+      {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "福建号航空母舰",
+        "supporting_sources": [
+          "N018",
+          "O032",
+          "R034"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N018': '福建号航空母舰', 'O032': '福建号航空母舰', 'R034': '福建号航空母舰'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "福建号航空母舰",
+          "supporting_sources": [
+            "N018",
+            "O032",
+            "R034"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均明确指向福建号航空母舰，无冲突。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "中国",
+        "supporting_sources": [
+          "N018",
+          "O032",
+          "R034"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N018': '中国', 'O032': '中国', 'R034': '中国'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "中国",
+          "supporting_sources": [
+            "N018",
+            "O032",
+            "R034"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均明确标注国籍为中国，无冲突。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "1艘",
+        "supporting_sources": [
+          "R034"
+        ],
+        "conflicting_sources": [],
+        "status": "insufficient",
+        "reason": "程序按已关联平台的明示字段复核：{'R034': 1}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "1 架/艘",
+          "supporting_sources": [
+            "R034"
+          ],
+          "conflicting_sources": [],
+          "status": "insufficient",
+          "reason": "仅雷达数据明确数量为 1，新闻与舆论未提及具体数量，无法构成三类来源支持或两源强支持（缺第三类佐证），且无明确反对证据，故标记为 insufficient 而非 supported。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "钓鱼岛海域",
+        "supporting_sources": [
+          "N018",
+          "R034"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "复核明示地点和PDF包含关系：{'N018': '钓鱼岛海域', 'O032': '东海', 'R034': '钓鱼岛海域'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "钓鱼岛海域",
+          "supporting_sources": [
+            "N018",
+            "R034"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻与雷达均精确指向“钓鱼岛海域”；舆论表述为“东海方向”，该大范围描述兼容具体区域，不构成冲突。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N018": {
+            "raw": "钓鱼岛海域",
+            "region": "钓鱼岛海域",
+            "direction": "东海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false,
+            "quote": "在钓鱼岛海域"
+          },
+          "O032": {
+            "raw": "东海方向",
+            "region": "东海",
+            "direction": "东海",
+            "precision": "大范围",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false,
+            "quote": "在东海方向执行了联合巡航任务"
+          },
+          "R034": {
+            "raw": "钓鱼岛海域",
+            "region": "钓鱼岛海域",
+            "direction": "东海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        },
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "共同观测/报道时段 02:38—04:03（非完整活动起止断言）",
+        "supporting_sources": [
+          "N018",
+          "R034"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N018': {'start': '02:38', 'end': '04:03', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O032': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R034': {'start': '02:38', 'end': '04:03', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "2025 年 5 月 1 日 02:38-04:03",
+          "supporting_sources": [
+            "N018",
+            "R034"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻与雷达起止时间完全一致；舆论仅提及日期，未提供具体时刻，不构成冲突。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N018": {
+            "start": "02:38",
+            "end": "04:03",
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
+          },
+          "O032": {
+            "start": null,
+            "end": null,
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
+          },
+          "R034": {
+            "start": "02:38",
+            "end": "04:03",
+            "interval": "observation_coverage",
+            "start_asserted": false,
+            "end_asserted": false
+          }
+        },
+        "asserted_boundaries": {
+          "start": {},
+          "end": {}
+        },
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "联合巡航",
+        "supporting_sources": [
+          "N018",
+          "O032",
+          "R034"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "原文明示任务：{'N018': ['联合巡航'], 'O032': ['联合巡航'], 'R034': ['联合巡航']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "联合巡航",
+          "supporting_sources": [
+            "N018",
+            "O032",
+            "R034"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均明确任务为“联合巡航”（或“联合巡航任务行动”），语义一致。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N018": [
+            "联合巡航"
+          ],
+          "O032": [
+            "联合巡航"
+          ],
+          "R034": [
+            "联合巡航"
+          ]
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N018",
+          "O032"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动",
+          "supporting_sources": [
+            "N018",
+            "O032"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻与舆论均描述为“活动”/“执行任务”，雷达未说明但不构成冲突，两源支持已足够。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N018": "活动",
+          "O032": "活动",
+          "R034": "未说明"
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      }
+    ],
+    "unresolved_issues": [],
+    "explanation": "三类来源已关联，纳入结论的事实获得至少两类独立来源支持，未发现未消解明示反证。",
+    "model_explanation": "三源（新闻、舆论、雷达）在平台、国籍、任务、地点及时间区间上高度一致，确认为同一事件。数量字段仅雷达有明确数据，新闻与舆论缺失，按规则标记为 insufficient 而非强行支持；地点和时间的不同粒度描述（如东海方向 vs 钓鱼岛海域）视为兼容而非冲突。"
+  },
+  "reasons": [],
+  "status": "可信事件",
+  "verified_facts": [
+    {
+      "platform_index": 0,
+      "field": "platform",
+      "claim": "福建号航空母舰",
+      "supporting_sources": [
+        "N018",
+        "O032",
+        "R034"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N018': '福建号航空母舰', 'O032': '福建号航空母舰', 'R034': '福建号航空母舰'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "福建号航空母舰",
+        "supporting_sources": [
+          "N018",
+          "O032",
+          "R034"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻、舆论、雷达三源均明确指向福建号航空母舰，无冲突。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "country",
+      "claim": "中国",
+      "supporting_sources": [
+        "N018",
+        "O032",
+        "R034"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N018': '中国', 'O032': '中国', 'R034': '中国'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "中国",
+        "supporting_sources": [
+          "N018",
+          "O032",
+          "R034"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻、舆论、雷达三源均明确标注国籍为中国，无冲突。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "location",
+      "claim": "钓鱼岛海域",
+      "supporting_sources": [
+        "N018",
+        "R034"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "复核明示地点和PDF包含关系：{'N018': '钓鱼岛海域', 'O032': '东海', 'R034': '钓鱼岛海域'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "钓鱼岛海域",
+        "supporting_sources": [
+          "N018",
+          "R034"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与雷达均精确指向“钓鱼岛海域”；舆论表述为“东海方向”，该大范围描述兼容具体区域，不构成冲突。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N018": {
+          "raw": "钓鱼岛海域",
+          "region": "钓鱼岛海域",
+          "direction": "东海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在钓鱼岛海域"
+        },
+        "O032": {
+          "raw": "东海方向",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在东海方向执行了联合巡航任务"
+        },
+        "R034": {
+          "raw": "钓鱼岛海域",
+          "region": "钓鱼岛海域",
+          "direction": "东海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        }
+      },
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "time",
+      "claim": "共同观测/报道时段 02:38—04:03（非完整活动起止断言）",
+      "supporting_sources": [
+        "N018",
+        "R034"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N018': {'start': '02:38', 'end': '04:03', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O032': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R034': {'start': '02:38', 'end': '04:03', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "2025 年 5 月 1 日 02:38-04:03",
+        "supporting_sources": [
+          "N018",
+          "R034"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与雷达起止时间完全一致；舆论仅提及日期，未提供具体时刻，不构成冲突。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N018": {
+          "start": "02:38",
+          "end": "04:03",
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "O032": {
+          "start": null,
+          "end": null,
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "R034": {
+          "start": "02:38",
+          "end": "04:03",
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        }
+      },
+      "asserted_boundaries": {
+        "start": {},
+        "end": {}
+      },
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "mission",
+      "claim": "联合巡航",
+      "supporting_sources": [
+        "N018",
+        "O032",
+        "R034"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "原文明示任务：{'N018': ['联合巡航'], 'O032': ['联合巡航'], 'R034': ['联合巡航']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "联合巡航",
+        "supporting_sources": [
+          "N018",
+          "O032",
+          "R034"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻、舆论、雷达三源均明确任务为“联合巡航”（或“联合巡航任务行动”），语义一致。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N018": [
+          "联合巡航"
+        ],
+        "O032": [
+          "联合巡航"
+        ],
+        "R034": [
+          "联合巡航"
+        ]
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "movement",
+      "claim": "活动",
+      "supporting_sources": [
+        "N018",
+        "O032"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N018",
+          "O032"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与舆论均描述为“活动”/“执行任务”，雷达未说明但不构成冲突，两源支持已足够。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N018": "活动",
+        "O032": "活动",
+        "R034": "未说明"
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    }
+  ],
+  "radar_row_count": 12,
+  "direction": "东海",
+  "report_eligible": true,
+  "directory": "可信事件/N018_中国海军福建号航母在钓鱼岛海域执行联合巡航任务行动"
+}

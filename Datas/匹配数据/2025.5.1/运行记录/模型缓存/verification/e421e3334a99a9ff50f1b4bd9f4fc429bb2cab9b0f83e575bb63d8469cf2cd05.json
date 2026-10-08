@@ -1,0 +1,309 @@
+{
+  "role": "verification",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N023",
+      "kind": "news",
+      "title": "中国海军054A型护卫舰在白令海执行反潜巡逻",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：中国海军054A型护卫舰在白令海执行反潜巡逻\n正文：2025年5月1日14时44分至16时09分，中国海军054A型导弹护卫舰在白令海执行反潜巡逻任务，按计划保持机动并结合既定航线持续收集相关信息。围绕任务海域组织反潜巡逻。\n\n主题词：中国  054A  反潜巡逻  白令海\n",
+      "platforms": [
+        {
+          "name": "054A型导弹护卫舰",
+          "country": "中国",
+          "quantity": null,
+          "quote": "中国海军054A型导弹护卫舰",
+          "quantity_quote": "",
+          "country_raw": "中国"
+        }
+      ],
+      "location": {
+        "raw": "白令海",
+        "region": "白令海",
+        "direction": "其他",
+        "precision": "原文区域",
+        "mapping": "PDF未列入三大核心海域的区域归其他",
+        "transit": false,
+        "quote": "在白令海执行反潜巡逻任务"
+      },
+      "mission": {
+        "value": "反潜巡逻",
+        "quote": "在白令海执行反潜巡逻任务"
+      },
+      "start_time": "14:44",
+      "end_time": "16:09",
+      "movement": "活动",
+      "time_semantics": {
+        "interval": "reported_activity",
+        "start_asserted": false,
+        "end_asserted": false
+      }
+    },
+    "opinion": {
+      "id": "O006",
+      "kind": "opinion",
+      "title": "中国海军一艘054A型护卫舰在白令海完成反潜巡逻",
+      "text": "时间：2025.5.1\n\n标题：中国海军一艘054A型护卫舰在白令海完成反潜巡逻\n\n正文：据央视新闻报道，2025年5月1日，中国海军一艘054A型导弹护卫舰在白令海相关海域执行反潜巡逻任务，行动时段为14时44分至16时09分。该舰在此期间按计划保持机动并持续执行反潜巡逻，被认为体现了在陌生海域围绕任务海域组织持续监视与区域侦巡的能力。\n",
+      "platforms": [
+        {
+          "name": "054A型导弹护卫舰",
+          "country": "中国",
+          "quantity": 1,
+          "quote": "一艘054A型导弹护卫舰",
+          "quantity_quote": "一艘054A型导弹护卫舰",
+          "country_raw": "中国"
+        }
+      ],
+      "location": {
+        "raw": "白令海相关海域",
+        "region": "白令海",
+        "direction": "其他",
+        "precision": "原文区域",
+        "mapping": "PDF未列入三大核心海域的区域归其他",
+        "transit": false,
+        "quote": "在白令海相关海域"
+      },
+      "mission": {
+        "value": "反潜巡逻任务",
+        "quote": "执行反潜巡逻任务"
+      },
+      "start_time": "14:44",
+      "end_time": "16:09",
+      "movement": "活动",
+      "time_semantics": {
+        "interval": "reported_activity",
+        "start_asserted": false,
+        "end_asserted": false
+      }
+    },
+    "radars": [
+      {
+        "id": "R029",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "054A型导弹护卫舰",
+            "country": "中国",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-1C9CA139F307B4",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "白令海",
+          "region": "白令海",
+          "direction": "其他",
+          "precision": "原文区域",
+          "mapping": "PDF未列入三大核心海域的区域归其他",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "白令海",
+            "region": "白令海",
+            "direction": "其他",
+            "precision": "原文区域",
+            "mapping": "PDF未列入三大核心海域的区域归其他",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "反潜巡逻",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "反潜巡逻"
+        ],
+        "start_time": "2025.05.01 14:44:00",
+        "end_time": "2025.05.01 16:09:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-1C9CA139F307B4",
+        "sibling_ids": [],
+        "hull_values": [
+          "TYPE-054A"
+        ],
+        "country_values": [
+          "中国"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 11,
+        "time_semantics": {
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "identity_scope": "batch_is_not_unique_target",
+        "warnings": []
+      }
+    ],
+    "association": {
+      "opinion_edges": [
+        {
+          "candidate_id": "O006",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.95,
+          "reason": "平台（054A）、地点（白令海）、任务（反潜巡逻）及精确时间区间（14:44-16:09）完全一致，属于同一事件的报道。"
+        },
+        {
+          "candidate_id": "O007",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.98,
+          "reason": "地点为孟加拉湾，与新闻中的白令海冲突；任务为联合巡航，与反潜巡逻不同；时间区间（17:09-18:39）不重叠。"
+        },
+        {
+          "candidate_id": "O049",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.95,
+          "reason": "舰艇型号为054B，与新闻中的054A不符；地点为东海，任务为远海训练，均不匹配。"
+        }
+      ],
+      "radar_edges": [
+        {
+          "candidate_id": "R029",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.98,
+          "reason": "平台（054A）、地点（白令海）、任务（反潜巡逻）及起止时间（14:44-16:09）与新闻完全吻合，确认为同一活动。"
+        },
+        {
+          "candidate_id": "R030",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.95,
+          "reason": "地点为夏威夷附近，任务为联合巡航，时间区间（17:09-18:39）与新闻不重叠。"
+        },
+        {
+          "candidate_id": "R006",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.92,
+          "reason": "平台为空警 -500预警机，非舰艇；地点缺失（坐标指向东海），任务为空中警戒，与新闻描述不符。"
+        }
+      ],
+      "ambiguity": "无。所有高置信度候选均通过时空和身份特征明确区分或确认关联。"
+    },
+    "same_batch_other_candidates": []
+  },
+  "result": {
+    "same_event": true,
+    "platforms": [
+      {
+        "platform_index": 0,
+        "platform": {
+          "claim": "054A 型导弹护卫舰",
+          "supporting_sources": [
+            "N023",
+            "O006",
+            "R029"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均明确指向 054A 型，且雷达批号与新闻/舆论描述一致。"
+        },
+        "country": {
+          "claim": "中国",
+          "supporting_sources": [
+            "N023",
+            "O006",
+            "R029"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源均明确标注为中国海军或中国籍舰船。"
+        },
+        "quantity": {
+          "claim": "1 艘",
+          "supporting_sources": [
+            "O006",
+            "R029"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论明确提及“一艘”，雷达批号显示数量值为 1；新闻虽未显式数字但语境为单舰执行任务，三源逻辑一致。"
+        }
+      }
+    ],
+    "location": {
+      "claim": "白令海",
+      "supporting_sources": [
+        "N023",
+        "O006",
+        "R029"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻、舆论（白令海相关海域）、雷达均指向白令海区域，三源一致。"
+    },
+    "time": {
+      "claim": "2025 年 5 月 1 日 14:44-16:09",
+      "supporting_sources": [
+        "N023",
+        "O006",
+        "R029"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻、舆论、雷达的起止时间完全吻合，三源共同印证该精确时间区间。"
+    },
+    "mission": {
+      "claim": "反潜巡逻",
+      "supporting_sources": [
+        "N023",
+        "O006",
+        "R029"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻、舆论、雷达均明确描述为“反潜巡逻”任务，三源一致。"
+    },
+    "movement": {
+      "claim": "活动",
+      "supporting_sources": [
+        "N023",
+        "O006"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与舆论均描述为按计划保持机动执行任务，雷达虽未显式说明但观测覆盖期间无异常，三源逻辑兼容。"
+    },
+    "unresolved_issues": [],
+    "explanation": "新闻、舆论、雷达三类来源在平台型号（054A）、国籍（中国）、数量（1 艘）、地点（白令海）、时间（2025.5.1 14:44-16:09）及任务（反潜巡逻）上完全一致，无未消解冲突，满足可信标准。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-08T00:06:59.8287335Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"same_event\": true, \"platforms\": [{\"platform_index\": 0, \"platform\": {\"claim\": \"054A 型导弹护卫舰\", \"supporting_sources\": [\"N023\", \"O006\", \"R029\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻、舆论、雷达三源均明确指向 054A 型，且雷达批号与新闻/舆论描述一致。\"}, \"country\": {\"claim\": \"中国\", \"supporting_sources\": [\"N023\", \"O006\", \"R029\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"三源均明确标注为中国海军或中国籍舰船。\"}, \"quantity\": {\"claim\": \"1 艘\", \"supporting_sources\": [\"O006\", \"R029\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"舆论明确提及“一艘”，雷达批号显示数量值为 1；新闻虽未显式数字但语境为单舰执行任务，三源逻辑一致。\"}}], \"location\": {\"claim\": \"白令海\", \"supporting_sources\": [\"N023\", \"O006\", \"R029\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻、舆论（白令海相关海域）、雷达均指向白令海区域，三源一致。\"}, \"time\": {\"claim\": \"2025 年 5 月 1 日 14:44-16:09\", \"supporting_sources\": [\"N023\", \"O006\", \"R029\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻、舆论、雷达的起止时间完全吻合，三源共同印证该精确时间区间。\"}, \"mission\": {\"claim\": \"反潜巡逻\", \"supporting_sources\": [\"N023\", \"O006\", \"R029\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻、舆论、雷达均明确描述为“反潜巡逻”任务，三源一致。\"}, \"movement\": {\"claim\": \"活动\", \"supporting_sources\": [\"N023\", \"O006\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻与舆论均描述为按计划保持机动执行任务，雷达虽未显式说明但观测覆盖期间无异常，三源逻辑兼容。\"}, \"unresolved_issues\": [],\"explanation\":\"新闻、舆论、雷达三类来源在平台型号（054A）、国籍（中国）、数量（1 艘）、地点（白令海）、时间（2025.5.1 14:44-16:09）及任务（反潜巡逻）上完全一致，无未消解冲突，满足可信标准。\"}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 13126662400,
+    "load_duration": 17478000,
+    "prompt_eval_count": 2322,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 910070000,
+    "eval_count": 644,
+    "eval_duration": 12052456000
+  }
+}

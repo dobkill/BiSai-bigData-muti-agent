@@ -17,15 +17,13 @@
         ],
         "relation": "uncertain",
         "confidence": 0.65,
-        "reason": "平台型号（E-2C）与任务（空中警戒）完全一致，时间（2025.5.1）重合，但地点存在明确冲突：新闻 N019 位于“仁爱礁附近海域”（南海），而候选 O014 位于“东海赤尾屿海域”。不同海域排除同一次活动。；程序保留待复核关联：同日双方唯一的型号/国籍/明确任务组合且新闻与雷达时段吻合；地点反证保留，不能据此判可信",
+        "reason": "平台型号与任务完全一致（法国 E-2C、空中警戒），时间重合（2025.5.1），但地点存在明确且不可调和的冲突：新闻 N019 明确位于“仁爱礁附近海域”（南海），而候选 O014 明确位于“东海赤尾屿海域”。不同海域方向排除了同一次活动的可能性。；程序保留待复核关联：同日双方唯一的型号/国籍/明确任务组合且新闻与雷达时段吻合；地点反证保留，不能据此判可信",
         "model_proposal": {
           "candidate_id": "O014",
-          "platform_indices": [
-            0
-          ],
+          "platform_indices": [],
           "relation": "different",
           "confidence": 0.95,
-          "reason": "平台型号（E-2C）与任务（空中警戒）完全一致，时间（2025.5.1）重合，但地点存在明确冲突：新闻 N019 位于“仁爱礁附近海域”（南海），而候选 O014 位于“东海赤尾屿海域”。不同海域排除同一次活动。"
+          "reason": "平台型号与任务完全一致（法国 E-2C、空中警戒），时间重合（2025.5.1），但地点存在明确且不可调和的冲突：新闻 N019 明确位于“仁爱礁附近海域”（南海），而候选 O014 明确位于“东海赤尾屿海域”。不同海域方向排除了同一次活动的可能性。"
         },
         "association_check": {
           "same_day_scope": true,
@@ -40,21 +38,17 @@
       },
       {
         "candidate_id": "O013",
-        "platform_indices": [
-          0
-        ],
+        "platform_indices": [],
         "relation": "different",
-        "confidence": 0.85,
-        "reason": "平台类型相似（预警机），时间重叠，但地点仅为“南海方向”大范围描述，且任务为“舰载机起降训练”与新闻“空中警戒”不符。缺乏具体机型和精确位置匹配，不足以认定为同一活动。"
+        "confidence": 0.9,
+        "reason": "平台型号（F-35B）与新闻（E-2C预警机）完全不同，且国籍不同（意大利vs法国），虽时间和大方向（南海）重合，但主体身份不符。"
       },
       {
-        "candidate_id": "O002",
-        "platform_indices": [
-          0
-        ],
+        "candidate_id": "O012",
+        "platform_indices": [],
         "relation": "different",
-        "confidence": 0.8,
-        "reason": "地点同为南海黄岩岛/仁爱礁区域，时间相近，但平台（苏 -30SM 战斗机）与任务（未明确/持续活动）与新闻（E-2C 预警机、空中警戒）完全不同，属于不同单位执行的不同任务。"
+        "confidence": 0.9,
+        "reason": "平台型号不同（E-7A vs E-2C），国籍不同（澳大利亚vs法国），虽同属预警机且在南半球方向，但具体机型和所属国均不匹配。"
       }
     ],
     "radar_edges": [
@@ -65,28 +59,24 @@
         ],
         "relation": "same",
         "confidence": 0.98,
-        "reason": "平台（法国 E-2C）、时间（2025.05.01 05:01-07:26）、任务（空中警戒）完全一致。虽然雷达数据地点缺失，但坐标辅助提示为“东海”，与新闻“仁爱礁”存在地理冲突；鉴于赛题允许字段出错且其他核心要素（平台、时间、任务）高度吻合，判定为同一活动，地点差异视为数据录入错误。"
+        "reason": "平台完全匹配（法国E-2C预警机），时间区间完全一致（05:01-07:26），任务完全一致（空中警戒）。尽管雷达坐标辅助提示为“东海”方向，但新闻明确地点为“仁爱礁附近海域”，且雷达数据中该批号（AIR-738A05E5683F27）与新闻描述的平台、时间、任务高度吻合，判定为同一事件。"
       },
       {
         "candidate_id": "R016",
-        "platform_indices": [
-          0
-        ],
+        "platform_indices": [],
         "relation": "different",
-        "confidence": 0.9,
-        "reason": "平台型号不同（德国“台风”vs 法国 E-2C），任务不同（对海突击训练 vs 空中警戒），时间虽重叠但主体完全不同，排除关联。"
+        "confidence": 0.95,
+        "reason": "平台型号不同（德国“台风”战机 vs 法国E-2C预警机），国籍不同，任务也不同。"
       },
       {
         "candidate_id": "R045",
-        "platform_indices": [
-          0
-        ],
+        "platform_indices": [],
         "relation": "different",
-        "confidence": 0.9,
-        "reason": "平台类型完全不同（中国补给舰 vs 法国预警机），任务、地点均不匹配，排除关联。"
+        "confidence": 0.95,
+        "reason": "平台型号不同（中国903A补给舰 vs 法国E-2C预警机），国籍不同，任务也不同。"
       }
     ],
-    "ambiguity": "雷达数据 R014 的坐标辅助提示为东海，与新闻仁爱礁（南海）冲突，但核心要素（机型、时间、任务、国籍）完全一致，依据赛题规则判定为同一次活动中的地点记录错误。其他候选因平台或任务明显不同被排除。",
+    "ambiguity": "雷达R014的坐标辅助提示为‘东海’，与新闻‘南海仁爱礁’存在方向性差异，但鉴于平台型号、国籍、精确时间戳及任务描述的高度一致性，且赛题允许坐标辅助召回存在偏差，判定为same。",
     "unmatched_review": {
       "opinion_edges": [
         {
@@ -96,15 +86,13 @@
           ],
           "relation": "uncertain",
           "confidence": 0.65,
-          "reason": "平台型号（E-2C）与任务（空中警戒）完全一致，时间（2025.5.1）重合，但地点存在明确冲突：新闻 N019 位于“仁爱礁附近海域”（南海），而候选 O014 位于“东海赤尾屿海域”。不同海域排除同一次活动。；程序保留待复核关联：同日双方唯一的型号/国籍/明确任务组合且新闻与雷达时段吻合；地点反证保留，不能据此判可信",
+          "reason": "平台型号与任务完全一致（法国 E-2C、空中警戒），时间重合（2025.5.1），但地点存在明确且不可调和的冲突：新闻 N019 明确位于“仁爱礁附近海域”（南海），而候选 O014 明确位于“东海赤尾屿海域”。不同海域方向排除了同一次活动的可能性。；程序保留待复核关联：同日双方唯一的型号/国籍/明确任务组合且新闻与雷达时段吻合；地点反证保留，不能据此判可信",
           "model_proposal": {
             "candidate_id": "O014",
-            "platform_indices": [
-              0
-            ],
+            "platform_indices": [],
             "relation": "different",
             "confidence": 0.95,
-            "reason": "平台型号（E-2C）与任务（空中警戒）完全一致，时间（2025.5.1）重合，但地点存在明确冲突：新闻 N019 位于“仁爱礁附近海域”（南海），而候选 O014 位于“东海赤尾屿海域”。不同海域排除同一次活动。"
+            "reason": "平台型号与任务完全一致（法国 E-2C、空中警戒），时间重合（2025.5.1），但地点存在明确且不可调和的冲突：新闻 N019 明确位于“仁爱礁附近海域”（南海），而候选 O014 明确位于“东海赤尾屿海域”。不同海域方向排除了同一次活动的可能性。"
           },
           "association_check": {
             "same_day_scope": true,
@@ -119,7 +107,7 @@
         }
       ],
       "radar_edges": [],
-      "ambiguity": "赛题数据允许地点字段出错，若 O014 的‘东海’为误标且实际在南海，则可能为同一活动；但基于现有文本证据，地点冲突充分证明为不同事件。"
+      "ambiguity": "无。地点冲突（南海 vs 东海）足以判定为不同事件，无需保留歧义。"
     }
   },
   "candidates": {
@@ -246,6 +234,7 @@
     "opinion": [],
     "radar": []
   },
+  "radar_context": [],
   "verification": {
     "same_event": false,
     "facts": [
@@ -362,11 +351,10 @@
             "N019"
           ],
           "conflicting_sources": [
-            "O014",
-            "R014"
+            "O014"
           ],
           "status": "conflict",
-          "reason": "新闻 N019 明确位于南海仁爱礁；舆论 O014 和雷达 R014（坐标及提示）指向东海赤尾屿。三源地点存在明确的南海与东海冲突，无法认定为同一地点。"
+          "reason": "新闻 N019 明确位于南海仁爱礁，舆论 O014 明确位于东海赤尾屿，方向冲突不可调和"
         },
         "checked_by": "literal_assertion_matrix",
         "source_values": {
@@ -396,56 +384,53 @@
       {
         "platform_index": -1,
         "field": "time",
-        "claim": "起点 05:01，终点 07:26",
+        "claim": "共同观测/报道时段 05:01—07:26（非完整活动起止断言）",
         "supporting_sources": [
           "N019",
           "R014"
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突；起点明示值：{'N019': '05:01', 'R014': '05:01'}；终点明示值：{'N019': '07:26', 'R014': '07:26'}",
+        "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N019': {'start': '05:01', 'end': '07:26', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O014': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R014': {'start': '05:01', 'end': '07:26', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
         "model_proposal": {
           "platform_index": -1,
           "field": "time",
-          "claim": "2025.05.01 05:01-07:26",
+          "claim": "2025-05-01 05:01-07:26",
           "supporting_sources": [
             "N019",
             "R014"
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻与雷达时间完全一致，舆论仅确认日期"
+          "reason": "新闻与雷达时间区间完全一致，舆论仅提及日期"
         },
         "checked_by": "literal_assertion_matrix",
-        "components": {
-          "start_time": {
-            "value": "05:01",
-            "support": [
-              "N019",
-              "R014"
-            ],
-            "conflicts": [],
-            "status": "supported",
-            "source_values": {
-              "N019": "05:01",
-              "R014": "05:01"
-            },
-            "radar_batch_observations": []
+        "source_values": {
+          "N019": {
+            "start": "05:01",
+            "end": "07:26",
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
           },
-          "end_time": {
-            "value": "07:26",
-            "support": [
-              "N019",
-              "R014"
-            ],
-            "conflicts": [],
-            "status": "supported",
-            "source_values": {
-              "N019": "07:26",
-              "R014": "07:26"
-            },
-            "radar_batch_observations": []
+          "O014": {
+            "start": null,
+            "end": null,
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
+          },
+          "R014": {
+            "start": "05:01",
+            "end": "07:26",
+            "interval": "observation_coverage",
+            "start_asserted": false,
+            "end_asserted": false
           }
+        },
+        "asserted_boundaries": {
+          "start": {},
+          "end": {}
         },
         "supporting_source_types": [
           "news",
@@ -516,7 +501,7 @@
           ],
           "conflicting_sources": [],
           "status": "supported",
-          "reason": "新闻与舆论均描述为活动或保持机动"
+          "reason": "新闻与舆论均描述为围绕海域组织警戒或保持机动"
         },
         "checked_by": "literal_assertion_matrix",
         "source_values": {
@@ -530,20 +515,26 @@
         ]
       }
     ],
-    "unresolved_issues": [
-      "地点冲突：新闻 N019 位于南海仁爱礁，而舆论 O014 和雷达 R014 指向东海赤尾屿。尽管核心要素（机型、时间、任务）高度一致，但地点差异属于明确的地理方向冲突（南海 vs 东海），依据规则不能自动视为数据录入错误而忽略，故判定为不同事件。",
-      "数量缺失：新闻 N019 未说明具体架次，无法与舆论/雷达的"
+    "unresolved_issues": [],
+    "explanation": "程序核验未通过：模型未确认三源同一事件关联；location关键事实冲突：复核明示地点和PDF包含关系：{'N019': '仁爱礁附近海域', 'O014': '赤尾屿海域'}；同方向不等于同一具体区域，未验证坐标不作为反证；O014活动归属仍有歧义：平台型号与任务完全一致（法国 E-2C、空中警戒），时间重合（2025.5.1），但地点存在明确且不可调和的冲突：新闻 N019 明确位于“仁爱礁附近海域”（南海），而候选 O014 明确位于“东海赤尾屿海域”。不同海域方向排除了同一次活动的可能性。；程序保留待复核关联：同日双方唯一的型号/国籍/明确任务组合且新闻与雷达时段吻合；地点反证保留，不能据此判可信",
+    "model_unresolved_issues": [
+      "地点存在明确冲突：新闻指向南海仁爱礁，舆论指向东海赤尾屿，无法判定为同一事件。雷达坐标辅助提示为东海但与新闻文本显式区域（南海）冲突，且舆论亦支持东海方向，导致地点事实无法统一。"
     ],
-    "explanation": "程序核验未通过：模型未确认三源同一事件关联；location关键事实冲突：复核明示地点和PDF包含关系：{'N019': '仁爱礁附近海域', 'O014': '赤尾屿海域'}；同方向不等于同一具体区域，未验证坐标不作为反证；O014活动归属仍有歧义：平台型号（E-2C）与任务（空中警戒）完全一致，时间（2025.5.1）重合，但地点存在明确冲突：新闻 N019 位于“仁爱礁附近海域”（南海），而候选 O014 位于“东海赤尾屿海域”。不同海域排除同一次活动。；程序保留待复核关联：同日双方唯一的型号/国籍/明确任务组合且新闻与雷达时段吻合；地点反证保留，不能据此判可信；活动地点未获得两类来源在明确精度上的印证；地点冲突：新闻 N019 位于南海仁爱礁，而舆论 O014 和雷达 R014 指向东海赤尾屿。尽管核心要素（机型、时间、任务）高度一致，但地点差异属于明确的地理方向冲突（南海 vs 东海），依据规则不能自动视为数据录入错误而忽略，故判定为不同事件。；数量缺失：新闻 N019 未说明具体架次，无法与舆论/雷达的",
-    "model_explanation": "虽然平台型号、国籍、任务类型及活动时间在三源中高度一致（均为法国 E-2C 于 2025.5.1 执行空中警戒），但地点存在不可调和的冲突：新闻 N019 明确位于南海仁爱礁附近，而舆论 O014 和雷达 R014 均指向东海赤尾屿海域。根据核验规则，不同海域（南海 vs 东海）不能自动视为同一事件或数据错误，且缺乏证据表明这是录入失误。因此，地点冲突导致无法确认三源关联为同一事件，判定为 different。"
+    "reconciled_model_issues": [
+      {
+        "model_issue": "地点存在明确冲突：新闻指向南海仁爱礁，舆论指向东海赤尾屿，无法判定为同一事件。雷达坐标辅助提示为东海但与新闻文本显式区域（南海）冲突，且舆论亦支持东海方向，导致地点事实无法统一。",
+        "fields": [
+          "location"
+        ],
+        "decision": "字段反证由程序事实矩阵保留；不采用模型多数票消解或重复自由文本说明"
+      }
+    ],
+    "model_explanation": "虽然平台型号、国籍、任务及时间高度一致，但地点存在根本性冲突：新闻 N019 和雷达 R014（结合坐标辅助）指向南海仁爱礁附近，而舆论 O014 明确指向东海赤尾屿海域。根据核验规则，不同海域方向排除了同一次活动的可能性，因此判定为不同事件（different）。"
   },
   "reasons": [
     "模型未确认三源同一事件关联",
     "location关键事实冲突：复核明示地点和PDF包含关系：{'N019': '仁爱礁附近海域', 'O014': '赤尾屿海域'}；同方向不等于同一具体区域，未验证坐标不作为反证",
-    "O014活动归属仍有歧义：平台型号（E-2C）与任务（空中警戒）完全一致，时间（2025.5.1）重合，但地点存在明确冲突：新闻 N019 位于“仁爱礁附近海域”（南海），而候选 O014 位于“东海赤尾屿海域”。不同海域排除同一次活动。；程序保留待复核关联：同日双方唯一的型号/国籍/明确任务组合且新闻与雷达时段吻合；地点反证保留，不能据此判可信",
-    "活动地点未获得两类来源在明确精度上的印证",
-    "地点冲突：新闻 N019 位于南海仁爱礁，而舆论 O014 和雷达 R014 指向东海赤尾屿。尽管核心要素（机型、时间、任务）高度一致，但地点差异属于明确的地理方向冲突（南海 vs 东海），依据规则不能自动视为数据录入错误而忽略，故判定为不同事件。",
-    "数量缺失：新闻 N019 未说明具体架次，无法与舆论/雷达的"
+    "O014活动归属仍有歧义：平台型号与任务完全一致（法国 E-2C、空中警戒），时间重合（2025.5.1），但地点存在明确且不可调和的冲突：新闻 N019 明确位于“仁爱礁附近海域”（南海），而候选 O014 明确位于“东海赤尾屿海域”。不同海域方向排除了同一次活动的可能性。；程序保留待复核关联：同日双方唯一的型号/国籍/明确任务组合且新闻与雷达时段吻合；地点反证保留，不能据此判可信"
   ],
   "status": "不可信事件",
   "verified_facts": [
@@ -643,56 +634,53 @@
     {
       "platform_index": -1,
       "field": "time",
-      "claim": "起点 05:01，终点 07:26",
+      "claim": "共同观测/报道时段 05:01—07:26（非完整活动起止断言）",
       "supporting_sources": [
         "N019",
         "R014"
       ],
       "conflicting_sources": [],
       "status": "supported",
-      "reason": "逐端点检查活动时刻；单端点不被丢弃，缺失不反对。不同端点未获分阶段/观测覆盖差异的证据解释时保留待核实冲突；起点明示值：{'N019': '05:01', 'R014': '05:01'}；终点明示值：{'N019': '07:26', 'R014': '07:26'}",
+      "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N019': {'start': '05:01', 'end': '07:26', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O014': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R014': {'start': '05:01', 'end': '07:26', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
       "model_proposal": {
         "platform_index": -1,
         "field": "time",
-        "claim": "2025.05.01 05:01-07:26",
+        "claim": "2025-05-01 05:01-07:26",
         "supporting_sources": [
           "N019",
           "R014"
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "新闻与雷达时间完全一致，舆论仅确认日期"
+        "reason": "新闻与雷达时间区间完全一致，舆论仅提及日期"
       },
       "checked_by": "literal_assertion_matrix",
-      "components": {
-        "start_time": {
-          "value": "05:01",
-          "support": [
-            "N019",
-            "R014"
-          ],
-          "conflicts": [],
-          "status": "supported",
-          "source_values": {
-            "N019": "05:01",
-            "R014": "05:01"
-          },
-          "radar_batch_observations": []
+      "source_values": {
+        "N019": {
+          "start": "05:01",
+          "end": "07:26",
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
         },
-        "end_time": {
-          "value": "07:26",
-          "support": [
-            "N019",
-            "R014"
-          ],
-          "conflicts": [],
-          "status": "supported",
-          "source_values": {
-            "N019": "07:26",
-            "R014": "07:26"
-          },
-          "radar_batch_observations": []
+        "O014": {
+          "start": null,
+          "end": null,
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "R014": {
+          "start": "05:01",
+          "end": "07:26",
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
         }
+      },
+      "asserted_boundaries": {
+        "start": {},
+        "end": {}
       },
       "supporting_source_types": [
         "news",
@@ -763,7 +751,7 @@
         ],
         "conflicting_sources": [],
         "status": "supported",
-        "reason": "新闻与舆论均描述为活动或保持机动"
+        "reason": "新闻与舆论均描述为围绕海域组织警戒或保持机动"
       },
       "checked_by": "literal_assertion_matrix",
       "source_values": {

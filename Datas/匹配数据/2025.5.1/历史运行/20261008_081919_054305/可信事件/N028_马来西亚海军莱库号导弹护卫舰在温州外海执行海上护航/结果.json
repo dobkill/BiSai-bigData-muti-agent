@@ -1,0 +1,733 @@
+{
+  "id": "N028",
+  "news_id": "N028",
+  "opinion_id": "O040",
+  "radar_ids": [
+    "R053"
+  ],
+  "radar_slots": {
+    "0": "R053"
+  },
+  "alignment": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O040",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.95,
+        "reason": "平台身份完全一致（马来西亚莱库号），任务相同（海上护航），地点高度重合（温州外海属于东海方向），时间区间包含关系明确（新闻14:54-16:47在舆论14:22起之后）。"
+      },
+      {
+        "candidate_id": "O006",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "平台国籍不同（中国 vs 马来西亚），海域完全不同（白令海 vs 温州外海/东海），任务不同（反潜巡逻 vs 海上护航）。"
+      },
+      {
+        "candidate_id": "O029",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.98,
+        "reason": "平台国籍不同（美国 vs 马来西亚），虽然地点和时间有重叠，但主体完全不同。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R053",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.98,
+        "reason": "雷达数据与新闻在平台（马来西亚莱库号）、地点（温州外海）、任务（海上护航）及时间区间上完全匹配，且坐标辅助信息一致。"
+      },
+      {
+        "candidate_id": "R046",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台国籍不同（日本 vs 马来西亚），任务不同（实弹射击训练 vs 海上护航），地点虽同属东海但具体区域描述不同。"
+      },
+      {
+        "candidate_id": "R031",
+        "platform_indices": [],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台国籍不同（美国 vs 马来西亚），时间区间不重叠，任务虽同为护航但主体不同。"
+      }
+    ],
+    "ambiguity": "无显著歧义，核心证据链完整。"
+  },
+  "candidates": {
+    "opinion": [
+      {
+        "id": "O040",
+        "score": 4.46028,
+        "cosine": 0.93028,
+        "platform_similarity": 0.95,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O006",
+        "score": 1.84216,
+        "cosine": 0.78334,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.8823529411764706,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O029",
+        "score": 1.30116,
+        "cosine": 0.82116,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O008",
+        "score": 1.27912,
+        "cosine": 0.79912,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O020",
+        "score": 0.82289,
+        "cosine": 0.82289,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O030",
+        "score": 0.80125,
+        "cosine": 0.80125,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      }
+    ],
+    "radar": [
+      {
+        "id": "R053",
+        "score": 6.02988,
+        "cosine": 0.97988,
+        "platform_similarity": 0.95,
+        "time_overlap": 1.0,
+        "location_relation": "same"
+      },
+      {
+        "id": "R046",
+        "score": 2.14504,
+        "cosine": 0.78504,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "same_direction_only"
+      },
+      {
+        "id": "R008",
+        "score": 1.9232,
+        "cosine": 0.7232,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R031",
+        "score": 1.62512,
+        "cosine": 0.82512,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "same"
+      },
+      {
+        "id": "R054",
+        "score": 0.96824,
+        "cosine": 0.80824,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "same_direction_only"
+      },
+      {
+        "id": "R049",
+        "score": 0.79217,
+        "cosine": 0.79217,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "R048",
+        "score": 0.792,
+        "cosine": 0.792,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "different_direction"
+      }
+    ]
+  },
+  "assignment_diagnostics": {
+    "opinion": [],
+    "radar": []
+  },
+  "radar_context": [],
+  "verification": {
+    "same_event": true,
+    "facts": [
+      {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "莱库号导弹护卫舰",
+        "supporting_sources": [
+          "N028",
+          "O040",
+          "R053"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N028': '莱库号导弹护卫舰', 'O040': '莱库号', 'R053': '莱库号导弹护卫舰'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "马来西亚莱库号导弹护卫舰",
+          "supporting_sources": [
+            "N028",
+            "O040",
+            "R053"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均明确指向马来西亚莱库号，无冲突。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "马来西亚",
+        "supporting_sources": [
+          "N028",
+          "O040",
+          "R053"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N028': '马来西亚', 'O040': '马来西亚', 'R053': '马来西亚'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "马来西亚",
+          "supporting_sources": [
+            "N028",
+            "O040",
+            "R053"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源一致确认国籍为马来西亚。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "1艘",
+        "supporting_sources": [
+          "R053"
+        ],
+        "conflicting_sources": [],
+        "status": "insufficient",
+        "reason": "程序按已关联平台的明示字段复核：{'R053': 1}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "1 架/艘",
+          "supporting_sources": [
+            "R053"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "雷达明确记录数量为 1，新闻与舆论虽未显式说明数量但提及单舰行动且无多舰描述，结合雷达数据确认为 1。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "温州外海",
+        "supporting_sources": [
+          "N028",
+          "R053"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "复核明示地点和PDF包含关系：{'N028': '温州外海', 'O040': '东海', 'R053': '温州外海'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "温州外海",
+          "supporting_sources": [
+            "N028",
+            "R053"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻与雷达均明确标注“温州外海”，舆论表述为“东海方向”（包含温州外海），两源支持具体区域。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N028": {
+            "raw": "温州外海",
+            "region": "温州外海",
+            "direction": "东海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false,
+            "quote": "在温州外海"
+          },
+          "O040": {
+            "raw": "东海方向",
+            "region": "东海",
+            "direction": "东海",
+            "precision": "大范围",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false,
+            "quote": "在东海方向"
+          },
+          "R053": {
+            "raw": "温州外海",
+            "region": "温州外海",
+            "direction": "东海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        },
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "共同观测/报道时段 14:54—16:47（非完整活动起止断言）",
+        "supporting_sources": [
+          "N028",
+          "R053"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N028': {'start': '14:54', 'end': '16:47', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O040': {'start': '14:22', 'end': None, 'interval': 'reported_activity', 'start_asserted': True, 'end_asserted': False}, 'R053': {'start': '14:22', 'end': '16:47', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "2025 年 5 月 1 日 14:22-16:47",
+          "supporting_sources": [
+            "O040",
+            "R053"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论与雷达提供了完整的起止时间（14:22-16:47），新闻时间区间（14:54-16:47）包含于内，三源共同支持该活动时间段。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N028": {
+            "start": "14:54",
+            "end": "16:47",
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
+          },
+          "O040": {
+            "start": "14:22",
+            "end": null,
+            "interval": "reported_activity",
+            "start_asserted": true,
+            "end_asserted": false
+          },
+          "R053": {
+            "start": "14:22",
+            "end": "16:47",
+            "interval": "observation_coverage",
+            "start_asserted": false,
+            "end_asserted": false
+          }
+        },
+        "asserted_boundaries": {
+          "start": {
+            "O040": "14:22"
+          },
+          "end": {}
+        },
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "海上护航",
+        "supporting_sources": [
+          "N028",
+          "O040",
+          "R053"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "原文明示任务：{'N028': ['海上护航'], 'O040': ['海上护航'], 'R053': ['海上护航']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "海上护航",
+          "supporting_sources": [
+            "N028",
+            "O040",
+            "R053"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均明确记录任务为“海上护航”。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N028": [
+            "海上护航"
+          ],
+          "O040": [
+            "海上护航"
+          ],
+          "R053": [
+            "海上护航"
+          ]
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N028",
+          "O040"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "活动/机动",
+          "supporting_sources": [
+            "N028",
+            "O040"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻描述“保持机动”，舆论描述“实施保障行动”，两源支持舰船处于活动状态。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N028": "活动",
+          "O040": "活动",
+          "R053": "未说明"
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      }
+    ],
+    "unresolved_issues": [],
+    "explanation": "三类来源已关联，纳入结论的事实获得至少两类独立来源支持，未发现未消解明示反证。",
+    "model_explanation": "三源（新闻、舆论、雷达）在平台身份、国籍、数量、地点、时间及任务上高度一致，形成完整证据链，无未消解冲突。"
+  },
+  "reasons": [],
+  "status": "可信事件",
+  "verified_facts": [
+    {
+      "platform_index": 0,
+      "field": "platform",
+      "claim": "莱库号导弹护卫舰",
+      "supporting_sources": [
+        "N028",
+        "O040",
+        "R053"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N028': '莱库号导弹护卫舰', 'O040': '莱库号', 'R053': '莱库号导弹护卫舰'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "马来西亚莱库号导弹护卫舰",
+        "supporting_sources": [
+          "N028",
+          "O040",
+          "R053"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻、舆论、雷达三源均明确指向马来西亚莱库号，无冲突。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "country",
+      "claim": "马来西亚",
+      "supporting_sources": [
+        "N028",
+        "O040",
+        "R053"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N028': '马来西亚', 'O040': '马来西亚', 'R053': '马来西亚'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "马来西亚",
+        "supporting_sources": [
+          "N028",
+          "O040",
+          "R053"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源一致确认国籍为马来西亚。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "location",
+      "claim": "温州外海",
+      "supporting_sources": [
+        "N028",
+        "R053"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "复核明示地点和PDF包含关系：{'N028': '温州外海', 'O040': '东海', 'R053': '温州外海'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "温州外海",
+        "supporting_sources": [
+          "N028",
+          "R053"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与雷达均明确标注“温州外海”，舆论表述为“东海方向”（包含温州外海），两源支持具体区域。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N028": {
+          "raw": "温州外海",
+          "region": "温州外海",
+          "direction": "东海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在温州外海"
+        },
+        "O040": {
+          "raw": "东海方向",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在东海方向"
+        },
+        "R053": {
+          "raw": "温州外海",
+          "region": "温州外海",
+          "direction": "东海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        }
+      },
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "time",
+      "claim": "共同观测/报道时段 14:54—16:47（非完整活动起止断言）",
+      "supporting_sources": [
+        "N028",
+        "R053"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N028': {'start': '14:54', 'end': '16:47', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O040': {'start': '14:22', 'end': None, 'interval': 'reported_activity', 'start_asserted': True, 'end_asserted': False}, 'R053': {'start': '14:22', 'end': '16:47', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "2025 年 5 月 1 日 14:22-16:47",
+        "supporting_sources": [
+          "O040",
+          "R053"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "舆论与雷达提供了完整的起止时间（14:22-16:47），新闻时间区间（14:54-16:47）包含于内，三源共同支持该活动时间段。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N028": {
+          "start": "14:54",
+          "end": "16:47",
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "O040": {
+          "start": "14:22",
+          "end": null,
+          "interval": "reported_activity",
+          "start_asserted": true,
+          "end_asserted": false
+        },
+        "R053": {
+          "start": "14:22",
+          "end": "16:47",
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        }
+      },
+      "asserted_boundaries": {
+        "start": {
+          "O040": "14:22"
+        },
+        "end": {}
+      },
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "mission",
+      "claim": "海上护航",
+      "supporting_sources": [
+        "N028",
+        "O040",
+        "R053"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "原文明示任务：{'N028': ['海上护航'], 'O040': ['海上护航'], 'R053': ['海上护航']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "海上护航",
+        "supporting_sources": [
+          "N028",
+          "O040",
+          "R053"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻、舆论、雷达三源均明确记录任务为“海上护航”。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N028": [
+          "海上护航"
+        ],
+        "O040": [
+          "海上护航"
+        ],
+        "R053": [
+          "海上护航"
+        ]
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "movement",
+      "claim": "活动",
+      "supporting_sources": [
+        "N028",
+        "O040"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动/机动",
+        "supporting_sources": [
+          "N028",
+          "O040"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻描述“保持机动”，舆论描述“实施保障行动”，两源支持舰船处于活动状态。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N028": "活动",
+        "O040": "活动",
+        "R053": "未说明"
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    }
+  ],
+  "radar_row_count": 10,
+  "direction": "东海",
+  "report_eligible": true,
+  "directory": "可信事件/N028_马来西亚海军莱库号导弹护卫舰在温州外海执行海上护航"
+}

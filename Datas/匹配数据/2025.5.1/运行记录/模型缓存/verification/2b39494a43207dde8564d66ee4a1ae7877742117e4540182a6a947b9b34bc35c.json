@@ -1,0 +1,288 @@
+{
+  "role": "verification",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N003",
+      "kind": "news",
+      "title": "中国903A型综合补给舰在冲绳海槽持续活动",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：中国903A型综合补给舰在冲绳海槽持续活动\n正文：2025年5月1日，中国1艘903A型综合补给舰在冲绳海槽持续活动，围绕任务区域保持机动，行动范围保持在指定任务海域。\n\n主题词：中国  903A型综合补给舰  冲绳海槽\n",
+      "platforms": [
+        {
+          "name": "903A型综合补给舰",
+          "country": "中国",
+          "quantity": 1,
+          "quote": "903A型综合补给舰",
+          "quantity_quote": "1艘903A型综合补给舰",
+          "country_raw": "中国"
+        }
+      ],
+      "location": {
+        "raw": "冲绳海槽",
+        "region": "冲绳海槽",
+        "direction": "东海",
+        "precision": "具体区域",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "在冲绳海槽持续活动"
+      },
+      "mission": {
+        "value": null,
+        "quote": ""
+      },
+      "start_time": null,
+      "end_time": null,
+      "movement": "活动",
+      "time_semantics": {
+        "interval": "reported_activity",
+        "start_asserted": false,
+        "end_asserted": false
+      }
+    },
+    "opinion": {
+      "id": "O015",
+      "kind": "opinion",
+      "title": "中国903A型综合补给舰在东海执行例行部署",
+      "text": "时间：2025.5.1\n\n标题：中国903A型综合补给舰在东海执行例行部署\n\n正文：据联合早报报道，2025年5月1日5时56分至7时21分，中国海军903A型综合补给舰在东海海域执行例行部署任务。媒体关注到，该舰沿既定方向保持机动并围绕任务区域维持部署，体现了部署持续性和区域机动能力。\n",
+      "platforms": [
+        {
+          "name": "903A型综合补给舰",
+          "country": "中国",
+          "quantity": null,
+          "quote": "中国海军903A型综合补给舰",
+          "quantity_quote": "",
+          "country_raw": "中国"
+        }
+      ],
+      "location": {
+        "raw": "东海海域",
+        "region": "东海",
+        "direction": "东海",
+        "precision": "大范围",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "在东海海域"
+      },
+      "mission": {
+        "value": "例行部署任务",
+        "quote": "执行例行部署任务"
+      },
+      "start_time": "05:56",
+      "end_time": "07:21",
+      "movement": "活动",
+      "time_semantics": {
+        "interval": "reported_activity",
+        "start_asserted": false,
+        "end_asserted": false
+      }
+    },
+    "radars": [
+      {
+        "id": "R045",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "903A型综合补给舰",
+            "country": "中国",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-B1BD0BF756EEB2",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "冲绳海槽",
+          "region": "冲绳海槽",
+          "direction": "东海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "冲绳海槽",
+            "region": "冲绳海槽",
+            "direction": "东海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "例行部署",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "例行部署"
+        ],
+        "start_time": "2025.05.01 05:56:00",
+        "end_time": "2025.05.01 07:21:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-B1BD0BF756EEB2",
+        "sibling_ids": [],
+        "hull_values": [
+          "TYPE-903A"
+        ],
+        "country_values": [
+          "中国"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 12,
+        "time_semantics": {
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "identity_scope": "batch_is_not_unique_target",
+        "warnings": []
+      }
+    ],
+    "association": {
+      "opinion_edges": [
+        {
+          "candidate_id": "O015",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.95,
+          "reason": "平台（903A 型综合补给舰）、地点（冲绳海槽包含于东海海域）、时间（2025.5.1）及任务性质（持续活动/例行部署）高度一致。舆论报道的具体时间段（05:56-07:21）与新闻描述的“持续活动”在逻辑上相容，属于同一事件的不同描述视角。"
+        },
+        {
+          "candidate_id": "O016",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.98,
+          "reason": "地点冲突：新闻明确为“冲绳海槽”，而该候选为“南海方向”。虽然同型号、同日期，但不同海域且任务描述（远海训练 vs 持续活动）指向不同行动单元。"
+        },
+        {
+          "candidate_id": "O048",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.99,
+          "reason": "平台类型冲突：新闻为“综合补给舰”，该候选为"
+        }
+      ],
+      "radar_edges": [
+        {
+          "candidate_id": "R045",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.98,
+          "reason": "时空与身份完全匹配。雷达数据明确记录 2025.05.01 在“冲绳海槽”的"
+        }
+      ],
+      "ambiguity": "无显著歧义，核心线索（平台型号、具体海域、日期）高度收敛于单一事件。"
+    },
+    "same_batch_other_candidates": []
+  },
+  "result": {
+    "same_event": true,
+    "platforms": [
+      {
+        "platform_index": 0,
+        "platform": {
+          "claim": "903A 型综合补给舰",
+          "supporting_sources": [
+            "N003",
+            "O015",
+            "R045"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均明确识别为 903A 型综合补给舰，无冲突。"
+        },
+        "country": {
+          "claim": "中国",
+          "supporting_sources": [
+            "N003",
+            "O015",
+            "R045"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均明确标注国籍为中国，无冲突。"
+        },
+        "quantity": {
+          "claim": "1 艘",
+          "supporting_sources": [
+            "N003",
+            "R045"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻明确提及"
+        }
+      }
+    ],
+    "location": {
+      "claim": "冲绳海槽",
+      "supporting_sources": [
+        "N003",
+        "R045"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与雷达均精确指向“冲绳海槽”；舆论提及的“东海海域”为兼容的大范围描述，支持该具体区域结论。"
+    },
+    "time": {
+      "claim": "2025 年 5 月 1 日 05:56-07:21",
+      "supporting_sources": [
+        "O015",
+        "R045"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "舆论与雷达提供了精确的起止时间（05:56-07:21），新闻仅确认日期，三者在时间覆盖上相容。"
+    },
+    "mission": {
+      "claim": "例行部署/持续活动",
+      "supporting_sources": [
+        "O015",
+        "R045"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "舆论与雷达均明确任务为“例行部署”，新闻描述为“持续活动”，两者在语义上高度一致，共同印证了该任务性质。"
+    },
+    "movement": {
+      "claim": "机动/活动",
+      "supporting_sources": [
+        "N003",
+        "O015"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与舆论均描述舰艇保持机动或围绕区域维持部署，雷达虽未显式说明运动状态但时空匹配，三源共同支持活动状态。"
+    },
+    "unresolved_issues": [],
+    "explanation": "三源（新闻、舆论、雷达）在平台型号、国籍、数量、地点、时间及任务性质上高度一致，无未消解冲突，满足可信度要求。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-08T00:02:31.0804357Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"same_event\": true, \"platforms\": [{\"platform_index\": 0, \"platform\": {\"claim\": \"903A 型综合补给舰\", \"supporting_sources\": [\"N003\", \"O015\", \"R045\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻、舆论、雷达三源均明确识别为 903A 型综合补给舰，无冲突。\"}, \"country\": {\"claim\": \"中国\", \"supporting_sources\": [\"N003\", \"O015\", \"R045\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻、舆论、雷达三源均明确标注国籍为中国，无冲突。\"}, \"quantity\": {\"claim\": \"1 艘\", \"supporting_sources\": [\"N003\", \"R045\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻明确提及\" } }], \"location\": {\"claim\": \"冲绳海槽\", \"supporting_sources\": [\"N003\", \"R045\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻与雷达均精确指向“冲绳海槽”；舆论提及的“东海海域”为兼容的大范围描述，支持该具体区域结论。\"}, \"time\": {\"claim\": \"2025 年 5 月 1 日 05:56-07:21\", \"supporting_sources\": [\"O015\", \"R045\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"舆论与雷达提供了精确的起止时间（05:56-07:21），新闻仅确认日期，三者在时间覆盖上相容。\"}, \"mission\": {\"claim\": \"例行部署/持续活动\", \"supporting_sources\": [\"O015\", \"R045\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"舆论与雷达均明确任务为“例行部署”，新闻描述为“持续活动”，两者在语义上高度一致，共同印证了该任务性质。\"}, \"movement\": {\"claim\": \"机动/活动\", \"supporting_sources\": [\"N003\", \"O015\"], \"conflicting_sources\": [], \"status\": \"supported\", \"reason\": \"新闻与舆论均描述舰艇保持机动或围绕区域维持部署，雷达虽未显式说明运动状态但时空匹配，三源共同支持活动状态。\"}, \"unresolved_issues\": [],\"explanation\":\"三源（新闻、舆论、雷达）在平台型号、国籍、数量、地点、时间及任务性质上高度一致，无未消解冲突，满足可信度要求。\"}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 12540142000,
+    "load_duration": 7830200,
+    "prompt_eval_count": 2122,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 808487000,
+    "eval_count": 602,
+    "eval_duration": 11531364000
+  }
+}

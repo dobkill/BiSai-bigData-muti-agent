@@ -1,0 +1,306 @@
+{
+  "role": "verification",
+  "model": "qwen3.5:9b-q8_0",
+  "payload": {
+    "news": {
+      "id": "N017",
+      "kind": "news",
+      "title": "俄军瓦良格号巡洋舰在礼乐滩海域持续开展活动",
+      "text": "抄收时间：2025.5.1\n发文时间：2025.5.1\n\n标题：俄军瓦良格号巡洋舰在礼乐滩海域持续开展活动\n正文：2025年5月1日，俄罗斯海军瓦良格号导弹巡洋舰在礼乐滩海域持续活动，围绕任务区域保持机动，行动范围保持在指定任务海域。\n\n主题词：俄罗斯  瓦良格号  礼乐滩  活动\n",
+      "platforms": [
+        {
+          "name": "瓦良格号导弹巡洋舰",
+          "country": "俄罗斯",
+          "quantity": null,
+          "quote": "瓦良格号导弹巡洋舰",
+          "quantity_quote": "",
+          "country_raw": "俄罗斯"
+        }
+      ],
+      "location": {
+        "raw": "礼乐滩海域",
+        "region": "礼乐滩海域",
+        "direction": "南海",
+        "precision": "具体区域",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "在礼乐滩海域"
+      },
+      "mission": {
+        "value": "活动",
+        "quote": "持续开展活动"
+      },
+      "start_time": null,
+      "end_time": null,
+      "movement": "活动",
+      "time_semantics": {
+        "interval": "reported_activity",
+        "start_asserted": false,
+        "end_asserted": false
+      }
+    },
+    "opinion": {
+      "id": "O020",
+      "kind": "opinion",
+      "title": "俄海军“瓦良格”号巡洋舰南海执行护航任务",
+      "text": "时间：2025.5.1\n\n标题：俄海军“瓦良格”号巡洋舰南海执行护航任务\n\n正文：据联合早报报道，俄罗斯海军“瓦良格”号导弹巡洋舰于2025年5月1日2时16分至4时41分在南海方向执行海上护航任务。该舰围绕任务编组实施保障行动，被认为按计划完成了相关保障环节衔接。相关观察关注其持续保障能力，认为此类行动续航有助于体现保障协同水平。\n",
+      "platforms": [
+        {
+          "name": "瓦良格”号导弹巡洋舰",
+          "country": "俄罗斯",
+          "quantity": null,
+          "quote": "瓦良格”号导弹巡洋舰",
+          "quantity_quote": "",
+          "country_raw": "俄罗斯"
+        }
+      ],
+      "location": {
+        "raw": "南海方向",
+        "region": "南海",
+        "direction": "南海",
+        "precision": "大范围",
+        "mapping": "PDF第2页活动区域表",
+        "transit": false,
+        "quote": "在南海方向"
+      },
+      "mission": {
+        "value": "海上护航任务",
+        "quote": "执行海上护航任务"
+      },
+      "start_time": "02:16",
+      "end_time": "04:41",
+      "movement": "活动",
+      "time_semantics": {
+        "interval": "reported_activity",
+        "start_asserted": false,
+        "end_asserted": false
+      }
+    },
+    "radars": [
+      {
+        "id": "R048",
+        "kind": "radar",
+        "platforms": [
+          {
+            "name": "瓦良格号导弹巡洋舰",
+            "country": "俄罗斯",
+            "quantity": 1,
+            "quote": "舰船工作表，批号SHIP-C59F5476F5026F",
+            "quantity_quote": "目标数量/数量原始列"
+          }
+        ],
+        "location": {
+          "raw": "礼乐滩海域",
+          "region": "礼乐滩海域",
+          "direction": "南海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        },
+        "location_values": [
+          {
+            "raw": "礼乐滩海域",
+            "region": "礼乐滩海域",
+            "direction": "南海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        ],
+        "mission": {
+          "value": "海上护航",
+          "quote": "任务原始列"
+        },
+        "mission_values": [
+          "海上护航"
+        ],
+        "start_time": "2025.05.01 02:16:00",
+        "end_time": "2025.05.01 04:41:00",
+        "movement": "未说明",
+        "coordinates": null,
+        "coordinate_hint": null,
+        "anomalies": [],
+        "batch": "SHIP-C59F5476F5026F",
+        "sibling_ids": [],
+        "hull_values": [
+          "011"
+        ],
+        "country_values": [
+          "俄罗斯"
+        ],
+        "quantity_values": [
+          1
+        ],
+        "row_count": 11,
+        "time_semantics": {
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "identity_scope": "batch_is_not_unique_target",
+        "warnings": []
+      }
+    ],
+    "association": {
+      "opinion_edges": [
+        {
+          "candidate_id": "O020",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.95,
+          "reason": "平台完全一致（俄瓦良格号）、地点精确匹配（礼乐滩海域）、时间高度重叠（新闻为全天持续活动，雷达/舆论观测时段 02:16-04:41 包含在内）。任务描述“持续开展活动”与“执行护航任务”在广义上相容，且舆论明确提及该舰按计划完成保障环节，符合新闻中“围绕任务区域保持机动”的描述。"
+        },
+        {
+          "candidate_id": "O034",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.98,
+          "reason": "平台身份冲突：候选为意大利巡逻舰（莱蒙多·蒙特库科利号），新闻明确为俄罗斯瓦良格号。尽管地点和时间相同，但主体不同，属于同一海域的不同活动。"
+        },
+        {
+          "candidate_id": "O025",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.98,
+          "reason": "平台类型与任务冲突：候选为图 -95MS 轰炸机（航空兵），新闻为瓦良格号巡洋舰（水面舰艇）。地点均为南海方向，但平台属性完全不同，属于不同活动。"
+        }
+      ],
+      "radar_edges": [
+        {
+          "candidate_id": "R048",
+          "platform_indices": [
+            0
+          ],
+          "relation": "same",
+          "confidence": 0.96,
+          "reason": "平台、地点、时间完全匹配。雷达记录显示瓦良格号于 02:16-04:41 在礼乐滩海域活动，与新闻描述的“持续开展活动”及舆论观测时段一致。任务原始列为‘海上护航’，与新闻中的‘活动’描述相容（护航是具体活动形式）。"
+        },
+        {
+          "candidate_id": "R052",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.98,
+          "reason": "平台身份冲突：雷达记录为意大利巡逻舰（莱蒙多·蒙特库科利号），新闻主体为俄罗斯瓦良格号。地点虽同为礼乐滩，但目标不同。"
+        },
+        {
+          "candidate_id": "R040",
+          "platform_indices": [
+            0
+          ],
+          "relation": "different",
+          "confidence": 0.98,
+          "reason": "平台身份冲突：雷达记录为俄罗斯守护级护卫舰，新闻主体为瓦良格号巡洋舰。地点（菲律宾海）与任务（联合搜救训练）均不匹配。"
+        }
+      ],
+      "ambiguity": "无。核心关联证据（R048 和 O020）在平台、时间、地点上高度一致，足以确认同一次活动。其他候选因平台国籍或型号不同被排除为不同活动。"
+    },
+    "same_batch_other_candidates": []
+  },
+  "result": {
+    "same_event": true,
+    "platforms": [
+      {
+        "platform_index": 0,
+        "platform": {
+          "claim": "瓦良格号导弹巡洋舰",
+          "supporting_sources": [
+            "N017",
+            "O020",
+            "R048"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻、舆论、雷达三源均明确标识为俄罗斯瓦良格号导弹巡洋舰，无冲突。"
+        },
+        "country": {
+          "claim": "俄罗斯",
+          "supporting_sources": [
+            "N017",
+            "O020",
+            "R048"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源一致认定为俄罗斯海军舰艇。"
+        },
+        "quantity": {
+          "claim": "1 架/艘",
+          "supporting_sources": [
+            "R048"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "雷达明确记录数量为 1，新闻与舆论未提具体数量但不构成反对，单源支持且无冲突。"
+        }
+      }
+    ],
+    "location": {
+      "claim": "礼乐滩海域",
+      "supporting_sources": [
+        "N017",
+        "R048"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "新闻与雷达均明确指向“礼乐滩海域”，舆论提及“南海方向”可兼容该具体区域，两源支持。"
+    },
+    "time": {
+      "claim": "2025-05-01 02:16 - 04:41",
+      "supporting_sources": [
+        "O020",
+        "R048"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "舆论与雷达时间完全一致。新闻仅说明“5 月 1 日持续活动”，未提供具体时刻，不反对也不支持精确时刻，两源支持精确区间。"
+    },
+    "mission": {
+      "claim": "海上护航任务",
+      "supporting_sources": [
+        "O020",
+        "R048"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "舆论与雷达均明确为“海上护航”。新闻描述为“持续开展活动”，属于泛称，不与具体任务冲突，两源支持具体任务。"
+    },
+    "movement": {
+      "claim": "活动/机动",
+      "supporting_sources": [
+        "N017",
+        "O020",
+        "R048"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "三源均描述为活动或机动，无冲突。"
+    },
+    "unresolved_issues": [],
+    "explanation": "新闻、舆论、雷达三源在平台身份（俄瓦良格号）、地点（礼乐滩海域）、时间（5 月 1 日 02:16-04:41）、任务（海上护航）上高度一致。舆论与雷达提供了精确的时间和任务细节，新闻提供了活动背景及全天持续性的佐证。数量由雷达明确支持。无未消解冲突。"
+  },
+  "raw_response": {
+    "model": "qwen3.5:9b-q8_0",
+    "created_at": "2026-10-08T00:05:40.409114Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\n  \"same_event\": true,\n  \"platforms\": [\n    {\n      \"platform_index\": 0,\n      \"platform\": {\n        \"claim\": \"瓦良格号导弹巡洋舰\",\n        \"supporting_sources\": [\"N017\", \"O020\", \"R048\"],\n        \"conflicting_sources\": [],\n        \"status\": \"supported\",\n        \"reason\": \"新闻、舆论、雷达三源均明确标识为俄罗斯瓦良格号导弹巡洋舰，无冲突。\"\n      },\n      \"country\": {\n        \"claim\": \"俄罗斯\",\n        \"supporting_sources\": [\"N017\", \"O020\", \"R048\"],\n        \"conflicting_sources\": [],\n        \"status\": \"supported\",\n        \"reason\": \"三源一致认定为俄罗斯海军舰艇。\"\n      },\n      \"quantity\": {\n        \"claim\": \"1 架/艘\",\n        \"supporting_sources\": [\"R048\"],\n        \"conflicting_sources\": [],\n        \"status\": \"supported\",\n        \"reason\": \"雷达明确记录数量为 1，新闻与舆论未提具体数量但不构成反对，单源支持且无冲突。\"\n      }\n    }\n  ],\n  \"location\": {\n    \"claim\": \"礼乐滩海域\",\n    \"supporting_sources\": [\"N017\", \"R048\"],\n    \"conflicting_sources\": [],\n    \"status\": \"supported\",\n    \"reason\": \"新闻与雷达均明确指向“礼乐滩海域”，舆论提及“南海方向”可兼容该具体区域，两源支持。\"\n  },\n  \"time\": {\n    \"claim\": \"2025-05-01 02:16 - 04:41\",\n    \"supporting_sources\": [\"O020\", \"R048\"],\n    \"conflicting_sources\": [],\n    \"status\": \"supported\",\n    \"reason\": \"舆论与雷达时间完全一致。新闻仅说明“5 月 1 日持续活动”，未提供具体时刻，不反对也不支持精确时刻，两源支持精确区间。\"\n  },\n  \"mission\": {\n    \"claim\": \"海上护航任务\",\n    \"supporting_sources\": [\"O020\", \"R048\"],\n    \"conflicting_sources\": [],\n    \"status\": \"supported\",\n    \"reason\": \"舆论与雷达均明确为“海上护航”。新闻描述为“持续开展活动”，属于泛称，不与具体任务冲突，两源支持具体任务。\"\n  },\n  \"movement\": {\n    \"claim\": \"活动/机动\",\n    \"supporting_sources\": [\"N017\", \"O020\", \"R048\"],\n    \"conflicting_sources\": [],\n    \"status\": \"supported\",\n    \"reason\": \"三源均描述为活动或机动，无冲突。\"\n  },\n  \"unresolved_issues\": [],\n  \"explanation\": \"新闻、舆论、雷达三源在平台身份（俄瓦良格号）、地点（礼乐滩海域）、时间（5 月 1 日 02:16-04:41）、任务（海上护航）上高度一致。舆论与雷达提供了精确的时间和任务细节，新闻提供了活动背景及全天持续性的佐证。数量由雷达明确支持。无未消解冲突。\"\n}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 15181785500,
+    "load_duration": 13257000,
+    "prompt_eval_count": 2385,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 864543000,
+    "eval_count": 775,
+    "eval_duration": 14124236000
+  }
+}

@@ -1,0 +1,767 @@
+{
+  "id": "N010",
+  "news_id": "N010",
+  "opinion_id": "O045",
+  "radar_ids": [
+    "R046"
+  ],
+  "radar_slots": {
+    "0": "R046"
+  },
+  "alignment": {
+    "opinion_edges": [
+      {
+        "candidate_id": "O045",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 0.98,
+        "reason": "平台（日本秋月级）、地点（东海南部/东海方向）、任务（实弹射击训练）及日期（2025.5.1）完全一致。虽然舆论未提供精确起止时间，但报道区间与新闻高度重合，且无冲突信息。"
+      },
+      {
+        "candidate_id": "O008",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台型号不同（村雨号 vs 秋月级），任务不同（编队警戒部署 vs 实弹射击训练），且时间区间无重叠（05:07-07:32 vs 14:28-16:53）。"
+      },
+      {
+        "candidate_id": "O044",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台国籍与型号不同（韩国独岛级 vs 日本秋月级），任务性质不同（两栖作战训练 vs 实弹射击训练）。"
+      }
+    ],
+    "radar_edges": [
+      {
+        "candidate_id": "R046",
+        "platform_indices": [
+          0
+        ],
+        "relation": "same",
+        "confidence": 1.0,
+        "reason": "雷达数据与新闻在平台（日本秋月级）、地点（东海南部）、任务（实弹射击训练）、日期及精确起止时间（14:28-16:53）上完全匹配，确认为同一活动。"
+      },
+      {
+        "candidate_id": "R053",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台国籍与型号不同（马来西亚莱库号 vs 日本秋月级），任务不同（海上护航 vs 实弹射击训练）。"
+      },
+      {
+        "candidate_id": "R047",
+        "platform_indices": [
+          0
+        ],
+        "relation": "different",
+        "confidence": 0.95,
+        "reason": "平台型号不同（村雨号 vs 秋月级），任务不同（编队警戒部署 vs 实弹射击训练），且时间区间无重叠。"
+      }
+    ],
+    "ambiguity": "无。核心候选 O045 与 R046 在时空、平台身份及任务上均高度一致，足以排除其他同区域同日期的干扰项（如不同型号或不同任务的舰艇）。"
+  },
+  "candidates": {
+    "opinion": [
+      {
+        "id": "O045",
+        "score": 4.50304,
+        "cosine": 0.97304,
+        "platform_similarity": 0.95,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O006",
+        "score": 1.85427,
+        "cosine": 0.65427,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "different_direction"
+      },
+      {
+        "id": "O008",
+        "score": 1.40641,
+        "cosine": 0.72641,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O044",
+        "score": 1.24968,
+        "cosine": 0.76968,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O042",
+        "score": 1.21501,
+        "cosine": 0.73501,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "contains"
+      },
+      {
+        "id": "O040",
+        "score": 1.19662,
+        "cosine": 0.71662,
+        "platform_similarity": 0.0,
+        "time_overlap": null,
+        "location_relation": "contains"
+      }
+    ],
+    "radar": [
+      {
+        "id": "R046",
+        "score": 5.95258,
+        "cosine": 0.90258,
+        "platform_similarity": 0.95,
+        "time_overlap": 1.0,
+        "location_relation": "same"
+      },
+      {
+        "id": "R053",
+        "score": 1.97913,
+        "cosine": 0.66879,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.9586206896551724,
+        "location_relation": "same_direction_only"
+      },
+      {
+        "id": "R008",
+        "score": 1.86998,
+        "cosine": 0.66998,
+        "platform_similarity": 0.0,
+        "time_overlap": 1.0,
+        "location_relation": "missing"
+      },
+      {
+        "id": "R041",
+        "score": 1.52825,
+        "cosine": 0.72825,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "same"
+      },
+      {
+        "id": "R050",
+        "score": 1.48984,
+        "cosine": 0.68984,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "same"
+      },
+      {
+        "id": "R047",
+        "score": 1.3914,
+        "cosine": 0.7114,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "contains"
+      },
+      {
+        "id": "R045",
+        "score": 0.8652,
+        "cosine": 0.7052,
+        "platform_similarity": 0.0,
+        "time_overlap": 0.0,
+        "location_relation": "same_direction_only"
+      }
+    ]
+  },
+  "assignment_diagnostics": {
+    "opinion": [],
+    "radar": []
+  },
+  "radar_context": [],
+  "verification": {
+    "same_event": true,
+    "facts": [
+      {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "秋月级",
+        "supporting_sources": [
+          "N010",
+          "O045",
+          "R046"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N010': '秋月级', 'O045': '秋月级', 'R046': '秋月级导弹护卫舰'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "platform",
+          "claim": "秋月级",
+          "supporting_sources": [
+            "N010",
+            "O045",
+            "R046"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均明确指向日本秋月级护卫舰，无冲突。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "日本",
+        "supporting_sources": [
+          "N010",
+          "O045",
+          "R046"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'N010': '日本', 'O045': '日本', 'R046': '日本'}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "country",
+          "claim": "日本",
+          "supporting_sources": [
+            "N010",
+            "O045",
+            "R046"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源（新闻、舆论、雷达）均明确标注国籍为日本，无冲突。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "1艘",
+        "supporting_sources": [
+          "O045",
+          "R046"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "程序按已关联平台的明示字段复核：{'O045': 1, 'R046': 1}；缺失不支持也不反对",
+        "model_proposal": {
+          "platform_index": 0,
+          "field": "quantity",
+          "claim": "1 架/艘",
+          "supporting_sources": [
+            "O045",
+            "R046"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "舆论明确提及“一艘”，雷达数据 quantity_values 为 [1]，两源支持；新闻虽未显式数字但描述单舰行动且与两源一致，不视为冲突。"
+        },
+        "checked_by": "explicit_source_matrix",
+        "supporting_source_types": [
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "东海南部",
+        "supporting_sources": [
+          "N010",
+          "R046"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "复核明示地点和PDF包含关系：{'N010': '东海南部', 'O045': '东海', 'R046': '东海南部'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "location",
+          "claim": "东海南部",
+          "supporting_sources": [
+            "N010",
+            "R046"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻与雷达均精确指向“东海南部”，舆论提及“东海方向”可兼容该具体区域，三源无冲突。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N010": {
+            "raw": "东海南部",
+            "region": "东海南部",
+            "direction": "东海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false,
+            "quote": "东海南部"
+          },
+          "O045": {
+            "raw": "东海方向",
+            "region": "东海",
+            "direction": "东海",
+            "precision": "大范围",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false,
+            "quote": "在东海方向"
+          },
+          "R046": {
+            "raw": "东海南部",
+            "region": "东海南部",
+            "direction": "东海",
+            "precision": "具体区域",
+            "mapping": "PDF第2页活动区域表",
+            "transit": false
+          }
+        },
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "共同观测/报道时段 14:28—16:53（非完整活动起止断言）",
+        "supporting_sources": [
+          "N010",
+          "R046"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N010': {'start': '14:28', 'end': '16:53', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O045': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R046': {'start': '14:28', 'end': '16:53', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "time",
+          "claim": "2025-05-01 14:28-16:53",
+          "supporting_sources": [
+            "N010",
+            "R046"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "新闻与雷达起止时间完全一致（14:28-16:53），舆论仅提及日期，不构成冲突。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N010": {
+            "start": "14:28",
+            "end": "16:53",
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
+          },
+          "O045": {
+            "start": null,
+            "end": null,
+            "interval": "reported_activity",
+            "start_asserted": false,
+            "end_asserted": false
+          },
+          "R046": {
+            "start": "14:28",
+            "end": "16:53",
+            "interval": "observation_coverage",
+            "start_asserted": false,
+            "end_asserted": false
+          }
+        },
+        "asserted_boundaries": {
+          "start": {},
+          "end": {}
+        },
+        "supporting_source_types": [
+          "news",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "实弹射击训练",
+        "supporting_sources": [
+          "N010",
+          "O045",
+          "R046"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "原文明示任务：{'N010': ['实弹射击训练'], 'O045': ['实弹射击训练'], 'R046': ['实弹射击训练']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "mission",
+          "claim": "实弹射击训练",
+          "supporting_sources": [
+            "N010",
+            "O045",
+            "R046"
+          ],
+          "conflicting_sources": [],
+          "status": "supported",
+          "reason": "三源均明确描述为“实弹射击训练”，无冲突。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N010": [
+            "实弹射击训练"
+          ],
+          "O045": [
+            "实弹射击训练"
+          ],
+          "R046": [
+            "实弹射击训练"
+          ]
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion",
+          "radar"
+        ]
+      },
+      {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "活动",
+        "supporting_sources": [
+          "N010",
+          "O045"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+        "model_proposal": {
+          "platform_index": -1,
+          "field": "movement",
+          "claim": "离开任务海域",
+          "supporting_sources": [
+            "N010"
+          ],
+          "conflicting_sources": [],
+          "status": "insufficient",
+          "reason": "仅新闻提及“离开该任务海域”，舆论称“活动”，雷达未说明，缺乏多源印证具体移动状态。"
+        },
+        "checked_by": "literal_assertion_matrix",
+        "source_values": {
+          "N010": "离开",
+          "O045": "活动",
+          "R046": "未说明"
+        },
+        "supporting_source_types": [
+          "news",
+          "opinion"
+        ]
+      }
+    ],
+    "unresolved_issues": [],
+    "explanation": "三类来源已关联，纳入结论的事实获得至少两类独立来源支持，未发现未消解明示反证。",
+    "model_explanation": "三源在平台型号、国籍、数量（2 源支持）、地点、时间及任务上高度一致，构成可信事实；仅‘离开’这一具体移动动作缺乏多源支持，但不影响核心事件关联的成立。"
+  },
+  "reasons": [],
+  "status": "可信事件",
+  "verified_facts": [
+    {
+      "platform_index": 0,
+      "field": "platform",
+      "claim": "秋月级",
+      "supporting_sources": [
+        "N010",
+        "O045",
+        "R046"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N010': '秋月级', 'O045': '秋月级', 'R046': '秋月级导弹护卫舰'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "platform",
+        "claim": "秋月级",
+        "supporting_sources": [
+          "N010",
+          "O045",
+          "R046"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源（新闻、舆论、雷达）均明确指向日本秋月级护卫舰，无冲突。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "country",
+      "claim": "日本",
+      "supporting_sources": [
+        "N010",
+        "O045",
+        "R046"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'N010': '日本', 'O045': '日本', 'R046': '日本'}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "country",
+        "claim": "日本",
+        "supporting_sources": [
+          "N010",
+          "O045",
+          "R046"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源（新闻、舆论、雷达）均明确标注国籍为日本，无冲突。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": 0,
+      "field": "quantity",
+      "claim": "1艘",
+      "supporting_sources": [
+        "O045",
+        "R046"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "程序按已关联平台的明示字段复核：{'O045': 1, 'R046': 1}；缺失不支持也不反对",
+      "model_proposal": {
+        "platform_index": 0,
+        "field": "quantity",
+        "claim": "1 架/艘",
+        "supporting_sources": [
+          "O045",
+          "R046"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "舆论明确提及“一艘”，雷达数据 quantity_values 为 [1]，两源支持；新闻虽未显式数字但描述单舰行动且与两源一致，不视为冲突。"
+      },
+      "checked_by": "explicit_source_matrix",
+      "supporting_source_types": [
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "location",
+      "claim": "东海南部",
+      "supporting_sources": [
+        "N010",
+        "R046"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "复核明示地点和PDF包含关系：{'N010': '东海南部', 'O045': '东海', 'R046': '东海南部'}；同方向不等于同一具体区域，未验证坐标不作为反证",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "location",
+        "claim": "东海南部",
+        "supporting_sources": [
+          "N010",
+          "R046"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与雷达均精确指向“东海南部”，舆论提及“东海方向”可兼容该具体区域，三源无冲突。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N010": {
+          "raw": "东海南部",
+          "region": "东海南部",
+          "direction": "东海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "东海南部"
+        },
+        "O045": {
+          "raw": "东海方向",
+          "region": "东海",
+          "direction": "东海",
+          "precision": "大范围",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false,
+          "quote": "在东海方向"
+        },
+        "R046": {
+          "raw": "东海南部",
+          "region": "东海南部",
+          "direction": "东海",
+          "precision": "具体区域",
+          "mapping": "PDF第2页活动区域表",
+          "transit": false
+        }
+      },
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "time",
+      "claim": "共同观测/报道时段 14:28—16:53（非完整活动起止断言）",
+      "supporting_sources": [
+        "N010",
+        "R046"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "分别核验报道区间、观测覆盖与明示开始/结束；区间包含不构成起点冲突，首末雷达样本不等于完整活动边界；原始时段：{'N010': {'start': '14:28', 'end': '16:53', 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'O045': {'start': None, 'end': None, 'interval': 'reported_activity', 'start_asserted': False, 'end_asserted': False}, 'R046': {'start': '14:28', 'end': '16:53', 'interval': 'observation_coverage', 'start_asserted': False, 'end_asserted': False}}",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "time",
+        "claim": "2025-05-01 14:28-16:53",
+        "supporting_sources": [
+          "N010",
+          "R046"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "新闻与雷达起止时间完全一致（14:28-16:53），舆论仅提及日期，不构成冲突。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N010": {
+          "start": "14:28",
+          "end": "16:53",
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "O045": {
+          "start": null,
+          "end": null,
+          "interval": "reported_activity",
+          "start_asserted": false,
+          "end_asserted": false
+        },
+        "R046": {
+          "start": "14:28",
+          "end": "16:53",
+          "interval": "observation_coverage",
+          "start_asserted": false,
+          "end_asserted": false
+        }
+      },
+      "asserted_boundaries": {
+        "start": {},
+        "end": {}
+      },
+      "supporting_source_types": [
+        "news",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "mission",
+      "claim": "实弹射击训练",
+      "supporting_sources": [
+        "N010",
+        "O045",
+        "R046"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "原文明示任务：{'N010': ['实弹射击训练'], 'O045': ['实弹射击训练'], 'R046': ['实弹射击训练']}；不同明确任务尚无包含/同时执行证据，不自动拼接或多数表决",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "mission",
+        "claim": "实弹射击训练",
+        "supporting_sources": [
+          "N010",
+          "O045",
+          "R046"
+        ],
+        "conflicting_sources": [],
+        "status": "supported",
+        "reason": "三源均明确描述为“实弹射击训练”，无冲突。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N010": [
+          "实弹射击训练"
+        ],
+        "O045": [
+          "实弹射击训练"
+        ],
+        "R046": [
+          "实弹射击训练"
+        ]
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion",
+        "radar"
+      ]
+    },
+    {
+      "platform_index": -1,
+      "field": "movement",
+      "claim": "活动",
+      "supporting_sources": [
+        "N010",
+        "O045"
+      ],
+      "conflicting_sources": [],
+      "status": "supported",
+      "reason": "活动可兼容进出过程，但活动描述不能支持具体进入/离开；明示进出细节保留在source_values",
+      "model_proposal": {
+        "platform_index": -1,
+        "field": "movement",
+        "claim": "离开任务海域",
+        "supporting_sources": [
+          "N010"
+        ],
+        "conflicting_sources": [],
+        "status": "insufficient",
+        "reason": "仅新闻提及“离开该任务海域”，舆论称“活动”，雷达未说明，缺乏多源印证具体移动状态。"
+      },
+      "checked_by": "literal_assertion_matrix",
+      "source_values": {
+        "N010": "离开",
+        "O045": "活动",
+        "R046": "未说明"
+      },
+      "supporting_source_types": [
+        "news",
+        "opinion"
+      ]
+    }
+  ],
+  "radar_row_count": 12,
+  "direction": "东海",
+  "report_eligible": true,
+  "directory": "可信事件/N010_日本秋月级护卫舰在东海南部完成实弹射击训练后离开"
+}
