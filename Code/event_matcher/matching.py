@@ -270,7 +270,7 @@ def review_unmatched_opinions(client, groups, news_items, opinions, radars, alig
                 hint=counterevidence_hint(news,byid[edge["candidate_id"]],[radar_byid[rid] for rid in group["radar_ids"]],news_items,opinions)
                 if hint:
                     edge["model_proposal"]=dict(edge)
-                    edge.update({"relation":"uncertain","confidence":.65,"association_check":hint,
+                    edge.update({"relation":"uncertain","confidence":.65,"platform_indices":[0],"association_check":hint,
                                  "reason":edge["reason"]+"；程序保留待复核关联：同日双方唯一的型号/国籍/明确任务组合且新闻与雷达时段吻合；地点反证保留，不能据此判可信"})
             edge["reviewed_after_unmatched"]=True
             edges[edge["candidate_id"]]=edge
@@ -279,6 +279,33 @@ def review_unmatched_opinions(client, groups, news_items, opinions, radars, alig
         recalls[news["id"]]["unmatched_review"]=True
         print(f"[counter-review] {news['id']} remaining opinions={len(compatible)}",flush=True)
     return allocate(news_items,opinions,radars,alignments,recalls)
+
+
+def reconcile_model_issues(verification):
+    """Keep model proposals, but recheck factual issues against the audited source matrix."""
+    import re
+    aliases={"quantity":["quantity","数量","架数","架次","艘数"],
+             "country":["country","国籍","国家"],"platform":["platform","平台身份","型号"],
+             "location":["location","地点","海域","区域","位置"],
+             "time":["time","时间","时刻","起点","终点"],
+             "mission":["mission","任务","科目"],"movement":["movement","进出","进入","离开"]}
+    proposed=list(verification.get("unresolved_issues",[]))
+    remaining=[];reconciled=[]
+    for issue in proposed:
+        fields={field for field,words in aliases.items() if any(word in issue for word in words)}
+        facts=[f for f in verification["facts"] if f["field"] in fields]
+        if any(f["status"]=="conflict" for f in facts):
+            reconciled.append({"model_issue":issue,"fields":sorted(fields),
+                               "decision":"字段反证由程序事实矩阵保留；不采用模型多数票消解或重复自由文本说明"})
+        elif re.search(r"缺失|未提|未说明|未明确|仅由|只有|不足|单一来源|仅一类",issue) and facts and all(
+                f["status"]=="supported" and len(f.get("supporting_source_types",[]))>=2 for f in facts):
+            reconciled.append({"model_issue":issue,"fields":sorted(fields),
+                               "decision":"事实已获至少两类来源印证；某一来源缺字段不再作为事件阻断原因"})
+        else:
+            remaining.append(issue)
+    verification["model_unresolved_issues"]=proposed
+    verification["unresolved_issues"]=remaining
+    verification["reconciled_model_issues"]=reconciled
 
 
 def apply_guards(group, news, opinion, radars, verification):
@@ -418,8 +445,9 @@ def apply_guards(group, news, opinion, radars, verification):
         country_fact=next(f for f in verification["facts"] if f["platform_index"]==i and f["field"]=="country")
         if p.get("country") and (i,"country") not in supported and country_fact["status"]!="conflict":
             blockers.append(f"平台{i} {p['name']}国籍未获得两类来源印证")
-    if (-1,"location") not in supported:
+    if (-1,"location") not in supported and not any(f["field"]=="location" and f["status"]=="conflict" for f in verification["facts"]):
         blockers.append("活动地点未获得两类来源在明确精度上的印证")
+    reconcile_model_issues(verification)
     blockers += verification["unresolved_issues"]
     group["verification"] = verification
     group["reasons"] = list(dict.fromkeys(blockers))

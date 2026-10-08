@@ -12,7 +12,7 @@ from event_matcher.export import export_results
 from event_matcher.geography import location_relation, normalize_location
 from event_matcher.literal_facts import check_common_facts, check_location_fact, repair_source_assertions
 from event_matcher.quality import audit_quality
-from event_matcher.matching import allocate, apply_guards, assignment_competitors, bundle_radar_evidence, counterevidence_hint, expanded_candidates, review_unmatched_opinions
+from event_matcher.matching import allocate, apply_guards, assignment_competitors, bundle_radar_evidence, counterevidence_hint, expanded_candidates, linked_platforms, reconcile_model_issues, review_unmatched_opinions
 
 
 class MatchingTests(unittest.TestCase):
@@ -155,6 +155,35 @@ class MatchingTests(unittest.TestCase):
         hint=counterevidence_hint(news,opinion,[radar],[news],[opinion])
         self.assertIsNotNone(hint)
         self.assertEqual(hint["location_relation"],"different_named_regions")
+
+    def test_provisional_counter_pair_restores_literal_platform_scope(self):
+        def source(sid,kind,place,start,end):
+            return {"id":sid,"kind":kind,"platforms":[{"name":"E-2C预警机","country":"法国","quantity":2}],
+                    "location":normalize_location(place),"mission":{"value":"空中警戒"},"start_time":start,"end_time":end}
+        news=source("N001","news","仁爱礁附近海域","05:01","07:26")
+        opinion=source("O001","opinion","赤尾屿海域",None,None)
+        radar=source("R001","radar",None,"05:01","07:26")
+        opedge={"candidate_id":"O001","platform_indices":[],"relation":"different","confidence":.95,"reason":"地点不同"}
+        alignment={"opinion_edges":[opedge],"radar_edges":[{"candidate_id":"R001","platform_indices":[0],
+                   "relation":"same","confidence":.95,"reason":"型号和时段吻合"}],"ambiguity":""}
+        recalls={"N001":{"opinion":[{"id":"O001","score":4}],"radar":[{"id":"R001","score":4}]}}
+        class ReviewClient:
+            def chat(self,role,prompt,payload,schema,validate,**kwargs):
+                result=schema.model_validate({"opinion_edges":[opedge],"radar_edges":[],"ambiguity":""})
+                validate(result)
+                return result
+        alignments={"N001":alignment}
+        groups=allocate([news],[opinion],[radar],alignments,recalls)
+        groups=review_unmatched_opinions(ReviewClient(),groups,[news],[opinion],[radar],alignments,recalls)
+        self.assertEqual(groups[0]["alignment"]["opinion_edges"][0]["platform_indices"],[0])
+        self.assertEqual({sid for sid,p in linked_platforms(groups[0],news,opinion,[radar],0)}, {"N001","O001","R001"})
+
+    def test_model_omission_is_rechecked_but_unknown_association_doubt_is_kept(self):
+        verify={"unresolved_issues":["数量来源缺失：新闻没写架数，仅由舆论和雷达支持","归属仍有无法排除的另一活动"],
+                "facts":[{"field":"quantity","status":"supported","supporting_source_types":["opinion","radar"]}]}
+        reconcile_model_issues(verify)
+        self.assertEqual(verify["unresolved_issues"],["归属仍有无法排除的另一活动"])
+        self.assertEqual(len(verify["model_unresolved_issues"]),2)
 
     def test_geography_precision_and_transit(self):
         detailed=normalize_location("永暑礁附近")
@@ -343,10 +372,12 @@ class MatchingTests(unittest.TestCase):
         group={"opinion_id":"O001","radar_ids":["R001"],"radar_slots":{"0":"R001"},"alignment":{"opinion_edges":[edge("O001")],"radar_edges":[edge("R001")]}}
         facts=[{"platform_index":i,"field":field,"claim":claim,"supporting_sources":["N001","O001"],"conflicting_sources":[],"status":"supported","reason":"两源一致"}
                for i,field,claim in [(0,"platform","903A"),(0,"country","中国"),(0,"quantity","1艘"),(-1,"location","万安滩海域")]]
-        verify={"same_event":True,"facts":facts,"unresolved_issues":[],"explanation":"模型误按多数票"}
+        verify={"same_event":True,"facts":facts,"unresolved_issues":["数量冲突已经由新闻和舆论消解"],"explanation":"模型误按多数票"}
         result=apply_guards(group,news,opinion,[radar],verify)
         self.assertEqual(result["status"],"不可信事件")
         self.assertTrue(any("quantity" in reason for reason in result["reasons"]))
+        self.assertFalse(any("已经" in reason for reason in result["reasons"]))
+        self.assertEqual(result["verification"]["model_unresolved_issues"],["数量冲突已经由新闻和舆论消解"])
 
     def test_export_roundtrip_preserves_all_text_bytes_and_radar_fields(self):
         day=Path(__file__).resolve().parents[1]/"Datas"/"数据"/"2025.5.1"
