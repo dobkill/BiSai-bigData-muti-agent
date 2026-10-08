@@ -13,7 +13,16 @@ def dump(path: Path, obj):
     path.parent.mkdir(parents=True, exist_ok=True)
     temp = path.with_suffix(path.suffix + ".tmp")
     temp.write_text(json.dumps(obj, ensure_ascii=False, indent=2), encoding="utf-8")
-    temp.replace(path)
+    for attempt in range(6):
+        try:
+            temp.replace(path)
+            break
+        except PermissionError:
+            # Windows file watchers/scanners may briefly deny replacing an
+            # existing checkpoint. Keep the previous file intact while retrying.
+            if attempt==5:
+                raise
+            time.sleep(min(.05*2**attempt,.8))
 
 
 class OllamaClient:

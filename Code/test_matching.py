@@ -2,6 +2,7 @@ import itertools
 import random
 import tempfile
 import unittest
+from unittest.mock import patch
 from pathlib import Path
 from types import SimpleNamespace
 
@@ -16,6 +17,36 @@ from event_matcher.matching import allocate, apply_guards, assignment_competitor
 
 
 class MatchingTests(unittest.TestCase):
+    def test_atomic_checkpoint_retries_transient_windows_file_lock(self):
+        from event_matcher.ollama_client import dump
+        original_replace=Path.replace
+        attempts=[]
+        with tempfile.TemporaryDirectory(prefix="matching-checkpoint-") as tmp:
+            target=Path(tmp)/"progress.json"
+            target.write_text('{"old":true}',encoding="utf-8")
+            def transient_replace(source,destination):
+                attempts.append(source)
+                if len(attempts)<3:
+                    self.assertEqual(target.read_text(encoding="utf-8"),'{"old":true}')
+                    raise PermissionError("temporary file watcher lock")
+                return original_replace(source,destination)
+            with patch.object(Path,"replace",transient_replace),patch("event_matcher.ollama_client.time.sleep"):
+                dump(target,{"complete":True})
+            self.assertEqual(len(attempts),3)
+            self.assertIn('"complete": true',target.read_text(encoding="utf-8"))
+            self.assertFalse(target.with_suffix(".json.tmp").exists())
+
+    def test_atomic_checkpoint_does_not_hide_persistent_permission_error(self):
+        from event_matcher.ollama_client import dump
+        with tempfile.TemporaryDirectory(prefix="matching-checkpoint-") as tmp:
+            target=Path(tmp)/"progress.json"
+            target.write_text('{"old":true}',encoding="utf-8")
+            with patch.object(Path,"replace",side_effect=PermissionError("persistent permission error")) as replace,patch("event_matcher.ollama_client.time.sleep"):
+                with self.assertRaises(PermissionError):
+                    dump(target,{"complete":True})
+            self.assertEqual(replace.call_count,6)
+            self.assertEqual(target.read_text(encoding="utf-8"),'{"old":true}')
+
     def test_news_only_group_cannot_borrow_rejected_candidates_as_counterevidence(self):
         news={"id":"N001","kind":"news","text":"正文：意大利1艘柯林斯级常规潜艇在长江口外海持续活动。",
               "platforms":[{"name":"柯林斯级常规潜艇","country":"意大利","quantity":1}],
