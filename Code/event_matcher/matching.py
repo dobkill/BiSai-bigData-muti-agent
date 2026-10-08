@@ -9,6 +9,7 @@ from .data import compact, country, minutes, platform_similarity, public_view, t
 from .geography import location_relation, normalize_location
 from .ollama_client import dump
 from .literal_facts import check_common_facts, check_location_fact, literal_missions
+from .concurrency import ordered_map
 
 
 def embedding_text(source):
@@ -555,26 +556,30 @@ def apply_guards(group, news, opinion, radars, verification, radar_candidates=No
     return group
 
 
-def match(client, texts, radars, output):
+def match(client, texts, radars, output, prepared_index=None):
     news_items = [s for s in texts if s["kind"]=="news"]
     opinions = [s for s in texts if s["kind"]=="opinion"]
     sources = texts + radars
     byid = {s["id"]:s for s in sources}
     positions = {s["id"]:i for i,s in enumerate(sources)}
-    similarities, vector_manifest = build_index(client, sources, output)
+    similarities, vector_manifest = prepared_index if prepared_index is not None else build_index(client, sources, output)
     print(f"[index] {len(sources)} BGE-M3 vectors generated and stored", flush=True)
     alignments, recalls = {}, {}
-    for j,news in enumerate(news_items,1):
+    def associate(news):
         op, oscores = recall(news,opinions,similarities,positions)
         ra, rscores = recall(news,radars,similarities,positions)
-        recalls[news["id"]] = {"opinion":oscores,"radar":rscores}
-        alignments[news["id"]] = align_source(client,news,op,ra,recalls[news["id"]])
+        candidate_info = {"opinion":oscores,"radar":rscores}
+        answer = align_source(client,news,op,ra,candidate_info)
+        return news["id"],candidate_info,answer,len(op),len(ra)
+    for j,(nid,candidate_info,answer,op_count,radar_count) in enumerate(ordered_map(client, associate, news_items),1):
+        recalls[nid] = candidate_info
+        alignments[nid] = answer
         dump(output / "运行记录" / "关联进度.json", {"alignments":alignments,"recalls":recalls})
-        print(f"[align] {j}/{len(news_items)} {news['id']} candidates opinion={len(op)}, radar={len(ra)}", flush=True)
+        print(f"[align] {j}/{len(news_items)} {nid} candidates opinion={op_count}, radar={radar_count}", flush=True)
     groups = allocate(news_items,opinions,radars,alignments,recalls)
     # Missing-source/uncertain groups receive one expanded recall, not an unbounded agent loop.
     review_ids = [g["id"] for g in groups if not g["opinion_id"] or any(r is None for r in g["radar_slots"].values())]
-    for nid in review_ids:
+    def expanded_review(nid):
         news = byid[nid]
         op, oscores = recall(news,opinions,similarities,positions,full_scores=True)
         ra, rscores = recall(news,radars,similarities,positions,full_scores=True)
@@ -585,6 +590,8 @@ def match(client, texts, radars, output):
         if any(r is None for r in g["radar_slots"].values()):
             ra = expanded_candidates(news,radars,rscores)
         review = align_source(client,news,op,ra,{"review": "缺源扩大检索，保留反证，不强行凑组", **recalls[nid]})
+        return nid, review
+    for nid,review in ordered_map(client, expanded_review, review_ids):
         alignments[nid] = review
         recalls[nid]["expanded_review"] = True
         print(f"[review] {nid} expanded recall", flush=True)
@@ -592,13 +599,14 @@ def match(client, texts, radars, output):
         groups = allocate(news_items,opinions,radars,alignments,recalls)
     groups=review_unmatched_opinions(client,groups,news_items,opinions,radars,alignments,recalls)
     dump(output / "运行记录" / "全局分配.json", groups)
-    for j,group in enumerate(groups,1):
+    def verify(group):
         news = byid[group["news_id"]]
         opinion = byid.get(group["opinion_id"])
         selected_radars = [byid[rid] for rid in group["radar_ids"]]
         sibling_ids = {sid for radar in selected_radars for sid in radar["sibling_ids"]} - set(group["radar_ids"])
         verification = verify_group(client,news,opinion,selected_radars,group["alignment"],[byid[s] for s in sorted(sibling_ids)])
-        apply_guards(group,news,opinion,selected_radars,verification,radar_candidates=radars)
+        return apply_guards(group,news,opinion,selected_radars,verification,radar_candidates=radars)
+    for j,group in enumerate(ordered_map(client, verify, groups),1):
         dump(output / "运行记录" / "核验进度.json", groups[:j])
         print(f"[verify] {j}/{len(groups)} {group['id']} {group['status']} radar_rows={group['radar_row_count']}", flush=True)
     return groups, vector_manifest

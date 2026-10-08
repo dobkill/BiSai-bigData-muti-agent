@@ -80,9 +80,9 @@ def clock_spans(raw):
 
 
 def extract_sources(client, sources, checkpoint):
-    results = []
-    for offset in range(0, len(sources), 4):
-        batch = sources[offset:offset+4]
+    from .concurrency import ordered_map
+    def extract_batch(batch):
+        extracted = []
         byid = {s["id"]: s for s in batch}
         repairs = {s["id"]: [] for s in batch}
         def validate(result):
@@ -187,9 +187,14 @@ def extract_sources(client, sources, checkpoint):
             source["location"] = location
             source["start_time"] = None if not item.start_time else f"{minutes(item.start_time)//60:02}:{minutes(item.start_time)%60:02}"
             source["end_time"] = None if not item.end_time else f"{minutes(item.end_time)//60:02}:{minutes(item.end_time)%60:02}"
-            results.append(repair_source_assertions(source))
+            extracted.append(repair_source_assertions(source))
+        return extracted
+    results = []
+    batches = [sources[offset:offset+4] for offset in range(0, len(sources), 4)]
+    for extracted in ordered_map(client, extract_batch, batches):
+        results.extend(extracted)
         checkpoint(results)
-        print(f"[extract] {min(offset+4,len(sources))}/{len(sources)}", flush=True)
+        print(f"[extract] {len(results)}/{len(sources)}", flush=True)
     return sorted(results, key=lambda s:s["id"])
 
 

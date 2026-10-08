@@ -8,7 +8,7 @@ from pathlib import Path
 def code_provenance():
     code=Path(__file__).resolve().parents[1]
     root=code.parent
-    paths=sorted([*code.glob("*.py"),*code.joinpath("event_matcher").glob("*.py"),code/"requirements.txt"])
+    paths=sorted([*code.glob("*.py"),*code.glob("*.ps1"),*code.joinpath("event_matcher").glob("*.py"),code/"requirements.txt"])
     files={p.relative_to(root).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in paths if p.exists()}
     digest=hashlib.sha256(json.dumps(files,sort_keys=True).encode()).hexdigest()
     try:

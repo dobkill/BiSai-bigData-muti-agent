@@ -249,6 +249,7 @@ def export_results(groups, texts, radars, radar_manifest, output, args, vector_m
               "matched_radar_batches":len({(byid[rid]['sheet'],byid[rid]['batch']) for rid in used_radar}),
               "matched_radar_rows":sum(g["radar_row_count"] for g in groups),"report_eligible":sum(g["report_eligible"] for g in groups),
               "http_calls_this_run":client.calls,"cache_hits_this_run":client.hits,"vector_index":vector_manifest,
+              "inference_runtime":client.runtime_info() if hasattr(client,"runtime_info") else {},
               "integrity":integrity,"accuracy":"未进行人工真值评估，分类为模型初步结果",
               "quality":quality,
               "spatial_limit":"飞机坐标方向仅辅助召回；缺乏官方边界时不作为精确地点的独立核验证据"}

@@ -43,3 +43,23 @@ python -X utf8 Code/test_matching.py
 ```
 
 模型分类没有官方真值准确率；不可信包括缺源、归属歧义、异常与冲突。日报标记单独按核心海域检查，本程序不生成官方提交日报。
+
+## 并行推理与全量批次
+
+`--workers` 控制客户端并发，默认4；原文校验、全局分配、检查点和导出保持确定的输入顺序。每个线程使用独立HTTP会话，请求日志和计数加锁；失败只停止本次流水线并保存已完成缓存。`--cache-run 新名称` 使用空的独立缓存重新推理，指定同一个名称可恢复本次运行。上下文变化和文本后端变化不会混用旧响应。
+
+Ollama 0.40.0 的调度器对 `qwen35` 强制1路，单独设置 `OLLAMA_NUM_PARALLEL` 不能让当前Qwen3.5真正并发。参见 [Ollama调度器源码](https://github.com/ollama/ollama/blob/main/server/sched.go)。本机通过安装包自带的 `llama-server.exe` 加载同一GGUF权重，使用文本接口并行；BGE-M3嵌入继续由Ollama提供。没有下载或替换模型。启动器显式使用CUDA 12后端、FP16缓存，每路上下文12288，禁用上下文截断。请先实测显存和速度再提高并发。
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File Code/start_llama_parallel.ps1 -Parallel 12 -LogDirectory 'Datas/匹配-初赛/运行记录/并行服务'
+python -u -X utf8 -B Code/match_batch.py --chat-url http://127.0.0.1:11436 --ollama-url http://127.0.0.1:11434 --workers 12 --cache-run parallel_20261008 --dates 2025.5.10 2025.5.18 2025.5.30 2025.6.9 2025.6.17 2025.6.29 2025.7.9 2025.7.17
+```
+
+批次依次执行所有日期的抽取、所有日期的向量计算、逐日关联核验和导出；每阶段内部并发推理。启动前要求代码已提交，运行过程中再次核对Git提交和代码哈希，避免多个日期混用版本。原始输入逐文件校验SHA-256，旧输出保留在历史运行目录，新模型原始响应单独保留。`manifest.json` 同时记录文本后端、服务地址、上下文、并发、缓存路径和实际同时发出的HTTP请求数。客户端并发数与服务端实际生成槽位须分别核查。
+
+2026-10-08 在V100 16GB上实测：同32篇材料串行134.17秒、8路56.59秒（2.37倍）；另取同48篇材料，4/8/12路为98.43/93.25/86.88秒，12路显存约14.6GB。均从空响应缓存推理并通过完整抽取校验。提高并发会增加单请求延迟，实测吞吐不等于并发倍数；本批选择12路。数据见输出运行记录中的并行服务benchmark JSON。
+
+```powershell
+python -X utf8 -B Code/test_matching.py
+python -X utf8 -B Code/test_concurrency.py
+```
