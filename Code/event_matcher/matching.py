@@ -182,6 +182,23 @@ def less_relevant_sibling(selected,rival,assigned):
             "reason":"两类文本的方向一致，仅使用未验证坐标排序同批候选；其他目标分支完整保留，不以批号相同制造本事件竞争或地点反证"}
 
 
+def temporally_distinct_rival(selected,rival,assigned):
+    """Resolve candidate competition using the linked report's activity interval."""
+    if platform_similarity(selected["platforms"][0]["name"],rival["platforms"][0]["name"])<.9 or country(selected["platforms"][0].get("country"))!=country(rival["platforms"][0].get("country")):
+        return None
+    if time_overlap(selected,rival)!=0:
+        return None
+    texts=[s for s in assigned if s["kind"] in {"news","opinion"} and (s.get("start_time") or s.get("end_time"))]
+    if not texts or any(not s.get("start_time") or not s.get("end_time") for s in texts):
+        return None
+    if any((time_overlap(s,selected) or 0)<.8 or time_overlap(s,rival)!=0 for s in texts):
+        return None
+    return {"candidate_id":rival["id"],"time_sources":[s["id"] for s in texts],
+            "selected_interval":[selected["start_time"],selected["end_time"]],
+            "other_interval":[rival["start_time"],rival["end_time"]],
+            "reason":"已关联文本的明确时段与已选雷达吻合，与另一候选时段完全不重叠；另一活动原始记录保留，不能仅凭同型号和同一天制造本活动竞争；不消解任何已分配来源的事实反证"}
+
+
 def allocate(news_items, opinions, radars, alignments, recalls):
     op_edges = {n["id"]: {e["candidate_id"]:e for e in alignments[n["id"]]["opinion_edges"]} for n in news_items}
     opweights = []
@@ -495,10 +512,15 @@ def apply_guards(group, news, opinion, radars, verification, radar_candidates=No
                 # A bundled branch is retained evidence of the same batch, not an alternative event.
                 continue
             if kind=="radar":
-                preferred=less_relevant_sibling(next(r for r in radars if r["id"]==edge["candidate_id"]),
-                    radar_byid[rival["candidate_id"]],assigned) if rival["candidate_id"] in radar_byid else None
+                selected=next(r for r in radars if r["id"]==edge["candidate_id"])
+                alternative=radar_byid.get(rival["candidate_id"])
+                preferred=less_relevant_sibling(selected,alternative,assigned) if alternative else None
                 if preferred:
                     group.setdefault("resolved_branch_selection",[]).append({"selected":edge["candidate_id"],**preferred})
+                    continue
+                temporal=temporally_distinct_rival(selected,alternative,assigned) if alternative else None
+                if temporal:
+                    group.setdefault("resolved_candidate_selection",[]).append({"selected":edge["candidate_id"],**temporal})
                     continue
             proof=next((d for d in diagnostics if d["candidate_id"]==rival["candidate_id"] and d["current_owner"]
                         and d["current_owner"]!=group.get("id") and d["weight_margin"]>=8),None)

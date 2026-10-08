@@ -13,7 +13,7 @@ from event_matcher.export import export_results
 from event_matcher.geography import location_relation, normalize_location
 from event_matcher.literal_facts import check_common_facts, check_location_fact, repair_source_assertions
 from event_matcher.quality import audit_quality
-from event_matcher.matching import allocate, apply_guards, assignment_competitors, bundle_radar_evidence, counterevidence_hint, expanded_candidates, less_relevant_sibling, linked_platforms, reconcile_model_issues, review_unmatched_opinions
+from event_matcher.matching import allocate, apply_guards, assignment_competitors, bundle_radar_evidence, counterevidence_hint, expanded_candidates, less_relevant_sibling, linked_platforms, reconcile_model_issues, review_unmatched_opinions, temporally_distinct_rival
 
 
 class MatchingTests(unittest.TestCase):
@@ -102,6 +102,29 @@ class MatchingTests(unittest.TestCase):
                 "unresolved_issues":["数量仅雷达明确，新闻与舆论缺失具体数值。","只有雷达明确数量，活动归属仍有歧义。"]}
         reconcile_model_issues(verify)
         self.assertEqual(verify["unresolved_issues"],["只有雷达明确数量，活动归属仍有歧义。"])
+
+    def test_distinct_radar_activity_requires_agreeing_text_intervals(self):
+        def source(sid,kind,start=None,end=None):
+            return {"id":sid,"kind":kind,"platforms":[{"name":"RC-135W电子侦察机","country":"英国"}],
+                    "start_time":start,"end_time":end}
+        selected=source("R001","radar","14:55","16:20")
+        rival=source("R002","radar","11:21","13:46")
+        news=source("N001","news")
+        opinion=source("O001","opinion","14:55","16:20")
+        proof=temporally_distinct_rival(selected,rival,[news,opinion,selected])
+        self.assertEqual(proof["time_sources"],["O001"])
+        self.assertEqual(proof["candidate_id"],"R002")
+        self.assertIsNone(temporally_distinct_rival(selected,rival,[news,selected]))
+        news["start_time"],news["end_time"]="11:21","13:46"
+        self.assertIsNone(temporally_distinct_rival(selected,rival,[news,opinion,selected]))
+        news["end_time"]=None
+        self.assertIsNone(temporally_distinct_rival(selected,rival,[news,opinion,selected]))
+        news["start_time"]=None
+        rival["start_time"],rival["end_time"]="15:00","16:10"
+        self.assertIsNone(temporally_distinct_rival(selected,rival,[news,opinion,selected]))
+        rival["start_time"],rival["end_time"]="11:21","13:46"
+        opinion["start_time"]="10:00"
+        self.assertIsNone(temporally_distinct_rival(selected,rival,[news,opinion,selected]))
 
     def test_literal_location_recovery_stays_inside_original_continuous_quote(self):
         source={"id":"N001","kind":"news","text":"正文：台湾E-2K预警机在连云港外海围绕任务海域组织预警指挥。"}
