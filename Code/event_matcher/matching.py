@@ -365,20 +365,21 @@ def reconcile_model_issues(verification):
              "country":["country","国籍","国家"],"platform":["platform","平台身份","型号"],
              "location":["location","地点","海域","区域","位置"],
              "time":["time","时间","时刻","起点","终点"],
-             "mission":["mission","任务","科目"],"movement":["movement","进出","进入","离开"]}
+             "mission":["mission","任务","科目"],"movement":["movement","运动状态","进出","进入","离开"]}
     proposed=list(verification.get("unresolved_issues",[]))
     remaining=[];reconciled=[]
     for issue in proposed:
         fields={field for field,words in aliases.items() if any(word in issue for word in words)}
         facts=[f for f in verification["facts"] if f["field"] in fields]
+        association_doubt=re.search(r"关联|归属|同一事件|同一活动|同一班次|同一架|同一艘|另一活动|歧义",issue)
         if any(f["status"]=="conflict" for f in facts):
             reconciled.append({"model_issue":issue,"fields":sorted(fields),
                                "decision":"字段反证由程序事实矩阵保留；不采用模型多数票消解或重复自由文本说明"})
-        elif re.search(r"缺失|未提|未说明|未明确|仅由|只有|不足|单一来源|仅一类",issue) and facts and all(
+        elif not association_doubt and re.search(r"缺失|缺乏|未提|未说明|未明确|未能[^；。]*支持|未获[^；。]*印证|仅由|只有|不足|单一来源|仅一类",issue) and facts and all(
                 f["status"]=="supported" and len(f.get("supporting_source_types",[]))>=2 for f in facts):
             reconciled.append({"model_issue":issue,"fields":sorted(fields),
                                "decision":"事实已获至少两类来源印证；某一来源缺字段不再作为事件阻断原因"})
-        elif fields=={"quantity"} and facts and all(f["status"]=="insufficient" for f in facts) and re.search(r"缺失|未提|仅|不足|未明确",issue) and not re.search(r"关联|归属|同一事件|另一活动|歧义",issue):
+        elif fields=={"quantity"} and facts and all(f["status"]=="insufficient" for f in facts) and re.search(r"缺失|未提|仅|不足|未明确",issue) and not association_doubt:
             reconciled.append({"model_issue":issue,"fields":["quantity"],
                                "decision":"数量继续列为待核实且不纳入已验证事实；仅数量未印证不阻断已关联的活动"})
         else:

@@ -103,6 +103,23 @@ class MatchingTests(unittest.TestCase):
         reconcile_model_issues(verify)
         self.assertEqual(verify["unresolved_issues"],["只有雷达明确数量，活动归属仍有歧义。"])
 
+    def test_missing_specific_detail_does_not_block_supported_common_activity(self):
+        issues=["地点精度：舆论和雷达未能直接支持东海油气田海域这一具体子区域，仅能支持至东海大范围。",
+                "运动状态：缺乏第二类来源对进入这一具体动作的独立文本印证。",
+                "时间缺乏精确边界，活动归属仍有歧义。"]
+        detail={"field":"location_detail","status":"insufficient","supporting_source_types":["news"]}
+        verify={"facts":[{"field":field,"status":"supported","supporting_source_types":["news","opinion"]}
+                          for field in ["location","movement","time"]]+[detail],"unresolved_issues":list(issues)}
+        reconcile_model_issues(verify)
+        self.assertEqual(verify["unresolved_issues"],[issues[2]])
+        self.assertEqual(verify["model_unresolved_issues"],issues)
+        self.assertEqual(len(verify["reconciled_model_issues"]),2)
+        self.assertEqual(detail["status"],"insufficient")
+        verify["facts"][0]["status"]="insufficient"
+        verify["unresolved_issues"]=[issues[0]]
+        reconcile_model_issues(verify)
+        self.assertEqual(verify["unresolved_issues"],[issues[0]])
+
     def test_distinct_radar_activity_requires_agreeing_text_intervals(self):
         def source(sid,kind,start=None,end=None):
             return {"id":sid,"kind":kind,"platforms":[{"name":"RC-135W电子侦察机","country":"英国"}],
