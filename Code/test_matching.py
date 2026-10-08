@@ -16,6 +16,20 @@ from event_matcher.matching import allocate, apply_guards, assignment_competitor
 
 
 class MatchingTests(unittest.TestCase):
+    def test_named_sea_airspace_preserves_the_sea_name(self):
+        for name in ["菲律宾海","安达曼海","巴伦支海","阿拉伯海"]:
+            with self.subTest(name=name):
+                ocean=normalize_location(name)
+                airspace=normalize_location(name+"空域")
+                self.assertEqual(airspace["region"],name)
+                self.assertEqual(airspace["direction"],"其他")
+                self.assertEqual(location_relation(ocean,airspace),"same")
+
+    def test_sea_airspace_suffix_does_not_invent_a_sea_or_merge_other_places(self):
+        self.assertEqual(normalize_location("夏威夷附近海空域")["region"],"夏威夷附近")
+        self.assertEqual(location_relation(normalize_location("菲律宾海空域"),normalize_location("菲律宾")),"different_named_regions")
+        self.assertEqual(location_relation(normalize_location("白令海空域"),normalize_location("巴伦支海")),"different_named_regions")
+
     def test_extraction_reanchors_valid_quote_that_omits_field_qualifier(self):
         source={"id":"N001","kind":"news","text":"标题：护卫舰执行监视侦察\n正文：越南猎豹3.9级导弹护卫舰展开海上监视侦察行动。"}
         item={"source_id":"N001","platforms":[{"name":"猎豹3.9级导弹护卫舰","country":"越南","quantity":None,

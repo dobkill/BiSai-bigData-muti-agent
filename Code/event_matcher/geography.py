@@ -11,6 +11,9 @@ REGION_DIRECTION = {r: d for d, regions in REGIONS.items() for r in regions}
 ALIASES = {r.removesuffix("海域"): r for r in REGION_DIRECTION if r.endswith("海域")}
 ALIASES.update({"南海海域": "南海", "东海海域": "东海", "黄海海域": "黄海", "钓鱼岛附近海域": "钓鱼岛海域", "赤尾屿附近海域": "赤尾屿海域"})
 TRANSIT = set(REGIONS["其他"])
+# Preserve the final 海 of a named sea when only 空域 is appended. These names
+# remain Other; this is spelling normalization, not a new direction boundary.
+NAMED_SEAS = set("菲律宾海 鄂霍次克海 阿拉伯海 安达曼海 塔斯曼海 白令海 巴伦支海 日本海 红海".split())
 
 
 def normalize_location(raw: str | None) -> dict:
@@ -29,7 +32,10 @@ def normalize_location(raw: str | None) -> dict:
                 "precision": "大范围" if region in {"东海", "南海", "黄海"} else "具体区域",
                 "mapping": "PDF第2页活动区域表", "transit": region in TRANSIT}
     # Unlisted named regions are Other; missing is deliberately not Other.
-    region=re.sub(r"(?:相关海域|任务海域|海空域|海域|方向)$","",text) or text
+    if text.endswith("空域") and text[:-2] in NAMED_SEAS:
+        region=text[:-2]
+    else:
+        region=re.sub(r"(?:相关海域|任务海域|海空域|海域|方向)$","",text) or text
     return {"raw": raw, "region": region, "direction": "其他", "precision": "原文区域",
             "mapping": "PDF未列入三大核心海域的区域归其他", "transit": False}
 
