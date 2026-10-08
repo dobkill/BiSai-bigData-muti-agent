@@ -8,7 +8,7 @@ from .assignment import maximum_assignment
 from .data import compact, country, minutes, platform_similarity, public_view, time_overlap
 from .geography import location_relation, normalize_location
 from .ollama_client import dump
-from .literal_facts import check_common_facts, check_location_fact
+from .literal_facts import check_common_facts, check_location_fact, literal_missions
 
 
 def embedding_text(source):
@@ -144,13 +144,50 @@ def bundle_radar_evidence(groups,radars):
     return groups
 
 
+def opinion_radar_corroboration(opinion,edge,selected):
+    """Use facts absent from a vague news report to distinguish near-tied opinions."""
+    details=[]
+    for radar,i in selected:
+        if i not in edge["platform_indices"] or not any(platform_similarity(p["name"],radar["platforms"][0]["name"])>=.9 for p in opinion["platforms"]):
+            continue
+        overlap=time_overlap(opinion,radar)
+        missions=literal_missions(opinion);radar_missions=literal_missions(radar)
+        time_bonus=6*overlap if overlap is not None and overlap>=.8 else 0
+        mission_bonus=6 if len(missions)==len(radar_missions)==1 and set(missions)==set(radar_missions) else 0
+        if time_bonus or mission_bonus:
+            details.append({"opinion_id":opinion["id"],"radar_id":radar["id"],"platform_index":i,
+                            "time_overlap":overlap,"mission_agreement":bool(mission_bonus),
+                            "bonus":round(time_bonus+mission_bonus,5)})
+    return max((d["bonus"] for d in details),default=0),details
+
+
+def less_relevant_sibling(selected,rival,assigned):
+    """A spatial hint may rank batch branches; it is never a new factual vote."""
+    if selected["id"]==rival["id"] or radar_batch_key(selected)!=radar_batch_key(rival):
+        return None
+    if platform_similarity(selected["platforms"][0]["name"],rival["platforms"][0]["name"])<.9 or country(selected["platforms"][0].get("country"))!=country(rival["platforms"][0].get("country")):
+        return None
+    if set(literal_missions(selected))!=set(literal_missions(rival)) or (time_overlap(selected,rival) or 0)<.7:
+        return None
+    texts=[s for s in assigned if s["kind"] in {"news","opinion"} and s["location"].get("direction") in {"东海","南海","黄海"}]
+    directions={s["location"]["direction"] for s in texts}
+    if {s["kind"] for s in texts}!={"news","opinion"} or len(directions)!=1:
+        return None
+    selected_hint=set((selected.get("coordinate_hint") or {}).get("candidate_directions",[]))
+    rival_hint=set((rival.get("coordinate_hint") or {}).get("candidate_directions",[]))
+    if selected_hint!=directions or not rival_hint or rival_hint & directions:
+        return None
+    return {"candidate_id":rival["id"],"location_sources":[s["id"] for s in texts],
+            "selected_hint":sorted(selected_hint),"other_hint":sorted(rival_hint),
+            "reason":"两类文本的方向一致，仅使用未验证坐标排序同批候选；其他目标分支完整保留，不以批号相同制造本事件竞争或地点反证"}
+
+
 def allocate(news_items, opinions, radars, alignments, recalls):
     op_edges = {n["id"]: {e["candidate_id"]:e for e in alignments[n["id"]]["opinion_edges"]} for n in news_items}
     opweights = []
     for n in news_items:
         heur = {r["id"]:r["score"] for r in recalls[n["id"]]["opinion"]}
         opweights.append([edge_weight(op_edges[n["id"]].get(o["id"]), heur.get(o["id"],0)) for o in opinions] + [0]*len(news_items))
-    opa = maximum_assignment(opweights)
     slots = [(n, i) for n in news_items for i in range(len(n["platforms"]))]
     rw = []
     for n,i in slots:
@@ -158,11 +195,34 @@ def allocate(news_items, opinions, radars, alignments, recalls):
         heur = {r["id"]:r["score"] for r in recalls[n["id"]]["radar"]}
         rw.append([edge_weight(edges.get(r["id"]), heur.get(r["id"],0)) for r in radars] + [0]*len(slots))
     ra = maximum_assignment(rw)
+    selected={n["id"]:[] for n in news_items}
+    for j,(n,i) in enumerate(slots):
+        if ra[j]<len(radars) and rw[j][ra[j]]>0:
+            selected[n["id"]].append((radars[ra[j]],i))
+    joint_evidence={}
+    for j,n in enumerate(news_items):
+        if n.get("start_time") or n.get("end_time") or literal_missions(n):
+            continue
+        same=[e for e in op_edges[n["id"]].values() if e["relation"]=="same" and e["confidence"]>=.55]
+        best=max((e["confidence"] for e in same),default=0)
+        near={e["candidate_id"]:e for e in same if best-e["confidence"]<.08}
+        if len(near)<2:
+            continue
+        for k,opinion in enumerate(opinions):
+            if opinion["id"] not in near or opweights[j][k]<=0:
+                continue
+            bonus,details=opinion_radar_corroboration(opinion,near[opinion["id"]],selected[n["id"]])
+            opweights[j][k]+=bonus
+            if details:
+                joint_evidence.setdefault(n["id"],[]).extend(details)
+    opa = maximum_assignment(opweights)
     groups = [{"id": n["id"], "news_id": n["id"], "opinion_id": opinions[opa[j]]["id"] if opa[j] < len(opinions) and opweights[j][opa[j]]>0 else None,
                "radar_ids": [], "radar_slots": {}, "alignment": alignments[n["id"]], "candidates": recalls[n["id"]],
                "assignment_diagnostics":{"opinion":[],"radar":[]}}
               for j,n in enumerate(news_items)]
     byid = {g["id"]:g for g in groups}
+    for nid,details in joint_evidence.items():
+        byid[nid]["joint_assignment_evidence"]={"scope":"新闻缺少时段与任务时，以已选雷达与近分舆论的明示时段/任务协同分配；不消解任何明示反证","candidates":details}
     for j,group in enumerate(groups):
         if group["opinion_id"]:
             edge=op_edges[group["id"]][group["opinion_id"]]
@@ -301,6 +361,9 @@ def reconcile_model_issues(verification):
                 f["status"]=="supported" and len(f.get("supporting_source_types",[]))>=2 for f in facts):
             reconciled.append({"model_issue":issue,"fields":sorted(fields),
                                "decision":"事实已获至少两类来源印证；某一来源缺字段不再作为事件阻断原因"})
+        elif fields=={"quantity"} and facts and all(f["status"]=="insufficient" for f in facts) and re.search(r"缺失|未提|仅|不足|未明确",issue) and not re.search(r"关联|归属|同一事件|另一活动|歧义",issue):
+            reconciled.append({"model_issue":issue,"fields":["quantity"],
+                               "decision":"数量继续列为待核实且不纳入已验证事实；仅数量未印证不阻断已关联的活动"})
         else:
             remaining.append(issue)
     verification["model_unresolved_issues"]=proposed
@@ -308,8 +371,9 @@ def reconcile_model_issues(verification):
     verification["reconciled_model_issues"]=reconciled
 
 
-def apply_guards(group, news, opinion, radars, verification):
+def apply_guards(group, news, opinion, radars, verification, radar_candidates=None):
     assigned = [news] + ([opinion] if opinion else []) + radars
+    radar_byid={s["id"]:s for s in (radar_candidates or radars)}
     kinds = {s["id"]:s["kind"] for s in assigned}
     blockers = []
     if not opinion:
@@ -430,6 +494,12 @@ def apply_guards(group, news, opinion, radars, verification):
             if kind=="radar" and rival["candidate_id"] in group["radar_ids"]:
                 # A bundled branch is retained evidence of the same batch, not an alternative event.
                 continue
+            if kind=="radar":
+                preferred=less_relevant_sibling(next(r for r in radars if r["id"]==edge["candidate_id"]),
+                    radar_byid[rival["candidate_id"]],assigned) if rival["candidate_id"] in radar_byid else None
+                if preferred:
+                    group.setdefault("resolved_branch_selection",[]).append({"selected":edge["candidate_id"],**preferred})
+                    continue
             proof=next((d for d in diagnostics if d["candidate_id"]==rival["candidate_id"] and d["current_owner"]
                         and d["current_owner"]!=group.get("id") and d["weight_margin"]>=8),None)
             if proof:
@@ -505,7 +575,7 @@ def match(client, texts, radars, output):
         selected_radars = [byid[rid] for rid in group["radar_ids"]]
         sibling_ids = {sid for radar in selected_radars for sid in radar["sibling_ids"]} - set(group["radar_ids"])
         verification = verify_group(client,news,opinion,selected_radars,group["alignment"],[byid[s] for s in sorted(sibling_ids)])
-        apply_guards(group,news,opinion,selected_radars,verification)
+        apply_guards(group,news,opinion,selected_radars,verification,radar_candidates=radars)
         dump(output / "运行记录" / "核验进度.json", groups[:j])
         print(f"[verify] {j}/{len(groups)} {group['id']} {group['status']} radar_rows={group['radar_row_count']}", flush=True)
     return groups, vector_manifest

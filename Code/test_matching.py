@@ -13,10 +13,98 @@ from event_matcher.export import export_results
 from event_matcher.geography import location_relation, normalize_location
 from event_matcher.literal_facts import check_common_facts, check_location_fact, repair_source_assertions
 from event_matcher.quality import audit_quality
-from event_matcher.matching import allocate, apply_guards, assignment_competitors, bundle_radar_evidence, counterevidence_hint, expanded_candidates, linked_platforms, reconcile_model_issues, review_unmatched_opinions
+from event_matcher.matching import allocate, apply_guards, assignment_competitors, bundle_radar_evidence, counterevidence_hint, expanded_candidates, less_relevant_sibling, linked_platforms, reconcile_model_issues, review_unmatched_opinions
 
 
 class MatchingTests(unittest.TestCase):
+    def test_near_tied_opinions_follow_selected_radar_when_news_has_no_task_or_clock(self):
+        def source(sid,kind,place,mission=None,start=None,end=None,extra=False):
+            platforms=[{"name":"阿基坦级导弹护卫舰","country":"法国","quantity":1}]
+            if extra:
+                platforms.append({"name":"絮弗伦级攻击核潜艇","country":"法国","quantity":1})
+            return {"id":sid,"kind":kind,"platforms":platforms,"location":normalize_location(place),
+                    "mission":{"value":mission},"mission_values":[mission] if mission else [],
+                    "text":"正文：法国舰艇持续活动。","start_time":start,"end_time":end}
+        news=[source("N001","news","美济礁附近海域"),source("N002","news","中沙群岛海域",extra=True)]
+        opinions=[source("O001","opinion","南海","反潜巡逻","08:00","09:00"),
+                  source("O002","opinion","南海","远海训练","18:00","19:00")]
+        opinions[0]["text"]="正文：法国阿基坦级导弹护卫舰执行反潜巡逻。"
+        opinions[1]["text"]="正文：法国阿基坦级导弹护卫舰开展远海训练。"
+        radars=[source("R001","radar","美济礁附近海域","反潜巡逻","08:00","09:00"),
+                source("R002","radar","中沙群岛海域","远海训练","18:00","19:00"),
+                source("R003","radar","中沙群岛海域","远海训练","18:00","19:00")]
+        radars[2]["platforms"]=[news[1]["platforms"][1]]
+        def edge(sid,confidence=.85,index=0):
+            return {"candidate_id":sid,"platform_indices":[index],"relation":"same","confidence":confidence,"reason":"同型活动"}
+        alignments={"N001":{"opinion_edges":[edge("O001"),edge("O002")],"radar_edges":[edge("R001",.98),edge("R002",.8)],"ambiguity":""},
+                    "N002":{"opinion_edges":[edge("O001"),edge("O002")],"radar_edges":[edge("R002",.98),edge("R003",.98,1),edge("R001",.8)],"ambiguity":""}}
+        recalls={n["id"]:{"opinion":[{"id":"O001","score":5 if n["id"]=="N001" else 5.7},
+                                       {"id":"O002","score":5.7 if n["id"]=="N001" else 5}],"radar":[]} for n in news}
+        groups=allocate(news,opinions,radars,alignments,recalls)
+        self.assertEqual([g["opinion_id"] for g in groups],["O001","O002"])
+        self.assertEqual(groups[1]["radar_slots"],{"0":"R002","1":"R003"})
+        self.assertTrue(all(g["joint_assignment_evidence"] for g in groups))
+        self.assertTrue(all(g["assignment_diagnostics"]["opinion"][0]["weight_margin"]>=8 for g in groups))
+
+    def test_radar_corroboration_does_not_replace_explicit_news_task_with_majority(self):
+        def source(sid,kind,task):
+            return {"id":sid,"kind":kind,"platforms":[{"name":"F-15SG","country":"新加坡","quantity":2}],
+                    "location":normalize_location("孟加拉湾"),"mission":{"value":task},"mission_values":[task],
+                    "text":"正文：新加坡F-15SG执行"+task+"。","start_time":None,"end_time":None}
+        news=source("N001","news","战备警巡")
+        opinions=[source("O001","opinion","战备警巡"),source("O002","opinion","对海突击训练")]
+        radar=source("R001","radar","对海突击训练")
+        edge=lambda sid,c:{"candidate_id":sid,"platform_indices":[0],"relation":"same","confidence":c,"reason":"关联候选"}
+        alignments={"N001":{"opinion_edges":[edge("O001",.95),edge("O002",.94)],"radar_edges":[edge("R001",.98)],"ambiguity":""}}
+        groups=allocate([news],opinions,[radar],alignments,{"N001":{"opinion":[],"radar":[]}})
+        self.assertEqual(groups[0]["opinion_id"],"O001")
+        self.assertNotIn("joint_assignment_evidence",groups[0])
+
+    def test_batch_branch_ranking_requires_two_text_types_and_keeps_same_direction_rivals(self):
+        def radar(sid,direction):
+            return {"id":sid,"kind":"radar","sheet":"飞机","batch":"AIR-X", "platforms":[{"name":"空警-600","country":"中国","quantity":2}],
+                    "mission":{"value":"情报监视侦察"},"mission_values":["情报监视侦察"],
+                    "start_time":"17:35","end_time":"19:00","coordinate_hint":{"candidate_directions":[direction]}}
+        good,bad=radar("R001","黄海"),radar("R002","东海")
+        texts=[{"id":"N001","kind":"news","location":normalize_location("黄海")},
+               {"id":"O001","kind":"opinion","location":normalize_location("黄海方向")}]
+        proof=less_relevant_sibling(good,bad,texts)
+        self.assertEqual(proof["candidate_id"],"R002")
+        self.assertIsNone(less_relevant_sibling(good,bad,texts[:1]))
+        bad["coordinate_hint"]["candidate_directions"]=["黄海"]
+        self.assertIsNone(less_relevant_sibling(good,bad,texts))
+        bad["coordinate_hint"]["candidate_directions"]=[]
+        self.assertIsNone(less_relevant_sibling(good,bad,texts))
+
+    def test_optional_quantity_omission_is_pending_without_hiding_association_doubt(self):
+        verify={"facts":[{"field":"quantity","status":"insufficient","supporting_source_types":["radar"]}],
+                "unresolved_issues":["数量仅雷达明确，新闻与舆论缺失具体数值。","只有雷达明确数量，活动归属仍有歧义。"]}
+        reconcile_model_issues(verify)
+        self.assertEqual(verify["unresolved_issues"],["只有雷达明确数量，活动归属仍有歧义。"])
+
+    def test_literal_location_recovery_stays_inside_original_continuous_quote(self):
+        source={"id":"N001","kind":"news","text":"正文：台湾E-2K预警机在连云港外海围绕任务海域组织预警指挥。"}
+        item={"source_id":"N001","platforms":[{"name":"E-2K预警机","country":"台湾","quantity":None,
+              "quote":"E-2K预警机","quantity_quote":""}],"location":{"value":"连云港外海任务海域","quote":"连云港外海围绕任务海域"},
+              "mission":{"value":"预警指挥","quote":"组织预警指挥"},"start_time":None,"end_time":None,
+              "time_quote":"","movement":"活动","movement_quote":"围绕任务海域组织预警指挥"}
+        class ExtractionClient:
+            def chat(self,role,prompt,payload,schema,validate,**kwargs):
+                result=schema.model_validate({"items":[item]})
+                validate(result)
+                return result
+        result=extract_sources(ExtractionClient(),[source],lambda data:None)[0]
+        self.assertEqual(result["location"]["raw"],"连云港外海")
+        self.assertEqual(result["location"]["quote"],"连云港外海")
+        item["location"]["value"]="青岛外海任务海域"
+        with self.assertRaisesRegex(ValueError,"字段value须来自quote原文"):
+            extract_sources(ExtractionClient(),[source],lambda data:None)
+
+    def test_place_context_modifiers_do_not_create_different_named_regions(self):
+        self.assertEqual(location_relation(normalize_location("渤海海峡"),normalize_location("渤海海峡一带")),"same")
+        self.assertEqual(location_relation(normalize_location("北大西洋"),normalize_location("北大西洋上空")),"same")
+        self.assertEqual(location_relation(normalize_location("北大西洋上空"),normalize_location("南大西洋上空")),"different_named_regions")
+
     def test_clock_quotes_support_whole_hours_without_inventing_minutes(self):
         self.assertEqual({value for match,value in clock_spans("17时35分至19时")},{17*60+35,19*60})
         self.assertEqual({value for match,value in clock_spans("19 时 35 分")},{19*60+35})

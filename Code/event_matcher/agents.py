@@ -116,6 +116,13 @@ def extract_sources(client, sources, checkpoint):
                     elif not assertions and re.fullmatch(r"(?:任务海域|任务区域|持续活动|持续|保持机动|机动|活动|保持|海域|围绕)+",compact(mission.value)):
                         mission.value,mission.quote=None,""
                         repairs[item.source_id].append("移除模型拼接的泛称活动；原文没有明确任务断言")
+                location=item.location
+                if location.value and compact(location.value) not in compact(raw):
+                    region=normalize_location(location.value).get("region")
+                    if region and compact(region) in compact(raw) and location.quote and compact(location.quote) in compact(raw) and compact(region) in compact(location.quote):
+                        location.value=exact_quote(raw,region)
+                        location.quote=location.value
+                        repairs[item.source_id].append("地点按本篇连续引用内的实际地名恢复，移除模型拼接修饰语")
                 for fact in [item.location,item.mission]:
                     if fact.value and compact(fact.value) in compact(raw) and (not fact.quote or compact(fact.quote) not in compact(raw)
                             or compact(fact.value) not in compact(fact.quote)):
