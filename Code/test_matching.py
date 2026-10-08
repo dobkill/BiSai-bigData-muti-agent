@@ -49,6 +49,12 @@ class MatchingTests(unittest.TestCase):
         self.assertEqual(location_relation(normalize_location("菲律宾海空域"),normalize_location("菲律宾")),"different_named_regions")
         self.assertEqual(location_relation(normalize_location("白令海空域"),normalize_location("巴伦支海")),"different_named_regions")
 
+    def test_other_named_regions_keep_identity_with_airspace_wrappers(self):
+        for name in ["莫桑比克海峡","孟加拉湾","印度洋"]:
+            for suffix in ["空域","相关空域","任务空域"]:
+                with self.subTest(name=name,suffix=suffix):
+                    self.assertEqual(location_relation(normalize_location(name),normalize_location(name+suffix)),"same")
+
     def test_extraction_reanchors_valid_quote_that_omits_field_qualifier(self):
         source={"id":"N001","kind":"news","text":"标题：护卫舰执行监视侦察\n正文：越南猎豹3.9级导弹护卫舰展开海上监视侦察行动。"}
         item={"source_id":"N001","platforms":[{"name":"猎豹3.9级导弹护卫舰","country":"越南","quantity":None,
@@ -56,7 +62,7 @@ class MatchingTests(unittest.TestCase):
               "mission":{"value":"海上监视侦察","quote":"执行监视侦察"},"start_time":None,"end_time":None,
               "time_quote":"","movement":"活动","movement_quote":"展开海上监视侦察行动"}
         class ExtractionClient:
-            def chat(self,role,prompt,payload,schema,validate):
+            def chat(self,role,prompt,payload,schema,validate,**kwargs):
                 result=schema.model_validate({"items":[item]})
                 validate(result)
                 return result
@@ -71,12 +77,46 @@ class MatchingTests(unittest.TestCase):
               "mission":{"value":"海上监视侦察","quote":"执行监视侦察"},"start_time":None,"end_time":None,
               "time_quote":"","movement":"活动","movement_quote":"执行监视侦察"}
         class ExtractionClient:
-            def chat(self,role,prompt,payload,schema,validate):
+            def chat(self,role,prompt,payload,schema,validate,**kwargs):
                 result=schema.model_validate({"items":[item]})
                 validate(result)
                 return result
         with self.assertRaisesRegex(ValueError,"字段value须来自quote原文"):
             extract_sources(ExtractionClient(),[source],lambda data:None)
+
+    def test_extraction_restores_unique_literal_mission_instead_of_splicing_sentences(self):
+        source={"id":"N001","kind":"news","text":"标题：E-2K预警机执行预警指挥任务行动\n正文：台湾E-2K预警机持续活动，围绕任务海域组织预警指挥。"}
+        item={"source_id":"N001","platforms":[{"name":"E-2K预警机","country":"台湾","quantity":None,
+              "quote":"E-2K预警机","quantity_quote":""}],"location":{"value":None,"quote":""},
+              "mission":{"value":"预警指挥任务行动，围绕任务海域组织预警指挥", "quote":"执行预警指挥任务行动，围绕任务海域组织预警指挥"},
+              "start_time":None,"end_time":None,"time_quote":"","movement":"活动","movement_quote":"持续活动"}
+        test=self
+        class ExtractionClient:
+            def chat(self,role,prompt,payload,schema,validate,**kwargs):
+                constrained=kwargs["schema_override"]
+                test.assertEqual(constrained["properties"]["items"]["minItems"],1)
+                test.assertEqual(constrained["properties"]["items"]["maxItems"],1)
+                test.assertEqual(constrained["$defs"]["Extracted"]["properties"]["source_id"]["enum"],["N001"])
+                result=schema.model_validate({"items":[item]})
+                validate(result)
+                return result
+        result=extract_sources(ExtractionClient(),[source],lambda data:None)[0]
+        self.assertEqual(result["mission"],{"value":"预警指挥","quote":"组织预警指挥"})
+        self.assertIn(result["mission"]["quote"],source["text"])
+
+    def test_extraction_removes_spliced_generic_activity_without_inventing_mission(self):
+        source={"id":"N001","kind":"news","text":"正文：台湾E-2K预警机在任务海域持续活动，并保持机动。"}
+        item={"source_id":"N001","platforms":[{"name":"E-2K预警机","country":"台湾","quantity":None,
+              "quote":"E-2K预警机","quantity_quote":""}],"location":{"value":None,"quote":""},
+              "mission":{"value":"任务海域持续活动、保持机动","quote":"任务海域持续活动、保持机动"},
+              "start_time":None,"end_time":None,"time_quote":"","movement":"活动","movement_quote":"持续活动"}
+        class ExtractionClient:
+            def chat(self,role,prompt,payload,schema,validate,**kwargs):
+                result=schema.model_validate({"items":[item]})
+                validate(result)
+                return result
+        result=extract_sources(ExtractionClient(),[source],lambda data:None)[0]
+        self.assertEqual(result["mission"],{"value":None,"quote":""})
 
     def test_global_assignment_against_exhaustive_search(self):
         rng=random.Random(31)

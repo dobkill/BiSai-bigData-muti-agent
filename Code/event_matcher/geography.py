@@ -35,7 +35,7 @@ def normalize_location(raw: str | None) -> dict:
     if text.endswith("空域") and text[:-2] in NAMED_SEAS:
         region=text[:-2]
     else:
-        region=re.sub(r"(?:相关海域|任务海域|海空域|海域|方向)$","",text) or text
+        region=re.sub(r"(?:相关海域|任务海域|相关空域|任务空域|海空域|海域|空域|方向)$","",text) or text
     return {"raw": raw, "region": region, "direction": "其他", "precision": "原文区域",
             "mapping": "PDF未列入三大核心海域的区域归其他", "transit": False}
 
