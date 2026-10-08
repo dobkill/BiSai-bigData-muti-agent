@@ -206,7 +206,7 @@ def allocate(news_items, opinions, radars, alignments, recalls):
         same=[e for e in op_edges[n["id"]].values() if e["relation"]=="same" and e["confidence"]>=.55]
         best=max((e["confidence"] for e in same),default=0)
         near={e["candidate_id"]:e for e in same if best-e["confidence"]<.08}
-        if len(near)<2:
+        if len(same)<2:
             continue
         for k,opinion in enumerate(opinions):
             if opinion["id"] not in near or opweights[j][k]<=0:
@@ -222,7 +222,7 @@ def allocate(news_items, opinions, radars, alignments, recalls):
               for j,n in enumerate(news_items)]
     byid = {g["id"]:g for g in groups}
     for nid,details in joint_evidence.items():
-        byid[nid]["joint_assignment_evidence"]={"scope":"新闻缺少时段与任务时，以已选雷达与近分舆论的明示时段/任务协同分配；不消解任何明示反证","candidates":details}
+        byid[nid]["joint_assignment_evidence"]={"scope":"新闻缺少时段与任务且有多个已接受舆论候选时，以已选雷达与最佳近分候选的明示时段/任务协同分配；最佳候选即使唯一近分也可获得印证，不消解任何明示反证","candidates":details}
     for j,group in enumerate(groups):
         if group["opinion_id"]:
             edge=op_edges[group["id"]][group["opinion_id"]]

@@ -60,6 +60,27 @@ class MatchingTests(unittest.TestCase):
         self.assertEqual(groups[0]["opinion_id"],"O001")
         self.assertNotIn("joint_assignment_evidence",groups[0])
 
+    def test_corroborated_best_opinion_is_not_stolen_by_another_clocked_activity(self):
+        def source(sid,kind,place,task=None,start=None,end=None):
+            return {"id":sid,"kind":kind,"platforms":[{"name":"卡尔瓦里级常规潜艇","country":"印度","quantity":1}],
+                    "location":normalize_location(place),"mission":{"value":task},"mission_values":[task] if task else [],
+                    "text":"正文：印度潜艇"+("执行"+task if task else "持续活动")+"。","start_time":start,"end_time":end}
+        news=[source("N001","news","成山头外海","海上巡逻","11:10","13:35"),
+              source("N002","news","黄海中部")]
+        opinions=[source("O001","opinion","黄海","战备巡逻","05:56","07:21"),
+                  source("O002","opinion","黄海","海上巡逻")]
+        radars=[source("R001","radar","成山头外海","海上巡逻","11:10","13:35"),
+                source("R002","radar","黄海中部","战备巡逻","05:56","07:21")]
+        edge=lambda sid,c:{"candidate_id":sid,"platform_indices":[0],"relation":"same","confidence":c,"reason":"关联候选"}
+        alignments={"N001":{"opinion_edges":[edge("O001",.85),edge("O002",.75)],"radar_edges":[edge("R001",.98),edge("R002",.8)],"ambiguity":""},
+                    "N002":{"opinion_edges":[edge("O001",.95),edge("O002",.85)],"radar_edges":[edge("R002",.98)],"ambiguity":""}}
+        recalls={n["id"]:{"opinion":[{"id":"O001","score":1} if n["id"]=="N001" else {"id":"O002","score":1}],"radar":[]} for n in news}
+        groups=allocate(news,opinions,radars,alignments,recalls)
+        self.assertEqual([g["opinion_id"] for g in groups],["O002","O001"])
+        self.assertEqual([g["radar_ids"] for g in groups],[["R001"],["R002"]])
+        self.assertNotIn("joint_assignment_evidence",groups[0])
+        self.assertEqual(groups[1]["joint_assignment_evidence"]["candidates"][0]["opinion_id"],"O001")
+
     def test_batch_branch_ranking_requires_two_text_types_and_keeps_same_direction_rivals(self):
         def radar(sid,direction):
             return {"id":sid,"kind":"radar","sheet":"飞机","batch":"AIR-X", "platforms":[{"name":"空警-600","country":"中国","quantity":2}],
