@@ -97,7 +97,8 @@ def extract_sources(client, sources, checkpoint):
                     elif p.quantity is not None and p.quantity in values and (not p.quantity_quote or compact(p.quantity_quote) not in compact(raw)):
                         p.quantity_quote = exact_quote(raw,matches[0].group())
                 for fact in [item.location,item.mission]:
-                    if fact.value and compact(fact.value) in compact(raw) and (not fact.quote or compact(fact.quote) not in compact(raw)):
+                    if fact.value and compact(fact.value) in compact(raw) and (not fact.quote or compact(fact.quote) not in compact(raw)
+                            or compact(fact.value) not in compact(fact.quote)):
                         fact.quote=exact_quote(raw,fact.value)
                         repairs[item.source_id].append("地点/任务引用按原文明示字段重新定位")
                 explicit_intervals=list(re.finditer(r"(\d{1,2})\s*时\s*(\d{1,2})\s*分\s*(?:至|到)\s*(\d{1,2})\s*时\s*(\d{1,2})\s*分",raw))

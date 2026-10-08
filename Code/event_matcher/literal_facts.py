@@ -34,7 +34,7 @@ def literal_missions(source):
         return {v:v for v in (normalize_mission(x) for x in source.get("mission_values",[source["mission"].get("value")])) if v}
     text=narrative(source)
     # A platform called 反潜巡逻机 is not itself an assertion of a 反潜巡逻 mission.
-    pattern=r"(?:执行|组织|开展|实施|进行|从事)(?:了)?\s*("+MISSION_PATTERN+r")"
+    pattern=r"(?:执行|组织|开展|展开|实施|进行|从事)(?:了)?\s*("+MISSION_PATTERN+r")"
     return {m[1]:m.group() for m in re.finditer(pattern,text)}
 
 

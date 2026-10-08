@@ -5,7 +5,7 @@ import unittest
 from pathlib import Path
 from types import SimpleNamespace
 
-from event_matcher.agents import exact_quote, quantity_numbers
+from event_matcher.agents import exact_quote, extract_sources, quantity_numbers
 from event_matcher.assignment import maximum_assignment
 from event_matcher.data import country, load_radar, load_texts, platform_similarity, platform_tokens
 from event_matcher.export import export_results
@@ -16,6 +16,35 @@ from event_matcher.matching import allocate, apply_guards, assignment_competitor
 
 
 class MatchingTests(unittest.TestCase):
+    def test_extraction_reanchors_valid_quote_that_omits_field_qualifier(self):
+        source={"id":"N001","kind":"news","text":"标题：护卫舰执行监视侦察\n正文：越南猎豹3.9级导弹护卫舰展开海上监视侦察行动。"}
+        item={"source_id":"N001","platforms":[{"name":"猎豹3.9级导弹护卫舰","country":"越南","quantity":None,
+              "quote":"猎豹3.9级导弹护卫舰","quantity_quote":""}],"location":{"value":None,"quote":""},
+              "mission":{"value":"海上监视侦察","quote":"执行监视侦察"},"start_time":None,"end_time":None,
+              "time_quote":"","movement":"活动","movement_quote":"展开海上监视侦察行动"}
+        class ExtractionClient:
+            def chat(self,role,prompt,payload,schema,validate):
+                result=schema.model_validate({"items":[item]})
+                validate(result)
+                return result
+        result=extract_sources(ExtractionClient(),[source],lambda data:None)[0]
+        self.assertEqual(result["mission"],{"value":"海上监视侦察","quote":"海上监视侦察"})
+        self.assertTrue(result["extraction_repairs"])
+
+    def test_extraction_does_not_reanchor_field_value_absent_from_source(self):
+        source={"id":"N001","kind":"news","text":"正文：越南猎豹3.9级导弹护卫舰执行监视侦察。"}
+        item={"source_id":"N001","platforms":[{"name":"猎豹3.9级导弹护卫舰","country":"越南","quantity":None,
+              "quote":"猎豹3.9级导弹护卫舰","quantity_quote":""}],"location":{"value":None,"quote":""},
+              "mission":{"value":"海上监视侦察","quote":"执行监视侦察"},"start_time":None,"end_time":None,
+              "time_quote":"","movement":"活动","movement_quote":"执行监视侦察"}
+        class ExtractionClient:
+            def chat(self,role,prompt,payload,schema,validate):
+                result=schema.model_validate({"items":[item]})
+                validate(result)
+                return result
+        with self.assertRaisesRegex(ValueError,"字段value须来自quote原文"):
+            extract_sources(ExtractionClient(),[source],lambda data:None)
+
     def test_global_assignment_against_exhaustive_search(self):
         rng=random.Random(31)
         for n in range(1,5):
