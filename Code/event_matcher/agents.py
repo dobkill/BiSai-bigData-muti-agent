@@ -68,6 +68,17 @@ def exact_quote(raw, value):
     return raw[chars[pos][0]:chars[pos+len(needle)-1][0]+1]
 
 
+def clock_spans(raw):
+    """Literal clock positions and minutes, including an explicitly written whole hour."""
+    pattern=r"(?<!\d)(?:(\d{1,2})\s*[时:：]\s*(\d{1,2})\s*(?:分|(?=\D|$))|(\d{1,2})\s*时(?!\s*\d))"
+    result=[]
+    for match in re.finditer(pattern,raw):
+        hour=int(match[1] or match[3]);minute=int(match[2] or 0)
+        if hour<24 and minute<60:
+            result.append((match,hour*60+minute))
+    return result
+
+
 def extract_sources(client, sources, checkpoint):
     results = []
     for offset in range(0, len(sources), 4):
@@ -110,16 +121,17 @@ def extract_sources(client, sources, checkpoint):
                             or compact(fact.value) not in compact(fact.quote)):
                         fact.quote=exact_quote(raw,fact.value)
                         repairs[item.source_id].append("地点/任务引用按原文明示字段重新定位")
-                explicit_intervals=list(re.finditer(r"(\d{1,2})\s*时\s*(\d{1,2})\s*分\s*(?:至|到)\s*(\d{1,2})\s*时\s*(\d{1,2})\s*分",raw))
+                explicit_intervals=list(re.finditer(r"(\d{1,2})\s*时(?:\s*(\d{1,2})\s*分)?\s*(?:至|到)\s*(\d{1,2})\s*时(?:\s*(\d{1,2})\s*分)?",raw))
                 if len(explicit_intervals)==1 and (not item.start_time or not item.end_time):
                     interval=explicit_intervals[0]
-                    item.start_time=f"{int(interval[1]):02}:{int(interval[2]):02}"
-                    item.end_time=f"{int(interval[3]):02}:{int(interval[4]):02}"
+                    item.start_time=f"{int(interval[1]):02}:{int(interval[2] or 0):02}"
+                    item.end_time=f"{int(interval[3]):02}:{int(interval[4] or 0):02}"
                     item.time_quote=interval.group()
                     repairs[item.source_id].append("恢复原文唯一明确的活动起止区间，未使用发文时间")
-                if (item.start_time or item.end_time) and (not item.time_quote or compact(item.time_quote) not in compact(raw)):
-                    clocks = list(re.finditer(r"(\d{1,2})\s*[时:：]\s*(\d{1,2})\s*(?:分|(?=\D|$))",raw))
-                    chosen = [m for m in clocks if int(m[1])*60+int(m[2]) in {minutes(v) for v in [item.start_time,item.end_time] if v}]
+                expected_clocks={minutes(v) for v in [item.start_time,item.end_time] if v}
+                if expected_clocks and (not item.time_quote or compact(item.time_quote) not in compact(raw)
+                        or not expected_clocks<={value for match,value in clock_spans(item.time_quote)}):
+                    chosen=[match for match,value in clock_spans(raw) if value in expected_clocks]
                     if chosen:
                         item.time_quote=raw[chosen[0].start():chosen[-1].end()]
                         repairs[item.source_id].append("活动时刻引用重新定位到原文区间")
@@ -143,7 +155,7 @@ def extract_sources(client, sources, checkpoint):
                 for value in [item.start_time, item.end_time]:
                     if value:
                         m = minutes(value)
-                        quoted = {(int(h)*60+int(mi)) for h,mi in re.findall(r"(\d{1,2})[时:：](\d{1,2})(?:分|(?=\D|$))", re.sub(r"\s+","",item.time_quote))}
+                        quoted={quoted_value for match,quoted_value in clock_spans(item.time_quote)}
                         if m not in quoted:
                             raise ValueError(f"{item.source_id} 活动时刻须明确来自time_quote: {value}")
         output_schema=ExtractionBatch.model_json_schema()

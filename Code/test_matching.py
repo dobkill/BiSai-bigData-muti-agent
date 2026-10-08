@@ -6,7 +6,7 @@ from unittest.mock import patch
 from pathlib import Path
 from types import SimpleNamespace
 
-from event_matcher.agents import exact_quote, extract_sources, quantity_numbers, verify_group
+from event_matcher.agents import clock_spans, exact_quote, extract_sources, quantity_numbers, verify_group
 from event_matcher.assignment import maximum_assignment
 from event_matcher.data import country, load_radar, load_texts, platform_similarity, platform_tokens
 from event_matcher.export import export_results
@@ -17,6 +17,31 @@ from event_matcher.matching import allocate, apply_guards, assignment_competitor
 
 
 class MatchingTests(unittest.TestCase):
+    def test_clock_quotes_support_whole_hours_without_inventing_minutes(self):
+        self.assertEqual({value for match,value in clock_spans("17时35分至19时")},{17*60+35,19*60})
+        self.assertEqual({value for match,value in clock_spans("19 时 35 分")},{19*60+35})
+        self.assertEqual({value for match,value in clock_spans("19:00、19：30")},{19*60,19*60+30})
+        self.assertFalse(clock_spans("25时00分，2025年5月18日"))
+
+    def test_extraction_accepts_whole_hour_and_rejects_unquoted_half_hour(self):
+        def source():
+            return {"id":"N001","kind":"news","text":"正文：台湾E-2K预警机于17时35分至19时持续活动。"}
+        item={"source_id":"N001","platforms":[{"name":"E-2K预警机","country":"台湾","quantity":None,
+              "quote":"E-2K预警机","quantity_quote":""}],"location":{"value":None,"quote":""},
+              "mission":{"value":None,"quote":""},"start_time":"17:35","end_time":"19:00",
+              "time_quote":"17时35分","movement":"活动","movement_quote":"持续活动"}
+        class ExtractionClient:
+            def chat(self,role,prompt,payload,schema,validate,**kwargs):
+                result=schema.model_validate({"items":[item]})
+                validate(result)
+                return result
+        result=extract_sources(ExtractionClient(),[source()],lambda data:None)[0]
+        self.assertEqual((result["start_time"],result["end_time"]),("17:35","19:00"))
+        self.assertEqual(result["time_quote"],"17时35分至19时")
+        item["end_time"]="19:30"
+        with self.assertRaisesRegex(ValueError,"活动时刻须明确来自time_quote"):
+            extract_sources(ExtractionClient(),[source()],lambda data:None)
+
     def test_atomic_checkpoint_retries_transient_windows_file_lock(self):
         from event_matcher.ollama_client import dump
         original_replace=Path.replace

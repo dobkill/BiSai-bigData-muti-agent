@@ -80,7 +80,7 @@ def time_semantics(source):
     if source["kind"]=="radar":
         return {"interval":"observation_coverage","start_asserted":False,"end_asserted":False}
     text=narrative(source)
-    clock=r"\d{1,2}\s*(?:时|[:：])\s*\d{1,2}\s*分?"
+    clock=r"\d{1,2}\s*(?:时(?:\s*\d{1,2}\s*分)?|[:：]\s*\d{1,2})"
     return {"interval":"reported_activity",
             "start_asserted":bool(re.search(clock+r"\s*(?:开始|起(?:在|执行|组织|活动|，)|进入|驶入|飞入)",text)
                                   or re.search(r"(?:开始|进入|驶入|飞入)[^。]{0,12}"+clock,text)),
