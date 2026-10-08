@@ -255,16 +255,17 @@ def align_source(client, news, opinions, radars, candidate_info, review_instruct
         {"news": public_view(news), "opinion_candidates": [view(s,len(opinions)>8) for s in opinions],
          "radar_candidates": [view(s,len(radars)>8) for s in radars], "recall": candidate_info}, Alignment, validate,
          schema_override=output_schema, compatible_schema=[previous_schema,legacy_schema]).model_dump()
-    byid={s["id"]:s for s in opinions}
-    for edge in answer["opinion_edges"]:
-        if edge["relation"]=="different":
-            continue
-        source=byid[edge["candidate_id"]]
-        identified=[i for i,p in enumerate(news["platforms"]) if any(platform_similarity(p["name"],q["name"])>=.45 for q in source["platforms"])]
-        if identified and identified!=edge["platform_indices"]:
-            edge["model_platform_indices"]=edge["platform_indices"]
-            edge["platform_indices"]=identified
-            edge["scope_correction"]="按舆论实际出现的平台身份校正；其他成员未提及不能算支持"
+    for field,pool,label in [("opinion_edges",opinions,"舆论"),("radar_edges",radars,"雷达")]:
+        byid={s["id"]:s for s in pool}
+        for edge in answer[field]:
+            if edge["relation"]=="different":
+                continue
+            source=byid[edge["candidate_id"]]
+            identified=[i for i,p in enumerate(news["platforms"]) if any(platform_similarity(p["name"],q["name"])>=.45 for q in source["platforms"])]
+            if identified and identified!=edge["platform_indices"]:
+                edge["model_platform_indices"]=edge["platform_indices"]
+                edge["platform_indices"]=identified
+                edge["scope_correction"]=f"按{label}实际出现的平台身份校正；其他成员未提及不能算支持或反证；事件关联与国籍/数量等字段继续核验"
     return answer
 
 

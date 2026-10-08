@@ -6,7 +6,7 @@ from unittest.mock import patch
 from pathlib import Path
 from types import SimpleNamespace
 
-from event_matcher.agents import clock_spans, exact_quote, extract_sources, quantity_numbers, verify_group
+from event_matcher.agents import align_source, clock_spans, exact_quote, extract_sources, quantity_numbers, verify_group
 from event_matcher.assignment import maximum_assignment
 from event_matcher.data import country, load_radar, load_texts, platform_similarity, platform_tokens
 from event_matcher.export import export_results
@@ -17,6 +17,33 @@ from event_matcher.matching import allocate, apply_guards, assignment_competitor
 
 
 class MatchingTests(unittest.TestCase):
+    def test_radar_formation_edges_cannot_copy_one_members_quantity_to_another(self):
+        from event_matcher.models import Alignment
+        def source(sid,kind,name,quantity):
+            return {"id":sid,"kind":kind,"title":name,"text":name,"platforms":[{"name":name,"country":"英国","quantity":quantity}],
+                    "location":normalize_location("南海"),"mission":{"value":"联合巡逻"},"start_time":"20:09","end_time":"22:34","movement":"活动"}
+        news=source("N023","news","P-8A反潜巡逻机",1)
+        news["platforms"].append({"name":"RC-135W电子侦察机","country":"英国","quantity":2})
+        radars=[source("R004","radar","P-8A反潜巡逻机",1),source("R002","radar","RC-135W电子侦察机",2)]
+        class FormationClient:
+            def chat(self,*args,**kwargs):
+                return Alignment.model_validate({"opinion_edges":[],"radar_edges":[
+                    {"candidate_id":r["id"],"platform_indices":[0,1],"relation":"same","confidence":.92,"reason":"同编队"} for r in radars],"ambiguity":""})
+        answer=align_source(FormationClient(),news,[],radars,{})
+        self.assertEqual([e["platform_indices"] for e in answer["radar_edges"]],[[0],[1]])
+        self.assertTrue(all(e["model_platform_indices"]==[0,1] for e in answer["radar_edges"]))
+        group={"radar_slots":{"0":"R004","1":"R002"},"alignment":answer}
+        for index,expected in [(0,[("N023",1),("R004",1)]),(1,[("N023",2),("R002",2)])]:
+            actual=[(sid,p["quantity"]) for sid,p in linked_platforms(group,news,None,radars,index)]
+            self.assertEqual(actual,expected)
+        # Identity correction must not erase a real country/quantity counter-value.
+        radars[0]["platforms"][0]["country"]="美国"
+        radars[0]["platforms"][0]["quantity"]=3
+        answer=align_source(FormationClient(),news,[],radars,{})
+        self.assertEqual(answer["radar_edges"][0]["platform_indices"],[0])
+        self.assertEqual(radars[0]["platforms"][0]["country"],"美国")
+        self.assertEqual(radars[0]["platforms"][0]["quantity"],3)
+
     def test_country_missing_value_strings_cannot_become_counterevidence(self):
         for value in [None,"null","NULL","None","unknown","未说明","不详",""]:
             self.assertIsNone(country(value))
