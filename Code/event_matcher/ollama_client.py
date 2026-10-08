@@ -42,10 +42,13 @@ class OllamaClient:
         # Only an explicitly supplied older schema for identical semantics may be migrated.
         # Inputs, instructions, model and version remain part of both hashes; validation is mandatory.
         if not path.exists() and compatible_schema is not None:
-            prior_key=hashlib.sha256(json.dumps([VERSION,self.model,role,instructions,payload,compatible_schema],
-                                              ensure_ascii=False,sort_keys=True).encode()).hexdigest()
-            prior=self.cache/role/(prior_key+".json")
-            if prior.exists():
+            schemas=compatible_schema if isinstance(compatible_schema,list) else [compatible_schema]
+            for earlier_schema in schemas:
+                prior_key=hashlib.sha256(json.dumps([VERSION,self.model,role,instructions,payload,earlier_schema],
+                                                  ensure_ascii=False,sort_keys=True).encode()).hexdigest()
+                prior=self.cache/role/(prior_key+".json")
+                if not prior.exists():
+                    continue
                 cached=json.loads(prior.read_text(encoding="utf-8"))
                 try:
                     proposed=schema.model_validate(cached["result"])
@@ -56,6 +59,7 @@ class OllamaClient:
                 else:
                     dump(path,{**cached,"result":proposed.model_dump(),"revalidated_from":str(prior),
                                "schema_migration":"仅收窄输出约束；同输入同指令的旧响应通过当前完整校验后复用"})
+                    break
         if path.exists():
             result = schema.model_validate(json.loads(path.read_text(encoding="utf-8"))["result"])
             if validate:
@@ -81,8 +85,10 @@ class OllamaClient:
                 dump(self.cache / "failed" / f"{key}-{attempt}.json", {"role": role, "error": str(e), "response": response})
                 if attempt == 2:
                     raise RuntimeError(f"{role} validated output failed: {e}") from e
-                messages += [{"role": "assistant", "content": response["message"]["content"]},
-                             {"role": "user", "content": f"输出校验失败，请重新输出完整结果，修正这些问题：{e}"}]
+                # Keep the evidence intact; appending failed long outputs can evict the original news.
+                messages = [{"role":"system","content":instructions},
+                            {"role":"user","content":json.dumps(payload,ensure_ascii=False)},
+                            {"role":"user","content":f"上次输出校验失败，请依据上述原始材料重新输出完整JSON：{e}"}]
 
     def embeddings(self, texts: list[str]):
         key = hashlib.sha256(json.dumps([self.embedding_model, texts], ensure_ascii=False).encode()).hexdigest()

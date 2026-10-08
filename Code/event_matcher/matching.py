@@ -56,7 +56,7 @@ def build_index(client, sources, output):
     return vectors @ vectors.T, manifest
 
 
-def recall(news, pool, similarities, positions):
+def recall(news, pool, similarities, positions, full_scores=False):
     scored = []
     for source in pool:
         ps = max(platform_similarity(a["name"], b["name"]) for a in news["platforms"] for b in source["platforms"])
@@ -73,7 +73,19 @@ def recall(news, pool, similarities, positions):
     selected = {s["id"] for s in top_vector+top_rules} | {s["id"] for s in scored if s["platform_similarity"] >= .9}
     records = sorted((s for s in scored if s["id"] in selected), key=lambda s:(-s["score"],s["id"]))
     byid = {s["id"]: s for s in pool}
-    return [byid[s["id"]] for s in records], records
+    return [byid[s["id"]] for s in records], scored if full_scores else records
+
+
+def expanded_candidates(news,pool,scores,limit=12):
+    """Search the complete indexed pool; prioritize compatible identities in a bounded review."""
+    byid={s["id"]:s for s in pool}
+    ranked=[r["id"] for r in sorted(scores,key=lambda r:(-r["score"],r["id"]))]
+    compatible=[s["id"] for s in pool if any(platform_similarity(p["name"],q["name"])>=.45
+                                           for p in news["platforms"] for q in s["platforms"])]
+    selected=set(ranked[:limit])|set(compatible)
+    # Unsent candidates remain in the index and raw export; this call has an explicit context budget.
+    order=list(dict.fromkeys([*[sid for sid in ranked if sid in compatible],*compatible,*ranked]))
+    return [byid[sid] for sid in order if sid in selected][:max(limit,3*len(news["platforms"]))]
 
 
 def edge_weight(edge, heuristic):
@@ -443,14 +455,14 @@ def match(client, texts, radars, output):
     review_ids = [g["id"] for g in groups if not g["opinion_id"] or any(r is None for r in g["radar_slots"].values())]
     for nid in review_ids:
         news = byid[nid]
-        op, oscores = recall(news,opinions,similarities,positions)
-        ra, rscores = recall(news,radars,similarities,positions)
-        # Expand to the full same-day pool for missing source. Keep other source candidates bounded.
+        op, oscores = recall(news,opinions,similarities,positions,full_scores=True)
+        ra, rscores = recall(news,radars,similarities,positions,full_scores=True)
+        # The whole day has already been indexed; avoid overflowing the model context with all 50 texts.
         g = next(g for g in groups if g["id"]==nid)
         if not g["opinion_id"]:
-            op = opinions
+            op = expanded_candidates(news,opinions,oscores)
         if any(r is None for r in g["radar_slots"].values()):
-            ra = radars
+            ra = expanded_candidates(news,radars,rscores)
         review = align_source(client,news,op,ra,{"review": "缺源扩大检索，保留反证，不强行凑组", **recalls[nid]})
         alignments[nid] = review
         recalls[nid]["expanded_review"] = True

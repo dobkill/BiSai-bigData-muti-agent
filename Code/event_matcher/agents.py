@@ -167,7 +167,10 @@ def align_source(client, news, opinions, radars, candidate_info, review_instruct
     def validate(result):
         if review_instructions and {e.candidate_id for e in result.opinion_edges} != allowed_op:
             raise ValueError("剩余材料复核必须对每篇舆论明确给出same/uncertain/different判定，不能省略")
-        for edges, allowed in [(result.opinion_edges, allowed_op), (result.radar_edges, allowed_rad)]:
+        for edges, allowed, maximum in [(result.opinion_edges,allowed_op,len(allowed_op) if review_instructions else min(len(allowed_op),3)),
+                                       (result.radar_edges,allowed_rad,len(allowed_rad) if review_instructions else min(len(allowed_rad),3*count))]:
+            if len(edges)>maximum:
+                raise ValueError("关联输出超出本次候选数量预算")
             seen = set()
             for edge in edges:
                 if edge.candidate_id not in allowed or edge.candidate_id in seen:
@@ -175,6 +178,8 @@ def align_source(client, news, opinions, radars, candidate_info, review_instruct
                 seen.add(edge.candidate_id)
                 if any(i < 0 or i >= count for i in edge.platform_indices):
                     raise ValueError("新闻平台索引越界")
+                if len(set(edge.platform_indices))!=len(edge.platform_indices):
+                    raise ValueError("新闻平台索引不能重复")
                 if edge.relation == "same" and not edge.platform_indices:
                     raise ValueError("same关联必须给出实际关联平台索引")
     def view(s, brief):
@@ -188,20 +193,30 @@ def align_source(client, news, opinions, radars, candidate_info, review_instruct
             result["coordinates"]=s["coordinates"]["median"]
         return result
     prompt=ALIGN_PROMPT if not review_instructions else ALIGN_PROMPT+"\n"+review_instructions
-    previous_schema=Alignment.model_json_schema()
+    legacy_schema=Alignment.model_json_schema()
     if review_instructions:
-        previous_schema["properties"]["opinion_edges"].update({"minItems":len(opinions),"maxItems":len(opinions)})
-        previous_schema["properties"]["radar_edges"]["maxItems"]=len(radars)
-        previous_schema["$defs"]["Edge"]["properties"]["candidate_id"]["enum"]=sorted(allowed_op|allowed_rad)
+        legacy_schema["properties"]["opinion_edges"].update({"minItems":len(opinions),"maxItems":len(opinions)})
+        legacy_schema["properties"]["radar_edges"]["maxItems"]=len(radars)
+        legacy_schema["$defs"]["Edge"]["properties"]["candidate_id"]["enum"]=sorted(allowed_op|allowed_rad)
     import copy
-    output_schema=copy.deepcopy(previous_schema)
-    output_schema["$defs"]["Edge"]["properties"]["candidate_id"]["enum"]=sorted(allowed_op|allowed_rad)
-    output_schema["$defs"]["Edge"]["properties"]["platform_indices"].update(
+    previous_schema=copy.deepcopy(legacy_schema)
+    previous_schema["$defs"]["Edge"]["properties"]["candidate_id"]["enum"]=sorted(allowed_op|allowed_rad)
+    previous_schema["$defs"]["Edge"]["properties"]["platform_indices"].update(
         {"maxItems":count,"items":{"type":"integer","enum":list(range(count))}})
+    output_schema=copy.deepcopy(previous_schema)
+    for field,ids,definition in [("opinion_edges",allowed_op,"OpinionEdge"),("radar_edges",allowed_rad,"RadarEdge")]:
+        edge=copy.deepcopy(previous_schema["$defs"]["Edge"])
+        if ids:
+            edge["properties"]["candidate_id"]["enum"]=sorted(ids)
+        output_schema["$defs"][definition]=edge
+        output_schema["properties"][field]["items"]={"$ref":"#/$defs/"+definition}
+        maximum=len(ids) if review_instructions else min(len(ids),3 if field=="opinion_edges" else 3*count)
+        output_schema["properties"][field]["maxItems"]=maximum
+    del output_schema["$defs"]["Edge"]
     answer = client.chat("alignment", prompt,
-        {"news": public_view(news), "opinion_candidates": [view(s,len(opinions)>12) for s in opinions],
-         "radar_candidates": [view(s,len(radars)>12) for s in radars], "recall": candidate_info}, Alignment, validate,
-         schema_override=output_schema, compatible_schema=previous_schema).model_dump()
+        {"news": public_view(news), "opinion_candidates": [view(s,len(opinions)>8) for s in opinions],
+         "radar_candidates": [view(s,len(radars)>8) for s in radars], "recall": candidate_info}, Alignment, validate,
+         schema_override=output_schema, compatible_schema=[previous_schema,legacy_schema]).model_dump()
     byid={s["id"]:s for s in opinions}
     for edge in answer["opinion_edges"]:
         if edge["relation"]=="different":

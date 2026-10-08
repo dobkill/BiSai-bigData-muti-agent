@@ -12,7 +12,7 @@ from event_matcher.export import export_results
 from event_matcher.geography import location_relation, normalize_location
 from event_matcher.literal_facts import check_common_facts, check_location_fact, repair_source_assertions
 from event_matcher.quality import audit_quality
-from event_matcher.matching import allocate, apply_guards, assignment_competitors, bundle_radar_evidence, counterevidence_hint, review_unmatched_opinions
+from event_matcher.matching import allocate, apply_guards, assignment_competitors, bundle_radar_evidence, counterevidence_hint, expanded_candidates, review_unmatched_opinions
 
 
 class MatchingTests(unittest.TestCase):
@@ -274,6 +274,32 @@ class MatchingTests(unittest.TestCase):
                                    schema_override=constrained,compatible_schema=old_schema)
                 self.assertEqual(result.opinion_edges[0].platform_indices,[0])
                 self.assertEqual(len(requests),0 if old_index==0 else 1)
+
+    def test_failed_retry_keeps_original_evidence_without_failed_answer(self):
+        import json
+        from event_matcher.models import Alignment
+        from event_matcher.ollama_client import OllamaClient
+        with tempfile.TemporaryDirectory(prefix="matching-retry-") as tmp:
+            client=OllamaClient(Path(tmp),"test","test","http://unused")
+            calls=[]
+            def request(endpoint,body):
+                calls.append(body)
+                content='invalid '+('x'*20000) if len(calls)==1 else json.dumps({"opinion_edges":[],"radar_edges":[],"ambiguity":""})
+                return {"message":{"content":content}}
+            client.request=request
+            evidence={"news":{"id":"N001","text":"法国E-2C在仁爱礁活动"}}
+            client.chat("alignment","instructions",evidence,Alignment)
+            self.assertEqual(len(calls),2)
+            self.assertEqual(calls[0]["messages"][:2],calls[1]["messages"][:2])
+            self.assertFalse(any(m["role"]=="assistant" for m in calls[1]["messages"]))
+
+    def test_expanded_search_keeps_matching_identity_with_bounded_context(self):
+        news={"platforms":[{"name":"E-2C预警机"}]}
+        pool=[{"id":f"O{i:03}","platforms":[{"name":"护卫舰" if i<50 else "E-2C预警机"}]} for i in range(1,51)]
+        scores=[{"id":s["id"],"score":51-i} for i,s in enumerate(pool,1)]
+        result=expanded_candidates(news,pool,scores)
+        self.assertEqual(len(result),12)
+        self.assertIn("O050",[s["id"] for s in result])
 
     def test_activity_does_not_corroborate_specific_entry(self):
         assigned=[{"id":"N001","kind":"news","text":"正文：平台进入东海。","mission":{"value":None}},
