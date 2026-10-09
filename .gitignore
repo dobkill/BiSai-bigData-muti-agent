@@ -3,6 +3,7 @@
 /Datas_分组_新版/
 outputs/
 .cache/
+/Datas
 
 # Python bytecode and build artifacts
 __pycache__/
